@@ -1,0 +1,38 @@
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: #FAA21A;
+}
+
+header nav {
+    padding: 20px;
+    display: flow-root;
+}
+
+header nav .nombre_proyecto{
+    float: left;
+    text-align: center;
+}
+
+header nav .nombre_proyecto a{
+    color: #40433E;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header nav .cont_links{
+    float: right;
+    text-align: left;
+    margin-top: 5px;
+}
+
+header nav .cont_links a{
+    color: #40433E;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 10px;
+}
