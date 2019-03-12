@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_padre_familia.css">
+    <title>Gemas - Nuevo Usuario</title>
+</head>
+<body>
+    <!-- Barra de navegacion superior -->
+    <header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="#">Inicio</a>
+                <a href="#">Iniciar sesión</a>
+                <a href="#">Crear cuenta</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenedores de las partes del formulario -->
+    
+    <h2 class="titulo2">Ingresar nuevo</h2>
+    <h1 class="titulo1">Centro Educativo</h1>
+    <main>
+
+
+        <!-- Primer contenedor, Informacion General-->
+
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Información General</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form>
+                        <div>
+                            <label for="txt_nombre">Nombre de la institución</label>
+                            <input type="text" id="txt_nombre">
+                        </div>
+
+                        <div>
+                            <label for="txt_corre">Correo Electrónico</label>
+                            <input type="text" id="txt_correo">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="flecha_der">
+                <a href="">
+                    <i class="fas fa-angle-right fa-5x"></i>
+                </a>   
+            </div>
+            
+        </div>
+        
+          <!-- Segundo contenedor, Informacion General-->
+
+          <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a href="#">
+                        <i class="fas fa-angle-left fa-5x"></i>
+                    </a> 
+                </div>
+    
+                <div class="descripcion_contenedor">
+                    <p>Información General</p>
+                </div>
+    
+                <div class="separador"></div>
+    
+                <div class="contenido">
+                    <div class="formulario-2">
+                        <form>
+                            <div>
+                                <label for="txt_nombre">Cédula Jurídica</label>
+                                <input type="text" id="txt_cedula">
+                            </div>
+    
+                            <div>
+                                <label for="rbt_escuela">Escuela</label>
+                                <input type="radio" id="rbt_escuela" name="rbt_tipo" value="Escuela">
+                                
+                                <label for="rbt_colegio">Colegio</label>
+                                <input type="radio" id="rbt_colegio" name="rbt_tipo" value="Colegio">
+                                
+                                <label for="rbt_ambos">Ambos</label>
+                                <input type="radio" id="rbt_ambos" name="rbt_tipo" value="Ambos">
+                                
+                            </div>
+
+                            <div>
+                                <label for="txt_tipo_colegio">Tipo Colegio</label>
+                                <select id="txt_tipo_colegio">
+
+                                    <option value="">Seleccione un tipo de colegio...</option>
+                                    <option value="Técnico">Académico</option>
+                                    <option value="Técnico">Técnico</option>
+                                    <option value="Técnico">Vocacional</option>
+                                    <option value="Técnico">Científico</option>
+                                    <option value="Técnico">Agropecuario</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                    <label for="rbt_publico">Público</label>
+                                    <input type="radio" id="rbt_publico" name="rbt_sistema" value="Público">
+                                    
+                                    <label for="rbt_colegio">Privado</label>
+                                    <input type="radio" id="rbt_privado" name="rbt_sistema" value="Privado">
+                                    
+                                </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="flecha_der">
+                    <a href="">
+                        <i class="fas fa-angle-right fa-5x"></i>
+                    </a>   
+                </div>
+                
+            </div>
+
+            <!-- Tercer contenedor, Ubicacion-->
+
+          <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a href="#">
+                        <i class="fas fa-angle-left fa-5x"></i>
+                    </a> 
+                </div>
+    
+                <div class="descripcion_contenedor">
+                    <p>Ubicación</p>
+                </div>
+    
+                <div class="separador"></div>
+    
+                <div class="contenido">
+                    <div class="formulario-3">
+                        <form>
+
+                            <div>
+                                <label for="txt_provincia">Dirección en:</label>
+                                <select id="txt_tipo_colegio">
+                                    <option value="">Provincia</option>
+                                    <option value="San José">San José</option>
+                                    <option value="Alajuela">Alajuela</option>
+                                    <option value="Heredia">Heredia</option>
+                                    <option value="Cartago">Cartago</option>
+                                    <option value="Limón">Limón</option>
+                                    <option value="Guanacaste">Guanacaste</option>
+                                    <option value="Puntarenas">Puntarenas</option>
+                                </select>
+
+                                <select id="txt_canton">
+                                    <option value="">Cantón</option>
+                                    <option value="San José">San José</option>
+                                    <option value="Guadalupe">Guadalupe</option>
+                                    <option value="Desamparados">Desamparados</option>
+                                    <option value="Alajuelita">Alajuelita</option>
+                                </select>
+
+                                <select id="txt_distrito">
+                                    <option value="">Distrito</option>
+                                    <option value="Goicoechea">Goicoechea</option>
+                                    <option value="Concepción Arriba">Concepción Arriba</option>
+                                    <option value="Concepción Abajo">Concepción Abajo</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="txt_direccion_exacta">Dirección Exacta</label>
+                                <textarea id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="flecha_der">
+                    <a href="">
+                        <i class="fas fa-angle-right fa-5x"></i>
+                    </a>   
+                </div>
+                
+            </div>
+    </main>
+</body>
+</html>
