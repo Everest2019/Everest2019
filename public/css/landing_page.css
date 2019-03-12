@@ -1,0 +1,36 @@
+h1{
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+img{
+    width: 700px;
+}
+#contenedor{
+    width: 700px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+#contenedor ul{
+    list-style: none;
+    width: 2800px;
+    display: flex;
+
+    animation: slide 20s infinite;
+}
+@keyframes slide{
+    0% {margin-left: 0px;}
+    20% {margin-left: 0px;}
+
+    25%{margin-left: -700px;}
+    45%{margin-left: -700px;}
+
+    50%{margin-left: -1400px;}
+    70%{margin-left: -1400px;}
+}
+.foto{
+width: 400px;
+margin: 30px auto;
+}
