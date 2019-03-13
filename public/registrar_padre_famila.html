@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/registrar_padre_familia.css">
+</head>
+<body>
+    <header>
+        <nav>
+             <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+             </div>
+             <div class="cont_links">
+                    <a href="#">Inicio</a>
+                    <a href="#">Iniciar sesión</a>
+                    <a href="#">Crear cuenta</a>
+             </div>
+        </nav>
+    </header>
+    <h2 class="titulo2">Registrar nuevo</h2>
+    <h1 class="titulo1">Padre de Familia</h1>
+    <main>
+        <div class="slidershow-container">
+            <!--primero contenedor-->
+            <div class="mySlides fade">
+                <div class="numbertext">1/3</div>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Informacion General</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div class="formulario-1">
+                            <form>
+                                <div>
+                                    <label for="txt_nombre">Primer nombre</label>
+                                    <input type="text" id="txt_nombre">
+                                </div>
+                                <div>
+                                    <label for="txt_segundonombre">Segundo nombre</label>
+                                    <input type="text" id="txt_segundonombre">
+                                </div>
+                                <div>
+                                    <label for="txt_apellido">Primer apellido</label>
+                                    <input type="text" id="txt_apellido">
+                                </div>
+                                <div>
+                                    <label for="txt_segundoapellido">Segundo apellido</label>
+                                    <input type="text" id="txt_segundoapellido">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--segundo contenedor-->
+            <div class="mySlides fade">
+                <div class="numbertext">2/3</div>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Informacion General</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div class="formulario-2">
+                            <form>
+                                <div>
+                                    <label for="num_identificación">Identificación</label>
+                                    <input type="number" id="num_identificación">
+                                </div>
+                                <div>
+                                    <label for="num_cantidadhijos">Cantidad de hijos</label>
+                                    <input type="number" id="num_cantidadhijos">
+                                </div>
+                                <div>
+                                    <label for="num_edadhijos">Edades hijos</label>
+                                    <input type="number" id="num_edadhijos">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--tercer contenedor-->
+            <div class="mySlides fade">
+                <div class="numbertext">3/3</div>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Ubicación</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div class="formulario-3">
+                            <form>
+                                    <div>
+                                        <label for="txt_provincia">Provincia</label>
+                                        <select id="Direccion">
+                                            <option value="San José">San José</option>
+                                            <option value="Alajuela">Alajuela</option>
+                                            <option value="Heredia">Heredia</option>
+                                            <option value="Cartago">Cartago</option>
+                                            <option value="Limón">Limón</option>
+                                            <option value="Guanacaste">Guanacaste</option>
+                                            <option value="Puntarenas">Puntarenas</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="txt_canton">Cantón</label>
+                                        <input list="cantones">
+                                        <datalist id="cantones">
+                                            <option value="Alajuelita">Alajuelita</option>
+                                            <option value="Guadalupe">Guadalupe</option>
+                                            <option value="Desamparados">Desamparados</option>
+                                        </datalist>
+                                    </div>
+                                    <div>
+                                        <label for="txt_distrito">Distrito</label>
+                                        <input list="distrito">
+                                        <datalist id="distrito">
+                                            <option value="Goicoechea">Goicoechea</option>
+                                            <option value="Concepción Arriba">Concepción Arriba</option>
+                                            <option value="Concepción Abajo">Concepción Abajo</option>
+                                        </datalist>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+    <a class="next" onclick="plusSlides(1)">&#10095</a>
+        </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="curentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script src="js/controlador_padrefamilia.js"></script>
+</body>
+</html>
