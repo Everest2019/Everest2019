@@ -91,6 +91,7 @@ div input[type=radio]{
     width: 20px;
     height: 20px;
 }
+
 /* Estilos primer contenedor */
 
 .contenido .formulario-1{
@@ -106,6 +107,10 @@ div input[type=radio]{
     width: 200px;
     margin-left: 40px;  
     font-weight: bold;
+}
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
 }
 
 /* Estilos del segundo contenedor */
@@ -132,6 +137,15 @@ div input[type=radio]{
     border: 2px solid gray;
     font-size: 15px;
 }
+.formulario-2 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-2 select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
 /* Estilos tercer contenedor */
 
 .contenido .formulario-3{
@@ -157,6 +171,12 @@ div input[type=radio]{
     border: 2px solid gray;
     font-size: 15px;
 }
+
+.formulario-3 select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
 .formulario-3 div textarea{
     width: 250px;
     height: 150px;
@@ -164,6 +184,11 @@ div input[type=radio]{
     border: 2px solid gray;
     font-size: 15px;
     resize: none;
+}
+
+.formulario-3 textarea:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
 }
 /* Estilos del mapa del cuarto contenedor */
 #map {
@@ -173,7 +198,7 @@ div input[type=radio]{
 
 /* Estilos del quinto contenedor */
 .formulario-5{
-    margin-top: 50px;   
+    margin-top: 30px;   
 }
 .titulo-elemento{
     margin-left: 100px;
@@ -194,8 +219,7 @@ div input[type=radio]{
     display: inline-block;
     margin-left: 100px;
     width: 100px;
-    font-weight: bold;
-    font-size: 25px;
+    font-size: 22px;
     margin-right: 25px;
 }
 
@@ -206,6 +230,86 @@ div input[type=radio]{
     border: 2px solid gray;
     margin-left: 50px;
 }
+
+.formulario-5 textarea:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
 .formulario-5 i{
     color: #FAA21A;
+}
+
+.cont-elemento{
+margin-bottom: 15px;
+}
+
+/* Estilos del Sexto contenedor */
+
+.formulario-6 label{
+    display: inline-block;
+    margin-left: 100px;
+    width: 100px;
+    font-size: 20px;
+    margin-right: 25px;
+}
+
+.formulario-6 textarea{
+    width: 200px;
+    height: 60px;
+    resize: none;
+    border: 2px solid gray;
+    margin-left: 50px;
+}
+
+
+.formulario-6 i{
+    color: #FAA21A;
+}
+
+.formulario-6 div select{
+    display: inline-block;
+    width: 200px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.formulario-6 textarea:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+.formulario-6 select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+/* Estilos del setimo contenedor*/
+.formulario-7 h1{
+    font-size: 23px;
+    margin-left: 60px;
+}
+
+.formulario-7 .cont_checkbox_izq{
+    float:left;
+    margin-left: 90px;
+    margin-top: 40px;
+}
+
+.formulario-7 .cont_checkbox_der{
+    float:left;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+.formulario-7 .cont_checkbox_izq div, .formulario-7 .cont_checkbox_der div{
+    margin-bottom: 30px;
+}
+
+.formulario-7 input[type=checkbox]{
+    height: 15px;
+    width: 15px;
 }
