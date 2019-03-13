@@ -132,9 +132,80 @@ div input[type=radio]{
     border: 2px solid gray;
     font-size: 15px;
 }
+/* Estilos tercer contenedor */
 
+.contenido .formulario-3{
+    margin-top: 40px;
+}
 
+.formulario-3 form div{
+    margin-bottom: 30px;
+}
 
+.formulario-3 div label{
+    display: inline-block;
+    margin-left: 40px;  
+    font-weight: bold;
+    width: 100px;
+}
 
+.formulario-3 div select{
+    display: inline-block;
+    width: 120px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+.formulario-3 div textarea{
+    width: 250px;
+    height: 150px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+    resize: none;
+}
+/* Estilos del mapa del cuarto contenedor */
+#map {
+    height: 100%;
+    width: 100%;
+}
 
+/* Estilos del quinto contenedor */
+.formulario-5{
+    margin-top: 50px;   
+}
+.titulo-elemento{
+    margin-left: 100px;
+    float: left;
+}
 
+.titulo-descripcion{
+    margin-left: 190px;
+    float: left;
+}
+.titulo-elemento p, .titulo-descripcion p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #FAA21A;
+}
+
+.formulario-5 label{
+    display: inline-block;
+    margin-left: 100px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+.formulario-5 textarea{
+    width: 200px;
+    height: 60px;
+    resize: none;
+    border: 2px solid gray;
+    margin-left: 50px;
+}
+.formulario-5 i{
+    color: #FAA21A;
+}
