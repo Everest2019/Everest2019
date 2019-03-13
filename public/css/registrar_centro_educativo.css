@@ -246,7 +246,7 @@ div input[type=radio]{
 }
 
 .cont-elemento{
-margin-bottom: 15px;
+margin-bottom: 10px;
 }
 
 /* Estilos del Sexto contenedor */
@@ -274,7 +274,7 @@ margin-bottom: 15px;
 
 .formulario-6 div select{
     display: inline-block;
-    width: 200px;
+    width: 220px;
     height: 25px;
     border-radius: 3px;
     border: 2px solid gray;
@@ -288,6 +288,37 @@ margin-bottom: 15px;
 }
 
 .formulario-6 select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+#txt_mensualidad{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+
+#txt_mensualidad:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+#txt_matricula{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+#txt_matricula:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
@@ -378,14 +409,29 @@ margin-bottom: 15px;
     margin-top: 40px;
     margin-left: 40px;
 }
+.formulario-10 .cont-contacto, .formulario-10 .cont-redes{
+    float: left;
+}
+
+.formulario-10 .cont-contacto{
+    margin-top: 40px;
+}
+
+.formulario-10 .cont-contacto input, .formulario-10 .cont-redes input{
+    width: 150px;
+}
 
 .formulario-10 .cont-red-social{
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 20px;
 }
 
 .formulario-10 .cont-red-social i{
     padding-right: 20px;
+}
+
+.formulario-10 input{
+    width: 100px;
 }
 
 .formulario-10 input:focus{

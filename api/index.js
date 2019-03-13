@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-      dburl = '',
+      dburl = 'mongodb://everest:everest@everest-shard-00-00-iywno.mongodb.net:27017,everest-shard-00-01-iywno.mongodb.net:27017,everest-shard-00-02-iywno.mongodb.net:27017/test?ssl=true&replicaSet=Everest-shard-0&authSource=admin&retryWrites=true',
     port = 4000;
 
 /**
@@ -63,6 +63,9 @@ app.use( function(req, res, next) {
   next();
 });
 
+const centros_educativos = require('./componentes/centro_educativo/centro_educativo_route');
+
+app.use('/api', centros_educativos);
 
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
