@@ -36,8 +36,11 @@ body{
 
 .flecha_izq i{
     margin-top: 20px;
-    margin-left: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: #FAA21A;
+    transition: 0.6s ease;
+    border-radius: 3px;
 }
 
 .flecha_der{
@@ -48,8 +51,15 @@ body{
 
 .flecha_der i{
     margin-top: 20px;
-    margin-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: #FAA21A;
+    transition: 0.6s ease;
+    border-radius: 3px;
+}
+
+.flecha_der i:hover, .flecha_izq i:hover{
+    background: #d3d3d3;
 }
 
 .descripcion_contenedor{
@@ -81,6 +91,7 @@ body{
     grid-row: 1 / 2;
 }
 
+
 /* Estilos generales de los elementos del contenido */
 
 div input[type=text]{
@@ -88,13 +99,16 @@ div input[type=text]{
     width: 300px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
 }
 div input[type=radio]{
     display: inline-block;
     width: 20px;
     height: 20px;
+}
+
+input, select, textarea{
+    border: 2px solid gray;
 }
 
 /* Estilos primer contenedor */
@@ -139,7 +153,6 @@ div input[type=radio]{
     width: 300px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
 }
 .formulario-2 input:focus{
@@ -173,7 +186,6 @@ div input[type=radio]{
     width: 120px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
 }
 
@@ -186,7 +198,6 @@ div input[type=radio]{
     width: 250px;
     height: 150px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
     resize: none;
 }
@@ -232,7 +243,6 @@ div input[type=radio]{
     width: 200px;
     height: 60px;
     resize: none;
-    border: 2px solid gray;
     margin-left: 50px;
 }
 
@@ -246,7 +256,7 @@ div input[type=radio]{
 }
 
 .cont-elemento{
-margin-bottom: 15px;
+margin-bottom: 10px;
 }
 
 /* Estilos del Sexto contenedor */
@@ -263,7 +273,6 @@ margin-bottom: 15px;
     width: 200px;
     height: 60px;
     resize: none;
-    border: 2px solid gray;
     margin-left: 50px;
 }
 
@@ -274,10 +283,9 @@ margin-bottom: 15px;
 
 .formulario-6 div select{
     display: inline-block;
-    width: 200px;
+    width: 220px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
     margin-left: 50px;
     margin-top: 30px;
@@ -288,6 +296,35 @@ margin-bottom: 15px;
 }
 
 .formulario-6 select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+#txt_mensualidad{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+#txt_mensualidad:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+#txt_matricula{
+    display: inline-block;
+    width: 100px;
+    margin-right: 5px;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+#txt_matricula:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
@@ -378,14 +415,29 @@ margin-bottom: 15px;
     margin-top: 40px;
     margin-left: 40px;
 }
+.formulario-10 .cont-contacto, .formulario-10 .cont-redes{
+    float: left;
+}
+
+.formulario-10 .cont-contacto{
+    margin-top: 40px;
+}
+
+.formulario-10 .cont-contacto input, .formulario-10 .cont-redes input{
+    width: 150px;
+}
 
 .formulario-10 .cont-red-social{
-    margin-left: 100px;
+    margin-left: 20px;
     margin-top: 20px;
 }
 
 .formulario-10 .cont-red-social i{
     padding-right: 20px;
+}
+
+.formulario-10 input{
+    width: 100px;
 }
 
 .formulario-10 input:focus{
@@ -448,7 +500,6 @@ margin-bottom: 15px;
     height: 25px;
     width: 375px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
 }
 
@@ -470,7 +521,6 @@ margin-bottom: 15px;
     margin-right: 5px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
     font-size: 15px;
 }
 
