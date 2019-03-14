@@ -15,8 +15,9 @@ var map;
         });
         
           google.maps.event.addListener(centro_educativo, 'dragend', function (evt) {
-            var lat = centro_educativo.getPosition().lat();
-            var lng = centro_educativo.getPosition().lng();
+            let lat = centro_educativo.getPosition().lat();
+            let lng = centro_educativo.getPosition().lng();
+
             console.log(lat,lng); 
         });
       }

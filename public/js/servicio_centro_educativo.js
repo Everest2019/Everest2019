@@ -1,0 +1,67 @@
+'use strict';
+
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, pdocumento, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, paprobado, pestado) =>{
+
+   let request = $.ajax({
+       url: "http://localhost:4000/api/registrar_centro_educativo",
+       method: "POST",
+       data: { 
+            nombre_comercial : pnombre_institucion,
+            cedula_juridica : pcedula_institucion,
+            tipo_institucion : ptipo_institucion,
+            modalidad : ptipo_sistema,
+            tipo_colegio : ptipo_colegio,
+            distrito : pdistrito,
+            canton : pcanton,
+            provincia : pprovincia,
+            direccion_exacta : pdireccion_exacta,
+            ubicacion_mapa_lat : platitud,
+            ubicacion_mapa_lng : plongitud,
+            ano_creacion : pano_fundacion,
+            referencia_historica : preferencia_historica,
+            informacion_general : pdescripcion_institucion,
+            telefono : ptelefono,
+            fax : pfax,
+            pagina_web : pweb,
+            correo : pcorreo_institucion,
+            facebook : pfacebook,
+            twitter : ptwitter,
+            instagram : pinstagram,
+            youtube : pyoutube,
+            matricula : pmatricula,
+            mensualidad : pmensualidad,
+            //contrasena : pcodigo,
+            imagen_portada : pportada,
+            galeria : pgaleria,
+            informacion_adicional : pidioma,
+            documento: pdocumento,
+            primer_nombre : pprimer_nombre,
+            segundo_nombre : psegundo_nombre,
+            primer_apellido : pprimer_apellido,
+            segundo_apellido : psegundo_apellido,
+            correo_encargado : pcorreo_encargado,
+            departamento : pdepartamento,
+            telefono_encargado : ptelefono_encargado,
+            extension : pextension,
+            identificacion : pidentificacion,
+            aprobado : paprobado,
+            estado : pestado
+       },
+       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+       dataType: "json"
+     });
+      
+     request.done(function( msg ) {
+
+       swal.fire({
+           type: 'success',
+           title: 'Centro Educativo agregado correctamente',
+           text: `El Centro Educativo ${pnombre_institucion} ha sido agregado correctamente`
+       });
+      
+     });
+      
+     request.fail(function( jqXHR, textStatus ) {
+      
+     }); 
+};

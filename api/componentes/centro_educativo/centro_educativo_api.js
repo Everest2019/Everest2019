@@ -30,11 +30,22 @@ module.exports.registrar = (req,res) =>{
             youtube: req.body.youtube,
             matricula: req.body.matricula,
             mensualidad: req.body.mensualidad,
-            aprobado: req.body.aprobado,
-            estado: req.body.estado,
             contrasena: req.body.contrasena,
-            fotografia: req.body.fotografia,
-            informacion_adicional: req.body.informacion_adicional
+            imagen_portada: req.body.imagen_portada,
+            galeria: req.body.galeria,
+            documento: req.body.documento,
+            informacion_adicional: req.body.informacion_adicional,
+            primer_nombre: req.body.primer_nombre,
+            segundo_nombre: req.body.segundo_nombre,
+            primer_apellido: req.body.primer_apellido,
+            segundo_apellido: req.body.segundo_apellido,
+            correo_encargado: req.body.correo_encargado,
+            departamento: req.body.departamento,
+            telefono_encargado: req.body.telefono_encargado,
+            extension: req.body.extension,
+            identificacion: req.body.identificacion,
+            aprobado: req.body.aprobado,
+            estado: req.body.estado
         }
     );
 
