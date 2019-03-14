@@ -14,7 +14,7 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-      dburl = '',
+      dburl = 'mongodb://mariana_mp:161513mariana@proyecto1-shard-00-00-vf88e.mongodb.net:27017,proyecto1-shard-00-01-vf88e.mongodb.net:27017,proyecto1-shard-00-02-vf88e.mongodb.net:27017/preferencia?ssl=true&replicaSet=proyecto1-shard-0&authSource=admin&retryWrites=true',
     port = 4000;
 
 /**
@@ -62,6 +62,9 @@ app.use( function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+const registrar = require('./componentes/registro/registrar.route');
+app.use('/api', registrar);
+
 
 
 // Se guarda todo lo que se ha realizado
