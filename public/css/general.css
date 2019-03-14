@@ -37,3 +37,7 @@ header nav .cont_links a{
     font-size: 20px;
     padding: 0 10px;
 }
+
+.input_error{
+    border: 2px solid #e55039;
+}

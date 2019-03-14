@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/carrusel.css">
     <link rel="stylesheet" href="css/registrar_centro_educativo.css">
     <title>Gemas - Nuevo Usuario</title>
 </head>
@@ -29,68 +30,70 @@
     <h2 class="titulo2">Ingresar nuevo</h2>
     <h1 class="titulo1">Centro Educativo</h1>
     <main>
-
+        <div class="slidershow-container">
 
         <!-- Primer contenedor, Informacion General-->
-
-        <div class="contenedor">
-
-            <div class="descripcion_contenedor">
-                <p>Información General</p>
-            </div>
-
-            <div class="separador"></div>
-
-            <div class="contenido">
-                <div class="formulario-1">
-                    <form>
-                        <div>
-                            <label for="txt_nombre">Nombre de la institución</label>
-                            <input type="text" id="txt_nombre">
-                        </div>
-
-                        <div>
-                            <label for="txt_correo">Correo Electrónico</label>
-                            <input type="text" id="txt_correo">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
-            <div class="flecha_der">
-                <a href="">
-                    <i class="fas fa-angle-right fa-5x"></i>
-                </a>   
-            </div>
-            
-        </div>
-        
-          <!-- Segundo contenedor, Informacion General-->
-
-          <div class="contenedor">
-
+        <div class="mySlides fade">
+            <div class="contenedor">
+                
                 <div class="flecha_izq">
-                    <a href="#">
-                        <i class="fas fa-angle-left fa-5x"></i>
-                    </a> 
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
                 </div>
-    
                 <div class="descripcion_contenedor">
                     <p>Información General</p>
                 </div>
-    
+
                 <div class="separador"></div>
-    
+
+                <div class="contenido">
+                    <div class="formulario-1">
+                        <form>
+                            <div>
+                                <label for="txt_nombre">Nombre de la institución</label>
+                                <input type="text" id="txt_nombre">
+                            </div>
+
+                            <div>
+                                <label for="txt_correo">Correo Electrónico</label>
+                                <input type="text" id="txt_correo">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo contenedor, Informacion General-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+                <div class="descripcion_contenedor">
+                    <p>Información General</p>
+                </div>
+
+                <div class="separador"></div>
+
                 <div class="contenido">
                     <div class="formulario-2">
                         <form>
                             <div>
-                                <label for="txt_nombre">Cédula Jurídica</label>
+                                <label for="txt_cedula">Cédula Jurídica</label>
                                 <input type="text" id="txt_cedula">
                             </div>
-    
-                            <div>
+
+                            <div id="cont_tipo_institucion">
                                 <label for="rbt_escuela">Escuela</label>
                                 <input type="radio" id="rbt_escuela" name="rbt_tipo" value="Escuela">
                                 
@@ -107,44 +110,43 @@
                                 <select id="txt_tipo_colegio">
 
                                     <option value="">Seleccione un tipo de colegio...</option>
-                                    <option value="Técnico">Académico</option>
+                                    <option value="Académico">Académico</option>
                                     <option value="Técnico">Técnico</option>
-                                    <option value="Técnico">Vocacional</option>
-                                    <option value="Técnico">Científico</option>
-                                    <option value="Técnico">Agropecuario</option>
+                                    <option value="Vocacional">Vocacional</option>
+                                    <option value="Científico">Científico</option>
+                                    <option value="Agropecuario">Agropecuario</option>
                                 </select>
                             </div>
 
-                            <div>
-                                    <label for="rbt_publico">Público</label>
-                                    <input type="radio" id="rbt_publico" name="rbt_sistema" value="Público">
-                                    
-                                    <label for="rbt_colegio">Privado</label>
-                                    <input type="radio" id="rbt_privado" name="rbt_sistema" value="Privado">
-                                    
-                                </div>
+                            <div id="cont_tipo_sistema">
+                                <label for="rbt_publico">Público</label>
+                                <input type="radio" id="rbt_publico" name="rbt_sistema" value="Público">
+                                
+                                <label for="rbt_colegio">Privado</label>
+                                <input type="radio" id="rbt_privado" name="rbt_sistema" value="Privado">
+                                
+                            </div>
                         </form>
                     </div>
                 </div>
-    
                 <div class="flecha_der">
-                    <a href="">
-                        <i class="fas fa-angle-right fa-5x"></i>
-                    </a>   
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
                 </div>
-                
             </div>
+        </div>
 
-            <!-- Tercer contenedor, Ubicacion-->
-
-          <div class="contenedor">
+        <!-- Tercer contenedor, Ubicacion-->
+        <div class="mySlides fade">
+            <div class="contenedor">
 
                 <div class="flecha_izq">
-                    <a href="#">
-                        <i class="fas fa-angle-left fa-5x"></i>
-                    </a> 
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
                 </div>
-    
+
                 <div class="descripcion_contenedor">
                     <p>Ubicación</p>
                 </div>
@@ -157,7 +159,7 @@
 
                             <div>
                                 <label for="txt_provincia">Dirección en:</label>
-                                <select id="txt_tipo_colegio">
+                                <select id="txt_provincia">
                                     <option value="">Provincia</option>
                                     <option value="San José">San José</option>
                                     <option value="Alajuela">Alajuela</option>
@@ -186,144 +188,136 @@
 
                             <div>
                                 <label for="txt_direccion_exacta">Dirección Exacta</label>
-                                <textarea id="" cols="30" rows="10"></textarea>
+                                <textarea cols="30" rows="10" id="txt_direccion_exacta"></textarea>
                             </div>
                         </form>
                     </div>
                 </div>
-
-    
                 <div class="flecha_der">
-                    <a href="">
-                        <i class="fas fa-angle-right fa-5x"></i>
-                    </a>   
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Cuarto contenedor, Ubicacion en el mapa-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
                 </div>
                 
+                <div class="descripcion_contenedor">
+                    <p>Ubicación en el mapa</p>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="contenido">
+                    <div id="map"></div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
             </div>
-
-        <!-- Cuarto contenedor, Ubicacion en el mapa-->
-
-          <div class="contenedor">
-
-            <div class="flecha_izq">
-                <a href="#">
-                    <i class="fas fa-angle-left fa-5x"></i>
-                </a> 
-            </div>
-
-            <div class="descripcion_contenedor">
-                <p>Ubicación en el mapa</p>
-            </div>
-
-            <div class="separador"></div>
-
-            <div class="contenido">
-                <div id="map"></div>
-            </div>
-
-            <div class="flecha_der">
-                <a href="">
-                    <i class="fas fa-angle-right fa-5x"></i>
-                </a>   
-            </div>
-            
         </div>
-
         <!-- Quinto contenedor, Información Adicional-->
-
-        <div class="contenedor">
-
-            <div class="flecha_izq">
-                <a href="#">
-                    <i class="fas fa-angle-left fa-5x"></i>
-                </a> 
-            </div>
-
-            <div class="descripcion_contenedor">
-                <p>Información Adicional</p>
-            </div>
-
-            <div class="separador"></div>
-
-            <div class="contenido">
-                <div class="titulo-elemento">
-                    <p>Elemento</p>
+        <div class="mySlides fade">
+            <div class="contenedor">
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
                 </div>
-                <div class="titulo-descripcion">
-                    <p>Descripción</p>
+                <div class="descripcion_contenedor">
+                    <p>Información Adicional</p>
                 </div>
-                    
-                <div class="formulario-5">
-                    <form>
-                        <div class="cont-elemento">
-                            <label for="descripcion_idioma">Idiomas</label>
-                            <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                            <textarea id="descripcion_idioma"></textarea>
-                        </div>
+
+                <div class="separador"></div>
+
+                <div class="contenido">
+                    <div class="titulo-elemento">
+                        <p>Elemento</p>
+                    </div>
+                    <div class="titulo-descripcion">
+                        <p>Descripción</p>
+                    </div>
                         
-                        <div class="cont-elemento">
-                            <label for="descripcion_religion">Religión</label>
-                            <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                            <textarea id="descripcion_religion"></textarea>
-                        </div>
+                    <div class="formulario-5">
+                        <form>
+                            <div class="cont-elemento">
+                                <label for="descripcion_idioma">Idiomas</label>
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+                                <textarea id="descripcion_idioma"></textarea>
+                            </div>
+                            
+                            <div class="cont-elemento">
+                                <label for="descripcion_religion">Religión</label>
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+                                <textarea id="descripcion_religion"></textarea>
+                            </div>
 
-                        <div class="cont-elemento">
-                            <label for="descripcion_ensenanza">Método Enseñanza</label>
-                            <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                            <textarea id="descripcion_ensenanza"></textarea>
-                        </div>
-                    </form>
+                            <div class="cont-elemento">
+                                <label for="descripcion_ensenanza">Método Enseñanza</label>
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+                                <textarea id="descripcion_ensenanza"></textarea>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-
-            <div class="flecha_der">
-                <a href="">
-                    <i class="fas fa-angle-right fa-5x"></i>
-                </a>   
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
             </div>
         </div>
-
         <!-- Sexto contenedor, Información Adicional 2-->
+        <div class="mySlides fade">
+            <div class="contenedor">
 
-        <div class="contenedor">
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
 
-            <div class="flecha_izq">
-                <a href="#">
-                    <i class="fas fa-angle-left fa-5x"></i>
-                </a> 
-            </div>
-    
-            <div class="descripcion_contenedor">
-                <p>Información Adicional</p>
-            </div>
+                <div class="descripcion_contenedor">
+                    <p>Información Adicional</p>
+                </div>
 
-            <div class="separador"></div>
+                <div class="separador"></div>
 
-            <div class="contenido">
-                    
-                <div class="formulario-6">
-                    <form>
-                        <div class="cont-elemento">
-                            <label for="descripcion_institucion">Descripción de la institución</label>
-
-                            <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-
-                            <textarea id="descripcion_institucion"></textarea>
-                        </div>
+                <div class="contenido">
                         
-                        <div class="cont-elemento">
-                            <label for="referencia_historica">Referencia histórica</label>
+                    <div class="formulario-6">
+                        <form>
+                            <div class="cont-elemento">
+                                <label for="descripcion_institucion">Descripción de la institución</label>
 
-                            <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-
-                            <textarea id="referencia_historica"></textarea>
-                        </div>
-
-                        <div class="cont-elemento">
-                                <label for="anio_fundacion">Año de fundación</label>
-    
                                 <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-    
+
+                                <textarea id="descripcion_institucion"></textarea>
+                            </div>
+                            
+                            <div class="cont-elemento">
+                                <label for="referencia_historica">Referencia histórica</label>
+
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+
+                                <textarea id="referencia_historica"></textarea>
+                            </div>
+
+                            <div class="cont-elemento">
+                                <label for="anio_fundacion">Año de fundación</label>
+
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+
                                 <select id="anio_fundacion">
                                     <option value="2019">2019</option>
                                     <option value="2018">2018</option>
@@ -442,95 +436,444 @@
                                     <option value="1905">1905</option>
                                 </select>
                             </div>
-                        
-                    </form>
-                </div>
-            </div>
 
-            <div class="flecha_der">
-                <a href="">
-                    <i class="fas fa-angle-right fa-5x"></i>
-                </a>   
+                            <div class="cont-elemento">
+                                <label for="txt_mensualidad">Costo</label>
+                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
+                                <input type="number" id="txt_matricula" min="0" max="2000000" step="10000" placeholder="Matricula">
+                                <input type="number" id="txt_mensualidad" min="0" max="10000000" step="10000" placeholder="Mensualidad">
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
         <!-- Septimo contenedor, Servicios adicionales-->
+        <div class="mySlides fade">
+            <div class="contenedor">
 
-        <div class="contenedor">
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
 
-            <div class="flecha_izq">
-                <a href="#">
-                    <i class="fas fa-angle-left fa-5x"></i>
-                </a> 
-            </div>
-    
-            <div class="descripcion_contenedor">
-                <p>Servicios adicionales</p>
-            </div>
+                <div class="descripcion_contenedor">
+                    <p>Servicios adicionales</p>
+                </div>
 
-            <div class="separador"></div>
+                <div class="separador"></div>
 
-            <div class="contenido">
-                    
-                <div class="formulario-7">
-                        <h1>Servicios ofrecidos por la institución</h1>
-                    <form>
-                        <div class="cont_checkbox_izq">
-                            <div>
-                                <input type="checkbox" id="check_transporte">
-                                <label for="check_transporte">Transporte</label>
+                <div class="contenido">
+                        
+                    <div class="formulario-7">
+                            <h1>Servicios ofrecidos por la institución</h1>
+                        <form>
+                            <div class="cont_checkbox_izq">
+                                <div>
+                                    <input type="checkbox" id="check_transporte">
+                                    <label for="check_transporte">Transporte</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_comedor">
+                                    <label for="check_comedor">Comedor</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_soda">
+                                    <label for="check_soda">Soda</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_iglesia">
+                                    <label for="check_iglesia">Iglesia</label>
+                                </div>
+
+                                
                             </div>
-                            <div>
-                                <input type="checkbox" id="check_comedor">
-                                <label for="check_comedor">Comedor</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="check_soda">
-                                <label for="check_soda">Soda</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="check_iglesia">
-                                <label for="check_iglesia">Iglesia</label>
+
+                            <div class="cont_checkbox_der">
+                                <div>
+                                    <input type="checkbox" id="check_bachillerato_internacional">
+                                    <label for="check_bachillerato_internacional">Bachillerato Internacional</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_gimnasio">
+                                    <label for="check_gimnasio">Gimnasio</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_zona_verde">
+                                    <label for="check_zona_verde">Zonas verdes</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="check_guarderia">
+                                    <label for="check_guarderia">Guardería</label>
+                                </div>
+
                             </div>
 
                             
-                        </div>
-
-                        <div class="cont_checkbox_der">
-                            <div>
-                                <input type="checkbox" id="check_bachillerato_internacional">
-                                <label for="check_bachillerato_internacional">Bachillerato Internacional</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="check_gimnasio">
-                                <label for="check_gimnasio">Gimnasio</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="check_zona_verde">
-                                <label for="check_zona_verde">Zonas verdes</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="check_guarderia">
-                                <label for="check_guarderia">Guardería</label>
-                            </div>
-
-                        </div>
-
-                        
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
-
-            <div class="flecha_der">
-                <a href="">
-                    <i class="fas fa-angle-right fa-5x"></i>
-                </a>   
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
+         <!-- Octavo contenedor, Imagen de portada-->
+         <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Galería</p>
+                </div>
+
+                <div class="separador"></div>
+                <div class="titulo-contenido">
+                    <h1 class="h1-portada">Ingrese una portada para su perfil</h1>
+                </div>
+                <div class="contenido">
+                        
+                    <div class="formulario-8">
+                            
+                    <figure>
+                        <img src="img/agregar_portada.png" id="preview_portada" alt="Preview de la portada">
+                    </figure>
+
+                    <button type="button" id="btn_seleccionar_portada" class="btn-imagen">Subir portada</button>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Noveno contenedor, Galería-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Galería</p>
+                </div>
+
+                <div class="separador"></div>
+                <div class="titulo-contenido">
+                    <h1 class="h1-portada">Ingrese imágenes para su galería</h1>
+                </div>
+                <div class="contenido">
+                        
+                    <div class="formulario-9">
+
+                        <div class="contenedor-galeria">
+                            <figure>
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria1">
+                            </figure>
+        
+                            <button type="button" id="btn_galeria1" class="btn-imagen">Subir imagen</button>
+                        </div>
+
+                        <div class="contenedor-galeria">
+                            <figure>
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria2">
+                            </figure>
+        
+                            <button type="button" id="btn_galeria2" class="btn-imagen">Subir imagen</button>
+                        </div>
+
+                        <div class="contenedor-galeria">
+                            <figure>
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria3">
+                            </figure>
+            
+                            <button type="button" id="btn_galeria3" class="btn-imagen">Subir imagen</button>
+                        </div>
+
+                        <div class="contenedor-galeria">
+                            <figure>
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria4">
+                            </figure>
+            
+                            <button type="button" id="btn_galeria4" class="btn-imagen">Subir imagen</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+         <!-- Decimo contenedor, Contacto-->
+         <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Contacto</p>
+                </div>
+                <div class="titulo-contenido">
+                    <h1 class="h1-redes-sociales">Ingrese las formas de contacto de la institución</h1>
+                </div>
+                <div class="separador"></div>
+
+                <div class="contenido">
+                    <div class="formulario-10">
+                        <form>
+                            <div class="cont-contacto">
+                                <div class="cont-red-social">
+                                        <i class="fas fa-phone fa-2x"></i>
+                                    <input type="text" id="txt_telefono" placeholder="2222-2222">
+                                </div>
+
+                                <div class="cont-red-social">
+                                        <i class="fas fa-fax fa-2x"></i>
+                                    <input type="text" id="txt_fax" placeholder="2222-2222">
+                                </div>
+
+                                <div class="cont-red-social">
+                                        <i class="fas fa-globe fa-2x"></i>
+                                    <input type="text" id="txt_web" placeholder="www.institucion.com">
+                                </div>
+        
+                            </div>
+
+                            <div class="cont-redes">
+                                <div class="cont-red-social">
+                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                    <input type="text" id="txt_facebook" placeholder="www.facebook.com">
+                                </div>
+        
+                                <div class="cont-red-social">
+                                    <i class="fab fa-instagram fa-3x"></i>
+                                    <input type="text" id="txt_instagram" placeholder="www.instagram.com">
+                                </div>
+        
+                                <div class="cont-red-social">
+                                    <i class="fab fa-twitter fa-3x"></i>
+                                    <input type="text" id="txt_twitter" placeholder="www.twitter.com">
+                                </div>
+        
+                                <div class="cont-red-social">
+                                    <i class="fab fa-youtube fa-3x"></i>
+                                    <input type="text" id="txt_youtube" placeholder="www.youtube.com">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Onceavo contenedor, Documentos-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Documentos</p>
+                </div>
+                <div class="titulo-contenido">
+                        <h1 class="h1-redes-sociales">Ingrese los documentos referentes a la institución</h1>
+                    </div>
+                <div class="separador"></div>
+                
+                <div class="contenido">
+                        
+                    <div class="formulario-11">
+
+                        <div class="contenedor-documento">
+                            <figure>
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento1">
+                            </figure>
+            
+                            <button type="button" id="btn_documento1" class="btn-documento">Subir documento</button>
+                        </div>
+
+                        <div class="contenedor-documento">
+                            <figure>
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento2">
+                            </figure>
+            
+                            <button type="button" id="btn_documento2" class="btn-documento">Subir documento</button>
+                        </div>
+
+                        <div class="contenedor-documento">
+                            <figure>
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento3">
+                            </figure>
+            
+                            <button type="button" id="btn_documento3" class="btn-documento">Subir documento</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Doceavo contenedor, Encargado-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Encargado</p>
+                </div>
+
+                <div class="separador"></div>
+                
+                <div class="contenido">
+                        
+                    <div class="formulario-12">
+                        <form>
+                            <div class="nombre-encargado">
+                                <label for="txt_primer_nombre">Nombre</label>
+                                <input type="text" id="txt_primer_nombre_encargado" placeholder="Primer nombre">
+                                <input type="text" id="txt_segundo_nombre_encargado" placeholder="Segundo nombre">
+                            </div>
+
+                            <div class="nombre-encargado">
+                                <label for="txt_primer_apellido_encargado">Apellidos</label>
+                                <input type="text" id="txt_primer_apellido_encargado" placeholder="Primer apellido">
+                                <input type="text" id="txt_segundo_apellido_encargado" placeholder="Segundo apellido">
+                            </div>
+
+                            <div class="correo-encargado">
+                                <label for="txt_correo_encargado">Correo</label>
+                                <input type="email" id="txt_correo_encargado" placeholder="Correo electrónico">
+                            </div>
+
+                            <div class="departamento-encargado">
+                                <label for="txt_departamento_encargado">Departamento</label>
+                                <input type="text" id="txt_departamento_encargado" placeholder="Departamento">
+                            </div>
+
+                            <div class="telefono-encargado">
+                                <label for="txt_telefono_encargado">Telefono</label>
+                                <input type="text" id="txt_telefono_encargado" placeholder="Telefono">
+                                <input type="number" id="txt_extension_encargado" placeholder="Extension">
+                            </div>
+
+                            <div class="identificacion-encargado">
+                                <label for="txt_identificacion_encargado">Identificacion</label>
+                                <input type="text" id="txt_identificacion_encargado" placeholder="Identificacion">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+         <!-- Treceavo contenedor, Enviar-->
+         <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Enviar</p>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="contenido">
+                    <div class="formulario-13">
+                        <h1>¡Terminamos!</h1>
+                        <p>Por favor revisa los datos que ingresaste</p>
+                        <button type="button" id="btn_registrar_institucion">Registrar institución</button>
+                        <p class="condiciones">Al enviar los datos, la información será revisada y en caso de ser aprobada la solicitud, recibirás un correo con un código de verificación</p>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <!--Cierre del div que contiene todas las diapositivas-->
+    </div>
+        <div class="posiciones">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="curentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
+            <span class="dot" onclick="currentSlide(11)"></span>
+            <span class="dot" onclick="currentSlide(12)"></span>
+            <span class="dot" onclick="currentSlide(13)"></span>
+        </div>
     </main>
     <script src="js/servicio_mapa_centro_educativo.js"></script>
     <script  defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWQsEEmcwV_Wnjzf-kgi4wZcYFqEDREiw&callback=initMap"
     type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_centro_educativo.js"></script>
+    <script src="js/servicio_carrusel.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_imagen_registrar_centro_educativo.js"></script>
 </body>
 </html>
