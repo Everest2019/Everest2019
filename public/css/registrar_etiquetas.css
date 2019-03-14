@@ -1,0 +1,11 @@
+
+#etiquetas{
+    width: 45%;
+    height: 30%;
+    float: right;
+    background: #FAA21A;
+}
+#etiquetas div{
+    text-align: center;
+    padding-top: 5px;
+}

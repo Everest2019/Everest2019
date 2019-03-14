@@ -66,10 +66,17 @@ const centros_educativos = require('./componentes/centro_educativo/centro_educat
 
 app.use('/api', centros_educativos);
 
+<<<<<<< HEAD
 const padre_familia = require('./componentes/padre_familia/padre_familia.route');
 
 app.use('/api', padre_familia);
 
+=======
+
+
+const etiquetas = require('./componente/etiquetas/etiqueta.route');
+app.use('/api', etiquetas);
+>>>>>>> 32de4682806b190f9608f7584bb06962fa73dd3b
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;

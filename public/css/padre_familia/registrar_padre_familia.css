@@ -141,6 +141,7 @@ div input[type=radio]{
     border-radius: 3px;
     border: 2px solid gray;
 }
+<<<<<<< HEAD:public/css/padre_familia/registrar_padre_familia.css
 .contenido.formulario-4{
   margin-top: 52px;
 }
@@ -241,3 +242,5 @@ div input[type=radio]{
   from {opacity: .4} 
   to {opacity: 1}
 }
+=======
+>>>>>>> 32de4682806b190f9608f7584bb06962fa73dd3b:public/css/registrar_padre_familia.css

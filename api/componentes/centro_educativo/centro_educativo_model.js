@@ -36,8 +36,22 @@ let schema_centro_educativo = new mongoose.Schema(
 
         //tablas agregadas
 
-        fotografia: {type: String, required: false},
+        imagen_portada: {type: String, required: false},
+        galeria: {type: String, required: false},
         informacion_adicional: {type: String, required: false},
+        documento: {type: String, required: false},
+
+        //Encargado
+        primer_nombre: {type: String, required: true},
+        segundo_nombre: {type: String, required: true},
+        primer_apellido: {type: String, required: true},
+        segundo_apellido: {type: String, required: true},
+        correo_encargado: {type: String, required: true},
+        departamento: {type: String, required: false},
+        telefono_encargado: {type: String, required: true},
+        extension: {type: String, required: false},
+        identificacion: {type: String, required: true}
+        
     }
 );
 
