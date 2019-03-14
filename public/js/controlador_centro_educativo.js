@@ -7,6 +7,8 @@ const input_correo_institucion = document.querySelector('#txt_correo');
 // Elementos segundo contenedor
 const input_cedula_institucion = document.querySelector('#txt_cedula');
 const select_tipo_colegio = document.querySelector('#txt_tipo_colegio');
+const contenedor_tipo_institucion = document.querySelector('#cont_tipo_institucion');
+const contenedor_sistema = document.querySelector('#cont_tipo_sistema');
 
 // Elementos tercer contenedor
 const select_provincia = document.querySelector('#txt_provincia');
@@ -75,7 +77,185 @@ let validar_datos = () => {
     let checkbox_verde = document.querySelector('#check_zona_verde');
     let checkbox_guarderia = document.querySelector('#check_guarderia');
 
-    
+    if(input_nombre_institucion.value == ''){
+        error = true;
+        input_nombre_institucion.classList.add('input_error')
+    }
+    else{
+        input_nombre_institucion.classList.remove('input_error');
+    }
+
+    if(input_correo_institucion.value == ''){
+        error = true;
+        input_correo_institucion.classList.add('input_error')
+    }
+    else{
+        input_correo_institucion.classList.remove('input_error');
+    }
+
+    if(input_cedula_institucion.value == ''){
+        error = true;
+        input_cedula_institucion.classList.add('input_error')
+    }
+    else{
+        input_cedula_institucion.classList.remove('input_error');
+    }
+
+    if(radio_institucion == null){
+        error = true;
+        contenedor_tipo_institucion.classList.add('input_error')
+    }
+    else{
+        contenedor_tipo_institucion.classList.remove('input_error');
+    }
+
+    if(select_tipo_colegio.value == ''){
+        error = true;
+        select_tipo_colegio.classList.add('input_error')
+    }
+    else{
+        select_tipo_colegio.classList.remove('input_error');
+    }
+
+    if(radio_sistema == null){
+        error = true;
+        contenedor_sistema.classList.add('input_error')
+    }
+    else{
+        contenedor_sistema.classList.remove('input_error');
+    }
+
+    if(select_provincia.value == ''){
+        error = true;
+        select_provincia.classList.add('input_error')
+    }
+    else{
+        select_provincia.classList.remove('input_error');
+    }
+
+    if(select_canton.value == ''){
+        error = true;
+        select_canton.classList.add('input_error')
+    }
+    else{
+        select_canton.classList.remove('input_error');
+    }
+
+    if(select_distrito.value == ''){
+        error = true;
+        select_distrito.classList.add('input_error')
+    }
+    else{
+        select_distrito.classList.remove('input_error');
+    }
+
+    if(input_direccion_exacta.value == ''){
+        error = true;
+        input_direccion_exacta.classList.add('input_error')
+    }
+    else{
+        input_direccion_exacta.classList.remove('input_error');
+    }
+
+    if(input_descripcion_institucion.value == ''){
+        error = true;
+        input_descripcion_institucion.classList.add('input_error')
+    }
+    else{
+        input_descripcion_institucion.classList.remove('input_error');
+    }
+
+    if(input_referencia_historica.value == ''){
+        error = true;
+        input_referencia_historica.classList.add('input_error')
+    }
+    else{
+        input_referencia_historica.classList.remove('input_error');
+    }
+
+    if(input_ano_fundacion.value == ''){
+        error = true;
+        input_ano_fundacion.classList.add('input_error')
+    }
+    else{
+        input_ano_fundacion.classList.remove('input_error');
+    }
+
+    if(input_telefono.value == ''){
+        error = true;
+        input_telefono.classList.add('input_error')
+    }
+    else{
+        input_telefono.classList.remove('input_error');
+    }
+
+    if(input_primer_nombre.value == ''){
+        error = true;
+        input_primer_nombre.classList.add('input_error')
+    }
+    else{
+        input_primer_nombre.classList.remove('input_error');
+    }
+
+    if(input_segundo_nombre.value == ''){
+        error = true;
+        input_segundo_nombre.classList.add('input_error')
+    }
+    else{
+        input_segundo_nombre.classList.remove('input_error');
+    }
+
+    if(input_primer_apellido.value == ''){
+        error = true;
+        input_primer_apellido.classList.add('input_error')
+    }
+    else{
+        input_primer_apellido.classList.remove('input_error');
+    }
+
+    if(input_segundo_apellido.value == ''){
+        error = true;
+        input_segundo_apellido.classList.add('input_error')
+    }
+    else{
+        input_segundo_apellido.classList.remove('input_error');
+    }
+
+    if(input_correo_encargado.value == ''){
+        error = true;
+        input_correo_encargado.classList.add('input_error')
+    }
+    else{
+        input_correo_encargado.classList.remove('input_error');
+    }
+
+    if(input_departamento.value == ''){
+        error = true;
+        input_departamento.classList.add('input_error')
+    }
+    else{
+        input_departamento.classList.remove('input_error');
+    }
+
+    if(input_telefono_encargado.value == ''){
+        error = true;
+        input_telefono_encargado.classList.add('input_error')
+    }
+    else{
+        input_telefono_encargado.classList.remove('input_error');
+    }
+
+    if(input_identificacion.value == ''){
+        error = true;
+        input_identificacion.classList.add('input_error')
+    }
+    else{
+        input_identificacion.classList.remove('input_error');
+    }
+
+
+
+
     return error;
 };
 
@@ -131,7 +311,7 @@ let obtener_datos = () =>{
     else{
         swal.fire({
             type: 'warning',
-            title: 'No se pudo agregar la Sucursal',
+            title: 'No se pudo agregar el  Centro Educativo',
             text: 'Por favor revisar los campos resaltados'
         });
     }

@@ -36,7 +36,11 @@
         <div class="mySlides fade">
             <div class="contenedor">
                 
-
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
                 <div class="descripcion_contenedor">
                     <p>Información General</p>
                 </div>
@@ -585,7 +589,7 @@
 
                         <div class="contenedor-galeria">
                             <figure>
-                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img-galeria1">
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria1">
                             </figure>
         
                             <button type="button" id="btn_galeria1" class="btn-imagen">Subir imagen</button>
@@ -593,7 +597,7 @@
 
                         <div class="contenedor-galeria">
                             <figure>
-                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img-galeria2">
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria2">
                             </figure>
         
                             <button type="button" id="btn_galeria2" class="btn-imagen">Subir imagen</button>
@@ -601,7 +605,7 @@
 
                         <div class="contenedor-galeria">
                             <figure>
-                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img-galeria3">
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria3">
                             </figure>
             
                             <button type="button" id="btn_galeria3" class="btn-imagen">Subir imagen</button>
@@ -609,7 +613,7 @@
 
                         <div class="contenedor-galeria">
                             <figure>
-                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img-galeria4">
+                                <img src="img/agregar_portada.png" alt="Preview de la portada" id="img_galeria4">
                             </figure>
             
                             <button type="button" id="btn_galeria4" class="btn-imagen">Subir imagen</button>
@@ -718,26 +722,26 @@
 
                         <div class="contenedor-documento">
                             <figure>
-                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img-documento1">
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento1">
                             </figure>
             
-                            <button type="button" id="btn_galeria1" class="btn-documento">Subir documento</button>
+                            <button type="button" id="btn_documento1" class="btn-documento">Subir documento</button>
                         </div>
 
                         <div class="contenedor-documento">
                             <figure>
-                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img-documento2">
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento2">
                             </figure>
             
-                            <button type="button" id="btn_galeria2" class="btn-documento">Subir documento</button>
+                            <button type="button" id="btn_documento2" class="btn-documento">Subir documento</button>
                         </div>
 
                         <div class="contenedor-documento">
                             <figure>
-                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img-documento3">
+                                <img src="img/agregar_documento.png" alt="Preview del documento" id="img_documento3">
                             </figure>
             
-                            <button type="button" id="btn_galeria3" class="btn-documento">Subir documento</button>
+                            <button type="button" id="btn_documento3" class="btn-documento">Subir documento</button>
                         </div>
                     </div>
                 </div>
@@ -834,6 +838,11 @@
                         <p class="condiciones">Al enviar los datos, la información será revisada y en caso de ser aprobada la solicitud, recibirás un correo con un código de verificación</p>
                     </div>
                 </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -863,5 +872,8 @@
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/controlador_centro_educativo.js"></script>
     <script src="js/servicio_carrusel.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/servicio_imagen_registrar_centro_educativo.js"></script>
 </body>
 </html>
