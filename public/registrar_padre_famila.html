@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Gemas</title>
-    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_padre_familia.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/padre_familia/registrar_padre_familia.css">
 </head>
 <body>
     <header>
@@ -26,7 +26,6 @@
         <div class="slidershow-container">
             <!--primero contenedor-->
             <div class="mySlides fade">
-                <div class="numbertext">1/3</div>
                 <div class="contenedor">
                     <div class="descripcion_contenedor">
                         <p>Informacion General</p>
@@ -36,20 +35,20 @@
                         <div class="formulario-1">
                             <form>
                                 <div>
-                                    <label for="txt_nombre">Primer nombre</label>
-                                    <input type="text" id="txt_nombre">
+                                    <label for="txt_primer_nombre">Primer nombre</label>
+                                    <input type="text" id="txt_primer_nombre">
                                 </div>
                                 <div>
-                                    <label for="txt_segundonombre">Segundo nombre</label>
-                                    <input type="text" id="txt_segundonombre">
+                                    <label for="txt_segundo_nombre">Segundo nombre</label>
+                                    <input type="text" id="txt_segundo_nombre">
                                 </div>
                                 <div>
-                                    <label for="txt_apellido">Primer apellido</label>
-                                    <input type="text" id="txt_apellido">
+                                    <label for="txt_primer_apellido">Primer apellido</label>
+                                    <input type="text" id="txt_primer_apellido">
                                 </div>
                                 <div>
-                                    <label for="txt_segundoapellido">Segundo apellido</label>
-                                    <input type="text" id="txt_segundoapellido">
+                                    <label for="txt_segundo_apellido">Segundo apellido</label>
+                                    <input type="text" id="txt_segundo_apellido">
                                 </div>
                             </form>
                         </div>
@@ -58,7 +57,6 @@
             </div>
             <!--segundo contenedor-->
             <div class="mySlides fade">
-                <div class="numbertext">2/3</div>
                 <div class="contenedor">
                     <div class="descripcion_contenedor">
                         <p>Informacion General</p>
@@ -68,16 +66,16 @@
                         <div class="formulario-2">
                             <form>
                                 <div>
-                                    <label for="num_identificación">Identificación</label>
-                                    <input type="number" id="num_identificación">
+                                    <label for="num_identificacion">Identificación</label>
+                                    <input type="number" id="num_identificacion">
                                 </div>
                                 <div>
-                                    <label for="num_cantidadhijos">Cantidad de hijos</label>
-                                    <input type="number" id="num_cantidadhijos">
+                                    <label for="num_cantidad_hijos">Cantidad de hijos</label>
+                                    <input type="number" id="num_cantidad_hijos">
                                 </div>
                                 <div>
-                                    <label for="num_edadhijos">Edades hijos</label>
-                                    <input type="number" id="num_edadhijos">
+                                    <label for="num_edad_hijos">Edades hijos</label>
+                                    <input type="number" id="num_edad_hijos">
                                 </div>
                             </form>
                         </div>
@@ -86,7 +84,6 @@
             </div>
             <!--tercer contenedor-->
             <div class="mySlides fade">
-                <div class="numbertext">3/3</div>
                 <div class="contenedor">
                     <div class="descripcion_contenedor">
                         <p>Ubicación</p>
@@ -97,7 +94,7 @@
                             <form>
                                     <div>
                                         <label for="txt_provincia">Provincia</label>
-                                        <select id="Direccion">
+                                        <select id="provincia">
                                             <option value="San José">San José</option>
                                             <option value="Alajuela">Alajuela</option>
                                             <option value="Heredia">Heredia</option>
@@ -110,7 +107,7 @@
                                     <div>
                                         <label for="txt_canton">Cantón</label>
                                         <input list="cantones">
-                                        <datalist id="cantones">
+                                        <datalist id="canton">
                                             <option value="Alajuelita">Alajuelita</option>
                                             <option value="Guadalupe">Guadalupe</option>
                                             <option value="Desamparados">Desamparados</option>
@@ -130,6 +127,26 @@
                     </div>
                 </div>
             </div>
+        <!--cuarto contenedor-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+                <div class="descripcion_contenedor">
+                    <p>Enviar</p>
+                </div>
+                <div class="separador"></div>
+                <div class="contenido">
+                    <div class="formulario-4">
+                        <div>
+                            <h1 class="titulo1">¡Terminamos!</h1>
+                            <h2 class="titulo2">Por favor, revise una última vez sus datos</h2>
+                        </div>
+                        <div>
+                            <button type="Enviar" id="btn_enviar">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <a class="prev" onclick="plusSlides(-1)">&#10094</a>
     <a class="next" onclick="plusSlides(1)">&#10095</a>
@@ -139,7 +156,13 @@
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="curentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
-    <script src="js/controlador_padrefamilia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/padre_familia/servicio_padrefamilia.js"></script>
+    <script src="js/padre_familia/controlador_padrefamilia.js"></script>
+    <script src="js/padre_familia/listar_padre_familia.js"></script>
+    <script src="js/padre_familia/carrousel_padrefamilia.js"></script>
 </body>
 </html>
