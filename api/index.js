@@ -61,6 +61,9 @@ app.use( function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+const registrar = require('./componentes/registro/registrar.route');
+app.use('/api', registrar);
+
 
 const centros_educativos = require('./componentes/centro_educativo/centro_educativo_route');
 

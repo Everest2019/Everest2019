@@ -1,8 +1,9 @@
-
 html {
     font-family: 'Roboto', sans-serif;
 }
-
+.error_input{
+    border: 2px solid #ED4C67;
+}
 header {
     background: #FAA21A;
 }
