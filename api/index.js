@@ -69,7 +69,7 @@ app.use('/api', centros_educativos);
 
 
 
-const etiquetas = require('./componente/etiquetas/etiqueta.route');
+const etiquetas = require('./componentes/etiquetas/etiqueta.route');
 app.use('/api', etiquetas);
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app

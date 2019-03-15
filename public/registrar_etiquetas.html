@@ -23,23 +23,36 @@
         </nav>
 
     </header>
-    <div id="divisor">-</div>
+
     <main>
-        <form id="etiquetas">
-            <div>
-                <label for="txt_titulo">Crear Etiquetas</label>
-            </div>
+        <div class="slidershow-container">
 
-            <div>
-                <label for="txt_accion">Nombre de la Etiqueta</label>
-                <input type="text" id="txt_accion">
-            </div>
-            
-            <div>
-                <input type="button" id="btn_guardar" value="Guardar">
-            </div>
 
-        </form>
+            <div id="divisor">-</div>
+            <!--primero contenedor-->
+            <div class="mySlides fade">
+                <div class="numbertext">1/1</div>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Etiquetas</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div>
+                            <form id="etiquetas">
+                                <div>
+                                    <label for="txt_accion">Nombre de la Etiqueta</label>
+                                    <input type="text" id="txt_accion">
+                                </div>
+                                <div>
+                                    <input type="button" id="btn_guardar" value="Guardar">
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

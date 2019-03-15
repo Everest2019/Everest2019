@@ -1,8 +1,8 @@
 'use strict';
-let consultar_etiquetas = ()=>{
-    let  consultar_etiquetas = [];
+let listar_etiquetas = ()=>{
+    let  listar_etiquetas = [];
     let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
+        url: "http://localhost:4000/api/listar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "GET",
         data: {
             
@@ -13,14 +13,14 @@ let consultar_etiquetas = ()=>{
     });
 
     request.done(function (res) {
-        consultar_etiquetas = res.caso_de_uso;
+        listar_etiquetas = res.etiquetas;
     });
 
     request.fail(function (jqXHR, textStatus) {
         alert("Request failed: " + textStatus);
     });
 
-    return consultar_etiquetas;
+    return listar_etiquetas;
 };
 let registrar_etiquetas = (paccion)=>{
     let request = $.ajax({
