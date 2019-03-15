@@ -22,12 +22,13 @@ let listar_etiquetas = ()=>{
 
     return listar_etiquetas;
 };
-let registrar_etiquetas = (paccion)=>{
+let registrar_etiquetas = (paccion, pdescripcion)=>{
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "POST",
         data: {
-            accion: paccion
+            accion: paccion,
+            descripcion: pdescripcion
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -37,7 +38,7 @@ let registrar_etiquetas = (paccion)=>{
         swal.fire({
             type: 'success',
             title: 'Se ha creado con exito la etiqueta',
-            text: `Se ha creado exitosamente la etiqueta con el nombre de ${paccion}`
+            text: `Se ha creado exitosamente la etiqueta con el nombre de ${paccion} con la siguiente descripción ${pdescripcion}`
         });
     });
 

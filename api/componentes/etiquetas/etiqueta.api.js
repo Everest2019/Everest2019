@@ -4,7 +4,8 @@ const modelo_etiquetas = require('./etiqueta.model');
 module.exports.registrar_etiquetas = (req, res)=>{
     let nuevo_etiquetas= new modelo_etiquetas(
         {
-            accion: req.body.accion
+            accion: req.body.accion,
+            descripcion: req.body.descripcion
         }
     );
     nuevo_etiquetas.save(function(error){

@@ -52,5 +52,33 @@ div input[type=radio]{
     width: 20px;
     height: 20px;
 }
-
-
+#frm_etiquetas{
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+#frm_etiquetas div{
+    margin-bottom: 15px;
+}
+#frm_etiquetas label{
+    display: inline-block;
+    width: 110px;
+}
+#frm_etiquetas input{
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+#frm_etiquetas textarea{
+    width: 250px;
+    height: 100px;
+    resize: none;
+}
+#frm_etiquetas button{
+    display: block;
+    background:  #f1c40f;
+    padding: 10px;
+    width: 170px;
+    margin: 0 auto;
+    font-size: 16px;
+}
