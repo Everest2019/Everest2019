@@ -1,0 +1,99 @@
+body{
+    background: #F2F2F2;
+}
+.error_input{
+    border: 2px solid #ED4C67;
+}
+
+.titulo1{
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+}
+.titulo2{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;   
+}
+.contenedor{
+    display: grid;    
+    background: #fff;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    margin-top: 20px;
+    height: 400px;
+    grid-template-columns: 100px 2fr 2px 4fr 100px;
+    grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.descripcion_contenedor{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align: left;
+}
+.descripcion_contenedor p{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.separador{
+    grid-column: 3 / 4;
+    grid-row: 2 / 5;
+    background: #FAA21A;
+}
+.contenido{
+    grid-column: 4 / 5;
+    grid-row: 2 / 5;
+}
+
+/* Estilos generales de los elementos del contenido */
+
+div input[type=text]{
+    display: inline-block;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+/* Estilos primer contenedor */
+
+.contenido .formulario-1{
+    margin-top: 60px;
+}
+
+.formulario-1 form div{
+    margin-bottom: 40px;
+}
+.formulario-1 div label{
+    display: inline-block;
+    width: 200px;
+    margin-left: 40px;  
+    font-weight: bold;
+}
+.formulario-1 div textarea{
+    width: 295px;
+    height: 75px;
+    resize: none;
+    border: 2px solid gray;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+.formulario-1 div button{
+    display: block;
+    background: #FAA21A;
+    padding: 10px;
+    width: 170px;
+    margin: 0 auto;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
