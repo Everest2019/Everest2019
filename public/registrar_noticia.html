@@ -11,39 +11,55 @@
 </head>
 <body>
 	
-			<header>
-					<nav>
-						 <div class="nombre_proyecto">
-							<a href="#">Gemas</a>
-						 </div>
-						 <div class="cont_links">
-								<a href="#">Inicio</a>
-								<a href="#">Iniciar sesión</a>
-								<a href="#">Crear cuenta</a>
-						 </div>
-					</nav>
-				</header>
-				<h2 class="titulo2">Registrar noticia</h2>
-				<h1 class="titulo1"></h1>
+	<header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="">Inicio</a>
+                <a href="">Instituciones</a>
+                <a href="">Mi Perfil</a>
+                <a href="">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header>
+				<h2 class="titulo2">Registrar</h2>
+				<h1 class="titulo1"> noticia</h1>
 	
 	<main>
-		<form>
-                <label for="txt_titulo">Titulo</label>
-                <input type="" name="" id="">
-    
-			<label for="fecha">Fecha de la actividad</label>
-			<input type="date" name="" id="fecha">
+		<div class="contenedor">
 
-			<label for="desc">descripcion</label>
-			<textarea name="" id="desc" cols="30" rows="10"></textarea>
-
-			<input type="button" value="Guardar" id="btn_registrar">
-			
-		</form>
+                <div class="descripcion_contenedor">
+                        <p>Noticias de la institución</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                            <div class="formulario-1">
+                        <form>
+                                <label for="txt_titulo">Titulo</label>
+                                <input type="" name="" id="txt_titulo">
+                    
+                            <label for="fecha">Fecha de la actividad</label>
+                            <input type="date" name="" id="fecha">
+                
+                            <label for="desc">descripcion</label>
+                            <textarea name="" id="desc" cols="30" rows="10"></textarea>
+                
+                            <div>
+                                <button type="button" id="boton_registrar">Registrar</button>
+                            </div>
+                            
+                        </form>
+                  </div>
+            </div>
+		</div>
 	</main>
 	
-	<script src="js/servicio_noticia.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<script src="js/servicio_noticia.js"></script>
  <script src="js/controlador_noticia.js"></script>
 
 </body>
