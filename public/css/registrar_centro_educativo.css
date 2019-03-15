@@ -23,7 +23,7 @@ body{
     border: 1px solid #000;
     margin-top: 25px;
     height: 400px;
-    grid-template-columns: 100px 2fr 2px 4fr 100px;
+    grid-template-columns: 100px 2fr 2px 4fr 70px;
     grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
     grid-gap: 10px;
 }
@@ -46,14 +46,13 @@ body{
 .flecha_der{
     grid-column: 5 / 6;
     grid-row: 3 / 4;
-    text-align: right;
 }
 
 .flecha_der i{
     margin-top: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
     color: #FAA21A;
+    padding-left: 20px;
+    padding-right: 18px;    
     transition: 0.6s ease;
     border-radius: 3px;
 }
@@ -96,7 +95,7 @@ body{
 
 div input[type=text]{
     display: inline-block;
-    width: 300px;
+    width: 45%;
     height: 25px;
     border-radius: 3px;
     font-size: 15px;
@@ -150,7 +149,7 @@ input, select, textarea{
 
 .formulario-2 div select{
     display: inline-block;
-    width: 300px;
+    width: 60%;
     height: 25px;
     border-radius: 3px;
     font-size: 15px;
@@ -180,10 +179,14 @@ input, select, textarea{
     font-weight: bold;
     width: 100px;
 }
+.formulario-3 div #label_direccion_exacta{
+    position: relative;
+    bottom: 125px;
+}
 
 .formulario-3 div select{
     display: inline-block;
-    width: 120px;
+    width: 20%;
     height: 25px;
     border-radius: 3px;
     font-size: 15px;
@@ -195,7 +198,7 @@ input, select, textarea{
 }
 
 .formulario-3 div textarea{
-    width: 250px;
+    width: 60%;
     height: 150px;
     border-radius: 3px;
     font-size: 15px;
@@ -212,6 +215,12 @@ input, select, textarea{
     width: 100%;
 }
 
+#txt_latitud, #txt_longitud{
+    display: none;
+    width: 1px;
+}
+
+
 /* Estilos del quinto contenedor */
 .formulario-5{
     margin-top: 30px;   
@@ -222,7 +231,7 @@ input, select, textarea{
 }
 
 .titulo-descripcion{
-    margin-left: 190px;
+    margin-left: 25%;
     float: left;
 }
 .titulo-elemento p, .titulo-descripcion p{
@@ -233,17 +242,17 @@ input, select, textarea{
 
 .formulario-5 label{
     display: inline-block;
-    margin-left: 100px;
-    width: 100px;
+    margin-left: 5%;
+    width: 20%;
     font-size: 22px;
     margin-right: 25px;
 }
 
 .formulario-5 textarea{
-    width: 200px;
+    width: 35%;
     height: 60px;
     resize: none;
-    margin-left: 50px;
+    margin-left: 10%;
 }
 
 .formulario-5 textarea:focus{
@@ -263,17 +272,17 @@ margin-bottom: 10px;
 
 .formulario-6 label{
     display: inline-block;
-    margin-left: 100px;
-    width: 100px;
+    margin-left: 5%;
+    width: 20%;
     font-size: 20px;
     margin-right: 25px;
 }
 
 .formulario-6 textarea{
-    width: 200px;
+    width: 35%;
     height: 60px;
     resize: none;
-    margin-left: 50px;
+    margin-left: 10%;
 }
 
 
@@ -283,11 +292,11 @@ margin-bottom: 10px;
 
 .formulario-6 div select{
     display: inline-block;
-    width: 220px;
+    width: 39%;
     height: 25px;
     border-radius: 3px;
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 10%;
     margin-top: 30px;
 }
 .formulario-6 textarea:focus{
@@ -302,7 +311,7 @@ margin-bottom: 10px;
 
 #txt_mensualidad{
     display: inline-block;
-    width: 100px;
+    width: 20%;
     margin-right: 5px;
     height: 25px;
     border-radius: 3px;
@@ -316,12 +325,12 @@ margin-bottom: 10px;
 
 #txt_matricula{
     display: inline-block;
-    width: 100px;
+    width: 20%;
     margin-right: 5px;
     height: 25px;
     border-radius: 3px;
     font-size: 15px;
-    margin-left: 50px;
+    margin-left: 10%;
 }
 
 #txt_matricula:focus{
@@ -337,13 +346,13 @@ margin-bottom: 10px;
 
 .formulario-7 .cont_checkbox_izq{
     float:left;
-    margin-left: 90px;
+    margin-left: 5%;
     margin-top: 40px;
 }
 
 .formulario-7 .cont_checkbox_der{
     float:left;
-    margin-left: 120px;
+    margin-left: 15%;
     margin-top: 40px;
 }
 
@@ -361,16 +370,16 @@ margin-bottom: 10px;
 .titulo-contenido .h1-portada{
     font-size: 22px;
     margin-top: 20px;
-    margin-left: 150px;
+    margin-left: 25%;
 }
 
 .formulario-8 img{
     height: 250px;
-    width: 600px;   
+    width: 100%;   
 }
 
 .formulario-8 .btn-imagen{
-    width: 600px;
+    width: 100%;
     height: 40px;
     background: #FAA21A;
     color: #fff;
@@ -382,15 +391,20 @@ margin-bottom: 10px;
     background: rgb(245, 148, 2);
 }
 
+#img_portada{
+    display: none;
+    width: 5px;
+}
+
 /* Estilos del noveno contenedor */
 
 .formulario-9 img{
     height: 100px;
-    width: 250px;   
+    width: 220px;   
 }
 
 .formulario-9 .btn-imagen{
-    width: 250px;
+    width: 220px;
     height: 30px;
     background: #FAA21A;
     color: #fff;
@@ -405,7 +419,12 @@ margin-bottom: 10px;
 .formulario-9 .contenedor-galeria{
     float: left;
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+#url_galeria1, #url_galeria2, #url_galeria3, #url_galeria4{
+    width: 5px;
+    display: none;
 }
 
 /* Estilos del decimo contenedor */
@@ -413,7 +432,7 @@ margin-bottom: 10px;
 .titulo-contenido .h1-redes-sociales{
     font-size: 20px;
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 .formulario-10 .cont-contacto, .formulario-10 .cont-redes{
     float: left;
@@ -433,12 +452,9 @@ margin-bottom: 10px;
 }
 
 .formulario-10 .cont-red-social i{
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
-.formulario-10 input{
-    width: 100px;
-}
 
 .formulario-10 input:focus{
     border: 2px solid #FAA21A;
@@ -449,11 +465,11 @@ margin-bottom: 10px;
 
 .formulario-11 img{
     height: 200px;
-    width: 150px;
+    width: 130px;
 }
 
 .formulario-11 .btn-documento{
-    width: 150px;
+    width: 130px;
     height: 30px;
     background: #FAA21A;
     color: #fff;
@@ -467,7 +483,7 @@ margin-bottom: 10px;
 
 .formulario-11 .contenedor-documento{
     float: left;
-    margin-left: 20px;
+    margin-left: 3%;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -475,7 +491,12 @@ margin-bottom: 10px;
 .formulario-11 .h1-documentos{
     font-size: 20px;
     margin-top: 40px;
-    margin-left: 40px;
+    margin-left: 20%;
+}
+
+#url_documento1, #url_documento2, #url_documento3{
+    width: 5px;
+    display: none;
 }
 
 /* Estilos doceavo contenedor */
@@ -492,13 +513,13 @@ margin-bottom: 10px;
 }
 
 .formulario-12 .nombre-encargado input{
-    width: 180px;
+    width: 31%;
     margin-right: 5px;
 }
 
 #txt_correo_encargado{
     height: 25px;
-    width: 375px;
+    width: 65%;
     border-radius: 3px;
     font-size: 15px;
 }
@@ -508,16 +529,16 @@ margin-bottom: 10px;
     outline: none;
 }
 .formulario-12 .departamento-encargado input, .formulario-12 .identificacion-encargado input {
-    width: 375px;
+    width: 65%;
 }
 #txt_telefono_encargado{
-    width: 262px;
+    width: 40%;
     margin-right: 5px;
 }
 
 #txt_extension_encargado{
     display: inline-block;
-    width: 100px;
+    width: 22%;
     margin-right: 5px;
     height: 25px;
     border-radius: 3px;
@@ -566,4 +587,32 @@ margin-bottom: 10px;
 
 .formulario-13 .condiciones{
     font-size: 15px;
+}
+
+/* Estilos decimo cuarto contenedor */
+
+
+.formulario-14 img{
+    height: 220px;
+    width: 40%;
+    margin-left: 35%;
+}
+
+.formulario-14 .btn-imagen{
+    width: 50%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 30%;
+}
+
+.formulario-14 .btn-imagen:hover{
+    background: rgb(245, 148, 2);
+}
+
+#url_foto_encargado, #url_logo_institucion{
+    width: 5px;
+    display: none;
 }

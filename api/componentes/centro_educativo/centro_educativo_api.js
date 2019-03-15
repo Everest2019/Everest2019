@@ -28,6 +28,7 @@ module.exports.registrar = (req,res) =>{
             twitter: req.body.twitter,
             instagram: req.body.instagram,
             youtube: req.body.youtube,
+            logo: req.body.logo,
             matricula: req.body.matricula,
             mensualidad: req.body.mensualidad,
             contrasena: req.body.contrasena,
@@ -44,8 +45,10 @@ module.exports.registrar = (req,res) =>{
             telefono_encargado: req.body.telefono_encargado,
             extension: req.body.extension,
             identificacion: req.body.identificacion,
+            fotografia_encargado: req.body.fotografia_encargado,
             aprobado: req.body.aprobado,
-            estado: req.body.estado
+            estado: req.body.estado,
+            servicio_adicional: req.body.servicio_adicional
         }
     );
 

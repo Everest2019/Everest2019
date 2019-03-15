@@ -28,6 +28,7 @@ let schema_centro_educativo = new mongoose.Schema(
         twitter: {type: String, required: false},
         instagram: {type: String, required: false},
         youtube: {type: String, required: false},
+        logo: {type: String, required: true},
         matricula: {type: Number, required: false},
         mensualidad: {type: Number, required: false},
         aprobado: {type: Boolean, required: false},
@@ -50,7 +51,12 @@ let schema_centro_educativo = new mongoose.Schema(
         departamento: {type: String, required: false},
         telefono_encargado: {type: String, required: true},
         extension: {type: String, required: false},
-        identificacion: {type: String, required: true}
+        identificacion: {type: String, required: true},
+        fotografia_encargado: {type: String, required: false},
+
+        
+        //Servicios adicionales
+        servicio_adicional: {type: String, required: false}
         
     }
 );

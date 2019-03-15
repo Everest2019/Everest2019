@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, pdocumento, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, paprobado, pestado) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, pservicio_adicional) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -28,6 +28,7 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             twitter : ptwitter,
             instagram : pinstagram,
             youtube : pyoutube,
+            logo: plogo,
             matricula : pmatricula,
             mensualidad : pmensualidad,
             //contrasena : pcodigo,
@@ -44,8 +45,11 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             telefono_encargado : ptelefono_encargado,
             extension : pextension,
             identificacion : pidentificacion,
+            fotografia_encargado: pfotografia_encargado,
             aprobado : paprobado,
-            estado : pestado
+            estado : pestado,
+
+            servicio_adicional: pservicio_adicional
        },
        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
        dataType: "json"

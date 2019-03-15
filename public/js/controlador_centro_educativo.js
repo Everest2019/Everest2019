@@ -16,6 +16,10 @@ const select_canton = document.querySelector('#txt_canton');
 const select_distrito = document.querySelector('#txt_distrito');
 const input_direccion_exacta = document.querySelector('#txt_direccion_exacta'); 
 
+//Elementos cuarto contenedor
+const input_latitud = document.querySelector('#txt_latitud');
+const input_longitud = document.querySelector('#txt_longitud');
+
 // Elementos quinto contenedor
 const input_infoadicional_idioma = document.querySelector('#descripcion_idioma'); 
 const input_infoadicional_religion = document.querySelector('#descripcion_religion'); 
@@ -28,11 +32,26 @@ const input_ano_fundacion = document.querySelector('#anio_fundacion');
 const input_matricula = document.querySelector('#txt_matricula');
 const input_mensualidad = document.querySelector('#txt_mensualidad');
 
-// Elementos octavo contenedor
-//QUEDAN PENDIENTES LAS IMAGENES CLOUDINARY
+//Elemento octavo contenedor
+const url_logo_institucion = document.querySelector('#url_logo_institucion');
+const img_logo_institucion = document.querySelector('#img_logo_institucion');
 
 // Elementos noveno contenedor
-//QUEDAN PENDIENTES LAS IMAGENES CLOUDINARY
+const url_img_portada = document.querySelector('#img_portada');
+const img_portada_institucion = document.querySelector('#preview_portada');
+
+// Elementos decimo contenedor
+const url_galeria1 = document.querySelector('#url_galeria1');
+const img_galeria1 = document.querySelector('#img_galeria1');
+
+const url_galeria2 = document.querySelector('#url_galeria2');
+const img_galeria2 = document.querySelector('#img_galeria2');
+
+const url_galeria3 = document.querySelector('#url_galeria3');
+const img_galeria3 = document.querySelector('#img_galeria3');
+
+const url_galeria4 = document.querySelector('#url_galeria4');
+const img_galeria4 = document.querySelector('#img_galeria4');
 
 //Elementos decimo contenedor
 const input_telefono = document.querySelector('#txt_telefono');
@@ -44,7 +63,9 @@ const input_twitter = document.querySelector('#txt_twitter');
 const input_youtube = document.querySelector('#txt_youtube');
 
 //Elementos onceavo contenedor
-//QUEDAN PENDIENTES LOS DOCUMENTOS CLOUDINARY
+const url_archivo_documento1 = document.querySelector('#url_documento1');
+const url_archivo_documento2 = document.querySelector('#url_documento2');
+const url_archivo_documento3 = document.querySelector('#url_documento3');
 
 //Elementos doceavo contenedor
 const input_primer_nombre = document.querySelector('#txt_primer_nombre_encargado');
@@ -56,6 +77,11 @@ const input_departamento = document.querySelector('#txt_departamento_encargado')
 const input_telefono_encargado = document.querySelector('#txt_telefono_encargado');
 const input_extension = document.querySelector('#txt_extension_encargado');
 const input_identificacion = document.querySelector('#txt_identificacion_encargado');
+
+//Elementos treceavo contenedor
+const url_img_encargado = document.querySelector('#url_foto_encargado');
+const img_encargado = document.querySelector('#img_encargado');
+
 
 //Boton de enviar
 const btn_enviar = document.querySelector('#btn_registrar_institucion');
@@ -181,6 +207,22 @@ let validar_datos = () => {
         input_ano_fundacion.classList.remove('input_error');
     }
 
+    if(url_logo_institucion.value == ''){
+        error = true;
+        img_logo_institucion.classList.add('input_error')
+    }
+    else{
+        img_logo_institucion.classList.remove('input_error');
+    }
+
+    if(url_img_portada.value == ''){
+        error = true;
+        img_portada_institucion.classList.add('input_error')
+    }
+    else{
+        img_portada_institucion.classList.remove('input_error');
+    }
+
     if(input_telefono.value == ''){
         error = true;
         input_telefono.classList.add('input_error')
@@ -253,6 +295,14 @@ let validar_datos = () => {
         input_identificacion.classList.remove('input_error');
     }
 
+    if(url_img_encargado.value == ''){
+        error = true;
+        img_encargado.classList.add('input_error')
+    }
+    else{
+        img_encargado.classList.remove('input_error');
+    }
+
 
 
 
@@ -273,18 +323,32 @@ let obtener_datos = () =>{
         let canton = select_canton.value;
         let distrito = select_distrito.value;
         let direccion_exacta = input_direccion_exacta.value;
-        let latitud = '-90.0211';
-        let longitud = '80.458';
+        let latitud = input_latitud.value;
+        let longitud = input_longitud.value;
+
+        //Informacion adicional
         let idioma = input_infoadicional_idioma.value;
         let religion = input_infoadicional_religion.value;
         let ensenanza = input_infoadicional_ensenanza.value;
+
         let descripcion_institucion = input_descripcion_institucion.value;
         let referencia_historica = input_referencia_historica.value;
         let ano_fundacion = input_ano_fundacion.value;
         let matricula = input_matricula.value;
         let mensualidad = input_mensualidad.value;
-        let portada = 'portada.png';
-        let galeria = 'galeria.png';
+
+        //Servicios adicionales, agregar o no a la tabla general? Subdocumentos?
+        let transporte = document.querySelector('#check_transporte').checked;
+        let comedor = document.querySelector('#check_comedor').checked;
+        let soda = document.querySelector('#check_soda').checked;
+        let iglesia = document.querySelector('#check_iglesia').checked;
+        let bachillerato = document.querySelector('#check_bachillerato_internacional').checked;
+        let gimnasio = document.querySelector('#check_gimnasio').checked;
+        let zona_verde = document.querySelector('#check_zona_verde').checked;
+        let guarderia = document.querySelector('#check_guarderia').checked;
+
+        let portada = url_img_portada.value;
+        let galeria = url_galeria1.value;
         let telefono = input_telefono.value;
         let fax = input_fax.value;
         let web = input_web.value;
@@ -292,7 +356,8 @@ let obtener_datos = () =>{
         let instagram = input_instagram.value;
         let twitter = input_twitter.value;
         let youtube = input_youtube.value;
-        let documento = 'documento.pdf';
+        let logo = url_logo_institucion.value;
+        let documento = url_archivo_documento1.value;
         let primer_nombre = input_primer_nombre.value;
         let segundo_nombre = input_segundo_nombre.value;
         let primer_apellido = input_primer_apellido.value;
@@ -302,11 +367,13 @@ let obtener_datos = () =>{
         let telefono_encargado = input_telefono_encargado.value;
         let extension = input_extension.value;
         let identificacion = input_identificacion.value;
+        let fotografia_encargado = url_img_encargado.value;
         let aprobado = false;
         let estado = true;
+
         
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria, telefono, fax, web, facebook, instagram, twitter, youtube, documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, aprobado, estado);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte);
     }
     else{
         swal.fire({

@@ -18,6 +18,7 @@ var map;
             let lat = centro_educativo.getPosition().lat();
             let lng = centro_educativo.getPosition().lng();
 
-            console.log(lat,lng); 
+            document.querySelector('#txt_latitud').value = lat;
+            document.querySelector('#txt_longitud').value = lng;
         });
       }

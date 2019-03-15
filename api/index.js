@@ -14,8 +14,8 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = 'mongodb://ashmoscoa:suri@proyecto1-shard-00-00-tteuk.mongodb.net:27017,proyecto1-shard-00-01-tteuk.mongodb.net:27017,proyecto1-shard-00-02-tteuk.mongodb.net:27017/test?ssl=true&replicaSet=Proyecto1-shard-0&authSource=admin&retryWrites=true',
-    port = 4000;
+  dburl = 'mongodb://everest:everest@everest-shard-00-00-iywno.mongodb.net:27017,everest-shard-00-01-iywno.mongodb.net:27017,everest-shard-00-02-iywno.mongodb.net:27017/test?ssl=true&replicaSet=Everest-shard-0&authSource=admin&retryWrites=true',
+  port = 4000;
 /**
  * Se le indica que cree un servidor extra dentro del puerto 4000 y escuche los cambios que se le hagan a esos archivos
  */
@@ -66,17 +66,14 @@ const centros_educativos = require('./componentes/centro_educativo/centro_educat
 
 app.use('/api', centros_educativos);
 
-<<<<<<< HEAD
 const padre_familia = require('./componentes/padre_familia/padre_familia.route');
 
 app.use('/api', padre_familia);
 
-=======
 
 
 const etiquetas = require('./componente/etiquetas/etiqueta.route');
 app.use('/api', etiquetas);
->>>>>>> 32de4682806b190f9608f7584bb06962fa73dd3b
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;
