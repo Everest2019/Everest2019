@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.8">
-    <meta http-equiv="X-UA-compatible" content="id=id=edge">
     
-    <title>Cocoa - contacto</title>
+
+    <title>Gemas</title>
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/registrar_etiquetas.css"
     <link rel="stylesheet" href="css/general.css">
-    
+
 
 </head>
+
 <body>
     <header id="header_principal">
         <nav>
@@ -28,24 +30,42 @@
         </nav>
     </header>
 
+
+
     <main>
-        <table id="tbl_comentarios">
-            <thead>
-                <tr>Etiqueta</tr>
-            </thead>
-
-            <tbody>
-            </tbody>
-        </table>
+        <div class="slidershow-container">
 
 
+            <div id="divisor">-</div>
+            <!--primero contenedor-->
+            <div class="mySlides fade">
+                <div class="numbertext">1/1</div>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p> Lista de Etiquetas</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
 
-    
-    </main>    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                        <table id="tbl_comentarios">
+                            <thead>
+                                <tr>Etiqueta</tr>
+                            </thead>
 
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
     <script src="js/servicio_etiquetas.js"></script>
-    
-   </body>
+    <script src="js/controlador_listar_etiquetas.js"></script>
+
+
+</body>
+
 </html>
