@@ -14,9 +14,8 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-      dburl = 'mongodb://everest:everest@everest-shard-00-00-iywno.mongodb.net:27017,everest-shard-00-01-iywno.mongodb.net:27017,everest-shard-00-02-iywno.mongodb.net:27017/test?ssl=true&replicaSet=Everest-shard-0&authSource=admin&retryWrites=true',
+      dburl = 'mongodb://mariana_mp:161513mariana@proyecto1-shard-00-00-vf88e.mongodb.net:27017,proyecto1-shard-00-01-vf88e.mongodb.net:27017,proyecto1-shard-00-02-vf88e.mongodb.net:27017/preferencia?ssl=true&replicaSet=proyecto1-shard-0&authSource=admin&retryWrites=true',
     port = 4000;
-
 /**
  * Se le indica que cree un servidor extra dentro del puerto 4000 y escuche los cambios que se le hagan a esos archivos
  */
@@ -62,10 +61,17 @@ app.use( function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+const registrar = require('./componentes/registro/registrar.route');
+app.use('/api', registrar);
+
 
 const centros_educativos = require('./componentes/centro_educativo/centro_educativo_route');
 
 app.use('/api', centros_educativos);
+
+const padre_familia = require('./componentes/padre_familia/padre_familia.route');
+
+app.use('/api', padre_familia);
 
 
 

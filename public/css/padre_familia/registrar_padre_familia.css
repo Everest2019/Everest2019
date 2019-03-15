@@ -141,3 +141,106 @@ div input[type=radio]{
     border-radius: 3px;
     border: 2px solid gray;
 }
+<<<<<<< HEAD:public/css/padre_familia/registrar_padre_familia.css
+.contenido.formulario-4{
+  margin-top: 52px;
+}
+.formulario-4 form div{
+  margin-bottom: 50px;
+}
+.formulario-4 button{
+    width: 80%;
+    height: 50px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-top: 25px;
+    margin: 73px
+}
+
+.formulario-13 button:hover{
+    background: rgb(245, 148, 2);
+}
+.formulario-4 button:hover{
+  background-color: rgb(245, 148, 2);
+}
+/*carrousel*/
+* {box-sizing:border-box}
+
+.slideshow-container {
+  width: 300px;
+  position: relative;
+  margin: auto;
+}
+.Slides {
+  display: none;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  color: #FAA21A;
+}
+.next {
+  right: 105px;
+  border-radius: 3px 0 0 3px;
+  margin: 30px;
+}
+.prev{
+  left: 105px;
+  border-radius: 3px 0 0 3px;
+  margin: 30px;
+}
+.prev:hover, .next:hover {
+  background-color: #74b9ff;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+=======
+>>>>>>> 32de4682806b190f9608f7584bb06962fa73dd3b:public/css/registrar_padre_familia.css
