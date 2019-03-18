@@ -14,6 +14,7 @@ const datalist_distrito = document.querySelector('#distrito');
 const boton_enviar = document.querySelector('#btn_enviar');
 
 let validar =() =>{
+  let error=false;
   if(input_primer_nombre.value == ''){
     error = true;
     input_primer_nombre.classList.add('error_input');

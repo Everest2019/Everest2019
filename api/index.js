@@ -65,6 +65,12 @@ const preferencia = require('./componentes/preferencia/preferencia_route');
 app.use('/api', preferencia);
 
 
+// const padre_familia = require('./componentes/padre_familia/padre_familia.route');
+
+// app.use('/api', padre_familia);
+
+const usuario = require('./componentes/usuarios/usuarios.route');
+app.use('/api', usuario);
 
 const contrasena = require ('./componentes/contrasena/contrasena_route');
 app.use('/api', contrasena);
