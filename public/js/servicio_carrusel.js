@@ -1,5 +1,5 @@
-'use strict'
-var slideIndex = 1;
+'use strict';
+let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
