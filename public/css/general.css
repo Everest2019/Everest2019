@@ -1,16 +1,15 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
-.error_input{
-    border: 2px solid #ED4C67;
-}
+
 header {
     background: #FAA21A;
 }
 
 header nav {
-    padding: 20px;
+    padding: 15px;
     display: flow-root;
+    border-bottom: 1px solid #000;
 }
 
 header nav .nombre_proyecto{
@@ -39,5 +38,9 @@ header nav .cont_links a{
 }
 
 .input_error{
+    border: 2px solid #e55039;
+}
+
+.error_input{
     border: 2px solid #e55039;
 }

@@ -370,10 +370,11 @@ let obtener_datos = () =>{
         let fotografia_encargado = url_img_encargado.value;
         let aprobado = false;
         let estado = true;
+        let tipo_usuario = 'centro_educativo';
 
         
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte,tipo_usuario);
     }
     else{
         swal.fire({

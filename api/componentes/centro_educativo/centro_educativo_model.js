@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 
 let schema_centro_educativo = new mongoose.Schema(
     {
-        //codigo: {type: String, required: true},
         
         nombre_comercial: {type:String, required: true},
         cedula_juridica: {type: String, required: true},
