@@ -6,38 +6,36 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/registrar_preferencia.css">
-
+    <link rel="stylesheet" href="css/contraseña.css">
     <title>Gemas</title>
+
 </head>
 
 <body>
     <!-- Barra de navegacion superior -->
     <header>
         <nav>
-            <div class="nombre_proyecto">
+            <div class="nombre_proyecto"> 
                 <a href="#">Gemas</a>
             </div>
             <div class="cont_links">
                 <a href="#">Inicio</a>
-                <a href="#">Instituciones</a>
                 <a href="#">Mi Perfil</a>
                 <a href="#">Cerrar Sesión</a>
             </div>
         </nav>
     </header>
-
     <!-- Contenedores de las partes del formulario -->
 
-    <h2 class="titulo2">Agregar</h2>
-    <h1 class="titulo1">Preferencias</h1>
+    <h2 class="titulo2">Crear</h2>
+    <h1 class="titulo1">Contraseña</h1>
     <main>
         <!-- Primer contenedor, Informacion General-->
 
         <div class="contenedor">
 
             <div class="descripcion_contenedor">
-                <p>Preferencias</p>
+                <p>Contraseña</p> 
             </div>
 
             <div class="separador"></div>
@@ -46,32 +44,31 @@
                 <div class="formulario-1">
                     <form>
                         <div>
-                            <label for="txt_nombre">Nombre de preferencia</label>
-                            <input type="text" id="txt_nombre" >
+                            <label for="txt_correo">Correo</label>
+                            <input type="email" id="txt_correo">
+                        </div>
+                        <div>
+                            <label for="txt_contrasena">Contraseña</label>
+                            <input type="password" id="txt_contrasena" maxlength="8" minlength="4">
                         </div>
 
                         <div>
-                            <label for="txt_informacion">Añadir Información</label>
-                            <textarea id="txt_informacion"></textarea>
-        
-                        </div>
-                        <div>
-                            <button type="button" id="boton_registrar">Registrar</button>
-                        </div>
+                                <label for="txt_confirmar_contrasena">Confirmar contraseña</label>
+                                <input type="password" id="txt_confirmar_contrasena" maxlength="8" minlength="4">
+                            </div>
 
+                        <div>
+                            <button type="button" id="boton_enviar">Enviar</button>
+                        </div>
                     </form>
                 </div>
-                
             </div>
-
-
         </div>
-        
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_registrar.js"></script>
-    <script src="js/controlador_registrar.js"></script>
+    <script src="js/servicio_contrasena.js"></script>
+    <script src="js/controlador_contasena.js"></script>
 </body>
 
 </html>
