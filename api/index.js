@@ -61,17 +61,16 @@ app.use( function(req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-const registrar = require('./componentes/registro/registrar.route');
-app.use('/api', registrar);
+const preferencia = require('./componentes/preferencia/preferencia_route');
+app.use('/api', preferencia);
 
 
-const centros_educativos = require('./componentes/centro_educativo/centro_educativo_route');
+// const padre_familia = require('./componentes/padre_familia/padre_familia.route');
 
-app.use('/api', centros_educativos);
+// app.use('/api', padre_familia);
 
-const padre_familia = require('./componentes/padre_familia/padre_familia.route');
-
-app.use('/api', padre_familia);
+const usuario = require('./componentes/usuarios/usuarios.route');
+app.use('/api', usuario);
 
 
 
