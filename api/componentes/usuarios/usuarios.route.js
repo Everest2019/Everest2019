@@ -32,6 +32,11 @@ router.route('/registrar_centro_educativo')
     }
 );
 
+router.route('/validar_credenciales')
+    .post(function(req, res){
+        api_usuario.validar(req, res);
+});
+
 router.route('/listar_instituciones')
         .get(
             function (req, res){
