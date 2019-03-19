@@ -72,6 +72,8 @@ app.use('/api', preferencia);
 const usuario = require('./componentes/usuarios/usuarios.route');
 app.use('/api', usuario);
 
+const contrasena = require ('./componentes/contrasena/contrasena_route');
+app.use('/api', contrasena);
 
 
 const etiquetas = require('./componentes/etiquetas/etiqueta.route');
