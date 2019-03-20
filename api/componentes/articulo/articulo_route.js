@@ -1,19 +1,18 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const api_registrar = require('./preferencia_api');
+const api_articulo = require('./articulo_api');
 
-router.route('/registrar')
+router.route('/registrar_articulo')
     .post(
         function (req, res) {
-            api_registrar.registrar(req, res);
+            api_articulo.registrar_articulo(req, res);
         }
     );
-router.route('/listar_preferencia')
+    router.route('/listar_articulo')
     .get(
         function (req, res) {
-            api_registrar.listar(req, res);
+            api_articulo.listar(req, res);
         }
     )
-
 module.exports = router;
