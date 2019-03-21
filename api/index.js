@@ -78,6 +78,9 @@ app.use('/api', contrasena);
 
 const etiquetas = require('./componentes/etiquetas/etiqueta.route');
 app.use('/api', etiquetas);
+
+const articulo = require('./componentes/articulo/articulo_route');
+app.use('/api',articulo);
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;

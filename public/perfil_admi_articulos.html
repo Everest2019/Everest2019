@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/listar_articulo.css">
+
+    <title>Gemas</title>
+</head>
+
+<body>
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+        <div id="navbar_lateral_inicio" class="pagina_actual">
+            <a href="index.html">Inicio</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="main">
+            <h1>Lista de Artículos</h1>
+            <div class="separador"></div>
+
+            <div class="formulario-1">
+                <div>
+                    <label for="txt_buscar">Buscar</label>
+                    <input type="text" id="txt_buscar">
+                </div>
+            </div>
+ 
+            <div>
+
+                <table id="tbl_articulo" class="tabla_articulo">
+                    <thead>
+                        <tr>
+                            <th>Nombre del Artículo</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_articulo.js"></script>
+    <script src="js/controlador_listar_articulo.js"></script>
+</body>
+
+</html>
