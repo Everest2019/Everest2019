@@ -169,3 +169,18 @@ module.exports.listar_instituciones = (req,res) =>{
         }
     )
 };
+
+//BUSCAR USUARIOS
+
+module.exports.buscar_centro_educativo = function(req, res){
+    modelo_usuario.findOne({_id : req.body.id}).then(
+        function(centro_educativo){
+            if(centro_educativo){
+                res.send(centro_educativo);
+            }else{
+                res.send('No se encontró el Centro Educativo');
+            }
+            
+        }
+    )
+};
