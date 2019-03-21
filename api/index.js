@@ -75,12 +75,14 @@ app.use('/api', usuario);
 const contrasena = require ('./componentes/contrasena/contrasena_route');
 app.use('/api', contrasena);
 
-
 const etiquetas = require('./componentes/etiquetas/etiqueta.route');
 app.use('/api', etiquetas);
 
 const articulo = require('./componentes/articulo/articulo_route');
 app.use('/api',articulo);
+const actividades = require('./componentes/actividades/actividades.route');
+app.use('/api', actividades);
+
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;
