@@ -4,6 +4,7 @@ const input_nombre = document.querySelector('#txt_nombre_articulo');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_registrar = document.querySelector('#boton_registrar');
 const input_filtro = document.querySelector('#txt_buscar');
+
 let validar = () => {
     let error = false;
     if (input_nombre.value == '') {
