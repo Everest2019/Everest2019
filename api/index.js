@@ -68,6 +68,8 @@ app.use('/api', preferencia);
 // const padre_familia = require('./componentes/padre_familia/padre_familia.route');
 
 // app.use('/api', padre_familia);
+const actividades= require('./componentes/actividades/actividades.route');
+app.use('/api',actividades);
 
 const usuario = require('./componentes/usuarios/usuarios.route');
 app.use('/api', usuario);

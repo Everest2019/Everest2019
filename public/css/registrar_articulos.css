@@ -57,7 +57,6 @@ div input[type=text]{
     border-radius: 3px;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
 }
 
@@ -86,7 +85,6 @@ div input[type=text]{
     resize: none;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
 }
 .formulario-1 textarea:focus{
@@ -106,9 +104,27 @@ div input[type=text]{
 .formulario-1 div button:hover{
     background: rgb(245, 148, 2);
 }
+#tbl_articulo{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 2%;
+    padding: 15px;
+}
+#tbl_articulo tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%;     
+    right: 90px;
+    background: #FAA21A;
+}
 
-
-
-
-
-
+#tbl_articulo tbody{
+    padding: 15px;
+    border: 42x solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: gray;
+    color: #40433E;
+}
