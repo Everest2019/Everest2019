@@ -29,7 +29,6 @@ module.exports.registrar = (req, res) =>{
       
   });
 }
-
 module.exports.listar_todos = (req, res) =>{
     modelo_actividades.find().then(
         function(actividades){
@@ -51,3 +50,4 @@ module.exports.listar_todos = (req, res) =>{
         }
     )
 }
+

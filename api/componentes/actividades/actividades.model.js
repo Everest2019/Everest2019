@@ -1,3 +1,4 @@
+
 'use stritc';
 const mongoose = require ('mongoose');
 
@@ -9,4 +10,5 @@ let schema_actividades = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('actividad', schema_actividades); 
+module.exports = mongoose.model('actividades', schema_actividades); 
+
