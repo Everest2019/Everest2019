@@ -9,7 +9,7 @@ router.route('/registrar_etiquetas')
         api_etiquetas.registrar_etiquetas(req,res);
     }
 );
-router.route('/consultar_etiquetas')
+router.route('/listar_etiquetas')
 .get(
     function(req,res){
         api_etiquetas.consultar_todo(req,res);

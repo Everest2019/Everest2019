@@ -8,18 +8,18 @@ let validar = () => {
     let error = false;
     
 
-    if (txt_accion.value == '') {
+    if (input_accion.value == '') {
         error = true;
-        txt_accion.classList.add('error_input');
+        input_accion.classList.add('error_input');
     } else {
-        txt_accion.classList.remove('erorr_input');
+        input_accion.classList.remove('erorr_input');
     }
 
-    if (txt_descripcion.value == ''){
+    if (input_descripcion.value == ''){
         error = true;
-        txt_descripcion.classList.add('error_input');
+        input_descripcion.classList.add('error_input');
     }else{
-        txt_descripcion.classList.remove('error_input');
+        input_descripcion.classList.remove('error_input');
     }
 
     

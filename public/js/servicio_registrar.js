@@ -1,13 +1,14 @@
 'use strict'
 
-let listar = () => {
-    let lista_registro = [];
+let listar_preferencia = () => {
+    let listar_preferencia = [];
 
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/listar",
+        url: "http://localhost:4000/api/listar_preferencia",
         method: "GET",
         data: {
+
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
@@ -15,14 +16,15 @@ let listar = () => {
     });
 
     request.done(function (res) {
-        lista_registro = res.registro;
+        listar_preferencia = res.preferencia;
 
     });
 
     request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
 
     });
-    return lista_registro;
+    return listar_preferencia;
 
 };
 let registrar = (pnombre, pinformacion) => {

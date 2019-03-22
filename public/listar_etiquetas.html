@@ -3,18 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    
+
 
     <title>Gemas</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/registrar_etiquetas.css"
+    <link rel="stylesheet" href="css/listar_etiquetas.css">
     <link rel="stylesheet" href="css/general.css">
 
 
 </head>
 
 <body>
+
+
+
     <header id="header_principal">
         <nav>
             <nav>
@@ -39,18 +43,19 @@
             <div id="divisor">-</div>
             <!--primero contenedor-->
             <div class="mySlides fade">
-                <div class="numbertext">1/1</div>
-                <div class="contenedor">
-                    <div class="descripcion_contenedor">
-                        <p> Lista de Etiquetas</p>
-                    </div>
+                <div class="numbertext"></div>
+                
+                    
                     <div class="separador"></div>
                     <div class="contenido">
 
-                        <table id="tbl_comentarios">
-                            <thead>
-                                <tr>Etiqueta</tr>
-                            </thead>
+                        <table id="tbl_etiquetas">
+                            
+                        <tr id="tr_head">
+                            <th>Etiquetas</th>
+                            <th>Descripción</th>
+                        </tr>
+                        
 
                             <tbody>
                             </tbody>
@@ -61,7 +66,11 @@
             </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+
     <script src="js/servicio_etiquetas.js"></script>
     <script src="js/controlador_listar_etiquetas.js"></script>
 

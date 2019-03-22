@@ -1,13 +1,19 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_etiquetas tbody');
+let etiquetas = listar_etiquetas();
+
 let mostrar_datos = ()=>{
-    let etiquetas = listar_etiquetas();
+    
 
     for(let i = 0; i < etiquetas.length; i++){
         let fila = tabla.insertRow();
 
-        fila.insertCell().innerHTML = etiquetas[i][Etiquetas];
+        let dato = fila.insertCell;
+        dato.innerHTML = etiquetas[i].accion;
+
+        fila.insertCell().innerHTML = etiquetas[i]['accion'];
+        fila.insertCell().innerHTML = etiquetas[i]['descripcion'];
     };
 };
 

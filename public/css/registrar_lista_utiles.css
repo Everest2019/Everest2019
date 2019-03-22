@@ -1,4 +1,5 @@
 
+
 body{
     background: #F2F2F2;;
 }
@@ -54,29 +55,43 @@ div input[type=radio]{
     width: 20px;
     height: 20px;
 }
-#frm_etiquetas{
+#frm_uitiles{
     margin-top: 20px;
     margin-bottom: 20px; 
 }
-#frm_etiquetas div{
+#frm_uitiles div{
     margin-bottom: 15px;
 }
-#frm_etiquetas label{
+#frm_uitiles label{
     display: inline-block;
     width: 110px;
 }
-#frm_etiquetas input{
+#frm_uitiles input{
     display: inline-block;
     width: 250px;
     height: 30px;
     outline: none;
 }
-#frm_etiquetas textarea{
+#numeros div{
+    margin-bottom: 7px;
+}
+#frmnumeros_uitiles label{
+    display: inline-block;
+    width: 30px;
+}
+#numeros input{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    outline: none;
+}
+#frm_uitiles textarea{
     width: 250px;
     height: 100px;
     resize: none;
+
 }
-#frm_etiquetas button{
+#frm_uitiles button{
     display: block;
     background:  #f1c40f;
     padding: 10px;

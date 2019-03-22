@@ -12,7 +12,7 @@ router.route('/registrar')
 router.route('/listar_preferencia')
     .get(
         function (req, res) {
-            api_registrar.listar(req, res);
+            api_registrar.listar_preferencia(req, res);
         }
     )
 
