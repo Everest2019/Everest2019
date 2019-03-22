@@ -25,4 +25,17 @@ let registrar = (titulo_noticia,fecha_noticia,desc_noticia) =>{
 
     });
 }
+let listar_noticias = ()=>{
+    let noticias = [];
+    let request= $.ajax({
+        url:"http://localhost:4000/api/listar_noticias",
+        method:"GET",
+        data:{
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async:false
+    });
+    
+}
      
