@@ -2,21 +2,15 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const api_actividades = require('./actividades.api');
+const actividadesApi= require('./actividades.api');
 
-router.route('/registrar_actividades')
-    .post(
-        function(req, res){
-           api_actividades.registrar(req, res);
-        }
-    );
-router.route('/listar_actividades')
-        .get(
-            function (req, res){
-                api_actividades.listar_todos(req, res);
-            }
-        )
+router.route('/registrar_actividad').post(function(req,res){
+    actividadesApi.registrar_actividad(req,res);
+});
 
-module.exports = router; 
+router.route('/listar_actividad').get(function(req,res){
+    actividadesApi.listar_actividades(req,res);
+});
 
+module.exports = router;
 
