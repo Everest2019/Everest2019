@@ -1,9 +1,6 @@
 body{
     background: #F2F2F2;
 }
-.error_input{
-    border: 2px solid #ED4C67;
-}
 .titulo1{
     font-size: 33px;
     font-weight: bold;
@@ -53,66 +50,85 @@ body{
 
 /* Estilos generales de los elementos del contenido */
 
-div input[type=text]{
+div input[type=date]{
     display: inline-block;
-    width: 300px;
+    width: 40%;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
-    font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 16px;
     outline: none;
+}
+
+div input[type=time]{
+    display: inline-block;
+    width: 40%;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+}
+
+div input[type=date]::-webkit-datetime-edit { 
+    padding-left: 25%; 
+}
+
+div input[type=time]::-webkit-datetime-edit{
+    padding-left: 36%; 
+}
+
+::-webkit-datetime-edit-text { 
+    color: #FAA21A; 
+    padding: 0 0.3em; 
 }
 
 /* Estilos primer contenedor */
 
-.contenido .formulario-1{
-    margin-top: 60px;
-}
 
-.formulario-1 form div{
+
+.formulario_citas form div{
     margin-bottom: 40px;
 }
-.formulario-1 div label{
+.formulario_citas div label{
     display: inline-block;
     width: 200px;
     margin-left: 40px;  
     font-weight: bold;
 }
-.formulario-1 input:focus{
+.formulario_citas input:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div textarea{
-    width: 295px;
+
+#label_comentario{
+    position: relative;
+    bottom: 65px;
+}
+
+.formulario_citas div textarea{
+    width: 40%;
     height: 75px;
     resize: none;
-    border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
+    border-radius: 3px;
 }
-.formulario-1 textarea:focus{
+.formulario_citas textarea:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div button{
-    width: 54%;
+.formulario_citas div button{
+    width: 43%;
     height: 40px;
     margin-left: 42%;
     background: #FAA21A;
     color: #fff;
     border-radius: 3px;
     border: 0;
-    
 }
-.formulario-1 div button:hover{
+.formulario_citas div button:hover{
     background: rgb(245, 148, 2);
 }
 
-
-
-
-
-
-
+.formulario_citas .borde{
+    border: 2px solid gray;
+}

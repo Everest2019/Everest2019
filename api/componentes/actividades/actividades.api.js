@@ -1,40 +1,53 @@
 'use strict';
+const modelo_actividades = require('./actividades.model');
 
-const actividadModel = require('./actividades.model');
-
-module.exports.registrar_actividad = function(req,res){
-    let nuevaActividad= new actividadModel(
-        {
-            imagen: req.body.imagen,
-            fecha: req.body.fecha,
-            titulo : req.body.titulo,
-            descripcion: req.body.descripcion
-        }
-    );
-
-    nuevaActividad.save(function(error){
-        if(error){ 
-            res.json(
-                {
-                    success: false,
-                    msg: `La actividad no pudo ser agregada. Verificar el error: ${error}`
-                }
-            )
-        }else{
-            res.json(
-                {
-                    success: true,
-                    msg: `La actividad fue agregada correctamente`
-                }
-            )
-        }
-    });
-};
-
-module.exports.listar_actividades = function(req,res){
-    actividadModel.find().then(
+module.exports.registrar = (req, res) =>{
+    let nueva_actividad = new modelo_actividades(
+    {
+        fecha : req.body.fecha,
+        titulo : req.body.titulo,
+        descripcion : req.body.descripcion
+    }    
+  );
+  nueva_actividad.save(function(error){
+    if(error){
+       res.json( 
+           {
+               success : false,
+               msg : `No se pudo registrar la actividad`
+           }
+       ); 
+    }else{
+        res.json(
+            {
+                succes : true,
+                msg : `Se registro correctamente la actividad`
+            }
+        ); 
+        
+    } 
+      
+  });
+}
+module.exports.listar_todos = (req, res) =>{
+    modelo_actividades.find().then(
         function(actividades){
-            res.send(actividades);
+            if (actividades.length > 0){
+                res.json(
+                    {
+                        sucess:true,
+                        actividades: actividades
+                    }
+                )
+            }else{
+                res.json(
+                    {
+                        succes:false,
+                        actividades:'No se encontraron actividades'
+                    }
+                )
+            }
         }
-    );
-};
+    )
+}
+

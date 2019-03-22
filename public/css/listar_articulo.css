@@ -4,13 +4,13 @@ html {
 body{
     background: #F2F2F2;
 }
-#tbl_articulo{
+.tabla_articulo{
     font-size: 20px;
     font-weight: bolder;
     margin: 2%;
     padding: 15px;
 }
-#tbl_articulo tr th{
+.tabla_articulo tr th{
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
@@ -19,21 +19,21 @@ body{
     color: #40433E;
     background: #FAA21A;
 }
-#tbl_articulo tr td{
+.tabla_articulo tr td{
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
     width: 4%; 
     right: 100px;
-    background: #F2F2F2;
-}
-#tbl_articulo tbody{
+    background: #fff;
+} 
+.tabla_articulo tbody{
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
     width: 4%; 
     right: 100px;
-    background: #F2F2F2;
+    background: #fff;
 }
 .contenido .formulario-1{
     margin-top: 60px;
@@ -45,16 +45,34 @@ div input[type=text]{
     border-radius: 3px;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.formulario-1 form div{
-    margin-bottom: 40px;
-    margin-top: 40px;
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
 }
 .formulario-1 div label{
     display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 35px;
     width: 200px;
     margin-left: 40px;  
     font-weight: bold;
 }
-
+.main{
+    background: #f2f2f2;
+    height: 100%;
+}
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
+}

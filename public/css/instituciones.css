@@ -50,7 +50,7 @@
 
 .contenedor_buscar input{
     display: inline-block;
-    width: 50%;
+    width: 70%;
     height: 25px;
     border-radius: 3px;
     font-size: 20px;
@@ -62,8 +62,6 @@
 .contenedor_filtraciones input:focus{
     border: 2px solid #FAA21A;
     outline: none;
-    width: 70%;
-    transition: all 0.5s ease;
 }
 
 .contenedor_criterios{
@@ -113,9 +111,10 @@
     width: 100%;
 }
 
+/*Estilos del contenedor de la informacion */
 .contenedor_informacion{
     background: #fff;
-    height: 170px;
+    height: 200px;
 }
 
 /* Nombre del centro educativo */
@@ -188,4 +187,29 @@
     font-weight: bold;
     text-align: center;
     margin-top: 30px;
+}
+
+.contenedor_boton{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.contenedor_boton button{
+    color: #000;
+    background: #fff;
+    border: 0;
+    cursor:pointer;
+    font-size: 15px;
+}
+
+.contenedor_boton button:hover{
+    color: #FAA21A;
+    transition: all 0.3s ease;
+}
+
+.contenedor_boton button i{
+    color: #FAA21A;
+    font-size: 20px;
+    position: relative;
+    top: 3px;  
 }
