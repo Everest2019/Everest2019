@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/registrar_citas.css">
+    <link rel="stylesheet" href="css/general.css">
+
+
+    <title>Gemas</title>
+</head>
+
+<body>
+    <!-- Barra de navegacion superior -->
+    <header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="#">Inicio</a>
+                <a href="#">Instituciones</a>
+                <a href="#">Mi Perfil</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Contenedores de las partes del formulario -->
+
+    <h2 class="titulo2">Agendar Cita</h2>
+    <h1 class="titulo1">Centro Educativo</h1> 
+
+    <main>
+        <!-- Primer contenedor, Informacion General-->
+
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Agendar una cita</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario_citas">
+
+                    <form>
+                        <div>
+                            <label for="input_fecha">Seleccione una fecha</label>
+                            <input type="date" id="input_fecha" class="borde">
+                        </div>
+    
+                        <div>
+                            <label for="input_hora">Seleccione la hora</label>
+                            <input type="time" id="input_hora" value="08:00" class="borde">
+                        </div>
+
+                        <div>
+                            <label for="txt_comentario" id="label_comentario">Agregue un comentario</label>
+                            <textarea id="txt_comentario" class="borde"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="button" id="btn_enviar">Agendar cita</button>
+                        </div>
+                        
+                    </form>
+                    
+                    
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_citas.js"></script>
+    <script src="js/controlador_citas.js"></script>
+</body>
+
+</html>

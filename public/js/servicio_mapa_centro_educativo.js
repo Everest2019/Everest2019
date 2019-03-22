@@ -22,3 +22,5 @@ var map;
             document.querySelector('#txt_longitud').value = lng;
         });
       }
+
+      
