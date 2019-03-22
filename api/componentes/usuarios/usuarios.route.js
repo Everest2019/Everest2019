@@ -25,6 +25,11 @@ router.route('/registrar_adminitrador')
         }
     );
 
+router.route('/iniciar_sesion')
+.post(function(req, res){
+    api_usuario.validar(req, res);
+});
+
 router.route('/listar_instituciones')
         .get(
             function (req, res){

@@ -184,3 +184,27 @@ module.exports.buscar_centro_educativo = function(req, res){
         }
     )
 };
+/*Inicio de Sesión*/ 
+module.exports.validar = function(req, res){
+    modelo_usuario.findOne({correo : req.body.correo}).then(
+        function (usuario){
+            if(usuario){
+                if(usuario.contrasena == req.body.contrasena){
+                    res.json({
+                        success: true,
+                        usuario : usuario
+                    });
+                }else{
+                    res.json({
+                        success: false
+                    });
+                }
+            }else{
+                res.json({
+                    success: false,
+                    msg: 'El usuario no se encuentra registrado'
+                });
+            }
+        }
+    )
+}

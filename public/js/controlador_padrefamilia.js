@@ -95,7 +95,7 @@ let obtener_datos = () =>{
   
   }else{
     swal.fire({
-      type: 'Warning',
+      type: 'warning',
       title: 'El usuario no se registro',
       text: 'Por favor verifique los campos resaltados'
     });
