@@ -24,7 +24,7 @@
   /* Links de la barra de navegacion lateral */
   .navbar_lateral a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     color: #111;
     display: block;
     padding-bottom: 10px;  
@@ -40,7 +40,7 @@
   /* Estilos de los contenedores del navbar lateral */
   .navbar_lateral div{
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
   }
 
   .navbar_lateral img{
@@ -54,11 +54,10 @@
     border-bottom: 3px solid #FAA21A;
 }
 
-/*Estilos de los contenedor del index del navbar lateral */
 #navbar_lateral_inicio{
-  margin-top: 30px;
-  width: 30%;
-  margin-left: 33%;
+  margin-top: 40px;
+  width: 28%;
+  margin-left: 32%;
 }
 
 #navbar_lateral_instituciones{
@@ -78,40 +77,8 @@
 }
 
 #navbar_lateral_utiles{
-  width: 50%;
-  margin-left: 22%;
-}
-
-/* Estilos de los contenedores del perfil del centro educativo del navbar */
-#navbar_lateral_regresar{
-  margin-top: 30px;
-  width: 30%;
-  margin-left: 31%;
-}
-
-#navbar_lateral_general{
-  width: 35%;
-  margin-left: 28%;
-}
-
-#navbar_lateral_servicios{
-  width: 35%;
-  margin-left: 28%;
-}
-
-#navbar_lateral_noticias{
-  width: 35%;
-  margin-left: 27.5%;
-}
-
-#navbar_lateral_actividades{
-  width: 43%;
-  margin-left: 24%;
-}
-
-#navbar_lateral_contacto{
-  width: 30%;
-  margin-left: 30%;
+  width: 55%;
+  margin-left: 18%;
 }
 
 .pagina_actual{

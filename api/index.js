@@ -68,8 +68,6 @@ app.use('/api', preferencia);
 // const padre_familia = require('./componentes/padre_familia/padre_familia.route');
 
 // app.use('/api', padre_familia);
-const actividades= require('./componentes/actividades/actividades.route');
-app.use('/api',actividades);
 
 const usuario = require('./componentes/usuarios/usuarios.route');
 app.use('/api', usuario);
@@ -77,12 +75,13 @@ app.use('/api', usuario);
 const contrasena = require ('./componentes/contrasena/contrasena_route');
 app.use('/api', contrasena);
 
-
 const etiquetas = require('./componentes/etiquetas/etiqueta.route');
 app.use('/api', etiquetas);
 
 const citas = require('./componentes/citas/citas.route');
 app.use('/api', citas);
+const actividades = require('./componentes/actividades/actividades.route');
+app.use('/api', actividades);
 
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app

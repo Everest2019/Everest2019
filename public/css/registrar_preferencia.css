@@ -1,6 +1,9 @@
 body{
     background: #F2F2F2;
 }
+.error_input{
+    border: 2px solid #ED4C67;
+}
 .titulo1{
     font-size: 33px;
     font-weight: bold;
@@ -106,6 +109,7 @@ div input[type=text]{
 .formulario-1 div button:hover{
     background: rgb(245, 148, 2);
 }
+
 
 
 
