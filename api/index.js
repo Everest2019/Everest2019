@@ -88,6 +88,9 @@ app.use('/api', citas);
 const actividades = require('./componentes/actividades/actividades.route');
 app.use('/api', actividades);
 
+const noticia = require('./componentes/noticias/noticia.route');
+app.use('/api', noticia);
+
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;
