@@ -44,7 +44,7 @@ let validar = () => {
         input_fecha.classList.add('borde');
     }
 
-    
+
 
     return error;
 };
@@ -58,8 +58,8 @@ let obtener_datos = () => {
         let comentario = input_comentario.value;
 
         registrar_cita(centro_educativo, padre_familia ,fecha, hora, comentario);
-        
-    } 
+
+    }
     else if(validar() == 'fin_de_semana'){
 
         swal.fire({

@@ -7,7 +7,7 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
         data: {
             primer_nombre : pprimer_nombre,
             segundo_nombre : psegundo_nombre,
-            primer_apellido : pprimera_pellido,
+            primer_apellido : pprimer_apellido,
             segundo_apellido : psegundo_apellido,
             identificacion : pidentificacion,
             cantidad_hijos :pcantidad_hijos,
@@ -25,7 +25,7 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
         swal.fire({
             type: 'sucess',
             title: 'Usuario registrado correctamente',
-            text: `Bienvenido ${pprimer_nombre} ${psegundo_nombre} ${pprimera_pellido} ${psegundo_apellido}`
+            text: `Bienvenido ${pprimer_nombre} ${psegundo_nombre} ${pprimer_apellido} ${psegundo_apellido}`
         });
     });
     request.fail(function(jqXHR, textStatus){

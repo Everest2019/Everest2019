@@ -14,10 +14,10 @@ body{
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
 .contenedor{
-    display: grid;    
+    display: grid;
     background: #fff;
     width: 90%;
     max-width: 1100px;
@@ -82,7 +82,7 @@ div input[type=date]{
 .formulario-1 div label{
     display: inline-block;
     width: 200px;
-    margin-left: 40px;  
+    margin-left: 40px;
     font-weight: bold;
 }
 .formulario-1 div textarea{

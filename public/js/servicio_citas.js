@@ -25,7 +25,7 @@ let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pc
     request.fail(function (jqXHR, textStatus) {
         alert("Request failed:" + textStatus);
     });
-   
+
 };
 
 let listar_citas = () =>{
@@ -54,7 +54,7 @@ let listar_citas = () =>{
 };
 
 
-  //Buscar padre familia 
+  //Buscar padre familia
 function buscar_padre_familia(pid_padre_familia){
     let padre_familia = [];
     $.ajax({
@@ -66,16 +66,16 @@ function buscar_padre_familia(pid_padre_familia){
             id : pid_padre_familia
         },
         beforeSend: function beforeSend() {
-              
+
         },
         success: function success(response) {
           padre_familia = response;
-            
+
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);
         }
     });
-  
+
     return padre_familia;
   };

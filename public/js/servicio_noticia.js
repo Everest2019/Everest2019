@@ -36,6 +36,13 @@ let listar_noticias = ()=>{
         dataType: "json",
         async:false
     });
-    
+    request.done(function( res ) {
+      noticias = res.noticias;
+
+    });
+
+    request.fail(function( jqXHR, textStatus ) {
+
+    });
+    return noticias;
 }
-     

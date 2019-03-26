@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Gemas</title>
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/carrusel.css">
-    <link rel="stylesheet" href="css/registrar_padre_familia.css">
-
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/agregar_preguntas.css|">
 </head>
 
 <body>
@@ -20,8 +18,9 @@
             </div>
             <div class="cont_links">
                 <a href="#">Inicio</a>
-                <a href="#">Iniciar sesión</a>
-                <a href="#">Crear cuenta</a>
+                <a href="#">Instituciones</a>
+                <a href="#">Mi Perfil</a>
+                <a href="#">Cerrar Sesión</a>
             </div>
         </nav>
     </header>
@@ -34,15 +33,15 @@
                     </div>
                     <div class="separador"></div>
                     <div class="contenido">
-                        <div class="formulario-1">
+                        <div class="formulario">
                             <form>
                                 <div>
                                     <label for="txt_pregunta">Pregunta</label>
                                     <input type="text" id="txt_pregunta">
                                 </div>
                                 <div>
-                                    <label for="txt_respuesta">Respuesta</label>
-                                    <input type="text" id="txt_respuesta">
+                                    <label for="txt_respuesta" id="label_respuesta">Respuesta</label>
+                                    <textarea id="txt_respuesta" class="borde"></textarea>
                                 </div>
                                 <div>
                                     <button type="button" id="btn_agregar">Agregar</button>
