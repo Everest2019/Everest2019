@@ -4,7 +4,7 @@ let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pc
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_cita",
         method: "POST",
-        data: {
+        data: { 
             id_padre_familia: pid_padre_familia,
             id_centro_educativo: pid_centro_educativo,
             fecha: pfecha,

@@ -12,7 +12,7 @@ let id_padre_familia = 'a57qwe56315qwe';
 
 let validar = () => {
 
-    let error = false;
+    let error = false; 
 
     if (input_fecha.value == '') {
         error = true;
@@ -32,7 +32,7 @@ let validar = () => {
         input_hora.classList.add('borde');
     }
 
-    
+
 
     return error;
 };
@@ -46,7 +46,7 @@ let obtener_datos = () => {
         let comentario = input_comentario.value;
 
         registrar_cita(centro_educativo, padre_familia ,fecha, hora, comentario);
-        
+
     } else {
         swal.fire({
             type: 'warning',

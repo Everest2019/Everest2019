@@ -1,10 +1,10 @@
-'use stric';
+'use strict';
 
 const tabla = document.querySelector('#tbl_actividades tbody');
 
 let mostrar_datos = () =>{
     let actividades = listar_actividades ();
-    
+
     for(let i=0; i<actividades.length; i++){
         let fila = tabla.insertRow();
 
@@ -13,7 +13,7 @@ let mostrar_datos = () =>{
         fila.insertCell().innerHTML = actividades[i]['titulo'];
         fila.insertCell().innerHTML = actividades[i]['descripcion'];
     };
-}; 
+};
 
 
 mostrar_datos();
