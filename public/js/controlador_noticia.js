@@ -1,11 +1,15 @@
 'use strict';
 
+'use strict';
+
 const input_titulo = document.querySelector('#txt_titulo');
 const input_fecha = document.querySelector('#fecha');
 const input_desc = document.querySelector('#desc');
 const boton_registrar = document.querySelector('#btn_registrar');
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');
+
+
 let validar = () =>{
     let error = false;
 
@@ -41,7 +45,7 @@ let registrar_datos = () => {
         let fecha = input_fecha.value;
         let descripcion = input_desc.value;
         console.log("registrado");
-        registrar(titulo,fecha,descripcion);
+        registrar(id_centro_educativo,titulo,fecha,descripcion);
     }else{
         swal.fire({
             type:'warning',

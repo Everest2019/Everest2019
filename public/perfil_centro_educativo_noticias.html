@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/listar_noticias.css">
     <link rel="stylesheet" href="css/perfil_centro_educativo.css">
 
     <title>Gemas - Instituciones</title>
@@ -62,37 +63,30 @@
 
         <h1 id="nombre_ce"></h1>
         <h2>Noticias</h2>
-        <div class="contenedor_filtraciones">
-            <div class="contenedor_buscar">
-                <label for="txt_filtrar_noticias">Buscar: </label>
-                <input type="text" id="txt_filtrar_noticias">
-            </div>
 
-            <div class="contenedor_criterios">
-                <label for="select_criterios">Criterios: </label>
-                <select id="select_criterios">
-                    <option value="">Seleccione un criterio...</option>
-                </select>
-            </div>
+
+
+
 
 
         <div class="separador"></div>
-        <div class="lista_instituciones" id="lista_instituciones">
-            <table id="tbl_noticias">
+        <div class="contenido">
+          <div class="contenedor_buscar">
+              <label for="txt_filtrar_noticia">Filtrar </label>
+              <input type="text" id="txt_filtrar_noticia">
+          </div>
+            <table class="tbl_noticias">
                 <thead>
                     <tr>
-                        <th>Fecha</th>
-                        <th>Título</th>
-                        <th>Descripción </th>
+                        <th class="celda_fecha">Fecha</th>
+                        <th class="celda_titulo">Título</th>
+                        <th class="celda_descripcion">Descripción </th>
                     </tr>
                 </thead>
                 <tbody></tbody>
             </table>
-
-        </div>
-
-    </div>
-
+          </div>
+</div>
 
 
 
