@@ -7,7 +7,7 @@ const input_desc = document.querySelector('#txt_informacion');
 const boton_registrar = document.querySelector('#boton_registrar');
 
 let validarBlancos = () =>{
-    let error = false;
+    let error = false; 
     if(input_imagen.src=="imgs/actividad.jpg"){
         error=true;
         input_imagen.classList.add('error_input');
@@ -61,7 +61,7 @@ let registrar_datos = () =>{
 };
 
 let limpiarInputs= (ptitulo,pdescripcion) =>{
-    
+
 }
 
 boton_registrar.addEventListener('click',registrar_datos);

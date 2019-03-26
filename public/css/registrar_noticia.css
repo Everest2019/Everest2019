@@ -14,17 +14,17 @@ body{
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
 .contenedor{
-    display: grid;    
+    display: grid;
     background: #fff;
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
     border: 1px solid #000;
     margin-top: 20px;
-    height: 400px;
+    height: 600px;
     grid-template-columns: 100px 2fr 2px 4fr 100px;
     grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
     grid-gap: 10px;
@@ -75,7 +75,7 @@ div input[type=text]{
 .formulario-1 div label{
     display: inline-block;
     width: 200px;
-    margin-left: 40px;  
+    margin-left: 40px;
     font-weight: bold;
 }
 .formulario-1 div textarea{

@@ -1,0 +1,13 @@
+
+#tbl_noticias{
+    float: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 8px;
+    background: #fff;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    margin-top: 25px;
+    height: 400px;
+}
