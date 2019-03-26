@@ -185,26 +185,31 @@ module.exports.buscar_centro_educativo = function(req, res){
     )
 };
 /*Inicio de Sesión*/ 
-module.exports.validar = function(req, res){
+module.exports.validar = function (req, res){
     modelo_usuario.findOne({correo : req.body.correo}).then(
-        function (usuario){
+        function(usuario){
             if(usuario){
                 if(usuario.contrasena == req.body.contrasena){
-                    res.json({
-                        success: true,
-                        usuario : usuario
-                    });
+                    res.json(
+                        {
+                            success:true,
+                            usuario : usuario,
+                            correo : usuario.correo
+                        }
+                    );
                 }else{
                     res.json({
-                        success: false
-                    });
+                        success:false
+                    })
                 }
             }else{
-                res.json({
-                    success: false,
-                    msg: 'El usuario no se encuentra registrado'
-                });
+                res.json(
+                    {
+                        success:false,
+                        msg : 'El usuario no existe'
+                    }
+                );
             }
         }
     )
-}
+};

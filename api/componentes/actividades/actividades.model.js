@@ -1,12 +1,12 @@
-
 'use stritc';
 const mongoose = require ('mongoose');
 
-let actividadSchema = new mongoose.Schema({
-    imagen: {type:String, required:true},
-    fecha: {type:Date, required:true},
-    titulo:{type:String,required:true},
-    descripcion:{type:String,required:true }
-});
+let schema_actividades = new mongoose.Schema(
+    {
+        titulo : {type: String, required: true},
+        fecha : {type: Date, required : true},
+        descripcion : {type : String, required : true}
+    }
+);
 
-module.exports = mongoose.model('Actividades',actividadSchema);
+module.exports = mongoose.model('Actividades', schema_actividades);  

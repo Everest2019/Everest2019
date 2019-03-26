@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gemas</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="css/registrar_padre_familia.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="#">Inicio</a>
+                <a href="#">Iniciar sesión</a>
+                <a href="#">Crear cuenta</a>
+            </div>
+        </nav>
+    </header>
+    <h2 class="titulo2">Preguntas</h2>
+    <h1 class="titulo1">Frecuentas</h1>
+    <main>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Preguntas Frecuentas</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div class="formulario-1">
+                            <form>
+                                <div>
+                                    <label for="txt_pregunta">Pregunta</label>
+                                    <input type="text" id="txt_pregunta">
+                                </div>
+                                <div>
+                                    <label for="txt_respuesta">Respuesta</label>
+                                    <input type="text" id="txt_respuesta">
+                                </div>
+                                <div>
+                                    <button type="button" id="btn_agregar">Agregar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_preguntas.js"></script>
+    <script src="js/controlador_preguntas.js"></script>
+</body>
+
+</html> 

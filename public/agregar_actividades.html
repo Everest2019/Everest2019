@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gemas</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_padre_familia.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="#">Inicio</a>
+                <a href="#">Iniciar sesión</a>
+                <a href="#">Crear cuenta</a>
+            </div>
+        </nav>
+    </header>
+    <h2 class="titulo2">Agregar</h2>
+    <h1 class="titulo1">Actividades</h1>
+    <main>
+                <div class="contenedor">
+                    <div class="descripcion_contenedor">
+                        <p>Actividades</p>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="contenido">
+                        <div class="formulario-1">
+                            <form>
+                                <div>
+                                    <label for="txt_titulo">Título</label>
+                                    <input type="text" id="txt_titulo">
+                                </div>
+                                <div>
+                                    <label for="dt_fecha">Fecha</label>
+                                    <input type="date" id="dt_fecha">
+                                </div>
+                                <div>
+                                    <label for="txt_descripcion">Descripción</label>
+                                    <textarea id="txt_descripcion"></textarea>
+                                </div>
+                                <div>
+                                    <button type="button" id="btn_registrar">Registrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_actividades.js"></script>
+    <script src="js/controlador__registrar_actividades.js"></script>
+</body>
+
+</html>
