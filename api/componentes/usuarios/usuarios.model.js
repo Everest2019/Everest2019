@@ -53,7 +53,7 @@ let schema_usuarios = new mongoose.Schema(
             fotografia_encargado: {type: String, required: false},
 
             //Servicios adicionales
-            servicio_adicional: {type: String, required: false},
+            servicio_adicional:{type: String, required: false},
 
 
         /* DATOS DE LOS USUARIOS PADRES DE FAMILIA*/

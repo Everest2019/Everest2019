@@ -8,7 +8,7 @@ const boton_registrar = document.querySelector('#btn_enviar');
 document.querySelector("#input_fecha").valueAsDate = new Date();
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');
-let id_padre_familia = '5c998e57d6a3a93f84e03eb6';
+let id_padre_familia = localStorage.getItem('id_usuario');
 
 let validar = () => {
 

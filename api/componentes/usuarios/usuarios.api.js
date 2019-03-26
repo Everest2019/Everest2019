@@ -213,7 +213,9 @@ module.exports.validar = function (req, res){
                         {
                             success:true,
                             usuario : usuario,
-                            correo : usuario.correo
+                            correo : usuario.correo,
+                            id : usuario._id,
+                            tipo_usuario : usuario.tipo_usuario
                         }
                     );
                 }else{
