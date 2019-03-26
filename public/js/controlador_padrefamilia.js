@@ -15,6 +15,7 @@ const boton_enviar = document.querySelector('#btn_enviar');
 
 let validar =() =>{
   let error=false;
+  
   if(input_primer_nombre.value == ''){
     error = true;
     input_primer_nombre.classList.add('error_input');
@@ -35,9 +36,9 @@ let validar =() =>{
   }
   if(input_segundo_apellido.value == ''){
     error = true;
-    input_segundo_apellido.classList.add ('error_inpu');
+    input_segundo_apellido.classList.add ('error_input');
   }else{
-    input_segundo_apellido.value.remove('error_input');
+    input_segundo_apellido.classList.remove('error_input');
   }
   if(input_identificacion.value == ''){
     error = true;
@@ -49,7 +50,7 @@ let validar =() =>{
     error = true;
     input_cantidad_hijos.classList.add('error_input');
   }else{
-    input_cantidad_hijos.classListremove('error_input');
+    input_cantidad_hijos.classList.remove('error_input');
   }
   if(input_edad_hijos.value == ''){
     error = true;
