@@ -1,30 +1,55 @@
 'use strict';
 
 
-let registrar = (pimagen,pfecha,ptitulo, pdescripcion) =>{
+   let  registrar_actividades = (ptitulo, pfecha, pdescripcion) => {
+   
     let request = $.ajax({
-        url:"http:localhost:4000/api/registrar_actividad",
+        url: "http://localhost:4000/api/registrar_actividades",
         method: "POST",
-        data:{
-            imagen:pimagen,
-            fecha: pfecha,
-            titulo: ptitulo,
-            descripcion: pdescripcion
+        data: { 
 
-        },
-        contentType: 'application/x-www-form-urlencoded; charset= UTF-8',
-        dataType :"json"
+            titulo : ptitulo,
+            fecha : pfecha,
+            descripcion : pdescripcion
+    },
+    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+    datatype: "json"
     });
+
     request.done(function(msg){
-        swal.fire({
+
+        swal.fire({ 
             type: 'success',
-            title: 'Actividad agregada correctamente',
-            text:`La actividad: ${ptitulo} ha sido agregada correctamente`
-        });
+            title: 'Actividad enviada correctamente'
+    });    
+
+    });
+    request.fail(function( jqXHR, textStatus ) {
+
+});
+
+};
+
+let listar_actividades = () =>{
+    let lista_actividades= [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listar_actividades",
+        method: "GET",
+        data: {
+            },
+    datatype: "json",
+    contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+    });
+
+    request.done(function(res){
+        lista_actividades = res.actividades;
+    
     });
 
     request.fail(function( jqXHR, textStatus ) {
-      
-    }); 
 
+    });
+    return lista_actividades;
 };

@@ -4,10 +4,10 @@ html {
 
 header {
     background: #FAA21A;
+
 }
 
 header nav {
-    padding: 15px;
     display: flow-root;
     border-bottom: 1px solid #000;
 }
@@ -18,23 +18,72 @@ header nav .nombre_proyecto{
 }
 
 header nav .nombre_proyecto a{
+    display: block;
+    float: left;
     color: #40433E;
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
+    padding: 13px 10px;
 }
+
 
 header nav .cont_links{
     float: right;
     text-align: left;
-    margin-top: 5px;
 }
 
 header nav .cont_links a{
+    display: block;
+    float: left;
     color: #40433E;
     text-decoration: none;
     font-size: 20px;
-    padding: 0 10px;
+    padding: 18px 25px;
+}
+
+header nav .cont_links .btn_iniciar_sesion{
+    display: block;
+    float: left;
+    font-size: 18px;
+    height: 40px;
+    width: 150px;
+    background: #FAA21A;
+    color: #40433E;
+    border-radius: 3px;
+    border: 1px solid #40433E;
+    margin-top: 8px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+header nav .cont_links .btn_iniciar_sesion:hover{
+    border: 1px solid #f2f2f2;
+    color: #f2f2f2;
+}
+
+header nav .cont_links .btn_crear_cuenta{
+    display: block;
+    float: left;
+    font-size: 18px;
+    height: 40px;
+    width: 150px;
+    background: #40433E;
+    color: #f2f2f2;
+    border-radius: 3px;
+    border: 1px solid #f2f2f2;
+    margin-top: 8px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+header nav .cont_links .btn_crear_cuenta:hover{
+    color: #FAA21A;
+    border: 1px solid #40433E;
+}
+
+header nav .cont_links a:hover{
+    color: #f2f2f2;
 }
 
 .input_error{

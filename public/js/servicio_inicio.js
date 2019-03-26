@@ -15,7 +15,7 @@ function validar_credenciales(pcorreo, pcontrasena){
       });
       peticion.done(function(response){
         respuesta = response;
-        localStorage.setItem('conectado', response.success);
+        localStorage.setItem('conectado', response.correo);
       });
     
       peticion.fail(function(response){

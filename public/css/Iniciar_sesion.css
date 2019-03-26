@@ -1,46 +1,102 @@
-body{
-    background: #F2F2F2;;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    box-sizing: border-box;
+    box-sizing: border-box;
 }
-.titulo1{
-    font-size: 33px;
-    font-weight: bold;
+
+.contenedor-form{
+    position: relative;
+    background: rgba(0, 0, 0, .7);
+    width: 100%;
+    max-width: 500px;
+    margin: 48px auto;
+    color: #ffff;
+    border-radius: 5px;
+    /*padding: 40px;*/
+}
+
+.contenedor-form .toggle{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 25px;
     text-align: center;
-    margin: 1%;
-}
-.contenedor{
-    display: grid;    
-    background: #fff;
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    border: 1px solid #000;
-    margin-top: 25px;
-    height: 400px;
-    grid-template-columns: 100px 2fr 2px 4fr 100px;
-    grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
-    grid-gap: 10px;
+    border-top: 2px solid #ff851b;
+    border-bottom: 2px solid #ff851b;
+    transition: all .5s ease;
+    cursor: pointer;
 }
 
-.descripcion_contenedor{
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-    text-align: left;
-
-}
-.descripcion_contenedor p{
-    font-size: 40px;
-    font-weight: bolder;
-    margin-top: 15px;
-    margin-left: 20px;
+.contenedor-form .toggle span{
+    letter-spacing: 1px;
 }
 
-.separador{
-    grid-column: 3 / 4;
-    grid-row: 2 / 5;
-    background: #FAA21A;
+.contenedor-form .toggle:hover{
+    border-top: 2px solid #0075d9;
+    border-bottom: 2px solid #0075d9;
 }
 
-.contenido{
-    grid-column: 4 / 5;
-    grid-row: 2 / 5;
+.contenedor-form h2{
+    margin: 0 0 28px 0;
+    font-size:  28px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.contenedor-form input[type="email"],
+.contenedor-form input[type="password"]{
+    outline: none;
+    background: rgba(0,0,0,.5);
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #ff851b;
+    font-size: normal;
+    margin: 0 0 20px 0;
+    transition: all .5s ease;
+}
+
+.contenedor-form input[type="email"] :focus,
+.contenedor-form input[type="password"] :focus{
+    border-bottom: 4px solid #0075d9;
+
+}
+
+.contenedor-form button{
+    background: #ff851b;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: normal;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor-form button :hover{
+    background: rgba(0, 117, 217, 0.7);
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px
+}
+
+.contenedor-form .reset_password a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contenedor-form .formulario{
+    padding: 40px;
 }

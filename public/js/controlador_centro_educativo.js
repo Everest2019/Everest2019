@@ -348,7 +348,10 @@ let obtener_datos = () =>{
         let guarderia = document.querySelector('#check_guarderia').checked;
 
         let portada = url_img_portada.value;
-        let galeria = url_galeria1.value;
+        let galeria1 = url_galeria1.value;
+        let galeria2 = url_galeria2.value;
+        let galeria3 = url_galeria3.value;
+        let galeria4 = url_galeria4.value;
         let telefono = input_telefono.value;
         let fax = input_fax.value;
         let web = input_web.value;
@@ -357,7 +360,9 @@ let obtener_datos = () =>{
         let twitter = input_twitter.value;
         let youtube = input_youtube.value;
         let logo = url_logo_institucion.value;
-        let documento = url_archivo_documento1.value;
+        let documento1 = url_archivo_documento1.value;
+        let documento2 = url_archivo_documento2.value;
+        let documento3 = url_archivo_documento3.value;
         let primer_nombre = input_primer_nombre.value;
         let segundo_nombre = input_segundo_nombre.value;
         let primer_apellido = input_primer_apellido.value;
@@ -374,7 +379,7 @@ let obtener_datos = () =>{
 
         
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte,tipo_usuario);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte,tipo_usuario);
     }
     else{
         swal.fire({

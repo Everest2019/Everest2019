@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/listar_etiquetas.css">
     <link rel="stylesheet" href="css/general.css">
-
+    <link rel="stylesheet" href="css/index.css">
 
 </head>
 
@@ -19,52 +19,50 @@
 
 
 
-    <header id="header_principal">
-        <nav>
-            <nav>
-                <div class="nombre_proyecto">
-                    <a href="#">Gemas</a>
-                </div>
-                <div class="cont_links">
-                    <a href="#">Perfil</a>
-                    <a href="#">Instituciones</a>
-                    <a href="#">Cerrar Sesión</a>
-                </div>
-            </nav>
-        </nav>
-    </header>
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+        
+        
+
+        <div id="navbar_lateral_inicio" class="pagina_actual">
+            <a href="index.html">Etiquetas</a>
+        </div>
+        
+    </div>
 
 
+    <div class="main">
+        
+        <h1>Lista de Etiquetas</h1>
+        <h2>Etiquetas creadas para los centros educativos</h2>
+        <div class="separador"></div>
 
-    <main>
-        <div class="slidershow-container">
-
-
-            <div id="divisor">-</div>
-            <!--primero contenedor-->
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                
-                    
-                    <div class="separador"></div>
-                    <div class="contenido">
-
-                        <table id="tbl_etiquetas">
-                            
-                        <tr id="tr_head">
-                            <th>Etiquetas</th>
-                            <th>Descripción</th>
-                        </tr>
-                        
-
-                            <tbody>
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
+        <div class="contenedor_filtraciones">
+            <div class="contenedor_buscar">
+                <label for="txt_filtar">Buscar: </label>
+                <input type="text" id="txt_filtar">
             </div>
-    </main>
+            
+        </div>
+
+        <div class="contenido">
+            <table id="tbl_etiquetas">
+                <thead>
+                    <tr id="tr_etiquetas">
+                        <th>Etiquetas</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+               
+           
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
