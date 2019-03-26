@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, pservicio_adicional, ptipo_usuario) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, pservicio_adicional, ptipo_usuario) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -32,9 +32,14 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             matricula : pmatricula,
             mensualidad : pmensualidad,
             imagen_portada : pportada,
-            galeria : pgaleria,
+            galeria1 : pgaleria1,
+            galeria2 : pgaleria2,
+            galeria3 : pgaleria3,
+            galeria4 : pgaleria4,
             informacion_adicional : pidioma,
-            documento: pdocumento,
+            documento1: pdocumento1,
+            documento2: pdocumento2,
+            documento3: pdocumento3,
             primer_nombre : pprimer_nombre,
             segundo_nombre : psegundo_nombre,
             primer_apellido : pprimer_apellido,
@@ -119,3 +124,4 @@ function buscar_centro_educativo(pid_centro_educativo){
 
   return centro_educativo;
 };
+

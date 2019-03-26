@@ -167,18 +167,40 @@ contenedor_fundacion.appendChild(fundacion);
 contenedor_caracteristicas.appendChild(contenedor_fundacion);
 
 //Galeria
-for(let i=1; i<=4; i++){
 
-let contenedor_imagen = document.createElement('div');
-contenedor_imagen.classList.add('contenedor_imagen');
+let contenedor_imagen1 = document.createElement('div');
+let contenedor_imagen2 = document.createElement('div');
+let contenedor_imagen3 = document.createElement('div');
+let contenedor_imagen4 = document.createElement('div');
 
-let imagen = document.createElement('img');
-imagen.src = centro_educativo['galeria'];
+contenedor_imagen1.classList.add('contenedor_imagen');
+contenedor_imagen2.classList.add('contenedor_imagen');
+contenedor_imagen3.classList.add('contenedor_imagen');
+contenedor_imagen4.classList.add('contenedor_imagen');
 
-contenedor_imagen.appendChild(imagen);
+let imagen1 = document.createElement('img');
+imagen1.src = centro_educativo['galeria1'];
 
-contenedor_imagenes.appendChild(contenedor_imagen);
-}
+let imagen2 = document.createElement('img');
+imagen2.src = centro_educativo['galeria2'];
+
+let imagen3 = document.createElement('img');
+imagen3.src = centro_educativo['galeria3'];
+
+let imagen4 = document.createElement('img');
+imagen4.src = centro_educativo['galeria4'];
+
+contenedor_imagen1.appendChild(imagen1);
+contenedor_imagen2.appendChild(imagen2);
+contenedor_imagen3.appendChild(imagen3);
+contenedor_imagen4.appendChild(imagen4);
+
+contenedor_imagenes.appendChild(contenedor_imagen1);
+contenedor_imagenes.appendChild(contenedor_imagen2);
+contenedor_imagenes.appendChild(contenedor_imagen3);
+contenedor_imagenes.appendChild(contenedor_imagen4);
+
+
 
 
 
