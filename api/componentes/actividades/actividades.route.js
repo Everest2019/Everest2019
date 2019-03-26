@@ -1,4 +1,3 @@
-
 'use strict';
 const express = require('express');
 const router = express.Router();
@@ -13,10 +12,8 @@ router.route('/registrar_actividades')
 router.route('/listar_actividades')
         .get(
             function (req, res){
-                api_actividades.listar_todos(req, res);
+                api_actividades.listar_todas(req, res);
             }
         )
 
 module.exports = router; 
-
-

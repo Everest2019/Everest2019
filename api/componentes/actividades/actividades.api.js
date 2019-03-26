@@ -4,17 +4,17 @@ const modelo_actividades = require('./actividades.model');
 module.exports.registrar = (req, res) =>{
     let nueva_actividad = new modelo_actividades(
     {
-        fecha : req.body.fecha,
         titulo : req.body.titulo,
+        fecha : req.body.fecha,
         descripcion : req.body.descripcion
-    }    
+    }     
   );
   nueva_actividad.save(function(error){
     if(error){
        res.json( 
            {
                success : false,
-               msg : `No se pudo registrar la actividad`
+               msg : `No se pudo registrar la actividad, ocurrio el siguiente error ${error}`
            }
        ); 
     }else{
@@ -29,7 +29,7 @@ module.exports.registrar = (req, res) =>{
       
   });
 }
-module.exports.listar_todos = (req, res) =>{
+module.exports.listar_todas = (req, res) =>{
     modelo_actividades.find().then(
         function(actividades){
             if (actividades.length > 0){
@@ -50,4 +50,3 @@ module.exports.listar_todos = (req, res) =>{
         }
     )
 }
-

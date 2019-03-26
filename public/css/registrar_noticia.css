@@ -24,7 +24,7 @@ body{
     margin: 0 auto;
     border: 1px solid #000;
     margin-top: 20px;
-    height: 400px;
+    height: 500px;
     grid-template-columns: 100px 2fr 2px 4fr 100px;
     grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
     grid-gap: 10px;
@@ -53,14 +53,21 @@ body{
 /* Estilos generales de los elementos del contenido */
 
 div input[type=text]{
-    display: inline-block;
     width: 300px;
     height: 25px;
+    font-size: 15px;
+}
+
+div input[type=date]{
+    width: 300px;
+    outline: none;
+    height: 25px;
+}
+
+.borde {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 3px;
     border: 2px solid gray;
-    font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    outline: none;
 }
 
 /* Estilos primer contenedor */
