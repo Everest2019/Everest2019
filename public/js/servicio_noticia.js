@@ -1,10 +1,11 @@
 'use strict';
 
-let registrar = (titulo_noticia,fecha_noticia,desc_noticia) =>{
+let registrar = (pid_centroE,titulo_noticia,fecha_noticia,desc_noticia) =>{
     let request = $.ajax({
         url:"http://localhost:4000/api/registrar_noticia",
         method :"POST",
         data:{
+            id_ce: pid_centroE,
             titulo: titulo_noticia,
             fecha: fecha_noticia,
             descripcion:desc_noticia
@@ -25,6 +26,7 @@ let registrar = (titulo_noticia,fecha_noticia,desc_noticia) =>{
 
     });
 }
+
 let listar_noticias = ()=>{
     let noticias = [];
     let request= $.ajax({
@@ -36,13 +38,5 @@ let listar_noticias = ()=>{
         dataType: "json",
         async:false
     });
-    request.done(function( res ) {
-      noticias = res.noticias;
 
-    });
-
-    request.fail(function( jqXHR, textStatus ) {
-
-    });
-    return noticias;
 }

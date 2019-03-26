@@ -3,10 +3,11 @@
 const noticiaModel = require ('./noticia.model');
 
 module.exports.registrar_noticia = function(req,res){
-    let nuevaNoticia = noticiaModel({
+    let nuevaNoticia = new noticiaModel({
+        id_ce: req.body.id_ce,
         titulo: req.body.titulo,
         fecha: req.body.fecha,
-        descripcion: req.body.descripcion 
+        descripcion: req.body.descripcion
     });
     nuevaNoticia.save(function(error){
         if(error){
@@ -22,7 +23,7 @@ module.exports.registrar_noticia = function(req,res){
         }
 
     });
-}; 
+};
 
 module.exports.listar_noticias = function(req,res){
     noticiaModel.find().sort({fecha: 'asc'}).then(
@@ -31,3 +32,5 @@ module.exports.listar_noticias = function(req,res){
         }
     );
 };
+
+// -------------------------centro educativo-------------
