@@ -39,4 +39,14 @@ let listar_noticias = ()=>{
         async:false
     });
 
+    request.done(function (res) {
+        noticias = res.noticias;
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+    return noticias;
+
 }
