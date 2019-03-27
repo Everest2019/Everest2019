@@ -11,10 +11,11 @@ let id_centro_educativo = localStorage.getItem('centro_educativo');
 
 let validar = () =>{
     let error = false;
-    
+
     if(input_titulo.value==''){
         error=true;
         input_titulo.classList.add('error_input');
+        input_fecha.classList.remove('borde');
     }else{
         input_titulo.classList.remove('error_input');
     }
@@ -22,6 +23,7 @@ let validar = () =>{
     if(input_fecha.value ==''){
         error=true;
         input_fecha.classList.add('error_input');
+        input_fecha.classList.remove('borde');
     }else{
         input_fecha.classList.remove('error_input');
     }
@@ -29,6 +31,7 @@ let validar = () =>{
     if(input_descripcion.value ==''){
         error=true;
         input_descripcion.classList.add('error_input');
+        input_descripcion.classList.remove('borde');
     }else{
         input_descripcion.classList.remove('error_input');
     }
@@ -49,8 +52,8 @@ let registrar_datos = () => {
             text: 'Por favor revise los campos resaltados'
         });
     }
-   
- 
+
+
 };
 
 boton_registrar.addEventListener('click',registrar_datos);

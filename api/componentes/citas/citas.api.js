@@ -32,10 +32,24 @@ module.exports.registrar_cita = function(req,res){
     });
 };
 
-module.exports.listar_citas = function(req,res){
+module.exports.listar_citas = (req, res) => {
     modelo_cita.find().then(
-        function(citas){
-            res.send(citas);
+        function (cita) {
+            if (cita.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        cita: cita
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        articulo: 'No se encontraron citas'
+                    }
+                )
+            }
         }
-    );
+    )
 };

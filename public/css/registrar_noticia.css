@@ -13,10 +13,10 @@ body{
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;   
+    margin-top: 20px;
 }
 .contenedor{
-    display: grid;    
+    display: grid;
     background: #fff;
     width: 90%;
     max-width: 1100px;
@@ -69,8 +69,15 @@ div input[type=date]{
     outline: none;
 }
 
-div input[type=date]::-webkit-datetime-edit { 
-    padding-left: 25%; 
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+.borde {
+
+    border-radius: 3px;
+    border: 2px solid gray;
 }
 
 
@@ -89,7 +96,7 @@ div input[type=date]::-webkit-datetime-edit {
 .formulario-1  div label{
     display: inline-block;
     width: 200px;
-    margin-left: 40px;  
+    margin-left: 40px;
     font-weight: bold;
 }
 .formulario-1  input:focus{
@@ -129,4 +136,21 @@ div input[type=date]::-webkit-datetime-edit {
 
 .formulario-1  .borde{
     border: 2px solid gray;
+}
+.formulario-1 textarea:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-1 div button{
+    width: 54%;
+    height: 40px;
+    margin-left: 42%;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+
+}
+.formulario-1 div button:hover{
+    background: rgb(245, 148, 2);
 }

@@ -30,13 +30,25 @@ router.route('/listar_instituciones')
             function (req, res){
                 api_usuario.listar_instituciones(req, res);
             }
-        )
+        );
+
+router.route('/listar_padre_familia')
+.get(
+    function (req, res){
+        api_usuario.listar_padre_familia(req, res);
+    }
+);
 
 router.route('/buscar_centro_educativo')
     .post(function(req , res){  
         api_usuario.buscar_centro_educativo(req , res);
 });
 
+router.route('/buscar_padre_familia')
+    .post(function(req , res){  
+        api_usuario.buscar_padre_familia(req , res);
+});
+       
 router.route('/validar_credenciales')
 .post(function(req, res){
     api_usuario.validar(req, res);

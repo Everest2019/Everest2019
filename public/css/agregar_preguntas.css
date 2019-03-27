@@ -1,9 +1,6 @@
 body{
     background: #F2F2F2;
 }
-.error_input{
-    border: 2px solid #ED4C67;
-}
 .titulo1{
     font-size: 33px;
     font-weight: bold;
@@ -28,7 +25,6 @@ body{
     grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
     grid-gap: 10px;
 }
-/* Colocacacion basica de los elementos */
 
 .descripcion_contenedor{
     grid-column: 2 / 3;
@@ -50,60 +46,63 @@ body{
     grid-column: 4 / 5;
     grid-row: 2 / 5;
 }
-
-/* Estilos generales de los elementos del contenido */
-
 div input[type=text]{
     display: inline-block;
-    width: 300px;
+    width: 40%;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
-    font-size: 15px;
+    font-size: 16px;
     outline: none;
 }
-
-/* Estilos primer contenedor */
-
-.contenido .formulario-1{
-    margin-top: 60px;
-}
-
-.formulario-1 form div{
+.formulario form div{
     margin-bottom: 40px;
 }
-.formulario-1 div label{
+.formulario div label{
     display: inline-block;
     width: 200px;
     margin-left: 40px;  
     font-weight: bold;
 }
-.formulario-1 input:focus{
+.formulario input:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div textarea{
-    width: 295px;
+
+#label_pregunta{
+    position: relative;
+    bottom: 65px;
+}
+
+#label_respuesta{
+    position: relative;
+    bottom: 65px;
+}
+
+.formulario div textarea{
+    width: 40%;
     height: 75px;
     resize: none;
-    border: 2px solid gray;
     font-size: 15px;
     outline: none;
+    border-radius: 3px;
 }
-.formulario-1 textarea:focus{
+.formulario textarea:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div button{
-    width: 54%;
+.formulario div button{
+    width: 43%;
     height: 40px;
     margin-left: 42%;
     background: #FAA21A;
     color: #fff;
     border-radius: 3px;
     border: 0;
-    
 }
-.formulario-1 div button:hover{
+.formulario div button:hover{
     background: rgb(245, 148, 2);
+}
+
+.formulario .borde{
+    border: 2px solid gray;
 }

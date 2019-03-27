@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/listar_noticias.css">
     <link rel="stylesheet" href="css/perfil_centro_educativo.css">
     <link rel="stylesheet" href="css/perfil_noticias.css">
 
@@ -70,6 +71,23 @@
         <h2>Noticias</h2>
 
         <div class="separador"></div>
+        <div class="contenido">
+          <div class="contenedor_buscar">
+              <label for="txt_filtrar_noticia">Filtrar </label>
+              <input type="text" id="txt_filtrar_noticia">
+          </div>
+            <table class="tbl_noticias" id="tbl_noticias">
+                <thead>
+                    <tr>
+                        <th class="celda_fecha">Fecha</th>
+                        <th class="celda_titulo">Título</th>
+                        <th class="celda_descripcion">Descripción </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+          </div>
+</div>
 
 <div class="contenedor_grid">
     <div id="elemento">
@@ -85,7 +103,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
-    <script src="js/controlador_noticias_centro_educativo.js"></script>
+    <script src="js/servicio_noticia.js"></script>
+    <script src="js/controlador_listar_noticias.js"></script>
+  <!--<script src="js/controlador_noticias_centro_educativo.js"></script>-->
+  <!--<script src="js/controlador_noticia.js"></script>-->
     <script src="js/controlador_sesion.js"></script>
 </body>
 

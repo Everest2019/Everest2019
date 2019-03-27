@@ -17,3 +17,17 @@ let mostar_datos = () => {
             '</div>'
     }
 };
+
+const input_filtrar = document.querySelector('#txt_filtrar_noticia');
+
+let mostrar_noticias = () =>{
+    
+    let filtro = input_filtrar.value;
+
+};
+
+
+
+
+mostrar_noticias();
+input_filtrar.addEventListener('keyup', mostrar_noticias);

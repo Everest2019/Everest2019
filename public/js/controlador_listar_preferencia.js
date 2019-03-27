@@ -7,7 +7,7 @@ let mostrar_datos = () => {
 
     for (let i=0; i<listar_preferencia.length; i++){
         let fila = tabla.insertRow();
-        
+
         fila.insertCell().innerHTML = preferencia[i]['nombre'];
         fila.insertCell().innerHTML=preferencia[i]['informacion'];
     };

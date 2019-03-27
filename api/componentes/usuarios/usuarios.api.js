@@ -73,8 +73,13 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             mensualidad: req.body.mensualidad,
             contrasena: req.body.contrasena,
             imagen_portada: req.body.imagen_portada,
-            galeria: req.body.galeria,
-            documento: req.body.documento,
+            galeria1: req.body.galeria1,
+            galeria2: req.body.galeria2,
+            galeria3: req.body.galeria3,
+            galeria4: req.body.galeria4,
+            documento1: req.body.documento1,
+            documento2: req.body.documento2,
+            documento3: req.body.documento3,
             informacion_adicional: req.body.informacion_adicional,
             primer_nombre_encargado: req.body.primer_nombre,
             segundo_nombre_encargado: req.body.segundo_nombre,
@@ -170,6 +175,7 @@ module.exports.listar_instituciones = (req,res) =>{
     )
 };
 
+
 //BUSCAR USUARIOS
 
 module.exports.buscar_centro_educativo = function(req, res){
@@ -184,6 +190,19 @@ module.exports.buscar_centro_educativo = function(req, res){
         }
     )
 };
+
+module.exports.buscar_padre_familia = function(req, res){
+    modelo_usuario.findOne({_id : req.body.id}).then(
+        function(padre_familia){
+            if(padre_familia){
+                res.send(padre_familia);
+            }else{
+                res.send('No se encontró el Padre Familia');
+            }
+        }
+    )
+};
+
 /*Inicio de Sesión*/ 
 module.exports.validar = function (req, res){
     modelo_usuario.findOne({correo : req.body.correo}).then(
@@ -194,7 +213,9 @@ module.exports.validar = function (req, res){
                         {
                             success:true,
                             usuario : usuario,
-                            correo : usuario.correo
+                            correo : usuario.correo,
+                            id : usuario._id,
+                            tipo_usuario : usuario.tipo_usuario
                         }
                     );
                 }else{

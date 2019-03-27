@@ -7,7 +7,7 @@ module.exports.registrar_noticia = function(req,res){
         id_centro_educativo: req.body.id_centro_educativo,
         titulo: req.body.titulo,
         fecha: req.body.fecha,
-        descripcion: req.body.descripcion 
+        descripcion: req.body.descripcion
     });
     nuevaNoticia.save(function(error){
         if(error){
@@ -23,7 +23,7 @@ module.exports.registrar_noticia = function(req,res){
         } 
 
     });
-}; 
+};
 
 module.exports.listar_noticias = function(req,res){
     modelo_noticia.find().then(
@@ -44,5 +44,7 @@ module.exports.listar_noticias = function(req,res){
                 )
             }
         }
-    )
+    );
 };
+
+// -------------------------centro educativo-------------

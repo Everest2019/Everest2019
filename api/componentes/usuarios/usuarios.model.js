@@ -30,9 +30,14 @@ let schema_usuarios = new mongoose.Schema(
             //tablas agregadas
 
             imagen_portada: {type: String, required: false},
-            galeria: {type: String, required: false},
+            galeria1: {type: String, required: false},
+            galeria2: {type: String, required: false},
+            galeria3: {type: String, required: false},
+            galeria4: {type: String, required: false},
             informacion_adicional: {type: String, required: false},
-            documento: {type: String, required: false},
+            documento1: {type: String, required: false},
+            documento2: {type: String, required: false},
+            documento3: {type: String, required: false},
             aprobado: {type: Boolean, required: false},
 
             //Encargado
@@ -48,7 +53,7 @@ let schema_usuarios = new mongoose.Schema(
             fotografia_encargado: {type: String, required: false},
 
             //Servicios adicionales
-            servicio_adicional: {type: String, required: false},
+            servicio_adicional:{type: String, required: false},
 
 
         /* DATOS DE LOS USUARIOS PADRES DE FAMILIA*/
@@ -67,7 +72,7 @@ let schema_usuarios = new mongoose.Schema(
             //Padre de familia y Administador
             primer_nombre: {type: String, required: false},
             segundo_nombre: {type: String, required: false},
-            primera_pellido: {type: String, required: false},
+            primer_apellido: {type: String, required: false},
             segundo_apellido: {type: String, required: false},
             identificacion: {type: String, required: false},
 

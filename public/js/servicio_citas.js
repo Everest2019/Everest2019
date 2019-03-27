@@ -18,7 +18,7 @@ let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pc
         swal.fire({
             type: 'success',
             title: 'Cita creada correctamente',
-            text: `Su cita con el centro educativo ha sido creada correctamente`
+            text: `Su cita con el centro educativo ha sido creada correctamente`,
         });
     });
 
@@ -27,3 +27,55 @@ let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pc
     });
 
 };
+
+let listar_citas = () =>{
+    let lista_citas = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listar_citas",
+        method: "GET",
+        data: {
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+        lista_citas = res.cita;
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return lista_citas;
+
+};
+
+
+  //Buscar padre familia
+function buscar_padre_familia(pid_padre_familia){
+    let padre_familia = [];
+    $.ajax({
+        url: 'http://localhost:4000/api/buscar_padre_familia',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        async: false,
+        data: {
+            id : pid_padre_familia
+        },
+        beforeSend: function beforeSend() {
+
+        },
+        success: function success(response) {
+          padre_familia = response;
+
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+
+    return padre_familia;
+  };
