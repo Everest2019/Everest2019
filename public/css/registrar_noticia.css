@@ -53,19 +53,32 @@ body{
 /* Estilos generales de los elementos del contenido */
 
 div input[type=text]{
+    display: inline-block;
     width: 300px;
     height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
     font-size: 15px;
+    outline: none;
 }
 
 div input[type=date]{
-    width: 300px;
+  display: inline-block;
+  width: 300px;
+  height: 25px;
+  border-radius: 3px;
+  border: 2px solid gray;
+  font-size: 15px;
+  outline: none;
+}
+
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
     outline: none;
-    height: 25px;
 }
 
 .borde {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     border-radius: 3px;
     border: 2px solid gray;
 }
@@ -91,7 +104,6 @@ div input[type=date]{
     resize: none;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
 }
 .formulario-1 div button{
@@ -103,4 +115,21 @@ div input[type=date]{
     font-size: 16px;
     outline: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.formulario-1 textarea:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-1 div button{
+    width: 54%;
+    height: 40px;
+    margin-left: 42%;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+
+}
+.formulario-1 div button:hover{
+    background: rgb(245, 148, 2);
 }
