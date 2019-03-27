@@ -13,7 +13,6 @@
     width: 20%; /*Definir el ancho del navbar */
     position: fixed; /* Fija el navbar, que no se mueva con el scroll */
     z-index: 1; /* Se mantiene en la parte superior */
-    /* top: 71px; Se mantiene en la parte superior */
     left: 0; /* Se mantiene a la izquiera */
     background-color: #fff; /*  Fondo del navbar */
     overflow-x: hidden; /* Deshabilitar el scroll lateral */
@@ -80,6 +79,21 @@
 #navbar_lateral_utiles{
   width: 50%;
   margin-left: 22%;
+}
+
+#navbar_mi_perfil{
+  width: 45%;
+  margin-left: 24%;
+  margin-top: 150px;
+}
+
+#navbar_mi_perfil i{
+  font-size: 21px;
+  padding-right: 5px;
+}
+
+#navbar_mi_perfil a:hover i{
+  color: #FAA21A;
 }
 
 /* Estilos de los contenedores del perfil del centro educativo del navbar */
@@ -171,8 +185,10 @@
   color: #fff;
   border-radius: 3px;
   border: 0;
+  cursor: pointer;
 }
 
 .contenedor_introduccion .contenedor_boton button:hover{
   background: rgb(245, 148, 2);
 }
+
