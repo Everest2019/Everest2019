@@ -3,9 +3,9 @@
 const tabla = document.querySelector('#tbl_registrar tbody');
 
 let mostrar_datos = () => {
-    let preferencia=listar_preferencia();
+    let preferencia=listar_preferencias();
 
-    for (let i=0; i<listar_preferencia.length; i++){
+    for (let i=0; i<preferencia.length; i++){
         let fila = tabla.insertRow();
         
         fila.insertCell().innerHTML = preferencia[i]['nombre'];

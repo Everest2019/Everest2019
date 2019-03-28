@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const input_titulo = document.querySelector('#txt_titulo');
 const input_fecha = document.querySelector('#fecha');
 const input_desc = document.querySelector('#desc');
