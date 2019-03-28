@@ -2,11 +2,11 @@
 
 
 let registrar_pregunta = (ppregunta, prespuesta) =>{
-   
+
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_preguntas",
         method: "POST",
-        data: { 
+        data: {
 
             pregunta : ppregunta,
             respuesta : prespuesta
@@ -17,10 +17,10 @@ let registrar_pregunta = (ppregunta, prespuesta) =>{
 
     request.done(function(msg){
 
-        swal.fire({ 
+        swal.fire({
             type: 'success',
             title: 'Pregunta registrada correctamente'
-    });    
+    });
 
     });
     request.fail(function( jqXHR, textStatus ) {

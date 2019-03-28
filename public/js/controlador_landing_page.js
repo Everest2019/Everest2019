@@ -34,7 +34,7 @@ let registrar_padre_familia = () =>{
 };
 
 let iniciar_sesion = () =>{
-    window.location.href = './Iniciar_sesion.html';
+    window.location.href = './Iniciar_sesion2.html';
 };
 
 btn_crear_cuenta.addEventListener('click',tipo_usuario);

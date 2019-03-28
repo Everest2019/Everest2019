@@ -53,6 +53,21 @@
     background: rgb(245, 148, 2);
 }
 
+#navbar_mi_perfil_instituciones{
+    width: 45%;
+    margin-left: 22%;
+    
+}
+
+#navbar_mi_perfil_instituciones i{
+    font-size: 21px;
+    padding-right: 5px;
+}
+
+#navbar_mi_perfil_instituciones a:hover i{
+    color: #FAA21A;
+}
+
 /*
 ///////////////////////////////////////
     Estilos de la pagina general

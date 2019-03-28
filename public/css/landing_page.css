@@ -37,13 +37,52 @@ img{
     70%{margin-left: -1400px;}
 }
 
-.carrusel {
-    background-image: url('../img/banner5.jpg');
+.banner {
+    background-image: url('../img/book.jpg');
     width: 100%;
     height: 91%;
     background-size: cover;
     background-position: center;
 }
+
+.banner .titulo_gemas{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10%;
+}
+.banner .titulo_gemas h1{
+    color: #FAA21A;
+    font-size: 85px;
+    font-weight: bold;
+    font-family: 'Quicksand', 'sans-serif';
+}
+
+.banner .titulo_gemas h2{
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Quicksand', 'sans-serif';
+
+}
+
+.banner button{
+    width: 40%;
+    height: 50px;
+    background: #FAA21A;
+    color: #40433E;
+    border-radius: 3px;
+    border: 0;
+    margin-top: 50px;
+    font-size: 18px;
+    font-family: 'Quicksand', 'sans-serif';
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.banner button:hover{
+    background: rgb(245, 148, 2);
+}
+
 
 .separador{
     height: 3px;
@@ -57,7 +96,8 @@ img{
 .btn_centro_educativo{
     margin-right: 5%;
 }
-  .btn_centro_educativo, .btn_padre_familia{
+
+.btn_centro_educativo, .btn_padre_familia{
     height: 150px;
     width: 40%;
     background: #fff;
@@ -70,16 +110,363 @@ img{
     color: #40433E;
     margin-top: 15px;
     margin-bottom: 20px;
-  }
+}
 
-  .btn_centro_educativo:hover, .btn_padre_familia:hover{
+.btn_centro_educativo:hover, .btn_padre_familia:hover{
     position: relative;
     top: 5px;
     color: #FAA21A;
     border: 3px solid #FAA21A;
-  }
+}
 
-  .btn_centro_educativo i, .btn_padre_familia i{
+.btn_centro_educativo i, .btn_padre_familia i{
     padding-bottom: 25px;
     padding-top: 15px;
-  }
+}
+
+.contenedor_info_gemas{
+    height: 95%;
+    background: #f2f2f2;
+}
+
+.contenedor_informacion{
+    display: grid;
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-gap: 10px;
+   padding-top: 35px;
+}
+
+.contenedor_logo{
+    grid-row: 1 / 2;
+}
+.contenedor_logo img{
+    width: 25%;
+    height: 130px;
+    margin-left: 38%;
+}
+
+.contenedor_descripcion{
+    grid-row: 2 / 3; 
+   
+    text-align: center;
+}
+.contenedor_descripcion .separador{
+    height: 3px;
+    background: #FAA21A;
+    width: 50%;
+}
+.contenedor_descripcion p{
+    margin: 0 auto;
+    font-size: 23px;
+    color: #000;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 70%;
+    line-height: 35px;
+}
+
+.contenedor_descripcion button{
+    width: 40%;
+    height: 50px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-top: 50px;
+    font-size: 18px;
+    font-family: 'Quicksand', 'sans-serif';
+    cursor: pointer;
+}
+
+.contenedor_descripcion button:hover{
+    background: rgb(245, 148, 2);
+}
+
+.contenedor_ranking{
+    height: auto;
+    background: #fff;
+}
+
+.contenedor_ranking h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 45px;
+    font-weight: bold;
+    font-family: 'Quicksand', 'sans-serif';
+}
+
+.contenedor_ranking h2{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.contenedor_criterios{
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.contenedor_criterios label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 25%;
+    margin-right: 25px;
+    margin-left: 25%;
+}
+
+.contenedor_criterios select{
+    display: inline-block;
+    width: 30%;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 17px;
+    border: 2px solid rgb(194, 194, 194);
+    transition: all 0.5s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor_criterios select:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+.contenedor_top{
+    height: 2000px;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.separador_top{
+    height: 3px;
+    background: #FAA21A;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 60%; 
+    border-radius: 5px;
+}
+
+.contenedor_top .contenedor_institucion{
+    display: grid;
+    grid-template-columns: 50px 1fr 2fr 200px;
+    grid-gap: 10px;
+    height: 170px;
+    margin-bottom: 25px;
+}
+
+.contenedor_top .contenedor_institucion:hover{
+    background: #f2f2f2;
+}
+
+.contenedor_institucion .posicion{
+    grid-column: 1 / 2;
+}
+
+.contenedor_institucion .posicion p{
+    font-size: 40px;
+    margin-left: 10px;
+    margin-top: 70px;
+    font-weight: bolder;
+    color: #FAA21A;
+}
+
+.contenedor_institucion .logo{
+    grid-column: 2 / 3;
+}
+
+.contenedor_institucion .logo img{
+    height: 150px;
+    width: 75%;
+    margin-left: 12%;
+}
+
+.contenedor_institucion .nombre_ubicacion{
+    grid-column: 3 / 4;
+}
+
+.contenedor_institucion .nombre_ubicacion .nombre{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.contenedor_institucion .nombre_ubicacion .ubicacion{
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.contenedor_institucion .nombre_ubicacion .correo{
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+.contenedor_institucion .nombre_ubicacion .correo span{
+    font-weight: bold;
+    color: #FAA21A;
+    font-size: 20px;
+}
+
+.contenedor_institucion .calificacion{
+    grid-column: 4 / 5;
+    text-align: center;
+}
+
+.contenedor_institucion .calificacion p{
+    font-size: 22px;
+    padding-top: 30px;
+}
+
+.contenedor_institucion .calificacion i{
+    font-size: 25px;
+    padding-top: 20px;
+    color: #FAA21A;
+}
+
+.contenedor_listas_utiles{
+    height: 100%;
+    background: #f2f2f2;
+    padding-bottom: 35px;
+}
+
+.contenedor_listas_utiles h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 45px;
+    font-weight: bold;
+    font-family: 'Quicksand', 'sans-serif';
+}
+
+.contenedor_listas_utiles h2{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.contenedor_listas_utiles .contenedor_primaria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-gap: 20px;
+    width: 40%;
+    margin-left: 6.5%;
+    margin-top: 35px;
+    float: left;
+}
+
+.contenedor_primaria div{
+    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contenedor_primaria div h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #40433E;
+    padding-top: 30px;
+}
+
+.contenedor_primaria div h2{
+    font-size: 30px;
+    color: #40433E;
+}
+
+.contenedor_primaria div:hover h1{
+    color: #FAA21A;
+}
+
+.contenedor_primaria div:hover{
+    border: 3px solid #FAA21A;
+}
+
+.footer{
+    height: 350px;
+    width: 100%;
+    background: #40433E;
+}
+
+.contenedor_footer{
+    display: grid;
+    width: 80%;
+    margin-left: 8%;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: 50px 200px;
+    grid-gap: 10px;
+    padding-top: 45px;
+}
+.contenedor_integrantes{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.titulo_integrantes{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FAA21A;
+}
+.integrantes{
+    margin-top: 20px;
+    text-align: left;
+}
+
+.integrantes span{
+    color: #FAA21A;
+    font-size: 30px;
+    position: relative;
+    top: 4px;
+    padding-right: 5px;
+}
+
+.integrantes p{
+    color: #f2f2f2;
+    padding: 2px 0;
+    font-size: 15px;
+}
+
+.contenedor_profesores{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.titulo_profesores{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FAA21A;
+}
+
+.contenedor_descripcion_footer{
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.contenedor_descripcion_footer p{
+    color: #f2f2f2;
+    font-size:  18px;
+    margin: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+
+.contenedor_descripcion_footer span{
+    color: #FAA21A;
+}
+
+.contenedor_descripcion_footer img{
+    height: 125px;
+    width: 250px;
+    padding-top: 20px;
+}

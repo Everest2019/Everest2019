@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, pservicio_adicional, ptipo_usuario) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, pservicio_adicional, ptipo_usuario, pcontrasena) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -52,9 +52,11 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             fotografia_encargado: pfotografia_encargado,
             aprobado : paprobado,
             estado : pestado,
+            
 
             servicio_adicional: pservicio_adicional,
-            tipo_usuario: ptipo_usuario
+            tipo_usuario: ptipo_usuario,
+            contrasena: pcontrasena
        },
        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
        dataType: "json"
