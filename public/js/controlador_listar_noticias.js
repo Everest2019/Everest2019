@@ -9,7 +9,7 @@ let mostrar_noticias = () => {
         let noticia = document.createElement('div');
         noticia.classList.add('noticia');
 
-        let titulo_noticia = document.createElement('div');
+          let titulo_noticia = document.createElement('div');
         titulo_noticia.classList.add('titulo_noticia');
 
         let texto_titulo_noticia = document.createElement('p');
