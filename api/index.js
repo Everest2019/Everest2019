@@ -80,7 +80,7 @@ app.use('/api', etiquetas);
 
 const lista_utiles = require('./componentes/lista_ustiles/utiles.router');
 app.use('/api',lista_utiles);
-const articulo = require('./componentes/articulo/articulo_route');
+const articulo = require('./componentes/articulo/articulo.route');
 app.use('/api',articulo);
 const citas = require('./componentes/citas/citas.route');
 app.use('/api', citas);

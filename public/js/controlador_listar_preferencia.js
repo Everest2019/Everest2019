@@ -11,6 +11,7 @@ function mostrar_datos() {
 
 
 
+
     let filtro = input_filtro.value;
 
    tabla.innerHTML ='';

@@ -1,10 +1,10 @@
 'use strict';
 
-const noticiaModel = require ('./noticia.model');
+const modelo_noticia = require ('./noticia.model');
 
 module.exports.registrar_noticia = function(req,res){
-    let nuevaNoticia = new noticiaModel({
-        id_ce: req.body.id_ce,
+    let nuevaNoticia = modelo_noticia({
+        id_centro_educativo: req.body.id_centro_educativo,
         titulo: req.body.titulo,
         fecha: req.body.fecha,
         descripcion: req.body.descripcion
@@ -13,22 +13,36 @@ module.exports.registrar_noticia = function(req,res){
         if(error){
             res.json({
                 success:false,
-                msj:'No se pudo registrar la noticia'+error
+                msg:'No se pudo registrar la noticia'+error
             });
         }else{
             res.json({
                 success: true,
-                msj: 'Notica registrada exitosamente'
+                msg: 'Noticia registrada exitosamente'
             })
-        }
+        } 
 
     });
 };
 
 module.exports.listar_noticias = function(req,res){
-    noticiaModel.find().sort({fecha: 'asc'}).then(
-        function(noticias){
-            res.send(noticias);
+    modelo_noticia.find().then(
+        function (noticia) {
+            if (noticia.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        noticia: noticia
+                    }
+                )
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        noticia: 'No se encontraron noticias'
+                    }
+                )
+            }
         }
     );
 };

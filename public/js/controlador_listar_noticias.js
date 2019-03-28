@@ -1,50 +1,53 @@
 'use strict';
+const lista_noticias = document.querySelector('#lista_noticias');
 
-const input_filtrar = document.querySelector('#txt_filtrar_noticia');
-const tabla= document.querySelector('#tbl_noticias tbody');
-
-
-let listaNoticias= new Array(3);
-listaNoticias[0] =new Array ("06.07.2016","Campeonato de boleyball","en esta fecha nuestra institución ganó el campeonato nacional en esta disciplina");
-listaNoticias[1] =new Array("02.11.2018","Partido de futball","En esta ocasión el equipo infantil le metió una goleada al otro equipo");
-listaNoticias[2] =new Array("10.05.1999","Danza aerea","Actividad en la cual estudiantes mostraron sus destrezas en danza aerea");
+let mostrar_noticias = () => {
+    let noticias = listar_noticias();
 
 
+    for(let i = 1; i <= noticias.length; i++){
+        let noticia = document.createElement('div');
+        noticia.classList.add('noticia');
 
-let mostrar_noticias_provisional = () =>{
-    tabla.innerHTML= '';
-    let filtro = input_filtrar.value;
+        let titulo_noticia = document.createElement('div');
+        titulo_noticia.classList.add('titulo_noticia');
 
-    for(let i=0;i<listaNoticias.length;i++){
+        let texto_titulo_noticia = document.createElement('p');
+        texto_titulo_noticia.innerHTML = noticias[i]['titulo'];
 
-      if(listaNoticias[i][1].toLowerCase().includes(filtro.toLowerCase())){
-        let fila = tabla.insertRow();
+        titulo_noticia.appendChild(texto_titulo_noticia);
+        //fecha
+        let fecha_noticia = document.createElement('div');
+        fecha_noticia.classList.add('fecha_noticia');
 
-        fila.insertCell().innerHTML = listaNoticias[i][0];
-        fila.insertCell().innerHTML = listaNoticias[i][1];
-        fila.insertCell().innerHTML = listaNoticias[i][2];
-      }
-    }
-};
+        let texto_fecha_noticia = document.createElement('p');
+        texto_fecha_noticia.innerHTML = noticias[i]['fecha'];
 
-let mostrar_noticias = () =>{
-  tabla.innerHTML= '';
-  let filtro = input_filtrar.value;
-  for(let i=0;i<listaNoticias.length;i++){
+        fecha_noticia.appendChild(texto_fecha_noticia);
+        //descripcion
+        let descripcion_noticia = document.createElement('div');
+        descripcion_noticia.classList.add('descripcion_noticia');
 
-    if(listaNoticias[i]['titulo'].toLowerCase().includes(filtro).toLowerCase()){
-      let fila = tabla.insertRow();
+        let texto_descricion_noticia = document.createElement('p');
+        texto_descricion_noticia.innerHTML = noticias[i]['descripcion'];
 
-      fila.insertCell().innerHTML = listaNoticias[i]['fecha'];
-      fila.insertCell().innerHTML = listaNoticias[i]['titulo'];
-      fila.insertCell().innerHTML = listaNoticias[i]['descripcion'];
+        descripcion_noticia.appendChild(texto_descricion_noticia);
+
+        //todo
+        noticia.appendChild(titulo_noticia);
+        noticia.appendChild(fecha_noticia);
+        noticia.appendChild(descripcion_noticia);
+
+        lista_noticias.appendChild(noticia);
     }
   }
 
-};
+
+
+//const input_filtrar = document.querySelector('#txt_filtrar_noticia');
 
 
 
 
-mostrar_noticias_provisional();
-input_filtrar.addEventListener('keyup', mostrar_noticias_provisional);
+mostrar_noticias();
+//input_filtrar.addEventListener('keyup', mostrar_noticias);
