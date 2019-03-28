@@ -616,3 +616,32 @@ margin-bottom: 10px;
     width: 5px;
     display: none;
 }
+
+/* Contrasena */
+
+.contenido .formulario-15{
+    margin-top: 70px;
+}
+
+.formulario-15 div{
+    margin-bottom: 40px;
+}
+
+.formulario-15 div label{
+    display: inline-block;
+    width: 200px;
+    margin-left: 40px;  
+    font-weight: bold;
+}
+.formulario-15 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+
+.formulario-15 div input{
+    display: inline-block;
+    width: 45%;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 15px;
+}

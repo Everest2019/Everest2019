@@ -137,8 +137,7 @@ img{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr 1fr;
     grid-gap: 10px;
-    margin-top: 35px;
-   
+   padding-top: 35px;
 }
 
 .contenedor_logo{
@@ -206,15 +205,6 @@ img{
     padding-bottom: 10px;
 }
 
-.contenedor_ranking .separador{
-    height: 4px;
-    width: 60%;
-    margin: 0 auto;
-    background: #FAA21A;
-    margin-top: 10px;
-    border-radius: 3px;
-}
-
 .contenedor_criterios{
     width: 60%;
     margin: 0 auto;
@@ -248,10 +238,21 @@ img{
 
 .contenedor_top{
     height: 2000px;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     margin-top: 50px;
 }
+
+.separador_top{
+    height: 3px;
+    background: #FAA21A;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 60%; 
+    border-radius: 5px;
+}
+
 .contenedor_top .contenedor_institucion{
     display: grid;
     grid-template-columns: 50px 1fr 2fr 200px;
@@ -263,10 +264,6 @@ img{
 .contenedor_top .contenedor_institucion:hover{
     background: #f2f2f2;
 }
-/* 
-.contenedor_top .contenedor_institucion div{
-    border: 1px solid red;
-} */
 
 .contenedor_institucion .posicion{
     grid-column: 1 / 2;
@@ -331,4 +328,145 @@ img{
     font-size: 25px;
     padding-top: 20px;
     color: #FAA21A;
+}
+
+.contenedor_listas_utiles{
+    height: 100%;
+    background: #f2f2f2;
+    padding-bottom: 35px;
+}
+
+.contenedor_listas_utiles h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 45px;
+    font-weight: bold;
+    font-family: 'Quicksand', 'sans-serif';
+}
+
+.contenedor_listas_utiles h2{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.contenedor_listas_utiles .contenedor_primaria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-gap: 20px;
+    width: 40%;
+    margin-left: 6.5%;
+    margin-top: 35px;
+    float: left;
+}
+
+.contenedor_primaria div{
+    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.contenedor_primaria div h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #40433E;
+    padding-top: 30px;
+}
+
+.contenedor_primaria div h2{
+    font-size: 30px;
+    color: #40433E;
+}
+
+.contenedor_primaria div:hover h1{
+    color: #FAA21A;
+}
+
+.contenedor_primaria div:hover{
+    border: 3px solid #FAA21A;
+}
+
+.footer{
+    height: 350px;
+    width: 100%;
+    background: #40433E;
+}
+
+.contenedor_footer{
+    display: grid;
+    width: 80%;
+    margin-left: 8%;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: 50px 200px;
+    grid-gap: 10px;
+    padding-top: 45px;
+}
+.contenedor_integrantes{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.titulo_integrantes{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FAA21A;
+}
+.integrantes{
+    margin-top: 20px;
+    text-align: left;
+}
+
+.integrantes span{
+    color: #FAA21A;
+    font-size: 30px;
+    position: relative;
+    top: 4px;
+    padding-right: 5px;
+}
+
+.integrantes p{
+    color: #f2f2f2;
+    padding: 2px 0;
+    font-size: 15px;
+}
+
+.contenedor_profesores{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.titulo_profesores{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FAA21A;
+}
+
+.contenedor_descripcion_footer{
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    text-align: left;
+}
+
+.contenedor_descripcion_footer p{
+    color: #f2f2f2;
+    font-size:  18px;
+    margin: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    line-height: 30px;
+}
+
+.contenedor_descripcion_footer span{
+    color: #FAA21A;
+}
+
+.contenedor_descripcion_footer img{
+    height: 125px;
+    width: 250px;
+    padding-top: 20px;
 }
