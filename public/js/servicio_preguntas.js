@@ -1,13 +1,13 @@
 'use strict';
 
 
-let registrar_pregunta = (ppregunta, prespuesta) => {
+let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_pregunta",
         method: "POST",
         data: {
-
+            id_centro_educativo: pid_centro_educativo,
             pregunta: ppregunta,
             respuesta: prespuesta
         },
@@ -19,7 +19,7 @@ let registrar_pregunta = (ppregunta, prespuesta) => {
 
         swal.fire({
             type: 'success',
-            title: 'Pregunta registrada correctamente'
+            title: 'Pregunta registrada correctamente',
         });
 
     });

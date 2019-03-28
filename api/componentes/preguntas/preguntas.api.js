@@ -4,6 +4,7 @@ const modelo_preguntas = require('./preguntas.model');
 module.exports.registrar_pregunta= (req, res) =>{
     let nueva_pregunta = new modelo_preguntas(
     {
+        id_centro_educativo: req.body.id_centro_educativo,
         pregunta : req.body.pregunta,
         respuesta : req.body.respuesta
     }     

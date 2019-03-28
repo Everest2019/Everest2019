@@ -1,20 +1,20 @@
 body{
     background: #f0f0f0;
 }
-.contenedor_grid{
+.contenedor{
     display: inline-grid;
     grid-template-columns: repeat(4, 2fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     margin: 5px;
 }
-.contenedor_grid h1{
+.contenedor h1{
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
     line-height: 25px;
     text-transform: uppercase;
 }
-.contenedor_grid h3{
+.contenedor h3{
     text-align: center;
     size: 5px;
     font-size: 16px;
@@ -22,7 +22,7 @@ body{
     line-height: 25px;
    margin-bottom: 10px;
 }
-.contenedor_grid p{
+.contenedor p{
     text-align: center;
     font-family: 'Raleway', sans-serif;
     size: 6px;
@@ -32,14 +32,7 @@ body{
     position: relative;
     left: 50px;
     margin-top: 25px;
+    border: 1px solid red;
 }
-.lista_noticias{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 220px);
-    grid-gap: 20px;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: center;
-    margin-top: 60px;
-}
+
 

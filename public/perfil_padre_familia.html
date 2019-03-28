@@ -41,10 +41,12 @@
     </div>
 
     <div class="main">
-       
+        <div>
+            <button>Modificar</button>
+        </div>
         <div class="contenedor_perfil">
-            <div class="contenedor_foto">
-                <img src="../public/img/perfil.jpg" alt="">
+            <div class="contenedor_foto" >
+                <img src="../public/img/user_icon.png" alt="" id="foto_perfil">
             </div>
 
             <div class="contenedor_nombre">
@@ -52,27 +54,26 @@
             </div>
 
             <div class="contenedor_info_nombre" id="contenedor_info_nombre">
-                    <h1> </h1>
-                </div>
+                 
+            </div>
 
             <div class="contenedor_id">
                 <h1>Identificación:</h1>
-                <h1>Tipo:</h1>
             </div>
 
-            <div class="contenedor_tipo">
-                <h1></h1>
+            <div class="contenedor_tipo" id="contenedor_info_id">
+                
             </div>
 
-            <div class="contenedor_provincia">
+            <div class="contenedor_provincia" id="contenedor_info_provincia">
                 <h1>Provincia:</h1>
             </div>
 
-            <div class="contenedor_canton">
+            <div class="contenedor_canton" id="contenedor_info_canton">
                 <h1>Cantón:</h1>
             </div>
 
-            <div class="contenedor_distrito">
+            <div class="contenedor_distrito" id="contenedor_info_distrito">
                     <h1>Distrito:</h1>
                 </div>
 
@@ -80,14 +81,26 @@
                 <h1>Teléfono:</h1>
             </div>
 
+            <div class="contenedor_tel" id="contenedor_info_telefono">
+                <h1></h1>
+            </div>
+
             <div class="contenedor_correo">
                 <h1>Correo:</h1>
             </div>
 
+            <div class="contenedor_correo_padre" id="contenedor_info_correo">
+                <h1></h1>
+            </div>
+
         </div>
+
+        
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/servicio_perfil_padre_familia.js"></script>
+        <script src="js/controlador_perfil_padre_familia.js"></script>
 
 </body>
 
