@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-
-
-    <title>Gemas - Panel Control</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/listar_citas.css">
+    <link rel="stylesheet" href="css/listar_noticias.css">
     <link rel="stylesheet" href="css/panel_control_centro_educativo.css">
 
+    <title>Gemas - Instituciones</title>
 </head>
-
 <body>
-
 
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-
-
 
         <div id="navbar_lateral_regresar">
                 <a href="panel_control_centro_educativo.html">Regresar</a>
@@ -40,9 +33,9 @@
             <div id="navbar_lateral_servicios">
                 <a href="panel_centro_educativo_servicios.html">Servicios</a>
             </div>
-
-            <div id="navbar_lateral_noticias">
-                <a href="panel_centro_educativo_noticias.html">Noticias</a>
+    
+            <div id="navbar_lateral_citas">
+                <a href="panel_centro_educativo_citas.html">Citas</a>
             </div>
     
             <div id="navbar_lateral_actividades">
@@ -65,48 +58,40 @@
             </div>
 
     </div>
-
-
     <div class="main">
 
-        <h1>Citas Agendadas</h1>
-        <h2>Por los padres de familia</h2>
+        <h1 id="nombre_ce"></h1>
+        <h2>Noticias</h2>
+
         <div class="separador"></div>
-
-
-
         <div class="contenido">
-            <div class="contenedor_buscar">
-                <label for="txt_buscar_cita">Buscar: </label>
-                <input type="text" id="txt_buscar_cita">
-            </div>
-
-
-            <table id="tbl_citas" class="tabla_citas">
+          <div class="contenedor_buscar">
+              <label for="txt_filtrar_noticia">Filtrar</label>
+              <input type="text" id="txt_filtrar_noticia">
+        </div>   
+        <button type="button" id="btn_agregar_noticia" class="noticia">Agregar noticia</button>
+        <button type="button" id="btn_modificar_noticia" class="noticia">Modificar noticia</button>
+            <table class="tbl_noticias">
                 <thead>
                     <tr>
-                        <th class="celda_nombre">Nombre</th>
-                        <th class="celda_telefono">Teléfono</th>
-                        <th class="celda_correo">Correo</th>
                         <th class="celda_fecha">Fecha</th>
-                        <th class="celda_hora">Hora</th>
-                        <th class="celda_comentario">Comentario</th>
-                        <th class="celda_acciones">Cancelar</th>
+                        <th class="celda_titulo">Título</th>
+                        <th class="celda_descripcion">Descripción </th>
                     </tr>
                 </thead>
-                <tbody>
-                </tbody>
+                <tbody></tbody>
             </table>
-        </div>
-    </div>
+          </div>
+</div>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="js/servicio_citas.js"></script>
-    <script src="js/controlador_listar_citas_centro_educativo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/servicio_noticia.js"></script>  
+    <script src="js/controlador_sesion.js"></script>
     <script src="js/controlador_panel_centro_educativo.js"></script>
-
 </body>
-
 </html>

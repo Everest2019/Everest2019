@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/panel_control_centro_educativo.css">
+    
+    <title>Gemas - Instituciones</title>
+</head>
+<body>
+   
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+        <div id="navbar_lateral_regresar">
+                <a href="panel_control_centro_educativo.html">Regresar</a>
+            </div>
+    
+            <div id="navbar_lateral_general">
+                <a href="panel_centro_educativo_general.html">General</a>
+            </div>
+                    
+            <div id="navbar_lateral_ubicacion">
+                <a href="panel_centro_educativo_ubicación.html">Ubicación</a>
+            </div>
+    
+            <div id="navbar_lateral_servicios">
+                <a href="panel_centro_educativo_servicios.html">Servicios</a>
+            </div>
+    
+            <div id="navbar_lateral_citas">
+                <a href="panel_centro_educativo_citas.html">Citas</a>
+            </div>
+    
+            <div id="navbar_lateral_noticias">
+                <a href="panel_centro_educativo_noticias.html">Noticias</a>
+            </div>
+    
+            <div id="navbar_lateral_actividades">
+                <a href="panel_centro_educativo_actividades.html">Actividades</a>
+            </div>
+    
+            <div id="navbar_lateral_utiles" >
+                <a href="panel_centro_educativo_utiles.html">Listas de Útiles</a>
+            </div>
+            <div id="navbar_lateral_reportes">
+                <a href="panel_centro_educativo_reportes.html">Reportes</a>
+            </div>
+    
+            <div id="contenedor_cerrar_sesion">
+                <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
+            </div>
+        
+    </div>
+    
+    <div class="main">
+
+        <h1 id="nombre_ce"></h1>
+        <h2>Contacto</h2>
+        
+        <div class="separador"></div>
+
+        
+        <!-- Informacion de la pagina web, correo, telefono y fax -->
+        <div class="contenedor_contacto">
+            
+            <div class="contenedor_item_contacto icono_web">
+                <i class="fas fa-globe-americas fa-4x web"></i>
+            </div>
+
+            <div>
+                <p id="pagina_web" class="contenido_web"></p>
+            </div>
+
+            <div class="contenedor_item_contacto icono_correo">
+                <i class="fas fa-envelope fa-3x correo"></i>
+            </div>
+            <div>
+                <p id="correo_electronico" class="contenido_correo"></p>
+            </div>
+
+            <div class="contenedor_item_contacto icono_telefono">
+                <i class="fas fa-phone fa-3x telefono"></i>
+            </div>
+            <div>
+                <p id="telefono" class="contenido_telefono">Teléfono: </p>
+                <p id="fax" class="contenido_telefono">Fax: </p>
+            </div>
+
+        </div>
+
+        <!-- Botones de solicitud de informacion y solicitud de citas -->
+        <div class="contenedor_botones">
+            
+            <div class="informacion">
+                <button type="button" id="btn_informacion">Recibe más información del Centro Educativo</button>
+            </div>
+
+            <div class="citas">
+                <button type="button" id="btn_cita">Solicita una cita con el Centro Educativo</button>
+            </div>
+        </div>
+
+        <!-- Contenedor de las redes sociales -->
+        <div class="fondo_gris_contenedor">
+
+            <div class="contenedor_redes_sociales">
+                <div class="titulo_redes_sociales">
+                    <p>Redes sociales</p>
+                </div>
+
+                <div class="separador_redes_sociales"></div>
+
+                <div id="iconos_redes" class="contenedor_iconos_redes">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_contacto_centro_educativo.js"></script>
+    <script src="js/controlador_sesion.js"></script>
+    <script src="js/controlador_panel_centro_educativo.js"></script>
+</body>
+</html>
