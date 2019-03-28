@@ -40,7 +40,9 @@ let mostrar_noticias = () => {
 
         lista_noticias.appendChild(noticia);
     }
-};
+  }
+
+
 
 //const input_filtrar = document.querySelector('#txt_filtrar_noticia');
 

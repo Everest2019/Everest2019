@@ -78,13 +78,16 @@ div input[type=text]{
     width: 300px;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
+    
     font-size: 15px;
 }
-div input[type=radio]{
+div input[type=number]{
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
 }
 .contenido .formulario-1{
     margin-top: 12px;
@@ -93,12 +96,15 @@ div input[type=radio]{
 .formulario-1 form div{
     margin-bottom: 40px;
 }
-
 .formulario-1 div label{
     display: inline-block;
     width: 200px;
-    margin-left: 40px;  
+    margin-left: 15px;  
     font-weight: bold;
+}
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
 }
 .contenido .formulario-2{
     margin-top: 40px;
@@ -107,12 +113,26 @@ div input[type=radio]{
 .formulario-2 form div{
     margin-bottom: 30px;
 }
-
 .formulario-2 div label{
     display: inline-block;
+    width: 200px;
     margin-left: 40px;  
     font-weight: bold;
-    width: 100px;
+}
+.formulario-2 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-2 div select{
+    display: inline-block;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+.formulario-2 div select{
+    cursor: pointer;
 }
 .contenido.formulario-3{
     margin-top: 52px;
@@ -125,6 +145,10 @@ div input[type=radio]{
     margin-left: 40px;  
     font-weight: bold;
     width: 100px;
+}
+.formulario-3 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
 }
 .formulario-3 div select{
     display: inline-block;
@@ -141,13 +165,65 @@ div input[type=radio]{
     border-radius: 3px;
     border: 2px solid gray;
 }
-.contenido.formulario-4{
+#img_padre_familia{
+    height: 200px;
+    width: 40%;
+    margin-left: 30%;
+}
+#btn_subir_foto{
+    width: 43%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 28%;
+    margin-top: 30px;
+}
+#btn_subir_foto:hover{
+    background: rgb(245, 148, 2);
+}
+#url_foto_perfil{
+    display: none;
+} 
+.contenido.formulario-5{
+    margin-top: 52px;
+}
+.formulario-5 form div{
+    margin-bottom: 50px;
+}
+.formulario-5 div label{
+    display: inline-block;
+    margin-left: 40px;  
+    font-weight: bold;
+    width: 100px;
+}
+.formulario-5 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-5 div select{
+    display: inline-block;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+.formulario-5 div select{
+    cursor: pointer;
+}
+.formulario-5 div input {
+    border-radius: 3px;
+    border: 2px solid gray;
+}
+.contenido.formulario-6{
   margin-top: 52px;
 }
-.formulario-4 form div{
+.formulario-6 form div{
   margin-bottom: 50px;
 }
-.formulario-4 button{
+.formulario-6 button{
     width: 80%;
     height: 50px;
     background: #FAA21A;
@@ -157,6 +233,10 @@ div input[type=radio]{
     margin-top: 25px;
     margin: 73px
 }
-.formulario-4 button:hover{
+.formulario-6 button:hover{
   background-color: rgb(245, 148, 2);
+}
+
+.borde{
+    border: 2px solid gray;
 }
