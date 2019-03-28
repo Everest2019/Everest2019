@@ -60,7 +60,6 @@ div input[type=text]{
     border-radius: 3px;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
 }
 
@@ -89,7 +88,6 @@ div input[type=text]{
     resize: none;
     border: 2px solid gray;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     outline: none;
 }
 .formulario-1 textarea:focus{
@@ -109,7 +107,6 @@ div input[type=text]{
 .formulario-1 div button:hover{
     background: rgb(245, 148, 2);
 }
-
 
 
 
