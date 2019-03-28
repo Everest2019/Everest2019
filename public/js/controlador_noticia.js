@@ -42,7 +42,7 @@ let registrar_datos = () => {
         let titulo = input_titulo.value;
         let fecha = input_fecha.value;
         let descripcion = input_desc.value;
-        console.log("registrado");
+        console.log(id_centro_educativo);
         registrar(id_centro_educativo,titulo,fecha,descripcion);
     }else{
         swal.fire({

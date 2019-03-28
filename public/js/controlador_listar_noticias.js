@@ -9,7 +9,9 @@ listaNoticias[0] =new Array ("06.07.2016","Campeonato de boleyball","en esta fec
 listaNoticias[1] =new Array("02.11.2018","Partido de futball","En esta ocasión el equipo infantil le metió una goleada al otro equipo");
 listaNoticias[2] =new Array("10.05.1999","Danza aerea","Actividad en la cual estudiantes mostraron sus destrezas en danza aerea");
 
-
+let get_noticias_ce = () =>{
+  let noticias= [];
+};
 
 let mostrar_noticias_provisional = () =>{
     tabla.innerHTML= '';
