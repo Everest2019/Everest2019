@@ -52,5 +52,3 @@ let listar = () => {
     return lista_pregunta;
 
 };
-
-
