@@ -1,0 +1,78 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main{
+    height: 100%;
+}
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.contenido{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.contenido .formulario-1{
+    margin-top: 60px;
+}
+
+div input[type=text]{
+    display: inline-block;
+    width: 300px;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.formulario-1 div label{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 35px;
+    width: 200px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.nombre_pregunta p{
+    font-size: 20px;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: bold;
+    padding-top: 20px;
+    text-align: center;
+    width: 1000px;
+    height: 50px;
+    margin-top: 20px;
+    background: gray;
+    position: relative;
+    left: 53px;
+}
+
+.respuesta_pregunta p{
+    font-size: 20px;
+    font-family: 'Roboto', 'sans-serif';
+    padding-top: 20px;
+    text-align: center;
+    width: 1000px;
+    height: 50px;
+    margin-top: 20px;
+    background: #f2f2f2;
+    position: relative;
+    left: 53px;
+}

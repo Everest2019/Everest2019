@@ -1,13 +1,16 @@
 
 body{
     background: #F2F2F2;;
+} 
+  
+.slidershow-container{
+    margin-left: 15%;
 }
-
 
 .contenedor{
     display: grid;    
     background: #fff;
-    width: 90%;
+    width: 85%;
     max-width: 1100px;
     margin: 0 auto;
     border: 1px solid #000;
@@ -27,7 +30,7 @@ body{
     font-size: 40px;
     font-weight: bolder;
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .separador{
     grid-column: 3 / 4;
@@ -84,3 +87,54 @@ div input[type=radio]{
     margin: 0 auto;
     font-size: 16px;
 }
+
+
+
+/* Estilos del navbar lateral */
+.navbar_lateral {
+    height: 100%; /* Que ocupe todo el ancho de la pantalla */
+    width: 15%; /*Definir el ancho del navbar */
+    position: fixed; /* Fija el navbar, que no se mueva con el scroll */
+    z-index: 1; /* Se mantiene en la parte superior */
+    /* top: 71px; Se mantiene en la parte superior */
+    left: 0; /* Se mantiene a la izquiera */
+    background-color: #fff; /*  Fondo del navbar */
+    overflow-x: hidden; /* Deshabilitar el scroll lateral */
+    padding-top: 15px;
+    border-right: 1px solid #000;
+  }
+  
+  /* Links de la barra de navegacion lateral */
+  .navbar_lateral a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #111;
+    display: block;
+    padding-bottom: 10px;  
+  }
+  
+
+
+  .separador_navbar{
+      height: 15px;
+      color: #FAA21A;
+  }
+
+  /* Estilos de los contenedores del navbar lateral */
+  .navbar_lateral div{
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .navbar_lateral img{
+    width: 80%;   
+    height: 100px;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+  .navbar_lateral div:hover{
+    border-bottom: 3px solid #FAA21A;
+}
+
+

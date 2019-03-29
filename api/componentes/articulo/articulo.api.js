@@ -1,5 +1,5 @@
 'use strict';
-const modelo_articulo = require('./articulo_model');
+const modelo_articulo = require('./articulo.model');
 
 module.exports.registrar_articulo = (req, res) => {
     let nuevo_articulo = new modelo_articulo(
@@ -13,14 +13,14 @@ module.exports.registrar_articulo = (req, res) => {
             res.json(
                 {
                     success: false,
-                    msg: 'No se pudo ingresar el artículo'
+                    msg: `No se pudo ingresar el artículo`
                 }
             );
         } else {
             res.json(
                 {
                     success: true,
-                    msg: 'Se registro correctamente'
+                    msg: `Se registro correctamente`
                 }
             );
         }

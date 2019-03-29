@@ -1,16 +1,29 @@
 'use strict';
 
-const tabla = document.querySelector('#tbl_registrar tbody');
+const tabla = document.querySelector('#tbl_preferencia tbody');
+const input_filtro = document.querySelector('#txt_filtar')
+let preferencia=listar_preferencias();
 
-let mostrar_datos = () => {
-    let preferencia=listar_preferencia();
+mostrar_datos();
+input_filtro.addEventListener('keyup', mostrar_datos);
 
-    for (let i=0; i<listar_preferencia.length; i++){
-        let fila = tabla.insertRow();
+function mostrar_datos() {
 
-        fila.insertCell().innerHTML = preferencia[i]['nombre'];
-        fila.insertCell().innerHTML=preferencia[i]['informacion'];
+
+
+
+    let filtro = input_filtro.value;
+
+   tabla.innerHTML ='';
+
+
+    for(let i = 0 ; i< preferencia.length; i++){
+        if(preferencia[i]['nombre'].toLowerCase().includes(filtro.toLowerCase())){
+            let fila = tabla.insertRow();
+
+            fila.insertCell().innerHTML = preferencia[i]['nombre'];
+            fila.insertCell().innerHTML = preferencia[i]['informacion'];
+        }
     };
 };
 
-mostrar_datos();

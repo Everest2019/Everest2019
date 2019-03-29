@@ -1,109 +1,100 @@
-body{
-    background: #F2F2F2;
+.main{
+    
+    height: 100%;
 }
-.error_input{
-    border: 2px solid #ED4C67;
-}
-.titulo1{
-    font-size: 33px;
-    font-weight: bold;
+.main h1{
     text-align: center;
-}
-.titulo2{
-    font-size: 25px; 
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;   
-}
-.contenedor{
-    display: grid;    
-    background: #fff;
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    border: 1px solid #000;
-    margin-top: 20px;
-    height: 400px;
-    grid-template-columns: 100px 2fr 2px 4fr 100px;
-    grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
-    grid-gap: 10px;
-}
-/* Colocacacion basica de los elementos */
-
-.descripcion_contenedor{
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-    text-align: left;
-}
-.descripcion_contenedor p{
     font-size: 40px;
-    font-weight: bolder;
-    margin-top: 15px;
-    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 25px;
+    font-weight: bold;
 }
-.separador{
-    grid-column: 3 / 4;
-    grid-row: 2 / 5;
+
+.main h2{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+}
+
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
     background: #FAA21A;
-}
-.contenido{
-    grid-column: 4 / 5;
-    grid-row: 2 / 5;
+    margin-top: 10px;
+    border-radius: 3px;
 }
 
-/* Estilos generales de los elementos del contenido */
 
-div input[type=text]{
+.contenedor_filtraciones{
+    padding-top: 40px;
+    width: 85%;
+    margin-left: 3%;
+    display: flow-root;
+}
+
+.contenedor_buscar{
+    width: 50%;
+    float: left;
+}
+
+.contenedor_buscar label{
     display: inline-block;
-    width: 300px;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 20%;
+}
+
+.contenedor_buscar input{
+    display: inline-block;
+    width: 70%;
     height: 25px;
     border-radius: 3px;
-    border: 2px solid gray;
-    font-size: 15px;
-    outline: none;
+    font-size: 20px;
+    border: 2px solid rgb(194, 194, 194);
+    transition: all 0.5s ease;
+    font-family: 'Raleway', sans-serif;
 }
 
-/* Estilos primer contenedor */
-
-.contenido .formulario-1{
-    margin-top: 60px;
-}
-
-.formulario-1 form div{
-    margin-bottom: 40px;
-}
-.formulario-1 div label{
-    display: inline-block;
-    width: 200px;
-    margin-left: 40px;  
-    font-weight: bold;
-}
-.formulario-1 input:focus{
+.contenedor_filtraciones input:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div textarea{
-    width: 295px;
-    height: 75px;
-    resize: none;
-    border: 2px solid gray;
-    font-size: 15px;
-    outline: none;
+
+#tbl_preferencia{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
 }
-.formulario-1 textarea:focus{
-    border: 2px solid #FAA21A;
-    outline: none;
-}
-.formulario-1 div button{
-    width: 54%;
-    height: 40px;
-    margin-left: 42%;
+#tbl_preferencia tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%;     
+    right: 90px;
     background: #FAA21A;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    
 }
-.formulario-1 div button:hover{
-    background: rgb(245, 148, 2);
+#tbl_preferencia tr td{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: #F2F2F2;
 }
+#tbl_preferencia tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: #F2F2F2;
+}
+
+
+
+

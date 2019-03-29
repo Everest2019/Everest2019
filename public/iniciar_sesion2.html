@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gemas-Iniciar Sesión</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/Iniciar_sesion.css">
+ </head>
+<body>
+    <header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="#">Inicio</a>
+                <a href="#">Iniciar sesión</a>
+                <a href="#">Crear cuenta</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor-form">
+
+            <div class="formulario">
+                <h2>Iniciar Sesión</h2>
+                <form action="#">
+                    <input type="email" placeholder="Correo Electrónico" required id="txt_correo">
+                    <input type="password" placeholder="Contraseña" required id="txt_contrasena">
+                    <button type="button" id="btn_iniciar">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_inicio.js"></script>
+    <script src="js/controlador_iniciar_sesion.js"></script>
+</body>
+</html>

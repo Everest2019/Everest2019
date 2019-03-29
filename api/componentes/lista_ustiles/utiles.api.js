@@ -4,6 +4,7 @@ const modelo_lista_utiles = require('./utiles.model');
 module.exports.registrar_utiles = (req, res) => {
     let nuevo_utiles = new modelo_lista_utiles(
         {
+            articulo:req.body.articulo,
             cantidad: req.body.cantidad,
             descripcion: req.body.descripcion
         }
