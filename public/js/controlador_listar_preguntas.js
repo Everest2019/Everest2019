@@ -1,11 +1,20 @@
-'use stric';
-
+'use strict';
 const lista_preguntas = document.querySelector('#lista_preguntas');
+const input_buscar = document.querySelector('#txt_buscar');
+let id = localStorage.getItem('centro_educativo');
+
+
 
 let mostrar_datos = () =>{
     let preguntas = listar();
+    let filtro = input_buscar.value;
+  /*  if(preguntas[i]['id_centro_educativo'].includes(id)){
+  }*/
 
     for(let i = 1; i<=preguntas.length; i++){
+    /*  if(preguntas[i]['pregunta'].includes(filtro)){
+        console.log(preguntas[i]['pregunta']);
+      }*/
         let pregunta_frecuente = document.createElement('div');
         pregunta_frecuente.classList.add('pregunta');
 

@@ -1,5 +1,6 @@
 'use strict';
 const lista_noticias = document.querySelector('#lista_noticias');
+const input_filtrar = document.querySelector('#txt_buscar');
 
 let mostrar_noticias = () => {
   let noticias = listar_noticias();
