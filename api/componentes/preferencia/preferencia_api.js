@@ -29,7 +29,7 @@ module.exports.registrar = (req, res) => {
     });
 
 };
-module.exports.listar_preferencia = (req, res) => {
+module.exports.listar_preferencias = (req, res) => {
     modelo_registrar.find().then(
         function (registro) {
             if (registro.length > 0) {

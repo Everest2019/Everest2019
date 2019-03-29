@@ -10,12 +10,13 @@ const input_edad_hijos = document.querySelector('#txt_edad_hijos');
 const select_nacionalidad = document.querySelector('#select_nacionalidad');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
+const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
 const input_provincia = document.querySelector('#provincia');
 const input_canton = document.querySelector('#canton');
 const input_distrito = document.querySelector('#distrito');
 const boton_enviar = document.querySelector('#btn_enviar');
 const boton_subir_foto = document.querySelector('#btn_subir_foto');
-const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
+
 
 
 let validar =() =>{
@@ -105,14 +106,17 @@ let obtener_datos = () =>{
     let telefono = input_telefono.value;
     let cantidad_hijos = input_cantidad_hijos.value;
     let edad_hijos = input_edad_hijos.value;
-    let nacionalidad = select_nacionalidad;
+    let nacionalidad = select_nacionalidad.value;
     let identificacion = input_identificacion.value;
-    let tipo_identificacion = select_tipo_identificacion;
+    let tipo_identificacion = select_tipo_identificacion.value;
+    let foto = input_foto_padre_familia.value;
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let distrito = input_distrito.value;
+    let estado = true;
+    let tipo_usuario = 'padre_familia';
 
-    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, provincia, canton, distrito);
+    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario);
   
   }else{
     swal.fire({

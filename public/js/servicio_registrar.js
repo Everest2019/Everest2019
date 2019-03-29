@@ -1,11 +1,11 @@
 'use strict'
 
-let listar_preferencia = () => {
-    let listar_preferencia = [];
+let listar_preferencias = () => {
+    let listar_preferencias = [];
 
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/listar_preferencia",
+        url: "http://localhost:4000/api/listar_preferencias",
         method: "GET",
         data: {
 
@@ -15,8 +15,8 @@ let listar_preferencia = () => {
         async: false
     });
 
-    request.done(function (res) {
-        listar_preferencia = res.preferencia;
+    request.done(function (res) { 
+        listar_preferencias = res.preferencia;
 
     });
 
@@ -24,7 +24,7 @@ let listar_preferencia = () => {
         alert("Request failed: " + textStatus);
 
     });
-    return listar_preferencia;
+    return listar_preferencias;
 
 };
 let registrar = (pnombre, pinformacion) => {
