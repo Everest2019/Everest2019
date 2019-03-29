@@ -39,14 +39,14 @@
   /* Estilos de los contenedores del navbar lateral */
   .navbar_lateral div{
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
   }
 
   .navbar_lateral img{
     width: 80%;   
     height: 100px;
     margin-left: 10%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
   .navbar_lateral div:hover{
@@ -55,7 +55,7 @@
 
 /*Estilos de los contenedor del index del navbar lateral */
 #navbar_lateral_inicio{
-  margin-top: 30px;
+  margin-top: 15px;
   width: 30%;
   margin-left: 33%;
 }
@@ -81,6 +81,11 @@
   margin-left: 22%;
 }
 
+#navbar_lateral_preguntas{
+  width: 70%;
+  margin-left: 13%;
+}
+
 #navbar_mi_perfil{
   width: 45%;
   margin-left: 24%;
@@ -98,7 +103,7 @@
 
 /* Estilos de los contenedores del perfil del centro educativo del navbar */
 #navbar_lateral_regresar{
-  margin-top: 30px;
+  margin-top: 20px;
   width: 30%;
   margin-left: 31%;
 }
@@ -192,3 +197,6 @@
   background: rgb(245, 148, 2);
 }
 
+.no_display{
+  display: none;
+}

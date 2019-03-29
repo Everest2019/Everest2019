@@ -7,6 +7,24 @@ const telefono = document.querySelector('#telefono');
 const fax = document.querySelector('#fax');
 const contenedor_redes = document.querySelector('#iconos_redes');
 const btn_cita = document.querySelector('#btn_cita');
+const btn_informacion = document.querySelector('#btn_informacion');
+
+
+a_regresar.addEventListener('click', function(){
+    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else{
+        window.location.href = './instituciones.html';
+    }
+});
+
+a_regresar.classList.add('estilos_a');
+
+if(localStorage.getItem('tipo_usuario') == 'administrador'){
+    btn_cita.classList.add('no_display');
+    btn_informacion.classList.add('no_display');
+}
 
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');
