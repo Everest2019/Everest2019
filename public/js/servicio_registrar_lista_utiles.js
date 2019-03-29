@@ -13,24 +13,25 @@ let listar_utiles=()=>{
     });
 
     request.done(function (res) {
-        listar_utiles = res.lista_utiles;
+        listar_utiles = res.utiles;
     });
     
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
     return listar_utiles;
 
 };
 
-let registrar_utiles = (particulo,pcantidad,pdescripcion)=>{
+let registrar = (particulo,pcantidad,pdescripcion)=>{
     let request = $.ajax({
-        url: "http://localhost:4000/api/registrar_utiles",// se necesita el protocolo http para que funciona por que lo pide
+        url: "http://localhost:4000/api/registrar",// se necesita el protocolo http para que funciona por que lo pide
         method: "POST",
         data:{
             articulo:particulo,
             cantidad:pcantidad,
-            descripcion: pdescripcion
+            descripcion: pdescripcion,
+            tipo_usuario:ptipo_usuario,
+            id_centro_educativo: pid_centro_educativo
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -43,7 +44,6 @@ let registrar_utiles = (particulo,pcantidad,pdescripcion)=>{
     });
 
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
 
 
