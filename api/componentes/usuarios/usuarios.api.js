@@ -11,7 +11,7 @@ module.exports.registrar_padre_familia = (req, res) =>{
             identificacion : req.body.identificacion,
             tipo_identificacion : req.body.identificacion,
             distrito : req.body.distrito,
-            cantón : req.body.canton,
+            canton : req.body.canton,
             provincia : req.body.provincia,
             cantidad_hijos : req.body.cantidad_hijos,
             edad_hijos : req.body.edad_hijos,
