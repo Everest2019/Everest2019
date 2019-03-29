@@ -6,6 +6,18 @@ const contenedor_caracteristicas = document.querySelector('#contenedor_caracteri
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
+const a_regresar = document.querySelector('#a_regresar');
+
+a_regresar.addEventListener('click', function(){
+    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else{
+        window.location.href = './instituciones.html';
+    }
+});
+
+a_regresar.classList.add('estilos_a');
 
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');

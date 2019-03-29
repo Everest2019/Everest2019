@@ -77,6 +77,27 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
      }); 
 };
 
+let registrar_servicio = (pcedula_juridica, pservicio) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/registrar_servicio",
+      method: "POST",
+      data: {
+          cedula_juridica: pcedula_juridica,
+          servicio: pservicio
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json"
+  });
+  request.done(function (msg) {
+    console.log('Servicio agregado correctamente');
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      alert("Request failed:" + textStatus);
+  });
+
+};
+
 let listar_instituciones = () => {
   let lista_instituciones = [];
   let request = $.ajax({

@@ -12,7 +12,7 @@ function mostrar_datos() {
 
     const tabla = document.querySelector('#tbl_citas tbody');
     let filtro = input_filtrar.value;
-    let id_centro_educativo = localStorage.getItem('centro_educativo');   
+    let id_centro_educativo = localStorage.getItem('id_usuario');   
     
     tabla.innerHTML = '';
 
@@ -21,6 +21,8 @@ function mostrar_datos() {
         let padre_familia = buscar_padre_familia(lista_citas[i]['id_padre_familia']);
 
          if (lista_citas[i]['id_centro_educativo'].includes(id_centro_educativo) && padre_familia['primer_nombre'].toLowerCase().includes(filtro.toLowerCase())) {
+
+            
 
             let fila = tabla.insertRow();
 

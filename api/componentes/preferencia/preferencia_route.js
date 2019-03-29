@@ -9,7 +9,7 @@ router.route('/registrar')
             api_registrar.registrar(req, res);
         }
     );
-router.route('/listar')
+router.route('/listar_preferencias')
     .get(
         function (req, res) {
             api_registrar.listar_preferencias(req, res);

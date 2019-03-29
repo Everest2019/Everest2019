@@ -23,11 +23,12 @@ let listar_utiles=()=>{
 
 };
 
-let registrar_utiles = (pcantidad,pdescripcion)=>{
+let registrar_utiles = (particulo,pcantidad,pdescripcion)=>{
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_utiles",// se necesita el protocolo http para que funciona por que lo pide
         method: "POST",
         data:{
+            articulo:particulo,
             cantidad:pcantidad,
             descripcion: pdescripcion
         },
@@ -37,7 +38,7 @@ let registrar_utiles = (pcantidad,pdescripcion)=>{
     request.done(function (msg) {
         swal.fire({
             type: 'success',
-            title: ` la cantidad de tiles ${pcantidad} con la descripcion ${pdescripcion} ha sido todo un exito `
+            title: ` Los articulos ${particulo}con la cantidad de tiles ${pcantidad} con la descripcion ${pdescripcion} ha sido todo un exito `
         });
     });
 

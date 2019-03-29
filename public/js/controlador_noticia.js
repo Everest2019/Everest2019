@@ -1,12 +1,13 @@
 'use strict';
 
 const input_titulo = document.querySelector('#txt_titulo');
-const input_fecha = document.querySelector('#fecha');
-const input_desc = document.querySelector('#desc');
+const input_fecha = document.querySelector('#input_fecha');
+const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_registrar = document.querySelector('#btn_registrar');
 
-let id_centro_educativo = localStorage.getItem('centro_educativo');
+document.querySelector("#input_fecha").valueAsDate = new Date();
 
+let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let validar = () =>{
     let error = false;
@@ -27,28 +28,28 @@ let validar = () =>{
         input_fecha.classList.remove('error_input');
     }
 
-    if(input_desc.value ==''){
+    if(input_descripcion.value ==''){
         error=true;
-        input_desc.classList.add('error_input');
-        input_fecha.classList.remove('borde');
+        input_descripcion.classList.add('error_input');
+        input_descripcion.classList.remove('borde');
     }else{
-        input_desc.classList.remove('error_input');
+        input_descripcion.classList.remove('error_input');
     }
     return error;
 };
 
 let registrar_datos = () => {
     if(validar()==false){
+        let centro_educativo = id_centro_educativo;
         let titulo = input_titulo.value;
         let fecha = input_fecha.value;
-        let descripcion = input_desc.value;
-        console.log("registrado");
-        registrar(id_centro_educativo,titulo,fecha,descripcion);
+        let descripcion = input_descripcion.value;
+        registrar(centro_educativo,titulo,fecha,descripcion);
     }else{
         swal.fire({
             type:'warning',
-            title:'No se pudo registrar :(',
-            text: 'Por favor revise todos los campos'
+            title:'No se pudo registrar',
+            text: 'Por favor revise los campos resaltados'
         });
     }
 

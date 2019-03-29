@@ -71,7 +71,6 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             logo: req.body.logo,
             matricula: req.body.matricula,
             mensualidad: req.body.mensualidad,
-            contrasena: req.body.contrasena,
             imagen_portada: req.body.imagen_portada,
             galeria1: req.body.galeria1,
             galeria2: req.body.galeria2,
@@ -93,8 +92,8 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             fotografia_encargado: req.body.fotografia_encargado,
             aprobado: req.body.aprobado,
             estado: req.body.estado,
-            servicio_adicional: req.body.servicio_adicional,
-            tipo_usuario: req.body.tipo_usuario
+            tipo_usuario: req.body.tipo_usuario,
+            contrasena: req.body.contrasena
         }
     );
     modelo_centro_educativo.save(function(error){
@@ -115,6 +114,29 @@ module.exports.registrar_centro_educativo = (req, res) =>{
         }
     });
 }
+
+module.exports.agregar_servicios = (req,res) =>{
+    modelo_usuario.update(
+        {cedula_juridica: req.body.cedula_juridica},
+        {
+            $push:
+            {
+                'servicios':
+                {
+                    servicio: req.body.servicio
+                }
+            }
+        },
+        function (error){
+            if(error){
+                res.json({ success: false, msg: `No se pudo agregar el servicio, revise el siguiente error ${error}`});
+            }
+            else{
+                res.json({ success: true, msg: `El servicio fue agregado correctamente`});
+            }
+        }
+    )
+};
 
 module.exports.registrar_administrador = (req, res) =>{
     let modelo_administrador = new modelo_usuario(

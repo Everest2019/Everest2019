@@ -7,14 +7,7 @@ let lista_articulo = listar();
 mostrar_datos();
 input_filtrar.addEventListener('keyup', mostrar_datos);
 
-function obtener_datos() {
-    let nombre = input_nombre.value;
-    let descripcion = input_descripcion.value;
 
-    registrar_articulo(nombre, descripcion);
-    lista_articulo = listar();
-    mostrar_datos();
-};
 function mostrar_datos() {
 
 

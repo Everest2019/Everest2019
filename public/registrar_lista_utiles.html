@@ -7,9 +7,38 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/registrar_lista_utiles.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 
 <body>
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+
+
+        <div id="navbar_lateral_inicio" class="pagina_actual">
+            <a href="index.html">Inicio</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="instituciones.html">Instituciones</a>
+        </div>
+
+        <div id="navbar_lateral_favoritos">
+            <a href="#">Favoritos</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="centros_educativos_cercanos.html"> Centros Educativos Cercanos</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="lista_utiles.html">Lista de útiles</a>
+        </div>
+
+    </div>
     <header id="header_principal">
         <nav>
             <div class="nombre_proyecto">
@@ -39,34 +68,48 @@
                     <div class="separador"></div>
                     <div class="contenido">
                         <div>
-                                <form class="utiles" id="frm_uitiles">
-                                        <table id="tbl_utiles">
-                                            <tr id="linea">
-                                                <th>
-                                                    <div id="numeros">
-                                                        <label for="txt_cantidad">Cantidad de articulos</label>
-                                                        <input type="number" id="txt_cantidad">
-        
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div>
-                                                        <label for="txt_descripcion">Descripción</label>
-                                                        <textarea id="txt_descripcion"></textarea>
-                                                    </div>
-                                                </th>
-                                            </tr>
-        
-                                        </table>
-        
-        
-        
-                                        <div>
-                                            <input type="button" id="btn_guardar" value="Guardar">
-                                        </div>
-        
-        
-                                    </form>
+                            <form class="utiles" id="frm_uitiles">
+                                <table id="tbl_utiles">
+                                    <tr id="linea">
+                                        <th>
+                                            <div id="slt_articulo">
+                                                <select name="articulo" id="slt_articulo">
+                                                    <option value="boligrafos">Boligrafo</option>
+                                                    <option value="cuadernos">Cuaderno</option>
+                                                    <option value="goma">Pegamento</option>
+                                                    <option value="diccionario">Diccionario</option>
+                                                    <option value="hojas"> Hojas</option>
+                                                    <option value="lapices-de-colores">Lapices de colores</option>
+                                                    <option value="caja-de-lapices">Caja de lapices de grfito</option>
+                                                    <option value="tijeras">Tijeras</option>
+                                                </select>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div id="numeros">
+                                                <label for="txt_cantidad">Cantidad de articulos</label>
+                                                <input type="number" id="txt_cantidad">
+
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div>
+                                                <label for="txt_descripcion">Descripción</label>
+                                                <textarea id="txt_descripcion"></textarea>
+                                            </div>
+                                        </th>
+                                    </tr>
+
+                                </table>
+
+
+
+                                <div>
+                                    <input type="button" id="btn_guardar" value="Guardar">
+                                </div>
+
+
+                            </form>
                         </div>
 
                     </div>
@@ -76,8 +119,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="js/servicio_registrar_lista_utiles.js"></script>
-<script src="js/controlador_registrar_lista_utiles.js"></script>
+    <script src="js/servicio_registrar_lista_utiles.js"></script>
+    <script src="js/controlador_registrar_lista_utiles.js"></script>
 </body>
 
 </html>

@@ -54,18 +54,26 @@
 }
 
 #navbar_mi_perfil_instituciones{
-    width: 45%;
-    margin-left: 22%;
+    width: 50%;
+    margin-left: 26%;
+    margin-top: 25px;
+    text-align: left;
     
 }
 
 #navbar_mi_perfil_instituciones i{
     font-size: 21px;
+    float: left;
     padding-right: 5px;
+    
 }
 
 #navbar_mi_perfil_instituciones a:hover i{
     color: #FAA21A;
+}
+
+#navbar_mi_perfil_instituciones:hover{
+    border: 0;
 }
 
 /*
@@ -545,4 +553,8 @@
 
 .contenedor_iconos_redes .primer_icono{
     margin-left: 10%;
+}
+
+.estilos_a{
+    cursor: pointer;
 }

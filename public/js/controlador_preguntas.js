@@ -4,6 +4,9 @@ const input_pregunta = document.querySelector('#txt_pregunta');
 const input_respuesta = document.querySelector('#txt_respuesta');
 const boton_agregar = document.querySelector('#btn_agregar');
 
+let id_centro_educativo = localStorage.getItem('centro_educativo');
+
+
 let validar = () => {
     let error = false;
 
@@ -27,16 +30,17 @@ let validar = () => {
 let obtener_datos = () => {
 
     if (validar() == false) {
-        
+        let centro_educativo = id_centro_educativo;
         let pregunta = input_pregunta.value;
         let respuesta = input_respuesta.value;
 
-        registrar_pregunta(pregunta, respuesta)
+        registrar_pregunta(centro_educativo,pregunta, respuesta)
 
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La pregunta no fue registrada'
+            title: 'La pregunta no fue registrada',
+            text: `Revise los campos resaltados`
         });
     }
 

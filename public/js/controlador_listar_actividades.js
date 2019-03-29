@@ -15,6 +15,4 @@ let mostrar_datos = () =>{
     };
 };
 
-
-
 mostrar_datos();

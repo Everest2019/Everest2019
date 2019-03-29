@@ -31,19 +31,19 @@ module.exports.registrar = (req, res) => {
 };
 module.exports.listar_preferencias = (req, res) => {
     modelo_registrar.find().then(
-        function (registro) {
-            if (registro.length > 0) {
+        function (pregistrar) {
+            if (pregistrar.length > 0) {
                 res.json(
                     {
                         success: true,
-                       registro: registro
+                        registrar: pregistrar
                     }
                 )
             } else {
                 res.json(
                     {
                         success: false,
-                        registro: 'No se encontraron preferencias'
+                        registrar: 'No se encontraron preferencias'
                     }
                 )
             }

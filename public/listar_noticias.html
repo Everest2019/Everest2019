@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/instituciones.css">
-    <title>Instituciones - Noticias</title>
+    <link rel="stylesheet" href="css/perfil_centro_educativo.css">
+    <link rel="stylesheet" href="css/listar_noticias.css">
+
+    <title>Gemas - Instituciones</title>
 </head>
+
 <body>
-   
+
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+<<<<<<< HEAD
         
          
+=======
+>>>>>>> 75fb90f7e257d810d97ac9e1838aacd9926c3066
 
-        <div id="navbar_lateral_inicio">
-            <a href="index.html">Inicio</a>
+
+
+        <div id="navbar_lateral_regresar">
+            <a href="instituciones.html">Regresar</a>
         </div>
 
-        <div id="navbar_lateral_instituciones"  class="pagina_actual">
-            <a href="instituciones.html">Instituciones</a>
+        <div id="navbar_lateral_general">
+            <a href="perfil_centro_educativo_general.html">General</a>
         </div>
-                
+
         <div id="navbar_lateral_favoritos">
-            <a href="#">Favoritos</a>
+            <a href="perfil_centro_educativo_ubicacion.html">Ubicación</a>
         </div>
+
+        <div id="navbar_lateral_servicios">
+            <a href="perfil_centro_educativo_servicios.html">Servicios</a>
+        </div>
+<<<<<<< HEAD
         <div id="navbar_lateral_favoritos">
                 <a href="listar_noticias.html">Noticias</a>
             </div>
@@ -40,49 +57,58 @@
 
         <div id="navbar_lateral_utiles">
             <a href="lista_utiles.html">Lista de útiles</a>
+=======
+
+        <div id="navbar_lateral_noticias" class="pagina_actual">
+            <a href="perfil_centro_educativo_noticias.html">Noticias</a>
         </div>
-        
+
+        <div id="navbar_lateral_actividades">
+            <a href="perfil_centro_educativo_actividades.html">Actividades</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="perfil_centro_educativo_utiles.html">Listas de Útiles</a>
+        </div>
+
+        <div id="navbar_lateral_contacto">
+            <a href="perfil_centro_educativo_contacto.html">Contacto</a>
+>>>>>>> 75fb90f7e257d810d97ac9e1838aacd9926c3066
+        </div>
+
+        <div id="contenedor_cerrar_sesion">
+            <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
+        </div>
+
     </div>
 
     <div class="main">
-        <h1>Noticias</h1>
-        <h2></h2>
+
+        <h1 id="nombre_ce"></h1>
+        <h2>Lista noticias</h2>
+
         <div class="separador"></div>
 
-        <div class="contenedor_filtraciones">
-            <div class="contenedor_buscar">
-                <label for="txt_filtar">Buscar: </label>
-                <input type="text" id="txt_buscar_centro_educativo">
-            </div>
-
-            <div class="contenedor_criterios">
-                <label for="select_criterios">Criterios: </label>
-                <select id="select_criterios">
-                    <option value="">Seleccione un criterio...</option>
-                </select>
-            </div>
-            
+        <div class="formulario-1">
+            <label for="txt_buscar">Buscar</label>
+            <input type="text" id="txt_buscar">
         </div>
-        
-        <!-- Contenedor donde se muestran todas las noticias -->
-        <div class="lista_instituciones" id="lista_instituciones">
-            <table id="tbl_noticias">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Título</th>
-                        <th>Descripción </th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
 
+        <div class="contenedor_noticia" id="lista_noticias">
+            
         </div>
     </div>
 
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_noticia.js"></script>
+    <script src="js/controlador_listar_noticias.js"></script>
+
 </body>
+
 </html>
