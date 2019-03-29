@@ -39,7 +39,8 @@ let obtener_datos = () => {
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La pregunta no fue registrada'
+            title: 'La pregunta no fue registrada',
+            text: `Revise los campos resaltados`
         });
     }
 

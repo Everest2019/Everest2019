@@ -71,43 +71,26 @@
         <h2>Noticias</h2>
 
         <div class="separador"></div>
+
         <div class="contenido">
-          <div class="contenedor_buscar">
-              <label for="txt_filtrar_noticia">Filtrar </label>
-              <input type="text" id="txt_filtrar_noticia">
-          </div>
-            <table class="tbl_noticias" id="tbl_noticias">
-                <thead>
-                    <tr>
-                        <th class="celda_fecha">Fecha</th>
-                        <th class="celda_titulo">Título</th>
-                        <th class="celda_descripcion">Descripción </th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-          </div>
-</div>
+            <div class="contenedor_buscar">
+                <label for="txt_buscar">Buscar</label>
+                <input type="text" id="txt_buscar">
+            </div>
 
-<div class="contenedor_grid">
-    <div id="elemento">
-        <h1>Semana de exámenes</h1>
-        <p>Día: 24 de marzo</p>
-        <h3>En la biblioteca estara el nuevo horario de examenes </h3>
-    </div>
-</div>
-       
-    </div>
+            <div class="contenedor_noticia" id="lista_noticias">
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_centro_educativo.js"></script>
-    <script src="js/servicio_noticia.js"></script>
-    <script src="js/controlador_listar_noticias.js"></script>
-  <!--<script src="js/controlador_noticias_centro_educativo.js"></script>-->
-  <!--<script src="js/controlador_noticia.js"></script>-->
-    <script src="js/controlador_sesion.js"></script>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/servicio_centro_educativo.js"></script>
+        <script src="js/servicio_noticia.js"></script>
+        <script src="js/controlador_listar_noticias.js"></script>
+        <!--<script src="js/controlador_noticias_centro_educativo.js"></script>-->
+        <!--<script src="js/controlador_noticia.js"></script>-->
+        <script src="js/controlador_sesion.js"></script>
 </body>
 
 </html>
