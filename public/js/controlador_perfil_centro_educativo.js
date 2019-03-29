@@ -19,5 +19,3 @@ direccion_canton.innerHTML = centro_educativo['canton'];
 direccion_provincia.innerHTML = centro_educativo['provincia'];
 latitud_centro_educativo.value = centro_educativo['ubicacion_mapa_lat'];
 longitud_centro_educativo.value = centro_educativo['ubicacion_mapa_lng'];
-
-
