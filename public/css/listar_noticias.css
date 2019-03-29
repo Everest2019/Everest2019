@@ -1,11 +1,10 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
-
-.main{
-    
-    height: 100%;
+body{
+    background: #F2F2F2;
 }
+
 .main h1{
     text-align: center;
     font-size: 40px;
@@ -21,36 +20,32 @@ html {
     border-radius: 3px;
 }
 
-.contenido{
+.contenido .contenedor_buscar{
     margin-top: 60px;
     margin-bottom: 30px;
 }
-
-.contenido .formulario-1{
-    margin-top: 60px;
-}
-
-div input[type=text]{
+div input{
     display: inline-block;
-    width: 300px;
+    width: 30%;
     height: 25px;
     border-radius: 3px;
     border: 2px solid gray;
     font-size: 15px;
-    margin-top: 10px;
 }
-.formulario-1 input:focus{
+
+.contenedor_buscar input:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-.formulario-1 div label{
+.contenedor_buscar  label{
     display: inline-block;
-    margin-bottom: 20px;
-    margin-top: 35px;
-    width: 200px;
-    margin-left: 40px;
-    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 8%;
+    margin-left: 5%;
 }
+
+
 
 .contenedor_noticia{
     display: grid;
@@ -63,7 +58,6 @@ div input[type=text]{
 
 .noticia{
     height: 250px;
-    background: #F2F2F2;
 }
 
 .noticia .titulo_noticia{

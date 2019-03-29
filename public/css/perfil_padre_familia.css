@@ -26,6 +26,7 @@
     font-size: 25px;
     font-weight: bold;
     padding-top: 15px;
+    color:  #FAA21A;
 }
 .contenedor_nombre{
     grid-column: 2 / 3;
@@ -60,7 +61,7 @@
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     text-align: center;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: bold;
     padding-top: 15px;
 }
@@ -72,7 +73,7 @@
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     text-align: center;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: bold;
     padding-top: 15px;
 }
@@ -84,7 +85,7 @@
     grid-column: 4 / 5;
     grid-row: 3 / 4;
     text-align: center;
-    font-size: 35px;
+    font-size: 15px;
     font-weight: bold;
     padding-top: 15px;
 }

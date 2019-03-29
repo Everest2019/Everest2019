@@ -2,63 +2,52 @@
 const lista_noticias = document.querySelector('#lista_noticias');
 const input_filtrar = document.querySelector('#txt_buscar');
 
-let noticias = listar_noticias();
-let id = localStorage.getItem('centro_educativo');
-
-
-let noticias_centro_educativo = () =>{
-  for(let i=0; i<noticias.length;i++){
-    if(noticias[i]['id_centro_educativo'].includes(id)){
-    console.log (id);
-    }
-  }
-};
-
-
-
 let mostrar_noticias = () => {
-  let filtro= input_filtrar.value
+  let noticias = listar_noticias();
+  let centro_educativo = localStorage.getItem('centro_educativo');
 
-/*  if(noticias['descripcion'].includes(filtro.toLowerCase())){
-    console.log(noticias[0]['fecha']);
-  }*/
-    for(let i = 1; i <= noticias.length; i++){
-        let noticia = document.createElement('div');
-        noticia.classList.add('noticia');
 
-          let titulo_noticia = document.createElement('div');
-        titulo_noticia.classList.add('titulo_noticia');
+  for (let i = 0; i < noticias.length; i++) {
+    if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {
 
-        let texto_titulo_noticia = document.createElement('p');
-        texto_titulo_noticia.innerHTML = noticias[i]['titulo'];
 
-        titulo_noticia.appendChild(texto_titulo_noticia);
-        //fecha
-        let fecha_noticia = document.createElement('div');
-        fecha_noticia.classList.add('fecha_noticia');
+      let noticia = document.createElement('div');
+      noticia.classList.add('noticia');
 
-        let texto_fecha_noticia = document.createElement('p');
-        texto_fecha_noticia.innerHTML = noticias[i]['fecha'];
+      let titulo_noticia = document.createElement('div');
+      titulo_noticia.classList.add('titulo_noticia');
 
-        fecha_noticia.appendChild(texto_fecha_noticia);
-        //descripcion
-        let descripcion_noticia = document.createElement('div');
-        descripcion_noticia.classList.add('descripcion_noticia');
+      let texto_titulo_noticia = document.createElement('p');
+      texto_titulo_noticia.innerHTML = noticias[i]['titulo'];
 
-        let texto_descricion_noticia = document.createElement('p');
-        texto_descricion_noticia.innerHTML = noticias[i]['descripcion'];
+      titulo_noticia.appendChild(texto_titulo_noticia);
+      //fecha
+      let fecha_noticia = document.createElement('div');
+      fecha_noticia.classList.add('fecha_noticia');
 
-        descripcion_noticia.appendChild(texto_descricion_noticia);
+      let texto_fecha_noticia = document.createElement('p');
+      texto_fecha_noticia.innerHTML = noticias[i]['fecha'];
 
-        //todo
-        noticia.appendChild(titulo_noticia);
-        noticia.appendChild(fecha_noticia);
-        noticia.appendChild(descripcion_noticia);
+      fecha_noticia.appendChild(texto_fecha_noticia);
+      //descripcion
+      let descripcion_noticia = document.createElement('div');
+      descripcion_noticia.classList.add('descripcion_noticia');
 
-        lista_noticias.appendChild(noticia);
+      let texto_descricion_noticia = document.createElement('p');
+      texto_descricion_noticia.innerHTML = noticias[i]['descripcion'];
+
+      descripcion_noticia.appendChild(texto_descricion_noticia);
+
+      //todo
+      noticia.appendChild(titulo_noticia);
+      noticia.appendChild(fecha_noticia);
+      noticia.appendChild(descripcion_noticia);
+
+      lista_noticias.appendChild(noticia);
     }
   }
-input_filtrar.addEventListener('keyup',mostrar_noticias);
+}
+
 
 
 //const input_filtrar = document.querySelector('#txt_filtrar_noticia');
