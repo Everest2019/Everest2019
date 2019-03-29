@@ -93,6 +93,8 @@ app.use('/api', noticia);
 
 const preguntas = require('./componentes/preguntas/preguntas.route');
 app.use('/api', preguntas);
+
+
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;

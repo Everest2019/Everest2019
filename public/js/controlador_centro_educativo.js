@@ -379,6 +379,8 @@ let obtener_datos = () =>{
         let zona_verde = document.querySelector('#check_zona_verde').checked;
         let guarderia = document.querySelector('#check_guarderia').checked;
 
+        const servicios = document.querySelectorAll('#checkbox_servicios input[type=checkbox]:checked');
+
         let portada = url_img_portada.value;
         let galeria1 = url_galeria1.value;
         let galeria2 = url_galeria2.value;
@@ -413,6 +415,10 @@ let obtener_datos = () =>{
         
 
         registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte,tipo_usuario, contrasena_ce);
+
+        for(let i = 0; i < servicios.length; i++){
+            registrar_servicio(cedula_institucion, servicios[i].value);
+        }
     }
     else{
         swal.fire({

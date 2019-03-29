@@ -18,6 +18,13 @@ router.route('/registrar_centro_educativo')
     }
 );
 
+router.route('/registrar_servicio')
+.post(
+    function(req, res){
+        api_usuario.agregar_servicios(req,res);
+    }
+);
+
 router.route('/registrar_adminitrador')
     .post(
         function(req, res){

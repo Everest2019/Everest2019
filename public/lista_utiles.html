@@ -7,10 +7,38 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/lista_utiles.css">
+    <link rel="stylesheet" href="css/index.css">
 
 </head>
 
 <body>
+
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+
+
+        <div id="navbar_lateral_inicio" class="pagina_actual">
+            <a href="lista_utiles.html">Lista de Utiles</a>
+
+        </div>
+
+        <div id="navbar_lateral_inicio" class="pagina_inicio">
+            <a href="index.html">Inicio</a>
+        </div>
+
+        <div id="registrar_lista_utiles" class="registrar_etiquetas">
+            <a href="registrar_lista_utiles.html">Registrar Lista de Utiles</a>
+        </div>
+
+        <div id="navbar_registrar_utiles" class="registrar_utiles">
+            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
+        </div>
+
+    </div>
+
     <header id="header_principal">
         <nav>
             <div class="nombre_proyecto">
@@ -25,44 +53,51 @@
 
     </header>
 
-    <main>
-        <div class="slidershow-container">
 
-            <div id="divisor">-</div>
-            <!--primero contenedor-->
-            <div class="mySlides fade">
-                <div class="numbertext">1/1</div>
-                <div class="contenedor">
-                    <div class="descripcion_contenedor">
-                        <p>Lista de Utiles</p>
-                    </div>
-                    <div class="separador"></div>
-                    <div class="contenido">
-                        <div>
+    <div class="main">
 
-                            <table id="tbl_utiles">
-                                <tr id="linea">
-                                
-                                    <th>
-                                        Cantidad
-                                    </th>
-                                    <th>
-                                        Descripción
-                                    </th>
+        <h1>Lista de Utiles</h1>
+        <h2>Lista de Utiles creada por parte del MEP</h2>
+        <div class="separador"></div>
 
-
-                                </tr>
-
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="contenedor_filtraciones">
+            <div class="contenedor_buscar">
+                <label for="txt_filtar">Buscar: </label>
+                <input type="text" id="txt_filtar">
             </div>
 
+        </div>
+
+        <div class="contenido">
+            <div>
+
+                <table id="tbl_utiles">
+                    <thead>
+                        <tr id="linea">
+                            <th>Articulo</th>
+                            <th>
+                                Cantidad
+                            </th>
+                            <th>
+                                Descripción
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
 
 
-    </main>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
