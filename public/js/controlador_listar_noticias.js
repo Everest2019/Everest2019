@@ -25,7 +25,9 @@ let mostrar_noticias = () => {
       fecha_noticia.classList.add('fecha_noticia');
 
       let texto_fecha_noticia = document.createElement('p');
-      texto_fecha_noticia.innerHTML = noticias[i]['fecha'];
+      let fecha = new Date(noticias[i]['fecha']);
+      fecha = fecha.toLocaleDateString();
+      texto_fecha_noticia.innerHTML = fecha;
 
       fecha_noticia.appendChild(texto_fecha_noticia);
       //descripcion
