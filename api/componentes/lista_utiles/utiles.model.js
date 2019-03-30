@@ -5,9 +5,9 @@ let schema_registrar = new mongoose.Schema(
     {
         articulo: {type:String, required:true},
         cantidad: {type:Number, required:true},
-        descripcion: {type:String, required:false},
-        tipo_usuario:{type:String, required:true},
-        id_centro_educativo:{type:String,required:false}
+        descripcion: {type:String, required:false}//,
+        //tipo_usuario:{type:String, required:true},
+       // id_centro_educativo:{type:String,required:false}
 
     }
 );

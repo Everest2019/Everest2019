@@ -6,9 +6,9 @@ module.exports.registrar_utiles = (req,res)=>{
         {
             articulo: req.body.articulo,
             cantidad: req.body.cantidad,
-            descripcion: req.body.descripcion,
-            tipo_usuario: req.body.tipo_usuario,
-            id_centro_educativo: req.body.id_centro_educativo
+            descripcion: req.body.descripcion//,
+            //tipo_usuario: req.body.tipo_usuario,
+           // id_centro_educativo: req.body.id_centro_educativo
         }
     ); 
     nuevo_registrar.save(function(error){

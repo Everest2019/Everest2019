@@ -46,7 +46,7 @@ let obtener_datos = ()=>{
 
         }*/
 
-        registrar(articulo, cantidad, descripcion, );
+        registrar_utiles(articulo, cantidad, descripcion );
     }else{
         swal.fire({
             type: 'warning',
