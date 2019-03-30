@@ -1,4 +1,5 @@
 'use strict'
+
 const input_primer_nombre = document.querySelector('#txt_primer_nombre');
 const input_segundo_nombre = document.querySelector('#txt_segundo_nombre');
 const input_primer_apellido = document.querySelector('#txt_primer_apellido');
@@ -11,6 +12,7 @@ const select_nacionalidad = document.querySelector('#select_nacionalidad');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
 const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
+const  input_contrasena = document.querySelector('txt_contrasena');
 const input_provincia = document.querySelector('#provincia');
 const input_canton = document.querySelector('#canton');
 const input_distrito = document.querySelector('#distrito');
@@ -38,12 +40,6 @@ let validar =() =>{
     input_correo.classList.add('error_input');
   }else{
     input_correo.classList.remove('error_input');
-  }
-  if(input_telefono.value == ''){
-    error = true;
-    input_telefono.classList.add('error_input');
-  }else{
-    input_telefono.classList.remove('error_input');
   }
   if(input_cantidad_hijos.value == ''){
     error = true;

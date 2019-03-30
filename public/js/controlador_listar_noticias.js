@@ -4,7 +4,7 @@ const input_filtrar = document.querySelector('#txt_buscar');
 
 let mostrar_noticias = () => {
   let noticias = listar_noticias();
-  let centro_educativo = localStorage.getItem('centro_educativo');
+  let centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
 
 
   for (let i = 0; i < noticias.length; i++) {
