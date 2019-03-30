@@ -6,6 +6,7 @@ let filtro =  input_filtrar.value;
 
 let mostrar_noticias = () => {
   let noticias = listar_noticias();
+  let centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
 
   let centro_educativo= localStorage.getItem('id_centro_educativo');
 

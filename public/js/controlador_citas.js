@@ -14,6 +14,15 @@ let validar = () => {
 
     let error = false;
     let dia_cita = new Date(input_fecha.value).getDay();
+    let mes_cita = new Date(input_fecha.value).getMonth();
+    let ano_cita = new Date(input_fecha.value).getFullYear();
+
+
+    let fecha_actual = new Date();
+    let dia_actual = fecha_actual.getDay();
+    let mes_actual = fecha_actual.getMonth();
+    let ano_actual = fecha_actual.getFullYear();
+
 
     if (input_fecha.value == '' ) {
         error = true;
@@ -34,8 +43,8 @@ let validar = () => {
     }
 
 
-    if(dia_cita == 5 || dia_cita == 6){
-        error = 'fin_de_semana';
+    if((dia_cita == 5 || dia_cita == 6) || (ano_cita < fecha_actual.getFullYear()) || ((mes_cita < mes_actual) && (ano_actual == ano_cita)) || ((mes_cita == mes_actual) && (ano_actual == ano_cita) && (dia_cita < dia_actual))){
+        error = true;
         input_fecha.classList.remove('borde');
         input_fecha.classList.add('error_input');
     }
@@ -43,7 +52,6 @@ let validar = () => {
         input_fecha.classList.remove('error_input');
         input_fecha.classList.add('borde');
     }
-
 
 
     return error;
@@ -58,15 +66,6 @@ let obtener_datos = () => {
         let comentario = input_comentario.value;
 
         registrar_cita(centro_educativo, padre_familia ,fecha, hora, comentario);
-
-    }
-    else if(validar() == 'fin_de_semana'){
-
-        swal.fire({
-            type: 'warning',
-            title: 'No se ha podido agendar la cita',
-            text: 'Por favor elija una fecha en un día lectivo'
-        });
 
     }
     else {

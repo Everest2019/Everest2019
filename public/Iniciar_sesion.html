@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Gemas</title>
-    
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/Iniciar_sesion.css">   
-    
- </head>
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Gemas-Iniciar Sesión</title>
+            <link rel="stylesheet" href="css/reset.css">
+            <link rel="stylesheet" href="css/general.css">
+            <link rel="stylesheet" href="css/Iniciar_sesion.css">
+    </head>
     <body>
         <header>
             <nav>
@@ -22,35 +20,23 @@
                 </div>
             </nav>
         </header>
-        <h1 class="titulo1">Iniciar sesión</h1>
         <main>
-            <div class="contenedor">
-                <div class="descripcion_contenedor">
-                    <p>Iniciar Sesión</p>
+            <div class="contenedor-form">
+
+                <div class="formulario">
+                    <h2>Iniciar Sesión</h2>
+                    <form action="#">
+                        <input type="email" placeholder="Correo Electrónico" required id="txt_correo">
+                        <input type="password" placeholder="Contraseña" required id="txt_contrasena">
+                        <button type="button" id="btn_iniciar">Iniciar Sesión</button>
+                    </form>
                 </div>
-                <div class="separador"></div>
-                <div class="contenido">
-                    <div class="formulario-1">
-                    </div>
-                <form>
-                    <div>
-                        <label for="">Correo Electrónico</label>
-                        <input type="text" id="txtcorreo">
-                    </div>
-            
-                    <div>
-                        <label for="">Contraseña</label>
-                        <input type="password" id="txtcontrasena">
-                    </div>
-            
-                    <button type="button" id="btnIngresar">Ingresar</button>
-            
-                </form>
+            </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="js/servicio_inicio.js"></script>
-        <script src="js/controlador_inicio.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/servicio_iniciar_sesion.js"></script>
+        <script src="js/controlador_iniciar_sesion.js"></script>
+        
     </body>
-</html>
+    </html>

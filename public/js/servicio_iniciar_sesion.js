@@ -18,6 +18,16 @@ function validar_credenciales(pcorreo, pcontrasena){
         localStorage.setItem('conectado', response.success);
         localStorage.setItem('id_usuario', response.id);
         localStorage.setItem('tipo_usuario', response.tipo_usuario);
+
+        if(response.tipo_usuario == 'administrador'){
+          window.location.href = 'panel_administrador_inicio.html';
+        }
+        if(response.tipo_usuario == 'padre_familia'){
+          window.location.href = 'perfil_padre_familia.html';
+        }
+        if(response.tipo_usuario == 'centro_educativo'){
+          window.location.href = 'panel_control_centro_educativo.html';
+        }
       });
     
       peticion.fail(function(response){
