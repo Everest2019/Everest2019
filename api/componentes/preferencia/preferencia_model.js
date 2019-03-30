@@ -7,4 +7,4 @@ let schema_registrar = new mongoose.Schema(
         informacion: { type: String, required: true }
     }
 );
-module.exports = mongoose.model('registrar', schema_registrar);
+module.exports = mongoose.model('registrar', schema_registrar); 

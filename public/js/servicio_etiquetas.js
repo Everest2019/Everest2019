@@ -17,7 +17,6 @@ let listar_etiquetas = ()=>{
     });
 
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
 
     return listar_etiquetas;
@@ -43,7 +42,6 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
     });
 
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
 
 };

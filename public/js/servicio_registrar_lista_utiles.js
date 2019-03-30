@@ -13,11 +13,10 @@ let listar_utiles=()=>{
     });
 
     request.done(function (res) {
-        listar_utiles = res.lista_utiles;
+        listar_utiles = res.utiles;
     });
     
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
     return listar_utiles;
 
@@ -30,7 +29,9 @@ let registrar_utiles = (particulo,pcantidad,pdescripcion)=>{
         data:{
             articulo:particulo,
             cantidad:pcantidad,
-            descripcion: pdescripcion
+            descripcion: pdescripcion//,
+            //tipo_usuario:ptipo_usuario,
+            //id_centro_educativo: pid_centro_educativo
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
@@ -38,12 +39,11 @@ let registrar_utiles = (particulo,pcantidad,pdescripcion)=>{
     request.done(function (msg) {
         swal.fire({
             type: 'success',
-            title: ` Los articulos ${particulo}con la cantidad de tiles ${pcantidad} con la descripcion ${pdescripcion} ha sido todo un exito `
+            title: ` Los articulos ${particulo} con la cantidad de utiles ${pcantidad} con la descripcion ${pdescripcion} ha sido todo un exito `
         });
     });
 
     request.fail(function (jqXHR, textStatus) {
-        alert("Request failed: " + textStatus);
     });
 
 

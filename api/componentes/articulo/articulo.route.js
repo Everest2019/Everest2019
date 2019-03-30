@@ -13,6 +13,6 @@ router.route('/registrar_articulo')
     .get(
         function (req, res) {
             api_articulo.listar(req, res);
-        }
+        } 
     )
 module.exports = router;

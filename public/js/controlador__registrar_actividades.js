@@ -5,6 +5,8 @@ const input_fecha = document.querySelector('#dt_fecha');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_registrar = document.querySelector('#btn_registrar');
 
+let id_centro_educativo = localStorage.getItem('id_usuario');
+
 let validar = () => {
     let error = false;
 
