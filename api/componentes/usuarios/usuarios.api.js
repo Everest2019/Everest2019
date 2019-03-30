@@ -79,7 +79,11 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             documento1: req.body.documento1,
             documento2: req.body.documento2,
             documento3: req.body.documento3,
-            informacion_adicional: req.body.informacion_adicional,
+
+            informacion_idioma: req.body.informacion_idioma,
+            informacion_religion: req.body.informacion_religion,
+            informacion_ensenanza: req.body.informacion_ensenanza,
+
             primer_nombre_encargado: req.body.primer_nombre,
             segundo_nombre_encargado: req.body.segundo_nombre,
             primer_apellido_encargado: req.body.primer_apellido,
