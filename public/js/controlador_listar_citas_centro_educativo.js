@@ -5,6 +5,7 @@ const input_filtrar = document.querySelector('#txt_buscar_cita');
 let lista_citas = listar_citas();
 
 input_filtrar.addEventListener('keyup', mostrar_datos);
+
 mostrar_datos();
 
 function mostrar_datos() {
