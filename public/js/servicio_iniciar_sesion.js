@@ -23,7 +23,7 @@ function validar_credenciales(pcorreo, pcontrasena){
           window.location.href = 'panel_administrador_inicio.html';
         }
         if(response.tipo_usuario == 'padre_familia'){
-          window.location.href = 'perfil_padre_familia.html';
+          window.location.href = 'index.html';
         }
         if(response.tipo_usuario == 'centro_educativo'){
           window.location.href = 'panel_control_centro_educativo.html';
