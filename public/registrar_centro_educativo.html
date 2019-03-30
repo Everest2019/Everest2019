@@ -97,13 +97,13 @@
                                 <input type="radio" id="rbt_colegio" name="rbt_tipo" value="Colegio">
                                 
                                 <label for="rbt_ambos">Ambos</label>
-                                <input type="radio" id="rbt_ambos" name="rbt_tipo" value="Escuela y Colegio">
+                                <input type="radio" id="rbt_ambos" name="rbt_tipo" value="Ambos">
                                 
                             </div>
 
                             <div>
                                 <label for="txt_tipo_colegio">Tipo Colegio</label>
-                                <select id="txt_tipo_colegio">
+                                <select id="txt_tipo_colegio" disabled>
 
                                     <option value="">Seleccione un tipo de colegio...</option>
                                     <option value="Académico">Académico</option>
@@ -157,28 +157,14 @@
                                 <label for="txt_provincia">Dirección en:</label>
                                 <select id="txt_provincia">
                                     <option value="">Provincia</option>
-                                    <option value="San José">San José</option>
-                                    <option value="Alajuela">Alajuela</option>
-                                    <option value="Heredia">Heredia</option>
-                                    <option value="Cartago">Cartago</option>
-                                    <option value="Limón">Limón</option>
-                                    <option value="Guanacaste">Guanacaste</option>
-                                    <option value="Puntarenas">Puntarenas</option>
                                 </select>
 
                                 <select id="txt_canton">
                                     <option value="">Cantón</option>
-                                    <option value="San José">San José</option>
-                                    <option value="Guadalupe">Guadalupe</option>
-                                    <option value="Desamparados">Desamparados</option>
-                                    <option value="Alajuelita">Alajuelita</option>
                                 </select>
 
                                 <select id="txt_distrito">
                                     <option value="">Distrito</option>
-                                    <option value="Goicoechea">Goicoechea</option>
-                                    <option value="Concepción Arriba">Concepción Arriba</option>
-                                    <option value="Concepción Abajo">Concepción Abajo</option>
                                 </select>
                             </div>
 
@@ -969,7 +955,7 @@
     </div>
         <div class="posiciones">
             <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="curentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
             <span class="dot" onclick="currentSlide(5)"></span>
@@ -992,6 +978,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/provincias.js"></script>
+    <script src="js/cantones.js"></script>
+    <script src="js/distritos.js"></script>
     <script src="js/controlador_centro_educativo.js"></script>
     <script src="js/servicio_carrusel.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js" type="text/javascript"></script>
