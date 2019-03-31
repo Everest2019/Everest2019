@@ -1,5 +1,6 @@
 'use strict';
 const lista_noticias = document.querySelector('#lista_noticias');
+const boton_buscar = document.querySelector('#btn_buscar');
 const input_filtrar = document.querySelector('#txt_buscar');
 
 let mostrar_noticias = () => {
@@ -48,13 +49,6 @@ let mostrar_noticias = () => {
     }
   }
 }
-
-
-
-//const input_filtrar = document.querySelector('#txt_filtrar_noticia');
-
-
-
+boton_buscar.addEventListener('click', mostrar_noticias);
 
 mostrar_noticias();
-//input_filtrar.addEventListener('keyup', mostrar_noticias);
