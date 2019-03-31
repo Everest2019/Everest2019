@@ -1,16 +1,29 @@
 'use strict';
 
 const lista_instituciones = document.querySelector('#lista_instituciones');
+const input_filtrar = document.querySelector('#txt_buscar_centro_educativo');
 let instituciones = listar_instituciones();
 
 
 let mostrar_datos = () => {
-   
-    var padre = 'San José';
+
+let filtro = input_filtrar.value;
+lista_instituciones.innerHTML ='';
+
+    let padre = localStorage.getItem('id_usuario');
+    let padre_familia = buscar_padre_familia(padre);
+
     for (let i = 0; i < instituciones.length; i++) {
 
-        if (instituciones[i]['canton'] ==padre) {
+        
+        
 
+            
+
+
+
+        if(instituciones[i]['canton'].includes(padre_familia['canton'])){
+            if(instituciones[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())){
 
             document.getElementById('lista_instituciones').innerHTML +=
 
@@ -66,6 +79,7 @@ let mostrar_datos = () => {
 
                 '</div>' +
                 '</div>'
+            }
         };
 
 
@@ -74,12 +88,17 @@ let mostrar_datos = () => {
 
     
 
-    function visualizar_centro_educativo(pid_centro_educativo) {
-
-        localStorage.setItem('centro_educativo', pid_centro_educativo);
-        window.location.href = 'perfil_centro_educativo_general.html';
-    };
+    
 
 };
 
 mostrar_datos();
+
+
+input_filtrar.addEventListener('keyup', mostrar_datos);
+
+function visualizar_centro_educativo(pid_centro_educativo){
+    
+    localStorage.setItem('centro_educativo', pid_centro_educativo);
+    window.location.href = 'perfil_centro_educativo_general.html';
+};

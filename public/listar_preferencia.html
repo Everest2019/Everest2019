@@ -14,82 +14,99 @@
 </head>
 
 <body>
-
-
-
-
-    <div class="navbar_lateral">
-
-        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-
-
-
-        <div id="navbar_lateral_inicio" class="pagina_actual">
-            <a href="listar_etiquetas.html">Lista de Etiquetas</a>
-
-        </div>
-
-        <div id="navbar_lateral_inicio" class="pagina_inicio">
-            <a href="index.html">Inicio</a>
-        </div>
-
-        <div id="navbar_registrar_etiquetas" class="registrar_etiquetas">
-            <a href="registrar_etiquetas.html">Registrar Etiquetas</a>
-        </div>
-
-        <div id="navbar_registrar_utiles" class="registrar_utiles">
-            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
-        </div>
-
-    </div>
-
-
-    <div class="main">
-
-        <h1>Lista de Preferencias</h1>
-        <h2>Lista de la preferencia registradas</h2>
-        <div class="separador"></div>
-
-
-
-        <div class="formulario-1">
-            <form>
-                <div class="contenedor_filtraciones">
-                    <div class="contenedor_buscar">
-                        <label for="txt_filtar">Buscar: </label>
-                        <input type="text" id="txt_filtar">
-                    </div>
-
-                </div>
-            </form>
-        </div>
-
-        <div>
-            <table id="tbl_preferencia">
-                <thead>
-                    <tr>
-                        <th>Nombre de Preferencia</th>
-                        <th>Información</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
+    <!--<header>
+        <nav>
+            <div class="nombre_proyecto">
+                <a href="#">Gemas</a>
+            </div>
+            <div class="cont_links">
+                <a href="index.html">Inicio</a>
+                <a href="instituciones.html">Instituciones</a>
+                <a href="perfil_centro_educativo_general.html">Mi Perfil</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </header> -->
     <main>
 
-    </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <div class="navbar_lateral">
+
+            <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
 
 
-    <script src="js/servicio_registrar.js"></script>
-    <script src="js/controlador_listar_preferencia.js"></script>
+
+            <div id="navbar_lateral_inicio" class="pagina_actual">
+                <a href="listar_etiquetas.html">Lista de Etiquetas</a>
+
+            </div>
+
+            <div id="navbar_lateral_inicio" class="pagina_inicio">
+                <a href="index.html">Inicio</a>
+            </div>
+
+            <div id="navbar_registrar_etiquetas" class="registrar_etiquetas">
+                <a href="registrar_etiquetas.html">Registrar Etiquetas</a>
+            </div>
+
+            <!--
+        <div id="navbar_registrar_utiles" class="registrar_utiles">
+            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
+        </div> 
+    <div id="navbar_registrar_utiles" class="registrar_utiles">
+            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
+        </div>-->
+
+
+        </div>
+
+
+        <div class="main">
+
+            <h1>Lista de Preferencias</h1>
+            <h2>Lista de la preferencia registradas</h2>
+            <div class="separador"></div>
+
+
+
+            <div class="formulario-1">
+
+                <form>
+                    <div class="contenedor_filtraciones">
+                        <div class="contenedor_buscar">
+                            <label for="txt_filtar">Buscar: </label>
+                            <input type="text" id="txt_filtar">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <table id="tbl_preferencia">
+                    <thead>
+                        <tr>
+                            <th>Nombre de Preferencia</th>
+                            <th>Información</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <main>
+
+        </main>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+        <script src="js/servicio_registrar.js"></script>
+        <script src="js/controlador_listar_preferencia.js"></script>
 </body>
 
 </html>

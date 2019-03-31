@@ -66,10 +66,10 @@ div input[type=radio]{
     display: inline-block;
     width: 110px;
 }
-#frm_uitiles input{
+#frm_uitiles table tr th div input{
     display: inline-block;
-    width: 250px;
-    height: 30px;
+    width: 80px;
+    height: 50px;
     outline: none;
 }
 #numeros div{
@@ -77,17 +77,17 @@ div input[type=radio]{
 }
 #frmnumeros_uitiles label{
     display: inline-block;
-    width: 30px;
+    width: 70px;
 }
 #numeros input{
     display: inline-block;
-    width: 100px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     outline: none;
 }
 #frm_uitiles textarea{
-    width: 250px;
-    height: 100px;
+    width: 100px;
+    height: 50px;
     resize: none;
 
 }

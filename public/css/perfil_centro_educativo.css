@@ -366,6 +366,52 @@
     margin-top: 30%;
 }
 
+#contenedor_servicios{
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    grid-template-columns: repeat(auto-fill, 120px);
+    margin-top: 70px;
+    justify-content: center;
+    grid-row-gap: 40px;
+}
+
+.contenedor_icono_servicio{
+    border-radius: 50%;
+    background: #f2f2f2;
+    height: 95px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#contenedor_servicios .texto_servicio p{
+    font-size: 18px;
+    font-family: 'Quicksand','sans-serif';
+    padding-top: 35px;
+}
+
+.contenedor_icono_servicio .icono{
+    color: #FAA21A;
+    margin-top: 20%;
+}
+
+#contenedor_servicios .servicios_vacios{
+    grid-column: 2 / 8;
+    grid-row: 2 / 3;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Quicksand','sans-serif';
+}
+
+#contenedor_servicios .icono_info{
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    position: relative;
+    left: 50%;
+}
 /*
 ///////////////////////////////////////
     Estilos de la pagina de contacto
@@ -437,7 +483,6 @@
 .contenedor_item_contacto{
     border-radius: 50%;
     background: #f2f2f2;
-    
     height: 95px;
     width: 90%;
     text-align: center;

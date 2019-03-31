@@ -9,6 +9,7 @@ const input_cedula_institucion = document.querySelector('#txt_cedula');
 const select_tipo_colegio = document.querySelector('#txt_tipo_colegio');
 const contenedor_tipo_institucion = document.querySelector('#cont_tipo_institucion');
 const contenedor_sistema = document.querySelector('#cont_tipo_sistema');
+const radios_tipo_institucion = document.querySelectorAll('#cont_tipo_institucion input[type=radio]');
 
 // Elementos tercer contenedor
 const select_provincia = document.querySelector('#txt_provincia');
@@ -92,6 +93,8 @@ const verificar_contrasena = document.querySelector('#txt_verificar_contrasena')
 const btn_enviar = document.querySelector('#btn_registrar_institucion');
 
 
+
+
 let validar_datos = () => {
 
     let error = false;
@@ -99,14 +102,6 @@ let validar_datos = () => {
     let radio_sistema = document.querySelector('#cont_tipo_sistema input[type=radio]:checked');
 
     //Elementos setimo contenedor
-    let checkbox_transporte = document.querySelector('#check_transporte');
-    let checkbox_comedor = document.querySelector('#check_comedor');
-    let checkbox_soda = document.querySelector('#check_soda');
-    let checkbox_iglesia = document.querySelector('#check_iglesia');
-    let checkbox_bachillerato = document.querySelector('#check_bachillerato_internacional');
-    let checkbox_gimnasio = document.querySelector('#check_gimnasio');
-    let checkbox_verde = document.querySelector('#check_zona_verde');
-    let checkbox_guarderia = document.querySelector('#check_guarderia');
 
     if(input_nombre_institucion.value == ''){
         error = true;
@@ -140,12 +135,18 @@ let validar_datos = () => {
         contenedor_tipo_institucion.classList.remove('input_error');
     }
 
-    if(select_tipo_colegio.value == ''){
-        error = true;
-        select_tipo_colegio.classList.add('input_error')
-    }
-    else{
+    if(select_tipo_colegio.disabled == true){
         select_tipo_colegio.classList.remove('input_error');
+    }
+
+    if(select_tipo_colegio.disabled == false){
+        if(select_tipo_colegio.value == ''){
+            error = true;
+            select_tipo_colegio.classList.add('input_error')
+        }
+        else{
+            select_tipo_colegio.classList.remove('input_error');
+        }
     }
 
     if(radio_sistema == null){
@@ -244,28 +245,12 @@ let validar_datos = () => {
         input_primer_nombre.classList.remove('input_error');
     }
 
-    if(input_segundo_nombre.value == ''){
-        error = true;
-        input_segundo_nombre.classList.add('input_error')
-    }
-    else{
-        input_segundo_nombre.classList.remove('input_error');
-    }
-
     if(input_primer_apellido.value == ''){
         error = true;
         input_primer_apellido.classList.add('input_error')
     }
     else{
         input_primer_apellido.classList.remove('input_error');
-    }
-
-    if(input_segundo_apellido.value == ''){
-        error = true;
-        input_segundo_apellido.classList.add('input_error');
-    }
-    else{
-        input_segundo_apellido.classList.remove('input_error');
     }
 
     if(input_correo_encargado.value == ''){
@@ -308,16 +293,6 @@ let validar_datos = () => {
         img_encargado.classList.remove('input_error');
     }
 
-    if(verificar_contrasena.value != contrasena.value){
-        error = true;
-        contrasena.classList.add('input_error');
-        verificar_contrasena.classList.add('input_error');
-    }
-    else{
-        contrasena.classList.remove('input_error');
-        verificar_contrasena.classList.remove('input_error');
-    }
-
     if(contrasena.value == ''){
         error = true;
         contrasena.classList.add('input_error');
@@ -333,11 +308,17 @@ let validar_datos = () => {
     else{
         verificar_contrasena.classList.remove('input_error');
     }
+
+    if(verificar_contrasena.value != contrasena.value){
+        error = true;
+        contrasena.classList.add('input_error');
+        verificar_contrasena.classList.add('input_error');
+    }
+    else{
+        contrasena.classList.remove('input_error');
+        verificar_contrasena.classList.remove('input_error');
+    }
     
-    
-
-
-
     return error;
 };
 
@@ -351,9 +332,9 @@ let obtener_datos = () =>{
         let tipo_institucion = document.querySelector('#cont_tipo_institucion input[type=radio]:checked').value;
         let tipo_sistema = document.querySelector('#cont_tipo_sistema input[type=radio]:checked').value;
         let tipo_colegio = select_tipo_colegio.value;
-        let provincia = select_provincia.value;
-        let canton = select_canton.value;
-        let distrito = select_distrito.value;
+        //let provincia = select_provincia.value;
+       // let canton = select_canton.value;
+        //let distrito = select_distrito.value;
         let direccion_exacta = input_direccion_exacta.value;
         let latitud = input_latitud.value;
         let longitud = input_longitud.value;
@@ -369,17 +350,11 @@ let obtener_datos = () =>{
         let matricula = input_matricula.value;
         let mensualidad = input_mensualidad.value;
 
-        //Servicios adicionales, agregar o no a la tabla general? Subdocumentos?
-        let transporte = document.querySelector('#check_transporte').checked;
-        let comedor = document.querySelector('#check_comedor').checked;
-        let soda = document.querySelector('#check_soda').checked;
-        let iglesia = document.querySelector('#check_iglesia').checked;
-        let bachillerato = document.querySelector('#check_bachillerato_internacional').checked;
-        let gimnasio = document.querySelector('#check_gimnasio').checked;
-        let zona_verde = document.querySelector('#check_zona_verde').checked;
-        let guarderia = document.querySelector('#check_guarderia').checked;
-
+        //Servicios adicionales
         const servicios = document.querySelectorAll('#checkbox_servicios input[type=checkbox]:checked');
+
+
+        
 
         let portada = url_img_portada.value;
         let galeria1 = url_galeria1.value;
@@ -411,10 +386,13 @@ let obtener_datos = () =>{
         let estado = true;
         let tipo_usuario = 'centro_educativo';
         let contrasena_ce = contrasena.value;
-
+        
+        let provincia = buscar_provincia();
+        let canton = buscar_canton();
+        let distrito = buscar_distrito();
         
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado, transporte,tipo_usuario, contrasena_ce);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce);
 
         for(let i = 0; i < servicios.length; i++){
             registrar_servicio(cedula_institucion, servicios[i].value);
@@ -429,4 +407,91 @@ let obtener_datos = () =>{
     }
 };
 
+
+let habilitar_tipo_colegio = () =>{
+    select_tipo_colegio.disabled = false;
+};
+
+let deshabilitar_tipo_colegio = () =>{
+    select_tipo_colegio.disabled = true;
+    select_tipo_colegio.value = '';
+};
+
+let llenar_provincias = () =>{
+    
+    for(let i = 0; i < provincias.length; i++){
+        let nuevaOpcion = new Option(provincias[i]['nombre']);
+        nuevaOpcion.value = provincias[i]['idProvincia'];
+        select_provincia.appendChild(nuevaOpcion);
+    }
+};
+
+let llenar_cantones = () =>{
+    let provincia = select_provincia.value;
+    select_canton.innerHTML = '';
+    select_distrito.innerHTML = '<option value="">Distrito</option>';
+
+    for(let i = 0; i < cantones.length; i++){
+        if(provincia == cantones[i]['Provincia_idProvincia']){
+            let nuevaOpcion = new Option(cantones[i]['nombre']);
+            nuevaOpcion.value = cantones[i]['idCanton'];
+            select_canton.appendChild(nuevaOpcion);
+        }  
+    }
+};
+
+let llenar_distritos = () =>{
+    let canton = select_canton.value;
+    select_distrito.innerHTML = '';
+    
+    for(let i = 0; i < distritos.length; i++){
+        if(canton == distritos[i]['Canton_idCanton']){
+            let nuevaOpcion = new Option(distritos[i]['nombre']);
+            nuevaOpcion.value = distritos[i]['idDistrito'];
+            select_distrito.appendChild(nuevaOpcion);
+        }  
+    }
+};
+
+let buscar_provincia = () =>{
+    
+    for(let i = 0; i < provincias.length; i++){
+        if(select_provincia.value == provincias[i]['idProvincia']){
+            var nombre_provincia = provincias[i]['nombre'];
+            console.log(nombre_provincia);
+        }
+    }
+    return nombre_provincia;
+};
+
+
+let buscar_canton = () =>{
+    
+    for(let i = 0; i < cantones.length; i++){
+        if(select_canton.value == cantones[i]['idCanton']){
+            var nombre_canton = cantones[i]['nombre'];
+            console.log(nombre_canton);
+        }
+    }
+    return nombre_canton;
+};
+
+let buscar_distrito = () =>{
+    
+    for(let i = 0; i < distritos.length; i++){
+        if(select_distrito.value == distritos[i]['idDistrito']){
+            var nombre_distrito = distritos[i]['nombre'];
+            console.log(nombre_distrito);
+        }
+    }
+    return nombre_distrito;
+};
+
+
+radios_tipo_institucion[0].addEventListener("click", deshabilitar_tipo_colegio);
+radios_tipo_institucion[1].addEventListener("click", habilitar_tipo_colegio);
+radios_tipo_institucion[2].addEventListener("click", habilitar_tipo_colegio);
+llenar_provincias();
+select_provincia.addEventListener('change', llenar_cantones);
+select_canton.addEventListener('change', llenar_distritos);
 btn_enviar.addEventListener('click', obtener_datos);
