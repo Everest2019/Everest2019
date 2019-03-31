@@ -5,7 +5,7 @@ const input_Filtro = document.querySelector('#txt_Filtro');
 
 let mostrar_datos = () =>{
     let actividades = listar_actividades ();
-    let centro_educativo = localStorage.getItem('id_usuario');/**Panel de control centro educativo ('id_usuario') */
+    let centro_educativo = localStorage.getItem('id_usuario');
 
     for (let i = 0; i < noticias.length; i++) {
         if (noticias[i]['id_usuario'].includes(centro_educativo))

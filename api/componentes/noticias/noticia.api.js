@@ -20,7 +20,7 @@ module.exports.registrar_noticia = function(req,res){
                 success: true,
                 msg: 'Noticia registrada exitosamente'
             })
-        } 
+        }
 
     });
 };

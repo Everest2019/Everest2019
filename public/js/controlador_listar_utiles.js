@@ -1,12 +1,11 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_utiles tbody');
-
 const input_filtro = document.querySelector('#txt_buscar')
 
 
 mostrar_datos();
-input_filtro.addEventListener('keyup', mostrar_datos);
+//input_filtro.addEventListener('keyup', mostrar_datos);
 
 function mostrar_datos() {
     
@@ -19,7 +18,7 @@ function mostrar_datos() {
     }
     
     
-    let filtro = input_filtro.value;
+    //let filtro = input_filtro.value;
 
     tabla.innerHTML = '';
     for (let i = 0; i < lista_utiles.length; i++) {
@@ -32,9 +31,9 @@ function mostrar_datos() {
             fila.insertCell().innerHTML = lista_utiles[i]['cantidad'];
             fila.insertCell().innerHTML = lista_utiles[i]['descripcion'];
             
-            fila.insertcell().innerHTML = lista_utiles[i]['articulo_1'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
+           // fila.insertcell().innerHTML = lista_utiles[i]['articulo_1'];
+            //fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
+            //fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
 
        // }
 
