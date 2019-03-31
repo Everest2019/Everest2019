@@ -7,7 +7,7 @@ const direccion_canton = document.querySelector('#direccion_canton');
 const direccion_provincia = document.querySelector('#direccion_provincia');
 const latitud_centro_educativo = document.querySelector('#lat_centro_educativo');
 const longitud_centro_educativo = document.querySelector('#lng_centro_educativo');
-
+const a_regresar = document.querySelector('#a_regresar');
 let id_centro_educativo = localStorage.getItem('centro_educativo');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);

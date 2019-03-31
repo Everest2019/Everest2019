@@ -1,20 +1,25 @@
 'use strict';
 const lista_preguntas = document.querySelector('#lista_preguntas');
 const input_buscar = document.querySelector('#txt_buscar');
+const nombre = document.querySelector('#nombre_ce');
 
+let id_centro_educativo = localStorage.getItem('centro_educativo');
 
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
+nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 let mostrar_datos = () => {
-  let preguntas = listar();
-  let centro_educativo = localStorage.getItem('id_usuarios');
-
+  lista_preguntas.innerHTML = '';
+  let preguntas = listar_preguntas();
+  let centro_educativo = localStorage.getItem('id_usuario');
+  let filtro = input_buscar.value;
 
   for (let i = 0; i < preguntas.length; i++) {
-    if (preguntas[i]['id_usuario'].includes(centro_educativo)){
-    /*  if(preguntas[i]['pregunta'].includes(filtro)){
+    if (preguntas[i]['id_centro_educativo'].includes(centro_educativo)){
+      if(preguntas[i]['pregunta'].includes(filtro)){
         console.log(preguntas[i]['pregunta']);
-      }*/
+      
     let pregunta_frecuente = document.createElement('div');
     pregunta_frecuente.classList.add('pregunta');
 
@@ -39,7 +44,9 @@ let mostrar_datos = () => {
     pregunta_frecuente.appendChild(respuesta_pregunta);
 
     lista_preguntas.appendChild(pregunta_frecuente);
+      }
   }
 }
 }
 mostrar_datos();
+input_buscar.addEventListener('keyup', mostrar_datos);

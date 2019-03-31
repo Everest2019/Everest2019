@@ -28,10 +28,10 @@ nombre.innerHTML = centro_educativo['nombre_comercial'];
 // }
 
 let mostrar_datos = () => {
-  let preguntas = listar();
+  let preguntas = listar_preguntas();
   lista_preguntas.innerHTML= '';
   for (let i = 0; i < preguntas.length; i++) {
-    if (preguntas[i]['id_centro_educativo'].includes(centro_educativo)){
+    if (preguntas[i]['id_centro_educativo'].includes(id_centro_educativo)){
     // pregunta
     let pregunta_frecuente = document.createElement('div');
     pregunta_frecuente.classList.add('pregunta');
@@ -95,5 +95,4 @@ let mostrar_datos = () => {
 //     }
 //   }
 // };
-boton_buscar.addEventListener('click',filtrar_preguntas);
 mostrar_datos();

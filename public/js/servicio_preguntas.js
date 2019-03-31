@@ -12,7 +12,8 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
             respuesta: prespuesta
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        datatype: "json"
+        datatype: "json",
+        async: false
     });
 
     request.done(function (msg) {
@@ -20,6 +21,7 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
         swal.fire({
             type: 'success',
             title: 'Pregunta registrada correctamente',
+            text: 'La pregunta será visualizada por los usuarios'
         });
 
     });
