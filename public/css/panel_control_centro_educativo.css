@@ -758,3 +758,226 @@
     background: rgb(245, 148, 2);
   }
   
+
+
+
+  
+
+
+
+
+
+  #header_index {
+    background: #FAA21A;
+    position: fixed; /*Fixed Sidebar (stay in place on scroll)*/
+    z-index: 2; /* Stay on top */
+    width: 80%;
+    top: 0; /* Stay at the top */
+    left: 244px;
+  }
+  
+  /* Estilos del navbar lateral */
+  .navbar_lateral {
+      height: 100%; /* Que ocupe todo el ancho de la pantalla */
+      width: 20%; /*Definir el ancho del navbar */
+      position: fixed; /* Fija el navbar, que no se mueva con el scroll */
+      z-index: 1; /* Se mantiene en la parte superior */
+      left: 0; /* Se mantiene a la izquiera */
+      background-color: #fff; /*  Fondo del navbar */
+      overflow-x: hidden; /* Deshabilitar el scroll lateral */
+      padding-top: 20px;
+      border-right: 1px solid #000;
+    }
+    
+    /* Links de la barra de navegacion lateral */
+    .navbar_lateral a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #111;
+      display: block;
+      padding-bottom: 10px;  
+    }
+    
+  
+  
+    .separador_navbar{
+        height: 15px;
+        color: #FAA21A;
+    }
+  
+    /* Estilos de los contenedores del navbar lateral */
+    .navbar_lateral div{
+        text-align: center;
+        margin-bottom: 15px;
+    }
+  
+    .navbar_lateral img{
+      width: 80%;   
+      height: 100px;
+      margin-left: 10%;
+      margin-top: 20px;
+  }
+  
+    .navbar_lateral div:hover{
+      border-bottom: 3px solid #FAA21A;
+  }
+  
+  /*Estilos de los contenedor del index del navbar lateral */
+  #navbar_lateral_inicio{
+    margin-top: 15px;
+    width: 30%;
+    margin-left: 33%;
+  }
+  
+  #navbar_lateral_instituciones{
+    width: 50%;
+    margin-left: 22%;
+  }
+  
+  
+  #navbar_lateral_favoritos{
+    width: 38%;
+    margin-left: 27%;
+  }
+  
+  #navbar_lateral_cercanos{
+    width: 38%;
+    margin-left: 27%;
+  }
+  
+  #navbar_lateral_utiles{
+    width: 50%;
+    margin-left: 22%;
+  }
+  
+  #navbar_lateral_preguntas{
+    width: 70%;
+    margin-left: 13%;
+  }
+  
+  #navbar_mi_perfil{
+    width: 45%;
+    margin-left: 24%;
+    margin-top: 150px;
+  }
+  
+  #navbar_mi_perfil i{
+    font-size: 21px;
+    padding-right: 5px;
+  }
+  
+  #navbar_mi_perfil a:hover i{
+    color: #FAA21A;
+  }
+  
+  /* Estilos de los contenedores del perfil del centro educativo del navbar */
+  #navbar_lateral_regresar{
+    margin-top: 20px;
+    width: 30%;
+    margin-left: 31%;
+  }
+  
+  #navbar_lateral_general{
+    width: 35%;
+    margin-left: 28%;
+  }
+  
+  #navbar_lateral_servicios{
+    width: 35%;
+    margin-left: 28%;
+  }
+  #navbar_lateral_citas{
+    width: 35%;
+    margin-left: 26%;
+  }
+  
+  #navbar_lateral_noticias{
+    width: 35%;
+    margin-left: 27.5%;
+  }
+  
+  #navbar_lateral_actividades{
+    width: 43%;
+    margin-left: 24%;
+  }
+  #navbar_lateral_etiquetas{
+    width: 43%;
+    margin-left: 24%;
+  }
+  #navbar_lateral_preguntas{
+    width: 43%;
+    margin-left: 24%;
+  }
+  #navbar_lateral_contacto{
+    width: 30%;
+    margin-left: 30%;
+  }
+  
+  .pagina_actual{
+    border-bottom: 3px solid #FAA21A;
+  }
+  
+    /* Estilos de la página completa */
+    .main {
+      margin-left: 20%; /* Se usa el mismo que el ancho del navbar lateral */
+    }
+  
+    .main .banner{
+      width: 100%;
+      height: 625px;
+      background-image: url("../img/banner2.jpg");
+      background-size: cover;
+      background-position: top;
+        
+    }
+  .banner .contenedor_introduccion{
+      position: relative;
+      top: 250px;
+      text-align: center;
+  }
+  
+  .banner .contenedor_introduccion h1{
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    font-size: 50px;
+  }
+  
+  .banner .contenedor_introduccion h2{
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .banner .contenedor_introduccion a{
+    color: #FAA21A;
+    text-decoration: none;
+  }
+  
+  .banner .contenedor_introduccion a:hover{
+    color: #FAA21A;
+    text-decoration: underline;
+    text-decoration-color: #FAA21A;
+  }
+  
+  .contenedor_introduccion .contenedor_boton{
+    margin-top: 25px;
+  }
+  
+  .contenedor_introduccion .contenedor_boton button{
+    width: 40%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+  }
+  
+  .contenedor_introduccion .contenedor_boton button:hover{
+    background: rgb(245, 148, 2);
+  }
+  
+  .no_display{
+    display: none;
+  }
+  
