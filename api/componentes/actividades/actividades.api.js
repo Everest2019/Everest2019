@@ -4,6 +4,7 @@ const modelo_actividades = require('./actividades.model');
 module.exports.registrar = (req, res) =>{
     let nueva_actividad = new modelo_actividades(
     {
+        id_centro_educativo: req.body.id_centro_educativo,
         titulo : req.body.titulo,
         fecha : req.body.fecha,
         descripcion : req.body.descripcion
