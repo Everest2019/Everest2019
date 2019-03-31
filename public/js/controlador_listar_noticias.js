@@ -1,5 +1,6 @@
 'use strict';
 const lista_noticias = document.querySelector('#lista_noticias');
+const boton_buscar = document.querySelector('#btn_buscar');
 const input_filtrar = document.querySelector('#txt_buscar');
 
 let filtro =  input_filtrar.value;
@@ -7,12 +8,11 @@ let filtro =  input_filtrar.value;
 
 let mostrar_noticias = () => {
   let noticias = listar_noticias();
- lista_noticias.innerHTML ='';
+  lista_noticias.innerHTML ='';
   let centro_educativo= localStorage.getItem('id_centro_educativo');
 
   for (let i = 0; i < noticias.length; i++) {
     if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {
-
       if(noticias[i]['titulo'].includes(filtro)){
       //do  if(i>0){lista_noticias.removeChild(noticia);}
 
@@ -55,6 +55,6 @@ let mostrar_noticias = () => {
     }
   }
 }
-input_filtrar.addEventListener('keyup', mostrar_noticias);
+boton_buscar.addEventListener('click', mostrar_noticias);
 
 mostrar_noticias();
