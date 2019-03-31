@@ -52,3 +52,29 @@ let listar_preguntas = () => {
     return lista_pregunta;
 
 };
+
+//Buscar centro educativo para mostar en el perfil del
+function buscar_centro_educativo(pid_centro_educativo){
+    let centro_educativo = [];
+    $.ajax({
+        url: 'http://localhost:4000/api/buscar_centro_educativo',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        async: false,
+        data: {
+            id : pid_centro_educativo
+        },
+        beforeSend: function beforeSend() {
+              
+        },
+        success: function success(response) {
+          centro_educativo = response;
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+  
+    return centro_educativo;
+  };

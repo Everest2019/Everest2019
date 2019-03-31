@@ -1,5 +1,8 @@
 const btn_iniciar_sesion = document.querySelector('#btn_iniciar_sesion');
 const btn_crear_cuenta = document.querySelector('#btn_crear_cuenta');
+const btn_accion1 = document.querySelector('#btn_banner');
+const btn_accion2 = document.querySelector('#btn_informacion');
+
 
 let tipo_usuario = () =>{
     Swal.fire({
@@ -39,3 +42,5 @@ let iniciar_sesion = () =>{
 
 btn_crear_cuenta.addEventListener('click',tipo_usuario);
 btn_iniciar_sesion.addEventListener('click',iniciar_sesion);
+btn_accion1.addEventListener('click',iniciar_sesion);
+btn_accion2.addEventListener('click',iniciar_sesion);

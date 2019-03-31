@@ -8,9 +8,8 @@
 .main h1{
     text-align: center;
     font-size: 40px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     padding-top: 25px;
-    font-weight: bold;
 }
 
 .main h2{
@@ -714,14 +713,14 @@
     }
   .banner .contenedor_introduccion{
       position: relative;
-      top: 250px;
+      top: 200px;
       text-align: center;
   }
   
   .banner .contenedor_introduccion h1{
     font-family: 'Quicksand', sans-serif;
-    color: #fff;
-    font-size: 50px;
+  color: #fff;
+  font-size: 50px;
   }
   
   .banner .contenedor_introduccion h2{
