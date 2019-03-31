@@ -9,7 +9,7 @@ module.exports.registrar_padre_familia = (req, res) =>{
             primer_apellido : req.body.primer_apellido,
             segundo_apellido : req.body.segundo_apellido,
             identificacion : req.body.identificacion,
-            tipo_identificacion : req.body.identificacion,
+            tipo_identificacion : req.body.tipo_identificacion,
             distrito : req.body.distrito,
             canton : req.body.canton,
             provincia : req.body.provincia,

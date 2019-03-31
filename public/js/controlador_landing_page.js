@@ -30,11 +30,11 @@ let registrar_centro_educativo = () =>{
 };
 
 let registrar_padre_familia = () =>{
-    window.location.href = './registrar_padre_famila.html';
+    window.location.href = './registrar_padre_familia.html';
 };
 
 let iniciar_sesion = () =>{
-    window.location.href = './Iniciar_sesion2.html';
+    window.location.href = './Iniciar_sesion.html';
 };
 
 btn_crear_cuenta.addEventListener('click',tipo_usuario);

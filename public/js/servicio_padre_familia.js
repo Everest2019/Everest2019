@@ -1,5 +1,5 @@
 'use strict';
-let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pfoto, pprovincia, pcanton, pdistrito, pestado, ptipo_usuario)=>{
+let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pfoto, pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcontrasena)=>{
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_padre_familia",
@@ -21,7 +21,8 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
             canton : pcanton,
             distrito : pdistrito,
             estado : pestado,
-            tipo_usuario : ptipo_usuario
+            tipo_usuario : ptipo_usuario,
+            contrasena: pcontrasena
         },
     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
     datatype: "json"
