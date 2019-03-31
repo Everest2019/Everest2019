@@ -1,17 +1,30 @@
 'use strict';
-const lista_preguntas = document.querySelector('#lista_preguntas');
-const input_buscar = document.querySelector('#txt_buscar');
+const lista_preguntas = document.querySelector('#tbl_preguntas');
+const input_buscar = document.querySelector('#txt_filtrar_preguntas');
 let id = localStorage.getItem('centro_educativo');
+
+const a_regresar = document.querySelector('#a_regresar');
+
+a_regresar.addEventListener('click', function(){
+    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else{
+        window.location.href = './instituciones.html';
+    }
+});
+
+a_regresar.classList.add('estilos_a');
 
 
 
 let mostrar_datos = () =>{
-    let preguntas = listar();
+    let preguntas = listar_preguntas();
     let filtro = input_buscar.value;
   /*  if(preguntas[i]['id_centro_educativo'].includes(id)){
   }*/
 
-    for(let i = 1; i<=preguntas.length; i++){
+    for(let i = 0; i<preguntas.length; i++){
     /*  if(preguntas[i]['pregunta'].includes(filtro)){
         console.log(preguntas[i]['pregunta']);
       }*/

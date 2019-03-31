@@ -88,29 +88,29 @@ let validar =() =>{
     select_tipo_identificacion.classList.add ('borde');
     select_tipo_identificacion.classList.remove('error_input');
   }
-  if(input_provincia.value == ''){
+  if(select_provincia.value == ''){
     error = true;
-    input_provincia.classList.remove ('borde');
-    input_provincia.classList.add('error_select');
+    select_provincia.classList.remove ('borde');
+    select_provincia.classList.add('error_select');
   }else{
-    input_provincia.classList.add ('borde');
-    input_provincia.classList.remove('error_select');
+    select_provincia.classList.add ('borde');
+    select_provincia.classList.remove('error_select');
   }
-  if(input_canton.value == ''){
+  if(select_canton.value == ''){
     error = true;
-    input_canton.classList.remove ('borde');
-    input_canton.classList.add('error_datalist');
+    select_canton.classList.remove ('borde');
+    select_canton.classList.add('error_datalist');
   }else{
-    input_canton.classList.add ('borde');
-    input_canton.classList.remove('error_datalist');
+    select_canton.classList.add ('borde');
+    select_canton.classList.remove('error_datalist');
   }
-  if(input_distrito.value == ''){
+  if(select_distrito.value == ''){
     error = true;
-    input_distrito.classList.remove ('borde');
-    input_distrito.classList.add('error_datalist');
+    select_distrito.classList.remove ('borde');
+    select_distrito.classList.add('error_datalist');
   }else{
-    input_distrito.classList.add ('borde');
-    input_distrito.classList.remove('error_datalist');
+    select_distrito.classList.add ('borde');
+    select_distrito.classList.remove('error_datalist');
   }
   if(contrasena.value == ''){
     error = true;
@@ -163,6 +163,9 @@ let obtener_datos = () =>{
     let tipo_usuario = 'padre_familia';
     let contrasena_pf = contrasena.value;
 
+    let provincia = buscar_provincia();
+    let canton = buscar_canton();
+    let distrito = buscar_distrito();
 
     registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, contrasena_pf);
   

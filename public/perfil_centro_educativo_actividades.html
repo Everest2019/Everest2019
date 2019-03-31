@@ -64,72 +64,33 @@
     </div>
     
     <div class="main">
-            <!DOCTYPE html>
-            <html lang="en">
-            
-            <head>
-                <meta charset="UTF-8">
-                <title>Gemas</title>
-            
-                <link rel="stylesheet" href="css/reset.css">
-                <link rel="stylesheet" href="css/general.css">
-                <link rel="stylesheet" href="css/listar_actividades.css">
-            
-            </head>
-            
-            <body>
-                <header>
-                    <nav>
-                        <div class="nombre_proyecto">
-                            <a href="#">Gemas</a>
-                        </div>
-                        <div class="cont_links">
-                            <a href="index.html">Inicio</a>
-                            <a href="iniciar_sesion.html">Iniciar sesión</a>
-                            <a href="registrar_centro_educativo.html">Crear cuenta</a>
-                        </div>
-                    </nav>
-                </header>
-                <h2 class="titulo2">Lista</h2>
-                <h1 class="titulo1">Actividades</h1>
-                <main>
-                    
-                        <div class="contenido">
-                            <div class="formulario-1">
-                                <form>
-                                    <label for="txt_Filtro">Filtrar</label>
-                                    <input type="text" id="txt_Filtro">
-                                    <table id="tbl_actividades">
-                                        <thead>
-                                            <tr>
-                                                <th>titulo</th>
-                                                <th>Fecha</th>
-                                                <th>Descripción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
-                                </form>
-                            </div>
-                    </div>
-                </main>
-                <div>
-                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-                <script src="js/servicio_actividades.js"></script>
-                <script src="js/controlador_listar_actividades.js"></script>
-               </div>
-            </body>
-            </html>
-    </div>
+        <h1 id="nombre_ce"></h1>
+        <h2>Actividades del Centro Educativo</h2>
+        <div class="separador"></div>
+        <div class="contenido">
+            <div class="contenedor_buscar">
+                <label for="txt_filtro">Buscar </label>
+                <input type="text" id="txt_filtro">
+            </div>
+            <table id="tbl_actividades">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
 
-    
-
+        </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/controlador_sesion.js"></script>
     <script src="js/servicio_actividades.js"></script>
-    <script src="js/controlador_listar_actividades_centro_educativo.js"></script>
+    <script src="js/controlador_listar_actividades.js"></script>
 </body>
 </html>

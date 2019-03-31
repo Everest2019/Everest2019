@@ -28,7 +28,7 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
     });
 
 };
-let listar = () => {
+let listar_preguntas = () => {
     let lista_pregunta = [];
 
     let request = $.ajax({

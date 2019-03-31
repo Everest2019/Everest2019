@@ -53,3 +53,28 @@ body{
 #tbl_actividades th, td{
       padding: 15px;
 }
+
+.contenido .contenedor_buscar{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+div input{
+    display: inline-block;
+    width: 30%;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+
+.contenedor_buscar input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.contenedor_buscar  label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 8%;
+    margin-left: 5%;
+}

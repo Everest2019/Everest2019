@@ -8,8 +8,6 @@ let mostrar_noticias = () => {
   let noticias = listar_noticias();
   let centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
 
-  let centro_educativo= localStorage.getItem('id_centro_educativo');v
-
   for (let i = 0; i < noticias.length; i++) {
     if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {
 
