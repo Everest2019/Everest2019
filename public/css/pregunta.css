@@ -19,7 +19,6 @@ html {
     margin-top: 10px;
     border-radius: 3px;
 }
-
 .contenido{
     margin-top: 60px;
     margin-bottom: 30px;
@@ -53,26 +52,24 @@ div input[type=text]{
 .nombre_pregunta p{
     font-size: 20px;
     font-family: 'Roboto', 'sans-serif';
-    font-weight: bold;
-    padding-top: 20px;
+    padding-top: 30px;
+    margin: 5%;
     text-align: center;
-    width: 1000px;
+    width: 91%;
     height: 50px;
     margin-top: 20px;
-    background: gray;
-    position: relative;
-    left: 53px;
+    background: #FAA21A;
+    color: #fff;
 }
 
 .respuesta_pregunta p{
     font-size: 20px;
     font-family: 'Roboto', 'sans-serif';
-    padding-top: 20px;
+    padding-top: 40px;
+    margin: 5%;
     text-align: center;
-    width: 1000px;
+    width: 91%;
     height: 50px;
-    margin-top: 20px;
-    background: #f2f2f2;
-    position: relative;
-    left: 53px;
+    margin-top: 25px;
+    border: 2px solid #FAA21A;
 }

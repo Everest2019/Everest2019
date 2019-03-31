@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/filtrar_preguntas.css">
     <link rel="stylesheet" href="css/perfil_centro_educativo.css">
+    <link rel="stylesheet" href="css/pregunta.css">
 
     <title>Gemas - Instituciones</title>
 </head>
@@ -53,7 +54,7 @@
             <a href="perfil_centro_educativo_utiles.html">Listas de Útiles</a>
         </div>
 
-        <div id="navbar_lateral_preguntas"   class="pagina_actual">
+        <div id="navbar_lateral_preguntas" class="pagina_actual">
             <a href="perfil_centro_educativo_preguntasFrec.html">Preguntas Frecuentes</a>
         </div>
 
@@ -74,16 +75,10 @@
               <label for="txt_filtrar_preguntas">Filtrar </label>
               <input type="text" id="txt_filtrar_preguntas">
           </div>
-            <table class="tbl_preguntas" id="tbl_preguntas">
-                <thead>
-                    <tr>
-                        <th class="celda_pregunta">Pregunta</th>
-                        <th class="celda_respuesta">Respuesta</th>
-
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+           
+          <div id="lista_preguntas">
+         
+            </div>
           </div>
 </div>
 
@@ -94,8 +89,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="js/servicio_centro_educativo.js"></script>
 <script src="js/servicio_listar_preguntas.js"></script>
+<script src="js/servicio_preguntas.js"></script>
+<script src="js/controlador_contacto_centro_educativo.js"></script>
 <script src="js/controlador_listar_preguntas.js"></script>
-
 <script src="js/controlador_sesion.js"></script>
 </body>
 </html>

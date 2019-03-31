@@ -34,11 +34,12 @@ let validar = () => {
 let obtener_datos = () => {
 
     if (validar() == false) {
+        let centro_educativo = id_centro_educativo;
         let titulo = input_titulo.value;
         let fecha = input_fecha.value;
         let descripcion = input_descripcion.value;
 
-        registrar_actividades(titulo, fecha, descripcion);
+        registrar_actividades(centro_educativo,titulo, fecha, descripcion);
 
     } else {
         swal.fire({

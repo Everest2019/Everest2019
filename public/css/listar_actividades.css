@@ -1,55 +1,75 @@
+html{
+    font-family: 'Roboto', sans-serif;
+}
 body{
-    background: #F2F2F2;;
+    background: #F2F2F2;
+}
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
 }
 
-.titulo1{
-    font-size: 33px;
-    font-weight: bold;
-    text-align: center;
+.contenido .contenedor_buscar{
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
-.titulo2{
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;   
+div input{
+    display: inline-block;
+    width: 30%;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
 }
-.contenido{
-    grid-column: 4 / 5;
-    grid-row: 2 / 5;
+.contenedor_buscar input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.contenedor_buscar  label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 8%;
+    margin-left: 5%;
 }
 #tbl_actividades{
-    float: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 8px;    
-    background: #fff;
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    border: 1px solid #000;
-    margin-top: 25px;
-    height: 400px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 2%;
+    padding: 15px;
 }
 #tbl_actividades tr th{
-    border-top: 2px solid rgba(0, 0, 0, 0.562);;
-    height: 40px;
-    border: 2px solid rgba(0, 0, 0, 0.562);
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%;     
+    right: 60px;
+    color: #40433E;
+    background: #FAA21A;
 }
 #tbl_actividades tr td{
-    padding: 10px;
-    text-align: left;
-    border: 2px solid;
-    border-color: rgba(0, 0, 0, 0.562);
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 100px;
+    background: #fff;
 } 
-#tbl_actividades tbody tr:hover{
-    border: 2px solid black;
-}
-#tbl_actividades thead tr:hover{
-    border: 2px solid  black;
-}
-#tbl_actividades tbody div{
-    background-size: 15%;
-    padding: 10%;
-}
-#tbl_actividades th, td{
-      padding: 15px;
+#tbl_actividades tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 100px;
+    background: #fff;
 }
