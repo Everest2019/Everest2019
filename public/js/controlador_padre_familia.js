@@ -13,9 +13,9 @@ const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
 const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
 const  input_contrasena = document.querySelector('txt_contrasena');
-const input_provincia = document.querySelector('#provincia');
-const input_canton = document.querySelector('#canton');
-const input_distrito = document.querySelector('#distrito');
+const select_provincia = document.querySelector('#txt_provincia');
+const select_canton = document.querySelector('#txt_canton');
+const select_distrito = document.querySelector('#txt_distrito');
 const boton_enviar = document.querySelector('#btn_enviar');
 const boton_subir_foto = document.querySelector('#btn_subir_foto');
 
@@ -90,7 +90,7 @@ let validar =() =>{
     input_distrito.classList.remove('error_datalist');
   }
   return error;
-};
+}; 
 
 let obtener_datos = () =>{
   if(validar() == false){
@@ -124,4 +124,77 @@ let obtener_datos = () =>{
 
 };
 
+let llenar_provincias = () =>{
+    
+  for(let i = 0; i < provincias.length; i++){
+      let nuevaOpcion = new Option(provincias[i]['nombre']);
+      nuevaOpcion.value = provincias[i]['idProvincia'];
+      select_provincia.appendChild(nuevaOpcion);
+  }
+};
+
+let llenar_cantones = () =>{
+  let provincia = select_provincia.value;
+  select_canton.innerHTML = '';
+  select_distrito.innerHTML = '<option value="">Distrito</option>';
+
+  for(let i = 0; i < cantones.length; i++){
+      if(provincia == cantones[i]['Provincia_idProvincia']){
+          let nuevaOpcion = new Option(cantones[i]['nombre']);
+          nuevaOpcion.value = cantones[i]['idCanton'];
+          select_canton.appendChild(nuevaOpcion);
+      }  
+  }
+};
+
+let llenar_distritos = () =>{
+  let canton = select_canton.value;
+  select_distrito.innerHTML = '';
+  
+  for(let i = 0; i < distritos.length; i++){
+      if(canton == distritos[i]['Canton_idCanton']){
+          let nuevaOpcion = new Option(distritos[i]['nombre']);
+          nuevaOpcion.value = distritos[i]['idDistrito'];
+          select_distrito.appendChild(nuevaOpcion);
+      }  
+  }
+};
+
+let buscar_provincia = () =>{
+  
+  for(let i = 0; i < provincias.length; i++){
+      if(select_provincia.value == provincias[i]['idProvincia']){
+          var nombre_provincia = provincias[i]['nombre'];
+          console.log(nombre_provincia);
+      }
+  }
+  return nombre_provincia;
+};
+
+
+let buscar_canton = () =>{
+  
+  for(let i = 0; i < cantones.length; i++){
+      if(select_canton.value == cantones[i]['idCanton']){
+          var nombre_canton = cantones[i]['nombre'];
+          console.log(nombre_canton);
+      }
+  }
+  return nombre_canton;
+};
+
+let buscar_distrito = () =>{
+  
+  for(let i = 0; i < distritos.length; i++){
+      if(select_distrito.value == distritos[i]['idDistrito']){
+          var nombre_distrito = distritos[i]['nombre'];
+          console.log(nombre_distrito);
+      }
+  }
+  return nombre_distrito;
+};
+
+llenar_provincias();
+select_provincia.addEventListener('change', llenar_cantones);
+select_canton.addEventListener('change', llenar_distritos);
 boton_enviar.addEventListener('click',obtener_datos);

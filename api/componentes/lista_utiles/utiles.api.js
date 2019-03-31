@@ -6,7 +6,10 @@ module.exports.registrar_utiles = (req,res)=>{
         {
             articulo: req.body.articulo,
             cantidad: req.body.cantidad,
-            descripcion: req.body.descripcion//,
+            descripcion: req.body.descripcion,
+            articulo_1: req.body.articulo_1,
+            cantidad_1: req.body.cantidad_1,
+            descripcion_1: req.body.descripcion_1//,
             //tipo_usuario: req.body.tipo_usuario,
            // id_centro_educativo: req.body.id_centro_educativo
         }
