@@ -178,22 +178,50 @@ contenedor_imagen2.classList.add('contenedor_imagen');
 contenedor_imagen3.classList.add('contenedor_imagen');
 contenedor_imagen4.classList.add('contenedor_imagen');
 
-let imagen1 = document.createElement('img');
-imagen1.src = centro_educativo['galeria1'];
+if(centro_educativo['galeria1'] != ''){
+    let imagen1 = document.createElement('img');
+    imagen1.src = centro_educativo['galeria1'];
+    contenedor_imagen1.appendChild(imagen1);
+}
 
-let imagen2 = document.createElement('img');
-imagen2.src = centro_educativo['galeria2'];
+if(centro_educativo['galeria2'] != ''){
+    let imagen2 = document.createElement('img');
+    imagen2.src = centro_educativo['galeria2'];
+    contenedor_imagen2.appendChild(imagen2);
+}
 
-let imagen3 = document.createElement('img');
-imagen3.src = centro_educativo['galeria3'];
+if(centro_educativo['galeria3'] != ''){
+    let imagen3 = document.createElement('img');
+    imagen3.src = centro_educativo['galeria3'];
+    contenedor_imagen3.appendChild(imagen3);
+}
 
-let imagen4 = document.createElement('img');
-imagen4.src = centro_educativo['galeria4'];
+if(centro_educativo['galeria4'] != ''){
+    let imagen4 = document.createElement('img');
+    imagen4.src = centro_educativo['galeria4'];
+    contenedor_imagen4.appendChild(imagen4);
+}
 
-contenedor_imagen1.appendChild(imagen1);
-contenedor_imagen2.appendChild(imagen2);
-contenedor_imagen3.appendChild(imagen3);
-contenedor_imagen4.appendChild(imagen4);
+
+
+
+
+a_regresar.addEventListener('click', function(){
+    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else{
+        window.location.href = './instituciones.html';
+    }
+});
+
+a_regresar.classList.add('estilos_a');
+
+
+
+
+
+
 
 contenedor_imagenes.appendChild(contenedor_imagen1);
 contenedor_imagenes.appendChild(contenedor_imagen2);

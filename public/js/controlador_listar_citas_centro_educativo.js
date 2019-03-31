@@ -20,39 +20,41 @@ function mostrar_datos() {
     for (let i = 0; i < lista_citas.length; i++) {
 
         let padre_familia = buscar_padre_familia(lista_citas[i]['id_padre_familia']);
-
-         if (lista_citas[i]['id_centro_educativo'].includes(id_centro_educativo) && padre_familia['primer_nombre'].toLowerCase().includes(filtro.toLowerCase())) {
+      
+            if (lista_citas[i]['id_centro_educativo'].includes(id_centro_educativo)) {
 
             
 
-            let fila = tabla.insertRow();
-
-            let celda_nombre = fila.insertCell();
-            let celda_telefono = fila.insertCell();
-            let celda_correo = fila.insertCell();
-            let celda_fecha = fila.insertCell();
-            let celda_hora = fila.insertCell();
-            let celda_comentario = fila.insertCell();
-            let celda_accion = fila.insertCell();
-
-            let fecha_cita = new Date(lista_citas[i]['fecha']);
-            let formato_fecha = fecha_cita.getDate() + "-" + (fecha_cita.getMonth() + 1) + "-" + fecha_cita.getFullYear();
-      
-            celda_nombre.innerHTML = padre_familia['primer_nombre'] + ' ' + padre_familia['primer_apellido']  + ' '  + padre_familia['segundo_apellido'];
-
-            celda_telefono.innerHTML = padre_familia['telefono'];
-
-            celda_correo.innerHTML = padre_familia['correo'];
-
-            celda_fecha.innerHTML = formato_fecha;
-
-            celda_hora.innerHTML = lista_citas[i]['hora'];
-
-            celda_comentario.innerHTML = lista_citas[i]['comentario'];
-
-            celda_accion.innerHTML = '<i class="fas fa-times fa-2x"></i>';
-
+                let fila = tabla.insertRow();
+    
+                let celda_nombre = fila.insertCell();
+                let celda_telefono = fila.insertCell();
+                let celda_correo = fila.insertCell();
+                let celda_fecha = fila.insertCell();
+                let celda_hora = fila.insertCell();
+                let celda_comentario = fila.insertCell();
+                let celda_accion = fila.insertCell();
+    
+                let fecha_cita = new Date(lista_citas[i]['fecha']);
+                let formato_fecha = fecha_cita.getDate() + "-" + (fecha_cita.getMonth() + 1) + "-" + fecha_cita.getFullYear();
+          
+                celda_nombre.innerHTML = padre_familia['primer_nombre'] + ' ' + padre_familia['primer_apellido']  + ' '  + padre_familia['segundo_apellido'];
+    
+                celda_telefono.innerHTML = padre_familia['telefono'];
+    
+                celda_correo.innerHTML = padre_familia['correo'];
+    
+                celda_fecha.innerHTML = formato_fecha;
+    
+                celda_hora.innerHTML = lista_citas[i]['hora'];
+    
+                celda_comentario.innerHTML = lista_citas[i]['comentario'];
+    
+                celda_accion.innerHTML = '<i class="fas fa-times fa-2x"></i>';
+    
+            
         }
+        
 
     };
 };

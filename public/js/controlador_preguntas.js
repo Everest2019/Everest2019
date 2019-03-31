@@ -4,7 +4,7 @@ const input_pregunta = document.querySelector('#txt_pregunta');
 const input_respuesta = document.querySelector('#txt_respuesta');
 const boton_agregar = document.querySelector('#btn_agregar');
 
-let id_centro_educativo = localStorage.getItem('centro_educativo');
+let id_centro_educativo = localStorage.getItem('id_usuario');
 
 
 let validar = () => {

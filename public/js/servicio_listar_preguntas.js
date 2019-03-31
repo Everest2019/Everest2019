@@ -22,3 +22,4 @@ let listar_preguntas = ()=>{
 
     return preguntas;
 };
+

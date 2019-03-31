@@ -12,7 +12,8 @@ const select_nacionalidad = document.querySelector('#select_nacionalidad');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
 const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
-const  input_contrasena = document.querySelector('txt_contrasena');
+const contrasena = document.querySelector('#txt_contrasena');
+const verificar_contrasena = document.querySelector('#txt_verificar_contrasena');
 const select_provincia = document.querySelector('#txt_provincia');
 const select_canton = document.querySelector('#txt_canton');
 const select_distrito = document.querySelector('#txt_distrito');
@@ -25,70 +26,122 @@ let validar =() =>{
   let error=false;
   if(input_primer_nombre.value == ''){
     error = true;
+    input_primer_nombre.classList.remove ('borde');
     input_primer_nombre.classList.add('error_input');
   }else{
+    input_primer_nombre.classList.add ('borde');
     input_primer_nombre.classList.remove ('error_input');
   }
   if(input_primer_apellido.value == ''){
     error = true;
+    input_primer_apellido.classList.remove ('borde');
     input_primer_apellido.classList.add('error_input');
   }else{
+    input_primer_apellido.classList.add ('borde');
     input_primer_apellido.classList.remove('error_input');
   }
   if(input_correo.value == ''){
     error = true;
+    input_correo.classList.remove ('borde');
     input_correo.classList.add('error_input');
   }else{
+    input_correo.classList.add ('borde');
     input_correo.classList.remove('error_input');
   }
   if(input_cantidad_hijos.value == ''){
     error = true;
+    input_cantidad_hijos.classList.remove ('borde');
     input_cantidad_hijos.classList.add('error_input');
   }else{
+    input_cantidad_hijos.classList.add ('borde');
     input_cantidad_hijos.classList.remove('error_input');
   }
   if(input_edad_hijos.value == ''){
     error = true;
+    input_edad_hijos.classList.remove ('borde');
     input_edad_hijos.classList.add('error_input');
   }else{
+    input_edad_hijos.classList.add ('borde');
     input_edad_hijos.classList.remove('error_input');
   }
   if(select_nacionalidad.value == ''){
     error = true;
+    select_nacionalidad.classList.remove ('borde');
     select_nacionalidad.classList.add('error_input');
   }else{
+    select_nacionalidad.classList.add ('borde');
     select_nacionalidad.classList.remove('error_input');
   }
   if(input_identificacion.value == ''){
     error = true;
+    input_identificacion.classList.remove ('borde');
     input_identificacion.classList.add('error_input');
   }else{
+    input_identificacion.classList.add ('borde');
     input_identificacion.classList.remove('error_input');
   }
   if(select_tipo_identificacion.value == ''){
     error = true;
+    select_tipo_identificacion.classList.remove ('borde');
     select_tipo_identificacion.classList.add('error_input');
   }else{
+    select_tipo_identificacion.classList.add ('borde');
     select_tipo_identificacion.classList.remove('error_input');
   }
-  if(input_provincia.value == ''){
+  if(select_provincia.value == ''){
     error = true;
-    input_provincia.classList.add('error_select');
+    select_provincia.classList.remove ('borde');
+    select_provincia.classList.add('error_select');
   }else{
-    input_provincia.classList.remove('error_select');
+    select_provincia.classList.add ('borde');
+    select_provincia.classList.remove('error_select');
   }
-  if(input_canton.value == ''){
+  if(select_canton.value == ''){
     error = true;
-    input_canton.classList.add('error_datalist');
+    select_canton.classList.remove ('borde');
+    select_canton.classList.add('error_datalist');
   }else{
-    input_canton.classList.remove('error_datalist');
+    select_canton.classList.add ('borde');
+    select_canton.classList.remove('error_datalist');
   }
-  if(input_distrito.value == ''){
+  if(select_distrito.value == ''){
     error = true;
-    input_distrito.classList.add('error_datalist');
+    select_distrito.classList.remove ('borde');
+    select_distrito.classList.add('error_datalist');
   }else{
-    input_distrito.classList.remove('error_datalist');
+    select_distrito.classList.add ('borde');
+    select_distrito.classList.remove('error_datalist');
   }
+  if(contrasena.value == ''){
+    error = true;
+    contrasena.classList.remove ('borde');
+    contrasena.classList.add('input_error');
+}
+else{
+    contrasena.classList.remove('input_error');
+}
+if(verificar_contrasena.value == ''){
+    error = true;
+    verificar_contrasena.classList.remove ('borde');
+    verificar_contrasena.classList.add('input_error');
+}
+else{
+    verificar_contrasena.classList.remove('input_error');
+}
+if(verificar_contrasena.value != contrasena.value){
+    error = true;
+    verificar_contrasena.classList.remove ('borde');
+    contrasena.classList.remove ('borde');
+    contrasena.classList.add('input_error');
+    verificar_contrasena.classList.add('input_error');
+}
+else{
+    verificar_contrasena.classList.add('borde');
+    contrasena.classList.add('borde');
+    contrasena.classList.remove('input_error');
+    verificar_contrasena.classList.remove('input_error');
+}
+
   return error;
 }; 
 
@@ -106,13 +159,15 @@ let obtener_datos = () =>{
     let identificacion = input_identificacion.value;
     let tipo_identificacion = select_tipo_identificacion.value;
     let foto = input_foto_padre_familia.value;
-    let provincia = input_provincia.value;
-    let canton = input_canton.value;
-    let distrito = input_distrito.value;
     let estado = true;
     let tipo_usuario = 'padre_familia';
+    let contrasena_pf = contrasena.value;
 
-    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario);
+    let provincia = buscar_provincia();
+    let canton = buscar_canton();
+    let distrito = buscar_distrito();
+
+    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, contrasena_pf);
   
   }else{
     swal.fire({

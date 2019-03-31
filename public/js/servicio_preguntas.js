@@ -12,7 +12,8 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
             respuesta: prespuesta
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        datatype: "json"
+        datatype: "json",
+        async: false
     });
 
     request.done(function (msg) {
@@ -20,6 +21,7 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
         swal.fire({
             type: 'success',
             title: 'Pregunta registrada correctamente',
+            text: 'La pregunta será visualizada por los usuarios'
         });
 
     });
@@ -28,7 +30,7 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
     });
 
 };
-let listar = () => {
+let listar_preguntas = () => {
     let lista_pregunta = [];
 
     let request = $.ajax({
@@ -52,3 +54,29 @@ let listar = () => {
     return lista_pregunta;
 
 };
+
+//Buscar centro educativo para mostar en el perfil del
+function buscar_centro_educativo(pid_centro_educativo){
+    let centro_educativo = [];
+    $.ajax({
+        url: 'http://localhost:4000/api/buscar_centro_educativo',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        async: false,
+        data: {
+            id : pid_centro_educativo
+        },
+        beforeSend: function beforeSend() {
+              
+        },
+        success: function success(response) {
+          centro_educativo = response;
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+  
+    return centro_educativo;
+  };

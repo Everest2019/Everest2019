@@ -1,5 +1,8 @@
 const btn_iniciar_sesion = document.querySelector('#btn_iniciar_sesion');
 const btn_crear_cuenta = document.querySelector('#btn_crear_cuenta');
+const btn_accion1 = document.querySelector('#btn_banner');
+const btn_accion2 = document.querySelector('#btn_informacion');
+
 
 let tipo_usuario = () =>{
     Swal.fire({
@@ -30,12 +33,14 @@ let registrar_centro_educativo = () =>{
 };
 
 let registrar_padre_familia = () =>{
-    window.location.href = './registrar_padre_famila.html';
+    window.location.href = './registrar_padre_familia.html';
 };
 
 let iniciar_sesion = () =>{
-    window.location.href = './Iniciar_sesion2.html';
+    window.location.href = './Iniciar_sesion.html';
 };
 
 btn_crear_cuenta.addEventListener('click',tipo_usuario);
 btn_iniciar_sesion.addEventListener('click',iniciar_sesion);
+btn_accion1.addEventListener('click',iniciar_sesion);
+btn_accion2.addEventListener('click',iniciar_sesion);

@@ -1,11 +1,31 @@
 'use strict';
 const lista_noticias = document.querySelector('#lista_noticias');
 const input_filtrar = document.querySelector('#txt_buscar');
+const nombre = document.querySelector('#nombre_ce');
+
+const a_regresar = document.querySelector('#a_regresar');
+
+a_regresar.addEventListener('click', function(){
+    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else{
+        window.location.href = './instituciones.html';
+    }
+});
+
+a_regresar.classList.add('estilos_a');
+
+let id_centro_educativo = localStorage.getItem('centro_educativo');
+
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
+
+nombre.innerHTML = centro_educativo['nombre_comercial'];
+
 
 let mostrar_noticias = () => {
   let noticias = listar_noticias();
   let centro_educativo = localStorage.getItem('centro_educativo');
-
 
   for (let i = 0; i < noticias.length; i++) {
     if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {

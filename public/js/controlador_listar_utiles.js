@@ -1,11 +1,11 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_utiles tbody');
-const input_filtro = document.querySelector('#txt_buscar')
+const input_filtro = document.querySelector('#txt_filtar')
 
 
 mostrar_datos();
-//input_filtro.addEventListener('keyup', mostrar_datos);
+input_filtro.addEventListener('keyup', mostrar_datos);
 
 function mostrar_datos() {
     
@@ -18,13 +18,13 @@ function mostrar_datos() {
     }
     
     
-    //let filtro = input_filtro.value;
+    let filtro = input_filtro.value;
 
     tabla.innerHTML = '';
     for (let i = 0; i < lista_utiles.length; i++) {
-       // if (lista_utiles[i]['articulo'].toLowerCase().includes(filtro.toLowerCase())) {
+        if (lista_utiles[i]['articulo'].toLowerCase().includes(filtro.toLowerCase())) {
             let fila = tabla.insertRow();
-           // console.log(lista_utiles.length);
+           //console.log(lista_utiles.length);
 
 
             fila.insertCell().innerHTML = lista_utiles[i]['articulo'];
@@ -35,7 +35,7 @@ function mostrar_datos() {
             //fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
             //fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
 
-       // }
+        }
 
     };
 };
