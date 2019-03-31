@@ -7,7 +7,5 @@ let noticiaSchema = new mongoose.Schema({
     fecha: {type:Date, required:true} ,
     descripcion:{type:String, required:true}
 });
- 
-module.exports = mongoose.model('Noticia',noticiaSchema);   
 
-
+module.exports = mongoose.model('Noticia',noticiaSchema);
