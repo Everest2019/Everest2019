@@ -1,13 +1,13 @@
 'use strict';
 
 
-   let  registrar_actividades = (ptitulo, pfecha, pdescripcion) => {
+   let  registrar_actividades = (pid_centro_educativo,ptitulo, pfecha, pdescripcion) => {
    
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_actividades",
         method: "POST",
         data: { 
-
+            id_centro_educativo: pid_centro_educativo,
             titulo : ptitulo,
             fecha : pfecha,
             descripcion : pdescripcion

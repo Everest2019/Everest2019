@@ -1,4 +1,4 @@
-'use stritc';
+'use strict';
 const mongoose = require ('mongoose');
 
 let schema_preguntas = new mongoose.Schema(

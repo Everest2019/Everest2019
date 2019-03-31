@@ -11,6 +11,7 @@
     grid-gap: 10px;
     margin: 0 auto;
     padding-top: 40px;
+    border: 3px solid gray;
 }
 .contenedor_perfil .contenedor_foto{
     grid-column: 1 / 2;
@@ -41,7 +42,6 @@
 }
 .contenedor_info_nombre{
     font-size: 25px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_id{
@@ -54,7 +54,6 @@
     grid-row: 2 / 3;
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_provincia {
@@ -62,11 +61,10 @@
     grid-row: 3 / 4;
     text-align: center;
     font-size: 15px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_provincia h1{
-    font-size: 20px;
+    font-size: 22px;
     padding-top: 15px;
 }
 .contenedor_canton{
@@ -74,11 +72,10 @@
     grid-row: 3 / 4;
     text-align: center;
     font-size: 15px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_canton h1{
-    font-size: 20px;
+    font-size: 22px;
     padding-top: 15px;
 }
 .contenedor_distrito{
@@ -86,11 +83,10 @@
     grid-row: 3 / 4;
     text-align: center;
     font-size: 15px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_distrito h1{
-    font-size: 20px;
+    font-size: 22px;
     padding-top: 15px;
 }
 .contenedor_telefono{
@@ -103,7 +99,6 @@
     grid-row: 4 / 5;
     text-align: center;
     font-size: 25px;
-    font-weight: bold;
     padding-top: 15px;
 }
 .contenedor_correo{
@@ -117,7 +112,6 @@
     grid-row: 5 / 6;
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
     padding-top: 15px;
 }
 div button{

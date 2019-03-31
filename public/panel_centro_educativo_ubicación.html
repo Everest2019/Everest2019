@@ -11,22 +11,23 @@
     <title>Ubicación-Centro Educativo</title>
 </head>
 <body>
-   
+    
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
         
-        
-
     
         <div id="navbar_lateral_regresar">
                 <a href="panel_control_centro_educativo.html">Regresar</a>
             </div>
-        
-            <div id="navbar_lateral_general">
-                <a href="panel_centro_educativo_general.html">General</a>
-            </div>
+            <div  id = "navbar_lateral_general">
+                    <a href="panel_centro_educativo_general.html">General</a>
+                </div>
+                        
+            <div id="navbar_lateral_ubicacion" class= "pagina_actual">
+                <a href="panel_centro_educativo_ubicación.html">Ubicación</a>
+            </div>  
         
             <div id="navbar_lateral_servicios">
                 <a href="panel_centro_educativo_servicios.html">Servicios</a>
@@ -43,8 +44,16 @@
             <div id="navbar_lateral_actividades">
                 <a href="panel_centro_educativo_actividades.html">Actividades</a>
             </div>
+            
+            <div id="navbar_lateral_etiquetas">
+                <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
+            </div>
         
-            <div id="navbar_lateral_utiles"   class="pagina_actual">
+            <div id="navbar_lateral_preguntas">
+                <a href="panel_centro_educativo_preguntas_frecuentes.html">Preguntas Frecuentes</a>
+            </div>
+        
+            <div id="navbar_lateral_utiles">
                 <a href="panel_centro_educativo_utiles.html">Listas de Útiles</a>
             </div>
     
@@ -59,6 +68,7 @@
             <div id="contenedor_cerrar_sesion">
                 <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
             </div>
+        </div>
     </div>
     
     <div class="main">
@@ -113,6 +123,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/controlador_sesion.js"></script>
+    <script src="js/controlador_panel_centro_educativo_ubicacion.js"></script>
     <script src="js/controlador_panel_centro_educativo.js"></script>
 </body>
 </html>
