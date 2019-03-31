@@ -13,7 +13,6 @@ let id_centro_educativo = localStorage.getItem('id_usuario');
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 
-
 banner.src = centro_educativo['imagen_portada'];
 logo.src = centro_educativo['logo'];
 nombre.innerHTML = centro_educativo['nombre_comercial'];

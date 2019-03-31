@@ -21,8 +21,8 @@ body{
 }
 
 .contenido .contenedor_buscar{
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 div input{
     display: inline-block;
@@ -101,4 +101,18 @@ div input{
     font-size: 16px;
     padding-top: 10px;
     text-align: center;
+}
+ button{
+    margin: 2%;
+    width: 20%;
+    height: 40px;
+    margin-left: 5%;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    
+}
+button:hover{
+    background: rgb(245, 148, 2);
 }
