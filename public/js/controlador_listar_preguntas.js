@@ -4,7 +4,7 @@ const input_buscar = document.querySelector('#txt_buscar');
 const boton_buscar = document.querySelector('#btn_buscar');
 let filtro = input_buscar.value;
 
-localStorage.setItem('centro_educativo','5c8dc9302bb1633a5054a51e');
+
 let centro_educativo = localStorage.getItem('centro_educativo');
 
 
