@@ -126,11 +126,12 @@ div input[type=radio]{
       margin-bottom: 20px;
   }
 
-  .navbar_lateral img{
-    width: 80%;   
-    height: 100px;
-    margin-left: 10%;
-    margin-top: 30px;
+  #logo{
+    width: 8%;   
+    height: 35px;
+    margin-left: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px
 }
 
   .navbar_lateral div:hover{
