@@ -19,8 +19,15 @@ function obtener_Datos() {
     if (!error_Blancos) {
         usuario_Aceptado = validar_credenciales(correo, contrasena);
         if (usuario_Aceptado.success == true) {
+        }else{
+            swal.fire({
+                type: 'warning',
+                title: 'El usuario no se encuentra registrado',
+                text: 'Por favor registrese para poder iniciar sesión'
+              });
         }
     }
+
 };
 
 function validar(pcorreo, pcontrasena) {
