@@ -1,6 +1,7 @@
 'use strict';
 
 const input_filtrar = document.querySelector('#txt_buscar');
+const btn_agregar_noticias = document.querySelector('#btn_agregar');
 let noticias = listar_noticias();
 
 input_filtrar.addEventListener('keyup', mostrar_noticias);
@@ -62,4 +63,8 @@ function mostrar_noticias() {
         }
     }
 }
+
+btn_agregar_noticias.addEventListener('click', function(){
+    window.location.href = './registrar_noticia.html';
+})
 

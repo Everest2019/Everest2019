@@ -46,10 +46,18 @@
         <div id="navbar_lateral_cercanos" class="pagina_actual">
             <a href="panel_administrador_articulos.html">Artículos</a>
         </div>
+
+        <div id="navbar_lateral_cercanos" >
+                <a href="listar_etiquetas.html">Etiquetas</a>
+            </div>
+            
         
         <div id="navbar_lateral_cercanos">
             <a href="#">Bitácora</a>
         </div>
+
+                <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+
     </div>
 
     <main>
@@ -63,6 +71,8 @@
                     <input type="text" id="txt_buscar">
                 </div>
             </div>
+            <button type="button" id="btn_agregar" class="btn_articulo">Agregar artículo</button>
+            <button type="button" id="btn_modificar_artículo" class="btn_articulo">Modificar artículo</button>
  
             <div>
 
@@ -84,6 +94,8 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_articulo.js"></script>
     <script src="js/controlador_listar_articulo.js"></script>
+    <script src="js/controlador_cerrar_sesion_admin.js"></script>
+
 </body>
 
 </html>

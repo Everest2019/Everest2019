@@ -22,7 +22,9 @@ function mostrar_datos() {
         let padre_familia = buscar_padre_familia(lista_citas[i]['id_padre_familia']);
       
             if (lista_citas[i]['id_centro_educativo'].includes(id_centro_educativo)) {
+                if(padre_familia['primer_nombre'].toLowerCase().includes(filtro.toLowerCase())){
 
+                
             
 
                 let fila = tabla.insertRow();
@@ -52,7 +54,7 @@ function mostrar_datos() {
     
                 celda_accion.innerHTML = '<i class="fas fa-times fa-2x"></i>';
     
-            
+                }
         }
         
 

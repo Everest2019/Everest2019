@@ -93,3 +93,38 @@ header nav .cont_links a:hover{
 .error_input{
     border: 2px solid #e55039;
 }
+
+#btn_cerrar_sesion{
+    width: 40%;
+    height: 28px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    font-size: 10px;
+    margin-right: 8%;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+#btn_cerrar_sesion:hover{
+    background: rgb(245, 148, 2);
+}
+
+#btn_cerrar_sesion_admin{
+    width: 40%;
+    height: 28px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    font-size: 10px;
+    margin-right: 8%;
+    cursor: pointer;
+    margin-bottom: 40px;
+    margin-left: 25%;
+}
+
+#btn_cerrar_sesion_admin:hover{
+    background: rgb(245, 148, 2);
+}

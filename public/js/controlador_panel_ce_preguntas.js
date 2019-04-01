@@ -2,8 +2,9 @@
 const lista_preguntas = document.querySelector('#lista_preguntas');
 const input_buscar = document.querySelector('#txt_buscar');
 const nombre = document.querySelector('#nombre_ce');
+const btn_pregunta = document.querySelector('#btn_agregar_pregunta_frecuente');
 
-let id_centro_educativo = localStorage.getItem('centro_educativo');
+let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
@@ -50,3 +51,7 @@ let mostrar_datos = () => {
 }
 mostrar_datos();
 input_buscar.addEventListener('keyup', mostrar_datos);
+
+btn_pregunta.addEventListener('click',function(){
+  window.location.href = './Agregar_preguntas_frecuentes.html';
+})
