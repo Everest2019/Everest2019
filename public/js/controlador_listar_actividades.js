@@ -13,11 +13,13 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 let mostrar_datos = () =>{
+    let filtro = input_Filtro.nodeValue;
     let actividades = listar_actividades ();
     let id_centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
+    tabla.innerHTML='';
 
     for (let i = 0; i < actividades.length; i++) {
-        if (actividades[i]['id_centro_educativo'].includes(id_centro_educativo)){
+        if (actividades[i]['id_centro_educativo'].tolowerCase().includes(id_centro_educativo)(filtro.tolowerCase())){
         let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = actividades[i]['titulo'];
