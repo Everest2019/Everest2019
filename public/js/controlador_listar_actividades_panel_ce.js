@@ -34,7 +34,7 @@ let mostrar_datos = () =>{
 };
 
 let actividad = () =>{
-    window.location.href = './registrar_actividad.html';
+    window.location.href = './agregar_actividades.html';
 }
 
 mostrar_datos();
