@@ -24,12 +24,13 @@ nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 
 let mostrar_noticias = () => {
+  lista_noticias.innerHTML = '';
+  let filtro = input_filtrar.value;
   let noticias = listar_noticias();
   let centro_educativo = localStorage.getItem('centro_educativo');
-
   for (let i = 0; i < noticias.length; i++) {
     if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {
-
+      if (noticias[i]['titulo'].toLowerCase().includes(filtro.toLowerCase())) {
 
       let noticia = document.createElement('div');
       noticia.classList.add('noticia');
@@ -66,9 +67,11 @@ let mostrar_noticias = () => {
       noticia.appendChild(descripcion_noticia);
 
       lista_noticias.appendChild(noticia);
+      }
     }
   }
 }
 
 mostrar_noticias();
 
+input_filtrar.addEventListener('keyup', mostrar_noticias);

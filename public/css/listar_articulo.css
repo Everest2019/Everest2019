@@ -76,3 +76,14 @@ div input[type=text]{
     margin-top: 10px;
     border-radius: 3px;
 }
+
+.btn_articulo{
+    width: 20%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 3%;
+    cursor: pointer;
+  }
