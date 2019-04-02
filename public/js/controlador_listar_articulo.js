@@ -1,6 +1,7 @@
 'use strict';
 
 const input_filtrar = document.querySelector('#txt_buscar');
+const btn_agregar_articulos = document.querySelector('#btn_agregar');
 
 let lista_articulo = listar();
 
@@ -30,4 +31,8 @@ function mostrar_datos() {
 
     };
 };
+
+btn_agregar_articulos.addEventListener('click', function(){
+    window.location.href = './registrar_articulos.html';
+})
 

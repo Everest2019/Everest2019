@@ -45,3 +45,4 @@ a_regresar.addEventListener('click', function(){
 });
 
 a_regresar.classList.add('estilos_a');
+input_Filtro.addEventListener('keyup', mostrar_datos);
