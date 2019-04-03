@@ -13,35 +13,78 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nombre_proyecto">
-                <a href="#">Gemas</a>
-            </div>
-            <div class="cont_links">
-                <a href="#">Inicio</a>
-                <a href="#">Instituciones</a>
-                <a href="#">Mi Perfil</a>
-                <a href="#">Cerrar Sesión</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="formulario-1">
-            <form>
-                <div>
-                    <label for="txt_buscar">Buscar</label>
-                    <input type="text" id="txt_buscar">
-                </div>
-            </form>
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+
+
+        <div id="navbar_lateral_inicio">
+            <a href="panel_administrador_inicio.html">Inicio</a>
         </div>
-        <div>
-       
+
+        <div id="navbar_lateral_favoritos">
+            <a href="#">Aprobaciones</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Reportes</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_instituciones.html">Instituciones</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="#">Evaluaciones</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="#">Lista de útiles</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="panel_administrador_articulos.html">Artículos</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos" class="pagina_actual">
+            <a href="listar_etiquetas.html">Etiquetas</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Bitácora</a>
+        </div>
+
+        <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+
+    </div>
+
+    <main class="main">
+        <h1>Lista de Articulos</h1>
+        <h2>Articulos actuales</h2>
+
+        <div class="contenedor_filtraciones">
+
+            <div>
+                <label for="txt_buscar">Buscar</label>
+                <input type="text" id="txt_buscar">
+            </div>
+        </div>
+
+        <button type="button" id="btn_agregar" class="btn_etiqueta">Agregar articulo</button>
+        <button type="button" id="btn_modificar_etiqueta" class="btn_etiqueta">Modificar articulo</button>
+
+        <div class="contenido">
+
             <table id="tbl_articulo">
-                <tr>
-                    <th>Nombre del Artículo</th>
-                    <th>Descripción</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Nombre del Artículo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+
                 <tbody>
 
                 </tbody>
@@ -51,7 +94,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_articulo.js"></script>
-<script src="js/controlador_listar_articulo.js"></script>
+    <script src="js/controlador_listar_articulo.js"></script>
 </body>
 
 </html>
