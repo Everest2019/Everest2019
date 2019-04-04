@@ -28,9 +28,8 @@
     </header>
 
     <main>
-        <div class="slidershow-container">
 
-
+        <form class="utiles" id="frm_uitiles">
             <div class="contenedor">
                 <div class="descripcion_contenedor">
                     <p>Lista de Útiles</p>
@@ -38,148 +37,84 @@
                 <div class="separador"></div>
                 <div class="contenido">
                     <div>
-                        <form class="utiles" id="frm_uitiles">
-                            <table id="tbl_utiles">
-                                <tr id="linea">
-                                    <th>
-                                        <div>
-                                            <label for="slt_articulo">Artículos</label>
-                                            <select name="articulo" id="slt_articulo">
-                                                <option value=""></option>
-                                                <option value="boligrafos">Bolígrafo</option>
-                                                <option value="cuadernos">Cuaderno</option>
-                                                <option value="goma">Pegamento</option>
-                                                <option value="diccionario">Diccionario</option>
-                                                <option value="hojas"> Hojas</option>
-                                                <option value="lapices-de-colores">Lápices de colores</option>
-                                                <option value="caja-de-lapices">Caja de lápices de grafito</option>
-                                                <option value="tijeras">Tijeras</option>
-                                            </select>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div>
-                                            <label for="txt_cantidad">Cantidad de artículos</label>
-                                            <input type="number" id="txt_cantidad">
 
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div>
-                                            <label for="txt_descripcion">Descripción</label>
-                                            <textarea id="txt_descripcion"></textarea>
-                                        </div>
-                                    </th>
-                                </tr>
-                                <!-------------------------------------------------------------------->
-
-                                <tr>
-                                    <th>
-                                        <div>
-                                            <label for="slt_articulo_1">Artículos</label>
-                                            <select name="articulo" id="slt_articulo_1">
-                                                <option value=""></option>
-                                                <option value="boligrafos">Bolígrafo</option>
-                                                <option value="cuadernos">Cuaderno</option>
-                                                <option value="goma">Pegamento</option>
-                                                <option value="diccionario">Diccionario</option>
-                                                <option value="hojas"> Hojas</option>
-                                                <option value="lapices-de-colores">Lápices de colores</option>
-                                                <option value="caja-de-lapices">Caja de lapices de grafito</option>
-                                                <option value="tijeras">Tijeras</option>
-                                            </select>
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div>
-                                            <label for="txt_cantidad_1">Cantidad de artículos</label>
-                                            <input type="number" id="txt_cantidad_1">
-
-                                        </div>
-                                    </th>
-                                    <th>
-                                        <div>
-                                            <label for="txt_descripcion_1">Descripción</label>
-                                            <textarea id="txt_descripcion_1"></textarea>
-                                        </div>
-                                    </th>
-
-                                            <input type="button" id="btn_guardar" value="Guardar">
-
-                                </tr>
-                                <!-------------------------------------------------------------------------------->
-
-
-                                <!--
-                                    <tr>
-                                            <th>
-                                                <div>
-                                                    <label for="slt_articulo">Articulos</label>
-                                                    <select name="articulo" id="slt_articulo_2">
-                                                        <option value=""></option>
-                                                        <option value="boligrafos">Boligrafo</option>
-                                                        <option value="cuadernos">Cuaderno</option>
-                                                        <option value="goma">Pegamento</option>
-                                                        <option value="diccionario">Diccionario</option>
-                                                        <option value="hojas"> Hojas</option>
-                                                        <option value="lapices-de-colores">Lapices de colores</option>
-                                                        <option value="caja-de-lapices">Caja de lapices de grfito</option>
-                                                        <option value="tijeras">Tijeras</option>
-                                                    </select>
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div>
-                                                    <label for="txt_cantidad_2">Cantidad de articulos</label>
-                                                    <input type="number" id="txt_cantidad_2">
-
-                                                </div>
-                                            </th>
-                                            <th>
-                                                <div>
-                                                    <label for="txt_descripcion_2">Descripción</label>
-                                                    <textarea id="txt_descripcion_2"></textarea>
-                                                </div>
-                                            </th>
-                                        </tr>
-
-                                </table> -->
-
-
-
-
-                        </form>
-                    </div>
-
-                </div>
-                <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
-                        <i class="fas fa-angle-right fa-4x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- //segundo contenedor
-<div class="mySlides fade">
-        <div class="numbertext"></div>
-        <div class="contenedor">
-                <div class="flecha_izq">
-                        <a onclick="plusSlides(-1)">
-                            <i class="fas fa-angle-left fa-4x"></i>
-                        </a>
-                    </div>
-            <div class="descripcion_contenedor">
-                <p>Lista de Utiles</p>
-            </div>
-            <div class="separador"></div>
-            <div class="contenido">
-                <div>
-                    <form class="utiles" id="frm_uitiles">
                         <table id="tbl_utiles">
                             <tr id="linea">
                                 <th>
                                     <div>
+                                        <label for="slt_articulo">Artículos</label>
                                         <select name="articulo" id="slt_articulo">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lápices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion">Descripción</label>
+                                        <textarea id="txt_descripcion"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-------------------------------------------------------------------->
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_1">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_1">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_1">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_1">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_1">Descripción</label>
+                                        <textarea id="txt_descripcion_1"></textarea>
+                                    </div>
+                                </th>
+
+
+
+                            </tr>
+                            <!-------------------------------------------------------------------------------->
+
+
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_2">Articulos</label>
+                                        <select name="articulo" id="slt_articulo_2">
                                             <option value=""></option>
                                             <option value="boligrafos">Boligrafo</option>
                                             <option value="cuadernos">Cuaderno</option>
@@ -194,36 +129,535 @@
                                 </th>
                                 <th>
                                     <div>
-                                        <label for="txt_cantidad">Cantidad de articulos</label>
-                                        <input type="number" id="txt_cantidad">
+                                        <label for="txt_cantidad_2">Cantidad de articulos</label>
+                                        <input type="number" id="txt_cantidad_2">
 
                                     </div>
                                 </th>
                                 <th>
                                     <div>
-                                        <label for="txt_descripcion">Descripción</label>
-                                        <textarea id="txt_descripcion"></textarea>
+                                        <label for="txt_descripcion_2">Descripción</label>
+                                        <textarea id="txt_descripcion_2"></textarea>
                                     </div>
                                 </th>
                             </tr>
-
                         </table>
 
+                    </div>
 
-
-
-
-                    </form>
                 </div>
-
-            </div>
-            <div class="flecha_der">
+                <div class="flecha_der">
                     <a onclick="plusSlides(1)">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
-        </div>
-    </div> -->
+            </div>
+            </div>
+            <!-- segundo contenedor -->
+
+            <div class="contenedor">
+                <div class="descripcion_contenedor">
+                    <p>Lista de Útiles</p>
+                </div>
+                <div class="separador"></div>
+                <div class="contenido">
+                    <div>
+                        <table id="tbl_utiles">
+                            <tr id="linea">
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_3">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_3">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lápices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_3">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_3">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_3">Descripción</label>
+                                        <textarea id="txt_descripcion_3"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-------------------------------------------------------------------->
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_4">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_4">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_4">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_4">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_4">Descripción</label>
+                                        <textarea id="txt_descripcion_4"></textarea>
+                                    </div>
+                                </th>
+
+
+
+                            </tr>
+                            <!-------------------------------------------------------------------------------->
+
+
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_5">Articulos</label>
+                                        <select name="articulo" id="slt_articulo_5">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Boligrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lapices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grfito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_5">Cantidad de articulos</label>
+                                        <input type="number" id="txt_cantidad_5">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_5">Descripción</label>
+                                        <textarea id="txt_descripcion_5"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- tercer contenedor -->
+
+            <div class="contenedor">
+                <div class="descripcion_contenedor">
+                    <p>Lista de Útiles</p>
+                </div>
+                <div class="separador"></div>
+                <div class="contenido">
+                    <div>
+                        <table id="tbl_utiles">
+                            <tr id="linea">
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_6">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_6">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lápices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_6">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_6">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_6">Descripción</label>
+                                        <textarea id="txt_descripcion_6"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-------------------------------------------------------------------->
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_7">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_7">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_7">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_7">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_7">Descripción</label>
+                                        <textarea id="txt_descripcion_7"></textarea>
+                                    </div>
+                                </th>
+
+
+
+                            </tr>
+                            <!-------------------------------------------------------------------------------->
+
+
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_8">Articulos</label>
+                                        <select name="articulo" id="slt_articulo_8">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Boligrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lapices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grfito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_8">Cantidad de articulos</label>
+                                        <input type="number" id="txt_cantidad_8">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_8">Descripción</label>
+                                        <textarea id="txt_descripcion_8"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- cuarto contenedor -->
+
+            <div class="contenedor">
+                <div class="descripcion_contenedor">
+                    <p>Lista de Útiles</p>
+                </div>
+                <div class="separador"></div>
+                <div class="contenido">
+                    <div>
+                        <table id="tbl_utiles">
+                            <tr id="linea">
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_9">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_9">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lápices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_9">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_9">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_9">Descripción</label>
+                                        <textarea id="txt_descripcion_9"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-------------------------------------------------------------------->
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_10">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_10">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_10">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_10">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_10">Descripción</label>
+                                        <textarea id="txt_descripcion_10"></textarea>
+                                    </div>
+                                </th>
+
+
+
+                            </tr>
+                            <!-------------------------------------------------------------------------------->
+
+
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_11">Articulos</label>
+                                        <select name="articulo" id="slt_articulo_11">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Boligrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lapices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grfito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_11">Cantidad de articulos</label>
+                                        <input type="number" id="txt_cantidad_11">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_11">Descripción</label>
+                                        <textarea id="txt_descripcion_11"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- quinto contenedor -->
+
+            <div class="contenedor">
+                <div class="descripcion_contenedor">
+                    <p>Lista de Útiles</p>
+                </div>
+                <div class="separador"></div>
+                <div class="contenido">
+                    <div>
+                        <table id="tbl_utiles">
+                            <tr id="linea">
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_12">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_12">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lápices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_12">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_12">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_12">Descripción</label>
+                                        <textarea id="txt_descripcion_12"></textarea>
+                                    </div>
+                                </th>
+                            </tr>
+                            <!-------------------------------------------------------------------->
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_13">Artículos</label>
+                                        <select name="articulo" id="slt_articulo_13">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Bolígrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lápices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grafito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_13">Cantidad de artículos</label>
+                                        <input type="number" id="txt_cantidad_13">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_13">Descripción</label>
+                                        <textarea id="txt_descripcion_13"></textarea>
+                                    </div>
+                                </th>
+
+
+
+                            </tr>
+                            <!-------------------------------------------------------------------------------->
+
+
+
+                            <tr>
+                                <th>
+                                    <div>
+                                        <label for="slt_articulo_14">Articulos</label>
+                                        <select name="articulo" id="slt_articulo_14">
+                                            <option value=""></option>
+                                            <option value="boligrafos">Boligrafo</option>
+                                            <option value="cuadernos">Cuaderno</option>
+                                            <option value="goma">Pegamento</option>
+                                            <option value="diccionario">Diccionario</option>
+                                            <option value="hojas"> Hojas</option>
+                                            <option value="lapices-de-colores">Lapices de colores</option>
+                                            <option value="caja-de-lapices">Caja de lapices de grfito</option>
+                                            <option value="tijeras">Tijeras</option>
+                                        </select>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_cantidad_14">Cantidad de articulos</label>
+                                        <input type="number" id="txt_cantidad_14">
+
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <label for="txt_descripcion_14">Descripción</label>
+                                        <textarea id="txt_descripcion_14"></textarea>
+                                    </div>
+                                </th>
+                                <input type="button" id="btn_guardar" value="Guardar">
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </form>
 
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

@@ -32,8 +32,6 @@ let id_centro_educativo = localStorage.getItem('centro_educativo');
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
-
-
 web.innerHTML = centro_educativo['pagina_web'];
 correo.innerHTML = centro_educativo['correo'];
 telefono.innerHTML += centro_educativo['telefono'];
