@@ -5,9 +5,14 @@ const input_fecha = document.querySelector('#input_fecha');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_registrar = document.querySelector('#btn_registrar');
 
-document.querySelector("#input_fecha").valueAsDate = new Date();
 
-let id_centro_educativo = localStorage.getItem('id_usuario');                                                                                                
+
+document.querySelector("#input_fecha").valueAsDate = new Date();
+localStorage.setItem('id_usuario','kjahdsfkjg');
+let id_centro_educativo = localStorage.getItem('id_usuario');
+
+
+
 let validar = () =>{
     let error = false;
 
@@ -39,11 +44,12 @@ let validar = () =>{
 
 let registrar_datos = () => {
     if(validar()==false){
-        let centro_educativo = id_centro_educativo;
-        let titulo = input_titulo.value;
-        let fecha = input_fecha.value;
-        let descripcion = input_descripcion.value;
+      let centro_educativo = id_centro_educativo;
+      let titulo = input_titulo.value;
+      let fecha = input_fecha.value;
+      let descripcion = input_descripcion.value;
         registrar(centro_educativo,titulo,fecha,descripcion);
+        limpiarFormulario;
     }else{
         swal.fire({
             type:'warning',
@@ -54,5 +60,17 @@ let registrar_datos = () => {
 
 
 };
+
+let limpiarFormulario = () => {
+  let centro_educativo = id_centro_educativo;
+  let titulo = input_titulo.value;
+  let fecha = input_fecha.value;
+  let descripcion = input_descripcion.value;
+  centro_educativo.innerHTML = '';
+  titulo.innerHTML = '';
+  fecha.innerHTML = '';
+  descripcion.innerHTML = '';
+
+}
 
 boton_registrar.addEventListener('click',registrar_datos);
