@@ -39,7 +39,7 @@ let obtener_datos = () => {
         let fecha = input_fecha.value;
         let descripcion = input_descripcion.value;
 
-        registrar_actividades(centro_educativo,titulo, fecha, descripcion);
+        registrar_actividades(id_centro_educativo,titulo, fecha, descripcion);
 
     } else {
         swal.fire({

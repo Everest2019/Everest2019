@@ -11,60 +11,56 @@
 
 <body>
 
-
+    <!--Barra de navegacion superios-->
 
     <header id="header_principal">
         <nav>
-                <a href="index.html" id="img"><img src="img/gemas.png" alt="Logo Gemas" id="logo"></a> 
-
             <div class="cont_links">
-
+                <a href="panel_administrador_inicio.html">Inicio</a>
+                <a href="panel_administrador_instituciones.html">Instituciones</a>
                 <a href="#">Bitacora</a>
                 <a href="#">Reportes</a>
-                <a href="panel_administrador_instituciones.html">Instituciones</a>
-                <a href="panel_administrador_inicio.html">Inicio</a>
+
+
             </div>
         </nav>
 
     </header>
 
-
+    <!-- titulos que estan en la parte superior -->
+    <h2 class="titulo2">Crear las Etiquetas para los</h2>
+    <h1 class="titulo1">Centros Educativos</h1>
     <main>
-        <div class="slidershow-container">
 
+        <div id="divisor"></div>
+        <!--primero contenedor-->
 
-            <div id="divisor"></div>
-            <!--primero contenedor-->
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <div class="contenedor">
-                    <div class="descripcion_contenedor">
-                        <p>Etiquetas</p>
-                    </div>
-                    <div class="separador"></div>
-                    <div class="contenido">
-                        <div>
-
-
-
-                            <form class="etiquetas" id="frm_etiquetas">
-                                <div>
-                                    <label for="txt_accion">Nombre de la Etiqueta</label>
-                                    <input type="text" id="txt_accion">
-                                </div>
-                                <div>
-                                    <label for="txt_descripcion">Descripción</label>
-                                    <textarea id="txt_descripcion"></textarea>
-                                </div>
-                                <div>
-                                    <input type="button" id="btn_guardar" value="Registar">
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="contenedor">
+            <div class="descripcion_contenedor">
+                <p>Etiquetas</p>
             </div>
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form class="etiquetas" id="frm_etiquetas">
+                        <div>
+                            <label for="txt_accion">Nombre de la Etiqueta</label>
+                            <input type="text" id="txt_accion">
+                        </div>
+                        <div>
+                            <label for="txt_descripcion">Descripción</label>
+                            <textarea id="txt_descripcion"></textarea>
+                        </div>
+                        <div>
+                            <input type="button" id="btn_guardar" value="Registar">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

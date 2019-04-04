@@ -2,6 +2,7 @@
 
 const tabla = document.querySelector('#tbl_etiquetas tbody');
 const input_filtro = document.querySelector('#txt_filtar');
+const btn_agregar_etiquetas = document.querySelector('#btn_agregar');
 let etiquetas = listar_etiquetas();
 
 let mostrar_datos = ()=>{
@@ -23,5 +24,7 @@ let mostrar_datos = ()=>{
 
 
 input_filtro.addEventListener('keyup', mostrar_datos);
-
+btn_agregar_etiquetas.addEventListener('click', function(){
+    window.location.href = './registrar_etiquetas.html';
+})
 mostrar_datos();

@@ -24,16 +24,15 @@ function mostrar_datos() {
     for (let i = 0; i < lista_utiles.length; i++) {
         if (lista_utiles[i]['articulo'].toLowerCase().includes(filtro.toLowerCase())) {
             let fila = tabla.insertRow();
-           //console.log(lista_utiles.length);
-
 
             fila.insertCell().innerHTML = lista_utiles[i]['articulo'];
             fila.insertCell().innerHTML = lista_utiles[i]['cantidad'];
             fila.insertCell().innerHTML = lista_utiles[i]['descripcion'];
             
-           // fila.insertcell().innerHTML = lista_utiles[i]['articulo_1'];
-            //fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
-            //fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
+            fila = tabla.insertRow();
+            fila.insertCell().innerHTML = lista_utiles[i]['articulo_1'];
+            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
+            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
 
         }
 
