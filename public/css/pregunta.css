@@ -56,21 +56,17 @@ div input[type=text]{
     padding-top: 30px;
     margin: 5%;
     text-align: center;
-    width: 91%;
-    height: 50px;
+    height: 40px;
     margin-top: 20px;
-    background: #FAA21A;
-    color: #fff;
+    border-top: 3px solid #FAA21A;
 }
 
 .respuesta_pregunta p{
     font-size: 20px;
     font-family: 'Roboto', 'sans-serif';
-    padding-top: 40px;
     margin: 5%;
     text-align: center;
-    width: 91%;
-    height: 50px;
+    height: 40px;
     margin-top: 25px;
-    border: 2px solid #FAA21A;
+    border-bottom: 3px solid #FAA21A;
 }
