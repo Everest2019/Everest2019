@@ -10,16 +10,15 @@ let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
-
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 let mostrar_datos = () =>{
     let actividades = listar_actividades ();
-    let id_centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
-
+   
     for (let i = 0; i < actividades.length; i++) {
         if (actividades[i]['id_centro_educativo'].includes(id_centro_educativo)){
-        let fila = tabla.insertRow();
+            centro_educativo = buscar_centro_educativo(actividades[i]['id_centro_educativo']);
+            let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = actividades[i]['titulo'];
         
@@ -32,15 +31,3 @@ let mostrar_datos = () =>{
 };
 
 mostrar_datos();
-
-
-a_regresar.addEventListener('click', function(){
-    if(localStorage.getItem('tipo_usuario') == 'administrador'){
-        window.location.href = './panel_administrador_instituciones.html';
-    }
-    else{
-        window.location.href = './instituciones.html';
-    }
-});
-
-a_regresar.classList.add('estilos_a');
