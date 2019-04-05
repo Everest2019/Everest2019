@@ -49,7 +49,7 @@ let registrar_datos = () => {
       let fecha = input_fecha.value;
       let descripcion = input_descripcion.value;
         registrar(centro_educativo,titulo,fecha,descripcion);
-        limpiarFormulario;
+      limpiarFormulario();
     }else{
         swal.fire({
             type:'warning',
@@ -62,15 +62,9 @@ let registrar_datos = () => {
 };
 
 let limpiarFormulario = () => {
-  let centro_educativo = id_centro_educativo;
-  let titulo = input_titulo.value;
-  let fecha = input_fecha.value;
-  let descripcion = input_descripcion.value;
-  centro_educativo.innerHTML = '';
-  titulo.innerHTML = '';
-  fecha.innerHTML = '';
-  descripcion.innerHTML = '';
-
-}
+  input_titulo.value='';
+  input_fecha.value='';
+  input_descripcion.value='';
+};
 
 boton_registrar.addEventListener('click',registrar_datos);
