@@ -18,6 +18,15 @@ let mostrar_datos = ()=>{
 
             fila.insertCell().innerHTML = etiquetas[i]['accion'];
             fila.insertCell().innerHTML = etiquetas[i]['descripcion'];
+// se crea una nueva celda para el boton de editar 
+            let celda_configuaracion = fila.insertCell();
+
+            //creacion del boton de editar
+            let boton_editar = document.createElement('a');
+            boton_editar.textContent = 'Editar';
+            boton_editar.href = `actualizar_etiquetas.html?id_etiquetas=${etiquetas[i]['_id']}`;
+
+            celda_configuaracion.appendChild(boton_editar);
         }
     };
 };

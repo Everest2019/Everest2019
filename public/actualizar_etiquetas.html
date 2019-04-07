@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Gemas</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_etiquetas.css">
+</head>
+
+<body>
+
+    <!--Barra de navegacion superios-->
+
+    <header id="header_principal">
+        <nav>
+            <div class="cont_links">
+                <a href="panel_administrador_inicio.html">Inicio</a>
+                <a href="panel_administrador_instituciones.html">Instituciones</a>
+                <a href="#">Bitacora</a>
+                <a href="#">Reportes</a>
+
+
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- titulos que estan en la parte superior -->
+    <h2 class="titulo2">Crear las Etiquetas para los</h2>
+    <h1 class="titulo1">Centros Educativos</h1>
+    <main>
+
+        <div id="divisor"></div>
+        <!--primero contenedor-->
+
+        <div class="contenedor">
+            <div class="descripcion_contenedor">
+                <p>Etiquetas</p>
+            </div>
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form class="etiquetas" id="frm_etiquetas">
+                        <div>
+                            <label for="txt_accion">Nombre de la Etiqueta</label>
+                            <input type="text" id="txt_accion">
+                        </div>
+                        <div>
+                            <label for="txt_descripcion">Descripción</label>
+                            <textarea id="txt_descripcion"></textarea>
+                        </div>
+                        <div>
+                            <input type="button" id="btn_actualizar" value="Actualizar">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="js/servicio_etiquetas.js"></script>
+    <script src="js/controlador_actualizar_etiquetas.js"></script>
+</body>
+
+
+
+
+</html>

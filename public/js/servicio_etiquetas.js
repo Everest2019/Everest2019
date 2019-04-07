@@ -33,15 +33,69 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         dataType: "json"
     });
 
-    request.done(function (msg) {
-        swal.fire({
-            type: 'success',
-            title: 'Se ha creado con exito la etiqueta',
-            text: `Se ha creado exitosamente la etiqueta con el nombre de ${paccion} con la siguiente descripción ${pdescripcion}`
-        });
-    });
 
     request.fail(function (jqXHR, textStatus) {
+    });
+
+};
+
+let buscar_etiquetas = (id_etiquetas)=>{
+    let etiquetas = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscar_etiquetas/"+ id_etiquetas,
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async : false
+    });
+
+    request.done(function(res){
+        etiquetas= res.etiquetas;
+    });
+
+    request.fail(function(jqXHR, textStatus){
+
+    });
+    return etiquetas;
+
+};
+
+let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/actualizar_etiquetas',
+        method : "POST",
+        data:{
+            accion : paccion,
+            descripcion: pdescripcion,
+            id : pid
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+    });
+
+    request.done(function(res){
+
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta actualizada con éxito',
+            text : res.msg,
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_etiquetas.html';
+              }    
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'Proceso no realizado',
+            text : res.msg
+        });
+
     });
 
 };
