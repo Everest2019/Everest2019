@@ -1,8 +1,8 @@
 'use strict';
 
-const modelo_lenguaje = require('./lenguaje.model');
+const modelo_idioma = require('./lenguaje.model');
 
-module.exports.registrar_lenguaje = function(req,res){
+module.exports.registrar_idioma = function(req,res){
   let nuevoIdioma = modelo_idioma({
     nombre:req.body.nombre,
     iso: req.body.iso,
