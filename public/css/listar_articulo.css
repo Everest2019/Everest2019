@@ -1,63 +1,6 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
-body{
-    background: #F2F2F2;
-}
-.tabla_articulo{
-    font-size: 20px;
-    font-weight: bolder;
-    margin: 2%;
-    padding: 15px;
-}
-.tabla_articulo tr th{
-    padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%;     
-    right: 60px;
-    color: #40433E;
-    background: #FAA21A;
-}
-.tabla_articulo tr td{
-    padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%; 
-    right: 100px;
-    background: #fff;
-} 
-.tabla_articulo tbody{
-    padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%; 
-    right: 100px;
-    background: #fff;
-}
-.contenido .formulario-1{
-    margin-top: 60px;
-}
-div input[type=text]{
-    display: inline-block;
-    width: 300px;
-    height: 25px;
-    border-radius: 3px;
-    border: 2px solid gray;
-    font-size: 15px;
-}
-.formulario-1 input:focus{
-    border: 2px solid #FAA21A;
-    outline: none;
-}
-.formulario-1 div label{
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-top: 35px;
-    width: 200px;
-    margin-left: 40px;  
-    font-weight: bold;
-}
 .main{
     background: #f2f2f2;
     height: 100%;
@@ -77,6 +20,79 @@ div input[type=text]{
     border-radius: 3px;
 }
 
+/*--------------------------------------------------------*/
+.formulario-1{
+    padding-top: 40px;
+    width: 85%;
+    margin-left: 3%;
+    display: flow-root;
+}
+
+.contenedor_buscar{
+    width: 50%;
+    float: left;
+}
+
+.contenedor_buscar label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 20%;
+}
+
+.contenedor_buscar input{
+    display: inline-block;
+    width: 70%;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 20px;
+    border: 2px solid rgb(194, 194, 194);
+    transition: all 0.5s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+.formulario-1 input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+/*--------------------------------------------------------*/
+
+.tabla_articulo{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.tabla_articulo tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%;     
+    right: 90px;
+    background: #FAA21A;
+}
+.tabla_articulo tr td{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: #F2F2F2;
+} 
+.tabla_articulo tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: #F2F2F2;
+}
+
+
+
+
 .btn_articulo{
     width: 20%;
     height: 40px;
@@ -86,4 +102,5 @@ div input[type=text]{
     border: 0;
     margin-left: 3%;
     cursor: pointer;
+    margin-top: 30px;
   }

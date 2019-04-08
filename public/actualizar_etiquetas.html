@@ -2,79 +2,77 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title> Gemas</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/registrar_articulos.css">
     <link rel="stylesheet" href="css/general.css">
-
-
-    <title>Gemas</title>
+    <link rel="stylesheet" href="css/registrar_etiquetas.css">
 </head>
 
 <body>
-    <!-- Barra de navegacion superior -->
-    <header>
+
+    <!--Barra de navegacion superios-->
+
+    <header id="header_principal">
         <nav>
-            
             <div class="cont_links">
-                    <a href="panel_administrador_inicio.html">Inicio</a>
-                    <a href="panel_administrador_instituciones.html">Instituciones</a>
+                <a href="panel_administrador_inicio.html">Inicio</a>
+                <a href="panel_administrador_instituciones.html">Instituciones</a>
                 <a href="#">Bitacora</a>
                 <a href="#">Reportes</a>
+
+
             </div>
         </nav>
+
     </header>
 
-
-    <!-- Contenedores de las partes del formulario -->
-
-    <h2 class="titulo2">Crear los Artículos de los</h2>
+    <!-- titulos que estan en la parte superior -->
+    <h2 class="titulo2">Crear las Etiquetas para los</h2>
     <h1 class="titulo1">Centros Educativos</h1>
-
     <main>
-        <!-- Primer contenedor, Informacion General-->
+
+        <div id="divisor"></div>
+        <!--primero contenedor-->
 
         <div class="contenedor">
-
             <div class="descripcion_contenedor">
-                <p>Artículos</p>
+                <p>Etiquetas</p>
             </div>
-
             <div class="separador"></div>
 
             <div class="contenido">
                 <div class="formulario-1">
-                    <form>
+                    <form class="etiquetas" id="frm_etiquetas">
                         <div>
-                            <label for="txt_nombre_articulo">Nombre del artículo</label>
-                            <input type="text" id="txt_nombre_articulo">
+                            <label for="txt_accion">Nombre de la Etiqueta</label>
+                            <input type="text" id="txt_accion">
                         </div>
-
                         <div>
-                            <label for="txt_descripcion">Añadir Descripción</label>
+                            <label for="txt_descripcion">Descripción</label>
                             <textarea id="txt_descripcion"></textarea>
-
                         </div>
                         <div>
-                            <button type="button" id="boton_registrar">Registrar</button>
+                            <input type="button" id="btn_actualizar" value="Actualizar">
                         </div>
-
                     </form>
                 </div>
 
             </div>
-
-
         </div>
 
     </main>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_articulo.js"></script>
-    <script src="js/controlador_articulo.js"></script>
+
+    <script src="js/servicio_etiquetas.js"></script>
+    <script src="js/controlador_actualizar_etiquetas.js"></script>
 </body>
+
+
+
 
 </html>

@@ -11,13 +11,13 @@
     <title>Gemas - Instituciones</title>
 </head>
 <body>
-   
+
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
+
 
         <div id="navbar_lateral_inicio" >
             <a href="panel_administrador_inicio.html">Inicio</a>
@@ -34,7 +34,7 @@
         <div id="navbar_lateral_instituciones"  class="pagina_actual">
             <a href="panel_administrador_instituciones.html">Instituciones</a>
         </div>
-        
+
         <div id="navbar_lateral_instituciones">
             <a href="#">Evaluaciones</a>
         </div>
@@ -42,27 +42,27 @@
         <div id="navbar_lateral_utiles">
             <a href="#">Lista de útiles</a>
         </div>
-        
+
         <div id="navbar_lateral_cercanos">
             <a href="panel_administrador_articulos.html">Artículos</a>
         </div>
-        
+
         <div id="navbar_lateral_cercanos">
                 <a href="listar_etiquetas.html">Etiquetas</a>
             </div>
-            
+
         <div id="navbar_lateral_cercanos">
             <a href="#">Bitácora</a>
         </div>
-        
+
                 <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
 
-        
+
     </div>
- 
+
     <div class="main">
         <h1>Lista de Instituciones</h1>
-        <h2>Encuentra el centro educativo ideal para tus hijos</h2>
+        <h2>Encuentre el centro educativo ideal para sus hijos</h2>
         <div class="separador"></div>
 
         <div class="contenedor_filtraciones">
@@ -79,9 +79,16 @@
                     <option  value="Colegios">Colegios</option>
                 </select>
             </div>
-            
+
+
+
         </div>
-        
+        <div class="">
+          <button type="button" id="btn_registrar_ce" class="btn_crear_ce"> <a href="registrar_centro_educativo.html">Agregar instituciones</a>
+          </button>
+
+        </div>
+
         <!-- Contenedor donde se muestran todas las instituciones -->
         <div class="lista_instituciones" id="lista_instituciones">
 
@@ -91,6 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_registrar_ce_admin.js"></script>
     <script src="js/controlador_listar_centro_educativo.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>
 

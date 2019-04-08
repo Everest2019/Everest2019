@@ -95,6 +95,9 @@ app.use('/api', noticia);
 const preguntas = require('./componentes/preguntas/preguntas.route');
 app.use('/api', preguntas);
 
+const idiomas = require('./componentes/lenguajes/lenguaje.route');
+app.use('/api',idiomas);
+
 
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app

@@ -56,39 +56,17 @@ div input[type=text]{
     padding-top: 30px;
     margin: 5%;
     text-align: center;
-    width: 91%;
-    height: 50px;
+    height: 40px;
     margin-top: 20px;
-    background: #FAA21A;
-    color: #fff;
+    border-top: 3px solid #FAA21A;
 }
 
 .respuesta_pregunta p{
     font-size: 20px;
     font-family: 'Roboto', 'sans-serif';
-    padding-top: 40px;
     margin: 5%;
     text-align: center;
-    width: 91%;
-    height: 50px;
-    margin-top: 25px;
-    border: 2px solid #FAA21A;
-}
-
-.pregunta_frecuente{
-    width: 20%;
     height: 40px;
-    background: #FAA21A;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    font-size: 13px;
-    margin-left: 4%;
-    cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.pregunta_frecuente:hover{
-    background: rgb(245, 148, 2);
+    margin-top: 25px;
+    border-bottom: 3px solid #FAA21A;
 }

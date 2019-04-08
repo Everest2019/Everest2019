@@ -220,5 +220,20 @@
     color: #FAA21A;
     font-size: 20px;
     position: relative;
-    top: 3px;  
+    top: 3px;
+}
+.btn_crear_ce{
+  width: 20%;
+  height: 40px;
+  background: #FAA21A;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  margin-left: 3%;
+  cursor: pointer;
+}
+
+.btn_crear_ce a{
+  text-decoration: none;
+  color: inherit;
 }

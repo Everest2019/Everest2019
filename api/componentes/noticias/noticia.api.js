@@ -19,9 +19,8 @@ module.exports.registrar_noticia = function(req,res){
             res.json({
                 success: true,
                 msg: 'Noticia registrada exitosamente'
-            })
+            });
         }
-
     });
 };
 

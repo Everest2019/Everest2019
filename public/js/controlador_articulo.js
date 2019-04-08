@@ -11,13 +11,13 @@ let validar = () => {
         error = true;
         input_nombre.classList.add('error_input');
     } else {
-       input_nombre.classList.remove('error_input');
+        input_nombre.classList.remove('error_input');
     }
     if (input_descripcion.value == '') {
         error = true;
         input_descripcion.classList.add('error_input');
     } else {
-       input_descripcion.classList.remove('error_input');
+        input_descripcion.classList.remove('error_input');
     }
     return error;
 };
@@ -35,5 +35,7 @@ let obtener_datos = () => {
             text: 'No ha hecho ningina acción'
         });
     }
+    input_nombre.value = '';
+    input_descripcion.value = '';
 };
 boton_registrar.addEventListener('click', obtener_datos);
