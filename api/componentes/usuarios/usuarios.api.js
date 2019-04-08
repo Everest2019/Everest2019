@@ -1,5 +1,16 @@
 'use strict';
+const nodeMailer = require('nodemailer');
 const modelo_usuario = require('./usuarios.model');
+
+const transporter = nodeMailer.createTransport({
+    service : 'gmail',
+    auth :{
+        user: 'everestproyecto99@gmail.com',
+        pass : 'CulantroCoyote2019'
+    }
+});
+
+
 
 module.exports.registrar_padre_familia = (req, res) =>{
     let modelo_padre_familia = new modelo_usuario(
@@ -109,6 +120,95 @@ module.exports.registrar_centro_educativo = (req, res) =>{
                 }
             );
         }else{
+            let mailOptions = {
+                from : 'everestproyecto99@gmail.com',
+                to : modelo_centro_educativo.correo_encargado,
+                subject : 'Bienvenido a Gemas',
+                html : `<html>
+                <head>
+                   <meta charset="UTF-8">
+                  <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+                </head>
+                <body>
+                  <div class="contenedor_titulo">
+                    <h1>Bienvenido a Gemas</h1>
+                  </div>
+                  <div class="contenedor_cuerpo">
+                    <p class="bienvenida">Encuentra el centro educativo ideal para tus hijos</p>
+                    <div class="contenedor_descripcion">
+                    <p>${modelo_centro_educativo.primer_nombre_encargado} ${modelo_centro_educativo.primer_apellido_encargado}, gracias por crear una cuenta con nosotros, en este momento, su información está siendo revisada por nuestros encargados. En caso de ser aprobado, pronto recibirá un nuevo correo con un código de verificación.</p>
+                    </div>
+                  </div>
+                </body>
+                <style>
+                  html{
+                    background: #f2f2f2;
+                  }
+                  .contenedor_titulo{
+                    width: 80%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 0 auto;
+                    text-align: center;
+                    margin-top: 30px;
+                    background: #FAA21A;
+                    border: 1px solid #40433E;
+                    border-bottom: 0;
+                  }
+                  
+                  .contenedor_titulo h1{
+                    font-family: 'Quicksand','sans-serif';
+                    font-size: 40px;
+                    color: #fff;
+                  }
+                  
+                  .contenedor_cuerpo{
+                    width: 80%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 0 auto;
+                    text-align: center;
+                    background: #fff;
+                    border: 1px solid #40433E;
+                    border-top: 0;
+                  }
+                  
+                  .contenedor_cuerpo .bienvenida{
+                    width: 80%;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                    padding-bottom: 20px;
+                    text-align: center;
+                    font-family: 'Roboto','sans-serif';
+                    font-size: 20px;  
+                    font-weight: bold;
+                  }
+              
+                  
+                  .contenedor_descripcion{
+                    font-size 18px;
+                     text-align: center;
+                  }
+                  
+                  .contenedor_descripcion p{
+                    font-size: 17px;
+                    font-family: 'Roboto','sans-serif';
+                    width: 85%;
+                    margin: 0 auto;
+                    padding-bottom: 30px;
+                  }
+               
+                </style>
+               </html>`
+            };
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    console.log(error);
+                }
+                else{
+                    console.log('Correo enviado '+ info.response);
+                }
+            })
             res.json(
                 {
                     success : true,
@@ -228,6 +328,56 @@ module.exports.buscar_padre_familia = function(req, res){
         }
     )
 };
+
+module.exports.agregar_favorito = (req,res) =>{
+    modelo_usuario.update(
+        {_id: req.body.id_usuario},
+        {
+            $push:
+            {
+                'favoritos':
+                {
+                    id_centro_educativo: req.body.id_centro_educativo
+                }
+            }
+        },
+        function (error){
+            if(error){
+                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}`});
+            }
+            else{
+                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos`});
+            }
+        }
+    )
+};
+
+module.exports.eliminar_favorito = function(req, res){
+    modelo_usuario.findByIdAndDelete(req.body.id_favorito,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el centro educativo de favoritos'});
+            }else{
+                res.json({success: true ,msg: 'El centro educativo se eliminó de favoritos con éxito'}); 
+            }
+        }
+    )
+};
+
+
+//Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
+module.exports.buscar_favoritos_padre_familia = function(req, res){
+    modelo_usuario.findOne({_id : req.body.id_padre_familia}).then(
+        function(padre_familia){
+            if(padre_familia){
+                res.send(padre_familia.favoritos);
+            }else{
+                res.send('No se encontró el Padre Familia');
+            }
+        }
+    )
+};
+
 
 /*Inicio de Sesión*/ 
 module.exports.validar = function (req, res){

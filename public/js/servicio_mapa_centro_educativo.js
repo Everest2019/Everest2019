@@ -14,6 +14,9 @@ var map;
           title:"Selecciona la ubicación del Centro Educativo"
         });
         
+        document.querySelector('#txt_latitud').value = 9.933063;
+        document.querySelector('#txt_longitud').value = -84.079479;
+
           google.maps.event.addListener(centro_educativo, 'dragend', function (evt) {
             let lat = centro_educativo.getPosition().lat();
             let lng = centro_educativo.getPosition().lng();

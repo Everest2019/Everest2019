@@ -23,11 +23,11 @@
             <a href="index.html">Inicio</a>
         </div>
 
-        <div id="navbar_lateral_instituciones"  class="pagina_actual">
+        <div id="navbar_lateral_instituciones"  >
             <a href="instituciones.html">Instituciones</a>
         </div>
                 
-        <div id="navbar_lateral_favoritos">
+        <div id="navbar_lateral_favoritos"  class="pagina_actual">
             <a href="instituciones_favoritas.html">Favoritos</a>
         </div>
 
@@ -44,26 +44,17 @@
         </div>
         
     </div>
+    </div>
  
     <div class="main">
         <h1>Lista de Instituciones</h1>
-        <h2>Encuentra el centro educativo ideal para tus hijos</h2>
+        <h2>Centros Educativos Favoritos</h2>
         <div class="separador"></div>
 
         <div class="contenedor_filtraciones">
             <div class="contenedor_buscar">
                 <label for="txt_filtar">Buscar: </label>
                 <input type="text" id="txt_buscar_centro_educativo">
-            </div>
-
-            <div class="contenedor_criterios">
-                <label for="select_criterios">Criterios: </label>
-                <select id="select_criterios">
-                    <option  value="Todos">Todos</option>
-                    <option  value="Colegios">Colegios</option>
-                    <option  value="Escuelas">Escuelas</option>
-                    <option  value="Ambos">Ambos</option>
-                </select>
             </div>
             
         </div>
@@ -76,7 +67,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_centro_educativo.js"></script>
-    <script src="js/controlador_listar_centro_educativo.js"></script>
+    <script src="js/servicio_centro_educativos_cercanos.js"></script>
+    <script src="js/controlador_listar_centros_educativos_favoritos.js"></script>
 </body>
 </html>

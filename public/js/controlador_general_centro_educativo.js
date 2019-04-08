@@ -12,6 +12,11 @@ let id_centro_educativo = localStorage.getItem('centro_educativo');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
+let id_padre_familia = localStorage.getItem('id_usuario');
+let favoritos_padre_familia = buscar_favoritos_padre_familia(id_padre_familia);
+console.log(favoritos_padre_familia);
+console.log(id_centro_educativo);
+
 
 
 banner.src = centro_educativo['imagen_portada'];
@@ -166,6 +171,63 @@ contenedor_fundacion.appendChild(fundacion);
 
 contenedor_caracteristicas.appendChild(contenedor_fundacion);
 
+//Favoritos
+
+
+//Boton agregar a favoritos
+let contenedor_favoritos = document.createElement('div');
+contenedor_favoritos.classList.add('contenedor_informacion');
+
+let icono = document.createElement('i');
+icono.classList.add('fas', 'fa-star');
+
+let boton_favoritos = document.createElement('button');
+boton_favoritos.type = 'button';
+boton_favoritos.classList.add('boton_favoritos');
+boton_favoritos.textContent = 'Agregar a favoritos';
+boton_favoritos.id = 'btn_agregar_favorito';
+
+boton_favoritos.appendChild(icono);
+contenedor_favoritos.appendChild(boton_favoritos);
+
+
+
+
+//Eliminar de favoritos
+let contenedor_eliminar_favoritos = document.createElement('div');
+contenedor_eliminar_favoritos.classList.add('contenedor_informacion');
+
+let icono_eliminar = document.createElement('i');
+icono_eliminar.classList.add('fas', 'fa-times');
+
+let boton_eliminar_favoritos = document.createElement('button');
+boton_eliminar_favoritos.type = 'button';
+boton_eliminar_favoritos.classList.add('boton_eliminar_favoritos');
+boton_eliminar_favoritos.textContent = 'Eliminar de favoritos';
+boton_eliminar_favoritos.id = 'btn_eliminar_favorito';
+
+boton_eliminar_favoritos.appendChild(icono_eliminar);
+contenedor_eliminar_favoritos.appendChild(boton_eliminar_favoritos);
+
+
+
+//Condicional para saber que boton mostrar
+let favorito = false;
+for(let i = 0; i < favoritos_padre_familia.length; i++){
+
+    if(favoritos_padre_familia[i]['id_centro_educativo'] == id_centro_educativo){
+        favorito = true;
+        console.log('Encontrado');
+    }
+}
+
+if(favorito){
+    contenedor_caracteristicas.appendChild(contenedor_eliminar_favoritos);
+}
+else{
+    contenedor_caracteristicas.appendChild(contenedor_favoritos);
+}
+
 //Galeria
 
 let contenedor_imagen1 = document.createElement('div');
@@ -202,7 +264,10 @@ if(centro_educativo['galeria4'] != ''){
     contenedor_imagen4.appendChild(imagen4);
 }
 
-
+contenedor_imagenes.appendChild(contenedor_imagen1);
+contenedor_imagenes.appendChild(contenedor_imagen2);
+contenedor_imagenes.appendChild(contenedor_imagen3);
+contenedor_imagenes.appendChild(contenedor_imagen4);
 
 
 
@@ -218,15 +283,16 @@ a_regresar.addEventListener('click', function(){
 a_regresar.classList.add('estilos_a');
 
 
+let agregar_favorito = () =>{
+    let id_centro_educativo = localStorage.getItem('centro_educativo');
+    let id_usuario = localStorage.getItem('id_usuario');
+    console.log(id_centro_educativo);
+    agregar_centro_educativo_favorito(id_centro_educativo, id_usuario,centro_educativo['nombre_comercial']);
+};
+
+boton_favoritos.addEventListener('click', agregar_favorito);
 
 
-
-
-
-contenedor_imagenes.appendChild(contenedor_imagen1);
-contenedor_imagenes.appendChild(contenedor_imagen2);
-contenedor_imagenes.appendChild(contenedor_imagen3);
-contenedor_imagenes.appendChild(contenedor_imagen4);
 
 
 

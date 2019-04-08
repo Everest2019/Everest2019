@@ -55,10 +55,29 @@ router.route('/buscar_padre_familia')
     .post(function(req , res){  
         api_usuario.buscar_padre_familia(req , res);
 });
+
+router.route('/buscar_favoritos_padre_familia')
+    .post(function(req , res){  
+        api_usuario.buscar_favoritos_padre_familia(req , res);
+});
        
 router.route('/validar_credenciales')
 .post(function(req, res){
     api_usuario.validar(req, res);
 });
+
+router.route('/agregar_favorito')
+.post(
+    function(req, res){
+        api_usuario.agregar_favorito(req,res);
+    }
+);
+
+router.route('/eliminar_favorito')
+.post(
+    function(req, res){
+        api_usuario.eliminar_favorito(req,res);
+    }
+);
 
 module.exports = router; 

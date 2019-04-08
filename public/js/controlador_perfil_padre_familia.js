@@ -6,7 +6,9 @@ const canton = document.querySelector('#contenedor_info_canton');
 const distrito = document.querySelector('#contenedor_info_distrito');
 const telefono = document.querySelector('#contenedor_info_telefono');
 const correo = document.querySelector('#contenedor_info_correo');
-const foto= document.querySelector('#foto_perfil')
+const foto= document.querySelector('#foto_perfil');
+
+
 
 let id_padre_familia = localStorage.getItem('id_usuario');
 
