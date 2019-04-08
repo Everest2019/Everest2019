@@ -38,7 +38,7 @@ let listar_lenguajes = () =>{
   });
 
   request.done(function(res){
-    listaIdiomas= res.idiomas;
+    listaIdiomas= res.lenguaje;
   });
 
   request.fail(function(jqXHR, textStatus){

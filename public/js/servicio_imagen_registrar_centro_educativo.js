@@ -13,7 +13,7 @@ $(function(){
     let btn_subir_documento3 = $('#btn_documento3');
     let btn_foto_encargado = $('#btn_foto_encargado');
     let btn_logo_institucion = $('#btn_logo_institucion');
-    
+
 
 
     btn_subir_portada.on('click', function(e){
@@ -21,7 +21,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['portada']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -35,7 +35,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['galeria']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -49,7 +49,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['galeria']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -63,7 +63,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['galeria']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -77,7 +77,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['galeria']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -91,7 +91,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['documento']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -105,7 +105,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['documento']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -119,7 +119,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['documento']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -133,7 +133,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['documento']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;
@@ -147,7 +147,7 @@ $(function(){
         cloudinary.openUploadWidget({cloud_name: 'everestproyecto', upload_preset: 'everestproyecto', tags: ['documento']},
         function(error, result) {
             if(error) console.log(error);
-            
+
             let id = result[0].public_id;
                 console.log(id);
                 imagenUrl = 'https://res.cloudinary.com/everestproyecto/image/upload/' + id;

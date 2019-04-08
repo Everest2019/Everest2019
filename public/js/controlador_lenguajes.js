@@ -2,7 +2,7 @@
 
 const input_idioma = document.querySelector('#txt_idioma');
 const input_iso = document.querySelector('#txt_iso');
-//const input_flag = document.queryselect('');
+const input_flag = document.querySelector('#imagen_idioma');
 const boton_guardar = document.querySelector('#btn_registrar');
 
 
@@ -12,8 +12,7 @@ let iso = input_iso.value;
 let registrar_lenguaje = ()=>{
   let idioma = input_idioma.value;
   let iso = input_iso.value;
-  let flag = "flag";
-  //let flag =input_flag.src;
+  let flag =input_flag.src;
   registrar(idioma,iso,flag);
 };
 
