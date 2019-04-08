@@ -5,8 +5,8 @@ let registrar = (pidioma,piso,pflag) =>{
     url:"http://localhost:4000/api/registrar_idioma",
     method: "POST",
     data:{
-      nombre:pidioma,
       iso:piso,
+      nombre:pidioma,
       bandera: pflag
     },
     contentType: 'application/x-www-form-urlencoded; charset= UTF-8',
@@ -37,4 +37,13 @@ let listar_lenguajes = () =>{
     async: false
   });
 
+  request.done(function(res){
+    listaIdiomas= res.idiomas;
+  });
+
+  request.fail(function(jqXHR, textStatus){
+    alert("Request failed: " + textStatus);
+  });
+
+   return listaIdiomas;
 };

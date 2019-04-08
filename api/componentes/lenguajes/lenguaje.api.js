@@ -4,8 +4,8 @@ const modelo_idioma = require('./lenguaje.model');
 
 module.exports.registrar_idioma = function(req,res){
   let nuevoIdioma = modelo_idioma({
-    nombre:req.body.nombre,
     iso: req.body.iso,
+    nombre:req.body.nombre,
     bandera: req.body.bandera
   });
   nuevoIdioma.save(function(error){

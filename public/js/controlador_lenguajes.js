@@ -19,14 +19,3 @@ let registrar_lenguaje = ()=>{
 
 
 boton_guardar.addEventListener('click',registrar_lenguaje);
-
-
-
-
-const tabla = document.querySelector('#tbl_languages tbody');
-
-let show_languages = () =>{
-  tabla.innerHTML = '';
-
-  //let fila =
-};
