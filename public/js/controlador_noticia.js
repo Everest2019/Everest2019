@@ -8,7 +8,7 @@ const boton_registrar = document.querySelector('#btn_registrar');
 
 
 document.querySelector("#input_fecha").valueAsDate = new Date();
-localStorage.setItem('id_usuario','kjahdsfkjg');
+
 let id_centro_educativo = localStorage.getItem('id_usuario');
 
 
