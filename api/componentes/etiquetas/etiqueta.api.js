@@ -68,9 +68,9 @@ module.exports.actualizar = function(req, res){
     modelo_etiquetas.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error){
             if(error){
-                res.json({success : false , msg : 'No se pudo actualizar el inmueble'});
+                res.json({success : false , msg : 'No se pudo actualizar la etiqueta'});
             }else{
-                res.json({success: true , msg : 'El inmueble se actualizó con éxito'});
+                res.json({success: true , msg : 'La etiqueta se actualizó con éxito'});
             }
         }
     
