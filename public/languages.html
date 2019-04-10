@@ -1,28 +1,95 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header>
+<html lang="en">
 
-    </header>
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/listar_idiomas.css">
+
+    <title>Gemas</title>
+</head>
+
+<body>
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+        <div id="navbar_lateral_inicio" >
+            <a href="panel_administrador_inicio.html">Inicio</a>
+        </div>
+
+        <div id="navbar_lateral_favoritos">
+            <a href="#">Aprobaciones</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Reportes</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_instituciones.html">Instituciones</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="#">Evaluaciones</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="#">Lista de útiles</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos" class="pagina_actual">
+            <a href="panel_administrador_articulos.html">Artículos</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos" >
+                <a href="listar_etiquetas.html">Etiquetas</a>
+            </div>
+
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Bitácora</a>
+        </div>
+
+                <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+
+    </div>
+
     <main>
-      <div class="contenedor">
-        <table id="tbl_languages">
-          <thead>
-            <th>Idioma</th>
-            <th>Código ISO</th>
-            <th>Flag</th>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <div class="main">
+            <h2>Configuración idiomas</h2>
+            <h1></h1>
 
-      </div>
+            <div class="separador"></div>
 
+
+
+                <table id="tbl_idiomas" class="tabla_idiomas">
+                    <thead>
+                        <tr>
+                            <th>Código ISO 639-1</th>
+                            <th>Idioma</th>
+                            <th>Bandera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
-  <script type="text/javascript" src="js/controlador_lenguajes.js"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_lenguajes.js"></script>
+    <script src="js/controlador_listar_lenguajes.js"></script>
+    <script src="js/controlador_cerrar_sesion_admin.js"></script>
+
+</body>
+
 </html>
