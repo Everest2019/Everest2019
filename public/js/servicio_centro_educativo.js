@@ -123,11 +123,40 @@ let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnom
       onClose: () => {
         window.location.href = './perfil_centro_educativo_general.html';
       }
-  });
+    });
   });
 
   request.fail(function (jqXHR, textStatus) {
-      alert("Request failed:" + textStatus);
+      
+  });
+
+};
+
+let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pnombre_institucion) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/eliminar_favorito",
+      method: "POST",
+      data: {
+          id_usuario : pid_usuario,
+          id_centro_educativo: pid_centro_educativo
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    swal.fire({
+      type: 'success',
+      title: 'Removido de favoritos',
+      text: `${pnombre_institucion} ya no aparecerá en tu lista de favoritos`,
+      onClose: () => {
+        window.location.href = './perfil_centro_educativo_general.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
   });
 
 };

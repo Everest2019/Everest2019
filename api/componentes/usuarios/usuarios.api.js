@@ -334,7 +334,7 @@ module.exports.agregar_favorito = (req,res) =>{
         {_id: req.body.id_usuario},
         {
             $push:
-            {
+                { 
                 'favoritos':
                 {
                     id_centro_educativo: req.body.id_centro_educativo
@@ -353,7 +353,9 @@ module.exports.agregar_favorito = (req,res) =>{
 };
 
 module.exports.eliminar_favorito = function(req, res){
-    modelo_usuario.findByIdAndDelete(req.body.id_favorito,
+    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
+        {$pull: {'favoritos':{id_centro_educativo: req.body.id_centro_educativo}}},
+         {safe: true, upsert: true},
         function(error){
             if(error){
                 res.json({success: false ,msg: 'No se pudo eliminar el centro educativo de favoritos'});
@@ -361,7 +363,7 @@ module.exports.eliminar_favorito = function(req, res){
                 res.json({success: true ,msg: 'El centro educativo se eliminó de favoritos con éxito'}); 
             }
         }
-    )
+        );
 };
 
 

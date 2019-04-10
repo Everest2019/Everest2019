@@ -1,4 +1,5 @@
 'use strict';
+
 const banner = document.querySelector('#banner');
 const logo = document.querySelector('#logo');
 const nombre = document.querySelector('#nombre_ce');
@@ -392,7 +393,25 @@ let agregar_favorito = () =>{
     agregar_centro_educativo_favorito(id_centro_educativo, id_usuario,centro_educativo['nombre_comercial']);
 };
 
+let eliminar_favorito = () =>{
+    swal.fire({
+        type: 'warning',
+        title: 'Remover Favorito',
+        text: `¿Desea remover a ${centro_educativo['nombre_comercial']} de su lista de favoritos?`,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, deseo eliminarlo',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.value) {
+            eliminar_centro_educativo_favorito(id_padre_familia, id_centro_educativo, centro_educativo['nombre_comercial']);
+            }
+    })
+};
+
 boton_favoritos.addEventListener('click', agregar_favorito);
+boton_eliminar_favoritos.addEventListener('click', eliminar_favorito);
 
 
 
