@@ -7,6 +7,12 @@ const boton_registrar = document.querySelector('#btn_registrar');
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
 let validar = () => {
     let error = false;
 

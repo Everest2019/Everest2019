@@ -1,7 +1,7 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_actividades tbody');
-const input_Filtro = document.querySelector('#txt_filtro');
+const input_filtro = document.querySelector('#txt_filtro');
 const nombre = document.querySelector('#nombre_ce');
 const a_regresar = document.querySelector('#a_regresar');
 
@@ -31,18 +31,17 @@ let mostrar_datos = () =>{
     };
 };
 };
-
 mostrar_datos();
 
 
-a_regresar.addEventListener('click', function(){
-    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+a_regresar.addEventListener('click', function () {
+    if (localStorage.getItem('tipo_usuario') == 'administrador') {
         window.location.href = './panel_administrador_instituciones.html';
     }
-    else{
+    else {
         window.location.href = './instituciones.html';
     }
 });
 
 a_regresar.classList.add('estilos_a');
-input_Filtro.addEventListener('keyup', mostrar_datos);
+input_filtro.addEventListener('keyup', mostrar_datos);

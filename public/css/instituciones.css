@@ -97,47 +97,63 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 220px);
     grid-gap: 20px;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     justify-content: center;
     margin-top: 60px;
 }
 
 /*Estilos de los contenedores de las instituciones */
+.contenedor_institucion{
+    background: #fff;
+
+}
 
 .contenedor_institucion img{
     height: 200px;
     width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #FAA21A;   
+    
 }
 
 /*Estilos del contenedor de la informacion */
 .contenedor_informacion{
     background: #fff;
-    height: 200px;
+    height: 140px;
 }
 
 /* Nombre del centro educativo */
-.contenedor_informacion .contenedor_nombre_centro_educativo{
-    width: 80%;   
-    height: 50px;
+
+ .contenedor_nombre_institucion{   
     margin: 0 auto;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding: 15px;
+    padding-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #fff;
+    min-height: 40px;
+    max-height: 40px;
+    border-top: 10px solid #FAA21A;
 }
 
-.contenedor_informacion .contenedor_nombre_centro_educativo p{
-    font-size: 16px;
+ .contenedor_nombre_institucion p{
+    font-size: 18px;
     font-family: 'Raleway', sans-serif;
-    line-height: 25px;
     text-transform: uppercase;
+    font-weight: bold;
 }
+
+
 
 /* Tipo de centro educativo */
 
 .contenedor_clasificacion_centro_educativo{
     width: 80%;
     margin: 0 auto;
+    padding-top: 20px;
 }
 
 .contenedor_tipo, .contenedor_sistema{
@@ -182,14 +198,8 @@
 
 /* Estilos contenedor pagina web */
 
-.contenedor_web_centro_educativo{
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-}
-
 .contenedor_boton{
-    padding-top: 15px;
+    padding-top: 30px;
     text-align: center;
 }
 
@@ -210,5 +220,20 @@
     color: #FAA21A;
     font-size: 20px;
     position: relative;
-    top: 3px;  
+    top: 3px;
+}
+.btn_crear_ce{
+  width: 20%;
+  height: 40px;
+  background: #FAA21A;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  margin-left: 3%;
+  cursor: pointer;
+}
+
+.btn_crear_ce a{
+  text-decoration: none;
+  color: inherit;
 }

@@ -1,5 +1,16 @@
 'use strict';
+const nodeMailer = require('nodemailer');
 const modelo_usuario = require('./usuarios.model');
+
+const transporter = nodeMailer.createTransport({
+    service : 'gmail',
+    auth :{
+        user: 'everestproyecto99@gmail.com',
+        pass : 'CulantroCoyote2019'
+    }
+});
+
+
 
 module.exports.registrar_padre_familia = (req, res) =>{
     let modelo_padre_familia = new modelo_usuario(

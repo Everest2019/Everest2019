@@ -66,6 +66,9 @@ let schema_usuarios = new mongoose.Schema(
             cantidad_hijos : {type: String, required: false},
             edad_hijos : {type: String, required: false},
             foto_perfil : {type: String, required: false},
+            favoritos : [
+                {id_centro_educativo: String}
+            ],
 
 
         /* DATOS DEL ADMINISTRADOR */

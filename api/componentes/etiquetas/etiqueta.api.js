@@ -47,3 +47,33 @@ module.exports.consultar_todo=(req,res)=>{
         }
     )
 };
+
+
+module.exports.buscar_por_id = function (req, res){
+    modelo_etiquetas.find({_id : req.body.id_etiquetas}).then(
+        function(etiquetas){
+            if(etiquetas){
+                res.json({success: true, etiquetas : etiquetas});
+            }else{
+                res.json({success: false, etiquetas : etiquetas});
+            }
+        }
+
+    );
+
+};
+
+module.exports.actualizar = function(req, res){
+   
+    modelo_etiquetas.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la etiqueta'});
+            }else{
+                res.json({success: true , msg : 'La etiqueta se actualizó con éxito'});
+            }
+        }
+    
+    );
+}
+

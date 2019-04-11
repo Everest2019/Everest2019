@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/perfil_centro_educativo.css">
-    
+
     <title>Gemas - Instituciones</title>
 </head>
+
 <body>
-   
+
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
+
 
         <div id="navbar_lateral_regresar">
             <a id="a_regresar">Regresar</a>
         </div>
 
-        <div id="navbar_lateral_general"  class="pagina_actual">
+        <div id="navbar_lateral_general" class="pagina_actual">
             <a href="perfil_centro_educativo_general.html">General</a>
         </div>
-                
+
         <div id="navbar_lateral_favoritos">
             <a href="perfil_centro_educativo_ubicacion.html">Ubicación</a>
         </div>
@@ -42,11 +45,11 @@
         <div id="navbar_lateral_actividades">
             <a href="perfil_centro_educativo_actividades.html">Actividades</a>
         </div>
-
+<!--
         <div id="navbar_lateral_contacto">
             <a href="perfil_centro_educativo_contacto.html">Contacto</a>
         </div>
-
+-->
         <div id="navbar_lateral_utiles">
             <a href="#">Listas de Útiles</a>
         </div>
@@ -56,24 +59,26 @@
         </div>
 
         <div id="navbar_mi_perfil_instituciones">
-            
+
         </div>
-        
-        
+
+
     </div>
 
     <div class="main">
 
         <div class="contenedor_banner_logo">
-                <img alt="banner" id="banner">
+            <img alt="banner" id="banner">
 
-                <div class="contenedor_logo">
-                    <img alt="" id="logo">
-                </div>
-                
+            <div class="contenedor_logo">
+                <img alt="" id="logo">
+            </div>
+
         </div>
-
-        <div class="contenedor_nombre_centro_educativo">    
+<!-- 
+    
+ -->
+        <div class="contenedor_nombre_centro_educativo">
             <h1 id="nombre_ce"></h1>
         </div>
 
@@ -85,35 +90,102 @@
             </div>
 
         </div>
-    <div class="contenedor_informacion_general">
-        
-        <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i></p>
+        <div class="contenedor_informacion_general">
 
-        <p id="informacion_general" class="informacion_general"></p>
-    </div>
+            <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i></p>
 
-    <div class="contenedor_galeria">
-        
-        <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
+            <p id="informacion_general" class="informacion_general"></p>
+        </div>
 
-        <div class="contenedor_imagenes" id="contenedor_imagenes">
+        <div class="contenedor_galeria">
+
+            <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
+
+            <div class="contenedor_imagenes" id="contenedor_imagenes">
+            </div>
+        </div>
+
+        <div class="contenedor_referencia_historica">
+
+            <p class="titulo_referencia_historica">Referencia Histórica<i class="fas fa-book"></i></p>
+
+            <p id="referencia_historica" class="referencia_historica"></p>
+        </div>
+
+        <!-------------------------- area de contacto ------------------------------->
+        <h1 id="nombre_ce"></h1>
+        <h2 id="contacto">Contacto</h2>
+
+        <div class="separador"></div>
+
+
+        <!-- Informacion de la pagina web, correo, telefono y fax -->
+        <div class="contenedor_contacto">
+
+            <div class="contenedor_item_contacto icono_web">
+                <i class="fas fa-globe-americas fa-4x web"></i>
+            </div>
+
+            <div>
+                <p id="pagina_web" class="contenido_web"></p>
+            </div>
+
+            <div class="contenedor_item_contacto icono_correo">
+                <i class="fas fa-envelope fa-3x correo"></i>
+            </div>
+            <div>
+                <p id="correo_electronico" class="contenido_correo"></p>
+            </div>
+
+            <div class="contenedor_item_contacto icono_telefono">
+                <i class="fas fa-phone fa-3x telefono"></i>
+            </div>
+            <div>
+                <p id="telefono" class="contenido_telefono">Teléfono: </p>
+                <p id="fax" class="contenido_telefono">Fax: </p>
+            </div>
+
+        </div>
+
+        <!-- Botones de solicitud de informacion y solicitud de citas -->
+        <div class="contenedor_botones">
+
+            <div class="informacion">
+                <button type="button" id="btn_informacion">Reciba más información del Centro Educativo</button>
+            </div>
+
+            <div class="citas">
+                <button type="button" id="btn_cita">Solicite una cita con el Centro Educativo</button>
+            </div>
+        </div>
+
+        <!-- Contenedor de las redes sociales -->
+        <div class="fondo_gris_contenedor">
+
+            <div class="contenedor_redes_sociales">
+                <div class="titulo_redes_sociales">
+                    <p>Redes sociales</p>
+                </div>
+
+                <div class="separador_redes_sociales"></div>
+
+                <div id="iconos_redes" class="contenedor_iconos_redes">
+
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <div class="contenedor_referencia_historica">
-        
-        <p class="titulo_referencia_historica">Referencia Histórica<i class="fas fa-book"></i></p>
-
-        <p id="referencia_historica" class="referencia_historica"></p>
-    </div>
-    
-
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
+
+
+    
     <script src="js/controlador_general_centro_educativo.js"></script>
     <script src="js/controlador_sesion.js"></script>
 </body>
+
 </html>

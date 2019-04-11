@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a  id="flecha_primer_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -80,11 +80,12 @@
                     <div class="formulario-2">
                         <form>
                             <div>
-                                <label for="txt_cedula">Cédula Jurídica</label>
+                                <label for="txt_cedula" class="cedula">Cédula Jurídica</label>
                                 <input type="text" id="txt_cedula">
                             </div>
-
+                            
                             <div id="cont_tipo_institucion">
+                                <label for="rbt_escuela" class="tipo_institucion">Tipo Institución</label>
                                 <label for="rbt_escuela">Escuela</label>
                                 <input type="radio" id="rbt_escuela" name="rbt_tipo" value="Escuela">
 
@@ -97,7 +98,7 @@
                             </div>
 
                             <div>
-                                <label for="txt_tipo_colegio">Tipo Colegio</label>
+                                <label for="txt_tipo_colegio" class="tipo_colegio">Tipo Colegio</label>
                                 <select id="txt_tipo_colegio" disabled>
 
                                     <option value="">Seleccione un tipo de colegio...</option>
@@ -110,6 +111,7 @@
                             </div>
 
                             <div id="cont_tipo_sistema">
+                                <label for="rbt_publico" class="tipo_sistema">Tipo Sistema</label>
                                 <label for="rbt_publico">Público</label>
                                 <input type="radio" id="rbt_publico" name="rbt_sistema" value="Público">
 
@@ -121,7 +123,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_segundo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -171,7 +173,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_tercer_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -199,7 +201,7 @@
                     <div id="map"></div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a onclick="plusSlides(1)" id="flecha_cuarto_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -219,43 +221,77 @@
 
                 <div class="separador"></div>
 
-                <div class="contenido">
-                    <div class="titulo-elemento">
-                        <p>Elemento</p>
-                    </div>
-                    <div class="titulo-descripcion">
-                        <p>Descripción</p>
-                    </div>
-
+                <div class="contenido"> 
+                        
                     <div class="formulario-5">
                         <form>
                             <div class="cont-elemento">
-                                <label for="descripcion_idioma">Idiomas</label>
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                                <textarea id="descripcion_idioma"></textarea>
+                                <label for="descripcion_ensenanza">Método Enseñanza</label>
+                                <textarea id="descripcion_ensenanza"></textarea>
                             </div>
 
                             <div class="cont-elemento">
                                 <label for="descripcion_religion">Religión</label>
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
                                 <textarea id="descripcion_religion"></textarea>
-                            </div>
-
-                            <div class="cont-elemento">
-                                <label for="descripcion_ensenanza">Método Enseñanza</label>
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                                <textarea id="descripcion_ensenanza"></textarea>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a onclick="plusSlides(1)" id="flecha_quinto_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- Septimo contenedor, Idioma-->
+        <div class="mySlides fade">
+            <div class="contenedor">
+
+                <div class="flecha_izq">
+                    <a onclick="plusSlides(-1)">
+                        <i class="fas fa-angle-left fa-4x"></i>
+                    </a>
+                </div>
+
+                <div class="descripcion_contenedor">
+                    <p>Servicios adicionales</p>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="contenido">
+                        
+                    <div class="formulario-16">
+                            <h1>Idiomas impartidos por la institución</h1>
+                        <form class="formulario_idiomas">
+                            
+                            <div>
+                                <label for="select_idioma1">Primer Idioma</label>
+                                <select id="select_idioma1">
+                                    <option value="">Seleccione un idioma</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="select_idioma2">Segundo Idioma</label>
+                                <select id="select_idioma2">
+                                    <option value="">Seleccione un idioma</option>
+                                </select>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="flecha_der">
+                    <a onclick="plusSlides(1)" id="flecha_sexto_slide">
+                        <i class="fas fa-angle-right fa-4x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Sexto contenedor, Información Adicional 2-->
         <div class="mySlides fade">
             <div class="contenedor">
@@ -277,26 +313,17 @@
                     <div class="formulario-6">
                         <form>
                             <div class="cont-elemento">
-                                <label for="descripcion_institucion">Descripción de la institución</label>
-
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-
+                                <label for="descripcion_institucion" class="label_textarea">Descripción</label>
                                 <textarea id="descripcion_institucion"></textarea>
                             </div>
 
                             <div class="cont-elemento">
-                                <label for="referencia_historica">Referencia histórica</label>
-
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-
+                                <label for="referencia_historica" class="label_textarea">Referencia histórica</label>
                                 <textarea id="referencia_historica"></textarea>
                             </div>
 
                             <div class="cont-elemento">
                                 <label for="anio_fundacion">Año de fundación</label>
-
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-
                                 <select id="anio_fundacion">
                                     <option value="2019">2019</option>
                                     <option value="2018">2018</option>
@@ -417,9 +444,8 @@
                             </div>
 
                             <div class="cont-elemento">
-                                <label for="txt_mensualidad">Costo</label>
-                                <i class="fas fa-arrow-alt-circle-right fa-3x"></i>
-                                <input type="number" id="txt_matricula" min="0" max="2000000" step="10000" placeholder="Matricula">
+                                <label for="txt_matricula">Costo</label>
+                                <input type="number" id="txt_matricula" min="0" max="2000000" step="10000" placeholder="Matrícula">
                                 <input type="number" id="txt_mensualidad" min="0" max="10000000" step="10000" placeholder="Mensualidad">
                             </div>
 
@@ -427,7 +453,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_setimo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -501,7 +527,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a onclick="plusSlides(1)" id="flecha_octavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -538,7 +564,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_noveno_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -575,7 +601,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_decimo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -642,7 +668,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a onclick="plusSlides(1)" id="flecha_onceavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -672,48 +698,51 @@
                         <form>
                             <div class="cont-contacto">
                                 <div class="cont-red-social">
-                                        <i class="fas fa-phone fa-2x"></i>
+                                    <label for="txt_telefono">Teléfono</label>
                                     <input type="text" id="txt_telefono" placeholder="2222-2222">
+                                    <i class="fas fa-phone"></i>
                                 </div>
 
                                 <div class="cont-red-social">
-                                        <i class="fas fa-fax fa-2x"></i>
+                                    <label for="txt_fax">Fax</label>
                                     <input type="text" id="txt_fax" placeholder="2222-2222">
+                                    <i class="fas fa-fax"></i>
                                 </div>
 
                                 <div class="cont-red-social">
-                                        <i class="fas fa-globe fa-2x"></i>
+                                    <label for="txt_web">Página web</label>
                                     <input type="text" id="txt_web" placeholder="www.institucion.com">
+                                    <i class="fas fa-globe "></i>
                                 </div>
-
-                            </div>
-
-                            <div class="cont-redes">
                                 <div class="cont-red-social">
-                                    <i class="fab fa-facebook-square fa-3x"></i>
+                                    <label for="txt_facebook">Facebook</label>
                                     <input type="text" id="txt_facebook" placeholder="www.facebook.com">
+                                    <i class="fab fa-facebook-square"></i>
                                 </div>
 
                                 <div class="cont-red-social">
-                                    <i class="fab fa-instagram fa-3x"></i>
+                                    <label for="txt_instagram">Instagram</label>
                                     <input type="text" id="txt_instagram" placeholder="www.instagram.com">
+                                    <i class="fab fa-instagram"></i>
                                 </div>
 
                                 <div class="cont-red-social">
-                                    <i class="fab fa-twitter fa-3x"></i>
+                                    <label for="txt_twitter">Twitter</label>
                                     <input type="text" id="txt_twitter" placeholder="www.twitter.com">
+                                    <i class="fab fa-twitter"></i>
                                 </div>
 
                                 <div class="cont-red-social">
-                                    <i class="fab fa-youtube fa-3x"></i>
+                                    <label for="txt_youtube">Youtube</label>
                                     <input type="text" id="txt_youtube" placeholder="www.youtube.com">
+                                    <i class="fab fa-youtube"></i>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_doceavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -771,7 +800,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a onclick="plusSlides(1)" id="flecha_treceavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -811,29 +840,29 @@
 
                             <div class="correo-encargado">
                                 <label for="txt_correo_encargado">Correo</label>
-                                <input type="email" id="txt_correo_encargado" placeholder="Correo electrónico">
+                                <input type="email" id="txt_correo_encargado" placeholder="ejemplo@mail.com">
                             </div>
 
                             <div class="departamento-encargado">
                                 <label for="txt_departamento_encargado">Departamento</label>
-                                <input type="text" id="txt_departamento_encargado" placeholder="Departamento">
+                                <input type="text" id="txt_departamento_encargado" placeholder="Administración">
                             </div>
 
                             <div class="telefono-encargado">
-                                <label for="txt_telefono_encargado">Teléfono</label>
-                                <input type="text" id="txt_telefono_encargado" placeholder="Telefono">
-                                <input type="number" id="txt_extension_encargado" placeholder="Extension">
+                                <label for="txt_telefono_encargado">Télefono</label>
+                                <input type="text" id="txt_telefono_encargado" placeholder="####-####">
+                                <input type="number" id="txt_extension_encargado" placeholder="Extensión">
                             </div>
 
                             <div class="identificacion-encargado">
                                 <label for="txt_identificacion_encargado">Identificación</label>
-                                <input type="text" id="txt_identificacion_encargado" placeholder="Identificacion">
+                                <input type="text" id="txt_identificacion_encargado" placeholder="Identificación">
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_catorceavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -870,7 +899,7 @@
                     </div>
                 </div>
                 <div class="flecha_der">
-                    <a onclick="plusSlides(1)">
+                    <a id="flecha_quinceavo_slide">
                         <i class="fas fa-angle-right fa-4x"></i>
                     </a>
                 </div>
@@ -964,6 +993,7 @@
             <span class="dot" onclick="currentSlide(14)"></span>
             <span class="dot" onclick="currentSlide(15)"></span>
             <span class="dot" onclick="currentSlide(16)"></span>
+            <span class="dot" onclick="currentSlide(17)"></span>
         </div>
     </main>
     <script src="js/servicio_mapa_centro_educativo.js"></script>

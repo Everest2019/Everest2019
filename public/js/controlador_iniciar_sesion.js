@@ -50,4 +50,5 @@ function validar(pcorreo, pcontrasena) {
     return error;
 };
 
+
 boton_Ingresar.addEventListener('click', obtener_Datos);
