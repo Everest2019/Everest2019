@@ -22,11 +22,12 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
+let noticias = listar_noticias();
 
 let mostrar_noticias = () => {
   lista_noticias.innerHTML = '';
   let filtro = input_filtrar.value;
-  let noticias = listar_noticias();
+  
   let centro_educativo = localStorage.getItem('centro_educativo');
   for (let i = 0; i < noticias.length; i++) {
     if (noticias[i]['id_centro_educativo'].includes(centro_educativo)) {

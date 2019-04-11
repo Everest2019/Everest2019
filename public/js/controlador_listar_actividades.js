@@ -1,15 +1,14 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_actividades tbody');
-const input_Filtro = document.querySelector('#txt_filtro');
+const input_filtro = document.querySelector('#txt_filtro');
 const nombre = document.querySelector('#nombre_ce');
 const a_regresar = document.querySelector('#a_regresar');
 
 
-let id_centro_educativo = localStorage.getItem('id_usuario');
+let id_centro_educativo = localStorage.getItem('centro_educativo');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
-
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
@@ -50,4 +49,4 @@ a_regresar.addEventListener('click', function () {
 });
 
 a_regresar.classList.add('estilos_a');
-input_Filtro.addEventListener('keyup', mostrar_datos);
+input_filtro.addEventListener('keyup', mostrar_datos);

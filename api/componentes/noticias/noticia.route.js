@@ -13,4 +13,4 @@ router.route('/listar_noticias')
         noticias_api.listar_noticias(req,res);
     });
 
-module.exports = router;    
+module.exports = router;

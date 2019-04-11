@@ -68,7 +68,10 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
        swal.fire({
            type: 'success',
            title: 'Centro Educativo agregado correctamente',
-           text: `El Centro Educativo ${pnombre_institucion} ha sido agregado correctamente`
+           text: `El Centro Educativo ${pnombre_institucion} ha sido agregado correctamente`,
+           onClose: () => {
+            window.location.href = './iniciar_sesion.html';
+          }
        });
       
      });
@@ -96,6 +99,64 @@ let registrar_servicio = (pcedula_juridica, pservicio) => {
 
   request.fail(function (jqXHR, textStatus) {
       alert("Request failed:" + textStatus);
+  });
+
+};
+
+let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnombre_institucion) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/agregar_favorito",
+      method: "POST",
+      data: {
+          id_centro_educativo: pid_centro_educativo,
+          id_usuario : pid_usuario
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    swal.fire({
+      type: 'success',
+      title: 'Agregado a favoritos',
+      text: `${pnombre_institucion} ahora aparecerá en tu lista de favoritos`,
+      onClose: () => {
+        window.location.href = './perfil_centro_educativo_general.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
+  });
+
+};
+
+let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pnombre_institucion) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/eliminar_favorito",
+      method: "POST",
+      data: {
+          id_usuario : pid_usuario,
+          id_centro_educativo: pid_centro_educativo
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    swal.fire({
+      type: 'success',
+      title: 'Removido de favoritos',
+      text: `${pnombre_institucion} ya no aparecerá en tu lista de favoritos`,
+      onClose: () => {
+        window.location.href = './perfil_centro_educativo_general.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
   });
 
 };
@@ -148,5 +209,31 @@ function buscar_centro_educativo(pid_centro_educativo){
   });
 
   return centro_educativo;
+};
+
+//Buscar centros educativos favoritos de un padre de familia
+function buscar_favoritos_padre_familia(pid_padre_familia){
+  let favoritos = [];
+  $.ajax({
+      url: 'http://localhost:4000/api/buscar_favoritos_padre_familia',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      async: false,
+      data: {
+          id_padre_familia : pid_padre_familia
+      },
+      beforeSend: function beforeSend() {
+            
+      },
+      success: function success(response) {
+        favoritos = response;
+          
+      },
+      error: function error(_error) {
+          console.log("Request fail error:" + _error);
+      }
+  });
+
+  return favoritos;
 };
 

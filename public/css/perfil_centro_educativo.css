@@ -15,9 +15,9 @@
 
 .main h2{
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
     font-family: 'Roboto', sans-serif;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .main .separador{
@@ -187,6 +187,57 @@
     padding-top: 8px;
 }
 
+.contenedor_informacion .boton_favoritos{
+    width: 70%;
+    height: 45px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.contenedor_informacion .boton_favoritos i{
+    float: left;
+    position: relative;
+    bottom: 2px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.contenedor_informacion .boton_favoritos:hover{
+    background: rgb(245, 148, 2);
+}
+
+.contenedor_informacion .boton_eliminar_favoritos{
+    width: 70%;
+    height: 45px;
+    color: #FAA21A;
+    border-radius: 3px;
+    border: 2px solid #FAA21A;
+    cursor: pointer;
+    padding-top: 5px;
+    background: #f2f2f2;
+}
+
+.contenedor_informacion .boton_eliminar_favoritos i{
+    float: left;
+    position: relative;
+    bottom: 2px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.contenedor_informacion .boton_eliminar_favoritos:hover{
+    background: #FAA21A;
+    color: #fff;
+}
+
+.boton_favoritos_display{
+    display: none;
+}
+
 /* Contenedor informacion general */
 
 .contenedor_informacion_general{
@@ -212,6 +263,8 @@
 .contenedor_informacion_general .informacion_general{
     font-size: 20px;
 }
+
+
 
 /* Contenedor galeria */
 
@@ -257,13 +310,12 @@
     height: auto;
     margin-left: 2%;
     margin-top: 40px;
-    padding-bottom: 50px;
 }
 
 .contenedor_referencia_historica .titulo_referencia_historica{
     font-size: 22px;
     font-weight: bold;  
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 .contenedor_referencia_historica .titulo_referencia_historica i{
     position: relative;
@@ -422,12 +474,12 @@
 
 .contenedor_botones{
     display: grid;
-    width: 70%;
+    width: 55%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     margin: 0 auto;
-    margin-bottom: 60px;
-    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .contenedor_botones .informacion{
@@ -472,19 +524,19 @@
 /* Estilos de correo, web y telefono*/
 .contenedor_contacto{
     display: grid;
-    width: 90%; 
+    width: 80%; 
     margin: 0 auto;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr;
     grid-template-rows: 100px;
     grid-gap: 3px;     
-    margin-top: 75px;
+    margin-top: 20px;
 }
 
 .contenedor_item_contacto{
-    border-radius: 50%;
+    border-radius: 40%;
     background: #f2f2f2;
-    height: 95px;
-    width: 90%;
+    height: 80px;
+    width: 80%;
     text-align: center;
 }
 
@@ -535,19 +587,23 @@
 
 /*REDES SOCIALES*/
 
+#contacto{
+    margin-top: 1px;
+}
+
 .contenedor_redes_sociales{
     display: grid;
     width: 90%; 
     grid-template-columns: 1fr 4px 4fr;
     grid-template-rows: 15px 150px 15px;
-    grid-column-gap: 20px;     
-    padding-top: 75px;
+    grid-column-gap: 70px;     
+    padding-top: 18px;
     margin: 0 auto;
 }
 
 .fondo_gris_contenedor{
     background: #f2f2f2;
-    height: 300px;
+    height: 150px;
 }
 
 .contenedor_redes_sociales .titulo_redes_sociales{
@@ -557,11 +613,11 @@
 }
 
 .contenedor_redes_sociales .titulo_redes_sociales p{
-    font-size: 26px;
+    font-size: 30px;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    margin-top: 40px;
-    padding-right: 10%;
+
+    padding-right: 20%;
 }
 
 .separador_redes_sociales{
@@ -569,13 +625,13 @@
     grid-row: 1 / 4;
     background: #FAA21A;
     border-radius: 2px;
+    height: 100px;
 }
 
 .contenedor_iconos_redes{
-    grid-row: 2 / 3;
     grid-column: 3 / 5;
     text-align: center;
-    width: 100%;
+    width: 75%;
 }
 
 .contenedor_iconos_redes h1{
