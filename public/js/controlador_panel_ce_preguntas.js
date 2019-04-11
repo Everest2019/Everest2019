@@ -4,54 +4,83 @@ const input_buscar = document.querySelector('#txt_buscar');
 const nombre = document.querySelector('#nombre_ce');
 const btn_pregunta = document.querySelector('#btn_agregar_pregunta_frecuente');
 
+let preguntas = listar_preguntas();
+mostrar_datos();
+
+input_buscar.addEventListener('keyup', mostrar_datos);
+
 let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
+function mostrar_datos() {
 
-let mostrar_datos = () => {
-  lista_preguntas.innerHTML = '';
-  let preguntas = listar_preguntas();
+  const tabla = document.querySelector('#tbl_pregunta tbody');
+
   let centro_educativo = localStorage.getItem('id_usuario');
   let filtro = input_buscar.value;
 
+  tabla.innerHTML = '';
   for (let i = 0; i < preguntas.length; i++) {
-    if (preguntas[i]['id_centro_educativo'].includes(centro_educativo)){
-      if(preguntas[i]['pregunta'].includes(filtro)){
-        console.log(preguntas[i]['pregunta']);
-      
-    let pregunta_frecuente = document.createElement('div');
-    pregunta_frecuente.classList.add('pregunta');
+    if (preguntas[i]['id_centro_educativo'].includes(centro_educativo)) {
+      if (preguntas[i]['pregunta'].includes(filtro)) {
+        let fila = tabla.insertRow();
 
-    let nombre_pregunta = document.createElement('div');
-    nombre_pregunta.classList.add('nombre_pregunta');
+        let celda_pregunta = fila.insertCell();
+        let celda_respuesta = fila.insertCell();
 
-    let texto_pregunta = document.createElement('p');
-    texto_pregunta.innerHTML = preguntas[i]['pregunta'];
+        celda_pregunta.innerHTML = preguntas[i]['pregunta'];
+        celda_respuesta.innerHTML = preguntas[i]['respuesta'];
 
-    nombre_pregunta.appendChild(texto_pregunta);
 
-    //Respuesta
-    let respuesta_pregunta = document.createElement('div');
-    respuesta_pregunta.classList.add('respuesta_pregunta');
+        let celda_configuracion = fila.insertCell();
+        //Creación del botón de editar
+        let boton_editar = document.createElement('a');
+        boton_editar.innerHTML='<i class="fas fa-pencil-alt"></i>';
+        boton_editar.href = `actualizar_preguntas.html?id=${preguntas[i]['_id']}`;
 
-    let texto_respuesta = document.createElement('p');
-    texto_respuesta.innerHTML = preguntas[i]['respuesta'];
 
-    respuesta_pregunta.appendChild(texto_respuesta);
+        celda_configuracion.appendChild(boton_editar);
 
-    pregunta_frecuente.appendChild(nombre_pregunta);
-    pregunta_frecuente.appendChild(respuesta_pregunta);
 
-    lista_preguntas.appendChild(pregunta_frecuente);
+        let boton_eliminar = document.createElement('a');
+        boton_eliminar.href = '#';
+        boton_eliminar.innerHTML='<i class="fas fa-trash-alt"></i>';
+        boton_eliminar.dataset.id = preguntas[i]['_id'];
+
+        boton_eliminar.addEventListener('click', confirmar_borrado);
+
+        celda_configuracion.appendChild(boton_eliminar);
       }
+
+    }
   }
 }
-}
-mostrar_datos();
-input_buscar.addEventListener('keyup', mostrar_datos);
 
-btn_pregunta.addEventListener('click',function(){
+function confirmar_borrado(){
+  let id =  this.dataset.id;
+  Swal.fire({
+    title: 'Está seguro que desea actualizar la pregunta?',
+    type: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+      if (result.value) {
+          borrar_pregunta(id);
+          preguntas = listar_preguntas();
+          mostrar_datos();
+        Swal.fire(
+          'Pregunta eliminada!',
+          'La pregunta fue borrada con éxito',
+          'success'
+        )
+      }
+    })
+};
+
+btn_pregunta.addEventListener('click', function () {
   window.location.href = './Agregar_preguntas_frecuentes.html';
 })

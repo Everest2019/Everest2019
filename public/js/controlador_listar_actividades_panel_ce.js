@@ -5,6 +5,12 @@ const input_Filtro = document.querySelector('#txt_filtrar_noticia');
 const nombre = document.querySelector('#nombre_ce');
 const crear_actividad = document.querySelector('#btn_agregar_actividad');
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
 

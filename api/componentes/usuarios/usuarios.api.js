@@ -201,6 +201,30 @@ module.exports.listar_instituciones = (req,res) =>{
     )
 };
 
+module.exports.listar_padre_familia = (req, res)=>{
+    modelo_usuario.find({tipo_usuario: 'padre_familia'}).then(
+        function(padre_familia){
+            if(padre_familia.length > 0){
+                res.json(
+                    {
+                        success: true,
+                        padre_familia: padre_familia
+                    }
+                )
+            }
+            else{
+                res.json(
+                    {
+                        success: false,
+                        padre_familia: `No se encontraron padres de familia`
+                    }
+                )
+            }
+        }
+    )
+};
+
+
 
 //BUSCAR USUARIOS
 
