@@ -61,7 +61,7 @@ function mostrar_datos() {
 function confirmar_borrado(){
   let id =  this.dataset.id;
   Swal.fire({
-    title: 'Está seguro que desea actualizar la pregunta?',
+    title: 'Está seguro que desea eliminar la pregunta?',
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',

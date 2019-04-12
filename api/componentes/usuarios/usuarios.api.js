@@ -404,7 +404,6 @@ module.exports.buscar_favoritos_padre_familia = function(req, res){
     )
 };
 
-
 /*Inicio de Sesión*/ 
 module.exports.validar = function (req, res){
     modelo_usuario.findOne({correo : req.body.correo}).then(
@@ -436,3 +435,29 @@ module.exports.validar = function (req, res){
         }
     )
 };
+
+//MODIFICAR
+
+module.exports.actualizar = (req, res) => {
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar el centro educativo.`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        succes: true,
+                        msg: `El centro educativo se actualizó correctamente.`
+                    }
+                );
+
+            }
+        }
+    );
+}
+

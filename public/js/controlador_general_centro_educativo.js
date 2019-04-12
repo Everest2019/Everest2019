@@ -418,6 +418,3 @@ boton_eliminar_favoritos.addEventListener('click', eliminar_favorito);
 
 
 
-
-
-

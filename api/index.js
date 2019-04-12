@@ -98,6 +98,9 @@ app.use('/api', preguntas);
 const idiomas = require('./componentes/lenguajes/lenguaje.route');
 app.use('/api',idiomas);
 
+const solicitudes = require('./componentes/solicitudes/solicitudes.route');
+app.use('/api', solicitudes);
+
 
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app

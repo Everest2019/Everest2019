@@ -22,11 +22,7 @@ function mostrar_datos() {
             let celda_foto = fila.insertCell();
             let celda_nombre = fila.insertCell();
             let celda_identificacion = fila.insertCell();
-            let celda_tipo_identificacion = fila.insertCell();
-            let celda_nacionalidad = fila.insertCell();
             let celda_provincia = fila.insertCell();
-            let celda_canton = fila.insertCell();
-            let celda_distrito = fila.insertCell();
             let celda_telefono = fila.insertCell();
             let celda_correo = fila.insertCell();
             let celda_cantidad_hijos = fila.insertCell();
@@ -44,11 +40,7 @@ function mostrar_datos() {
             celda_nombre.innerHTML = lista_padre_familia[i]['primer_nombre'] + ' ' + lista_padre_familia[i]['segundo_nombre'] + ' ' + lista_padre_familia[i]['primer_apellido'] + ' ' + lista_padre_familia[i]['segundo_apellido'];
     
             celda_identificacion.innerHTML = lista_padre_familia[i]['identificacion'];
-            celda_tipo_identificacion.innerHTML = lista_padre_familia[i]['tipo_identificacion'];
-            celda_nacionalidad.innerHTML = lista_padre_familia[i]['nacionalidad'];
             celda_provincia.innerHTML = lista_padre_familia[i]['provincia'];
-            celda_canton.innerHTML = lista_padre_familia[i]['canton'];
-            celda_distrito.innerHTML = lista_padre_familia[i]['distrito'];
             celda_telefono.innerHTML = lista_padre_familia[i]['telefono'];
             if (lista_padre_familia['telefono'] != undefined) {
                 celda_telefono.innerHTML = lista_padre_familia['telefono'];
