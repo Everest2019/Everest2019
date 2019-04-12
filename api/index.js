@@ -98,7 +98,8 @@ app.use('/api', preguntas);
 const idiomas = require('./componentes/lenguajes/lenguaje.route');
 app.use('/api',idiomas);
 
-
+const criterios_evaluacion = require('./componentes/criterios_evaluacion/criterios_evaluacion.route');
+app.use('/api',criterios_evaluacion);
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;
