@@ -8,8 +8,6 @@ const telefono = document.querySelector('#contenedor_info_telefono');
 const correo = document.querySelector('#contenedor_info_correo');
 const foto= document.querySelector('#foto_perfil');
 
-
-
 let id_padre_familia = localStorage.getItem('id_usuario');
 
 let padre_familia = buscar_padre_familia(id_padre_familia);

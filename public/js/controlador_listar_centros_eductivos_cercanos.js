@@ -3,8 +3,12 @@
 const lista_instituciones = document.querySelector('#lista_instituciones');
 const input_filtrar = document.querySelector('#txt_buscar_centro_educativo');
 let instituciones = listar_instituciones();
-let padre = localStorage.getItem('id_usuario');
-let padre_familia = buscar_padre_familia(padre);
+
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='padre_familia'){
+    window.location.href = `iniciar_sesion.html`;
+}
 
 let mostrar_datos = () => {
 

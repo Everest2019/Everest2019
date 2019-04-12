@@ -7,43 +7,39 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/actividades.css">
+    <link rel="stylesheet" href="css/agregar_preguntas.css">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="cont_links">
-                <a href="panel_control_centro_educativo.html">Inicio</a>
-                <a href="panel_centro_educativo_actividades.html">Actividades</a>
+                    <a href="panel_control_centro_educativo.html">Inicio</a>
+                    <a href="panel_centro_educativo_preguntas_frecuentes.html">Preguntas</a>
             </div>
         </nav>
     </header>
-    <h2 class="titulo2">Agregar</h2>
-    <h1 class="titulo1">Actividades</h1>
+    <h2 class="titulo2">Preguntas</h2>
+    <h1 class="titulo1">Frecuentas</h1>
     <main>
                 <div class="contenedor">
                     <div class="descripcion_contenedor">
-                        <p>Actividades</p>
+                        <p>Actualizar Preguntas Frecuentas</p>
                     </div>
                     <div class="separador"></div>
                     <div class="contenido">
-                        <div class="formulario-1">
+                        <div class="formulario">
                             <form>
                                 <div>
-                                    <label for="txt_titulo">Título</label>
-                                    <input type="text" id="txt_titulo">
+                                    <label for="txt_pregunta">Pregunta</label>
+                                    <input type="text" id="txt_pregunta" class="borde">
                                 </div>
                                 <div>
-                                    <label for="dt_fecha">Fecha</label>
-                                    <input type="date" id="dt_fecha">
+                                    <label for="txt_respuesta" id="label_respuesta">Respuesta</label>
+                                    <textarea id="txt_respuesta" class="borde"></textarea>
                                 </div>
                                 <div>
-                                    <label for="txt_descripcion">Descripción</label>
-                                    <textarea id="txt_descripcion"></textarea>
-                                </div>
-                                <div>
-                                    <button type="button" id="btn_registrar">Actualizar</button>
+                                    <button type="button" id="btn_actualizar">Actualizar</button>
                                 </div>
                             </form>
                         </div>
@@ -53,8 +49,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_actividades.js"></script>
-    <script src="js/controlador_actualizar_actividades.js"></script>
+    <script src="js/servicio_preguntas.js"></script>
+    <script src="js/controlador_actualizar_preguntas.js"></script>
+    <script src="js/controlador_panel_ce_preguntas.js"></script>
 </body>
 
-</html>
+</html> 

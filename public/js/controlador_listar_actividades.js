@@ -12,38 +12,38 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
-let actividades = listar_actividades ();
-
-let mostrar_datos = () =>{
+let mostrar_datos = () => {
     tabla.innerHTML = '';
-    let filtro = input_filtro.value;
-    
+    let filtro = input_Filtro.value;
+    let actividades = listar_actividades();
     let id_centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
 
     for (let i = 0; i < actividades.length; i++) {
-        if (actividades[i]['id_centro_educativo'].includes(id_centro_educativo)){
+        if (actividades[i]['id_centro_educativo'].includes(id_centro_educativo)) {
             if (actividades[i]['titulo'].toLowerCase().includes(filtro.toLowerCase())) {
-            let fila = tabla.insertRow();
+                let fila = tabla.insertRow();
 
-            fila.insertCell().innerHTML = actividades[i]['titulo'];
-            
-            let fecha = new Date(actividades[i]['fecha']);
-            fecha = fecha.toLocaleDateString();
-            fila.insertCell().innerHTML = fecha;
-            fila.insertCell().innerHTML = actividades[i]['descripcion'];
-        }
+                fila.insertCell().innerHTML = actividades[i]['titulo'];
+
+                let fecha = new Date(actividades[i]['fecha']);
+                fecha = fecha.toLocaleDateString();
+                fila.insertCell().innerHTML = fecha;
+                fila.insertCell().innerHTML = actividades[i]['descripcion'];
+
+          
+            }
+        };
     };
-};
 };
 
 mostrar_datos();
 
 
-a_regresar.addEventListener('click', function(){
-    if(localStorage.getItem('tipo_usuario') == 'administrador'){
+a_regresar.addEventListener('click', function () {
+    if (localStorage.getItem('tipo_usuario') == 'administrador') {
         window.location.href = './panel_administrador_instituciones.html';
     }
-    else{
+    else {
         window.location.href = './instituciones.html';
     }
 });
