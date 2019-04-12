@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/listar_articulo.css">
+    <link rel="stylesheet" href="css/listar_criterios.css">
 
-    <title>Gemas - Artículos</title>
+
+    <title>Gemas - Evaluaciones</title>
 </head>
 
 <body>
@@ -35,7 +38,7 @@
             <a href="panel_administrador_instituciones.html">Instituciones</a>
         </div>
         
-        <div id="navbar_lateral_instituciones">
+        <div id="navbar_lateral_instituciones" class="pagina_actual">
             <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
         </div>
 
@@ -43,7 +46,7 @@
             <a href="#">Lista de útiles</a>
         </div>
         
-        <div id="navbar_lateral_cercanos" class="pagina_actual">
+        <div id="navbar_lateral_cercanos" >
             <a href="panel_administrador_articulos.html">Artículos</a>
         </div>
 
@@ -56,31 +59,34 @@
             <a href="#">Bitácora</a>
         </div>
 
-                <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+        <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
 
     </div>
 
-    <main>
         <div class="main">
-            <h1>Lista de Artículos</h1>
+            <h1>Criterios de Evaluación</h1>
             <div class="separador"></div>
 
-            <div class="formulario-1">
+            
                 <div class="contenedor_buscar">
                     <label for="txt_buscar">Buscar:</label>
                     <input type="text" id="txt_buscar">
                 </div>
+            <div class="contenedor_btn_modificar">
+                <button type="button" id="btn_evaluacion" class="btn_criterio">Realizar evaluación</button>
+                <button type="button" id="btn_registrar" class="btn_criterio">Agregar criterio</button>
+
             </div>
-            <button type="button" id="btn_agregar" class="btn_articulo">Agregar artículo</button>
-            <button type="button" id="btn_modificar_artículo" class="btn_articulo">Modificar artículo</button>
  
             <div>
 
-                <table id="tbl_articulo" class="tabla_articulo">
+                <table id="tbl_criterios" class="tabla_criterios">
                     <thead>
                         <tr>
-                            <th>Nombre del Artículo</th>
-                            <th>Descripción</th>
+                            <th class="th_posicion">#</th>
+                            <th class="th_criterios">Criterio de evaluación</th>
+                            <th class="th_valor">Valor</th>
+                            <th class="th_accion">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,11 +95,11 @@
                 </table>
             </div>
         </div>
-    </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_articulo.js"></script>
-    <script src="js/controlador_listar_articulo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_criterios_evaluacion.js"></script>
+    <script src="js/controlador_listar_criterios_evaluacion.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>
 
 </body>

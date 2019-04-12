@@ -45,7 +45,7 @@ let obtener_datos = () => {
         let fecha = input_fecha.value;
         let descripcion = input_descripcion.value;
 
-        registrar_actividades(id_centro_educativo,titulo, fecha, descripcion);
+        registrar_actividades(centro_educativo,titulo, fecha, descripcion);
 
     } else {
         swal.fire({
@@ -54,6 +54,11 @@ let obtener_datos = () => {
         });
     }
 
+    input_titulo.value = '';
+    input_fecha.value = '';
+    input_descripcion = '';
 };
+
+
 
 boton_registrar.addEventListener('click', obtener_datos);

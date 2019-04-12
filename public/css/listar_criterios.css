@@ -1,0 +1,131 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    background: #F2F2F2;
+}
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+
+.contenedor_buscar{
+    width: 50%;
+    margin-left: 3%;
+    padding-top: 40px;
+}
+
+.contenedor_buscar label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 18%;
+}
+
+.contenedor_buscar input{
+    display: inline-block;
+    width: 58%;
+    height: 25px;
+    border-radius: 3px;
+    font-size: 20px;
+    border: 2px solid rgb(194, 194, 194);
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor_buscar input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+/*--------------------------------------------------------*/
+
+.tabla_criterios{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.tabla_criterios tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    background: #FAA21A;
+    text-align: center;
+}
+.tabla_criterios tr td{
+    padding: 15px;
+    border: 2px solid #000;
+    background: #F2F2F2;
+} 
+.tabla_criterios tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    background: #F2F2F2;
+}
+
+.btn_criterio{
+    width: 20%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 3%;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .btn_criterio:hover{
+    background: rgb(245, 148, 2);
+}
+.th_posicion{
+    width: 2%;
+}
+
+.th_criterios{
+    width: 40%;
+} 
+
+.th_valor{
+    width: 5%;
+}
+
+.th_accion{
+    width: 5%;
+}
+
+.td_posicion{
+    text-align: center;
+}
+
+.td_valor{
+    text-align: center;
+}
+
+.td_accion{   
+    text-align: center;
+}
+
+.td_accion a{   
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
+
+.celda_total{
+    text-align: center;
+    color: #FAA21A;
+}
+
+.tabla_criterios i{
+    padding: 7px;
+}

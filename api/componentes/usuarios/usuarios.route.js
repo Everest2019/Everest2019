@@ -92,4 +92,13 @@ router.route('/actualizar_centro_educativo')
         }
     );
 
+router.route('/deshabilitar_padre_familia')
+.post(function(req , res){
+    api_usuario.deshabilitar(req , res);
+});
+
+router.route('/habilitar_padre_familia')
+.post(function(req , res){
+    api_usuario.habilitar(req , res);
+});
 module.exports = router; 
