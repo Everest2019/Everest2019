@@ -187,7 +187,28 @@ module.exports.registrar_padre_familia = (req, res) =>{
     }
 
     //LISTAR USUARIOS
-
+    module.exports.listar_padre_familia = (req, res)=>{
+        modelo_usuario.find({tipo_usuario: 'padre_familia'}).then(
+            function(padre_familia){
+                if(padre_familia.length > 0){
+                    res.json(
+                        {
+                            success: true,
+                            padre_familia: padre_familia
+                        }
+                    )
+                }
+                else{
+                    res.json(
+                        {
+                            success: false,
+                            padre_familia: `No se encontraron padres de familia`
+                        }
+                    )
+                }
+            }
+        )
+    };
     module.exports.listar_instituciones = (req, res) => {
         modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).then(
             function (instituciones) {
@@ -266,6 +287,31 @@ module.exports.registrar_padre_familia = (req, res) =>{
                             msg: 'El usuario no existe'
                         }
                     );
+                }
+            }
+        )
+    };
+
+    //habilitar y deshabilitar
+    module.exports.deshabilitar = function(req, res){
+        modelo_usuario.findByIdAndUpdate(req.body.id, {$set: { estado: false }},
+            function(error){
+                if(error){
+                    res.json({success: false, msg: 'No se pudo actualizar la editorial'});
+                }else{
+                    res.json({success: true, msg: 'La editorial se actualizó con éxito'}); 
+                }
+            }
+        )
+    };
+    
+    module.exports.habilitar = function(req, res){
+        modelo_usuario.findByIdAndUpdate(req.body.id, {$set: { estado: true }},
+            function(error){
+                if(error){
+                    res.json({success: false, msg: 'No se pudo habilitar el usuario'});
+                }else{
+                    res.json({success: true, msg: 'El usuario se habilito corectamente'}); 
                 }
             }
         )
