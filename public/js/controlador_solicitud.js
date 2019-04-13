@@ -1,8 +1,12 @@
 'use strict';
 
+const btn_informacion = document.querySelector('#btn_informacion');
 
-const boton_registrar = document.querySelector('#btn_informacion');
-
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='padre_familia'){
+    window.location.href = `iniciar_sesion.html`;
+}
 
 let id_padre_familia = localStorage.getItem('id_usuario');
 
@@ -10,6 +14,7 @@ let obtener_datos = () => {
 
         let centro_educativo = id_centro_educativo;
         let padre_familia = id_padre_familia;
+        let id = localStorage.getItem('_id');
 
   
         Swal.fire({
@@ -27,4 +32,4 @@ let obtener_datos = () => {
     }
 
 
-boton_registrar.addEventListener('click', obtener_datos);
+    btn_informacion.addEventListener('click', obtener_datos);

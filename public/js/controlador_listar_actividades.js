@@ -5,6 +5,13 @@ const input_filtro = document.querySelector('#txt_filtro');
 const nombre = document.querySelector('#nombre_ce');
 const a_regresar = document.querySelector('#a_regresar');
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if (!usuario_loggeado || tipo_usuario == 'centro_educativo') {
+    window.location.href = `iniciar_sesion.html`;
+}
+
+
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');
 
@@ -13,13 +20,13 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 let mostrar_datos = () =>{
-    let filtro = input_Filtro.nodeValue;
+    let filtro = input_filtro.value;
     let actividades = listar_actividades ();
     let id_centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
     tabla.innerHTML='';
 
     for (let i = 0; i < actividades.length; i++) {
-        if (actividades[i]['id_centro_educativo'].tolowerCase().includes(id_centro_educativo)(filtro.tolowerCase())){
+        //if (actividades[i]['id_centro_educativo'].tolowerCase().includes(id_centro_educativo)(filtro.tolowerCase())){
         let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = actividades[i]['titulo'];
@@ -30,7 +37,7 @@ let mostrar_datos = () =>{
         fila.insertCell().innerHTML = actividades[i]['descripcion'];
     };
 };
-};
+//};
 mostrar_datos();
 
 

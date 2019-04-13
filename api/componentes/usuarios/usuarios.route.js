@@ -79,12 +79,7 @@ router.route('/eliminar_favorito')
             api_usuario.eliminar_favorito(req, res);
         }
     );
-router.route('/registrar_solicitudes')
-    .post(
-        function (req, res) {
-            api_usuario.registrar_solicitudes(req, res);
-        }
-    );
+
 router.route('/actualizar_centro_educativo')
     .post(
         function (req, res) {

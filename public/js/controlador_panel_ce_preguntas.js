@@ -4,6 +4,13 @@ const input_buscar = document.querySelector('#txt_buscar');
 const nombre = document.querySelector('#nombre_ce');
 const btn_pregunta = document.querySelector('#btn_agregar_pregunta_frecuente');
 
+//Inicio Sesión
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
 let preguntas = listar_preguntas();
 mostrar_datos();
 

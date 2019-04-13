@@ -260,6 +260,58 @@ module.exports.registrar_padre_familia = (req, res) =>{
         )
     };
 
+    module.exports.agregar_favorito = (req,res) =>{
+        modelo_usuario.update(
+            {_id: req.body.id_usuario},
+            {
+                $push:
+                    { 
+                    'favoritos':
+                    {
+                        id_centro_educativo: req.body.id_centro_educativo
+                    }
+                }
+            },
+            function (error){
+                if(error){
+                    res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}`});
+                }
+                else{
+                    res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos`});
+                }
+            }
+        )
+    };
+    
+    module.exports.eliminar_favorito = function(req, res){
+        modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
+            {$pull: {'favoritos':{id_centro_educativo: req.body.id_centro_educativo}}},
+             {safe: true, upsert: true},
+            function(error){
+                if(error){
+                    res.json({success: false ,msg: 'No se pudo eliminar el centro educativo de favoritos'});
+                }else{
+                    res.json({success: true ,msg: 'El centro educativo se eliminó de favoritos con éxito'}); 
+                }
+            }
+            );
+    };
+    
+    
+    //Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
+    module.exports.buscar_favoritos_padre_familia = function(req, res){
+        modelo_usuario.findOne({_id : req.body.id_padre_familia}).then(
+            function(padre_familia){
+                if(padre_familia){
+                    res.send(padre_familia.favoritos);
+                }else{
+                    res.send('No se encontró el Padre Familia');
+                }
+            }
+        )
+    };
+    
+
     /*Inicio de Sesión*/
     module.exports.validar = function (req, res) {
         modelo_usuario.findOne({ correo: req.body.correo }).then(

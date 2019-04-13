@@ -69,9 +69,6 @@ let schema_usuarios = new mongoose.Schema(
             favoritos : [
                 {id_centro_educativo: String}
             ],
-            solicitudes : [
-                {id_centro_educativo: String}
-            ],
 
 
         /* DATOS DEL ADMINISTRADOR */

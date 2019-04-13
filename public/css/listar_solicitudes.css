@@ -88,4 +88,9 @@ div input{
     width: 8%;
     margin-left: 5%;
 }
+i{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
 
