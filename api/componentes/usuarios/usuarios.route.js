@@ -4,6 +4,11 @@ const express = require('express');
 const router = express.Router();
 const api_usuario = require('./usuarios.api');
 
+router.param('id_padre_familia', function(req, res, next, id_padre_familia){
+    req.body.id_padre_familia = id_padre_familia;
+    next();
+});
+
 router.route('/registrar_padre_familia')
     .post(
         function (req, res) {
@@ -29,6 +34,13 @@ router.route('/registrar_adminitrador')
     .post(
         function (req, res) {
             api_usuario.registrar_administrador(req, res);
+        }
+    );
+
+    router.route('/actualizar_padre_familia')
+    .post(
+        function(req , res){
+            api_usuario.actualizar(req, res);
         }
     );
 
@@ -87,13 +99,4 @@ router.route('/actualizar_centro_educativo')
         }
     );
 
-router.route('/deshabilitar_padre_familia')
-.post(function(req , res){
-    api_usuario.deshabilitar(req , res);
-});
-
-router.route('/habilitar_padre_familia')
-.post(function(req , res){
-    api_usuario.habilitar(req , res);
-});
 module.exports = router; 
