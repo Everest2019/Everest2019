@@ -32,13 +32,6 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
-    request.done(function (msg) {
-     swal.fire({
-            type: 'success',
-            title: 'Se ha creado con exito la etiqueta',
-            text: `Se ha creado exitosamente la etiqueta con el nombre de ${paccion} con la siguiente descripción ${pdescripcion}`
-        });
-    });
 
 
     request.fail(function (jqXHR, textStatus) {
@@ -84,6 +77,15 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
     });
 
     request.done(function(res){
+
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta actualizada con éxito',
+            text : res.msg,
+            onClose: () => {
+                window.location.href = 'panel_administrador_etiquetas.html';
+              }    
+        });
 
     });
 

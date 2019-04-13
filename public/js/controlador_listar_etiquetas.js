@@ -5,20 +5,20 @@ const input_filtro = document.querySelector('#txt_filtar');
 const btn_agregar_etiquetas = document.querySelector('#btn_agregar');
 let etiquetas = listar_etiquetas();
 
-let mostrar_datos = () => {
+let mostrar_datos = ()=>{
 
-
+    
     let filtro = input_filtro.value;
 
     tabla.innerHTML = '';
 
-    for (let i = 0; i < etiquetas.length; i++) {
+    for(let i = 0; i < etiquetas.length; i++){
         if (etiquetas[i]['accion'].toLowerCase().includes(filtro.toLowerCase())) {
             let fila = tabla.insertRow();
 
             fila.insertCell().innerHTML = etiquetas[i]['accion'];
             fila.insertCell().innerHTML = etiquetas[i]['descripcion'];
-            // se crea una nueva celda para el boton de editar 
+// se crea una nueva celda para el boton de editar 
             let celda_configuaracion = fila.insertCell();
 
             //creacion del boton de editar
@@ -33,7 +33,7 @@ let mostrar_datos = () => {
 
 
 input_filtro.addEventListener('keyup', mostrar_datos);
-btn_agregar_etiquetas.addEventListener('click', function () {
-    window.location.href = './registrar_etiquetas.html';
+btn_agregar_etiquetas.addEventListener('click', function(){
+    window.location.href = './actualizar_etiquetas.html';
 })
 mostrar_datos();
