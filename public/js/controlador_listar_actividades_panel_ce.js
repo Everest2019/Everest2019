@@ -4,6 +4,7 @@ const tabla = document.querySelector('#tbl_actividades tbody');
 const input_Filtro = document.querySelector('#txt_filtrar_noticia');
 const nombre = document.querySelector('#nombre_ce');
 const crear_actividad = document.querySelector('#btn_agregar_actividad');
+const modificar_actividades = document.querySelector('#btn_modificar_actividad');
 
 let usuario_loggeado = localStorage.getItem('conectado');
 let tipo_usuario = localStorage.getItem('tipo_usuario');
@@ -42,6 +43,11 @@ let mostrar_datos = () =>{
 let actividad = () =>{
     window.location.href = './agregar_actividades.html';
 }
+
+
+modificar_actividades.addEventListener('click',function(){
+    window.location.href = './actualizar_actividades.html';
+})
 
 mostrar_datos();
 crear_actividad.addEventListener('click', actividad);
