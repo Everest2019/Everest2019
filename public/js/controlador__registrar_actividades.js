@@ -13,30 +13,6 @@ if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
     window.location.href = `iniciar_sesion.html`;
 }
 
-let validar = () => {
-    let error = false;
-
-    if (input_titulo.value == '') {
-        error = true;
-        input_titulo.classList.add('error_input');
-    } else {
-        input_titulo.classList.remove('error_input');
-    }   
-    if(input_fecha.value == ''){
-        error = true;
-        input_fecha.classList.add('error_input');
-    }else{
-        input_fecha.classList.remove('error_input');
-    }
-    if(input_descripcion.value == ''){
-        error = true;
-        input_descripcion.classList.add('error_input');
-    }else{
-        input_descripcion.classList.remove('error_input')
-    }
-    return error;
-};
-
 let obtener_datos = () => {
 
     if (validar() == false) {

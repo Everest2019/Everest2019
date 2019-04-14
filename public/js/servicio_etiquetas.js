@@ -99,3 +99,23 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
     });
 
 };
+
+function borrar_etiquetas(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_etiquetas',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id : pid
+        },
+        beforeSend: function beforeSend() {
+            
+        },
+        success: function success(response) {
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+}
