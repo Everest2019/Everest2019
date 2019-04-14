@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -36,7 +36,6 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             galeria2 : pgaleria2,
             galeria3 : pgaleria3,
             galeria4 : pgaleria4,
-            informacion_idioma : pidioma,
             informacion_religion : preligion,
             informacion_ensenanza : pensenanza,
             documento1: pdocumento1,
@@ -95,6 +94,28 @@ let registrar_servicio = (pcedula_juridica, pservicio) => {
   });
   request.done(function (msg) {
     console.log('Servicio agregado correctamente');
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      alert("Request failed:" + textStatus);
+  });
+
+};
+
+let registrar_idioma = (pcedula_juridica, pidioma) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/registrar_idioma",
+      method: "POST",
+      data: {
+          cedula_juridica: pcedula_juridica,
+          idioma: pidioma
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    console.log('Idioma agregado correctamente');
   });
 
   request.fail(function (jqXHR, textStatus) {

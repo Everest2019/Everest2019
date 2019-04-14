@@ -5,8 +5,7 @@ const modelo_criterios_evaluacion = require('./criterios_evaluacion.model');
 module.exports.registrar_criterios_evaluacion = (req,res) =>{
     let nuevo_criterio_evaluacion = new modelo_criterios_evaluacion(
         {
-            nombre: req.body.nombre,
-            valor: req.body.valor
+            nombre: req.body.nombre
         }
     )
     nuevo_criterio_evaluacion.save(function(error){

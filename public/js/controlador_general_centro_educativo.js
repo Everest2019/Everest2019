@@ -7,6 +7,8 @@ const contenedor_caracteristicas = document.querySelector('#contenedor_caracteri
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
+const txt_religion =  document.querySelector('#txt_religion');
+const txt_ensenanza =  document.querySelector('#txt_ensenanza');
 
 /******************************************************** */
 
@@ -44,9 +46,6 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let id_padre_familia = localStorage.getItem('id_usuario');
 let favoritos_padre_familia = buscar_favoritos_padre_familia(id_padre_familia);
-console.log(favoritos_padre_familia);
-console.log(id_centro_educativo);
-
 
 
 banner.src = centro_educativo['imagen_portada'];
@@ -274,7 +273,31 @@ contenedor_fundacion.appendChild(fundacion);
 
 contenedor_caracteristicas.appendChild(contenedor_fundacion);
 
-//Favoritos
+
+//Idiomas
+let contenedor_idioma = document.createElement('div');
+contenedor_idioma.classList.add('contenedor_informacion');
+
+let titulo_idioma = document.createElement('p');
+titulo_idioma.classList.add('tipo_informacion');
+titulo_idioma.textContent = 'Idiomas';
+
+contenedor_idioma.appendChild(titulo_idioma);
+
+let total_idiomas = 0;
+
+for(let i = 0; i < centro_educativo['idiomas'].length; i++){
+    let idioma = document.createElement('p');
+    idioma.classList.add('informacion');
+    idioma.textContent = centro_educativo['idiomas'][i]['idioma'];
+
+    contenedor_idioma.appendChild(idioma);
+
+    total_idiomas++;
+}
+if(total_idiomas > 0){
+    contenedor_caracteristicas.appendChild(contenedor_idioma);
+}
 
 
 //Boton agregar a favoritos
@@ -371,6 +394,25 @@ contenedor_imagenes.appendChild(contenedor_imagen1);
 contenedor_imagenes.appendChild(contenedor_imagen2);
 contenedor_imagenes.appendChild(contenedor_imagen3);
 contenedor_imagenes.appendChild(contenedor_imagen4);
+
+//Informacion adicional
+
+
+
+    if(centro_educativo['informacion_ensenanza']){
+        txt_ensenanza.innerHTML = centro_educativo['informacion_ensenanza'];
+    }
+    else{
+        txt_ensenanza.innerHTML = 'No hay información sobre el método de enseñanza';
+    }
+
+    if(centro_educativo['informacion_religion']){
+        txt_religion.innerHTML = centro_educativo['informacion_religion'];
+    }
+    else{
+        txt_religion.innerHTML = 'No hay información sobre la religión';
+    }
+
 
 
 

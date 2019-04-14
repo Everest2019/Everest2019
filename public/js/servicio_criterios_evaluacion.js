@@ -1,12 +1,11 @@
 'use strict';
 
-let registrar_criterio = (pdescripcion,pvalor) =>{
+let registrar_criterio = (pdescripcion) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/registrar_criterio_evaluacion',
         method : "POST",
         data : {
-            nombre : pdescripcion,
-            valor : pvalor
+            nombre : pdescripcion
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
@@ -31,14 +30,13 @@ let registrar_criterio = (pdescripcion,pvalor) =>{
 
 };
 
-let modificar_criterio = (pid_criterio,pdescripcion,pvalor) =>{
+let modificar_criterio = (pid_criterio,pdescripcion) =>{
     let request = $.ajax({
         url : 'http://localhost:4000/api/modificar_criterio_evaluacion',
         method : "POST",
         data : {
             id_criterio : pid_criterio,
-            nombre : pdescripcion,
-            valor : pvalor
+            nombre : pdescripcion
         },
         dataType : "json",
         contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 

@@ -316,35 +316,45 @@ margin-bottom: 10px;
 }
 
 /* Estilos del contenedor de idiomas */
+
 .formulario-16 h1{
     font-size: 23px;
     margin-left: 7%;
-    margin-bottom: 60px;
 }
 
-.formulario-16 form div{
-    margin-top: 40px;
+.formulario-16 .contenedor_idiomas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 48%);
+    grid-gap: 5px;
+    border: 1px solid red;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.formulario-16 .contenedor_idiomas div{
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 15%;
 }
 
 .formulario-16 div label{
+    margin-left: 15px;
     display: inline-block;
-    width: 30%;
-    margin-left: 40px;  
-    font-weight: bold;
-}
-.formulario-16 select:focus{
-    border: 2px solid #FAA21A;
-    outline: none;
+    width: 50%;
 }
 
-.formulario-16 select{
-    display: inline-block;
-    width: 55%;
-    height: 25px;
-    border-radius: 3px;
-    font-size: 15px;
+.formulario-16 input[type=checkbox]{
+    height: 16px;
+    width: 16px;
 }
 
+.formulario-16 img{
+    height: 20px;
+    width: 30px;
+    position: relative;
+    top: 3px;
+    margin-left: 8px;   
+}
 
 
 /* Estilos del Sexto contenedor */
@@ -371,7 +381,7 @@ margin-bottom: 10px;
     height: 70px;
     resize: none;
     border-radius: 3px;
-
+    font-size: 14px;
 }
 
 

@@ -83,6 +83,9 @@ const input_identificacion = document.querySelector('#txt_identificacion_encarga
 const url_img_encargado = document.querySelector('#url_foto_encargado');
 const img_encargado = document.querySelector('#img_encargado');
 
+//Contenedor idiomas
+const contenedor_idiomas = document.querySelector('#contenedor_idiomas');
+
 //Contraseña
 
 const contrasena = document.querySelector('#txt_contrasena');
@@ -686,8 +689,7 @@ let obtener_datos = () =>{
 
         //Informacion adicional
 
-        //let idioma = input_infoadicional_idioma.value;
-        let idioma = '';
+        const idiomas = document.querySelectorAll('#contenedor_idiomas input[type=checkbox]:checked');
         let religion = input_infoadicional_religion.value;
         let ensenanza = input_infoadicional_ensenanza.value;
 
@@ -699,6 +701,8 @@ let obtener_datos = () =>{
 
         //Servicios adicionales
         const servicios = document.querySelectorAll('#checkbox_servicios input[type=checkbox]:checked');
+
+
 
         let portada = url_img_portada.value;
         let galeria1 = url_galeria1.value;
@@ -736,10 +740,14 @@ let obtener_datos = () =>{
         let distrito = buscar_distrito();
         
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud,religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce);
 
         for(let i = 0; i < servicios.length; i++){
             registrar_servicio(cedula_institucion, servicios[i].value);
+        }
+
+        for(let i = 0; i < idiomas.length; i++){
+            registrar_idioma(cedula_institucion, idiomas[i].value);
         }
 
     }
@@ -832,6 +840,35 @@ let buscar_distrito = () =>{
     }
     return nombre_distrito;
 };
+
+let lista_idiomas = listar_lenguajes();
+console.log(lista_idiomas);
+
+for(let i = 0; i < lista_idiomas.length; i++){
+    let contenedor = document.createElement('div');
+
+    let label = document.createElement('label');
+    label.textContent = lista_idiomas[i]['iso'] + ' - ' + lista_idiomas[i]['nombre']; 
+
+    let checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox_idioma');
+    checkbox.value = lista_idiomas[i]['nombre'];
+
+    let bandera = document.createElement('img');
+    bandera.src = lista_idiomas[i]['bandera'];
+
+    contenedor.appendChild(checkbox);
+    contenedor.appendChild(label);
+    contenedor.appendChild(bandera);
+
+    contenedor_idiomas.appendChild(contenedor);
+}
+
+
+
+
+
 
 
 radios_tipo_institucion[0].addEventListener("click", deshabilitar_tipo_colegio);

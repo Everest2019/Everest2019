@@ -1,7 +1,6 @@
 'use strict';
 
 const input_descripcion = document.querySelector('#txt_descripcion');
-const input_valor = document.querySelector('#input_valor');
 const btn_agregar = document.querySelector('#boton_agregar');
 
 let validar_datos = () =>{
@@ -17,16 +16,6 @@ let validar_datos = () =>{
         input_descripcion.classList.add('borde');
     }
 
-    if(input_valor.value == '' ){
-        error = true;
-        input_valor.classList.remove('borde');
-        input_valor.classList.add('input_error');
-    }
-    else{
-        input_valor.classList.remove('input_error');
-        input_valor.classList.add('borde');
-    }
-
     return error;
 };
 
@@ -34,9 +23,8 @@ let validar_datos = () =>{
 let obtener_datos = () =>{
     if(!validar_datos()){
         let descripcion = input_descripcion.value;
-        let valor = input_valor.value;
 
-        registrar_criterio(descripcion,valor);
+        registrar_criterio(descripcion);
     }
     else{
         swal.fire({

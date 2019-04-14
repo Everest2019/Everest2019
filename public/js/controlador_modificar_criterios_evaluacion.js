@@ -1,7 +1,6 @@
 'use strict';
 
 const input_descripcion = document.querySelector('#txt_descripcion');
-const input_valor = document.querySelector('#input_valor');
 const btn_modificar = document.querySelector('#boton_modificar');
 
 
@@ -18,7 +17,6 @@ let criterio_evaluacion = buscar_criterio(id_criterio);
 
 let llenar_campos = () =>{
     input_descripcion.value = criterio_evaluacion['nombre'];
-    input_valor.value = criterio_evaluacion['valor'];
 };
 
 let validar_datos = () =>{
@@ -34,16 +32,6 @@ let validar_datos = () =>{
         input_descripcion.classList.add('borde');
     }
 
-    if(input_valor.value == '' ){
-        error = true;
-        input_valor.classList.remove('borde');
-        input_valor.classList.add('input_error');
-    }
-    else{
-        input_valor.classList.remove('input_error');
-        input_valor.classList.add('borde');
-    }
-
     return error;
 };
 
@@ -51,7 +39,6 @@ let validar_datos = () =>{
 let obtener_datos = () =>{
     if(!validar_datos()){
         let descripcion = input_descripcion.value;
-        let valor = input_valor.value;
 
         swal.fire({
             type: 'warning',
@@ -64,7 +51,7 @@ let obtener_datos = () =>{
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.value) {
-                modificar_criterio(id_criterio,descripcion,valor);
+                modificar_criterio(id_criterio,descripcion);
             }
           });
     }

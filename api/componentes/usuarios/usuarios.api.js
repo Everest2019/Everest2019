@@ -90,8 +90,6 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             documento1: req.body.documento1,
             documento2: req.body.documento2,
             documento3: req.body.documento3,
-
-            informacion_idioma: req.body.informacion_idioma,
             informacion_religion: req.body.informacion_religion,
             informacion_ensenanza: req.body.informacion_ensenanza,
 
@@ -237,6 +235,29 @@ module.exports.agregar_servicios = (req,res) =>{
             }
             else{
                 res.json({ success: true, msg: `El servicio fue agregado correctamente`});
+            }
+        }
+    )
+};
+
+module.exports.agregar_idioma = (req,res) =>{
+    modelo_usuario.update(
+        {cedula_juridica: req.body.cedula_juridica},
+        {
+            $push:
+            {
+                'idiomas':
+                {
+                    idioma: req.body.idioma
+                }
+            }
+        },
+        function (error){
+            if(error){
+                res.json({ success: false, msg: `No se pudo agregar el idioma, revise el siguiente error ${error}`});
+            }
+            else{
+                res.json({ success: true, msg: `El idioma fue agregado correctamente`});
             }
         }
     )
