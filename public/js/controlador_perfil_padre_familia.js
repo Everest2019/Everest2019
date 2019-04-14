@@ -6,7 +6,9 @@ const canton = document.querySelector('#contenedor_info_canton');
 const distrito = document.querySelector('#contenedor_info_distrito');
 const telefono = document.querySelector('#contenedor_info_telefono');
 const correo = document.querySelector('#contenedor_info_correo');
-const foto= document.querySelector('#foto_perfil');
+const foto= document.querySelector('#foto_perfil')
+;
+const btn_modificar = document.querySelector('#btn_modificar');
 
 let id_padre_familia = localStorage.getItem('id_usuario');
 
@@ -32,3 +34,9 @@ if (padre_familia['telefono'] != undefined) {
 }
 correo.innerHTML = padre_familia['correo'];
 foto.src =  padre_familia['foto_perfil'];
+
+
+
+btn_modificar.addEventListener('click',function(){
+    window.location.href = './actualizar_perfil_padre_familia.html';
+})

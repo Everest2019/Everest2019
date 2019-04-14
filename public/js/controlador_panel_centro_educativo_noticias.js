@@ -3,6 +3,14 @@
 const input_filtrar = document.querySelector('#txt_buscar');
 const btn_agregar_noticias = document.querySelector('#btn_agregar');
 const nombre = document.querySelector('#nombre_ce');
+
+//Inicio Sesión
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
 let noticias = listar_noticias();
 
 input_filtrar.addEventListener('keyup', mostrar_noticias);

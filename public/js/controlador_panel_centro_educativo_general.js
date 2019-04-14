@@ -12,6 +12,11 @@ let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
 
 banner.src = centro_educativo['imagen_portada'];
 logo.src = centro_educativo['logo'];

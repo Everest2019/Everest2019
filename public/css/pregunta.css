@@ -107,7 +107,9 @@ div input[type=text]{
     background: #F2F2F2;
 }
 i{
+    text-decoration: none;
     color: #000;
+    font-size: 25px;
 }
 
 .btn_pregunta{

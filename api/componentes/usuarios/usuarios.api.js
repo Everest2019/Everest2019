@@ -3,58 +3,58 @@ const nodeMailer = require('nodemailer');
 const modelo_usuario = require('./usuarios.model');
 
 const transporter = nodeMailer.createTransport({
-    service : 'gmail',
-    auth :{
+    service: 'gmail',
+    auth: {
         user: 'everestproyecto99@gmail.com',
-        pass : 'CulantroCoyote2019'
+        pass: 'CulantroCoyote2019'
     }
 });
 
 
 
-module.exports.registrar_padre_familia = (req, res) =>{
+module.exports.registrar_padre_familia = (req, res) => {
     let modelo_padre_familia = new modelo_usuario(
         {
-            primer_nombre : req.body.primer_nombre,
-            segundo_nombre : req.body.segundo_nombre,
-            primer_apellido : req.body.primer_apellido,
-            segundo_apellido : req.body.segundo_apellido,
-            identificacion : req.body.identificacion,
-            tipo_identificacion : req.body.tipo_identificacion,
-            distrito : req.body.distrito,
-            canton : req.body.canton,
-            provincia : req.body.provincia,
-            cantidad_hijos : req.body.cantidad_hijos,
-            edad_hijos : req.body.edad_hijos,
+            primer_nombre: req.body.primer_nombre,
+            segundo_nombre: req.body.segundo_nombre,
+            primer_apellido: req.body.primer_apellido,
+            segundo_apellido: req.body.segundo_apellido,
+            identificacion: req.body.identificacion,
+            tipo_identificacion: req.body.tipo_identificacion,
+            distrito: req.body.distrito,
+            canton: req.body.canton,
+            provincia: req.body.provincia,
+            cantidad_hijos: req.body.cantidad_hijos,
+            edad_hijos: req.body.edad_hijos,
             nacionalidad: req.body.nacionalidad,
             telefono: req.body.telefono,
             foto_perfil: req.body.foto_perfil,
             correo: req.body.correo,
             estado: req.body.estado,
             contrasena: req.body.contrasena,
-            tipo_usuario: req.body.tipo_usuario 
+            tipo_usuario: req.body.tipo_usuario
         }
     );
-    modelo_padre_familia.save(function(error){
-        if(error){
+    modelo_padre_familia.save(function (error) {
+        if (error) {
             res.json(
                 {
-                    success : false,
-                    msg:`No se pudo registrar el padre de familia ocurrio el siguiente error ${error}`
+                    success: false,
+                    msg: `No se pudo registrar el padre de familia ocurrio el siguiente error ${error}`
                 }
             );
-        }else{
+        } else {
             res.json(
                 {
-                    success : true,
-                    msg : `Padre de familia registrado correctamente`
+                    success: true,
+                    msg: `Padre de familia registrado correctamente`
                 }
             );
         }
     });
 }
 
-module.exports.registrar_centro_educativo = (req, res) =>{
+module.exports.registrar_centro_educativo = (req, res) => {
     let modelo_centro_educativo = new modelo_usuario(
         {
             nombre_comercial: req.body.nombre_comercial,
@@ -109,20 +109,20 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             contrasena: req.body.contrasena
         }
     );
-    modelo_centro_educativo.save(function(error){
-        if(error){
+    modelo_centro_educativo.save(function (error) {
+        if (error) {
             res.json(
                 {
-                    success : false,
-                    msg:`No se pudo registrar el Centro Educativo ocurrio el siguiente error ${error}`
+                    success: false,
+                    msg: `No se pudo registrar el Centro Educativo ocurrio el siguiente error ${error}`
                 }
             );
-        }else{
+        } else {
             let mailOptions = {
-                from : 'everestproyecto99@gmail.com',
-                to : modelo_centro_educativo.correo_encargado,
-                subject : 'Bienvenido a Gemas',
-                html : `<html>
+                from: 'everestproyecto99@gmail.com',
+                to: modelo_centro_educativo.correo_encargado,
+                subject: 'Bienvenido a Gemas',
+                html: `<html>
                 <head>
                    <meta charset="UTF-8">
                   <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
@@ -199,27 +199,27 @@ module.exports.registrar_centro_educativo = (req, res) =>{
                 </style>
                </html>`
             };
-            transporter.sendMail(mailOptions, function(error, info){
-                if(error){
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
                     console.log(error);
                 }
-                else{
-                    console.log('Correo enviado '+ info.response);
+                else {
+                    console.log('Correo enviado ' + info.response);
                 }
             })
             res.json(
                 {
-                    success : true,
-                    msg : `Centro Educativo registrado correctamente`
+                    success: true,
+                    msg: `Centro Educativo registrado correctamente`
                 }
             );
         }
     });
 }
 
-module.exports.agregar_servicios = (req,res) =>{
+module.exports.agregar_servicios = (req, res) => {
     modelo_usuario.update(
-        {cedula_juridica: req.body.cedula_juridica},
+        { cedula_juridica: req.body.cedula_juridica },
         {
             $push:
             {
@@ -229,12 +229,12 @@ module.exports.agregar_servicios = (req,res) =>{
                 }
             }
         },
-        function (error){
-            if(error){
-                res.json({ success: false, msg: `No se pudo agregar el servicio, revise el siguiente error ${error}`});
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el servicio, revise el siguiente error ${error}` });
             }
-            else{
-                res.json({ success: true, msg: `El servicio fue agregado correctamente`});
+            else {
+                res.json({ success: true, msg: `El servicio fue agregado correctamente` });
             }
         }
     )
@@ -266,31 +266,31 @@ module.exports.agregar_idioma = (req,res) =>{
 module.exports.registrar_administrador = (req, res) =>{
     let modelo_administrador = new modelo_usuario(
         {
-            primer_nombre : req.body.primer_nombre,
-            segundo_nombre : req.body.segundo_nombre,
-            primer_apellido : req.body.primer_apellido,
-            segundo_apellido : req.body.segundo_apellido,
-            identificacion : req.body.identificacion,
+            primer_nombre: req.body.primer_nombre,
+            segundo_nombre: req.body.segundo_nombre,
+            primer_apellido: req.body.primer_apellido,
+            segundo_apellido: req.body.segundo_apellido,
+            identificacion: req.body.identificacion,
             telefono: req.body.telefono,
             correo: req.body.correo,
             estado: req.body.estado,
             contrasena: req.body.contrasena,
-            tipo_usuario: req.body.tipo_usuario 
+            tipo_usuario: req.body.tipo_usuario
         }
     );
-    modelo_administrador.save(function(error){
-        if(error){
+    modelo_administrador.save(function (error) {
+        if (error) {
             res.json(
                 {
-                    success : false,
-                    msg:`No se pudo registrar el administrador ocurrio el siguiente error ${error}`
+                    success: false,
+                    msg: `No se pudo registrar el administrador ocurrio el siguiente error ${error}`
                 }
             );
-        }else{
+        } else {
             res.json(
                 {
-                    success : true,
-                    msg : `Administrador registrado correctamente`
+                    success: true,
+                    msg: `Administrador registrado correctamente`
                 }
             );
         }
@@ -299,10 +299,10 @@ module.exports.registrar_administrador = (req, res) =>{
 
 //LISTAR USUARIOS
 
-module.exports.listar_instituciones = (req,res) =>{
-    modelo_usuario.find({tipo_usuario: 'centro_educativo'}).then(
-        function(instituciones){
-            if(instituciones.length > 0){
+module.exports.listar_instituciones = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).then(
+        function (instituciones) {
+            if (instituciones.length > 0) {
                 res.json(
                     {
                         success: true,
@@ -310,7 +310,7 @@ module.exports.listar_instituciones = (req,res) =>{
                     }
                 )
             }
-            else{
+            else {
                 res.json(
                     {
                         success: false,
@@ -322,10 +322,10 @@ module.exports.listar_instituciones = (req,res) =>{
     )
 };
 
-module.exports.listar_padre_familia = (req, res)=>{
-    modelo_usuario.find({tipo_usuario: 'padre_familia'}).then(
-        function(padre_familia){
-            if(padre_familia.length > 0){
+module.exports.listar_padre_familia = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'padre_familia' }).then(
+        function (padre_familia) {
+            if (padre_familia.length > 0) {
                 res.json(
                     {
                         success: true,
@@ -333,7 +333,7 @@ module.exports.listar_padre_familia = (req, res)=>{
                     }
                 )
             }
-            else{
+            else {
                 res.json(
                     {
                         success: false,
@@ -349,110 +349,210 @@ module.exports.listar_padre_familia = (req, res)=>{
 
 //BUSCAR USUARIOS
 
-module.exports.buscar_centro_educativo = function(req, res){
-    modelo_usuario.findOne({_id : req.body.id}).then(
-        function(centro_educativo){
-            if(centro_educativo){
+module.exports.buscar_centro_educativo = function (req, res) {
+    modelo_usuario.findOne({ _id: req.body.id }).then(
+        function (centro_educativo) {
+            if (centro_educativo) {
                 res.send(centro_educativo);
-            }else{
+            } else {
                 res.send('No se encontró el Centro Educativo');
             }
-            
+
         }
     )
 };
 
-module.exports.buscar_padre_familia = function(req, res){
-    modelo_usuario.findOne({_id : req.body.id}).then(
-        function(padre_familia){
-            if(padre_familia){
+module.exports.buscar_padre_familia = function (req, res) {
+    modelo_usuario.findOne({ _id: req.body.id }).then(
+        function (padre_familia) {
+            if (padre_familia) {
                 res.send(padre_familia);
-            }else{
+            } else {
                 res.send('No se encontró el Padre Familia');
             }
         }
     )
 };
 
-module.exports.agregar_favorito = (req,res) =>{
+module.exports.agregar_favorito = (req, res) => {
     modelo_usuario.update(
-        {_id: req.body.id_usuario},
+        { _id: req.body.id_usuario },
         {
             $push:
-                { 
+            {
                 'favoritos':
                 {
                     id_centro_educativo: req.body.id_centro_educativo
                 }
             }
         },
-        function (error){
-            if(error){
-                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}`});
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}` });
             }
-            else{
-                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos`});
+            else {
+                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
             }
         }
     )
 };
 
-module.exports.eliminar_favorito = function(req, res){
+module.exports.eliminar_favorito = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
-        {$pull: {'favoritos':{id_centro_educativo: req.body.id_centro_educativo}}},
-         {safe: true, upsert: true},
-        function(error){
-            if(error){
-                res.json({success: false ,msg: 'No se pudo eliminar el centro educativo de favoritos'});
-            }else{
-                res.json({success: true ,msg: 'El centro educativo se eliminó de favoritos con éxito'}); 
+        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
             }
         }
-        );
+    );
 };
 
 
 //Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
-module.exports.buscar_favoritos_padre_familia = function(req, res){
-    modelo_usuario.findOne({_id : req.body.id_padre_familia}).then(
-        function(padre_familia){
-            if(padre_familia){
+module.exports.buscar_favoritos_padre_familia = function (req, res) {
+    modelo_usuario.findOne({ _id: req.body.id_padre_familia }).then(
+        function (padre_familia) {
+            if (padre_familia) {
                 res.send(padre_familia.favoritos);
-            }else{
+            } else {
                 res.send('No se encontró el Padre Familia');
             }
         }
     )
 };
 
+module.exports.agregar_favorito = (req, res) => {
+    modelo_usuario.update(
+        { _id: req.body.id_usuario },
+        {
+            $push:
+            {
+                'favoritos':
+                {
+                    id_centro_educativo: req.body.id_centro_educativo
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}` });
+            }
+            else {
+                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
+            }
+        }
+    )
+};
 
-/*Inicio de Sesión*/ 
-module.exports.validar = function (req, res){
-    modelo_usuario.findOne({correo : req.body.correo}).then(
-        function(usuario){
-            if(usuario){
-                if(usuario.contrasena == req.body.contrasena){
+module.exports.eliminar_favorito = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
+        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
+            }
+        }
+    );
+};
+
+
+//Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
+module.exports.buscar_favoritos_padre_familia = function (req, res) {
+    modelo_usuario.findOne({ _id: req.body.id_padre_familia }).then(
+        function (padre_familia) {
+            if (padre_familia) {
+                res.send(padre_familia.favoritos);
+            } else {
+                res.send('No se encontró el Padre Familia');
+            }
+        }
+    )
+};
+
+/*Inicio de Sesión*/
+module.exports.validar = function (req, res) {
+    modelo_usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
+            if (usuario) {
+                if (usuario.contrasena == req.body.contrasena) {
                     res.json(
                         {
-                            success:true,
-                            usuario : usuario,
-                            correo : usuario.correo,
-                            id : usuario._id,
-                            tipo_usuario : usuario.tipo_usuario
+                            success: true,
+                            usuario: usuario,
+                            correo: usuario.correo,
+                            id: usuario._id,
+                            tipo_usuario: usuario.tipo_usuario
                         }
                     );
-                }else{
+                } else {
                     res.json({
-                        success:false
+                        success: false
                     })
                 }
-            }else{
+            } else {
                 res.json(
                     {
-                        success:false,
-                        msg : 'El usuario no existe'
+                        success: false,
+                        msg: 'El usuario no existe'
                     }
                 );
+            }
+        }
+    )
+};
+
+module.exports.buscar_por_id = function (req, res) {
+    modelo_usuario.find({ _id: req.body.id_padre_familia }).then(
+        function (padre_familia) {
+            if (padre_familia) {
+                res.json({ success: true, padre_familia: padre_familia });
+            } else {
+                res.json({ success: false, padre_familia: padre_familia });
+            }
+        }
+    )
+};
+
+
+//MODIFICAR
+
+module.exports.actualizar = (req, res) => {
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar el centro educativo.`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        succes: true,
+                        msg: `El centro educativo se actualizó correctamente.`
+                    }
+                );
+
+            }
+        }
+    );
+}
+
+module.exports.habilitar = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: true } },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo habilitar el usuario' });
+            } else {
+                res.json({ success: true, msg: 'El usuario se habilito corectamente' });
             }
         }
     )

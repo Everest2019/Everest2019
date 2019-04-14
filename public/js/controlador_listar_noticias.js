@@ -3,6 +3,13 @@ const lista_noticias = document.querySelector('#lista_noticias');
 const input_filtrar = document.querySelector('#txt_buscar');
 const nombre = document.querySelector('#nombre_ce');
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if (!usuario_loggeado || tipo_usuario == 'centro_educativo') {
+    window.location.href = `iniciar_sesion.html`;
+}
+
+
 const a_regresar = document.querySelector('#a_regresar');
 
 a_regresar.addEventListener('click', function(){

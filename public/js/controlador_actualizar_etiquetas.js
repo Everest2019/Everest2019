@@ -7,13 +7,13 @@ const boton_guardar = document.querySelector('#btn_actualizar');
 let get_param = (param) => {
     let url_string =  window.location.href;
     let url = new URL(url_string);
-    let id = url.searchParams.get(param);//Toma el parámetro id_ del url y retorna el valor
+    let id = url.searchParams.get(param);//Toma el parámetro id_inmueble del url y retorna el valor
     return id;
 };
 
 let _id = get_param('id_etiquetas');
 
-let etiquetas = buscar_etiquetas(_id); //se levantan los datos de ese id bajo demanda usando su id
+let etiquetas = buscar_etiquetas(_id); //se levantan los datos de ese inmueble bajo demanda usando su id
 
 
 let validar = () => {
@@ -60,7 +60,7 @@ let obtener_datos = () => {
         let descripcion = input_descripcion.value;
         
 
-        actualizar_etiquetas(accion, descripcion)
+        registrar_etiquetas(accion, descripcion)
 
         Swal.fire({
             title: 'Está seguro que desea actualizar la etiqueta ?',
@@ -68,17 +68,12 @@ let obtener_datos = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Sí, estoy seguro',
-            onClose: () => {
-                window.location.href = 'panel_centro_educativo_etiquetas.html';
-              }
+            confirmButtonText: 'Sí, estoy seguro'
           }).then((result) => {
             if (result.value) {
                 actualizar_etiquetas(accion, descripcion, _id);
             }
-            
           })
-          
 
     } else {
         swal.fire({

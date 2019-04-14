@@ -36,4 +36,9 @@ router.route('/buscar_etiquetas/:id_etiquetas')
             api_etiquetas.buscar_por_id(req, res);
         }
     );
+
+    router.route('/borrar_etiquetas')
+    .post(function (req, res) {
+        api_etiquetas.borrar(req, res);
+    });
 module.exports = router;
