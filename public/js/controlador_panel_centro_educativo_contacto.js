@@ -9,9 +9,12 @@ const contenedor_redes = document.querySelector('#iconos_redes');
 const btn_cita = document.querySelector('#btn_cita');
 const btn_informacion = document.querySelector('#btn_informacion');
 
-
-
-
+//Inicio Sesión
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
 

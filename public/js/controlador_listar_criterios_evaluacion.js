@@ -5,6 +5,12 @@ const input_filtrar = document.querySelector('#txt_buscar');
 const btn_evaluacion = document.querySelector('#btn_evaluacion');
 const btn_registar = document.querySelector('#btn_registrar');
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if (!usuario_loggeado || tipo_usuario !='administrador') {
+    window.location.href = `iniciar_sesion.html`;
+}
+
 let lista_criterios = listar_criterios_evaluacion();
 let total = 0;
 let cantidad_criterios = 0;

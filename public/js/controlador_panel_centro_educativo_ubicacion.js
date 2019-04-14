@@ -8,6 +8,13 @@ const direccion_provincia = document.querySelector('#direccion_provincia');
 const latitud_centro_educativo = document.querySelector('#lat_centro_educativo');
 const longitud_centro_educativo = document.querySelector('#lng_centro_educativo');
 
+//Inicio Sesión
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
 let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
