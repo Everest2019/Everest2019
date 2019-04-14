@@ -35,6 +35,13 @@ router.route('/registrar_servicio')
         }
     );
 
+router.route('/registrar_idioma')
+.post(
+    function(req, res){
+        api_usuario.agregar_idioma(req,res);
+    }
+);
+
 router.route('/registrar_adminitrador')
     .post(
         function (req, res) {

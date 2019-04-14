@@ -17,7 +17,6 @@ let cantidad_criterios = 0;
 
 let mostrar_criterios = () =>{
     tabla_criterios.innerHTML = '';
-    total = 0;
     cantidad_criterios = 0;
     let filtro = input_filtrar.value;
     
@@ -30,9 +29,7 @@ let mostrar_criterios = () =>{
             posicion.classList.add('td_posicion');
 
             fila.insertCell().innerHTML = lista_criterios[i]['nombre'];
-            let valor = fila.insertCell();
-            valor.innerHTML= lista_criterios[i]['valor'];
-            valor.classList.add('td_valor');
+        
             let accion = fila.insertCell();
             accion.classList.add('td_accion');
     
@@ -56,33 +53,15 @@ let mostrar_criterios = () =>{
             accion.appendChild(btn_modificar);
             accion.appendChild(btn_eliminar);
         }
-       total = total + parseInt(lista_criterios[i]['valor']);
+
        
        cantidad_criterios++;
     }
-    let fila = tabla_criterios.insertRow();
-
-    fila.insertCell();
-    let fila_texto_total = fila.insertCell();
-    fila_texto_total.innerHTML = "Total de puntos";
-
-    let fila_total = fila.insertCell();
-    fila_total.innerHTML = total;
-    fila_total.classList.add('celda_total');
-
-    fila.insertCell();
 };
 
 let realizar_evaluacion = () =>{
-    if(total != 100){
-        swal.fire({
-            type: 'error',
-            title: 'No se pueden realizar evaluaciones',
-            text: 'El puntaje total de los criterios no es de 100 puntos'
-        });
-    }
-    else{
-        
+    if(cantidad_criterios >1){
+
     }
 };
 

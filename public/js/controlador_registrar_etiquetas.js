@@ -38,6 +38,11 @@ let obtener_datos = () => {
 
         registrar_etiquetas(accion, descripcion)
 
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta creada con éxito',
+            
+        });
     } else {
         swal.fire({
             type: 'warning',
@@ -45,6 +50,8 @@ let obtener_datos = () => {
             text: 'No ha hecho ninguna acción'
         });
     }
+    input_accion.value = '';
+    input_descripcion.value = '';
 };
 
 boton_guardar.addEventListener('click', obtener_datos);

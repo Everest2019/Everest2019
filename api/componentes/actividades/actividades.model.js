@@ -10,4 +10,4 @@ let schema_actividades = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('Actividades', schema_actividades);  
+module.exports = mongoose.model('actividades', schema_actividades);  

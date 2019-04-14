@@ -34,7 +34,6 @@ let schema_usuarios = new mongoose.Schema(
             galeria2: {type: String, required: false},
             galeria3: {type: String, required: false},
             galeria4: {type: String, required: false},
-            informacion_idioma: {type: String, required: false},
             informacion_religion: {type: String, required: false},
             informacion_ensenanza: {type: String, required: false},
             documento1: {type: String, required: false},
@@ -57,6 +56,10 @@ let schema_usuarios = new mongoose.Schema(
             //Servicios adicionales
             servicios : [
                 {servicio: String}
+            ],
+
+            idiomas : [
+                {idioma: String}
             ],
 
 
