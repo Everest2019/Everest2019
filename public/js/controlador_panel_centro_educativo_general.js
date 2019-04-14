@@ -6,6 +6,8 @@ const contenedor_caracteristicas = document.querySelector('#contenedor_caracteri
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
+const btn_modificar = document.querySelector('#btn_modificar');
+
 
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
@@ -14,7 +16,7 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let usuario_loggeado = localStorage.getItem('conectado');
 let tipo_usuario = localStorage.getItem('tipo_usuario');
-if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+if (!usuario_loggeado || tipo_usuario != 'centro_educativo') {
     window.location.href = `iniciar_sesion.html`;
 }
 
@@ -34,12 +36,15 @@ titulo_tipo_institucion.textContent = 'Tipo Institución';
 
 let tipo_institucion = document.createElement('p');
 tipo_institucion.classList.add('informacion');
-    if(centro_educativo['tipo_institucion'] == 'Ambos'){
-        tipo_institucion.textContent = 'Escuela y Colegio';
-    }
-    else{
-        tipo_institucion.textContent = centro_educativo['tipo_institucion'];
-    }
+if (centro_educativo['tipo_institucion'] == 'Ambos') {
+    tipo_institucion.textContent = 'Escuela y Colegio';
+}
+else {
+    tipo_institucion.textContent = centro_educativo['tipo_institucion'];
+}
+
+
+
 
 contenedor_tipo_institucion.appendChild(titulo_tipo_institucion);
 contenedor_tipo_institucion.appendChild(tipo_institucion);
@@ -66,7 +71,7 @@ contenedor_caracteristicas.appendChild(contenedor_tipo_sistema);
 
 //Tipo de colegio
 
-if(centro_educativo['tipo_institucion'] == 'Colegio' || centro_educativo['tipo_institucion'] == 'Ambos'){
+if (centro_educativo['tipo_institucion'] == 'Colegio' || centro_educativo['tipo_institucion'] == 'Ambos') {
 
     let contenedor_tipo_colegio = document.createElement('div');
     contenedor_tipo_colegio.classList.add('contenedor_informacion');
@@ -87,7 +92,7 @@ if(centro_educativo['tipo_institucion'] == 'Colegio' || centro_educativo['tipo_i
 
 //Matricula
 
-if(!centro_educativo['matricula'] == ''){
+if (!centro_educativo['matricula'] == '') {
 
     let contenedor_matricula = document.createElement('div');
     contenedor_matricula.classList.add('contenedor_informacion');
@@ -98,7 +103,7 @@ if(!centro_educativo['matricula'] == ''){
 
     let matricula = document.createElement('p');
     matricula.classList.add('informacion');
-    matricula.textContent += '₡ '+ centro_educativo['matricula'];
+    matricula.textContent += '₡ ' + centro_educativo['matricula'];
 
     contenedor_matricula.appendChild(titulo_matricula);
     contenedor_matricula.appendChild(matricula);
@@ -108,7 +113,7 @@ if(!centro_educativo['matricula'] == ''){
 
 //Mensulidad
 
-if(!centro_educativo['mensualidad'] == ''){
+if (!centro_educativo['mensualidad'] == '') {
 
     let contenedor_mensualidad = document.createElement('div');
     contenedor_mensualidad.classList.add('contenedor_informacion');
@@ -119,7 +124,7 @@ if(!centro_educativo['mensualidad'] == ''){
 
     let mensualidad = document.createElement('p');
     mensualidad.classList.add('informacion');
-    mensualidad.textContent = '₡ '+ centro_educativo['mensualidad'];
+    mensualidad.textContent = '₡ ' + centro_educativo['mensualidad'];
 
     contenedor_mensualidad.appendChild(titulo_mensualidad);
     contenedor_mensualidad.appendChild(mensualidad);
@@ -138,7 +143,7 @@ titulo_etiquetas.textContent = 'Etiquetas';
 
 contenedor_etiquetas.appendChild(titulo_etiquetas);
 
-for(let i=1; i <= 4; i++){
+for (let i = 1; i <= 4; i++) {
     var div_etiqueta = document.createElement('div');
     let etiqueta = document.createElement('p');
     div_etiqueta.classList.add('etiqueta');
@@ -146,7 +151,7 @@ for(let i=1; i <= 4; i++){
     etiqueta.textContent = 'Deporte';
 
     div_etiqueta.appendChild(etiqueta);
-    contenedor_etiquetas.appendChild(div_etiqueta); 
+    contenedor_etiquetas.appendChild(div_etiqueta);
 }
 
 
@@ -182,25 +187,25 @@ contenedor_imagen2.classList.add('contenedor_imagen');
 contenedor_imagen3.classList.add('contenedor_imagen');
 contenedor_imagen4.classList.add('contenedor_imagen');
 
-if(centro_educativo['galeria1'] != ''){
+if (centro_educativo['galeria1'] != '') {
     let imagen1 = document.createElement('img');
     imagen1.src = centro_educativo['galeria1'];
     contenedor_imagen1.appendChild(imagen1);
 }
 
-if(centro_educativo['galeria2'] != ''){
+if (centro_educativo['galeria2'] != '') {
     let imagen2 = document.createElement('img');
     imagen2.src = centro_educativo['galeria2'];
     contenedor_imagen2.appendChild(imagen2);
 }
 
-if(centro_educativo['galeria3'] != ''){
+if (centro_educativo['galeria3'] != '') {
     let imagen3 = document.createElement('img');
     imagen3.src = centro_educativo['galeria3'];
     contenedor_imagen3.appendChild(imagen3);
 }
 
-if(centro_educativo['galeria4'] != ''){
+if (centro_educativo['galeria4'] != '') {
     let imagen4 = document.createElement('img');
     imagen4.src = centro_educativo['galeria4'];
     contenedor_imagen4.appendChild(imagen4);
@@ -212,6 +217,11 @@ contenedor_imagenes.appendChild(contenedor_imagen2);
 contenedor_imagenes.appendChild(contenedor_imagen3);
 contenedor_imagenes.appendChild(contenedor_imagen4);
 
+
+
+btn_modificar.addEventListener('click', function () {
+    window.location.href = './actualizar_centro_educativo_general.html';
+})
 
 
 
