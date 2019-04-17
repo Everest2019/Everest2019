@@ -39,8 +39,9 @@ html {
     border-bottom: 0;
 }
 
-
-
+#contenedor_eliminar:hover{
+  border-bottom: 0;
+}
 /*
 ///////////////////////////////////////
     Estilos de la pagina general
@@ -256,6 +257,22 @@ html {
 }
 
 #btn_cerrar_sesion:hover{
+  background: rgb(245, 148, 2);
+}
+#btn_eliminar{
+  width: 40%;
+  height: 28px;
+  background: #FAA21A;
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  font-size: 10px;
+  margin-right: 8%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#btn_eliminar:hover{
   background: rgb(245, 148, 2);
 }
 
@@ -1090,5 +1107,32 @@ html {
     margin-left: 3%;
     cursor: pointer;
   }
+  .contenedor_informacion .boton_eliminar_favoritos{
+    width: 70%;
+    height: 45px;
+    color: #FAA21A;
+    border-radius: 3px;
+    border: 2px solid #FAA21A;
+    cursor: pointer;
+    padding-top: 5px;
+    background: #f2f2f2;
+}
+
+.contenedor_informacion .boton_eliminar_favoritos i{
+    float: left;
+    position: relative;
+    bottom: 2px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.contenedor_informacion .boton_eliminar_favoritos:hover{
+    background: #FAA21A;
+    color: #fff;
+}
+
+.boton_favoritos_display{
+    display: none;
+}
 
   

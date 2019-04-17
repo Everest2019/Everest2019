@@ -292,12 +292,12 @@ function buscar_favoritos_padre_familia(pid_padre_familia){
 };
 
 //MODIFICAR
-let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena, pid) => {
+let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud,  preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, pid) => {
   let request = $.ajax({
       url: "http://localhost:4000/api/actualizar_centro_educativo",
       method: "POST",
       data: {
-        nombre_comercial : pnombre_institucion,
+            nombre_comercial : pnombre_institucion,
             cedula_juridica : pcedula_institucion,
             tipo_institucion : ptipo_institucion,
             modalidad : ptipo_sistema,
@@ -327,7 +327,6 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
             galeria2 : pgaleria2,
             galeria3 : pgaleria3,
             galeria4 : pgaleria4,
-            informacion_idioma : pidioma,
             informacion_religion : preligion,
             informacion_ensenanza : pensenanza,
             documento1: pdocumento1,
@@ -343,12 +342,7 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
             extension : pextension,
             identificacion : pidentificacion,
             fotografia_encargado: pfotografia_encargado,
-            aprobado : paprobado,
-            estado : pestado,
-
-            tipo_usuario: ptipo_usuario,
-            contrasena: pcontrasena,
-           id : pid
+            id_centro_educativo : pid
       },
       datatype: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -388,3 +382,106 @@ let generar_codigo = () =>{
     } 
     return codigo; 
 };
+let buscar_centro = (id_centro_educativo) => {
+  let centro_educativo = [];
+
+  let request = $.ajax({
+      url: "http://localhost:4000/api/buscar_centro/" +id_centro_educativo,
+      method: "GET",
+      data: {
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+
+  request.done(function (res) {
+    centro_educativo = res.centro_educativo;
+
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+  return centro_educativo;
+
+};
+function borrar_centro_educativo(pid_centro_educativo){
+  $.ajax({
+      url: 'http://localhost:4000/api/borrar_centro_educativo',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+          id_centro_educativo : pid_centro_educativo
+      },
+      beforeSend: function beforeSend() {
+          
+      },
+      success: function success(response) {
+          
+      },
+      error: function error(_error) {
+          console.log("Request fail error:" + _error);
+      }
+  });
+};
+
+let eliminar_idioma = (pid_centro_educativo, pidioma) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/eliminar_idioma",
+      method: "POST",
+      data: {
+          id_centro_educativo : pid_centro_educativo,
+          idioma: pidioma
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    console.log('Idioma removido correctamente');
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
+  });
+
+};
+
+let eliminar_servicio = (pid_centro_educativo, pservicio) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/eliminar_servicio",
+      method: "POST",
+      data: {
+          id_centro_educativo : pid_centro_educativo,
+          servicio: pservicio
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    console.log('Servicio removido correctamente');
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
+  });
+
+};
+
+//function habilitar_centro_aducativo(pid_usuarios){
+  //$.ajax({
+      //url: 'http://localhost:4000/api/habilitar_centro_edicativo',
+      //method: 'POST',
+      //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      //data: {
+          //id : pid_usuarios
+      //},
+      
+      //success: function success(res) {
+          //console.log(res.msg);
+          
+      //},
+  //});
+//};
