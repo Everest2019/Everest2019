@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/modificar_rangos_puntuacion.css">
+
+
+    <title>Gemas - Rangos</title>
+</head>
+
+<body>
+    <!-- Barra de navegacion superior -->
+    <header>
+        <nav>
+            
+            <div class="cont_links">
+                    <a href="panel_administrador_inicio.html">Inicio</a>
+                    <a href="panel_administrador_instituciones.html">Instituciones</a>
+                    <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+                    <a href="#">Bitácora</a>
+                    <a href="#">Reportes</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Contenedores de las partes del formulario -->
+
+    <h2 class="titulo2">Modificar</h2>
+    <h1 class="titulo1">Criterio de Evaluación</h1>
+
+    <main>
+        <!-- Primer contenedor, Informacion General-->
+
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Rangos Puntuación</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form>
+                        <div>
+                            <label for="txt_estrella1" class="label_nombre">Una estrella</label>
+                            <input type="number" id="txt_estrella1" class="borde">
+                        </div>
+
+                        <div>
+                            <label for="txt_estrella2" class="label_nombre">Dos estrellas</label>
+                            <input type="number" id="txt_estrella2" class="borde">
+                        </div>
+
+                        <div>
+                            <label for="txt_estrella3" class="label_nombre">Tres estrellas</label>
+                            <input type="number" id="txt_estrella3" class="borde">
+                        </div>
+
+                        <div>
+                            <label for="txt_estrella4" class="label_nombre">Cuatro estrellas</label>
+                            <input type="number" id="txt_estrella4" class="borde">
+                        </div>
+
+                        <div>
+                            <label for="txt_estrella5" class="label_nombre">Cinco estrellas</label>
+                            <input type="number" id="txt_estrella5" class="borde">
+                        </div>
+
+                        <div>
+                            <button type="button" id="boton_modificar">Modificar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_criterios_evaluacion.js"></script>
+    <script src="js/controlador_modificar_rangos_puntuacion.js"></script>
+</body>
+
+</html>

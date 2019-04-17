@@ -170,6 +170,31 @@ contenedor_fundacion.appendChild(fundacion);
 
 contenedor_caracteristicas.appendChild(contenedor_fundacion);
 
+//Idiomas
+let contenedor_idioma = document.createElement('div');
+contenedor_idioma.classList.add('contenedor_informacion');
+
+let titulo_idioma = document.createElement('p');
+titulo_idioma.classList.add('tipo_informacion');
+titulo_idioma.textContent = 'Idiomas';
+
+contenedor_idioma.appendChild(titulo_idioma);
+
+let total_idiomas = 0;
+
+for(let i = 0; i < centro_educativo['idiomas'].length; i++){
+    let idioma = document.createElement('p');
+    idioma.classList.add('informacion');
+    idioma.textContent = centro_educativo['idiomas'][i]['idioma'];
+
+    contenedor_idioma.appendChild(idioma);
+
+    total_idiomas++;
+}
+if(total_idiomas > 0){
+    contenedor_caracteristicas.appendChild(contenedor_idioma);
+}
+
 //Galeria
 
 let contenedor_imagen1 = document.createElement('div');
@@ -212,7 +237,23 @@ contenedor_imagenes.appendChild(contenedor_imagen2);
 contenedor_imagenes.appendChild(contenedor_imagen3);
 contenedor_imagenes.appendChild(contenedor_imagen4);
 
+//Informacion adicional
 
+
+
+if(centro_educativo['informacion_ensenanza']){
+    txt_ensenanza.innerHTML = centro_educativo['informacion_ensenanza'];
+}
+else{
+    txt_ensenanza.innerHTML = 'No hay información sobre el método de enseñanza';
+}
+
+if(centro_educativo['informacion_religion']){
+    txt_religion.innerHTML = centro_educativo['informacion_religion'];
+}
+else{
+    txt_religion.innerHTML = 'No hay información sobre la religión';
+}
 
 
 

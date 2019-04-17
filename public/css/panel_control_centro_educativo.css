@@ -222,7 +222,7 @@ html {
     height: auto;
     margin-left: 2%;
     margin-top: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .contenedor_referencia_historica .titulo_referencia_historica{
@@ -258,6 +258,51 @@ html {
 #btn_cerrar_sesion:hover{
   background: rgb(245, 148, 2);
 }
+
+/* Informacion adicional */
+
+.contenedor_informacion_adicional{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 45%);
+  width: 65%; 
+  min-height: 110px;
+  height: auto;
+  margin-left: 2%;
+  margin-top: 10px;
+}
+.contenedor_informacion_adicional .titulo_info_adicional i{
+  position: relative;
+  top: 3px;
+  color: #FAA21A;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+.contenedor_informacion_adicional .contenedor_ensenanza{
+  height: 40px;
+  margin-right: 15px;
+}
+
+.contenedor_informacion_adicional .contenedor_religion{
+  height: 40px;
+}
+
+.contenedor_informacion_adicional .contenedor_religion p{
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.contenedor_informacion_adicional .contenedor_ensenanza p{
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.contenedor_informacion_adicional .titulo_info_adicional{
+  font-size: 22px;
+  font-weight: bold;  
+  padding-bottom: 20px;
+}
+
 
 /*
 ///////////////////////////////////////

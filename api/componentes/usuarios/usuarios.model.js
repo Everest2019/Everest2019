@@ -61,6 +61,8 @@ let schema_usuarios = new mongoose.Schema(
             idiomas : [
                 {idioma: String}
             ],
+            
+            fecha_creacion: {type: Date, required: false},
 
 
         /* DATOS DE LOS USUARIOS PADRES DE FAMILIA*/
@@ -91,6 +93,7 @@ let schema_usuarios = new mongoose.Schema(
             distrito: {type: String, required: false},
             canton: {type: String, required: false},
             provincia: {type: String, required: false},
+            codigo_verificacion: {type: String, required: false},
 
             //Todos los usuarios
             telefono: {type: String, required: true},
