@@ -28,7 +28,7 @@ function mostrar_datos() {
     let padre_familia = buscar_padre_familia(lista_solicitudes[i]['id_padre_familia']);
 
     if (lista_solicitudes[i]['id_centro_educativo'].includes(id_centro_educativo)) {
-      //if (padre_familia['primer_nombre'].toLowerCase().includes(filtro.toLowerCase())) {
+      if (padre_familia['primer_nombre'].toLowerCase().includes(filtro.toLowerCase())) {
 
         let fila = tabla.insertRow();
 
@@ -58,6 +58,7 @@ function mostrar_datos() {
 
 
   };
+};
 
 function confirmar_borrado() {
   let id = this.dataset.id;

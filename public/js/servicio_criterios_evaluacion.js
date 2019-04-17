@@ -127,5 +127,67 @@ let buscar_criterio = (id_criterio) =>{
     return criterio_evaluacion;
 };
 
+let listar_rangos_puntuacion = () =>{
+    let rangos;
+    let request = $.ajax({
+        url: "http://localhost:4000/api/listar_rangos_puntuacion",
+        method: "GET",
+        data:{},
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+        
+    });
+    request.done(function(res){
+        rangos = res.rangos
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+    });
+
+    return rangos;
+};
+
+let modificar_rangos_puntuacion = (pid_rangos_puntuacion,pestrella1,pestrella2,pestrella3,pestrella4,pestrella5) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/modificar_rangos_puntuacion',
+        method : "POST",
+        data : {
+            id_rangos : pid_rangos_puntuacion,
+            estrella1 : pestrella1,
+            estrella2 : pestrella2,
+            estrella3 : pestrella3,
+            estrella4 : pestrella4,
+            estrella5 : pestrella5,
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+    });
+
+    request.done(function(res){
+        
+       
+        swal.fire({
+            type : 'success',
+            title : 'Rangos actualizados con éxito',
+            text : 'Los rangos de puntuacion se modificaron correctamente',
+            onClose: () => {
+                window.location.href = 'panel_administrador_evaluaciones.html';
+              }    
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'Error al modificar',
+            text : res.msg
+        });
+
+    });
+
+};
+
 
 

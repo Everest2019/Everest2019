@@ -751,6 +751,14 @@ let obtener_datos = () =>{
             registrar_idioma(cedula_institucion, idiomas[i].value);
         }
 
+        //Bitacora
+
+        let detalle = "Agregar centro educativo";
+        let usuario = nombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
     }
     else{
         swal.fire({

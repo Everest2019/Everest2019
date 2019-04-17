@@ -326,7 +326,6 @@ margin-bottom: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 48%);
     grid-gap: 5px;
-    border: 1px solid red;
     max-height: 300px;
     overflow-y: scroll;
 }

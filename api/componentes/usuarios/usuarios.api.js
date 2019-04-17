@@ -106,7 +106,8 @@ module.exports.registrar_centro_educativo = (req, res) => {
             aprobado: req.body.aprobado,
             estado: req.body.estado,
             tipo_usuario: req.body.tipo_usuario,
-            contrasena: req.body.contrasena
+            contrasena: req.body.contrasena,
+            codigo_verificacion: req.body.codigo_verificacion
         }
     );
     modelo_centro_educativo.save(function (error) {
@@ -396,21 +397,6 @@ module.exports.agregar_favorito = (req, res) => {
         }
     )
 };
-
-module.exports.eliminar_favorito = function (req, res) {
-    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
-        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
-        { safe: true, upsert: true },
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
-            } else {
-                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
-            }
-        }
-    );
-};
-
 
 //Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
 module.exports.buscar_favoritos_padre_familia = function (req, res) {

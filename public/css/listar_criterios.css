@@ -129,3 +129,17 @@ html {
 .tabla_criterios i{
     padding: 7px;
 }
+
+
+.th_rangos{
+    width: 20%;
+} 
+
+
+.th_estrellas{
+    width: 20%;
+} 
+
+.tabla_rangos td{
+    text-align: center
+}

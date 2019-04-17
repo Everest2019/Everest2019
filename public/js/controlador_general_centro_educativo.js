@@ -354,10 +354,12 @@ for (let i = 0; i < favoritos_padre_familia.length; i++) {
     }
 }
 
-if (favorito) {
+let usuario = localStorage.getItem('tipo_usuario')
+
+if (favorito && usuario == 'padre_familia') {
     contenedor_caracteristicas.appendChild(contenedor_eliminar_favoritos);
 }
-else {
+else if(!favorito && usuario == 'padre_familia'){
     contenedor_caracteristicas.appendChild(contenedor_favoritos);
 }
 
@@ -403,8 +405,6 @@ contenedor_imagenes.appendChild(contenedor_imagen3);
 contenedor_imagenes.appendChild(contenedor_imagen4);
 
 //Informacion adicional
-
-
 
     if(centro_educativo['informacion_ensenanza']){
         txt_ensenanza.innerHTML = centro_educativo['informacion_ensenanza'];
