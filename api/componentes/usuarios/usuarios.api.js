@@ -240,9 +240,9 @@ module.exports.agregar_servicios = (req, res) => {
     )
 };
 
-module.exports.agregar_idioma = (req,res) =>{
+module.exports.agregar_idioma = (req, res) => {
     modelo_usuario.update(
-        {cedula_juridica: req.body.cedula_juridica},
+        { cedula_juridica: req.body.cedula_juridica },
         {
             $push:
             {
@@ -252,18 +252,18 @@ module.exports.agregar_idioma = (req,res) =>{
                 }
             }
         },
-        function (error){
-            if(error){
-                res.json({ success: false, msg: `No se pudo agregar el idioma, revise el siguiente error ${error}`});
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el idioma, revise el siguiente error ${error}` });
             }
-            else{
-                res.json({ success: true, msg: `El idioma fue agregado correctamente`});
+            else {
+                res.json({ success: true, msg: `El idioma fue agregado correctamente` });
             }
         }
     )
 };
 
-module.exports.registrar_administrador = (req, res) =>{
+module.exports.registrar_administrador = (req, res) => {
     let modelo_administrador = new modelo_usuario(
         {
             primer_nombre: req.body.primer_nombre,
@@ -468,7 +468,18 @@ module.exports.buscar_por_id = function (req, res) {
         }
     )
 };
-
+//habilitar y deshabilitar
+module.exports.deshabilitar = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: false } },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar la editorial' });
+            } else {
+                res.json({ success: true, msg: 'La editorial se actualizó con éxito' });
+            }
+        }
+    )
+};
 module.exports.habilitar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: true } },
         function (error) {
@@ -535,4 +546,44 @@ module.exports.actualizar_centro_educativo = (req, res) => {
         }
     );
 }
+
+module.exports.eliminar_idioma = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
+        { $pull: { 'idiomas': { idioma: req.body.idioma } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el idioma' });
+            } else {
+                res.json({ success: true, msg: 'El idioma se eliminó con éxito' });
+            }
+        }
+    );
+};
+
+module.exports.eliminar_servicio = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
+        { $pull: { 'servicios': { idioma: req.body.servicio } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el servicio' });
+            } else {
+                res.json({ success: true, msg: 'El servicio se eliminó con éxito' });
+            }
+        }
+    );
+};
+
+module.exports.habilitar_centro_educativo = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: { aprobado: true } },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo aprobar el centro educativo' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se aprobó corectamente' });
+            }
+        }
+    )
+};
 

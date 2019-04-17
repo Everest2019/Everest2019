@@ -7,7 +7,7 @@ const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
 const btn_modificar = document.querySelector('#btn_modificar');
-
+const btn_eliminar = document.querySelector('#btn_eliminar');
 
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
@@ -217,10 +217,32 @@ contenedor_imagenes.appendChild(contenedor_imagen2);
 contenedor_imagenes.appendChild(contenedor_imagen3);
 contenedor_imagenes.appendChild(contenedor_imagen4);
 
+let eliminar_centro_educativo = () => {
+    swal.fire({
+        type: 'warning',
+        title: '¿Seguro que desea eliminar el centro educativo?',
+        text: `Este centro educativo será borrado completamente`,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Sí, deseo eliminarlo',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.value) {
+            borrar_centro_educativo(id_centro_educativo);
+            Swal.fire(
+                'Centro Educativo eliminado!',
+                'El centro educativo fue borrada con éxito',
+                'success'
+              )
+        }
+    })
+};
+btn_eliminar.addEventListener('click', eliminar_centro_educativo);
 
 
 btn_modificar.addEventListener('click', function () {
-    window.location.href = './actualizar_centro_educativo_general.html';
+    window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
 })
 
 

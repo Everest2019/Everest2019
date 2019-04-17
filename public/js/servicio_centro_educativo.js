@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena, pcodigo) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -55,7 +55,8 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             estado : pestado,
 
             tipo_usuario: ptipo_usuario,
-            contrasena: pcontrasena
+            contrasena: pcontrasena,
+            codigo_verificacion: pcodigo
        },
        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
        dataType: "json",
@@ -141,6 +142,34 @@ let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnom
       type: 'success',
       title: 'Agregado a favoritos',
       text: `${pnombre_institucion} ahora aparecerá en tu lista de favoritos`,
+      onClose: () => {
+        window.location.href = './perfil_centro_educativo_general.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
+  });
+
+};
+let registrar_solicitudes = (pid_centro_educativo, pid_usuario) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/registrar_solicitudes",
+      method: "POST",
+      data: {
+          id_centro_educativo: pid_centro_educativo,
+          id_usuario : pid_usuario
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    swal.fire({
+      type: 'success',
+      title: 'Solicitud agregada',
+      text: `Solicitud agregada`,
       onClose: () => {
         window.location.href = './perfil_centro_educativo_general.html';
       }
@@ -257,6 +286,97 @@ function buscar_favoritos_padre_familia(pid_padre_familia){
   return favoritos;
 };
 
+//MODIFICAR
+let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud,  preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, pid) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/actualizar_centro_educativo",
+      method: "POST",
+      data: {
+            nombre_comercial : pnombre_institucion,
+            cedula_juridica : pcedula_institucion,
+            tipo_institucion : ptipo_institucion,
+            modalidad : ptipo_sistema,
+            tipo_colegio : ptipo_colegio,
+            distrito : pdistrito,
+            canton : pcanton,
+            provincia : pprovincia,
+            direccion_exacta : pdireccion_exacta,
+            ubicacion_mapa_lat : platitud,
+            ubicacion_mapa_lng : plongitud,
+            ano_creacion : pano_fundacion,
+            referencia_historica : preferencia_historica,
+            informacion_general : pdescripcion_institucion,
+            telefono : ptelefono,
+            fax : pfax,
+            pagina_web : pweb,
+            correo : pcorreo_institucion,
+            facebook : pfacebook,
+            twitter : ptwitter,
+            instagram : pinstagram,
+            youtube : pyoutube,
+            logo: plogo,
+            matricula : pmatricula,
+            mensualidad : pmensualidad,
+            imagen_portada : pportada,
+            galeria1 : pgaleria1,
+            galeria2 : pgaleria2,
+            galeria3 : pgaleria3,
+            galeria4 : pgaleria4,
+            informacion_religion : preligion,
+            informacion_ensenanza : pensenanza,
+            documento1: pdocumento1,
+            documento2: pdocumento2,
+            documento3: pdocumento3,
+            primer_nombre : pprimer_nombre,
+            segundo_nombre : psegundo_nombre,
+            primer_apellido : pprimer_apellido,
+            segundo_apellido : psegundo_apellido,
+            correo_encargado : pcorreo_encargado,
+            departamento : pdepartamento,
+            telefono_encargado : ptelefono_encargado,
+            extension : pextension,
+            identificacion : pidentificacion,
+            fotografia_encargado: pfotografia_encargado,
+            id_centro_educativo : pid
+      },
+      datatype: "json",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+  });
+  request.done(function (res) {
+
+      swal.fire({
+          type: 'success',
+          title: 'Centro educativo modificado correctamente',
+          text: res.msg,
+          onClose: () => {
+              window.location.href = 'panel_control_centro_educativo.html';
+            }  
+      });
+
+  });
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
+
+let generar_codigo = () =>{
+
+  let string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
+    let codigo = ''; 
+      
+    // Find the length of string 
+    var len = string.length; 
+    for (let i = 0; i < 6; i++ ) { 
+        codigo += string[Math.floor(Math.random() * len)]; 
+    } 
+    return codigo; 
+};
 let buscar_centro = (id_centro_educativo) => {
   let centro_educativo = [];
 
@@ -301,89 +421,62 @@ function borrar_centro_educativo(pid_centro_educativo){
   });
 };
 
-let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, pidioma, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcontrasena, pid) =>{
-
+let eliminar_idioma = (pid_centro_educativo, pidioma) => {
   let request = $.ajax({
-      url: "http://localhost:4000/api/actualizar_centro_educativo",
+      url: "http://localhost:4000/api/eliminar_idioma",
       method: "POST",
       data: {
-        nombre_comercial : pnombre_institucion,
-        cedula_juridica : pcedula_institucion,
-        tipo_institucion : ptipo_institucion,
-        modalidad : ptipo_sistema,
-        tipo_colegio : ptipo_colegio,
-        distrito : pdistrito,
-        canton : pcanton,
-        provincia : pprovincia,
-        direccion_exacta : pdireccion_exacta,
-        ubicacion_mapa_lat : platitud,
-        ubicacion_mapa_lng : plongitud,
-        ano_creacion : pano_fundacion,
-        referencia_historica : preferencia_historica,
-        informacion_general : pdescripcion_institucion,
-        telefono : ptelefono,
-        fax : pfax,
-        pagina_web : pweb,
-        correo : pcorreo_institucion,
-        facebook : pfacebook,
-        twitter : ptwitter,
-        instagram : pinstagram,
-        youtube : pyoutube,
-        logo: plogo,
-        matricula : pmatricula,
-        mensualidad : pmensualidad,
-        imagen_portada : pportada,
-        galeria1 : pgaleria1,
-        galeria2 : pgaleria2,
-        galeria3 : pgaleria3,
-        galeria4 : pgaleria4,
-        informacion_idioma : pidioma,
-        informacion_religion : preligion,
-        informacion_ensenanza : pensenanza,
-        documento1: pdocumento1,
-        documento2: pdocumento2,
-        documento3: pdocumento3,
-        primer_nombre : pprimer_nombre,
-        segundo_nombre : psegundo_nombre,
-        primer_apellido : pprimer_apellido,
-        segundo_apellido : psegundo_apellido,
-        correo_encargado : pcorreo_encargado,
-        departamento : pdepartamento,
-        telefono_encargado : ptelefono_encargado,
-        extension : pextension,
-        identificacion : pidentificacion,
-        fotografia_encargado: pfotografia_encargado,
-        aprobado : paprobado,
-        estado : pestado,
-
-        tipo_usuario: ptipo_usuario,
-        contrasena: pcontrasena,
-
-
+          id_centro_educativo : pid_centro_educativo,
+          idioma: pidioma
       },
-      datatype: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
   });
-  request.done(function (res) {
-
-      swal.fire({
-          type: 'success',
-          title: 'Centro educativo modificada correctamente',
-          text: res.msg,
-          onClose: () => {
-              window.location.href = 'panel_centro_educativo_general.html';
-            }  
-      });
-
+  request.done(function (msg) {
+    console.log('Idioma removido correctamente');
   });
-  request.fail(function(res){
-      swal.fire({
-          type : 'error',
-          title : 'Proceso no realizado',
-          text : res.msg
-      });
 
+  request.fail(function (jqXHR, textStatus) {
+      
   });
 
 };
 
+let eliminar_servicio = (pid_centro_educativo, pservicio) => {
+  let request = $.ajax({
+      url: "http://localhost:4000/api/eliminar_servicio",
+      method: "POST",
+      data: {
+          id_centro_educativo : pid_centro_educativo,
+          servicio: pservicio
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      dataType: "json",
+      async: false
+  });
+  request.done(function (msg) {
+    console.log('Servicio removido correctamente');
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+      
+  });
+
+};
+
+//function habilitar_centro_aducativo(pid_usuarios){
+  //$.ajax({
+      //url: 'http://localhost:4000/api/habilitar_centro_edicativo',
+      //method: 'POST',
+      //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      //data: {
+          //id : pid_usuarios
+      //},
+      
+      //success: function success(res) {
+          //console.log(res.msg);
+          
+      //},
+  //});
+//};

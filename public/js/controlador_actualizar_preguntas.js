@@ -38,6 +38,6 @@ let obtener_datos = () =>{
       })   
 };
 
-btn_modificar.addEventListener('click', obtener_datos);
+btn_actualizar.addEventListener('click', obtener_datos);
 
 

@@ -36,11 +36,11 @@ router.route('/registrar_servicio')
     );
 
 router.route('/registrar_idioma')
-.post(
-    function(req, res){
-        api_usuario.agregar_idioma(req,res);
-    }
-);
+    .post(
+        function (req, res) {
+            api_usuario.agregar_idioma(req, res);
+        }
+    );
 
 router.route('/registrar_adminitrador')
     .post(
@@ -119,5 +119,30 @@ router.route('/actualizar_centro_educativo')
             api_usuario.actualizar_centro_educativo(req, res);
         }
     );
+router.route('/eliminar_idioma')
+    .post(
+        function (req, res) {
+            api_usuario.eliminar_idioma(req, res);
+        }
+    );
+router.route('/eliminar_servicio')
+    .post(
+        function (req, res) {
+            api_usuario.eliminar_servicio(req, res);
+        }
+    );
+router.route('/habilitar_centro_educativo')
+    .post(function (req, res) {
+        api_usuario.habilitar_centro_educativo(req, res);
+    });
 
+router.route('/deshabilitar_padre_familia')
+    .post(function (req, res) {
+        api_usuario.deshabilitar(req, res);
+    });
+
+router.route('/habilitar_padre_familia')
+    .post(function (req, res) {
+        api_usuario.habilitar(req, res);
+    });
 module.exports = router; 
