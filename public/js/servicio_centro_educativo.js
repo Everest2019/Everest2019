@@ -64,6 +64,11 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
      });
       
      request.done(function( msg ) {
+        let detalle = "Centro educativo registrado";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
 
        swal.fire({
            type: 'success',

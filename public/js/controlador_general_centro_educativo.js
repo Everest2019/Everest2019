@@ -465,7 +465,6 @@ boton_eliminar_favoritos.addEventListener('click', eliminar_favorito);
 let obtener_datos = () => {
 
     let centro_educativo = id_centro_educativo;
-    let padre_familia = id_padre_familia;
 
     swal.fire({
         title: '¿Seguro que desea registrar la solicitud?',
@@ -477,7 +476,7 @@ let obtener_datos = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            registrar_solicitud(centro_educativo, padre_familia);
+            registrar_solicitud(centro_educativo, id_padre_familia);
         }
     })
 }

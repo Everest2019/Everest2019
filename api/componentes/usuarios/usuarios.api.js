@@ -375,29 +375,6 @@ module.exports.buscar_padre_familia = function (req, res) {
     )
 };
 
-module.exports.agregar_favorito = (req, res) => {
-    modelo_usuario.update(
-        { _id: req.body.id_usuario },
-        {
-            $push:
-            {
-                'favoritos':
-                {
-                    id_centro_educativo: req.body.id_centro_educativo
-                }
-            }
-        },
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}` });
-            }
-            else {
-                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
-            }
-        }
-    )
-};
-
 //Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
 module.exports.buscar_favoritos_padre_familia = function (req, res) {
     modelo_usuario.findOne({ _id: req.body.id_padre_familia }).then(

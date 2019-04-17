@@ -97,6 +97,5 @@ module.exports.buscar_criterio = (req,res) =>{
             
             
         })
-    
 
 };

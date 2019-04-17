@@ -68,8 +68,7 @@ html {
 .tabla_articulo tr th{
     padding: 15px;
     border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%;     
+    border-top: 2px solid #000;   
     right: 90px;
     background: #FAA21A;
 }
@@ -77,7 +76,6 @@ html {
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
-    width: 4%; 
     right: 150px;
     background: #F2F2F2;
 } 
@@ -88,6 +86,26 @@ html {
     width: 4%; 
     right: 150px;
     background: #F2F2F2;
+}
+.th_nombre{   
+    width:15%;
+}
+.th_descripcion{   
+    width:25%;
+}
+.th_accion{   
+    width:5%;
+}
+
+.td_accion{   
+    text-align: center;
+    font-size: 25px;
+}
+
+.td_accion a{   
+    text-decoration: none;
+    color: #000;   
+    padding: 0 8px; 
 }
 
 

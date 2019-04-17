@@ -33,6 +33,13 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         dataType: "json"
     });
 
+    request.done(function(res){
+        let detalle = "Etiqueta registrada";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+    });
 
     request.fail(function (jqXHR, textStatus) {
     });
@@ -78,6 +85,12 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
 
     request.done(function(res){
 
+        let detalle = "Etiqueta actualizada";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type : 'success',
             title : 'Etiqueta actualizada con éxito',
@@ -112,7 +125,11 @@ function borrar_etiquetas(pid){
             
         },
         success: function success(response) {
-            
+            let detalle = "Etiqueta actualizada";
+            let usuario = 'Administrador';
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

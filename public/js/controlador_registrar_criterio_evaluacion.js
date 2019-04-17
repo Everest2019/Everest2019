@@ -25,6 +25,8 @@ let obtener_datos = () =>{
         let descripcion = input_descripcion.value;
 
         registrar_criterio(descripcion);
+
+
     }
     else{
         swal.fire({

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
@@ -48,7 +49,7 @@
         </div>
 
         <div id="navbar_lateral_cercanos" >
-                <a href="listar_etiquetas.html">Etiquetas</a>
+                <a href="panel_administrador_etiquetas.html">Etiquetas</a>
             </div>
             
         
@@ -71,16 +72,15 @@
                     <input type="text" id="txt_buscar">
                 </div>
             </div>
-            <button type="button" id="btn_agregar" class="btn_articulo">Agregar artículo</button>
-            <button type="button" id="btn_modificar_artículo" class="btn_articulo">Modificar artículo</button>
- 
+            <button type="button" id="btn_agregar" class="btn_articulo">Agregar artículo</button> 
             <div>
 
                 <table id="tbl_articulo" class="tabla_articulo">
                     <thead>
                         <tr>
-                            <th>Nombre del Artículo</th>
-                            <th>Descripción</th>
+                            <th class="th_nombre">Nombre del Artículo</th>
+                            <th class="th_descripcion">Descripción</th>
+                            <th class="th_accion">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,6 +92,8 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_articulo.js"></script>
     <script src="js/controlador_listar_articulo.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>
