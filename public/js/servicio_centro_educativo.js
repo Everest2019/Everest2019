@@ -130,7 +130,7 @@ let registrar_idioma = (pcedula_juridica, pidioma) => {
 
 };
 
-let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnombre_institucion) => {
+let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnombre_institucion, pnombre_usuario) => {
   let request = $.ajax({
       url: "http://localhost:4000/api/agregar_favorito",
       method: "POST",
@@ -143,6 +143,13 @@ let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnom
       async: false
   });
   request.done(function (msg) {
+
+    let detalle = "Centro educativo agregado a favoritos";
+    let usuario = pnombre_usuario;
+    let fecha = new Date();
+
+    registrar_accion(usuario,detalle,fecha);
+
     swal.fire({
       type: 'success',
       title: 'Agregado a favoritos',
@@ -186,7 +193,7 @@ let registrar_solicitudes = (pid_centro_educativo, pid_usuario) => {
   });
 
 };
-let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pnombre_institucion) => {
+let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pnombre_institucion, pnombre_usuario) => {
   let request = $.ajax({
       url: "http://localhost:4000/api/eliminar_favorito",
       method: "POST",
@@ -199,6 +206,12 @@ let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pno
       async: false
   });
   request.done(function (msg) {
+    let detalle = "Centro educativo eliminado de favoritos";
+    let usuario = pnombre_usuario;
+    let fecha = new Date();
+
+    registrar_accion(usuario,detalle,fecha);
+
     swal.fire({
       type: 'success',
       title: 'Removido de favoritos',
@@ -349,6 +362,12 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
   });
   request.done(function (res) {
 
+      let detalle = "Centro educativo modificado";
+      let usuario = pnombre_institucion;
+      let fecha = new Date();
+      
+      registrar_accion(usuario,detalle,fecha);
+
       swal.fire({
           type: 'success',
           title: 'Centro educativo modificado correctamente',
@@ -406,7 +425,7 @@ let buscar_centro = (id_centro_educativo) => {
   return centro_educativo;
 
 };
-function borrar_centro_educativo(pid_centro_educativo){
+function borrar_centro_educativo(pid_centro_educativo, pnombre_institucion){
   $.ajax({
       url: 'http://localhost:4000/api/borrar_centro_educativo',
       method: 'POST',
@@ -418,7 +437,11 @@ function borrar_centro_educativo(pid_centro_educativo){
           
       },
       success: function success(response) {
-          
+        let detalle = "Centro educativo eliminado";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+        
+        registrar_accion(usuario,detalle,fecha);
       },
       error: function error(_error) {
           console.log("Request fail error:" + _error);

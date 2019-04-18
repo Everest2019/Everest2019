@@ -254,12 +254,15 @@ let eliminar_centro_educativo = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            borrar_centro_educativo(id_centro_educativo);
-            Swal.fire(
-                'Centro Educativo eliminado!',
-                'El centro educativo fue borrada con éxito',
-                'success'
-              )
+            borrar_centro_educativo(id_centro_educativo, centro_educativo['nombre_comercial']);
+            Swal.fire({
+                title: 'Centro Educativo eliminado',
+                text: 'El centro educativo fue borrada con éxito',
+                type: 'success',
+                onClose: () => {
+                    window.location.href = 'iniciar_sesion.html';
+                  } 
+            })
         }
     })
 };

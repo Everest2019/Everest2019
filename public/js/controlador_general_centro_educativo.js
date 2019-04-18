@@ -52,6 +52,8 @@ let id_centro_educativo = localStorage.getItem('centro_educativo');
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let id_padre_familia = localStorage.getItem('id_usuario');
+let padre_familia = buscar_padre_familia(id_padre_familia);
+let nombre_usuario = padre_familia['primer_nombre'] + ' ' + padre_familia['primer_apellido'];
 let favoritos_padre_familia = buscar_favoritos_padre_familia(id_padre_familia);
 
 
@@ -439,7 +441,7 @@ let agregar_favorito = () => {
     let id_centro_educativo = localStorage.getItem('centro_educativo');
     let id_usuario = localStorage.getItem('id_usuario');
     console.log(id_centro_educativo);
-    agregar_centro_educativo_favorito(id_centro_educativo, id_usuario, centro_educativo['nombre_comercial']);
+    agregar_centro_educativo_favorito(id_centro_educativo, id_usuario, centro_educativo['nombre_comercial'],nombre_usuario);
 };
 
 let eliminar_favorito = () => {
@@ -454,7 +456,7 @@ let eliminar_favorito = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            eliminar_centro_educativo_favorito(id_padre_familia, id_centro_educativo, centro_educativo['nombre_comercial']);
+            eliminar_centro_educativo_favorito(id_padre_familia, id_centro_educativo, centro_educativo['nombre_comercial'], nombre_usuario);
         }
     })
 };
@@ -476,7 +478,7 @@ let obtener_datos = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            registrar_solicitud(centro_educativo, id_padre_familia);
+            registrar_solicitud(centro_educativo, id_padre_familia, nombre_usuario);
         }
     })
 }

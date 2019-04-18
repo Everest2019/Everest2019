@@ -9,6 +9,8 @@ document.querySelector("#input_fecha").valueAsDate = new Date();
 
 let id_centro_educativo = localStorage.getItem('centro_educativo');
 let id_padre_familia = localStorage.getItem('id_usuario');
+let padre_familia = buscar_padre_familia(id_padre_familia);
+let nombre_usuario = padre_familia['primer_nombre'] + ' ' + padre_familia['primer_apellido'];
 
 let validar = () => {
 
@@ -60,12 +62,11 @@ let obtener_datos = () => {
 
     if (validar() == false) {
         let centro_educativo = id_centro_educativo;
-        let padre_familia = id_padre_familia;
         let fecha = input_fecha.value;
         let hora = input_hora.value;
         let comentario = input_comentario.value;
 
-        registrar_cita(centro_educativo, padre_familia ,fecha, hora, comentario);
+        registrar_cita(centro_educativo, id_padre_familia ,fecha, hora, comentario, nombre_usuario);
 
     }
     else {

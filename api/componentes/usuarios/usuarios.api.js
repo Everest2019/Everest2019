@@ -363,6 +363,43 @@ module.exports.buscar_centro_educativo = function (req, res) {
     )
 };
 
+module.exports.agregar_favorito = (req, res) => {
+    modelo_usuario.update(
+        { _id: req.body.id_usuario },
+        {
+            $push:
+            {
+                'favoritos':
+                {
+                    id_centro_educativo: req.body.id_centro_educativo
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}` });
+            }
+            else {
+                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
+            }
+        }
+    )
+};
+
+module.exports.eliminar_favorito = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
+        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
+            }
+        }
+    );
+};
+
 module.exports.buscar_padre_familia = function (req, res) {
     modelo_usuario.findOne({ _id: req.body.id }).then(
         function (padre_familia) {

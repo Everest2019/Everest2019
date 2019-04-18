@@ -6,6 +6,7 @@ const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_registrar = document.querySelector('#btn_registrar');
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let validar = () => {
     let error = false;
@@ -34,12 +35,11 @@ let validar = () => {
 let obtener_datos = () => {
 
     if (validar() == false) {
-        let centro_educativo = id_centro_educativo;
         let titulo = input_titulo.value;
         let fecha = input_fecha.value;
         let descripcion = input_descripcion.value;
 
-        registrar_actividades(id_centro_educativo,titulo, fecha, descripcion);
+        registrar_actividades(id_centro_educativo,titulo, fecha, descripcion, centro_educativo['nombre_comercial']);
 
     } else {
         swal.fire({

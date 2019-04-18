@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pcomentario) => {
+let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pcomentario, pnombre_usuario) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_cita",
         method: "POST",
@@ -15,10 +15,20 @@ let registrar_cita = (pid_centro_educativo, pid_padre_familia, pfecha, phora, pc
         dataType: "json"
     });
     request.done(function (msg) {
+
+        let detalle = "Cita registrada";
+        let usuario = pnombre_usuario;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+        
         swal.fire({
             type: 'success',
             title: 'Cita creada correctamente',
             text: `Su cita con el centro educativo ha sido creada correctamente`,
+            onClose: () => {
+                window.location.href = 'perfil_centro_educativo_general.html';
+              }   
         });
     });
 
