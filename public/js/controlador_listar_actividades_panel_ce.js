@@ -50,10 +50,10 @@ let mostrar_datos = () => {
                 //se crea el boto eliminar
         let boton_eliminar = document.createElement('a');
         boton_eliminar.textContent = 'Eliminar';
-        
+        boton_eliminar.addEventListener('click', confirmar_borrado);
+
         celda_configuracion.appendChild(boton_eliminar);
 
-        boton_eliminar.addEventListener('click', confirmar_borrado);
 
             }
         };
@@ -68,9 +68,30 @@ let actividad = () => {
 
 
 function confirmar_borrado() {
-    let id = this.dataset.id;
-    Swal.fire({
+    let id = this.dataset.id_actividad;
+    swal.fire({
         title: 'Está seguro que desea eliminar la la actiivdad?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+        if (result.value) {
+            borrar_actividades(id_actividades);
+            actividad = listar_actividades();
+             mostrar_datos();
+            Swal.fire(
+                'Actividad eliminada!'
+            )
+        }
+    })
+};
+
+function confirmar_borrado() {
+    let id = this.dataset.id_actividades;
+    swal.fire({
+        title: 'Está seguro que desea eliminar la etiqueta?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -80,11 +101,8 @@ function confirmar_borrado() {
         if (result.value) {
             borrar_actividades(id);
             actividad = listar_actividades();
-            id == delete
-                mostrar_datos();
-            Swal.fire(
-                'Actividad eliminada!'
-            )
+            mostrar_datos();
+            
         }
     })
 };

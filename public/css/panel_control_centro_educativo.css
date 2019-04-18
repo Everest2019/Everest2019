@@ -515,72 +515,79 @@ html {
     margin-top: 20px;
     font-family: 'Quicksand', sans-serif;
 }
-
 /*REDES SOCIALES*/
 
+#contacto{
+  margin-top: 1px;
+}
+
 .contenedor_redes_sociales{
-    display: grid;
-    width: 90%; 
-    grid-template-columns: 1fr 4px 4fr;
-    grid-template-rows: 15px 150px 15px;
-    grid-column-gap: 20px;     
-    padding-top: 75px;
-    margin: 0 auto;
+  display: grid;
+  width: 90%; 
+  grid-template-columns: 1fr 4px 4fr;
+  grid-template-rows: 15px 150px 15px;
+  grid-column-gap: 70px;     
+  padding-top: 18px;
+  margin: 0 auto;
 }
 
 .fondo_gris_contenedor{
-    background: #f2f2f2;
-    height: 300px;
+  background: #f2f2f2;
+  height: 150px;
 }
 
 .contenedor_redes_sociales .titulo_redes_sociales{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    text-align: right;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  text-align: right;
 }
 
 .contenedor_redes_sociales .titulo_redes_sociales p{
-    font-size: 26px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    margin-top: 40px;
-    padding-right: 10%;
+  font-size: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+
+  padding-right: 20%;
 }
 
 .separador_redes_sociales{
-    grid-column: 2 / 3;
-    grid-row: 1 / 4;
-    background: #FAA21A;
-    border-radius: 2px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background: #FAA21A;
+  border-radius: 2px;
+  height: 100px;
 }
 
 .contenedor_iconos_redes{
-    grid-row: 2 / 3;
-    grid-column: 3 / 5;
-    text-align: center;
-    width: 100%;
+  grid-column: 3 / 5;
+  text-align: center;
+  width: 75%;
 }
 
 .contenedor_iconos_redes h1{
-    font-size: 18px;
-    color: #40433E;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 30px;
+  font-size: 18px;
+  color: #40433E;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .contenedor_iconos_redes i{
-    color: #40433E;
-    margin-right: 10%;
-    margin-top: 35px;
+  color: #40433E;
+  margin-right: 10%;
+  margin-top: 35px;
 }
 
 .contenedor_iconos_redes i:hover{
-    color: #FAA21A;
+  color: #FAA21A;
 }
 
 .contenedor_iconos_redes .primer_icono{
-    margin-left: 10%;
+  margin-left: 10%;
+}
+
+.estilos_a{
+  cursor: pointer;
 }
 #btn_modificar{
     width: 15%;
@@ -833,7 +840,7 @@ html {
   /* Estilos del navbar lateral */
   .navbar_lateral {
       height: 100%; /* Que ocupe todo el ancho de la pantalla */
-      width: 20%; /*Definir el ancho del navbar */
+      width: 18%; /*Definir el ancho del navbar */
       position: fixed; /* Fija el navbar, que no se mueva con el scroll */
       z-index: 1; /* Se mantiene en la parte superior */
       left: 0; /* Se mantiene a la izquiera */

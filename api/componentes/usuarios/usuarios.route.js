@@ -47,7 +47,7 @@ router.route('/registrar_adminitrador')
     router.route('/actualizar_padre_familia')
     .post(
         function(req , res){
-            api_usuario.actualizar(req, res);
+            api_usuario.actualizar_perfil_padre_familia(req, res);
         }
     );
 
@@ -72,7 +72,7 @@ router.route('/buscar_centro_educativo')
 
 router.route('/buscar_padre_familia')
     .post(function (req, res) {
-        api_usuario.buscar_padre_familia(req, res);
+        api_usuario.buscar_por_id(req, res);
     });
 
 router.route('/buscar_favoritos_padre_familia')
@@ -106,4 +106,9 @@ router.route('/actualizar_centro_educativo')
         }
     );
 
+    router.route('/borrar_actividad')
+    .post(function (req, res) {
+        api_usuario.borrar(req, res);
+    });
+    
 module.exports = router; 

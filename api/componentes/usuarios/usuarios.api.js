@@ -523,6 +523,20 @@ module.exports.buscar_por_id = function (req, res) {
 
 //MODIFICAR
 
+module.exports.actualizar_perfil_padre_familia = function (req, res) {
+
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo actualizar el perfil' });
+            } else {
+                res.json({ success: true, msg: ' Se actualizó con éxito' });
+            }
+        }
+
+    );
+}
+
 module.exports.actualizar = (req, res) => {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error) {
@@ -557,3 +571,18 @@ module.exports.habilitar = function (req, res) {
         }
     )
 };
+
+
+
+module.exports.borrar = (req, res) => {
+    modelo_usuario.findByIdAndDelete(req.body.id_actividad,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la actividad' });
+            } else {
+                res.json({ success: true, msg: 'La actividad se elimino con éxito' });
+            }
+        }
+
+    )
+}
