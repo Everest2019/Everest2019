@@ -131,9 +131,9 @@ router.route('/eliminar_servicio')
             api_usuario.eliminar_servicio(req, res);
         }
     );
-router.route('/habilitar_centro_educativo')
+router.route('/aprobar_centro_educativo')
     .post(function (req, res) {
-        api_usuario.habilitar_centro_educativo(req, res);
+        api_usuario.aprobar_centro_educativo(req, res);
     });
 
 router.route('/deshabilitar_padre_familia')
@@ -144,5 +144,9 @@ router.route('/deshabilitar_padre_familia')
 router.route('/habilitar_padre_familia')
     .post(function (req, res) {
         api_usuario.habilitar(req, res);
+    });
+router.route('/deshabilitar_centro_educativo')
+    .post(function (req, res) {
+        api_usuario.deshabilitar_centro_educativo(req, res);
     });
 module.exports = router; 

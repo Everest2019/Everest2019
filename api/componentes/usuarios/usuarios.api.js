@@ -561,7 +561,7 @@ module.exports.eliminar_servicio = function (req, res) {
     );
 };
 
-module.exports.habilitar_centro_educativo = function (req, res) {
+module.exports.aprobar_centro_educativo = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: { aprobado: true } },
         function (error) {
             if (error) {
@@ -572,4 +572,17 @@ module.exports.habilitar_centro_educativo = function (req, res) {
         }
     )
 };
+module.exports.deshabilitar_centro_educativo = function(req, res){
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, {$set: { aprobado: false }},
+        function(error){
+            if(error){
+                res.json({success: false, msg: 'No se pudo actualizar el centro educativo'});
+            }else{
+                res.json({success: true, msg: 'El centro educativo se actualizó con éxito'}); 
+            }
+        }
+    )
+};
+
+
 

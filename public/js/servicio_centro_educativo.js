@@ -465,18 +465,35 @@ let eliminar_servicio = (pid_centro_educativo, pservicio) => {
 
 };
 
-//function habilitar_centro_aducativo(pid_usuarios){
-  //$.ajax({
-      //url: 'http://localhost:4000/api/habilitar_centro_edicativo',
-      //method: 'POST',
-      //contentType: "application/x-www-form-urlencoded; charset=utf-8",
-      //data: {
-          //id : pid_usuarios
-      //},
+function aprobar_centro_aducativo(pid_centro_educativo){
+  $.ajax({
+      url: 'http://localhost:4000/api/aprobar_centro_edicativo',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+        id_centro_educativo : pid_centro_educativo
+          },
       
-      //success: function success(res) {
-          //console.log(res.msg);
+      success: function success(res) {
+          console.log(res.msg);
           
-      //},
-  //});
-//};
+      },
+  });
+};
+
+function deshabilitar_centro_educativo (pid_centro_educativo){
+  $.ajax({
+      url: 'http://localhost:4000/api/deshabilitar_centro_educativo',
+      method: 'POST',
+      contentType: "application/x-www-form-urlencoded; charset=utf-8",
+      data: {
+        id_centro_educativo : pid_centro_educativo
+      },
+
+      success: function success(res) {
+          console.log(res.msg);
+          
+      },
+  });
+  
+};
