@@ -4,8 +4,13 @@ const express = require('express');
 const router = express.Router();
 const api_usuario = require('./usuarios.api');
 
-router.param('id_padre_familia', function(req, res, next, id_padre_familia){
+router.param('id_padre_familia', function (req, res, next, id_padre_familia) {
     req.body.id_padre_familia = id_padre_familia;
+    next();
+});
+
+router.param('id_centro_educativo', function (req, res, next, id_centro_educativo) {
+    req.body.id_centro_educativo = id_centro_educativo;
     next();
 });
 
@@ -31,11 +36,11 @@ router.route('/registrar_servicio')
     );
 
 router.route('/registrar_idioma')
-.post(
-    function(req, res){
-        api_usuario.agregar_idioma(req,res);
-    }
-);
+    .post(
+        function (req, res) {
+            api_usuario.agregar_idioma(req, res);
+        }
+    );
 
 router.route('/registrar_adminitrador')
     .post(
@@ -44,10 +49,10 @@ router.route('/registrar_adminitrador')
         }
     );
 
-    router.route('/actualizar_padre_familia')
+router.route('/actualizar_padre_familia')
     .post(
-        function(req , res){
-            api_usuario.actualizar_perfil_padre_familia(req, res);
+        function (req, res) {
+            api_usuario.actualizar(req, res);
         }
     );
 
@@ -98,17 +103,46 @@ router.route('/eliminar_favorito')
             api_usuario.eliminar_favorito(req, res);
         }
     );
-
+router.route('/buscar_centro/:id_centro_educativo')
+    .get(
+        function (req, res) {
+            api_usuario.buscar_id(req, res);
+        }
+    )
+router.route('/borrar_centro_educativo')
+    .post(function (req, res) {
+        api_usuario.eliminar(req, res);
+    });
 router.route('/actualizar_centro_educativo')
     .post(
         function (req, res) {
-            api_usuario.actualizar(req, res);
+            api_usuario.actualizar_centro_educativo(req, res);
         }
     );
-
-    router.route('/borrar_actividad')
+router.route('/eliminar_idioma')
+    .post(
+        function (req, res) {
+            api_usuario.eliminar_idioma(req, res);
+        }
+    );
+router.route('/eliminar_servicio')
+    .post(
+        function (req, res) {
+            api_usuario.eliminar_servicio(req, res);
+        }
+    );
+router.route('/habilitar_centro_educativo')
     .post(function (req, res) {
-        api_usuario.borrar(req, res);
+        api_usuario.habilitar_centro_educativo(req, res);
     });
-    
+
+router.route('/deshabilitar_padre_familia')
+    .post(function (req, res) {
+        api_usuario.deshabilitar(req, res);
+    });
+
+router.route('/habilitar_padre_familia')
+    .post(function (req, res) {
+        api_usuario.habilitar(req, res);
+    });
 module.exports = router; 

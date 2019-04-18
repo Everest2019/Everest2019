@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_noticia.css">
+    <title>Gemas</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="cont_links">
+                <a href="panel_control_centro_educativo.html">Inicio</a>
+                <a href="panel_centro_educativo_noticias.html">Noticias</a>
+            </div>
+        </nav>
+    </header>
+    <h2 class="titulo2">Modificar</h2>
+    <h1 class="titulo1"> noticia</h1>
+
+    <main>
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Noticias de la institución</p>
+            </div>
+            <div class="separador"></div>
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form>
+                        <div><label for="txt_titulo">Título</label>
+                            <input type="text" id="txt_titulo" class="borde"> </div>
+
+                        <div> <label for="slt_fecha">Fecha de la noticia</label>
+                            <input type="date" id="slt_fecha" class="borde"></div>
+
+                        <div> <label for="txt_descripcion">Añadir Descripción</label>
+                            <textarea id="txt_descripcion" cols="30" rows="10" class="borde"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="button" id="btn_actualizar">Guardar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/servicio_noticia.js"></script>
+    <script src="js/controlador_editar_noticia.js"></script>
+
+</body>
+
+</html>

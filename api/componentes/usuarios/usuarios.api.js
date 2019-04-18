@@ -106,7 +106,8 @@ module.exports.registrar_centro_educativo = (req, res) => {
             aprobado: req.body.aprobado,
             estado: req.body.estado,
             tipo_usuario: req.body.tipo_usuario,
-            contrasena: req.body.contrasena
+            contrasena: req.body.contrasena,
+            codigo_verificacion: req.body.codigo_verificacion
         }
     );
     modelo_centro_educativo.save(function (error) {
@@ -240,9 +241,9 @@ module.exports.agregar_servicios = (req, res) => {
     )
 };
 
-module.exports.agregar_idioma = (req,res) =>{
+module.exports.agregar_idioma = (req, res) => {
     modelo_usuario.update(
-        {cedula_juridica: req.body.cedula_juridica},
+        { cedula_juridica: req.body.cedula_juridica },
         {
             $push:
             {
@@ -252,18 +253,18 @@ module.exports.agregar_idioma = (req,res) =>{
                 }
             }
         },
-        function (error){
-            if(error){
-                res.json({ success: false, msg: `No se pudo agregar el idioma, revise el siguiente error ${error}`});
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar el idioma, revise el siguiente error ${error}` });
             }
-            else{
-                res.json({ success: true, msg: `El idioma fue agregado correctamente`});
+            else {
+                res.json({ success: true, msg: `El idioma fue agregado correctamente` });
             }
         }
     )
 };
 
-module.exports.registrar_administrador = (req, res) =>{
+module.exports.registrar_administrador = (req, res) => {
     let modelo_administrador = new modelo_usuario(
         {
             primer_nombre: req.body.primer_nombre,
@@ -397,72 +398,6 @@ module.exports.agregar_favorito = (req, res) => {
     )
 };
 
-module.exports.eliminar_favorito = function (req, res) {
-    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
-        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
-        { safe: true, upsert: true },
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
-            } else {
-                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
-            }
-        }
-    );
-};
-
-
-//Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
-module.exports.buscar_favoritos_padre_familia = function (req, res) {
-    modelo_usuario.findOne({ _id: req.body.id_padre_familia }).then(
-        function (padre_familia) {
-            if (padre_familia) {
-                res.send(padre_familia.favoritos);
-            } else {
-                res.send('No se encontró el Padre Familia');
-            }
-        }
-    )
-};
-
-module.exports.agregar_favorito = (req, res) => {
-    modelo_usuario.update(
-        { _id: req.body.id_usuario },
-        {
-            $push:
-            {
-                'favoritos':
-                {
-                    id_centro_educativo: req.body.id_centro_educativo
-                }
-            }
-        },
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: `No se pudo agregar el centro educativo a favoritos, revise el siguiente error ${error}` });
-            }
-            else {
-                res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
-            }
-        }
-    )
-};
-
-module.exports.eliminar_favorito = function (req, res) {
-    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
-        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
-        { safe: true, upsert: true },
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
-            } else {
-                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
-            }
-        }
-    );
-};
-
-
 //Funcion de busqueda que permite encontrar los centros educativos favoritos de un padre de familia
 module.exports.buscar_favoritos_padre_familia = function (req, res) {
     modelo_usuario.findOne({ _id: req.body.id_padre_familia }).then(
@@ -519,47 +454,18 @@ module.exports.buscar_por_id = function (req, res) {
         }
     )
 };
-
-
-//MODIFICAR
-
-module.exports.actualizar_perfil_padre_familia = function (req, res) {
-
-    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+//habilitar y deshabilitar
+module.exports.deshabilitar = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: false } },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo actualizar el perfil' });
+                res.json({ success: false, msg: 'No se pudo actualizar la editorial' });
             } else {
-                res.json({ success: true, msg: ' Se actualizó con éxito' });
+                res.json({ success: true, msg: 'La editorial se actualizó con éxito' });
             }
         }
-
-    );
-}
-
-module.exports.actualizar = (req, res) => {
-    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
-        function (error) {
-            if (error) {
-                res.json(
-                    {
-                        success: false,
-                        msg: `No se pudo actualizar el centro educativo.`
-                    }
-                );
-            } else {
-                res.json(
-                    {
-                        succes: true,
-                        msg: `El centro educativo se actualizó correctamente.`
-                    }
-                );
-
-            }
-        }
-    );
-}
-
+    )
+};
 module.exports.habilitar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: true } },
         function (error) {
@@ -572,17 +478,98 @@ module.exports.habilitar = function (req, res) {
     )
 };
 
-
-
-module.exports.borrar = (req, res) => {
-    modelo_usuario.findByIdAndDelete(req.body.id_actividad,
-        function (error) {
-            if (error) {
-                res.json({ success: false, msg: 'No se pudo eliminar la actividad' });
+module.exports.buscar_id = (req, res) => {
+    modelo_usuario.find({ _id: req.body.id_centro_educativo }).then(
+        function (centro_educativo) {
+            if (centro_educativo) {
+                res.json(
+                    {
+                        success: true,
+                        centro_educativo: centro_educativo
+                    }
+                )
             } else {
-                res.json({ success: true, msg: 'La actividad se elimino con éxito' });
+                res.json(
+                    {
+                        success: false,
+                        centro_educativo: 'No se encontraron centro educativos'
+                    }
+                )
             }
         }
-
     )
+};
+module.exports.eliminar = (req, res) => {
+    modelo_usuario.findByIdAndDelete(req.body.id_centro_educativo,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se elimino con éxito' });
+            }
+        }
+    )
+};
+module.exports.actualizar_centro_educativo = (req, res) => {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json(
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar el centro educativo`
+                    }
+                );
+            } else {
+                res.json(
+                    {
+                        succes: true,
+                        msg: `Se actualizó correctamente el centro educativo`
+                    }
+                );
+
+            }
+        }
+    );
 }
+
+module.exports.eliminar_idioma = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
+        { $pull: { 'idiomas': { idioma: req.body.idioma } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el idioma' });
+            } else {
+                res.json({ success: true, msg: 'El idioma se eliminó con éxito' });
+            }
+        }
+    );
+};
+
+module.exports.eliminar_servicio = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
+        { $pull: { 'servicios': { idioma: req.body.servicio } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el servicio' });
+            } else {
+                res.json({ success: true, msg: 'El servicio se eliminó con éxito' });
+            }
+        }
+    );
+};
+
+module.exports.habilitar_centro_educativo = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: { aprobado: true } },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo aprobar el centro educativo' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se aprobó corectamente' });
+            }
+        }
+    )
+};
+

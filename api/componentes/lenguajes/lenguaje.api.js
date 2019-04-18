@@ -34,9 +34,10 @@ module.exports.listar_idiomas = function(req,res){
       }else{
         res.json({
           success:false,
-          lenguaje:'No se encontraron idiomas registrados :('
+          lenguaje:'No se encontraron idiomas registrados'
         });
       }
     }
   );
 };
+

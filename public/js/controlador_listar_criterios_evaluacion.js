@@ -1,9 +1,11 @@
 'use strict';
 
 const tabla_criterios = document.querySelector('#tbl_criterios tbody');
+const tabla_rangos = document.querySelector('#tbl_rangos tbody');
 const input_filtrar = document.querySelector('#txt_buscar');
 const btn_evaluacion = document.querySelector('#btn_evaluacion');
 const btn_registar = document.querySelector('#btn_registrar');
+const btn_modificar = document.querySelector('#btn_modificar');
 
 let usuario_loggeado = localStorage.getItem('conectado');
 let tipo_usuario = localStorage.getItem('tipo_usuario');
@@ -12,6 +14,7 @@ if (!usuario_loggeado || tipo_usuario !='administrador') {
 }
 
 let lista_criterios = listar_criterios_evaluacion();
+let rangos_puntuacion = listar_rangos_puntuacion();
 let total = 0;
 let cantidad_criterios = 0;
 
@@ -59,6 +62,60 @@ let mostrar_criterios = () =>{
     }
 };
 
+let mostrar_rangos = () =>{
+    tabla_rangos.innerHTML = '';
+    let fila0 = tabla_rangos.insertRow();
+            
+    let rango0 = fila0.insertCell();
+    rango0.innerHTML = '0 - ' + rangos_puntuacion[0]['estrella1'] + ' puntos';
+
+    let estrellas0 = fila0.insertCell();
+    estrellas0.innerHTML = '<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
+
+    let fila1 = tabla_rangos.insertRow();
+            
+    let rango1 = fila1.insertCell();
+    rango1.innerHTML = rangos_puntuacion[0]['estrella1'] +' - ' + rangos_puntuacion[0]['estrella2'] + ' puntos';
+
+    let estrellas1 = fila1.insertCell();
+    estrellas1.innerHTML = '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
+
+    let fila2 = tabla_rangos.insertRow();
+            
+    let rango2 = fila2.insertCell();
+    rango2.innerHTML = rangos_puntuacion[0]['estrella2'] +' - ' + rangos_puntuacion[0]['estrella3'] + ' puntos';
+
+    let estrellas2 = fila2.insertCell();
+    estrellas2.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
+
+
+    let fila3 = tabla_rangos.insertRow();
+            
+    let rango3 = fila3.insertCell();
+    rango3.innerHTML = rangos_puntuacion[0]['estrella3'] +' - ' + rangos_puntuacion[0]['estrella4'] + ' puntos';
+
+    let estrellas3 = fila3.insertCell();
+    estrellas3.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
+
+
+    let fila4 = tabla_rangos.insertRow();
+            
+    let rango4 = fila4.insertCell();
+    rango4.innerHTML = rangos_puntuacion[0]['estrella4'] +' - ' + rangos_puntuacion[0]['estrella5'] + ' puntos';
+
+    let estrellas4 = fila4.insertCell();
+    estrellas4.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>';
+
+
+    let fila5 = tabla_rangos.insertRow();
+            
+    let rango5 = fila5.insertCell();
+    rango5.innerHTML = rangos_puntuacion[0]['estrella5'] +' - 100 ' + 'puntos';
+
+    let estrellas5 = fila5.insertCell();
+    estrellas5.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
+};
+
 let realizar_evaluacion = () =>{
     if(cantidad_criterios >1){
 
@@ -98,7 +155,12 @@ function borrar_criterio(){
     });
 };
 
+
 mostrar_criterios();
+mostrar_rangos();
 input_filtrar.addEventListener('keyup', mostrar_criterios);
 btn_evaluacion.addEventListener('click', realizar_evaluacion);
 btn_registar.addEventListener('click', agregar_criterio);
+btn_modificar.addEventListener('click', function(){
+    window.location.href = './modificar_rangos_puntuacion.html';
+})
