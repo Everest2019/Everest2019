@@ -3,6 +3,7 @@ const input_articulo = document.querySelector('#slt_articulo');
 const input_cantidad = document.querySelector('#txt_cantidad');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const boton_guardar = document.querySelector('#btn_guardar');
+const caja = document.querySelector('#list-utiles');
 
 let validar = () =>{
     let error = false;
@@ -31,6 +32,7 @@ let validar = () =>{
 };
 
 let obtener_datos = ()=>{
+
     if(validar()==false){
         //se ejecuta solo si la validacion no da error
         let articulo = input_articulo.value;
@@ -39,7 +41,13 @@ let obtener_datos = ()=>{
         /*--------------------------------------------------*/
 
         console.log(articulo, cantidad, descripcion);
+
         registrar_utiles(articulo, cantidad, descripcion);
+        
+            swal.fire({
+                type: 'success',
+                title: 'El registro ha sido completado!'
+            });
     }else{
         swal.fire({
             type: 'warning',
@@ -47,5 +55,8 @@ let obtener_datos = ()=>{
             text: 'Porfavor revice los campos resaltados'
         });
     }
+    input_articulo.value = '';
+    input_cantidad.value = '';
+    input_descripcion.value = '';
 };
 boton_guardar.addEventListener('click',obtener_datos);

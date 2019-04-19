@@ -1,7 +1,7 @@
 'use strict';
 
-const tabla = document.querySelector('#tbl_etiquetas tbody');
 const input_filtro = document.querySelector('#txt_filtar');
+const tabla = document.querySelector('#tbl_etiquetas tbody');
 const btn_agregar_etiquetas = document.querySelector('#btn_agregar');
 const boton_eliminar = document.querySelector('#btn_modificar_etiqueta');
 

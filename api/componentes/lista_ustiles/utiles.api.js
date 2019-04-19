@@ -50,35 +50,42 @@ module.exports.listar_todo = (req, res) => {
     )
 };
 
-module.exports.lista = function (req, res) {
 
-    utiles_model.update(
-        { _id: req.body._id },
-        {
-            $push:
-            {
-                'utiles':
-                {
-                    nombre: req.body.nombre
-                }
+module.exports.buscar_por_id = function (req, res) {
+    modelo_lista_utiles.find({ _id: req.body.id_lista_utiles }).then(
+        function (lista_utiles) {
+            if (lista_utiles) {
+                res.json({ success: true, lista_utiles: lista_utiles });
+            } else {
+                res.json({ success: false, lista_utiles: lista_utiles });
             }
-        },
-        function (error) {
-            res.json(
-                {
-                    success: false,
-                    msg: `No se ha podido crea la lista`
-                }
-            );
+        }
+    );
+};
 
-        }else{
-            res.json(
-                {
-                    success: true,
-                    msg: `Se ha registrado correctamente la lista.`
-                }
-            );
+module.exports.actualizar = function (req, res) {
+    modelo_lista_utiles.findByIdAndUpdate(req.body.id, {
+        $set: req.body
+    },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se ha podido actualizar el articulo de la lista' });
+            } else {
+                res.json({ success: true, msg: 'El articulo de la lista se ha actualizado con éxito' });
+            }
+        }
+    );
+}
+
+module.exports.borrar = (req, res) => {
+    modelo_lista_utiles.findByIdAndDelete(req.body.id_lista_utiles,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se ha podido eliminar el articulo de la lista' });
+            } else {
+                res.json({
+                    success: true, meg: 'El articulo de la lista se ha eliminado con exito' });
+            }
         }
     )
-
-};
+}
