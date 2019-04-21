@@ -1,7 +1,7 @@
 'use strict';
 
-const tabla = document.querySelector('#tbl_etiquetas tbody');
 const input_filtro = document.querySelector('#txt_filtar');
+const tabla = document.querySelector('#tbl_etiquetas tbody');
 const btn_agregar_etiquetas = document.querySelector('#btn_agregar');
 const boton_eliminar = document.querySelector('#btn_modificar_etiqueta');
 
@@ -36,21 +36,22 @@ let mostrar_datos = () => {
             
             let boton_eliminar = document.createElement('a');
             boton_eliminar.textContent = 'Eliminar';
-            
-            boton_eliminar.dataset.id_etiquetas = etiquetas[i]
+            boton_eliminar.href = "#";
+            boton_eliminar.dataset.id_etiqueta = etiquetas[i]
             ['_id'];
+            boton_eliminar.addEventListener('click', confirmar_borrado);
 
             celda_configuracion.appendChild(boton_eliminar);
 
-            boton_eliminar.addEventListener('click', confirmar_borrado);
+            
 
         }
     };
 };
 
 function confirmar_borrado() {
-    let id = this.dataset.id;
-    Swal.fire({
+    let id = this.dataset.id_etiqueta;
+    swal.fire({
         title: 'Está seguro que desea eliminar la etiqueta?',
         type: 'warning',
         showCancelButton: true,
@@ -61,13 +62,8 @@ function confirmar_borrado() {
         if (result.value) {
             borrar_etiquetas(id);
             etiquetas = listar_etiquetas();
-            id == delete
-                mostrar_datos();
-            Swal.fire(
-                'Etiqueta eliminada!',
-                'La etiqueta fue borrada con éxito',
-                'success'
-            )
+            mostrar_datos();
+            
         }
     })
 };

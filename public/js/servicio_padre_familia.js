@@ -67,32 +67,32 @@ let listar_padre_familia = ()  =>{
  };
 
  let buscar_padre_familia = (id_padre_familia)=>{
-     let padre_familia= [];
+    let padre_familia= [];
 
+    
+   let request = $.ajax({
+       url: "http://localhost:4000/api/buscar_padre_familia/"+ id_padre_familia,
+       method: "GET",
+       data: {
+       },
+       dataType: "json",
+       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+       async : false
+     });
+
+     request.done(function (res) {
+       padre_familia = res.padre_familia;
      
-    let request = $.ajax({
-        url: "http://localhost:4000/api/buscar_padre_familia/"+ id_padre_familia,
-        method: "GET",
-        data: {
-        },
-        dataType: "json",
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        async : false
-      });
-
-      request.done(function (res) {
-        padre_familia = res.padre_familia;
-      
-    });
+   });
+ 
+   request.fail(function (jqXHR, textStatus) {
+     
+   });
+   return padre_familia;
   
-    request.fail(function (jqXHR, textStatus) {
-      
-    });
-    return padre_familia;
-   
- };
+};
 
- let actualizar_padre_familia = (pfoto,pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcontrasena,pid)=>{
+let actualizar_padre_familia = (pfoto,pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcontrasena,pid)=>{
 
     let request = $.ajax({
         url : 'http://localhost:4000/api/actualizar_padre_familia',

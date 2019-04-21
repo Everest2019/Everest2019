@@ -78,7 +78,7 @@ module.exports.actualizar = function (req, res) {
 }
 
 module.exports.borrar = (req, res) => {
-    modelo_etiquetas.findByIdAndDelete(req.body.id_etiquetas,
+    modelo_etiquetas.findByIdAndDelete(req.body.id_etiqueta,
         function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo eliminar la etiqueta' });

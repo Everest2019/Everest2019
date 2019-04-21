@@ -37,8 +37,9 @@ router.route('/buscar_etiquetas/:id_etiquetas')
         }
     );
 
-    router.route('/borrar_etiquetas')
+router.route('/borrar_etiquetas')
     .post(function (req, res) {
         api_etiquetas.borrar(req, res);
     });
+    
 module.exports = router;

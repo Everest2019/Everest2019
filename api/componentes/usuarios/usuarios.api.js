@@ -600,3 +600,31 @@ module.exports.habilitar_centro_educativo = function (req, res) {
     )
 };
 
+
+module.exports.buscar_por_id = function (req, res){
+    modelo_usuario.find({_id : req.body.id_padre_familia}).then(
+        function(padre_familia){
+            if(padre_familia){
+                res.json({success: true, padre_familia : padre_familia});
+            }else{
+                res.json({success: false, padre_familia : padre_familia});
+            }
+        }
+
+    );
+
+};
+
+module.exports.actualizar = function (req, res) {
+
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se ha podido actualizar su perfil' });
+            } else {
+                res.json({ success: true, msg: 'Su perfil se ha actualizado con exito' });
+            }
+        }
+    );
+}
+

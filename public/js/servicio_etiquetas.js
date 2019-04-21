@@ -119,7 +119,7 @@ function borrar_etiquetas(pid){
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id : pid
+            id_etiqueta : pid
         },
         beforeSend: function beforeSend() {
             
@@ -130,6 +130,13 @@ function borrar_etiquetas(pid){
             let fecha = new Date();
 
             registrar_accion(usuario,detalle,fecha);
+            Swal.fire({
+                title: 'Etiqueta eliminada!',
+                text: 'La etiqueta fue borrada con éxito',
+                type: 'success'
+            }
+                
+            )
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

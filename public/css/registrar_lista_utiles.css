@@ -60,11 +60,11 @@ div input[type=radio]{
     margin-bottom: 20px; 
 }
 #frm_uitiles div{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 #frm_uitiles label{
     display: inline-block;
-    width: 130px;
+    width: 200px;
 }
 #frm_uitiles table tr th div input{
     display: inline-block;
@@ -73,11 +73,11 @@ div input[type=radio]{
     outline: none;
 }
 #numeros div{
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 #frmnumeros_uitiles label{
     display: inline-block;
-    width: 70px;
+    width: 200px;
 }
 #numeros input{
     display: inline-block;
@@ -86,7 +86,7 @@ div input[type=radio]{
     outline: none;
 }
 #frm_uitiles textarea{
-    width: 100px;
+    width: 170px;
     height: 50px;
     resize: none;
 
@@ -108,3 +108,47 @@ div input[type=radio]{
 }
 
 
+#list-utiles {
+    width: 375px;
+    height: 50px;
+    border: 1px solid #A9A9A9;
+    border-radius: 3px;
+
+}
+
+#item-list-container {
+    padding: 5px;
+    background-color: #fff;
+    display: inline-block;
+    margin: 2px 1px !important;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#titulo {
+    position: center;
+    margin: center;
+}
+
+#agregarItem {
+    background-color: #FAA21A !important;
+    border: 2px solid #000;
+    color: #FFF !important;
+    outline: none !important;
+    cursor: pointer !important;
+    padding: 10px 25px !important;
+}
+
+#agregarItem:hover {
+    background-color: #FAA21A !important;
+}
+#btn_guardar{
+    background-color: #FAA21A;
+    width: 54%;
+    height: 40px;
+    margin-left: 42%;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+}

@@ -161,13 +161,19 @@ function borrar_actividades(pid){
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id : pid
+            id_actividades : pid
         },
         beforeSend: function beforeSend() {
             
         },
         success: function success(response) {
-            
+            Swal.fire({
+                title: 'actividad eliminada!',
+                text: 'La actividad fue borrada con éxito',
+                type: 'success'
+            }
+                
+            )
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

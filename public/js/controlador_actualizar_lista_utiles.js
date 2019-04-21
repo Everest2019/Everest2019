@@ -1,8 +1,9 @@
 'use strict';
 
-const input_accion = document.querySelector('#txt_accion');
+const input_articulo = document.querySelectorAll('#slt_articulo');
+const input_cantidad = document.querySelector('#txt_cantidad');
 const input_descripcion = document.querySelector('#txt_descripcion');
-const boton_guardar = document.querySelector('#btn_actualizar');
+const boton_actualizar = document.querySelector('#btn_guardar');
 
 let get_param = (param) => {
     let url_string =  window.location.href;
@@ -11,61 +12,61 @@ let get_param = (param) => {
     return id;
 };
 
-let _id = get_param('id_etiquetas');
+let _id = get_param('id_lista_utiles');
 
-let etiquetas = buscar_etiquetas(_id); //se levantan los datos de ese inmueble bajo demanda usando su id
-
+let lista_utiles = buscar_lista_utiles(_id);
 
 let validar = () => {
     let error = false;
-    
 
-    if (input_accion.value == '') {
+
+    if (input_cantidad.value == '') {
         error = true;
-        input_accion.classList.add('error_input');
+        input_cantidad.classList.add('error_input');
     } else {
-        input_accion.classList.remove('erorr_input');
+        input_cantidad.classList.remove('error_input');
     }
 
-    if (input_descripcion.value == ''){
+    if (input_descripcion.value == '') {
         error = true;
         input_descripcion.classList.add('error_input');
-    }else{
+    } else {
         input_descripcion.classList.remove('error_input');
     }
     return error;
 };
 
-
-let mostrar_datos = () =>{
-    input_accion.value = etiquetas[0]['accion'];
-    input_descripcion.value = etiquetas[0]['descripcion'];
-
+let mostrar_datos = ()=>{
+    
+    input_articulo.value = lista_utiles[0]['articulo'];
+    input_cantidad.value = lista_utiles[0]['cantidad'];
+    input_descripcion.value = lista_utiles[0]['descripcion'];
 };
 
-if(etiquetas){
+if(lista_utiles){
     mostrar_datos();
 }
 
-
 let obtener_datos = () => {
-
     if (validar() == false) {
-        let accion = input_accion.value;
+        let articulo = input_articulo.value;
+        let cantidad = input_cantidad.value;
         let descripcion = input_descripcion.value;
 
+       // registrar_utiles(articulo, cantidad, descripcion)
+
         Swal.fire({
-            title: ' Está seguro que desea actualizar la etiqueta ?',
+            title: 'Está seguro que desea actualizar el articulo de la lista ?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Sí, estoy seguro'
-          }).then((result) => {
+        }).then((result) => {
             if (result.value) {
-                actualizar_etiquetas(accion, descripcion, _id);
+                actualizar_lista_utiles(articulo, cantidad, descripcion, _id);
             }
-          })
+        })
 
     } else {
         swal.fire({
@@ -73,8 +74,7 @@ let obtener_datos = () => {
             title: 'Algo ha sucedido',
             text: 'No ha hecho ninguna acción'
         });
-        
     }
 };
 
-boton_guardar.addEventListener('click', obtener_datos);
+boton_actualizar.addEventListener('click', obtener_datos);

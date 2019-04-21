@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const api_registrar = require('./utiles.api');
+const api_utiles = require('./utiles.api');
 
 router.param('id_lista_utiles', function (req, res, nex, id_lista_utiles) {
     req.body.id_lista_utiles = id_lista_utiles;
@@ -9,37 +9,35 @@ router.param('id_lista_utiles', function (req, res, nex, id_lista_utiles) {
 });
 
 router.route('/registrar_utiles')
-.post( 
-    function(req,res){
-        api_registrar.registrar_utiles(req,res);
-    }
-);
+    .post(
+        function (req, res) {
+            api_utiles.registrar_utiles(req, res);
+        }
+    );
 
 router.route('/actualizar_lista_utiles')
     .post(
         function (req, res) {
-            api_registrar.actualizar(req, res);
+            api_utiles.actualizar(req, res);
         }
     );
-
-router.route('/listar_utiles')
-.get(
-    function(req,res){
-        api_registrar.listar_utiles(req,res)
-    }
-)
+router.route('/lista_utiles')
+    .get(
+        function (req, res) {
+            api_utiles.listar_todo(req, res);
+        }
+    );
 
 router.route('/buscar_lista_utiles/:id_lista_utiles')
     .get(
         function (req, res) {
-            api_registrar.buscar_por_id(req, res);
+            api_utiles.buscar_por_id(req, res);
         }
     );
 
 router.route('/borrar_lista_utiles')
     .post(function (req, res) {
-        api_registrar.borrar(req, res);
+        api_utiles.borrar(req, res);
     });
-
 
 module.exports = router;
