@@ -21,7 +21,7 @@ module.exports.registrar_padre_familia = (req, res) =>{
             correo: req.body.correo,
             estado: req.body.estado,
             contrasena: req.body.contrasena,
-            tipo_usuario: req.body.tipo_usuario 
+            tipo_usuario: req.body.tipo_usuario
         }
     );
     modelo_padre_familia.save(function(error){
@@ -97,7 +97,8 @@ module.exports.registrar_centro_educativo = (req, res) =>{
             aprobado: req.body.aprobado,
             estado: req.body.estado,
             tipo_usuario: req.body.tipo_usuario,
-            contrasena: req.body.contrasena
+            contrasena: req.body.contrasena,
+            etiquetas: req.body.etiquetas
         }
     );
     modelo_centro_educativo.save(function(error){
@@ -154,7 +155,7 @@ module.exports.registrar_administrador = (req, res) =>{
             correo: req.body.correo,
             estado: req.body.estado,
             contrasena: req.body.contrasena,
-            tipo_usuario: req.body.tipo_usuario 
+            tipo_usuario: req.body.tipo_usuario
         }
     );
     modelo_administrador.save(function(error){
@@ -212,7 +213,6 @@ module.exports.buscar_centro_educativo = function(req, res){
             }else{
                 res.send('No se encontró el Centro Educativo');
             }
-            
         }
     )
 };
@@ -229,7 +229,7 @@ module.exports.buscar_padre_familia = function(req, res){
     )
 };
 
-/*Inicio de Sesión*/ 
+/*Inicio de Sesión*/
 module.exports.validar = function (req, res){
     modelo_usuario.findOne({correo : req.body.correo}).then(
         function(usuario){
@@ -259,4 +259,70 @@ module.exports.validar = function (req, res){
             }
         }
     )
+};
+
+module.exports.asignar_etiquetas = function(req,res){
+    modelo_usuario.update(
+      {_id:req.body._id},
+      {
+        $push:
+        {
+          'etiquetas':
+          {
+            accion : req.body.accion,
+            descripcion : req.body.descripcion
+          }
+        }
+      },
+      function(error){
+        if(error){
+          res.json({success:false, msg:'No se pudo agregar la etiqueta'});
+        }else{
+          res.json({success:true, msg:'Etiqueta asignada con éxito'});
+        }
+      }
+    )
+
+
+};
+
+//no se si recibe id_centro educativo , no se cómo se llama ese CAMPO
+module.exports.remover_etiquetas = function(req, res){
+  modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
+    { $pull:{'etiquetas':  { _id : req.body.id_etiqueta  } } },
+    {
+      safe:true ,
+      upsert:true
+    },
+
+    function(error){
+        if(error){
+            res.json({success:false, msg: 'No se pudo eliminar la etiqueta'});
+        }else{
+            res.json({success:true, msg: 'Etiqueta removida con éxito'});
+        }
+    }
+  )
+};
+
+module.exports.listar_padre_familia = (req, res) =>{
+  modelo_usuario.find({tipo_usuario: 'padre_familia'}).then(
+    function(padres){
+      if(padres.length > 0){
+        res.json(
+          {
+            success: true,
+            padres_de_familia:padres
+          }
+        )
+      }else{
+        res.json(
+          {
+            success:false,
+            padres_de_familia: 'No se encontraron padres de familia'
+          }
+        )
+      }
+    }
+  )
 };

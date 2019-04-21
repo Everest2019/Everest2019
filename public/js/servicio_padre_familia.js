@@ -40,3 +40,28 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
 
     });
 };
+
+let listar_padres_familia = ()=>{
+  let lista_padres = [];
+  let request = $.ajax({
+    url:"http://localhost:4000/api/listar_padre_familia",
+    method:"GET",
+    data :{
+
+    },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async: false
+  });
+
+  request.done(function(res){
+    lista_padres = res.padres_de_familia;
+  });
+
+  request.fail(function( jqXHR, textStatus ){
+
+  });
+
+  return lista_padres;
+
+};

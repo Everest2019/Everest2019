@@ -15,16 +15,16 @@ const radios_tipo_institucion = document.querySelectorAll('#cont_tipo_institucio
 const select_provincia = document.querySelector('#txt_provincia');
 const select_canton = document.querySelector('#txt_canton');
 const select_distrito = document.querySelector('#txt_distrito');
-const input_direccion_exacta = document.querySelector('#txt_direccion_exacta'); 
+const input_direccion_exacta = document.querySelector('#txt_direccion_exacta');
 
 //Elementos cuarto contenedor
 const input_latitud = document.querySelector('#txt_latitud');
 const input_longitud = document.querySelector('#txt_longitud');
 
 // Elementos quinto contenedor
-const input_infoadicional_idioma = document.querySelector('#descripcion_idioma'); 
-const input_infoadicional_religion = document.querySelector('#descripcion_religion'); 
-const input_infoadicional_ensenanza = document.querySelector('#descripcion_ensenanza'); 
+const input_infoadicional_idioma = document.querySelector('#descripcion_idioma');
+const input_infoadicional_religion = document.querySelector('#descripcion_religion');
+const input_infoadicional_ensenanza = document.querySelector('#descripcion_ensenanza');
 
 // Elementos sexto contenedor
 const input_descripcion_institucion = document.querySelector('#descripcion_institucion');
@@ -318,7 +318,7 @@ let validar_datos = () => {
         contrasena.classList.remove('input_error');
         verificar_contrasena.classList.remove('input_error');
     }
-    
+
     return error;
 };
 
@@ -354,7 +354,7 @@ let obtener_datos = () =>{
         const servicios = document.querySelectorAll('#checkbox_servicios input[type=checkbox]:checked');
 
 
-        
+
 
         let portada = url_img_portada.value;
         let galeria1 = url_galeria1.value;
@@ -386,11 +386,11 @@ let obtener_datos = () =>{
         let estado = true;
         let tipo_usuario = 'centro_educativo';
         let contrasena_ce = contrasena.value;
-        
+
         let provincia = buscar_provincia();
         let canton = buscar_canton();
         let distrito = buscar_distrito();
-        
+
 
         registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce);
 
@@ -418,7 +418,7 @@ let deshabilitar_tipo_colegio = () =>{
 };
 
 let llenar_provincias = () =>{
-    
+
     for(let i = 0; i < provincias.length; i++){
         let nuevaOpcion = new Option(provincias[i]['nombre']);
         nuevaOpcion.value = provincias[i]['idProvincia'];
@@ -436,25 +436,25 @@ let llenar_cantones = () =>{
             let nuevaOpcion = new Option(cantones[i]['nombre']);
             nuevaOpcion.value = cantones[i]['idCanton'];
             select_canton.appendChild(nuevaOpcion);
-        }  
+        }
     }
 };
 
 let llenar_distritos = () =>{
     let canton = select_canton.value;
     select_distrito.innerHTML = '';
-    
+
     for(let i = 0; i < distritos.length; i++){
         if(canton == distritos[i]['Canton_idCanton']){
             let nuevaOpcion = new Option(distritos[i]['nombre']);
             nuevaOpcion.value = distritos[i]['idDistrito'];
             select_distrito.appendChild(nuevaOpcion);
-        }  
+        }
     }
 };
 
 let buscar_provincia = () =>{
-    
+
     for(let i = 0; i < provincias.length; i++){
         if(select_provincia.value == provincias[i]['idProvincia']){
             var nombre_provincia = provincias[i]['nombre'];
@@ -466,7 +466,7 @@ let buscar_provincia = () =>{
 
 
 let buscar_canton = () =>{
-    
+
     for(let i = 0; i < cantones.length; i++){
         if(select_canton.value == cantones[i]['idCanton']){
             var nombre_canton = cantones[i]['nombre'];
@@ -477,7 +477,7 @@ let buscar_canton = () =>{
 };
 
 let buscar_distrito = () =>{
-    
+
     for(let i = 0; i < distritos.length; i++){
         if(select_distrito.value == distritos[i]['idDistrito']){
             var nombre_distrito = distritos[i]['nombre'];

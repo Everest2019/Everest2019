@@ -11,13 +11,13 @@
     <title>Gemas - Instituciones</title>
 </head>
 <body>
-   
+
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
+
 
         <div id="navbar_lateral_inicio">
             <a href="index.html">Inicio</a>
@@ -26,7 +26,7 @@
         <div id="navbar_lateral_instituciones"  class="pagina_actual">
             <a href="instituciones.html">Instituciones</a>
         </div>
-                
+
         <div id="navbar_lateral_favoritos">
             <a href="#">Favoritos</a>
         </div>
@@ -35,16 +35,18 @@
             <a href="centros_educativos_cercanos.html">Cercanos</a>
         </div>
 
+        <div id="navbar_lateral_etiquetas">
+            <a href="filtrar_mediante_etiquetas_centros_educativos.html">Etiquetas</a>
+        </div>
+
         <div id="navbar_lateral_utiles">
             <a href="lista_utiles.html">Lista de útiles</a>
         </div>
 
-        <div id="navbar_lateral_utiles">
-            <a href="#">Lista de útiles</a>
-        </div>
         
+
     </div>
- 
+
     <div class="main">
         <h1>Lista de Instituciones</h1>
         <h2>Centros Educativos Cercanos</h2>
@@ -53,11 +55,24 @@
         <div class="contenedor_filtraciones">
             <div class="contenedor_buscar">
                 <label for="txt_filtar">Buscar: </label>
-                <input type="text" id="txt_buscar_centro_educativo">
+                <!--<input type="text" id="txt_buscar_centro_educativo">-->
+                <select class="slt_etiquetas" id="txt_buscar_centro_educativo" placeholder="--Seleccione una etiqueta--">
+                  <option value="">--Seleccione una etiqueta--</option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
             </div>
-            
+
         </div>
-        
+
         <!-- Contenedor donde se muestran todas las instituciones -->
         <div class="lista_instituciones" id="lista_instituciones">
 
@@ -67,6 +82,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativos_cercanos.js"></script>
-    <script src="js/controlador_listar_centros_eductivos_cercanos.js"></script>
+     <script src="js/servicio_etiquetas.js"></script>
+  <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_listar_etiquetas.js"></script>
 </body>
 </html>

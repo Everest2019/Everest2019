@@ -5,7 +5,7 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
        method: "POST",
-       data: { 
+       data: {
             nombre_comercial : pnombre_institucion,
             cedula_juridica : pcedula_institucion,
             tipo_institucion : ptipo_institucion,
@@ -62,7 +62,7 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
        dataType: "json",
        async: false
      });
-      
+
      request.done(function( msg ) {
 
        swal.fire({
@@ -70,12 +70,12 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
            title: 'Centro Educativo agregado correctamente',
            text: `El Centro Educativo ${pnombre_institucion} ha sido agregado correctamente`
        });
-      
+
      });
-      
+
      request.fail(function( jqXHR, textStatus ) {
-      
-     }); 
+
+     });
 };
 
 let registrar_servicio = (pcedula_juridica, pservicio) => {
@@ -105,21 +105,21 @@ let listar_instituciones = () => {
   let request = $.ajax({
     url: "http://localhost:4000/api/listar_instituciones",
     method: "GET",
-    data: { 
-        
+    data: {
+
     },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json",
     async: false
   });
-   
+
   request.done(function( res ) {
     lista_instituciones = res.instituciones;
-    
+
   });
-   
+
   request.fail(function( jqXHR, textStatus ) {
-   
+
   });
   return lista_instituciones;
 };
@@ -136,11 +136,11 @@ function buscar_centro_educativo(pid_centro_educativo){
           id : pid_centro_educativo
       },
       beforeSend: function beforeSend() {
-            
+
       },
       success: function success(response) {
         centro_educativo = response;
-          
+
       },
       error: function error(_error) {
           console.log("Request fail error:" + _error);
@@ -150,3 +150,63 @@ function buscar_centro_educativo(pid_centro_educativo){
   return centro_educativo;
 };
 
+let asignar_etiquetas = (paccion, pdescripcion, id_ce)=>{
+  let respuesta ='';
+  let peticion = $.ajax({
+    url:"http://localhost:4000/api/asignar_etiquetas",
+    type:"POST",
+    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    async: false,
+    data:{
+      _id : id_ce,
+      accion: paccion,
+      descripcion:pdescripcion
+    },
+    dataType: "json"
+  });
+
+  peticion.done(function(response){
+    respuesta = response;
+      window.location.href = 'lista_etiquetas_centro_educativo.html';
+  });
+
+  peticion.fail(function(response){
+
+  });
+
+  return respuesta;
+
+};
+
+let remover_etiquetas = (pid_centro_educativo, pid_etiqueta)=>{
+  let request = $.ajax({
+    url:"http://localhost:4000/api/remover_etiquetas",
+    method:"POST",
+    data:{
+      id_centro_educativo: pid_centro_educativo,
+      id_etiqueta: pid_etiqueta,
+    },
+    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    dataType: "json",
+    async: false
+  });
+
+  request.done(function(msg){
+    swal.fire({
+      type:'success',
+      title:'Eliminada',
+      text: 'Etiqueta eliminada de la lista ',
+      onClose: ()=>{
+        window.location.href = './lista_etiquetas_centro_educativo.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+
+}
+
+
+//---------------unfinished--------------------------------

@@ -48,7 +48,11 @@
 
         <div id="navbar_lateral_actividades">
             <a href="panel_centro_educativo_actividades.html">Actividades</a>
-        </div>  
+        </div>
+
+        <div id="navbar_lateral_etiquetas">
+            <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
+        </div>
 
         <div id="navbar_lateral_preguntas">
             <a href="panel_centro_educativo_preguntas_frecuentes.html">Preguntas Frecuentes</a>
@@ -85,13 +89,27 @@
                 <label for="txt_buscar">Buscar</label>
                 <input type="text" id="txt_buscar">
             </div>
-            
+
         <button type="button" id="btn_agregar" class="">Agregar noticia</button>
         <button type="button" id="btn_modificar_noticia" class="">Modificar noticia</button>
 
-            <div class="contenedor_noticia" id="lista_noticias">
+        <table id="lista_noticias">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Título</th>
+              <th>Detalles</th>
+              <th>Gestionar</th>
+            </tr>
+          </thead>
+          <tbody>
 
-            </div>
+          </tbody>
+        </table>
+
+            <!--<div class="contenedor_noticia" id="lista_noticias">
+
+            </div>-->
 
         </div>
 

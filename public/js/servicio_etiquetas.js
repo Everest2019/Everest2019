@@ -5,7 +5,7 @@ let listar_etiquetas = ()=>{
         url: "http://localhost:4000/api/listar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "GET",
         data: {
-            
+
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
@@ -80,7 +80,7 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
             id : pid
         },
         dataType : "json",
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 
     request.done(function(res){

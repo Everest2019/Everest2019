@@ -18,6 +18,7 @@ router.route('/registrar_centro_educativo')
     }
 );
 
+
 router.route('/registrar_servicio')
 .post(
     function(req, res){
@@ -47,18 +48,28 @@ router.route('/listar_padre_familia')
 );
 
 router.route('/buscar_centro_educativo')
-    .post(function(req , res){  
+    .post(function(req , res){
         api_usuario.buscar_centro_educativo(req , res);
 });
 
 router.route('/buscar_padre_familia')
-    .post(function(req , res){  
+    .post(function(req , res){
         api_usuario.buscar_padre_familia(req , res);
 });
-       
+
 router.route('/validar_credenciales')
 .post(function(req, res){
     api_usuario.validar(req, res);
 });
 
-module.exports = router; 
+router.route('/asignar_etiquetas')
+  .post(function(req,res){
+    api_usuario.asignar_etiquetas(req,res);
+  });
+
+router.route('/remover_etiquetas')
+    .post(function(req, res){
+      api_usuario.remover_etiquetas(req, res);
+    });
+
+module.exports = router;

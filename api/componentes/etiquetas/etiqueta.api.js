@@ -64,7 +64,7 @@ module.exports.buscar_por_id = function (req, res){
 };
 
 module.exports.actualizar = function(req, res){
-   
+
     modelo_etiquetas.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error){
             if(error){
@@ -73,7 +73,6 @@ module.exports.actualizar = function(req, res){
                 res.json({success: true , msg : 'La etiqueta se actualizó con éxito'});
             }
         }
-    
+
     );
 }
-
