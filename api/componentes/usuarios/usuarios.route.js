@@ -113,6 +113,12 @@ router.route('/borrar_centro_educativo')
     .post(function (req, res) {
         api_usuario.eliminar(req, res);
     });
+
+router.route('/eliminar_padre_familia')
+.post(function (req, res) {
+    api_usuario.eliminar_padre_familia(req, res);
+});
+
 router.route('/actualizar_centro_educativo')
     .post(
         function (req, res) {

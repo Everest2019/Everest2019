@@ -15,13 +15,15 @@ let nombre_usuario = padre_familia['primer_nombre'] + ' ' + padre_familia['prime
 let validar = () => {
 
     let error = false;
+
     let dia_cita = new Date(input_fecha.value).getDay();
+    let fecha_cita = new Date(input_fecha.value).getDate();
     let mes_cita = new Date(input_fecha.value).getMonth();
     let ano_cita = new Date(input_fecha.value).getFullYear();
 
 
     let fecha_actual = new Date();
-    let dia_actual = fecha_actual.getDay();
+    let dia_actual = fecha_actual.getDate();
     let mes_actual = fecha_actual.getMonth();
     let ano_actual = fecha_actual.getFullYear();
 
@@ -45,7 +47,7 @@ let validar = () => {
     }
 
 
-    if((dia_cita == 5 || dia_cita == 6) || (ano_cita < fecha_actual.getFullYear()) || ((mes_cita < mes_actual) && (ano_actual == ano_cita)) || ((mes_cita == mes_actual) && (ano_actual == ano_cita) && (dia_cita < dia_actual))){
+    if((dia_cita == 5 || dia_cita == 6) || (ano_cita < fecha_actual.getFullYear()) || ((mes_cita < mes_actual) && (ano_actual == ano_cita)) || ((mes_cita == mes_actual) && (ano_actual == ano_cita) && (fecha_cita < dia_actual))){
         error = true;
         input_fecha.classList.remove('borde');
         input_fecha.classList.add('error_input');

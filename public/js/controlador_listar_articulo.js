@@ -74,7 +74,8 @@ function borrar_articulo(){
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Sí, estoy seguro',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+
       }).then((result) => {
         if (result.value) {
             eliminar_articulo(id_articulo);

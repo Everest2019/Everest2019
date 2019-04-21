@@ -26,7 +26,7 @@ module.exports.registrar_criterios_evaluacion = (req,res) =>{
 };
 
 module.exports.mostrar_criterios=(req,res)=>{
-    modelo_criterios_evaluacion.find().then(
+    modelo_criterios_evaluacion.find().sort({nombre : 1}).then(
         function(criterios_evaluacion){
             if(criterios_evaluacion.length > 0){
                 res.json(

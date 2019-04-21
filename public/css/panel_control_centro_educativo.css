@@ -179,6 +179,55 @@ html {
     font-size: 20px;
 }
 
+
+.contenedor_informacion_general #titulo_evaluaciones{
+  font-size: 20px;
+  padding-bottom: 25px;
+  float: left;
+  padding-right: 25px;
+  color: #FAA21A;
+  font-weight: bold;
+}
+
+.contenedor_informacion_general #puntuacion_pf{
+  font-size: 20px;
+  float: left;
+  padding-bottom: 25px;
+  padding-right: 20px;
+}
+
+.contenedor_informacion_general #puntuacion_pf i{
+ padding-left: 4px;
+ color: #FAA21A;
+ position: relative;
+ bottom: 1px;
+}
+
+.contenedor_informacion_general #puntuacion_mep{
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+.contenedor_informacion_general #puntuacion_mep i{
+  padding-left: 4px;
+  color: #FAA21A;
+  position: relative;
+  bottom: 1px;
+}
+
+.contenedor_informacion_general .informacion_general{
+  font-size: 20px;
+}
+
+.contenedor_informacion_general .sin_evaluar{
+  color: #FAA21A;
+  font-weight: 100;
+}
+
+.contenedor_informacion_general .evaluacion{
+  font-weight: bold;
+}
+
 /* Contenedor galeria */
 
 .contenedor_galeria{
@@ -212,7 +261,7 @@ html {
 }
 .contenedor_imagenes .contenedor_imagen img{
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: 2%;
 }
 

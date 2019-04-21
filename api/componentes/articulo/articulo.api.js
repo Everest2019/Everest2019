@@ -27,7 +27,7 @@ module.exports.registrar_articulo = (req, res) => {
     });
 };
 module.exports.listar = (req, res) => {
-    modelo_articulo.find().then(
+    modelo_articulo.find().sort({nombre: 1}).then(
         function (articulo) {
             if (articulo.length > 0) {
                 res.json(

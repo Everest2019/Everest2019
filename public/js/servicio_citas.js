@@ -65,7 +65,7 @@ let listar_citas = () =>{
 
 
   //Buscar padre familia
-function buscar_padre_familia(pid_padre_familia){
+let buscar_padre_familia = (pid_padre_familia)=>{
     let padre_familia = [];
     $.ajax({
         url: 'http://localhost:4000/api/buscar_padre_familia',
@@ -88,4 +88,62 @@ function buscar_padre_familia(pid_padre_familia){
     });
 
     return padre_familia;
+  };
+
+  let eliminar_cita = (pid_cita, pnombre_institucion)=>{
+    $.ajax({
+        url: 'http://localhost:4000/api/eliminar_cita',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id_cita : pid_cita
+        },
+        beforeSend: function beforeSend() {
+            
+        },
+        success: function success(response) {
+            let detalle = "Cita cancelada";
+            let usuario = pnombre_institucion;
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
+
+            Swal.fire({
+                title:'Cita cancelada',
+                text:'La cita fue cancelada con éxito',
+                type:'success',
+                onClose: () =>{
+                    window.location.href = 'panel_centro_educativo_citas.html';
+                }
+            });
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+};
+
+function buscar_centro_educativo(pid_centro_educativo){
+    let centro_educativo = [];
+    $.ajax({
+        url: 'http://localhost:4000/api/buscar_centro_educativo',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        async: false,
+        data: {
+            id : pid_centro_educativo
+        },
+        beforeSend: function beforeSend() {
+              
+        },
+        success: function success(response) {
+          centro_educativo = response;
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+  
+    return centro_educativo;
   };
