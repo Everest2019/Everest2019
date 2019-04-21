@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Gemas</title>
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/general.css">  
+        <link rel="stylesheet" href="css/deshabilitar.css">
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="nombre_proyecto">
+                    <a href="#">Gemas</a>
+                </div>
+                <div class="cont_links">
+                    <a href="index.html">Inicio</a>
+                    <a href="iniciar_sesion.html">Iniciar sesión</a>
+                    <a href="registrar_centro_educativo.html">Crear cuenta</a>
+                </div>
+            </nav>
+        </header>
+
+        <h1 class="titulo2">Padres de familia</h1>
+        <h2 class="titulo1">Deshabilitados</h2>
+        <main>
+
+                <div class="contenido">
+                    <div class="formulario-1">
+                        <form>
+                            <label for="txt_Filtro">Filtrar</label>
+                            <input type="text" id="txt_Filtro">
+                        </form>
+                    </div>
+            </div>
+            <table id="tbl_padres" class="tbl_padres">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Identificación</th>
+                        <th>Tipo de Identificación</th>
+                        <th>Nacionalidad</th>
+                        <th>Provincia</th>
+                        <th>Cantón</th>
+                        <th>Distrito</th>
+                        <th>Teléfono</th>
+                        <th>Correo</th>
+                        <th>Cantidad de hijos</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                </tbody>
+            </table>
+        </main>
+        <div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/controlador_usuarios_deshabilitador.js"></script>
+        <script src="js/servicio_padre_familia.js"></script>
+    </div>
+    </body>
+    </html>

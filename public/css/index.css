@@ -10,7 +10,7 @@
 /* Estilos del navbar lateral */
 .navbar_lateral {
     height: 100%; /* Que ocupe todo el ancho de la pantalla */
-    width: 20%; /*Definir el ancho del navbar */
+    width: 18%; /*Definir el ancho del navbar */
     position: fixed; /* Fija el navbar, que no se mueva con el scroll */
     z-index: 1; /* Se mantiene en la parte superior */
     left: 0; /* Se mantiene a la izquiera */
@@ -82,14 +82,18 @@
 }
 
 #navbar_lateral_preguntas{
-  width: 70%;
-  margin-left: 13%;
+  width: 50%;
+  margin-left: 22%;
 }
 
 #navbar_mi_perfil{
   width: 45%;
   margin-left: 24%;
   margin-top: 150px;
+}
+#navber_lateral_padres{
+  width: 70%;
+  margin-left: 13%;
 }
 
 #navbar_mi_perfil i{

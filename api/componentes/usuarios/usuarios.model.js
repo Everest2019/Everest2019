@@ -34,7 +34,6 @@ let schema_usuarios = new mongoose.Schema(
             galeria2: {type: String, required: false},
             galeria3: {type: String, required: false},
             galeria4: {type: String, required: false},
-            informacion_idioma: {type: String, required: false},
             informacion_religion: {type: String, required: false},
             informacion_ensenanza: {type: String, required: false},
             documento1: {type: String, required: false},
@@ -59,6 +58,12 @@ let schema_usuarios = new mongoose.Schema(
                 {servicio: String}
             ],
 
+            idiomas : [
+                {idioma: String}
+            ],
+            
+            fecha_creacion: {type: Date, required: false},
+
 
         /* DATOS DE LOS USUARIOS PADRES DE FAMILIA*/
             tipo_identificacion: {type: String, required: false},
@@ -71,6 +76,9 @@ let schema_usuarios = new mongoose.Schema(
 
 
             foto_perfil : {type: String, required: false},
+            favoritos : [
+                {id_centro_educativo: String}
+            ],
 
 
         /* DATOS DEL ADMINISTRADOR */
@@ -90,6 +98,7 @@ let schema_usuarios = new mongoose.Schema(
             distrito: {type: String, required: false},
             canton: {type: String, required: false},
             provincia: {type: String, required: false},
+            codigo_verificacion: {type: String, required: false},
 
             //Todos los usuarios
             telefono: {type: String, required: true},

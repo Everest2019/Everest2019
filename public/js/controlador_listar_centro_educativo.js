@@ -7,6 +7,13 @@ const opt_escuelas = document.querySelector('#listar_escuelas');
 const input_filtrar = document.querySelector('#txt_buscar_centro_educativo');
 
 
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario=='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
+
 let filtrar_criterios = () =>{
     switch(select_criterios.value){
         case 'Todos':
@@ -18,12 +25,15 @@ let filtrar_criterios = () =>{
         case 'Escuelas':
             mostrar_datos_escuelas();
         break;
+        case 'Ambos':
+            mostrar_datos_ambos();
+        break;
     }
 };
+let instituciones = listar_instituciones();
 
 let mostrar_datos = () => {
     let filtro = input_filtrar.value;
-    let instituciones = listar_instituciones();
     select_criterios.value = 'Todos';
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
@@ -32,13 +42,12 @@ let mostrar_datos = () => {
 
 
         '<div class="contenedor_institucion">'+
+            '<div class="contenedor_nombre_institucion">'+
+                '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
+            '</div>'+
                 '<img src="' + instituciones[i]['logo'] + '" alt="Logo Centro Educativo">'+
 
                 '<div class="contenedor_informacion">'+
-
-                    '<div class="contenedor_nombre_centro_educativo">'+
-                        '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
-                   ' </div>'+
 
                     '<div class="contenedor_clasificacion_centro_educativo">'+
 
@@ -70,9 +79,7 @@ let mostrar_datos = () => {
                         '</div>'+
                     '</div>'+
 
-                    '<div class="contenedor_web_centro_educativo">'+
-                        '<p>'+ instituciones[i]['pagina_web'] + '</p>'+
-                    '</div>'+
+
                     '<div data-institucion="' + instituciones[i]['_id'] +'" id="institucion' + i + '" class="contenedor_boton">'+
 
                          //En este boton se acciona la funcion que permite almacenar en el LocalStorage el id del centro educativo
@@ -91,22 +98,21 @@ let mostrar_datos = () => {
 };
 
 let mostrar_datos_colegios = () => {
-    let instituciones = listar_instituciones();
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
-        if (instituciones[i]['tipo_institucion'].includes('Colegio') || instituciones[i]['tipo_institucion'].includes('Ambos')) {
+        if (instituciones[i]['tipo_institucion'].includes('Colegio')) {
 
         document.getElementById('lista_instituciones').innerHTML +=
 
 
+
         '<div class="contenedor_institucion">'+
+            '<div class="contenedor_nombre_institucion">'+
+                '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
+            '</div>'+
                 '<img src="' + instituciones[i]['logo'] + '" alt="Logo Centro Educativo">'+
 
                 '<div class="contenedor_informacion">'+
-
-                    '<div class="contenedor_nombre_centro_educativo">'+
-                        '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
-                   ' </div>'+
 
                     '<div class="contenedor_clasificacion_centro_educativo">'+
 
@@ -138,9 +144,7 @@ let mostrar_datos_colegios = () => {
                         '</div>'+
                     '</div>'+
 
-                    '<div class="contenedor_web_centro_educativo">'+
-                        '<p>'+ instituciones[i]['pagina_web'] + '</p>'+
-                    '</div>'+
+
                     '<div data-institucion="' + instituciones[i]['_id'] +'" id="institucion' + i + '" class="contenedor_boton">'+
 
                          //En este boton se acciona la funcion que permite almacenar en el LocalStorage el id del centro educativo
@@ -154,24 +158,22 @@ let mostrar_datos_colegios = () => {
     };
 };
 
-let mostrar_datos_escuelas = (param) => {
-  let instituciones = listar_instituciones();
-
+let mostrar_datos_escuelas = () => {
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
-        if (instituciones[i]['tipo_institucion'].includes('Escuela') || instituciones[i]['tipo_institucion'].includes('Ambos')) {
+        if (instituciones[i]['tipo_institucion'].includes('Escuela')) {
 
         document.getElementById('lista_instituciones').innerHTML +=
 
 
+
         '<div class="contenedor_institucion">'+
+            '<div class="contenedor_nombre_institucion">'+
+                '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
+            '</div>'+
                 '<img src="' + instituciones[i]['logo'] + '" alt="Logo Centro Educativo">'+
 
                 '<div class="contenedor_informacion">'+
-
-                    '<div class="contenedor_nombre_centro_educativo">'+
-                        '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
-                   ' </div>'+
 
                     '<div class="contenedor_clasificacion_centro_educativo">'+
 
@@ -203,9 +205,69 @@ let mostrar_datos_escuelas = (param) => {
                         '</div>'+
                     '</div>'+
 
-                    '<div class="contenedor_web_centro_educativo">'+
-                        '<p>'+ instituciones[i]['pagina_web'] + '</p>'+
+
+                    '<div data-institucion="' + instituciones[i]['_id'] +'" id="institucion' + i + '" class="contenedor_boton">'+
+
+                         //En este boton se acciona la funcion que permite almacenar en el LocalStorage el id del centro educativo
+                         ' <button type="button" onclick="visualizar_centro_educativo(document.getElementById(\'institucion'+i +'\').dataset.institucion)">Ver más <i class="fas fa-angle-right"></i> </button>'+
+
                     '</div>'+
+
+                '</div>'+
+            '</div>'
+        };
+    };
+};
+
+
+let mostrar_datos_ambos = () => {
+    document.getElementById('lista_instituciones').innerHTML ='';
+    for(let i=0; i< instituciones.length; i++){
+        if (instituciones[i]['tipo_institucion'].includes('Ambos')) {
+
+        document.getElementById('lista_instituciones').innerHTML +=
+
+
+
+        '<div class="contenedor_institucion">'+
+            '<div class="contenedor_nombre_institucion">'+
+                '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
+            '</div>'+
+                '<img src="' + instituciones[i]['logo'] + '" alt="Logo Centro Educativo">'+
+
+                '<div class="contenedor_informacion">'+
+
+                    '<div class="contenedor_clasificacion_centro_educativo">'+
+
+                        '<div class="contenedor_tipo">'+
+                            '<p>' + instituciones[i]['tipo_institucion'] + '</p>'+
+                        '</div>' +
+
+                        '<div class="contenedor_division">'+
+                            '<p>/</p>'+
+                        '</div>'+
+
+                        '<div class="contenedor_sistema">'+
+                            '<p>'+ instituciones[i]['modalidad'] + '</p>'+
+                        '</div>'+
+                    '</div>'+
+
+                    '<div class="contenedor_telefono_centro_educativo">'+
+                        '<p>'+ instituciones[i]['telefono'] + '</p>'+
+                    '</div>'+
+
+                    '<div class="contenedor_ubicacion_centro_educativo">'+
+
+                        '<div class="contenedor_provincia">'+
+                            '<p>' + instituciones[i]['provincia'] + '</p>'+
+                        '</div>'+
+
+                        '<div class="contenedor_canton">'+
+                            '<p>'+ instituciones[i]['canton'] + '</p>'+
+                        '</div>'+
+                    '</div>'+
+
+
                     '<div data-institucion="' + instituciones[i]['_id'] +'" id="institucion' + i + '" class="contenedor_boton">'+
 
                          //En este boton se acciona la funcion que permite almacenar en el LocalStorage el id del centro educativo

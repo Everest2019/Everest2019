@@ -12,8 +12,10 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
+let actividades = listar_actividades ();
+
 let mostrar_datos = () =>{
-    let actividades = listar_actividades ();
+    
    
     for (let i = 0; i < actividades.length; i++) {
         if (actividades[i]['id_centro_educativo'].includes(id_centro_educativo)){

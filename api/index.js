@@ -98,6 +98,17 @@ app.use('/api', preguntas);
 const idiomas = require('./componentes/lenguajes/lenguaje.route');
 app.use('/api',idiomas);
 
+const solicitudes = require('./componentes/solicitudes/solicitudes.route');
+app.use('/api', solicitudes);
+
+const criterios_evaluacion = require('./componentes/criterios_evaluacion/criterios_evaluacion.route');
+app.use('/api',criterios_evaluacion);
+
+const rangos_puntuacion = require('./componentes/rangos_puntuacion/rangos_puntuacion.route');
+app.use('/api', rangos_puntuacion);
+
+const bitacora = require('./componentes/bitacora/bitacora.route');
+app.use('/api', bitacora);
 
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app

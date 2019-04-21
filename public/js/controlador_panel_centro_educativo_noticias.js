@@ -2,6 +2,16 @@
 
 const input_filtrar = document.querySelector('#txt_buscar');
 const btn_agregar_noticias = document.querySelector('#btn_agregar');
+const nombre = document.querySelector('#nombre_ce');
+
+//Inicio Sesión
+let usuario_loggeado = localStorage.getItem('conectado');
+let tipo_usuario = localStorage.getItem('tipo_usuario');
+if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
+    window.location.href = `iniciar_sesion.html`;
+}
+
+let noticias = listar_noticias();
 //let todas_las_noticias = listar_noticias();
 let noticias =  listar_noticias();
 
@@ -9,6 +19,10 @@ let noticias =  listar_noticias();
 let centro_educativo = localStorage.getItem('id_usuario');
 input_filtrar.addEventListener('keyup', mostrar_noticias);
 
+let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
+
+nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 
 /*let filtrar_noticias = () => {
@@ -145,5 +159,5 @@ function mostrar_noticias() {
 mostrar_noticias();
 
 btn_agregar_noticias.addEventListener('click', function(){
-  //  window.location.href = './editar_noticia.html';
-})
+    window.location.href = './registrar_noticia.html';
+});

@@ -55,6 +55,88 @@ let listar_preguntas = () => {
 
 };
 
+let buscar_pregunta = (id) => {
+    let pregunta = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/buscar_pregunta/" +id,
+        method: "GET",
+        data: {
+        },
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        async: false
+    });
+
+    request.done(function (res) {
+        pregunta = res.pregunta;
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+
+    });
+    return pregunta;
+
+};
+
+let actualizar_pregunta = (ppregunta, prespuesta, pid) => {
+    let request = $.ajax({
+        url: "http://localhost:4000/api/actualizar_pregunta",
+        method: "POST",
+        data: {
+            pregunta: ppregunta,
+            respuesta: prespuesta,
+            id : pid
+        },
+        datatype: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    });
+    request.done(function (res) {
+
+        swal.fire({
+            type: 'success',
+            title: 'Pregunta modificada correctamente',
+            text: res.msg,
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_preguntas_frecuentes.html';
+              }  
+        });
+
+    });
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'Proceso no realizado',
+            text : res.msg
+        });
+
+    });
+
+};
+
+function borrar_pregunta(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_pregunta',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id : pid
+        },
+        beforeSend: function beforeSend() {
+            
+        },
+        success: function success(response) {
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+};
+
+
+
 //Buscar centro educativo para mostar en el perfil del
 function buscar_centro_educativo(pid_centro_educativo){
     let centro_educativo = [];

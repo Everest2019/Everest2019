@@ -32,13 +32,6 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
-    request.done(function (msg) {
-     swal.fire({
-            type: 'success',
-            title: 'Se ha creado con exito la etiqueta',
-            text: `Se ha creado exitosamente la etiqueta con el nombre de ${paccion} con la siguiente descripción ${pdescripcion}`
-        });
-    });
 
 
     request.fail(function (jqXHR, textStatus) {
@@ -85,6 +78,15 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
 
     request.done(function(res){
 
+        swal.fire({
+            type : 'success',
+            title : 'Etiqueta actualizada con éxito',
+            text : res.msg,
+            onClose: () => {
+                window.location.href = 'panel_administrador_etiquetas.html';
+              }
+        });
+
     });
 
     request.fail(function(res){
@@ -97,3 +99,29 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
     });
 
 };
+
+function borrar_etiquetas(pid){
+    $.ajax({
+        url: 'http://localhost:4000/api/borrar_etiquetas',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id_etiqueta : pid
+        },
+        beforeSend: function beforeSend() {
+
+        },
+        success: function success(response) {
+            Swal.fire({
+                title: 'Etiqueta eliminada!',
+                text: 'La etiqueta fue borrada con éxito',
+                type: 'success'
+            }
+
+            )
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+}

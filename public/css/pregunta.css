@@ -1,7 +1,9 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
-
+body{
+    background: #f2f2f2;
+}
 .main{
     height: 100%;
 }
@@ -51,22 +53,75 @@ div input[type=text]{
 }
 
 .nombre_pregunta p{
-    font-size: 20px;
-    font-family: 'Roboto', 'sans-serif';
-    padding-top: 30px;
-    margin: 5%;
-    text-align: center;
-    height: 40px;
-    margin-top: 20px;
-    border-top: 3px solid #FAA21A;
+    border-top: 1px solid #c7c7c7;
+    padding: 20px 0 20px 30px;
+    color: #323232;
+    display: block;
+    position: relative;
+    -webkit-transition: border-color .4s;
+    transition: border-color .4s;
+    
 }
 
 .respuesta_pregunta p{
-    font-size: 20px;
-    font-family: 'Roboto', 'sans-serif';
-    margin: 5%;
-    text-align: center;
-    height: 40px;
-    margin-top: 25px;
-    border-bottom: 3px solid #FAA21A;
+    padding: 20px 0 20px 30px;
+    color: #323232;
+    display: block;
+    position: relative;
+    -webkit-transition: border-color .4s;
+    transition: border-color .4s;
+    border-bottom: 1px solid #c7c7c7;
+   
 }
+
+.tabla_pregunta{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.tabla_pregunta tr th{
+    padding: 10px 0;
+    border: 1px solid #000;   
+    color: #40433E;
+    background: #FAA21A;
+    font-weight: bold;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 20px;
+}
+.tabla_pregunta tr td{
+    padding: 15px 10px;
+    border: 1px solid #000;
+    width: 4%; 
+    right: 100px;
+    background: #fff;
+    text-align: center;
+} 
+.tabla_pregunta tbody{
+    padding: 15px;
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
+    width: 4%; 
+    right: 150px;
+}
+i{
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+}
+
+.btn_pregunta{
+    width: 20%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 3%;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+

@@ -83,6 +83,9 @@ const input_identificacion = document.querySelector('#txt_identificacion_encarga
 const url_img_encargado = document.querySelector('#url_foto_encargado');
 const img_encargado = document.querySelector('#img_encargado');
 
+//Contenedor idiomas
+const contenedor_idiomas = document.querySelector('#contenedor_idiomas');
+
 //Contraseña
 
 const contrasena = document.querySelector('#txt_contrasena');
@@ -92,17 +95,366 @@ const verificar_contrasena = document.querySelector('#txt_verificar_contrasena')
 //Boton de enviar
 const btn_enviar = document.querySelector('#btn_registrar_institucion');
 
+//Botones slides
+const flecha_primer_slide = document.querySelector('#flecha_primer_slide');
+const flecha_segundo_slide = document.querySelector('#flecha_segundo_slide');
+const flecha_tercer_slide = document.querySelector('#flecha_tercer_slide');
+const flecha_cuarto_slide = document.querySelector('#flecha_cuarto_slide');
+const flecha_quinto_slide = document.querySelector('#flecha_quinto_slide');
+const flecha_sexto_slide = document.querySelector('#flecha_sexto_slide');
+const flecha_setimo_slide = document.querySelector('#flecha_setimo_slide');
+const flecha_octavo_slide = document.querySelector('#flecha_octavo_slide');
+const flecha_noveno_slide = document.querySelector('#flecha_noveno_slide');
+const flecha_decimo_slide = document.querySelector('#flecha_decimo_slide');
+const flecha_onceavo_slide = document.querySelector('#flecha_onceavo_slide');
+const flecha_doceavo_slide = document.querySelector('#flecha_doceavo_slide');
+const flecha_treceavo_slide = document.querySelector('#flecha_treceavo_slide');
+const flecha_catorceavo_slide = document.querySelector('#flecha_catorceavo_slide');
+const flecha_quiceavo_slide = document.querySelector('#flecha_quiceavo_slide');
 
+//Primera validacion
+let validacion_primer_slide = () =>{
+    let error = false;
+    if(input_nombre_institucion.value == ''){
+        error = true;
+        input_nombre_institucion.classList.add('input_error')
+    }
+    else{
+        input_nombre_institucion.classList.remove('input_error');
+    }
 
+    if(input_correo_institucion.value == ''){
+        error = true;
+        input_correo_institucion.classList.add('input_error')
+    }
+    else{
+        input_correo_institucion.classList.remove('input_error');
+    }
 
-let validar_datos = () => {
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
 
+//Segunda validacion
+let validacion_segundo_slide = () =>{
     let error = false;
     let radio_institucion = document.querySelector('#cont_tipo_institucion input[type=radio]:checked');
     let radio_sistema = document.querySelector('#cont_tipo_sistema input[type=radio]:checked');
 
-    //Elementos setimo contenedor
+    if(input_cedula_institucion.value == ''){
+        error = true;
+        input_cedula_institucion.classList.add('input_error')
+    }
+    else{
+        input_cedula_institucion.classList.remove('input_error');
+    }
 
+    if(radio_institucion == null){
+        error = true;
+        contenedor_tipo_institucion.classList.add('input_error')
+    }
+    else{
+        contenedor_tipo_institucion.classList.remove('input_error');
+    }
+
+    if(select_tipo_colegio.disabled == true){
+        select_tipo_colegio.classList.remove('input_error');
+    }
+
+    if(select_tipo_colegio.disabled == false){
+        if(select_tipo_colegio.value == ''){
+            error = true;
+            select_tipo_colegio.classList.add('input_error')
+        }
+        else{
+            select_tipo_colegio.classList.remove('input_error');
+        }
+    }
+
+    if(radio_sistema == null){
+        error = true;
+        contenedor_sistema.classList.add('input_error')
+    }
+    else{
+        contenedor_sistema.classList.remove('input_error');
+    }
+
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Tercera validacion
+let validacion_tercer_slide = () =>{
+    let error = false;
+
+    if(select_provincia.value == ''){
+        error = true;
+        select_provincia.classList.add('input_error')
+    }
+    else{
+        select_provincia.classList.remove('input_error');
+    }
+
+    if(select_canton.value == ''){
+        error = true;
+        select_canton.classList.add('input_error')
+    }
+    else{
+        select_canton.classList.remove('input_error');
+    }
+
+    if(select_distrito.value == ''){
+        error = true;
+        select_distrito.classList.add('input_error')
+    }
+    else{
+        select_distrito.classList.remove('input_error');
+    }
+
+    if(input_direccion_exacta.value == ''){
+        error = true;
+        input_direccion_exacta.classList.add('input_error')
+    }
+    else{
+        input_direccion_exacta.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Setima validacion
+let validacion_setimo_slide = () =>{
+    let error = false;
+    if(input_descripcion_institucion.value == ''){
+        error = true;
+        input_descripcion_institucion.classList.add('input_error')
+    }
+    else{
+        input_descripcion_institucion.classList.remove('input_error');
+    }
+
+    if(input_referencia_historica.value == ''){
+        error = true;
+        input_referencia_historica.classList.add('input_error')
+    }
+    else{
+        input_referencia_historica.classList.remove('input_error');
+    }
+
+    if(input_ano_fundacion.value == ''){
+        error = true;
+        input_ano_fundacion.classList.add('input_error')
+    }
+    else{
+        input_ano_fundacion.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Novena validacion
+let validacion_noveno_slide = () =>{
+    let error = false;
+    if(url_logo_institucion.value == ''){
+        error = true;
+        img_logo_institucion.classList.add('input_error')
+    }
+    else{
+        img_logo_institucion.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Decima validacion
+let validacion_decimo_slide = () =>{
+    let error = false;
+    if(url_img_portada.value == ''){
+        error = true;
+        img_portada_institucion.classList.add('input_error')
+    }
+    else{
+        img_portada_institucion.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Doceava validacion
+let validacion_doceavo_slide = () =>{
+    let error = false;
+    if(input_telefono.value == ''){
+        error = true;
+        input_telefono.classList.add('input_error')
+    }
+    else{
+        input_telefono.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Catorceava validacion
+let validacion_catorceavo_slide = () =>{
+    let error = false;
+    if(input_primer_nombre.value == ''){
+        error = true;
+        input_primer_nombre.classList.add('input_error')
+    }
+    else{
+        input_primer_nombre.classList.remove('input_error');
+    }
+
+    if(input_primer_apellido.value == ''){
+        error = true;
+        input_primer_apellido.classList.add('input_error')
+    }
+    else{
+        input_primer_apellido.classList.remove('input_error');
+    }
+
+    if(input_correo_encargado.value == ''){
+        error = true;
+        input_correo_encargado.classList.add('input_error');
+    }
+    else{
+        input_correo_encargado.classList.remove('input_error');
+    }
+
+    if(input_departamento.value == ''){
+        error = true;
+        input_departamento.classList.add('input_error');
+    }
+    else{
+        input_departamento.classList.remove('input_error');
+    }
+
+    if(input_telefono_encargado.value == ''){
+        error = true;
+        input_telefono_encargado.classList.add('input_error');
+    }
+    else{
+        input_telefono_encargado.classList.remove('input_error');
+    }
+
+    if(input_identificacion.value == ''){
+        error = true;
+        input_identificacion.classList.add('input_error')
+    }
+    else{
+        input_identificacion.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+//Quiceava validacion
+let validacion_quinceavo_slide = () =>{
+    let error = false;
+    if(url_img_encargado.value == ''){
+        error = true;
+        img_encargado.classList.add('input_error');
+    }
+    else{
+        img_encargado.classList.remove('input_error');
+    }
+
+    if(error == false){
+        plusSlides(1);
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
+        });
+    }
+};
+
+
+
+
+
+/*
+///////////////////////////////////////
+VALIDACIONES GENERALES
+///////////////////////////////////////
+*/
+let validar_datos = () => {
+    let error = false;
+    let radio_institucion = document.querySelector('#cont_tipo_institucion input[type=radio]:checked');
+    let radio_sistema = document.querySelector('#cont_tipo_sistema input[type=radio]:checked');
     if(input_nombre_institucion.value == ''){
         error = true;
         input_nombre_institucion.classList.add('input_error')
@@ -156,7 +508,6 @@ let validar_datos = () => {
     else{
         contenedor_sistema.classList.remove('input_error');
     }
-
     if(select_provincia.value == ''){
         error = true;
         select_provincia.classList.add('input_error')
@@ -332,15 +683,13 @@ let obtener_datos = () =>{
         let tipo_institucion = document.querySelector('#cont_tipo_institucion input[type=radio]:checked').value;
         let tipo_sistema = document.querySelector('#cont_tipo_sistema input[type=radio]:checked').value;
         let tipo_colegio = select_tipo_colegio.value;
-        //let provincia = select_provincia.value;
-       // let canton = select_canton.value;
-        //let distrito = select_distrito.value;
         let direccion_exacta = input_direccion_exacta.value;
         let latitud = input_latitud.value;
         let longitud = input_longitud.value;
 
         //Informacion adicional
-        let idioma = input_infoadicional_idioma.value;
+
+        const idiomas = document.querySelectorAll('#contenedor_idiomas input[type=checkbox]:checked');
         let religion = input_infoadicional_religion.value;
         let ensenanza = input_infoadicional_ensenanza.value;
 
@@ -352,7 +701,6 @@ let obtener_datos = () =>{
 
         //Servicios adicionales
         const servicios = document.querySelectorAll('#checkbox_servicios input[type=checkbox]:checked');
-
 
 
 
@@ -391,20 +739,35 @@ let obtener_datos = () =>{
         let canton = buscar_canton();
         let distrito = buscar_distrito();
 
+        let codigo = generar_codigo();
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud, idioma, religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud,religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, contrasena_ce, codigo);
 
         for(let i = 0; i < servicios.length; i++){
             registrar_servicio(cedula_institucion, servicios[i].value);
         }
+
+        for(let i = 0; i < idiomas.length; i++){
+            registrar_idioma(cedula_institucion, idiomas[i].value);
+        }
+
+        //Bitacora
+
+        let detalle = "Agregar centro educativo";
+        let usuario = nombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
     }
     else{
         swal.fire({
             type: 'warning',
-            title: 'No se pudo agregar el  Centro Educativo',
-            text: 'Por favor revisar los campos resaltados'
+            title: 'Datos incompletos',
+            text: 'Los campos resaltados son obligatorios'
         });
     }
+
 };
 
 
@@ -487,6 +850,34 @@ let buscar_distrito = () =>{
     return nombre_distrito;
 };
 
+let lista_idiomas = listar_lenguajes();
+
+for(let i = 0; i < lista_idiomas.length; i++){
+    let contenedor = document.createElement('div');
+
+    let label = document.createElement('label');
+    label.textContent = lista_idiomas[i]['iso'] + ' - ' + lista_idiomas[i]['nombre'];
+
+    let checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox_idioma');
+    checkbox.value = lista_idiomas[i]['nombre'];
+
+    let bandera = document.createElement('img');
+    bandera.src = lista_idiomas[i]['bandera'];
+
+    contenedor.appendChild(checkbox);
+    contenedor.appendChild(label);
+    contenedor.appendChild(bandera);
+
+    contenedor_idiomas.appendChild(contenedor);
+}
+
+
+
+
+
+
 
 radios_tipo_institucion[0].addEventListener("click", deshabilitar_tipo_colegio);
 radios_tipo_institucion[1].addEventListener("click", habilitar_tipo_colegio);
@@ -495,3 +886,14 @@ llenar_provincias();
 select_provincia.addEventListener('change', llenar_cantones);
 select_canton.addEventListener('change', llenar_distritos);
 btn_enviar.addEventListener('click', obtener_datos);
+
+//Validaciones por slide
+flecha_primer_slide.addEventListener('click', validacion_primer_slide);
+flecha_segundo_slide.addEventListener('click', validacion_segundo_slide);
+flecha_tercer_slide.addEventListener('click', validacion_tercer_slide);
+flecha_setimo_slide.addEventListener('click', validacion_setimo_slide);
+flecha_noveno_slide.addEventListener('click', validacion_noveno_slide);
+flecha_decimo_slide.addEventListener('click', validacion_decimo_slide);
+flecha_doceavo_slide.addEventListener('click', validacion_doceavo_slide);
+flecha_catorceavo_slide.addEventListener('click', validacion_catorceavo_slide);
+flecha_quinceavo_slide.addEventListener('click', validacion_quinceavo_slide);

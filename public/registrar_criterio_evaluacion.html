@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/criterios_evaluacion.css">
+
+
+    <title>Gemas - Criterios</title>
+</head>
+
+<body>
+    <!-- Barra de navegacion superior -->
+    <header>
+        <nav>
+            
+            <div class="cont_links">
+                    <a href="panel_administrador_inicio.html">Inicio</a>
+                    <a href="panel_administrador_instituciones.html">Instituciones</a>
+                    <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+                    <a href="#">Bitácora</a>
+                    <a href="#">Reportes</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Contenedores de las partes del formulario -->
+
+    <h2 class="titulo2">Agregar</h2>
+    <h1 class="titulo1">Criterio de Evaluación</h1>
+
+    <main>
+        <!-- Primer contenedor, Informacion General-->
+
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Criterio Evaluación</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form>
+                        <div>
+                            <label for="txt_descripcion" class="label_nombre">Descripción criterio</label>
+                            <textarea id="txt_descripcion" class="borde"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="button" id="boton_agregar">Agregar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_criterios_evaluacion.js"></script>
+    <script src="js/controlador_registrar_criterio_evaluacion.js"></script>
+</body>
+
+</html>
