@@ -54,9 +54,38 @@ function redirigir() {
         cancelButtonText: 'Cancelar',
         showCloseButton: true,
         html: '<div class="separador"></div>'+
-        '<div class="contenedor_botones"><button class="btn_reporte">Centros educativos mejor evaluados</button><button class="btn_reporte">Reporte 2</button><button class="btn_reporte">Reporte 3</button><button class="btn_reporte">Reporte 4</button><button class="btn_reporte">Reporte 5</button><button class="btn_reporte">Reporte 6</button></div>',
+        '<div class="contenedor_botones"><button class="btn_reporte"  id="reporte1">Centros educativos mejor evaluados</button><button class="btn_reporte"  id="reporte2">Reporte 2</button><button class="btn_reporte"  id="reporte3">Reporte 3</button><button class="btn_reporte"  id="reporte4">Reporte 4</button><button class="btn_reporte"  id="reporte5">Reporte 5</button><button class="btn_reporte"  id="reporte6">Reporte 6</button></div>',
+    });
+    const reporte1 = document.querySelector('#reporte1');
+    const reporte2 = document.querySelector('#reporte2');
+    const reporte3 = document.querySelector('#reporte3');
+    const reporte4 = document.querySelector('#reporte4');
+    const reporte5 = document.querySelector('#reporte5');
+    const reporte6 = document.querySelector('#reporte6');
+
+    reporte1.addEventListener('click',function(){
+        window.location.href = 'reporte_administrador_mejor_evaluados.html';
     });
 
+    reporte2.addEventListener('click',function(){
+        
+    });
+
+    reporte3.addEventListener('click',function(){
+        
+    });
+
+    reporte4.addEventListener('click',function(){
+        
+    });
+
+    reporte5.addEventListener('click',function(){
+        
+    });
+
+    reporte6.addEventListener('click',function(){
+        
+    });
 };
 
 input_filtro.addEventListener('keyup', mostrar_datos);

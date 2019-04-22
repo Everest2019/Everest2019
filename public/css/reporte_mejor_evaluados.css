@@ -1,0 +1,23 @@
+body{
+    background: #F2F2F2;
+}
+.titulo1{
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+}
+.titulo2{
+    font-size: 25px; 
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;   
+}
+
+.contenedor_reporte{
+    width: 70%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #000;
+    height: 500px;
+    margin-top: 50px;
+}
