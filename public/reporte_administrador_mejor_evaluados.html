@@ -4,8 +4,9 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/reporte_mejor_evaluados.css">
 
@@ -34,12 +35,29 @@
 
     <!-- Contenedores de las partes del formulario -->
 
-    <h2 class="titulo2">Reporte</h2>
-    <h1 class="titulo1">Mejores Centros Educativos</h1> 
+    <h2 class="titulo2">Reporte mejores Centros Educativos</h2>
+    <h1 class="titulo1"> Evaluación MEP</h1> 
 
     <main>
         <!-- Primer contenedor, Informacion General-->
-        <div class="contenedor_reporte"></div>
+        <div class="contenedor_reporte">
+
+            <table id="tbl_instituciones" class="tbl_instituciones">
+                <thead>
+                    <tr>
+                        <th class="th_posicion">Posición</th>
+                        <th class="th_nombre">Nombre comercial</th>
+                        <th class="th_correo">Correo</th>
+                        <th class="th_telefono">Teléfono</th>
+                        <th class="th_calificacion">Calificación</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
         
 
     </main>
@@ -47,8 +65,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_bitacora.js"></script>
-    <script src="js/servicio_citas.js"></script>
-    <script src="js/controlador_citas.js"></script>
+    <script src="js/servicio_reportes.js"></script>
+    <script src="js/controlador_reporte_mejor_evaluados.js"></script>
+    
 </body>
 
 </html>

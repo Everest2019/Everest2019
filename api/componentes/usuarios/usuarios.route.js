@@ -159,4 +159,11 @@ router.route('/habilitar_padre_familia')
     .post(function (req, res) {
         api_usuario.habilitar(req, res);
     });
+
+    router.route('/listar_instituciones_por_evaluacion')
+    .get(
+        function (req, res) {
+            api_usuario.listar_instituciones_por_evaluacion(req, res);
+        }
+    );
 module.exports = router; 

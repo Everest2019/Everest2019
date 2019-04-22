@@ -626,5 +626,30 @@ module.exports.actualizar = function (req, res) {
             }
         }
     );
-}
+};
+
+module.exports.listar_instituciones_por_evaluacion = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({evaluacion: -1}).then(
+        function (instituciones) {
+            if (instituciones.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        instituciones: instituciones
+                    }
+                )
+            }
+            else {
+                res.json(
+                    {
+                        success: false,
+                        instituciones: `No se encontraron centros educativos`
+                    }
+                )
+            }
+        }
+    )
+};
+
+
 
