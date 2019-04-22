@@ -138,11 +138,12 @@ let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
      $.ajax ({
       url:"http://localhost:4000/api/eliminar_noticia",
       method:"POST",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
       data:{
         id: pid_noticia
       },
 
-      contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+
       beforeSend: function beforeSend(){
 
       },
@@ -156,5 +157,5 @@ let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
 
     });
 
-  
+
   };

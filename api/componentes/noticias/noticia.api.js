@@ -70,8 +70,8 @@ module.exports.actualizar = function(req, res){
   );
 };
 
-module.exports.eliminar = function (req, res){
-  modelo_noticia.findOneAndDelete(req.body.id,
+module.exports.eliminar =  (req, res)=>{
+  modelo_noticia.findByIdAndDelete(req.body.id,
     function(error){
       if(error){
         res.json({ success:false, msg: 'No se pudo eliminar la noticia'})

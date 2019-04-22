@@ -61,7 +61,7 @@ let schema_usuarios = new mongoose.Schema(
             idiomas : [
                 {idioma: String}
             ],
-            
+
             fecha_creacion: {type: Date, required: false},
 
 
@@ -71,7 +71,7 @@ let schema_usuarios = new mongoose.Schema(
             cantidad_hijos : {type: Number, required: false},
             edad_hijos : [
                {type: Number, required: false}
-            ]
+            ],
 
 
 

@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/instituciones.css">
-    <title>Gemas - Instituciones</title>
+    <link rel="stylesheet" href="css/listar_citas_padres.css">
 
+    <title>Gemas - Instituciones</title>
 </head>
 <body>
 
@@ -24,11 +24,11 @@
             <a href="index.html">Inicio</a>
         </div>
 
-        <div id="navbar_lateral_instituciones"  class="pagina_actual">
+        <div id="navbar_lateral_instituciones"  >
             <a href="instituciones.html">Instituciones</a>
         </div>
 
-        <div id="navbar_lateral_favoritos">
+        <div id="navbar_lateral_favoritos"  >
             <a href="instituciones_favoritas.html">Favoritos</a>
         </div>
 
@@ -36,7 +36,7 @@
             <a href="instituciones_cercanas.html">Cercanos</a>
         </div>
 
-        <div id="navbar_lateral_inicio">
+        <div id="navbar_lateral_inicio" class="pagina_actual">
             <a href="citas_padres_familia.html">Citas</a>
         </div>
 
@@ -53,39 +53,43 @@
         </div>
 
     </div>
+    </div>
 
     <div class="main">
-        <h1>Lista de Instituciones</h1>
-        <h2>Encuentre el centro educativo ideal para sus hijos</h2>
-        <div class="separador"></div>
+      <h1>Citas Agendadas</h1>
+      <h2>con las instituciones </h2>
+      <div class="separador"></div>
 
-        <div class="contenedor_filtraciones">
-            <div class="contenedor_buscar">
-                <label for="txt_filtar">Buscar: </label>
-                <input type="text" id="txt_buscar_centro_educativo">
-            </div>
 
-            <div class="contenedor_criterios">
-                <label for="select_criterios">Criterios: </label>
-                <select id="select_criterios">
-                    <option  value="Todos">Todos</option>
-                    <option  value="Colegios">Colegios</option>
-                    <option  value="Escuelas">Escuelas</option>
-                    <option  value="Ambos">Ambos</option>
-                </select>
-            </div>
 
-        </div>
+      <div class="contenido">
+          <div class="contenedor_buscar">
+              <label for="txt_buscar_cita">Buscar: </label>
+              <input type="text" id="txt_buscar_cita">
+          </div>
 
-        <!-- Contenedor donde se muestran todas las instituciones -->
-        <div class="lista_instituciones" id="lista_instituciones">
 
-        </div>
+          <table id="tbl_citas" class="tabla_citas">
+              <thead>
+                  <tr>
+                      <th class="celda_nombre">Nombre de la institución</th>
+                      <th class="celda_fecha">fecha</th>
+                  <th class="celda_hora">Hora</th>
+
+
+                      <th class="celda_eliminar">Cancelar</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_centro_educativo.js"></script>
-    <script src="js/controlador_listar_centro_educativo.js"></script>
+  <script src="js/servicio_citas.js"></script>
+    <script src="js/controlador_listar_citas.js"></script>
+
 </body>
 </html>
