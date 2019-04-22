@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/listar_criterios.css">
+    <link rel="stylesheet" href="css/listar_articulo.css">
 
-
-    <title>Gemas - Evaluaciones</title>
+    <title>Gemas - Bitácora</title>
 </head>
 
 <body>
@@ -37,7 +36,7 @@
             <a href="panel_administrador_instituciones.html">Instituciones</a>
         </div>
         
-        <div id="navbar_lateral_instituciones" class="pagina_actual">
+        <div id="navbar_lateral_instituciones">
             <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
         </div>
 
@@ -45,7 +44,7 @@
             <a href="#">Lista de útiles</a>
         </div>
         
-        <div id="navbar_lateral_cercanos" >
+        <div id="navbar_lateral_cercanos">
             <a href="panel_administrador_articulos.html">Artículos</a>
         </div>
 
@@ -54,65 +53,48 @@
             </div>
             
         
-        <div id="navbar_lateral_cercanos">
+        <div id="navbar_lateral_cercanos" class="pagina_actual">
             <a href="panel_administrador_bitacora.html">Bitácora</a>
         </div>
 
-        <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+                <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
 
     </div>
 
+    <main>
         <div class="main">
-            <h1>Criterios de Evaluación</h1>
+            <h1>Bitácora</h1>
             <div class="separador"></div>
 
-            
+            <div class="formulario-1">
                 <div class="contenedor_buscar">
-                    <label for="txt_buscar">Buscar:</label>
-                    <input type="text" id="txt_buscar">
+                    <label for="txt_filtrar">Buscar:</label>
+                    <input type="text" id="txt_filtrar">
                 </div>
-            <div class="contenedor_btn_modificar">
-                <button type="button" id="btn_evaluacion" class="btn_criterio">Realizar evaluación</button>
-                <button type="button" id="btn_registrar" class="btn_criterio">Agregar criterio</button>
-                <button type="button" id="btn_modificar" class="btn_criterio">Modificar rangos puntuación</button>
-
             </div>
- 
+
             <div>
 
-                <table id="tbl_criterios" class="tabla_criterios">
+                <table id="tabla_articulo" class="tabla_articulo">
                     <thead>
                         <tr>
-                            <th class="th_posicion">#</th>
-                            <th class="th_criterios">Criterio de evaluación</th>
-                            <th class="th_accion">Acción</th>
+                            <th class="th_nombre">Usuario</th>
+                            <th class="th_descripcion">Detalle</th>
+                            <th class="th_fecha">Fecha</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                    </tbody>
-                </table>
-
-                <table id="tbl_rangos" class="tabla_criterios tabla_rangos">
-                    <thead>
-                        <tr>
-                            <th class="th_rangos">Rango puntuación</th>
-                            <th class="th_estrellas">Cantidad estrellas</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                       
                     </tbody>
                 </table>
             </div>
         </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/servicio_criterios_evaluacion.js"></script>
     <script src="js/servicio_bitacora.js"></script>
-    <script src="js/controlador_listar_criterios_evaluacion.js"></script>
+    <script src="js/controlador_listar_bitacora.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>
 
 </body>

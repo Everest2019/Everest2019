@@ -18,4 +18,11 @@ router.route('/listar_citas')
         }
 );
 
+router.route('/eliminar_cita')
+    .post(
+        function(req,res){
+            api_citas.eliminar_cita(req,res);
+        }
+);
+
 module.exports = router;

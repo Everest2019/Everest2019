@@ -1,7 +1,7 @@
 'use strict';
 
 
-let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion) => {
+let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion,pnombre_institucion) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_actividades",
@@ -18,9 +18,19 @@ let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion
 
     request.done(function (msg) {
 
+        let detalle = "Actividad registrada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
-            title: 'Actividad enviada correctamente'
+            title: 'Actividad enviada correctamente',
+            text: 'La actividad se agregó de manera correcta',
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_actividades.html';
+              } 
         });
 
     });

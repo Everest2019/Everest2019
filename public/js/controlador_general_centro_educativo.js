@@ -4,6 +4,8 @@ const banner = document.querySelector('#banner');
 const logo = document.querySelector('#logo');
 const nombre = document.querySelector('#nombre_ce');
 const contenedor_caracteristicas = document.querySelector('#contenedor_caracteristicas');
+const puntuacion_padres_familia = document.querySelector('#evaluacion_padres_familia');
+const puntuacion_mep = document.querySelector('#evaluacion_mep');
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
@@ -52,12 +54,40 @@ let id_centro_educativo = localStorage.getItem('centro_educativo');
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let id_padre_familia = localStorage.getItem('id_usuario');
+let padre_familia = buscar_padre_familia(id_padre_familia);
+let nombre_usuario = padre_familia['primer_nombre'] + ' ' + padre_familia['primer_apellido'];
 let favoritos_padre_familia = buscar_favoritos_padre_familia(id_padre_familia);
 
 
 banner.src = centro_educativo['imagen_portada'];
 logo.src = centro_educativo['logo'];
 nombre.innerHTML = centro_educativo['nombre_comercial'];// se repite en ambos controladores
+
+if(centro_educativo['evaluacion']){
+    puntuacion_mep.innerHTML = centro_educativo['evaluacion'];
+    puntuacion_mep.classList.add('evaluacion');
+
+    let icono_estrella = document.createElement('i');
+    icono_estrella.classList.add('fas','fa-star');
+
+    puntuacion_mep.appendChild(icono_estrella);
+}
+else{
+    puntuacion_mep.classList.add('sin_evaluar');
+}
+
+if(centro_educativo['evaluacion_padres']){
+    puntuacion_padres_familia.innerHTML = centro_educativo['evaluacion'];
+
+    let icono_estrella = document.createElement('i');
+    icono_estrella.classList.add('fas','fa-star');
+
+    puntuacion_padres_familia.appendChild(icono_estrella);
+}
+else{
+    puntuacion_padres_familia.classList.add('sin_evaluar');
+}
+
 informacion_general.innerHTML = centro_educativo['informacion_general'];
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
 
@@ -439,7 +469,7 @@ let agregar_favorito = () => {
     let id_centro_educativo = localStorage.getItem('centro_educativo');
     let id_usuario = localStorage.getItem('id_usuario');
     console.log(id_centro_educativo);
-    agregar_centro_educativo_favorito(id_centro_educativo, id_usuario, centro_educativo['nombre_comercial']);
+    agregar_centro_educativo_favorito(id_centro_educativo, id_usuario, centro_educativo['nombre_comercial'],nombre_usuario);
 };
 
 let eliminar_favorito = () => {
@@ -454,7 +484,7 @@ let eliminar_favorito = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            eliminar_centro_educativo_favorito(id_padre_familia, id_centro_educativo, centro_educativo['nombre_comercial']);
+            eliminar_centro_educativo_favorito(id_padre_familia, id_centro_educativo, centro_educativo['nombre_comercial'], nombre_usuario);
         }
     })
 };
@@ -465,7 +495,6 @@ boton_eliminar_favoritos.addEventListener('click', eliminar_favorito);
 let obtener_datos = () => {
 
     let centro_educativo = id_centro_educativo;
-    let padre_familia = id_padre_familia;
 
     swal.fire({
         title: '¿Seguro que desea registrar la solicitud?',
@@ -477,7 +506,7 @@ let obtener_datos = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            registrar_solicitud(centro_educativo, padre_familia);
+            registrar_solicitud(centro_educativo, id_padre_familia, nombre_usuario);
         }
     })
 }

@@ -14,6 +14,8 @@ let get_param = (param) =>{
 let _id = get_param('id');
 
 let pregunta = buscar_pregunta(_id); 
+let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 if(pregunta){
     input_pregunta.value = pregunta[0]['pregunta'];
@@ -33,7 +35,7 @@ let obtener_datos = () =>{
         confirmButtonText: 'Sí, estoy seguro'
       }).then((result) => {
         if (result.value) {
-            actualizar_pregunta(pregunta,respuesta, _id);
+            actualizar_pregunta(pregunta,respuesta, _id, centro_educativo['nombre_comercial']);
         }
       })   
 };

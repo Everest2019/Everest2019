@@ -3,9 +3,13 @@ const banner = document.querySelector('#banner');
 const logo = document.querySelector('#logo');
 const nombre = document.querySelector('#nombre_ce');
 const contenedor_caracteristicas = document.querySelector('#contenedor_caracteristicas');
+const puntuacion_padres_familia = document.querySelector('#evaluacion_padres_familia');
+const puntuacion_mep = document.querySelector('#evaluacion_mep');
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
+const txt_religion =  document.querySelector('#txt_religion');
+const txt_ensenanza =  document.querySelector('#txt_ensenanza');
 const btn_modificar = document.querySelector('#btn_modificar');
 const btn_eliminar = document.querySelector('#btn_eliminar');
 
@@ -25,6 +29,32 @@ if (!usuario_loggeado || tipo_usuario != 'centro_educativo') {
 banner.src = centro_educativo['imagen_portada'];
 logo.src = centro_educativo['logo'];
 nombre.innerHTML = centro_educativo['nombre_comercial'];
+
+if(centro_educativo['evaluacion']){
+    puntuacion_mep.innerHTML = centro_educativo['evaluacion'];
+    puntuacion_mep.classList.add('evaluacion');
+
+    let icono_estrella = document.createElement('i');
+    icono_estrella.classList.add('fas','fa-star');
+
+    puntuacion_mep.appendChild(icono_estrella);
+}
+else{
+    puntuacion_mep.classList.add('sin_evaluar');
+}
+
+if(centro_educativo['evaluacion_padres']){
+    puntuacion_padres_familia.innerHTML = centro_educativo['evaluacion'];
+
+    let icono_estrella = document.createElement('i');
+    icono_estrella.classList.add('fas','fa-star');
+
+    puntuacion_padres_familia.appendChild(icono_estrella);
+}
+else{
+    puntuacion_padres_familia.classList.add('sin_evaluar');
+}
+
 informacion_general.innerHTML = centro_educativo['informacion_general'];
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
 
@@ -321,12 +351,15 @@ let eliminar_centro_educativo = () => {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            borrar_centro_educativo(id_centro_educativo);
-            Swal.fire(
-                'Centro Educativo eliminado!',
-                'El centro educativo fue borrada con éxito',
-                'success'
-              )
+            borrar_centro_educativo(id_centro_educativo, centro_educativo['nombre_comercial']);
+            Swal.fire({
+                title: 'Centro Educativo eliminado',
+                text: 'El centro educativo fue borrada con éxito',
+                type: 'success',
+                onClose: () => {
+                    window.location.href = 'iniciar_sesion.html';
+                  } 
+            })
         }
     })
 };

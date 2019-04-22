@@ -1,16 +1,22 @@
-html {
-    font-family: 'Roboto', sans-serif;
-}
 .main{
-    background: #f2f2f2;
+    
     height: 100%;
 }
 .main h1{
     text-align: center;
     font-size: 40px;
+    font-family: 'Raleway', sans-serif;
     padding-top: 25px;
     font-weight: bold;
 }
+
+.main h2{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+}
+
 .main .separador{
     height: 4px;
     width: 60%;
@@ -20,8 +26,8 @@ html {
     border-radius: 3px;
 }
 
-/*--------------------------------------------------------*/
-.formulario-1{
+
+.contenedor_filtraciones{
     padding-top: 40px;
     width: 85%;
     margin-left: 3%;
@@ -51,13 +57,12 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
-.formulario-1 input:focus{
+.contenedor_filtraciones input:focus{
     border: 2px solid #FAA21A;
     outline: none;
 }
-/*--------------------------------------------------------*/
 
-.tabla_articulo{
+#tbl_instituciones{
     font-size: 20px;
     font-weight: bolder;
     padding: 15px;
@@ -65,21 +70,18 @@ html {
     margin: 0 auto;
     margin-top: 30px;
 }
-.tabla_articulo tr th{
+#tbl_instituciones tr th{
     padding: 15px;
     border: 2px solid #000;
-    border-top: 2px solid #000;   
-    right: 90px;
     background: #FAA21A;
 }
-.tabla_articulo tr td{
+#tbl_instituciones tr td{
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
-    right: 150px;
     background: #F2F2F2;
-} 
-.tabla_articulo tbody{
+}
+#tbl_instituciones tbody{
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000; 
@@ -87,44 +89,61 @@ html {
     right: 150px;
     background: #F2F2F2;
 }
-.th_nombre{   
-    width:15%;
-}
-.th_descripcion{   
-    width:25%;
-}
-.th_accion{   
-    width:5%;
-}
-.th_fecha{   
-    width:10%;
+
+.th_nombre{
+    width: 40%;
 }
 
-.td_accion{   
-    text-align: center;
-    font-size: 25px;
+.th_correo{
+    width: 40%;
 }
 
-.td_accion a{   
-    text-decoration: none;
-    color: #000;   
-    padding: 0 8px; 
-}
-
-.td_fecha{   
-    text-align: center;
-}
-
-
-
-.btn_articulo{
+.th_accion{
     width: 20%;
-    height: 40px;
+}
+
+.icono{
+    padding-left: 40%;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+.separador{
+    height: 3px;
     background: #FAA21A;
-    color: #fff;
-    border-radius: 3px;
-    border: 0;
-    margin-left: 3%;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 80%;   
+    margin: 0 auto;
+}
+.contenedor_botones{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,45%);
+    grid-gap: 5px;
+    margin: 0 auto;
+    justify-content: center; 
+    padding-top: 25px;
+}
+.btn_reporte{
+    height: 100px;
+    width: 100%;
+    background: #fff;
+    border: 3px solid #40433E;
+    border-radius: 15px;
     cursor: pointer;
-    margin-top: 30px;
-  }
+    outline: none;
+    font-size: 16px;
+    font-family: 'Roboto', 'sans-serif';
+    color: #40433E;
+    margin-top: 15px;
+}
+
+.btn_reporte:hover{
+    position: relative;
+    top: 5px;
+    color: #FAA21A;
+    border: 3px solid #FAA21A;
+}

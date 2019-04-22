@@ -27,7 +27,7 @@ module.exports.registrar_articulo = (req, res) => {
     });
 };
 module.exports.listar = (req, res) => {
-    modelo_articulo.find().then(
+    modelo_articulo.find().sort({nombre: 1}).then(
         function (articulo) {
             if (articulo.length > 0) {
                 res.json(
@@ -46,4 +46,57 @@ module.exports.listar = (req, res) => {
             }
         }
     )
+};
+
+module.exports.modificar_articulo = (req,res) =>{
+    modelo_articulo.findByIdAndUpdate(req.body.id_articulo,
+        {
+            $set: req.body
+        },
+        function(error){
+            if(error){
+                res.json({
+                    success: false,
+                    msg: `No se pudo modificar el articulo, revisar el error: ${error}`
+                });
+            }
+            else{
+                res.json({
+                    success: true,
+                    msg: `El articulo ha sido modificado correctamente`
+                });
+            }
+        });
+};
+
+module.exports.eliminar_articulo = function(req, res){
+    modelo_articulo.findByIdAndDelete(req.body.id_articulo,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el articulo'});
+            }else{
+                res.json({success: true ,msg: 'El articulo se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+
+module.exports.buscar_articulo = (req,res) =>{
+    modelo_articulo.findOne({_id: req.body.id_articulo}).then(
+
+        function(articulo){
+            if(articulo){
+                res.json({
+                    articulo: articulo
+                });
+            }
+            else{
+                res.json({
+                    articulo: 'No se encontró el articulo'
+                })
+            }
+            
+            
+        })
+
 };

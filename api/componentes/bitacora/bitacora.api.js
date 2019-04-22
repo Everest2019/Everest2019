@@ -25,3 +25,22 @@ module.exports.registrar_accion = (req,res) =>{
         }
     })
 };
+
+module.exports.listar_bitacora = (req,res) =>{
+    modelo_bitacora.find().sort({fecha: -1}).then(
+        function(acciones){
+            if(acciones.length > 0){
+                res.json({
+                    success: true,
+                    acciones: acciones
+                })
+            }
+            else{
+                res.json({
+                    success: false,
+                    msg: 'No hay acciones registradas'
+                })
+            }
+        }
+    )
+};

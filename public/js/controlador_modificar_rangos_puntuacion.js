@@ -142,8 +142,8 @@ let obtener_datos = () =>{
 
         swal.fire({
             type: 'warning',
-            title: 'Modificar Criterio',
-            text: '¿Seguro que desea modificar este criterio de evaluación?',
+            title: 'Modificar Rangos',
+            text: '¿Seguro que desea modificar los rangos de puntuación?',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
@@ -151,7 +151,9 @@ let obtener_datos = () =>{
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.value) {
+                
                 modificar_rangos_puntuacion(rangos_puntuacion[0]['_id'],estrella1,estrella2,estrella3,estrella4,estrella5);
+
             }
           });
     }

@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_solicitud = (pid_centro_educativo, pid_padre_familia) => {
+let registrar_solicitud = (pid_centro_educativo, pid_padre_familia, pnombre_padre_familia) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_solicitud",
         method: "POST",
@@ -12,6 +12,13 @@ let registrar_solicitud = (pid_centro_educativo, pid_padre_familia) => {
         dataType: "json"
     });
     request.done(function (msg) {
+
+        let detalle = "Solicitud de información registrada";
+        let usuario = pnombre_padre_familia;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
             title: 'Solicitud creada correctamente',
@@ -72,7 +79,7 @@ let buscar_solicitud = (id) => {
     return solicitud;
 
 };
-function borrar_solicitud(pid){
+function borrar_solicitud(pid, pnombre_institucion){
     $.ajax({
         url: 'http://localhost:4000/api/borrar_solicitud',
         method: 'POST',
@@ -84,7 +91,11 @@ function borrar_solicitud(pid){
             
         },
         success: function success(response) {
-            
+            let detalle = "Solicitud de información eliminada";
+            let usuario = pnombre_institucion;
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);
@@ -115,4 +126,29 @@ function buscar_padre_familia(pid_padre_familia){
     });
 
     return padre_familia;
+  };
+
+  function buscar_centro_educativo(pid_centro_educativo){
+    let centro_educativo = [];
+    $.ajax({
+        url: 'http://localhost:4000/api/buscar_centro_educativo',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        async: false,
+        data: {
+            id : pid_centro_educativo
+        },
+        beforeSend: function beforeSend() {
+              
+        },
+        success: function success(response) {
+          centro_educativo = response;
+            
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+  
+    return centro_educativo;
   };

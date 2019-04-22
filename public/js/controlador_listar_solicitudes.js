@@ -8,7 +8,11 @@ if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
     window.location.href = `iniciar_sesion.html`;
 }
 
+let id_centro_educativo = localStorage.getItem('id_usuario');
+
 let lista_solicitudes = listar_solicitudes();
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
+
 
 
 input_filtrar.addEventListener('keyup', mostrar_datos);
@@ -72,7 +76,7 @@ function confirmar_borrado() {
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.value) {
-      borrar_solicitud(id);
+      borrar_solicitud(id, centro_educativo['nombre_comercial']);
       lista_solicitudes = listar_solicitudes();
       mostrar_datos();
       Swal.fire(
