@@ -109,6 +109,15 @@ div input[type=text]{
     background: rgb(245, 148, 2);
 }
 
-
+.formulario-1 div #btn_actualizar{
+    width: 54%;
+    height: 40px;
+    margin-left: 42%;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    
+}
 
 

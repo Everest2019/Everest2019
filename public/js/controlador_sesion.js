@@ -1,6 +1,6 @@
 'use strict';
 
-const contenedor_mi_perfil = document.querySelector('#navbar_mi_perfil_instituciones');
+const contenedor_mi_perfil = document.querySelector('#navbar_mi_perfil');
 
 if(localStorage.getItem('tipo_usuario') != 'administrador'){
     let link_mi_perfil =  document.createElement('a');
