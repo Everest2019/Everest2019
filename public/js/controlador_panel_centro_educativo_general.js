@@ -239,13 +239,14 @@ titulo_etiquetas.classList.add('tipo_informacion');
 titulo_etiquetas.textContent = 'Etiquetas';
 
 contenedor_etiquetas.appendChild(titulo_etiquetas);
-
-for (let i = 1; i <= 4; i++) {
+let etiquetas = [];
+etiquetas = centro_educativo['etiquetas'];
+for(let i=1; i <= 4; i++){
     var div_etiqueta = document.createElement('div');
     let etiqueta = document.createElement('p');
     div_etiqueta.classList.add('etiqueta');
     etiqueta.classList.add('texto_etiqueta');
-    etiqueta.textContent = 'Deporte';
+    etiqueta.textContent = etiquetas[i]['accion'];
 
     div_etiqueta.appendChild(etiqueta);
     contenedor_etiquetas.appendChild(div_etiqueta);
@@ -386,8 +387,3 @@ if(centro_educativo['informacion_religion']){
 else{
     txt_religion.innerHTML = 'No hay información sobre la religión';
 }
-
-
-
-
-

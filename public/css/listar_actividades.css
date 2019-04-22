@@ -51,25 +51,26 @@ div input{
 #tbl_actividades tr th{
     padding: 15px;
     border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%;     
+    border-top: 2px solid #000;
+    width: 4%;
     right: 60px;
     color: #40433E;
     background: #FAA21A;
 }
+
 #tbl_actividades tr td{
     padding: 15px;
     border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%; 
+    border-top: 2px solid #000;
+    width: 4%;
     right: 100px;
     background: #fff;
-} 
+}
 #tbl_actividades tbody{
     padding: 15px;
     border: 2px solid #000;
-    border-top: 2px solid #000; 
-    width: 4%; 
+    border-top: 2px solid #000;
+    width: 4%;
     right: 100px;
     background: #fff;
 }

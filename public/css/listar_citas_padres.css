@@ -45,22 +45,20 @@ body{
 }
 
 .tabla_citas .celda_nombre{
-    width: 8%;
+    width: 40%;
 }
-.tabla_citas .celda_telefono{
-    width: 10%;
-}
-.tabla_citas .celda_correo{
-    width: 15%;
-}
+
 
 .tabla_citas .celda_fecha{
+    width: 30%;
+}
+
+.tabla_citas .celda_eliminar{
     width: 10%;
 }
 
-.tabla_citas .celda_comentario{
-    width: 15%;
-}
+
+
 
 
 .tabla_citas tr td{

@@ -154,13 +154,13 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     border: 1px solid #40433E;
                     border-bottom: 0;
                   }
-                  
+
                   .contenedor_titulo h1{
                     font-family: 'Quicksand','sans-serif';
                     font-size: 40px;
                     color: #fff;
                   }
-                  
+
                   .contenedor_cuerpo{
                     width: 80%;
                     padding-top: 5px;
@@ -171,7 +171,7 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     border: 1px solid #40433E;
                     border-top: 0;
                   }
-                  
+
                   .contenedor_cuerpo .bienvenida{
                     width: 80%;
                     margin: 0 auto;
@@ -179,16 +179,16 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     padding-bottom: 20px;
                     text-align: center;
                     font-family: 'Roboto','sans-serif';
-                    font-size: 20px;  
+                    font-size: 20px;
                     font-weight: bold;
                   }
-              
-                  
+
+
                   .contenedor_descripcion{
                     font-size 18px;
                      text-align: center;
                   }
-                  
+
                   .contenedor_descripcion p{
                     font-size: 17px;
                     font-family: 'Roboto','sans-serif';
@@ -196,7 +196,7 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     margin: 0 auto;
                     padding-bottom: 30px;
                   }
-               
+
                 </style>
                </html>`
             };
@@ -627,4 +627,3 @@ module.exports.actualizar = function (req, res) {
         }
     );
 }
-

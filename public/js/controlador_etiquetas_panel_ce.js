@@ -6,7 +6,7 @@ let etiquetas = listar_etiquetas();
 
 let mostrar_datos = ()=>{
 
-    
+
     let filtro = input_filtro.value;
 
     tabla.innerHTML = '';

@@ -5,7 +5,7 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
        method: "POST",
-       data: { 
+       data: {
             nombre_comercial : pnombre_institucion,
             cedula_juridica : pcedula_institucion,
             tipo_institucion : ptipo_institucion,
@@ -62,7 +62,7 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
        dataType: "json",
        async: false
      });
-      
+
      request.done(function( msg ) {
         let detalle = "Centro educativo registrado";
         let usuario = pnombre_institucion;
@@ -78,12 +78,12 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             window.location.href = './iniciar_sesion.html';
           }
        });
-      
+
      });
-      
+
      request.fail(function( jqXHR, textStatus ) {
-      
-     }); 
+
+     });
 };
 
 let registrar_servicio = (pcedula_juridica, pservicio) => {
@@ -161,7 +161,7 @@ let agregar_centro_educativo_favorito = (pid_centro_educativo, pid_usuario, pnom
   });
 
   request.fail(function (jqXHR, textStatus) {
-      
+
   });
 
 };
@@ -189,7 +189,7 @@ let registrar_solicitudes = (pid_centro_educativo, pid_usuario) => {
   });
 
   request.fail(function (jqXHR, textStatus) {
-      
+
   });
 
 };
@@ -223,7 +223,7 @@ let eliminar_centro_educativo_favorito = (pid_usuario, pid_centro_educativo, pno
   });
 
   request.fail(function (jqXHR, textStatus) {
-      
+
   });
 
 };
@@ -233,21 +233,21 @@ let listar_instituciones = () => {
   let request = $.ajax({
     url: "http://localhost:4000/api/listar_instituciones",
     method: "GET",
-    data: { 
-        
+    data: {
+
     },
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     dataType: "json",
     async: false
   });
-   
+
   request.done(function( res ) {
     lista_instituciones = res.instituciones;
-    
+
   });
-   
+
   request.fail(function( jqXHR, textStatus ) {
-   
+
   });
   return lista_instituciones;
 };
@@ -264,11 +264,11 @@ function buscar_centro_educativo(pid_centro_educativo){
           id : pid_centro_educativo
       },
       beforeSend: function beforeSend() {
-            
+
       },
       success: function success(response) {
         centro_educativo = response;
-          
+
       },
       error: function error(_error) {
           console.log("Request fail error:" + _error);
@@ -290,11 +290,11 @@ function buscar_favoritos_padre_familia(pid_padre_familia){
           id_padre_familia : pid_padre_familia
       },
       beforeSend: function beforeSend() {
-            
+
       },
       success: function success(response) {
         favoritos = response;
-          
+
       },
       error: function error(_error) {
           console.log("Request fail error:" + _error);
@@ -365,7 +365,7 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
       let detalle = "Centro educativo modificado";
       let usuario = pnombre_institucion;
       let fecha = new Date();
-      
+
       registrar_accion(usuario,detalle,fecha);
 
       swal.fire({
@@ -374,7 +374,7 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
           text: res.msg,
           onClose: () => {
               window.location.href = 'panel_control_centro_educativo.html';
-            }  
+            }
       });
 
   });
@@ -391,15 +391,15 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
 
 let generar_codigo = () =>{
 
-  let string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
-    let codigo = ''; 
-      
-    // Find the length of string 
-    var len = string.length; 
-    for (let i = 0; i < 6; i++ ) { 
-        codigo += string[Math.floor(Math.random() * len)]; 
-    } 
-    return codigo; 
+  let string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let codigo = '';
+
+    // Find the length of string
+    var len = string.length;
+    for (let i = 0; i < 6; i++ ) {
+        codigo += string[Math.floor(Math.random() * len)];
+    }
+    return codigo;
 };
 let buscar_centro = (id_centro_educativo) => {
   let centro_educativo = [];
@@ -434,13 +434,13 @@ function borrar_centro_educativo(pid_centro_educativo, pnombre_institucion){
           id_centro_educativo : pid_centro_educativo
       },
       beforeSend: function beforeSend() {
-          
+
       },
       success: function success(response) {
         let detalle = "Centro educativo eliminado";
         let usuario = pnombre_institucion;
         let fecha = new Date();
-        
+
         registrar_accion(usuario,detalle,fecha);
       },
       error: function error(_error) {
@@ -466,7 +466,7 @@ let eliminar_idioma = (pid_centro_educativo, pidioma) => {
   });
 
   request.fail(function (jqXHR, textStatus) {
-      
+
   });
 
 };
@@ -488,7 +488,7 @@ let eliminar_servicio = (pid_centro_educativo, pservicio) => {
   });
 
   request.fail(function (jqXHR, textStatus) {
-      
+
   });
 
 };
@@ -501,10 +501,70 @@ let eliminar_servicio = (pid_centro_educativo, pservicio) => {
       //data: {
           //id : pid_usuarios
       //},
-      
+
       //success: function success(res) {
           //console.log(res.msg);
-          
+
       //},
   //});
 //};
+let asignar_etiquetas = (paccion, pdescripcion, id_ce)=>{
+  let respuesta ='';
+  let peticion = $.ajax({
+    url:"http://localhost:4000/api/asignar_etiquetas",
+    type:"POST",
+    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    async: false,
+    data:{
+      _id : id_ce,
+      accion: paccion,
+      descripcion:pdescripcion
+    },
+    dataType: "json"
+  });
+
+  peticion.done(function(response){
+    respuesta = response;
+      window.location.href = 'lista_etiquetas_centro_educativo.html';
+  });
+
+  peticion.fail(function(response){
+
+  });
+
+  return respuesta;
+
+};
+
+let remover_etiquetas = (pid_centro_educativo, pid_etiqueta)=>{
+  let request = $.ajax({
+    url:"http://localhost:4000/api/remover_etiquetas",
+    method:"POST",
+    data:{
+      id_centro_educativo: pid_centro_educativo,
+      id_etiqueta: pid_etiqueta,
+    },
+    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    dataType: "json",
+    async: false
+  });
+
+  request.done(function(msg){
+    swal.fire({
+      type:'success',
+      title:'Eliminada',
+      text: 'Etiqueta eliminada de la lista ',
+      onClose: ()=>{
+        window.location.href = './lista_etiquetas_centro_educativo.html';
+      }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+
+}
+
+
+//---------------unfinished--------------------------------

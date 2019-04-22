@@ -28,6 +28,7 @@ router.route('/registrar_centro_educativo')
         }
     );
 
+
 router.route('/registrar_servicio')
     .post(
         function (req, res) {
@@ -77,7 +78,7 @@ router.route('/buscar_centro_educativo')
 
 
 router.route('/buscar_padre_familia')
-    .post(function(req , res){  
+    .post(function(req , res){
         api_usuario.buscar_padre_familia(req , res);
 });
 
@@ -159,4 +160,4 @@ router.route('/habilitar_padre_familia')
     .post(function (req, res) {
         api_usuario.habilitar(req, res);
     });
-module.exports = router; 
+module.exports = router;
