@@ -18,4 +18,11 @@ router.route('/listar_bitacora')
     }
 );
 
+router.route('/listar_bitacora')
+    .get(
+        function(req,res){
+            api_bitacora.listar_bitacora(req,res);
+        }
+    );
+    
 module.exports = router;

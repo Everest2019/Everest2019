@@ -1,6 +1,7 @@
 'use strict';
 
 const input_filtrar = document.querySelector('#txt_buscar_cita');
+const tabla = document.querySelector('#tbl_citas tbody');
 
 //Inicio Sesión
 let usuario_loggeado = localStorage.getItem('conectado');
@@ -10,15 +11,13 @@ if(!usuario_loggeado || tipo_usuario!='centro_educativo'){
 }
 
 let lista_citas = listar_citas();
-
-input_filtrar.addEventListener('keyup', mostrar_datos);
+let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 mostrar_datos();
 
 function mostrar_datos() {
-
-
-    const tabla = document.querySelector('#tbl_citas tbody');
+    tabla.innerHTML = '';
     let filtro = input_filtrar.value;
     let id_centro_educativo = localStorage.getItem('id_usuario');
 
@@ -59,7 +58,18 @@ function mostrar_datos() {
 
                 celda_comentario.innerHTML = lista_citas[i]['comentario'];
 
-                celda_accion.innerHTML = '<i class="fas fa-times fa-2x"></i>';
+                let boton_eliminar = document.createElement('a');
+                boton_eliminar.href = '#';
+                boton_eliminar.dataset.id = lista_citas[i]['_id'];
+                boton_eliminar.addEventListener('click',confirmar_borrado);
+
+                let icono_eliminar = document.createElement('i');
+                icono_eliminar.classList.add('fas','fa-times','fa-2x');
+
+                boton_eliminar.appendChild(icono_eliminar);
+                celda_accion.appendChild(boton_eliminar);
+
+                // celda_accion.innerHTML = '<i class="fas fa-times fa-2x"></i>';
 
                 }
         }
@@ -67,3 +77,24 @@ function mostrar_datos() {
 
     };
 };
+
+function confirmar_borrado() {
+    let id = this.dataset.id;
+    swal.fire({
+      title: 'Cancelar cita',
+      text: '¿Seguro que desea cancelar la cita?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, estoy seguro',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        eliminar_cita(id, centro_educativo['nombre_comercial']);
+
+      }
+    })
+  };
+
+  input_filtrar.addEventListener('keyup', mostrar_datos);

@@ -76,14 +76,14 @@ function confirmar_borrado(){
     confirmButtonText: 'Sí, estoy seguro'
     }).then((result) => {
       if (result.value) {
-          borrar_pregunta(id);
+          borrar_pregunta(id, centro_educativo['nombre_comercial']);
           preguntas = listar_preguntas();
           mostrar_datos();
-        Swal.fire(
-          'Pregunta eliminada!',
-          'La pregunta fue borrada con éxito',
-          'success'
-        )
+        Swal.fire({
+          title: 'Pregunta eliminada',
+          text: 'La pregunta fue borrada con éxito',
+          type: 'success'
+        })
       }
     })
 };

@@ -1,7 +1,7 @@
 'use strict';
 
 
-let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
+let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta, pnombre_institucion) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_pregunta",
@@ -18,10 +18,19 @@ let registrar_pregunta = (pid_centro_educativo,ppregunta, prespuesta) => {
 
     request.done(function (msg) {
 
+        let detalle = "Pregunta frecuente registrada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
             title: 'Pregunta registrada correctamente',
-            text: 'La pregunta será visualizada por los usuarios'
+            text: 'La pregunta será visualizada por los usuarios',
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_preguntas_frecuentes.html';
+              } 
         });
 
     });
@@ -80,7 +89,7 @@ let buscar_pregunta = (id) => {
 
 };
 
-let actualizar_pregunta = (ppregunta, prespuesta, pid) => {
+let actualizar_pregunta = (ppregunta, prespuesta, pid, pnombre_institucion) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/actualizar_pregunta",
         method: "POST",
@@ -93,6 +102,12 @@ let actualizar_pregunta = (ppregunta, prespuesta, pid) => {
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     });
     request.done(function (res) {
+
+        let detalle = "Pregunta frecuente modificada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
 
         swal.fire({
             type: 'success',
@@ -115,7 +130,7 @@ let actualizar_pregunta = (ppregunta, prespuesta, pid) => {
 
 };
 
-function borrar_pregunta(pid){
+function borrar_pregunta(pid, pnombre_institucion){
     $.ajax({
         url: 'http://localhost:4000/api/borrar_pregunta',
         method: 'POST',
@@ -127,7 +142,11 @@ function borrar_pregunta(pid){
             
         },
         success: function success(response) {
-            
+            let detalle = "Pregunta frecuente eliminada";
+            let usuario = pnombre_institucion;
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

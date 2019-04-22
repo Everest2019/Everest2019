@@ -13,6 +13,12 @@ let registrar_criterio = (pdescripcion) =>{
 
     request.done(function(res){
         
+        let detalle = "Criterio de evaluación registrado";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type : 'success',
             title : 'Criterio agregado con éxito',
@@ -43,7 +49,12 @@ let modificar_criterio = (pid_criterio,pdescripcion) =>{
     });
 
     request.done(function(res){
-        
+
+        let detalle = "Criterio de evaluación modificado";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
        
         swal.fire({
             type : 'success',
@@ -79,6 +90,12 @@ let eliminar_criterio = (pid_criterio) =>{
         async: false
     });
     request.done(function(res){
+        let detalle = "Criterio de evaluación eliminado";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
             title: 'Criterio eliminado correctamente',
@@ -166,7 +183,12 @@ let modificar_rangos_puntuacion = (pid_rangos_puntuacion,pestrella1,pestrella2,p
 
     request.done(function(res){
         
-       
+        let detalle = "Rangos de puntuación modificados";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type : 'success',
             title : 'Rangos actualizados con éxito',

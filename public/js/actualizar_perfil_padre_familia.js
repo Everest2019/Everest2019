@@ -41,7 +41,10 @@ let mostrar_datos = () => {
     contrasena.value = padre_familia[0]['contrasena'];
     verificar_contrasena.value = padre_familia[0]['verificar_contrasena'];
 
-    let opciones_provincias = document.querySelectorAll('#txt_provincia');
+
+
+
+    let opciones_provincias = document.querySelectorAll('#txt_provincia option');
     for (let i = 0; i < opciones_provincias.length; i++) {
         if (opciones_provincias[i].textContent == padre_familia[0]['provincia']) {
             opciones_provincias[i].selected = true;
@@ -49,14 +52,14 @@ let mostrar_datos = () => {
         }
     }
 
-    let opciones_cantones = document.querySelectorAll('#txt_canton');
+    let opciones_cantones = document.querySelectorAll('#txt_canton option');
     for (let i = 0; i < opciones_cantones.length; i++) {
         if (opciones_cantones[i].textContent == padre_familia[0]['canton']) {
             opciones_cantones[i].selected = true;
             llenar_distritos();
         }
     }
-    let opciones_distrito = document.querySelectorAll('#txt_distrito');
+    let opciones_distrito = document.querySelectorAll('#txt_distrito option');
     for (let i = 0; i < opciones_distrito.length; i++) {
         if (opciones_distrito[i].textContent == padre_familia[0]['distrito']) {
             opciones_distrito[i].selected = true;
@@ -110,7 +113,7 @@ let validar = () => {
         input_edad_hijos.classList.add('borde');
         input_edad_hijos.classList.remove('error_input');
     }
-    
+
     if (select_nacionalidad.value == '') {
         error = true;
         select_nacionalidad.classList.remove('borde');
@@ -194,6 +197,8 @@ let validar = () => {
 
 let obtener_datos = () => {
     if (validar() == false) {
+        let foto = input_foto_padre_familia.value;
+
         let primer_nombre = input_primer_nombre.value;
         let segundo_nombre = input_segundo_nombre.value;
         let primer_apellido = input_primer_apellido.value;
@@ -205,16 +210,18 @@ let obtener_datos = () => {
         let nacionalidad = select_nacionalidad.value;
         let identificacion = input_identificacion.value;
         let tipo_identificacion = select_tipo_identificacion.value;
-        let foto = input_foto_padre_familia.value;
+        let provincia = select_provincia.selectedOptions[0].textContent;
+        let canton = select_cantones.selectedOptions[0].textContent;
+        let distrito = select_distrito.selectedOptions[0].textContent;
         let estado = true;
         let tipo_usuario = 'padre_familia';
         let contrasena_pf = contrasena.value;
-        
-/* 
-        let provincia = buscar_provincia();
-        let canton = buscar_canton();
-        let distrito = buscar_distrito();
-*/
+
+        /* 
+                let provincia = buscar_provincia();
+                let canton = buscar_canton();
+                let distrito = buscar_distrito();
+        */
         Swal.fire({
             title: 'Está seguro que desea actualizar su perfril ?',
             type: 'warning',
@@ -224,13 +231,13 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                actualizar_padre_familia(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono, cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, /*provincia, canton, distrito,*/ estado, tipo_usuario, contrasena_pf, _id);
+                actualizar_padre_familia(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono, cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, contrasena_pf, _id);
             }
         })
 
 
 
-    }else {
+    } else {
         swal.fire({
             type: 'warning',
             title: 'El usuario no se actualizo correctamente',

@@ -27,7 +27,7 @@ module.exports.registrar_etiquetas = (req, res) => {
     });
 };
 module.exports.consultar_todo = (req, res) => {
-    modelo_etiquetas.find().then(
+    modelo_etiquetas.find().sort({accion : 1}).then(
         function (etiquetas) {
             if (etiquetas.length > 0) {
                 res.json(

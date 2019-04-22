@@ -18,7 +18,7 @@
 
 
                 <div id="navbar_lateral_regresar">
-                    <a href="#">Inicio</a>
+                    <a href="panel_control_centro_educativo">Inicio</a>
                 </div>
 
                 <div id="navbar_lateral_general">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div id="navbar_lateral_utiles" >
-                    <a href="#">Listas de Útiles</a>
+                    <a href="lista_utiles.html">Listas de Útiles</a>
                 </div>
                 <div id="navbar_lateral_reportes">
                     <a href="#">Reportes</a>
@@ -149,20 +149,23 @@
                 </div>
             </div>
             <button type="button" id="btn_agregar_pregunta_frecuente" class="btn_pregunta">Agregar pregunta frecuente</button>
-        <button type="button" id="btn_modificar_pregunta_frecuente" class="btn_pregunta">Modificar pregunta frecuente</button>
-
-            <div id="lista_preguntas">
-
-
-            </div>
-
+    <div>
+        <table id="tbl_pregunta" class="tabla_pregunta">
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Respuesta</th>
+                    <th></th>
+                </tr>
+            </thead>
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/servicio_preguntas.js"></script>
-   <script src="js/controlador_panel_ce_preguntas.js"></script>
+    <script src="js/controlador_panel_ce_preguntas.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
 
 

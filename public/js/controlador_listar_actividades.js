@@ -26,11 +26,14 @@ let actividades = listar_actividades ();
 
 let mostrar_datos = () =>{
     let filtro = input_filtro.value;
-    let id_centro_educativo = localStorage.getItem('centro_educativo');/**Panel de control centro educativo ('id_usuario') */
     tabla.innerHTML='';
 
     for (let i = 0; i < actividades.length; i++) {
-        //if (actividades[i]['id_centro_educativo'].tolowerCase().includes(id_centro_educativo)(filtro.tolowerCase())){
+        if(actividades[i]['id_centro_educativo'].includes(id_centro_educativo)){
+
+        
+        if (actividades[i]['titulo'].toLowerCase().includes(filtro.toLowerCase())){
+
         let fila = tabla.insertRow();
 
         fila.insertCell().innerHTML = actividades[i]['titulo'];
@@ -49,8 +52,9 @@ let mostrar_datos = () =>{
 
         celda_configuracion.appendChild(boton_editar);
     };
+    }
 };
-//};
+};
 
 
 mostrar_datos();

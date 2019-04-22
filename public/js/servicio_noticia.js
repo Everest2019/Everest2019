@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar = (pid_centro_educativo, ptitulo, pfecha, pdescripcion) => {
+let registrar = (pid_centro_educativo, ptitulo, pfecha, pdescripcion, pnombre_institucion) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_noticia",
         method: "POST",
@@ -15,10 +15,19 @@ let registrar = (pid_centro_educativo, ptitulo, pfecha, pdescripcion) => {
 
     });
     request.done(function (msg) {
+        let detalle = "Noticia registrada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
             title: 'Noticia agregada correctamente',
-            text: `La noticia sobre : ${ptitulo} ha sido agregada correctamente`
+            text: `La noticia sobre : ${ptitulo} ha sido agregada correctamente`,
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_noticias.html';
+              } 
         });
     });
 
