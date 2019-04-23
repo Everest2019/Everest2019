@@ -34,6 +34,7 @@ let get_param = (param) => {
 let _id = get_param('id_centro_educativo');
 
 let centro_educativo = buscar_centro_educativo(_id);
+let id_centro_educativo = centro_educativo['_id'];
 /*------------------------------------------------------------*/
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
@@ -45,9 +46,18 @@ ubicacion.innerHTML = centro_educativo['provincia'] + ", " + centro_educativo['c
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
 cedula.innerHTML = centro_educativo['cedula_juridica'];
 correo.innerHTML = centro_educativo['correo'];
-documento1.innerHTML = centro_educativo['documento1'];
-documento2.innerHTML = centro_educativo['documento2'];
-documento3.innerHTML = centro_educativo['documento3'];
+
+
+if (centro_educativo['documento1']) {
+    documento1.href = centro_educativo['documento1'];
+}
+if (centro_educativo['documento2']) {
+    documento2.href = centro_educativo['documento2'];
+}
+if (centro_educativo['documento3']) {
+    documento2.href = centro_educativo['documento3'];
+}
+
 if (centro_educativo['logo']) {
     logo.src = centro_educativo['logo'];
 } else {
@@ -113,7 +123,7 @@ let eliminar_centro_educativo = () => {
     }
 };
 
-if(aprobar_centro_aducativo['aprobado']==true){
+if (aprobar_centro_aducativo['aprobado'] == true) {
 
 }
 celda_eliminar.addEventListener('click', eliminar_centro_educativo);

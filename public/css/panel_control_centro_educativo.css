@@ -134,7 +134,7 @@ html {
     font-size: 18px;
 }
 .contenedor_etiquetas{
-    margin-bottom: 120px;
+    display: flow-root;
 }
 .contenedor_informacion .etiqueta{
     height: 30px;
@@ -951,7 +951,7 @@ html {
   /* Estilos del navbar lateral */
   .navbar_lateral {
       height: 100%; /* Que ocupe todo el ancho de la pantalla */
-      width: 18%; /*Definir el ancho del navbar */
+      width: 20%; /*Definir el ancho del navbar */
       position: fixed; /* Fija el navbar, que no se mueva con el scroll */
       z-index: 1; /* Se mantiene en la parte superior */
       left: 0; /* Se mantiene a la izquiera */
