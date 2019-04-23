@@ -1,7 +1,7 @@
 'use strict';
 
 
-let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion) => {
+let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion,pnombre_institucion) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_actividades",
@@ -18,9 +18,19 @@ let registrar_actividades = (pid_centro_educativo, ptitulo, pfecha, pdescripcion
 
     request.done(function (msg) {
 
+        let detalle = "Actividad registrada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
-            title: 'Actividad enviada correctamente'
+            title: 'Actividad enviada correctamente',
+            text: 'La actividad se agregó de manera correcta',
+            onClose: () => {
+                window.location.href = 'panel_centro_educativo_actividades.html';
+              } 
         });
 
     });
@@ -151,13 +161,19 @@ function borrar_actividades(pid){
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id : pid
+            id_actividades : pid
         },
         beforeSend: function beforeSend() {
             
         },
         success: function success(response) {
-            
+            Swal.fire({
+                title: 'actividad eliminada!',
+                text: 'La actividad fue borrada con éxito',
+                type: 'success'
+            }
+                
+            )
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

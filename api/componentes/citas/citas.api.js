@@ -53,3 +53,15 @@ module.exports.listar_citas = (req, res) => {
         }
     )
 };
+
+module.exports.eliminar_cita = (req, res) => {
+    modelo_cita.findByIdAndDelete(req.body.id_cita,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar la cita' });
+            } else {
+                res.json({ success: true, msg: 'La cita se elimino con éxito' });
+            }
+        }
+    )
+};

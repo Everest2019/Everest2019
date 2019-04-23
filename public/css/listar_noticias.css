@@ -93,7 +93,7 @@ div input{
 .noticia .descripcion_noticia{
     height: 100px;
    padding: 20px;
-  
+
    border-bottom: 3px solid #FAA21A;
 }
 
@@ -111,8 +111,40 @@ div input{
     color: #fff;
     border-radius: 3px;
     border: 0;
-    
+
 }
 button:hover{
     background: rgb(245, 148, 2);
+}
+
+#lista_noticias {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 2%;
+  padding: 15px;
+}
+#lista_noticias tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 4%;
+    right: 60px;
+    color: #40433E;
+    background: #FAA21A;
+}
+#lista_noticias tr td{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 4%;
+    right: 100px;
+    background: #fff;
+}
+#lista_noticias  tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 4%;
+    right: 100px;
+    background: #fff;
 }

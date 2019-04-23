@@ -72,8 +72,13 @@ let schema_usuarios = new mongoose.Schema(
         /* DATOS DE LOS USUARIOS PADRES DE FAMILIA*/
             tipo_identificacion: {type: String, required: false},
             nacionalidad: {type: String,  required: false},
-            cantidad_hijos : {type: String, required: false},
-            edad_hijos : {type: String, required: false},
+            cantidad_hijos : {type: Number, required: false},
+            edad_hijos : [
+               {type: Number, required: false}
+            ],
+
+
+
             foto_perfil : {type: String, required: false},
             favoritos : [
                 {id_centro_educativo: String}
@@ -93,7 +98,7 @@ let schema_usuarios = new mongoose.Schema(
             identificacion: {type: String, required: false},
 
             //Padre de familia y Centro educativo
-            
+
             distrito: {type: String, required: false},
             canton: {type: String, required: false},
             provincia: {type: String, required: false},
@@ -102,12 +107,20 @@ let schema_usuarios = new mongoose.Schema(
             //Todos los usuarios
             telefono: {type: String, required: true},
             correo: {type: String, required: true},
- 
+
             estado: {type: Boolean, required: true},
             contrasena: {type: String, required: false},
-            tipo_usuario: {type: String, required: true}
+            tipo_usuario: {type: String, required: true},
 
-        
+            etiquetas: [
+                {
+                  accion : {type: String, required: true},
+                  descripcion : {type: String, required:true}
+                }
+            ]
+
+
+
     }
 );
 

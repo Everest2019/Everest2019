@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
@@ -22,44 +23,14 @@
 
 
 
-        <div id="navbar_lateral_regresar">
-            <a id="a_regresar">Regresar</a>
-        </div>
-
-        <div id="navbar_lateral_general" class="pagina_actual">
-            <a href="perfil_centro_educativo_general.html">General</a>
-        </div>
-
-        <div id="navbar_lateral_favoritos">
-            <a href="perfil_centro_educativo_ubicacion.html">Ubicación</a>
-        </div>
-
-        <div id="navbar_lateral_servicios">
-            <a href="perfil_centro_educativo_servicios.html">Servicios</a>
-        </div>
-
-        <div id="navbar_lateral_noticias">
-            <a href="perfil_centro_educativo_noticias.html">Noticias</a>
-        </div>
-
-        <div id="navbar_lateral_actividades">
-            <a href="perfil_centro_educativo_actividades.html">Actividades</a>
-        </div>
-
-        <div id="navbar_lateral_utiles">
-            <a href="#">Listas de Útiles</a>
-        </div>
-
-        <div id="navbar_lateral_preguntas">
-            <a href="perfil_centro_educativo_preguntasFrec.html">Preguntas Frecuentes</a>
-        </div>
-
-        <div id="navbar_mi_perfil_instituciones">
-
-        </div>
-
+        
 
     </div>
+
+    <!---------------------------------------------------------------------------->
+
+
+
 
     <div class="main">
 
@@ -71,10 +42,50 @@
             </div>
 
         </div>
+<!--
 
+ -->
         <div class="contenedor_nombre_centro_educativo">
             <h1 id="nombre_ce"></h1>
         </div>
+
+        <!-- Contenedor lateral -->
+
+        <nav id="sub_menu">
+            <div>
+                <a id="a_regresar">Regresar</a>
+            </div>
+
+            <div class="pagina_actual">
+                <a href="perfil_centro_educativo_general.html">General</a>
+            </div>
+
+            <div>
+                <a href="perfil_centro_educativo_ubicacion.html">Ubicación</a>
+            </div>
+
+            <div>
+                <a href="perfil_centro_educativo_servicios.html">Servicios</a>
+            </div>
+
+            <div>
+                <a href="perfil_centro_educativo_noticias.html">Noticias</a>
+            </div>
+
+            <div>
+                <a href="perfil_centro_educativo_actividades.html">Actividades</a>
+            </div>
+
+            <div>
+                <a href="lista_utiles.html">Listas de Útiles</a>
+            </div>
+
+            <div>
+                <a href="perfil_centro_educativo_preguntasFrec.html">Preguntas Frecuentes</a>
+            </div>
+
+
+        </nav>
 
         <div class="contenedor_caracteristicas" id="contenedor_caracteristicas">
 
@@ -87,7 +98,11 @@
         <div class="contenedor_informacion_general">
 
             <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i></p>
-
+            <div>
+                <p id="titulo_evaluaciones">Evaluaciones</p>
+                <p id="puntuacion_pf">Padres familia <span id="evaluacion_padres_familia">Sin evaluar</p>
+                <p id="puntuacion_mep">MEP <span id="evaluacion_mep">Sin evaluar</span></i></p>
+            </div>
             <p id="informacion_general" class="informacion_general"></p>
         </div>
 
@@ -107,7 +122,7 @@
         </div>
 
         <div class="contenedor_informacion_adicional">
-            
+
             <div class="contenedor_ensenanza">
                 <p class="titulo_info_adicional">Enseñanza<i class="fas fa-book-open"></i></p>
                 <p id="txt_ensenanza"></p>
@@ -117,10 +132,11 @@
                 <p class="titulo_info_adicional">Religión<i class="fas fa-cross"></i></p>
                 <p id="txt_religion"></p>
             </div>
-    
+
         </div>
 
         <!-------------------------- area de contacto ------------------------------->
+
         <h1 id="nombre_ce"></h1>
         <h2 id="contacto">Contacto</h2>
 
@@ -185,9 +201,11 @@
         </div>
     </div>
 
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/servicio_solicitud.js"></script>
     <script src="js/controlador_general_centro_educativo.js"></script>

@@ -61,7 +61,7 @@ let obtener_datos = () => {
         let fecha = input_fecha.value;
         let descripcion = input_descripcion.value;
 
-        registrar_actividades( titulo, fecha, descripcion);
+        //registrar_actividades( titulo, fecha, descripcion);
 
         Swal.fire({
             title: 'Está seguro que desea actualizar la actividad ?',

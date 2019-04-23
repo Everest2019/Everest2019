@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general.css">  
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfil_centro_educativo.css">
     <link rel="stylesheet" href="css/panel_control_centro_educativo.css">
-    
+
     <title>General-Centro Educativo</title>
 </head>
-<body>
-   
 
-    <div class="navbar_lateral">
+<body>
+    <div class="navbar_lateral" id="nav_principal">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
 
         <div id="navbar_lateral_regresar">
-            <a href="panel_control_centro_educativo.html">Inicio</a>
+            <a href="panel_control_centro_educativo">Inicio</a>
         </div>
-        <div  id = "navbar_lateral_general" class= "pagina_actual">
-                <a href="panel_centro_educativo_general.html">General</a>
-            </div>
-                    
+
+        <div id="navbar_lateral_general" class="pagina_actual">
+            <a href="panel_centro_educativo_general.html">General</a>
+        </div>
+
         <div id="navbar_lateral_ubicacion">
             <a href="panel_centro_educativo_ubicación.html">Ubicación</a>
         </div>
-    
+
         <div id="navbar_lateral_servicios">
             <a href="panel_centro_educativo_servicios.html">Servicios</a>
         </div>
-    
+
         <div id="navbar_lateral_citas">
             <a href="panel_centro_educativo_citas.html">Citas</a>
         </div>
-    
+
         <div id="navbar_lateral_noticias">
             <a href="panel_centro_educativo_noticias.html">Noticias</a>
         </div>
-    
+
         <div id="navbar_lateral_actividades">
             <a href="panel_centro_educativo_actividades.html">Actividades</a>
+        </div>
+
+        <div id="navbar_lateral_etiquetas">
+            <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
         </div>
 
         <div id="navbar_lateral_preguntas">
@@ -50,44 +58,39 @@
         </div>
 
         <div id="navbar_lateral_utiles">
-            <a href="#">Listas de Útiles</a>
+            <a href="lista_utiles.html">Listas de Útiles</a>
         </div>
-
         <div id="navbar_lateral_reportes">
             <a href="#">Reportes</a>
         </div>
-    
+
         <div id="navbar_lateral_contacto">
             <a href="panel_centro_educativo_contacto.html">Contacto</a>
         </div>
 
-        
         <div id="navbar_lateral_solicitudes">
             <a href="panel_centro_educativo_solicitudes.html">Solicitudes Información</a>
         </div>
 
-        <!--<div id="contenedor_eliminar">
-            <button type="button" id="btn_eliminar">Eliminar</button>
-        </div>-->
-        
+
         <div id="contenedor_cerrar_sesion">
             <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
         </div>
-        
+
     </div>
 
     <div class="main">
 
         <div class="contenedor_banner_logo">
-                <img alt="banner" id="banner">
+            <img alt="banner" id="banner">
 
-                <div class="contenedor_logo">
-                    <img alt="" id="logo">
-                </div>
-                
+            <div class="contenedor_logo">
+                <img alt="" id="logo">
+            </div>
+
         </div>
 
-        <div class="contenedor_nombre_centro_educativo">    
+        <div class="contenedor_nombre_centro_educativo">
             <h1 id="nombre_ce"></h1>
         </div>
 
@@ -100,36 +103,77 @@
 
         </div>
     <div class="contenedor_informacion_general">
-        
+
         <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i>
             <button type="button" id="btn_modificar">Modificar</button></p>
 
+            <div>
+                <p id="titulo_evaluaciones">Evaluaciones</p>
+                <p id="puntuacion_pf">Padres familia <span id="evaluacion_padres_familia">Sin evaluar</p>
+                <p id="puntuacion_mep">MEP <span id="evaluacion_mep">Sin evaluar</span></i></p>
+            </div>
+
         <p id="informacion_general" class="informacion_general"></p>
     </div>
+            <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i><button
+                    type="button" id="btn_modificar">Modificar</button></p>
 
-    <div class="contenedor_galeria">
-        
-        <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
-
-        <div class="contenedor_imagenes" id="contenedor_imagenes">
+            <p id="informacion_general" class="informacion_general"></p>
         </div>
+
+        <div class="contenedor_galeria">
+
+            <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
+
+            <div class="contenedor_imagenes" id="contenedor_imagenes">
+            </div>
+        </div>
+
+        <div class="contenedor_referencia_historica">
+
+            <p class="titulo_referencia_historica">Referencia Histórica<i class="fas fa-book"></i></p>
+
+    <div class="contenedor_informacion_adicional">
+            
+        <div class="contenedor_ensenanza">
+            <p class="titulo_info_adicional">Enseñanza<i class="fas fa-book-open"></i></p>
+            <p id="txt_ensenanza"></p>
+        </div>
+
+        <div class="contenedor_religion">
+            <p class="titulo_info_adicional">Religión<i class="fas fa-cross"></i></p>
+            <p id="txt_religion"></p>
+        </div>
+
     </div>
 
-    <div class="contenedor_referencia_historica">
-        
-        <p class="titulo_referencia_historica">Referencia Histórica<i class="fas fa-book"></i></p>
+            <p id="referencia_historica" class="referencia_historica"></p>
+        </div>
 
-        <p id="referencia_historica" class="referencia_historica"></p>
+
+
+        <!--------------------------------------------------------------------------------------------->
+        <!-------------------------- area de contacto ------------------------------->
+        <h1 id="nombre_ce"></h1>
+        <h2 id="contacto">Contacto</h2>
+
+        <div class="separador"></div>
+
+
+        <!-- Informacion de la pagina web, correo, telefono y fax -->
+        <div class="contenedor_contacto">
+
     </div>
 
-
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_centro_educativo.js"></script>
+
     <script src="js/controlador_panel_centro_educativo_general.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
 
 </body>
+
 </html>

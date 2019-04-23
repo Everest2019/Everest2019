@@ -117,22 +117,11 @@ let mostrar_rangos = () =>{
 };
 
 let realizar_evaluacion = () =>{
-    if(cantidad_criterios >1){
 
-    }
 };
 
 let agregar_criterio = () =>{
-    if(cantidad_criterios < 10){
-        window.location.href = './registrar_criterio_evaluacion.html';
-    }
-    else{
-        swal.fire({
-            type: 'error',
-            title: 'No se pueden agregar más criterios de evaluación',
-            text: 'El número máximo de criterios ha sido alcanzado'
-        });
-    }
+    window.location.href = './registrar_criterio_evaluacion.html';
 };
 
 function borrar_criterio(){
@@ -149,6 +138,7 @@ function borrar_criterio(){
       }).then((result) => {
         if (result.value) {
             eliminar_criterio(id_criterio);
+
             lista_criterios = listar_criterios_evaluacion();
             mostrar_criterios();
         }

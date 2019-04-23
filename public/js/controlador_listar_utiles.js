@@ -1,26 +1,22 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_utiles tbody');
-const input_filtro = document.querySelector('#txt_filtar')
+const input_filtro = document.querySelector('#txt_filtar');
 
+let lista_utiles = listar_utiles();
 
-mostrar_datos();
-input_filtro.addEventListener('keyup', mostrar_datos);
+let tipoUsuario = localStorage.getItem("tipo_usuario");
 
-function mostrar_datos() {
-    
-    let tipoUsuario = localStorage.getItem("tipo_usuario");
+let mostrar_datos =()=> {
 
-    let lista_utiles = listar_utiles();
 
     if (tipoUsuario == "padre_familia") {
         document.getElementById("registrar_lista_utiles").style.display = "none";
     }
-    
-    
     let filtro = input_filtro.value;
 
     tabla.innerHTML = '';
+
     for (let i = 0; i < lista_utiles.length; i++) {
         if (lista_utiles[i]['articulo'].toLowerCase().includes(filtro.toLowerCase())) {
             let fila = tabla.insertRow();
@@ -28,82 +24,56 @@ function mostrar_datos() {
             fila.insertCell().innerHTML = lista_utiles[i]['articulo'];
             fila.insertCell().innerHTML = lista_utiles[i]['cantidad'];
             fila.insertCell().innerHTML = lista_utiles[i]['descripcion'];
-            
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_1'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_1'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_1'];
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_2'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_2'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_2'];
+            //se crea el boton de editar
+            let celda_configuracion = fila.insertCell();
 
-            /******************************************************** */
+            let boton_editar = document.createElement('a');
+            boton_editar.textContent = 'Editar';
+            boton_editar.href = `actualizaar_lista_utiles.html?id_lista_utiles=${lista_utiles[i]['_id']}`;
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_3'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_3'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_3'];
+            celda_configuracion.appendChild(boton_editar);
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_4'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_4'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_4'];
+            // se crea el boton para eliminar
+            celda_configuracion = fila.insertCell();
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_5'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_5'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_5'];
+            let boton_eliminar = document.createElement('a');
+            boton_eliminar.textContent = 'Eliminar';
+            boton_eliminar.href = "#";
+            boton_eliminar.dataset.id_lista_utiles = lista_utiles[i]['_id'];
+            boton_eliminar.addEventListener('click', confirmar_borrado);
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_6'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_6'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_6'];
+            celda_configuracion.appendChild(boton_eliminar);
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_7'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_7'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_7'];
 
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_8'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_8'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_8'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_9'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_9'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_9'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_10'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_10'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_10'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_11'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_11'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_11'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_12'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_12'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_12'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_13'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_13'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_13'];
-
-            fila = tabla.insertRow();
-            fila.insertCell().innerHTML = lista_utiles[i]['articulo_14'];
-            fila.insertCell().innerHTML = lista_utiles[i]['cantidad_14'];
-            fila.insertCell().innerHTML = lista_utiles[i]['descripcion_14'];
-
-            
 
         }
 
     };
 };
+
+
+function confirmar_borrado() {
+    let id = this.dataset.id_lista_utiles;
+    swal.fire({
+        title: 'Está seguro que desea eliminar la etiqueta?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+        if (result.value) {
+            borrar_lista_utiles(id);
+            
+    lista_utiles = listar_utiles();
+            mostrar_datos();
+
+        }
+    })
+
+};
+
+input_filtro.addEventListener('keyup', mostrar_datos);
+
+mostrar_datos();

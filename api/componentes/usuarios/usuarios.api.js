@@ -154,13 +154,13 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     border: 1px solid #40433E;
                     border-bottom: 0;
                   }
-                  
+
                   .contenedor_titulo h1{
                     font-family: 'Quicksand','sans-serif';
                     font-size: 40px;
                     color: #fff;
                   }
-                  
+
                   .contenedor_cuerpo{
                     width: 80%;
                     padding-top: 5px;
@@ -171,7 +171,7 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     border: 1px solid #40433E;
                     border-top: 0;
                   }
-                  
+
                   .contenedor_cuerpo .bienvenida{
                     width: 80%;
                     margin: 0 auto;
@@ -179,16 +179,16 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     padding-bottom: 20px;
                     text-align: center;
                     font-family: 'Roboto','sans-serif';
-                    font-size: 20px;  
+                    font-size: 20px;
                     font-weight: bold;
                   }
-              
-                  
+
+
                   .contenedor_descripcion{
                     font-size 18px;
                      text-align: center;
                   }
-                  
+
                   .contenedor_descripcion p{
                     font-size: 17px;
                     font-family: 'Roboto','sans-serif';
@@ -196,7 +196,7 @@ module.exports.registrar_centro_educativo = (req, res) => {
                     margin: 0 auto;
                     padding-bottom: 30px;
                   }
-               
+
                 </style>
                </html>`
             };
@@ -301,7 +301,7 @@ module.exports.registrar_administrador = (req, res) => {
 //LISTAR USUARIOS
 
 module.exports.listar_instituciones = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({nombre_comercial: 1}).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(
@@ -385,18 +385,6 @@ module.exports.buscar_centro_educativo = function (req, res) {
     )
 };
 
-module.exports.buscar_padre_familia = function (req, res) {
-    modelo_usuario.findOne({ _id: req.body.id }).then(
-        function (padre_familia) {
-            if (padre_familia) {
-                res.send(padre_familia);
-            } else {
-                res.send('No se encontró el Padre Familia');
-            }
-        }
-    )
-};
-
 module.exports.agregar_favorito = (req, res) => {
     modelo_usuario.update(
         { _id: req.body.id_usuario },
@@ -415,6 +403,32 @@ module.exports.agregar_favorito = (req, res) => {
             }
             else {
                 res.json({ success: true, msg: `El centro educativo fue agregado correctamente a favoritos` });
+            }
+        }
+    )
+};
+
+module.exports.eliminar_favorito = function (req, res) {
+    modelo_usuario.findByIdAndUpdate(req.body.id_usuario,
+        { $pull: { 'favoritos': { id_centro_educativo: req.body.id_centro_educativo } } },
+        { safe: true, upsert: true },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el centro educativo de favoritos' });
+            } else {
+                res.json({ success: true, msg: 'El centro educativo se eliminó de favoritos con éxito' });
+            }
+        }
+    );
+};
+
+module.exports.buscar_padre_familia = function (req, res) {
+    modelo_usuario.findOne({ _id: req.body.id }).then(
+        function (padre_familia) {
+            if (padre_familia) {
+                res.send(padre_familia);
+            } else {
+                res.send('No se encontró el Padre Familia');
             }
         }
     )
@@ -532,6 +546,19 @@ module.exports.eliminar = (req, res) => {
         }
     )
 };
+
+module.exports.eliminar_padre_familia = (req, res) => {
+    modelo_usuario.findByIdAndDelete(req.body.id_padre_familia,
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se pudo eliminar el padre de familia' });
+            } else {
+                res.json({ success: true, msg: 'El padre de familia se eliminó con éxito' });
+            }
+        }
+    )
+};
+
 module.exports.actualizar_centro_educativo = (req, res) => {
     modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: req.body },
         function (error) {
@@ -728,3 +755,30 @@ module.exports.agregar_visitas = (req, res) => {
         }
     )
 };
+
+module.exports.buscar_por_id = function (req, res){
+    modelo_usuario.find({_id : req.body.id_padre_familia}).then(
+        function(padre_familia){
+            if(padre_familia){
+                res.json({success: true, padre_familia : padre_familia});
+            }else{
+                res.json({success: false, padre_familia : padre_familia});
+            }
+        }
+
+    );
+
+};
+
+module.exports.actualizar = function (req, res) {
+
+    modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: 'No se ha podido actualizar su perfil' });
+            } else {
+                res.json({ success: true, msg: 'Su perfil se ha actualizado con exito' });
+            }
+        }
+    );
+}

@@ -5,7 +5,7 @@ let listar_etiquetas = ()=>{
         url: "http://localhost:4000/api/listar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "GET",
         data: {
-            
+
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
@@ -33,6 +33,13 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         dataType: "json"
     });
 
+    request.done(function(res){
+        let detalle = "Etiqueta registrada";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+    });
 
     request.fail(function (jqXHR, textStatus) {
     });
@@ -73,10 +80,16 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
             id : pid
         },
         dataType : "json",
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 
     request.done(function(res){
+
+        let detalle = "Etiqueta actualizada";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
 
         swal.fire({
             type : 'success',
@@ -84,7 +97,7 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
             text : res.msg,
             onClose: () => {
                 window.location.href = 'panel_administrador_etiquetas.html';
-              }    
+              }
         });
 
     });
@@ -106,13 +119,24 @@ function borrar_etiquetas(pid){
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id : pid
+            id_etiqueta : pid
         },
         beforeSend: function beforeSend() {
-            
+
         },
         success: function success(response) {
-            
+            let detalle = "Etiqueta actualizada";
+            let usuario = 'Administrador';
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
+            Swal.fire({
+                title: 'Etiqueta eliminada!',
+                text: 'La etiqueta fue borrada con éxito',
+                type: 'success'
+            }
+
+            )
         },
         error: function error(_error) {
             console.log("Request fail error:" + _error);

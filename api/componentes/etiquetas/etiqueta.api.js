@@ -27,7 +27,7 @@ module.exports.registrar_etiquetas = (req, res) => {
     });
 };
 module.exports.consultar_todo = (req, res) => {
-    modelo_etiquetas.find().then(
+    modelo_etiquetas.find().sort({accion : 1}).then(
         function (etiquetas) {
             if (etiquetas.length > 0) {
                 res.json(
@@ -78,7 +78,7 @@ module.exports.actualizar = function (req, res) {
 }
 
 module.exports.borrar = (req, res) => {
-    modelo_etiquetas.findByIdAndDelete(req.body.id_etiquetas,
+    modelo_etiquetas.findByIdAndDelete(req.body.id_etiqueta,
         function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo eliminar la etiqueta' });

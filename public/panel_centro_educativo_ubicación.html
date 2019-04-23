@@ -7,56 +7,121 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/panel_control_centro_educativo.css">
-    
+
     <title>Ubicación-Centro Educativo</title>
 </head>
 <body>
-    
+        <div class="navbar_lateral" id="nav_principal">
 
+                <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+
+                <div id="navbar_lateral_regresar" >
+                    <a href="panel_control_centro_educativo">Inicio</a>
+                </div>
+
+                <div id="navbar_lateral_general">
+                    <a href="panel_centro_educativo_general.html">General</a>
+                </div>
+
+                <div id="navbar_lateral_ubicacion" class = "pagina_actual">
+                    <a href="panel_centro_educativo_ubicación.html">Ubicación</a>
+                </div>
+
+                <div id="navbar_lateral_servicios">
+                    <a href="panel_centro_educativo_servicios.html">Servicios</a>
+                </div>
+
+                <div id="navbar_lateral_citas">
+                    <a href="panel_centro_educativo_citas.html">Citas</a>
+                </div>
+
+                <div id="navbar_lateral_noticias">
+                    <a href="panel_centro_educativo_noticias.html">Noticias</a>
+                </div>
+
+                <div id="navbar_lateral_actividades">
+                    <a href="panel_centro_educativo_actividades.html">Actividades</a>
+                </div>
+
+                <div id="navbar_lateral_etiquetas">
+                    <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
+                </div>
+
+                <div id="navbar_lateral_preguntas">
+                    <a href="panel_centro_educativo_preguntas_frecuentes.html">Preguntas Frecuentes</a>
+                </div>
+
+                <div id="navbar_lateral_utiles" >
+                    <a href="lista_utiles.html">Listas de Útiles</a>
+                </div>
+                <div id="navbar_lateral_reportes">
+                    <a href="#">Reportes</a>
+                </div>
+
+                <div id="navbar_lateral_contacto">
+                    <a href="panel_centro_educativo_contacto.html">Contacto</a>
+                </div>
+
+                <div id="navbar_lateral_solicitudes">
+                    <a href="panel_centro_educativo_solicitudes.html">Solicitudes Información</a>
+                </div>
+
+
+                <div id="contenedor_cerrar_sesion">
+                    <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
+                </div>
+
+            </div>
+<!--
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-    
+
+
         <div id="navbar_lateral_regresar">
                 <a href="panel_control_centro_educativo.html">Inicio</a>
             </div>
             <div  id = "navbar_lateral_general">
                     <a href="panel_centro_educativo_general.html">General</a>
                 </div>
-                        
+
             <div id="navbar_lateral_ubicacion" class= "pagina_actual">
                 <a href="panel_centro_educativo_ubicación.html">Ubicación</a>
-            </div>  
-        
+            </div>
+
             <div id="navbar_lateral_servicios">
                 <a href="panel_centro_educativo_servicios.html">Servicios</a>
             </div>
-        
+
             <div id="navbar_lateral_citas">
                 <a href="panel_centro_educativo_citas.html">Citas</a>
             </div>
-        
+
             <div id="navbar_lateral_noticias">
                 <a href="panel_centro_educativo_noticias.html">Noticias</a>
             </div>
-        
+
             <div id="navbar_lateral_actividades">
                 <a href="panel_centro_educativo_actividades.html">Actividades</a>
             </div>
-        
+
+            <div id="navbar_lateral_etiquetas">
+                <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
+            </div>
+
             <div id="navbar_lateral_preguntas">
                 <a href="panel_centro_educativo_preguntas_frecuentes.html">Preguntas Frecuentes</a>
             </div>
-        
+
             <div id="navbar_lateral_utiles">
                 <a href="#">Listas de Útiles</a>
             </div>
-    
+
             <div id="navbar_lateral_reportes">
                 <a href="#">Reportes</a>
             </div>
-        
+
             <div id="navbar_lateral_contacto">
                 <a href="panel_centro_educativo_contacto.html">Contacto</a>
             </div>
@@ -68,21 +133,22 @@
             <div id="contenedor_eliminar">
                 <button type="button" id="btn_eliminar">Eliminar</button>
             </div>
-            
+
             <div id="contenedor_cerrar_sesion">
                 <button type="button" id="btn_cerrar_sesion">Cerrar Sesión</button>
             </div>
         </div>
     </div>
-    
+    -->
+
     <div class="main">
 
         <h1 id="nombre_ce"></h1>
         <h2>Ubicación</h2>
-        
+
         <div class="separador"></div>
         <button type="button" id="btn_modificar_2">Modificar</button>
-        
+
 
         <div class="contenedor_ubicacion">
 
@@ -112,14 +178,14 @@
 
         </div>
 
-        
-        
+
+
         <input type="text" id="lat_centro_educativo">
         <input type="text" id="lng_centro_educativo">
-        
+
     </div>
 
-    
+
     <script src="js/servicio_mapa_perfil_centro_educativo.js"></script>
     <script  defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWQsEEmcwV_Wnjzf-kgi4wZcYFqEDREiw&callback=initMap" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

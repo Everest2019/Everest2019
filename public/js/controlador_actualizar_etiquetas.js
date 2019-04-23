@@ -33,11 +33,6 @@ let validar = () => {
     }else{
         input_descripcion.classList.remove('error_input');
     }
-
-    
-
-
-
     return error;
 };
 
@@ -58,12 +53,9 @@ let obtener_datos = () => {
     if (validar() == false) {
         let accion = input_accion.value;
         let descripcion = input_descripcion.value;
-        
-
-        registrar_etiquetas(accion, descripcion)
 
         Swal.fire({
-            title: 'Está seguro que desea actualizar la etiqueta ?',
+            title: ' Está seguro que desea actualizar la etiqueta ?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

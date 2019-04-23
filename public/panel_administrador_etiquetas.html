@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 
 
-    <title>Gemas</title>
+    <title>Gemas - Etiquetas</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link rel="stylesheet" href="css/reset.css">
@@ -22,52 +22,52 @@
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
+
 
         <div id="navbar_lateral_inicio" >
                 <a href="panel_administrador_inicio.html">Inicio</a>
             </div>
-    
+
             <div id="navbar_lateral_favoritos">
-                <a href="#">Aprobaciones</a>
+                <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
             </div>
-    
+
             <div id="navbar_lateral_cercanos">
                 <a href="#">Reportes</a>
             </div>
-    
+
             <div id="navbar_lateral_instituciones">
                 <a href="panel_administrador_instituciones.html">Instituciones</a>
             </div>
-            
+
             <div id="navbar_lateral_instituciones">
                 <a href="#">Evaluaciones</a>
             </div>
-    
+
             <div id="navbar_lateral_utiles">
                 <a href="#">Lista de útiles</a>
             </div>
-            
+
             <div id="navbar_lateral_cercanos">
                 <a href="panel_administrador_articulos.html">Artículos</a>
             </div>
-    
+
             <div id="navbar_lateral_cercanos" class="pagina_actual">
-                <a href="listar_etiquetas.html">Etiquetas</a>
+                <a href="panel_administrador_etiquetas.html">Etiquetas</a>
             </div>
-            
+
             <div id="navbar_lateral_cercanos">
-                <a href="#">Bitácora</a>
+                <a href="panel_administrador_bitacora.html">Bitácora</a>
             </div>
-        
+
             <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
 
     </div>
 
 
     <div class="main">
-        
+
         <h1>Lista de Etiquetas</h1>
         <h2>Etiquetas creadas para los centros educativos</h2>
         <div class="separador"></div>
@@ -77,10 +77,11 @@
                 <label for="txt_filtar">Buscar: </label>
                 <input type="text" id="txt_filtar">
             </div>
-            
+
         </div>
 
         <button type="button" id="btn_agregar" class="btn_etiqueta">Agregar etiquetas</button>
+        <button type="button" id="btn_modificar_etiqueta" class="btn_etiqueta">Modificar etiquetas</button>
 
 
         <div class="contenido">
@@ -90,23 +91,23 @@
                         <th>Etiquetas</th>
                         <th>Descripción</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
 
                 </tbody>
             </table>
         </div>
-               
-           
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
-
+    <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_etiquetas.js"></script>
     <script src="js/controlador_listar_etiquetas.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>

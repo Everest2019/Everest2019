@@ -18,11 +18,14 @@ let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
+let actividades = listar_actividades();
+
 let mostrar_datos = () => {
+
     tabla.innerHTML = '';
-    let actividades = listar_actividades();
     let id_usuario = localStorage.getItem('id_usuario');
     let filtro = input_Filtro.value;
+
     for (let i = 0; i < actividades.length; i++) {
         if (actividades[i]['id_centro_educativo'].includes(id_usuario)) {
             if (actividades[i]['titulo'].toLowerCase().includes(filtro.toLowerCase())) {
@@ -35,25 +38,28 @@ let mostrar_datos = () => {
                 fila.insertCell().innerHTML = fecha;
                 fila.insertCell().innerHTML = actividades[i]['descripcion'];
 
-              
-        //se crea una nueva celda para el boton actividades
-        let celda_configuracion = fila.insertCell();
-        //se crea el boton editar
-        let boton_editar = document.createElement('a');
-        boton_editar.textContent = 'Editar';
-        boton_editar.href =  `actualizar_actividades.html?id_actividades=${actividades[i]['_id']}`;
 
-        celda_configuracion.appendChild(boton_editar);
+                //se crea una nueva celda para el boton editar
+                let celda_configuracion = fila.insertCell();
+                //se crea el boton editar
+                let boton_editar = document.createElement('a');
+                boton_editar.textContent = 'Editar';
+                boton_editar.href = `actualizar_actividades.html?id_actividades=${actividades[i]['_id']}`;
 
-        //se crea una nueva celda para el boton eliminar
-        celda_configuracion = fila.insertCell();
+                celda_configuracion.appendChild(boton_editar);
+
+                //se crea una nueva celda para el boton eliminar
+                celda_configuracion = fila.insertCell();
                 //se crea el boto eliminar
-        let boton_eliminar = document.createElement('a');
-        boton_eliminar.textContent = 'Eliminar';
-        
-        celda_configuracion.appendChild(boton_eliminar);
 
-        boton_eliminar.addEventListener('click', confirmar_borrado);
+                let boton_eliminar = document.createElement('a');
+                boton_eliminar.textContent = 'Eliminar';
+                boton_eliminar.href = "#";
+                boton_eliminar.dataset.id_actividades = actividades[i]['_id'];
+                boton_eliminar.addEventListener('click', confirmar_borrado);
+
+                celda_configuracion.appendChild(boton_eliminar);
+
 
             }
         };
@@ -68,9 +74,9 @@ let actividad = () => {
 
 
 function confirmar_borrado() {
-    let id = this.dataset.id;
-    Swal.fire({
-        title: 'Está seguro que desea eliminar la la actiivdad?',
+    let id = this.dataset.id_actividades;
+    swal.fire({
+        title: 'Está seguro que desea eliminar la actividad ?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -79,12 +85,9 @@ function confirmar_borrado() {
     }).then((result) => {
         if (result.value) {
             borrar_actividades(id);
-            actividad = listar_actividades();
-            id == delete
-                mostrar_datos();
-            Swal.fire(
-                'Actividad eliminada!'
-            )
+            actividades = listar_actividades();
+            mostrar_datos();
+
         }
     })
 };

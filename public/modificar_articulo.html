@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/registrar_articulos.css">
+    <link rel="stylesheet" href="css/general.css">
+
+
+    <title>Gemas</title>
+</head>
+
+<body>
+    <!-- Barra de navegacion superior -->
+    <header>
+        <nav>
+            
+            <div class="cont_links">
+                <a href="panel_administrador_inicio.html">Inicio</a>
+                <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
+                <a href="panel_administrador_reportes.html">Reportes</a>
+                <a href="panel_administrador_instituciones.html">Instituciones</a>
+                <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+                <a href="#">Lista útiles</a>
+                <a href="panel_administrador_articulos.html">Artículos</a>
+                <a href="panel_administrador_etiquetas.html">Etiquetas</a>
+                <a href="panel_administrador_bitacora.html">Bitácora</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Contenedores de las partes del formulario -->
+
+    <h2 class="titulo2">Crear los Artículos de los</h2>
+    <h1 class="titulo1">Centros Educativos</h1>
+
+    <main>
+        <!-- Primer contenedor, Informacion General-->
+
+        <div class="contenedor">
+
+            <div class="descripcion_contenedor">
+                <p>Artículos</p>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="contenido">
+                <div class="formulario-1">
+                    <form>
+                        <div>
+                            <label for="txt_nombre_articulo">Nombre del artículo</label>
+                            <input type="text" id="txt_nombre_articulo">
+                        </div>
+
+                        <div>
+                            <label for="txt_descripcion">Añadir Descripción</label>
+                            <textarea id="txt_descripcion"></textarea>
+
+                        </div>
+                        <div>
+                            <button type="button" id="boton_modificar">Modificar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_bitacora.js"></script>
+    <script src="js/servicio_articulo.js"></script>
+    <script src="js/controlador_modificar_articulos.js"></script>
+</body>
+
+</html>

@@ -84,10 +84,10 @@ i{
     color: #FAA21A;
     margin: 5px;
 }
-div button{
+div .boton{
     width: 15%;
     height: 40px;
-    margin-right: 5%;
+    margin-right: 2%;
     background: #FAA21A;
     color: #fff;
     border-radius: 3px;
