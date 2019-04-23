@@ -10,7 +10,7 @@ if (!usuario_loggeado || tipo_usuario != 'administrador') {
   window.location.href = `iniciar_sesion.html`;
 }
 
-let lista_instituciones = listar_instituciones();
+let lista_instituciones = listar_instituciones_por_fecha();
 
 function mostrar_datos() {
 
@@ -29,17 +29,38 @@ function mostrar_datos() {
         let celda_nombre = fila.insertCell();
         let celda_fecha = fila.insertCell();
         let celda_dias = fila.insertCell();
-        let celda_configuracion = fila.insertCell();
+        let celda_accion = fila.insertCell();
 
 
         celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
         let fecha = new Date(lista_instituciones[i]['fecha_creacion']);
+        let dia_fecha = fecha.getDate();
         fecha = fecha.toLocaleDateString();
 
         let fecha_hoy = new Date();
         let dia = fecha_hoy.getDate();
         let mes = fecha_hoy.getMonth() + 1;
         let anno = fecha_hoy.getFullYear();
+
+        let diferencia = dia - dia_fecha;
+        let dias_restantes = "";
+        if(diferencia == 0){
+          dias_restantes+= "Hoy";
+        }
+        else if(diferencia==1){
+          dias_restantes = "Ayer";
+        }
+        else if(diferencia==2){
+          dias_restantes = "Hace dos días";
+        }
+        else if(diferencia==3){
+          dias_restantes = "Hace tres días";
+          celda_dias.classList.add('texto_vencido');
+        }
+        else{
+          dias_restantes = "Más de tres días";
+          celda_dias.classList.add('texto_vencido');
+        }
 
         if (dia < 10) {
           dia = '0' + dia
@@ -50,47 +71,19 @@ function mostrar_datos() {
         fecha_hoy = dia + '/' + mes + '/' + anno;
 
         celda_fecha.innerHTML = fecha;
-        celda_dias.innerHTML = fecha_hoy;
+        celda_dias.innerHTML = dias_restantes;
 
+        let boton_ver = document.createElement('a');
+        boton_ver.innerHTML = '<i class="fas fa-eye"></i>';
+        boton_ver.href = `aprobaciones.html?id_centro_educativo=${lista_instituciones[i]['_id']}`;
 
-        if (lista_instituciones[i]['aprobado'] == false) {
-          let boton_deshabilitar = document.createElement('a');
-          boton_deshabilitar.href = '#';
-          boton_deshabilitar.innerHTML = '<i class="fas fa-eye"></i>';
-          boton_deshabilitar.classList.add('botonEstado');
-          boton_deshabilitar.classList.add('btn_habilitar');
-          boton_deshabilitar.dataset.id_centro_educativo = lista_instituciones[i]['_id'];
-          boton_deshabilitar.addEventListener('click', aprobar_centro_aducativo);
-          celda_configuracion.appendChild(boton_deshabilitar);
-        } else {
-          let boton_deshabilitar = document.createElement('a');
-          boton_deshabilitar.href = '#';
-          boton_deshabilitar.innerHTML = '<i class="far fa-eye-slash"></i>';
-          boton_deshabilitar.classList.add('botonEstado');
-          boton_deshabilitar.classList.add('btnDeshabilitar');
-          boton_deshabilitar.dataset.id_centro_educativo = lista_instituciones[i]['_id'];
-          boton_deshabilitar.addEventListener('click', deshabilitar_centro_educativo);
-          celda_configuracion.appendChild(boton_deshabilitar);
-        }
+        celda_accion.appendChild(boton_ver);
+        
       }
     };
   };
 }
 
-//function calcular(){
-	//var fechaini = new Date(document.getElementById('fecha_creacion').value);
-	//var fechafin = new Date(document.getElementById('fecha_hoy').value);
-	//var diasdif= fechafin.getTime()-fechaini.getTime();
-	//var contdias = Math.round(diasdif/(1000*60*60*24));
-	//alert(contdias);
-//}
-
-function deshabilitar_centro_educativo() {
-  let id_centro_educativo = this.dataset.id_centro_educativo;
-  deshabilitar_centro_educativo(id_centro_educativo);
-  lista_instituciones = listar_instituciones();
-  mostrar_datos();
-};
 function aprobar_centro_aducativo() {
   let id_centro_educativo = this.dataset.id_centro_educativo;
   aprobar_centro_aducativo(id_centro_educativo);

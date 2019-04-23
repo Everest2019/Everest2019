@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/instituciones.css">
     <title>Gemas - Instituciones</title>
 </head>
+
 <body>
-   
+
 
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-        
-        
+
+
 
         <div id="navbar_lateral_inicio">
             <a href="index.html">Inicio</a>
         </div>
 
-        <div id="navbar_lateral_instituciones"  >
+        <div id="navbar_lateral_instituciones">
             <a href="instituciones.html">Instituciones</a>
         </div>
-                
-        <div id="navbar_lateral_favoritos"  class="pagina_actual">
+
+        <div id="navbar_lateral_favoritos" class="pagina_actual">
             <a href="instituciones_favoritas.html">Favoritos</a>
         </div>
 
@@ -39,13 +42,17 @@
             <a href="#">Lista de útiles</a>
         </div>
 
+        <div id="navbar_lateral_utiles">
+            <a href="top_ce_mep.html">TOPS Centros Educativos</a>
+        </div>
+
         <div id="navbar_mi_perfil">
             <a href="perfil_padre_familia.html"><i class="fas fa-user-cog"></i>Mi Perfil</a>
         </div>
-        
+
     </div>
     </div>
- 
+
     <div class="main">
         <h1>Lista de Instituciones</h1>
         <h2>Centros Educativos Favoritos</h2>
@@ -56,9 +63,9 @@
                 <label for="txt_filtar">Buscar: </label>
                 <input type="text" id="txt_buscar_centro_educativo">
             </div>
-            
+
         </div>
-        
+
         <!-- Contenedor donde se muestran todas las instituciones -->
         <div class="lista_instituciones" id="lista_instituciones">
 
@@ -66,8 +73,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativos_cercanos.js"></script>
     <script src="js/controlador_listar_centros_educativos_favoritos.js"></script>
 </body>
+
 </html>

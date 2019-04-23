@@ -61,6 +61,10 @@ let schema_usuarios = new mongoose.Schema(
             idiomas : [
                 {idioma: String}
             ],
+
+            visitas : [
+                {fecha: Date}
+            ],
             
             fecha_creacion: {type: Date, required: false},
 
