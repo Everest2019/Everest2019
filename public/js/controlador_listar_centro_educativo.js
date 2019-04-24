@@ -116,9 +116,6 @@ let mostrar_datos_colegios = () => {
         if (instituciones[i]['tipo_institucion'].includes('Colegio') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
         
         document.getElementById('lista_instituciones').innerHTML += 
-        
-
-            document.getElementById('lista_instituciones').innerHTML +=
 
 
 
@@ -178,9 +175,6 @@ let mostrar_datos_escuelas = () => {
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
         if (instituciones[i]['tipo_institucion'].includes('Escuela') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
-        
-        document.getElementById('lista_instituciones').innerHTML += 
-        
 
             document.getElementById('lista_instituciones').innerHTML +=
 
@@ -245,10 +239,6 @@ let mostrar_datos_ambos = () => {
         if (instituciones[i]['tipo_institucion'].includes('Ambos') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
         
         document.getElementById('lista_instituciones').innerHTML += 
-        
-
-            document.getElementById('lista_instituciones').innerHTML +=
-
 
 
                 '<div class="contenedor_institucion">' +
@@ -488,7 +478,7 @@ let mostrar_datos_matricula = () => {
 let mostrar_mensualidad_mayor_100000 = () => {
     document.getElementById('lista_instituciones').innerHTML = '';
     for (let i = 0; i < instituciones.length; i++) {
-        if (instituciones[i]['matricula']) {
+        if (instituciones[i]['mensualidad'] > 100000) {
 
             document.getElementById('lista_instituciones').innerHTML +=
 

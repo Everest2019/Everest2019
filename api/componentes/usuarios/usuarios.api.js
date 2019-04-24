@@ -196,7 +196,8 @@ module.exports.registrar_centro_educativo = (req, res) => {
             aprobado: req.body.aprobado,
             estado: req.body.estado,
             tipo_usuario: req.body.tipo_usuario,
-            codigo_verificacion: req.body.codigo_verificacion
+            codigo_verificacion: req.body.codigo_verificacion,
+            fecha_creacion: req.body.fecha_creacion
         }
     );
     modelo_centro_educativo.save(function (error) {
@@ -413,7 +414,7 @@ module.exports.listar_instituciones = (req, res) => {
 };
 
 module.exports.listar_instituciones_por_fecha = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ fecha_creacion: -1 }).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ fecha_creacion: 1 }).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(
