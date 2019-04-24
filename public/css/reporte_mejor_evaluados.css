@@ -1,23 +1,100 @@
-body{
-    background: #F2F2F2;
+html {
+    font-family: 'Roboto', sans-serif;
 }
-.titulo1{
-    font-size: 33px;
-    font-weight: bold;
-    text-align: center;
+.main{
+    background: #f2f2f2;
+    height: 100%;
 }
-.titulo2{
-    font-size: 25px; 
-    font-weight: bold;
+.main h1{
     text-align: center;
-    margin-top: 20px;   
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main h2{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
 }
 
-.contenedor_reporte{
-    width: 70%;
+
+
+/* tabla */
+
+
+.tbl_instituciones{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
     margin: 0 auto;
-    background: #fff;
-    border: 1px solid #000;
-    height: 500px;
-    margin-top: 50px;
+    margin-top: 30px;
+     
 }
+.tbl_instituciones tr th{
+    padding: 15px;
+    border: 2px solid #000;
+    background: #FAA21A;
+}
+.tbl_instituciones tr td{
+    padding: 15px;
+    border: 2px solid #000;
+    background: #F2F2F2;
+    text-align: center;
+} 
+
+.tbl_instituciones td i{
+    color: #FAA21A;
+    float: right;   
+    position: relative;
+    right: 20px;
+} 
+.tbl_instituciones tbody{
+    padding: 15px;
+    border: 2px solid #000;
+    border-top: 2px solid #000; 
+    width: 4%; 
+    right: 150px;
+    background: #F2F2F2;
+}
+.th_posicion{   
+    width:2%;
+}
+.th_nombre{   
+    width:35%;
+}
+.th_correo{   
+    width:25%;
+}
+.th_telefono{   
+    width:25%;
+}
+.th_calificacion{   
+    width:10%;
+}
+
+
+.td_accion{   
+    text-align: center;
+    font-size: 25px;
+}
+
+.td_accion a{   
+    text-decoration: none;
+    color: #000;   
+    padding: 0 8px; 
+}
+
+.td_fecha{   
+    text-align: center;
+}
+

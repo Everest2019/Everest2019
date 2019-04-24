@@ -1,5 +1,5 @@
 'use strict';
-let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pfoto,pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcontrasena)=>{
+let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pfoto,pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcodigo)=>{
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_padre_familia",
@@ -22,7 +22,7 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
             distrito : pdistrito,
             estado : pestado,
             tipo_usuario : ptipo_usuario,
-            contrasena: pcontrasena
+            codigo_verificacion: pcodigo
         },
     contentType:'application/x-www-form-urlencoded; charset=UTF-8',
     datatype: "json"
@@ -30,10 +30,19 @@ let registrar_usuario = (pprimer_nombre, psegundo_nombre, pprimer_apellido, pseg
 
     request.done(function(msg){
 
+        let detalle = "Padre familia registrado";
+        let usuario = pprimer_nombre + ' ' + pprimer_apellido;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
             title: 'Usuario registrado correctamente',
-            text: `Bienvenido ${pprimer_nombre} ${pprimer_apellido}`
+            text: `Bienvenido ${pprimer_nombre} ${pprimer_apellido}`,
+            onClose: () =>{
+                window.location.href = "Iniciar_sesion.html";
+            }
         });
     });
     request.fail(function(jqXHR, textStatus){
@@ -122,7 +131,12 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
     });
 
     request.done(function(res){
+        
+        let detalle = "Usuario modificado";
+        let usuario = pprimer_nombre + ' ' + pprimer_apellido;
+        let fecha = new Date();
 
+        registrar_accion(usuario,detalle,fecha);
 
         swal.fire({
             type : 'success',
@@ -145,3 +159,16 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
     });
 
  };
+
+ let generar_codigo = () =>{
+
+    let string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
+      let codigo = ''; 
+        
+      // Find the length of string 
+      var len = string.length; 
+      for (let i = 0; i < 6; i++ ) { 
+          codigo += string[Math.floor(Math.random() * len)]; 
+      } 
+      return codigo; 
+  };

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gemas</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/aprobaciones.css">
+</head>
+
+<body>
+
+
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+
+
+        <div id="navbar_lateral_inicio" class="pagina_actual">
+            <a href="panel_administrador_inicio.html">Inicio</a>
+        </div>
+
+        <div id="navbar_lateral_favoritos">
+            <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Reportes</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_instituciones.html">Instituciones</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="#">Lista de útiles</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="panel_administrador_articulos.html">Artículos</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="panel_administrador_etiquetas.html">Etiquetas</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos">
+            <a href="#">Bitácora</a>
+        </div>
+
+        <div id="navber_lateral_padres">
+            <a href="panel_administrador_lista_padres_familia.html">Padres de Familia</a>
+        </div>
+
+        <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+
+    </div>
+    <div class="main">
+
+        <h1>Centro Educativo</h1>
+        <div class="nombre" id="nombre">
+        </div>
+        <div class="separador"></div>
+
+        <div class="columna_izquierda">
+
+            <div class="contenedor_foto">
+                <img src="../public/img/user_icon.png" alt="" id="logo">
+            </div>
+
+            <div class="informacion_general" id="informacion_general">
+
+            </div>
+
+            <div class="tipo_institución" id="tipo_institución">
+
+            </div>
+
+            <div class="tipo_colegio" id="tipo_colegio">
+
+            </div>
+
+            <div class="referencia_historica" id="referencia_historica">
+
+            </div>
+
+            <div class="correo" id="correo">
+
+            </div>
+
+            <div class="cedula" id="cedula">
+
+            </div>
+
+
+            <div class="modalidad" id="modalidad">
+
+            </div>
+
+            <div class="ubicacion" id="ubicacion">
+
+            </div>
+
+            <div class="documento1" >
+                <a href="#" id="documento1"></a>
+            </div>
+
+            <div class="documento2">
+                <a href="#" id="documento2"></a>
+            </div>
+
+            <div class="documento3">
+                <a href="#" id="documento3"></a>
+            </div>
+        </div>
+        <div class="columna_derecha">
+
+            <div class="contenedor_imagen">
+                <img src="../public/img/user_icon.png" alt="" id="foto">
+            </div>
+
+            <div class="nombre_encargado" id="nombre_encargado">
+
+            </div>
+
+            <div class="correo_encargado" id="correo_encargado">
+
+            </div>
+
+            <div class="telefono_encargado" id="telefono_encargado">
+
+            </div>
+
+            <div class="identificacion_encargado" id="identificacion_encargado">
+
+            </div>
+
+            <div class="celda_configuracion" id="celda_configuracion"></div>
+            <div class="celda_configuracion">
+                <button type="button" id="celda_eliminar">Eliminar</button>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_bitacora.js"></script>
+    <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_aprobaciones.js"></script>
+</body>
+
+</html>

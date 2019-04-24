@@ -754,19 +754,20 @@
 #sub_menu{
     float: center;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 
 #sub_menu div a{
     display: block;
-    float: left;;
+    float: left;
     color: #40433E;
     text-decoration: none;
     font-size: 15px;
     padding: 18px;
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 10px;
-    background: #FAA21A;
-
+    margin-left: 5px;
+    color: #FAA21A;
 }
+

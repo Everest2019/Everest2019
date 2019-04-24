@@ -31,8 +31,8 @@ module.exports.registrar_padre_familia = (req, res) => {
             foto_perfil: req.body.foto_perfil,
             correo: req.body.correo,
             estado: req.body.estado,
-            contrasena: req.body.contrasena,
-            tipo_usuario: req.body.tipo_usuario
+            tipo_usuario: req.body.tipo_usuario,
+            codigo_verificacion: req.body.codigo_verificacion
         }
     );
     modelo_padre_familia.save(function (error) {
@@ -44,6 +44,96 @@ module.exports.registrar_padre_familia = (req, res) => {
                 }
             );
         } else {
+            let mailOptions = {
+                from: 'everestproyecto99@gmail.com',
+                to: modelo_padre_familia.correo,
+                subject: 'Bienvenido a Gemas',
+                html: `<html>
+                <head>
+                   <meta charset="UTF-8">
+                  <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+                </head>
+                <body>
+                  <div class="contenedor_titulo">
+                    <h1>Bienvenido a Gemas</h1>
+                  </div>
+                  <div class="contenedor_cuerpo">
+                    <p class="bienvenida">Encuentra el centro educativo ideal para tus hijos</p>
+                    <div class="contenedor_descripcion">
+                    <p>${modelo_padre_familia.primer_nombre} ${modelo_padre_familia.primer_apellido}, gracias por crear una cuenta con nosotros, en este correo se encuentra un código de verificación que le permitirá crear una contraseña para ingresar a la plataforma. Por favor revise su correo para confirmar que el correo ingresado fue el correcto.</p>
+                    <p>Código: ${modelo_padre_familia.codigo_verificacion}</p>
+                    </div>
+                  </div>
+                </body>
+                <style>
+                  html{
+                    background: #f2f2f2;
+                  }
+                  .contenedor_titulo{
+                    width: 80%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 0 auto;
+                    text-align: center;
+                    margin-top: 30px;
+                    background: #FAA21A;
+                    border: 1px solid #40433E;
+                    border-bottom: 0;
+                  }
+                  
+                  .contenedor_titulo h1{
+                    font-family: 'Quicksand','sans-serif';
+                    font-size: 40px;
+                    color: #fff;
+                  }
+                  
+                  .contenedor_cuerpo{
+                    width: 80%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    margin: 0 auto;
+                    text-align: center;
+                    background: #fff;
+                    border: 1px solid #40433E;
+                    border-top: 0;
+                  }
+                  
+                  .contenedor_cuerpo .bienvenida{
+                    width: 80%;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                    padding-bottom: 20px;
+                    text-align: center;
+                    font-family: 'Roboto','sans-serif';
+                    font-size: 20px;  
+                    font-weight: bold;
+                  }
+              
+                  
+                  .contenedor_descripcion{
+                    font-size 18px;
+                     text-align: center;
+                  }
+                  
+                  .contenedor_descripcion p{
+                    font-size: 17px;
+                    font-family: 'Roboto','sans-serif';
+                    width: 85%;
+                    margin: 0 auto;
+                    padding-bottom: 30px;
+                  }
+               
+                </style>
+               </html>`
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    console.log('Correo enviado ' + info.response);
+                }
+            })
             res.json(
                 {
                     success: true,
@@ -106,7 +196,6 @@ module.exports.registrar_centro_educativo = (req, res) => {
             aprobado: req.body.aprobado,
             estado: req.body.estado,
             tipo_usuario: req.body.tipo_usuario,
-            contrasena: req.body.contrasena,
             codigo_verificacion: req.body.codigo_verificacion
         }
     );
@@ -323,6 +412,28 @@ module.exports.listar_instituciones = (req, res) => {
     )
 };
 
+module.exports.listar_instituciones_por_fecha = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ fecha_creacion: -1 }).then(
+        function (instituciones) {
+            if (instituciones.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        instituciones: instituciones
+                    }
+                )
+            }
+            else {
+                res.json(
+                    {
+                        success: false,
+                        instituciones: `No se encontraron centros educativos`
+                    }
+                )
+            }
+        }
+    )
+};
 module.exports.listar_padre_familia = (req, res) => {
     modelo_usuario.find({ tipo_usuario: 'padre_familia' }).then(
         function (padre_familia) {
@@ -430,7 +541,7 @@ module.exports.validar = function (req, res) {
     modelo_usuario.findOne({ correo: req.body.correo }).then(
         function (usuario) {
             if (usuario) {
-                if (usuario.contrasena == req.body.contrasena) {
+                if (usuario.contrasena == req.body.contrasena && usuario.estado == true) {
                     res.json(
                         {
                             success: true,
@@ -559,7 +670,6 @@ module.exports.actualizar_centro_educativo = (req, res) => {
         }
     );
 }
-
 module.exports.eliminar_idioma = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo,
         { $pull: { 'idiomas': { idioma: req.body.idioma } } },
@@ -588,18 +698,152 @@ module.exports.eliminar_servicio = function (req, res) {
     );
 };
 
-module.exports.habilitar_centro_educativo = function (req, res) {
+module.exports.aprobar_centro_educativo = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id_centro_educativo, { $set: { aprobado: true } },
         function (error) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo aprobar el centro educativo' });
             } else {
+                let mailOptions = {
+                    from: 'everestproyecto99@gmail.com',
+                    to: req.body.correo_encargado,
+                    subject: 'Bienvenido a Gemas',
+                    html: `<html>
+                    <head>
+                       <meta charset="UTF-8">
+                      <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+                    </head>
+                    <body>
+                      <div class="contenedor_titulo">
+                        <h1>Bienvenido a Gemas</h1>
+                      </div>
+                      <div class="contenedor_cuerpo">
+                        <p class="bienvenida">Encuentra el centro educativo ideal para tus hijos</p>
+                        <p> El centro educativo a sido aprobado con exitó</p>
+                        <div class="contenedor_descripcion">
+                        <p>Codigo: ${req.body.codigo_verificacion}.</p>
+                        </div>
+                      </div>
+                    </body>
+                    <style>
+                      html{
+                        background: #f2f2f2;
+                      }
+                      .contenedor_titulo{
+                        width: 80%;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        margin: 0 auto;
+                        text-align: center;
+                        margin-top: 30px;
+                        background: #FAA21A;
+                        border: 1px solid #40433E;
+                        border-bottom: 0;
+                      }
+                      
+                      .contenedor_titulo h1{
+                        font-family: 'Quicksand','sans-serif';
+                        font-size: 40px;
+                        color: #fff;
+                      }
+                      
+                      .contenedor_cuerpo{
+                        width: 80%;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        margin: 0 auto;
+                        text-align: center;
+                        background: #fff;
+                        border: 1px solid #40433E;
+                        border-top: 0;
+                      }
+                      
+                      .contenedor_cuerpo .bienvenida{
+                        width: 80%;
+                        margin: 0 auto;
+                        padding-top: 10px;
+                        padding-bottom: 20px;
+                        text-align: center;
+                        font-family: 'Roboto','sans-serif';
+                        font-size: 20px;  
+                        font-weight: bold;
+                      }
+                  
+                      
+                      .contenedor_descripcion{
+                        font-size 18px;
+                         text-align: center;
+                      }
+                      
+                      .contenedor_descripcion p{
+                        font-size: 17px;
+                        font-family: 'Roboto','sans-serif';
+                        width: 85%;
+                        margin: 0 auto;
+                        padding-bottom: 30px;
+                      }
+                   
+                    </style>
+                   </html>`
+                };
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    }
+                    else {
+                        console.log('Correo enviado ' + info.response);
+                    }
+                })
                 res.json({ success: true, msg: 'El centro educativo se aprobó corectamente' });
             }
         }
     )
 };
 
+module.exports.listar_instituciones_top_mep = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo'}).sort({ evaluacion: -1 }).then(
+        function (instituciones) {
+            if (instituciones.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        instituciones: instituciones
+                    }
+                )
+            } 
+            else {
+                res.json(
+                    {
+                        success: false,
+                        instituciones: `No se encontraron centros educativos`
+                    }
+                )
+            }
+        }
+    )
+};
+module.exports.agregar_visitas = (req, res) => {
+    modelo_usuario.update(
+        { _id: req.body.id_centro_educativo },
+        {
+            $push:
+            {
+                'visitas':
+                {
+                    fecha: req.body.fecha
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar la visita, revise el siguiente error ${error}` });
+            }
+            else {
+                res.json({ success: true, msg: `Visita agregada correctamente` });
+            }
+        }
+    )
+};
 
 module.exports.buscar_por_id = function (req, res){
     modelo_usuario.find({_id : req.body.id_padre_familia}).then(
@@ -626,4 +870,61 @@ module.exports.actualizar = function (req, res) {
             }
         }
     );
-}
+};
+
+module.exports.listar_instituciones_por_evaluacion = (req, res) => {
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({evaluacion: -1}).then(
+        function (instituciones) {
+            if (instituciones.length > 0) {
+                res.json(
+                    {
+                        success: true,
+                        instituciones: instituciones
+                    }
+                )
+            }
+            else {
+                res.json(
+                    {
+                        success: false,
+                        instituciones: `No se encontraron centros educativos`
+                    }
+                )
+            }
+        }
+    )
+};
+
+module.exports.agregar_contrasena = function (req, res) {
+    modelo_usuario.findOne({ correo: req.body.correo }).then(
+        function (usuario) {
+            if (usuario) {
+                if (usuario.codigo_verificacion == req.body.codigo_verificacion) {
+                        modelo_usuario.update({correo: req.body.correo}, { $set: { contrasena: req.body.contrasena, estado: true } },
+                            function (error) {
+                                if (error) {
+                                    res.json({ success: false, msg: `Revise el error ${error}` });
+                                } else {
+                                    res.json({ success: true, msg: 'Su perfil se ha actualizado con éxito', nombre: usuario.primer_nombre, apellido: usuario.primer_apellido });
+                                }
+                            }
+                        );
+                } else {
+                    res.json({
+                        success: false
+                    })
+                }
+            } else {
+                res.json(
+                    {
+                        success: false,
+                        msg: 'El usuario no existe'
+                    }
+                );
+            }
+        }
+    )
+};
+
+
+

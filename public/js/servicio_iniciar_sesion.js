@@ -36,3 +36,45 @@ function validar_credenciales(pcorreo, pcontrasena){
 
      return respuesta; 
 };
+
+
+function agregar_contrasena(pcorreo, pcodigo_verificacion, pcontrasena){
+  let respuesta = '';
+  let peticion = $.ajax({
+      url: 'http://localhost:4000/api/agregar_contrasena',
+      type: 'post',
+      contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+      dataType : 'json',
+      async:false,
+      data:{
+         correo : pcorreo,
+         codigo_verificacion: pcodigo_verificacion,
+         contrasena : pcontrasena
+      }
+    });
+    peticion.done(function(response){
+      respuesta = response;
+
+        let detalle = "Padre familia verificado";
+        let usuario = respuesta.nombre + ' ' + respuesta.apellido;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
+
+      swal.fire({
+        type: 'success',
+        title: 'Código de verificación aceptado',
+        text: 'Su contraseña ha sido agregada correctamente',
+        onClose: () =>{
+          window.location.href = 'Iniciar_sesion.html';
+        }
+      })
+    });
+  
+    peticion.fail(function(response){
+      respuesta = response;
+    });
+
+   return respuesta; 
+};

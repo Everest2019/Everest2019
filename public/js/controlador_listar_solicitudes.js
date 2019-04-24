@@ -79,10 +79,12 @@ function confirmar_borrado() {
       borrar_solicitud(id, centro_educativo['nombre_comercial']);
       lista_solicitudes = listar_solicitudes();
       mostrar_datos();
-      Swal.fire(
-        'Solicitud eliminada!',
-        'La solicitud fue borrada con éxito',
-        'success'
+      Swal.fire({
+        title:'Solicitud eliminada',
+        text:'La solicitud fue borrada con éxito',
+        type:'success'
+      }
+        
       )
     }
   })
