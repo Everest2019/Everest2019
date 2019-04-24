@@ -17,35 +17,60 @@
     
     <main>
 
-        <div class="navbar_lateral">
+            <div class="navbar_lateral">
 
-            <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
-
-
-
-            <div id="navbar_lateral_inicio" class="pagina_actual">
-                <a href="listar_etiquetas.html">Lista de Etiquetas</a>
-
-            </div>
-
-            <div id="navbar_lateral_inicio" class="pagina_inicio">
-                <a href="index.html">Inicio</a>
-            </div>
-
-            <div id="navbar_registrar_etiquetas" class="registrar_etiquetas">
-                <a href="registrar_etiquetas.html">Registrar Etiquetas</a>
-            </div>
-
-            <!--
-        <div id="navbar_registrar_utiles" class="registrar_utiles">
-            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
-        </div> 
-    <div id="navbar_registrar_utiles" class="registrar_utiles">
-            <a href="registrar_lista_utiles.html">Utiles Escolares </a>
-        </div>-->
-
-
-        </div>
+                    <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+            
+            
+            
+                    <div id="navbar_lateral_inicio">
+                        <a href="panel_administrador_inicio.html">Inicio</a>
+                    </div>
+            
+                    <div id="navbar_lateral_favoritos">
+                        <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
+                    </div>
+            
+                    <div id="navbar_lateral_cercanos">
+                        <a href="#">Reportes</a>
+                    </div>
+            
+                    <div id="navbar_lateral_instituciones">
+                        <a href="panel_administrador_instituciones.html">Instituciones</a>
+                    </div>
+            
+                    <div id="navbar_lateral_instituciones">
+                        <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+                    </div>
+            
+                    <div id="navbar_lateral_utiles"">
+                        <a href="lista_utiles.html">Lista de útiles</a>
+                    </div>
+            
+                    <div id="navbar_lateral_cercanos">
+                        <a href="panel_administrador_articulos.html">Artículos</a>
+                    </div>
+            
+                    <div id="navbar_lateral_cercanos">
+                        <a href="panel_administrador_etiquetas.html">Etiquetas</a>
+                    </div>
+                    <div id="navbar_administrador_preferencia"  class="pagina_actual" >
+                        <a href="listar_preferencia.html">Preferencia</a>
+                    </div>
+            
+                    <div id="navbar_lateral_cercanos">
+                        <a href="#">Bitácora</a>
+                    </div>
+            
+                    <div id="navber_lateral_padres">
+                        <a href="panel_administrador_lista_padres_familia.html">Padres de Familia</a>
+                    </div>
+            
+                    <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+            
+            
+                </div>
+            
 
 
         <div class="main">
@@ -68,6 +93,8 @@
                     </div>
                 </form>
             </div>
+
+            <button type="button" id="btn_agregar" class="btn_preferencia">Agregar preferencia </button>
 
             <div>
                 <table id="tbl_preferencia">

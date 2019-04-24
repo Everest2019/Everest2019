@@ -564,21 +564,20 @@ html {
 
 /* Estilos de correo, web y telefono*/
 .contenedor_contacto{
-    display: grid;
-    width: 90%; 
-    margin: 0 auto;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr;
-    grid-template-rows: 100px;
-    grid-gap: 3px;     
-    margin-top: 75px;
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr;
+  grid-template-rows: 100px;
+  grid-gap: 3px;
+  margin-top: 15px;
 }
 
 .contenedor_item_contacto{
-    border-radius: 50%;
+  border-radius: 50%;
     background: #f2f2f2;
-    
-    height: 95px;
-    width: 90%;
+    height: 90px;
+    width: 90px;
     text-align: center;
 }
 
@@ -602,8 +601,8 @@ html {
 }
 
 .contenido_web{
-    grid-column: 2 / 3;
-    margin-top: 40px;
+  grid-column: 2 / 3;
+  margin-top: 40px;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -645,6 +644,7 @@ html {
 .fondo_gris_contenedor{
   background: #f2f2f2;
   height: 150px;
+  width: 100%;
 }
 
 .contenedor_redes_sociales .titulo_redes_sociales{
@@ -951,7 +951,7 @@ html {
   /* Estilos del navbar lateral */
   .navbar_lateral {
       height: 100%; /* Que ocupe todo el ancho de la pantalla */
-      width: 18%; /*Definir el ancho del navbar */
+      width: 20%; /*Definir el ancho del navbar */
       position: fixed; /* Fija el navbar, que no se mueva con el scroll */
       z-index: 1; /* Se mantiene en la parte superior */
       left: 0; /* Se mantiene a la izquiera */

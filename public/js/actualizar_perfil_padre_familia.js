@@ -1,7 +1,5 @@
 'use strict';
 
-const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
-const foto_padre_familia = document.querySelector('#img_padre_familia');
 const input_primer_nombre = document.querySelector('#txt_primer_nombre');
 const input_segundo_nombre = document.querySelector('#txt_segundo_nombre');
 const input_primer_apellido = document.querySelector('#txt_primer_apellido');
@@ -13,6 +11,8 @@ const input_edad_hijos = document.querySelector('#txt_edad_hijos');
 const select_nacionalidad = document.querySelector('#select_nacionalidad');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
+const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
+const foto_padre_familia = document.querySelector('#img_padre_familia');
 const contrasena = document.querySelector('#txt_contrasena');
 const verificar_contrasena = document.querySelector('#txt_verificar_contrasena');
 const select_provincia = document.querySelector('#txt_provincia');
@@ -26,10 +26,6 @@ let _id = localStorage.getItem('id_usuario');
 let padre_familia = buscar_padre_familia(_id);
 
 let mostrar_datos = () => {
-    
-    input_foto_padre_familia.value = padre_familia[0]['foto_perfil'];
-    foto_padre_familia.src = padre_familia[0]['foto_perfil'];
-
     input_primer_nombre.value = padre_familia[0]['primer_nombre'];
     input_segundo_nombre.value = padre_familia[0]['segundo_nombre'];
     input_primer_apellido.value = padre_familia[0]['primer_apellido'];
@@ -38,12 +34,14 @@ let mostrar_datos = () => {
     input_correo.value = padre_familia[0]['correo'];
     input_telefono.value = padre_familia[0]['telefono'];
     input_cantidad_hijos.value = padre_familia[0]['cantidad_hijos'];
-    input_edad_hijos.value = padre_familia[0]['edad_hojos'];
+    input_edad_hijos.value = padre_familia[0]['edad_hijos'];
     select_nacionalidad.value = padre_familia[0]['nacionalidad'];
     input_identificacion.value = padre_familia[0]['identificacion'];
     select_tipo_identificacion.value = padre_familia[0]['tipo_identificacion'];
+    input_foto_padre_familia.value = padre_familia[0]['foto_perfil'];
+    foto_padre_familia.src = padre_familia[0]['foto_perfil'];
     contrasena.value = padre_familia[0]['contrasena'];
-    verificar_contrasena.value = padre_familia[0]['verificar_contrasena'];
+    verificar_contrasena.value = padre_familia[0]['contrasena'];
 
 
 
@@ -200,6 +198,7 @@ let validar = () => {
 let obtener_datos = () => {
     if (validar() == false) {
         let foto = input_foto_padre_familia.value;
+
         let primer_nombre = input_primer_nombre.value;
         let segundo_nombre = input_segundo_nombre.value;
         let primer_apellido = input_primer_apellido.value;
@@ -211,20 +210,21 @@ let obtener_datos = () => {
         let nacionalidad = select_nacionalidad.value;
         let identificacion = input_identificacion.value;
         let tipo_identificacion = select_tipo_identificacion.value;
+
+        let provincia = buscar_provincia();
+                let canton = buscar_canton();
+                let distrito = buscar_distrito();
+      /* 
         let provincia = select_provincia.selectedOptions[0].textContent;
         let canton = select_canton.selectedOptions[0].textContent;
         let distrito = select_distrito.selectedOptions[0].textContent;
-        let estado = true;
-        let tipo_usuario = 'padre_familia';
+*/
         let contrasena_pf = contrasena.value;
-
-        /* 
-                let provincia = buscar_provincia();
-                let canton = buscar_canton();
-                let distrito = buscar_distrito();
-        */
+        
+      
+               
         Swal.fire({
-            title: 'Está seguro que desea actualizar su perfril ?',
+            title: '¿Está seguro que desea actualizar su perfil?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -232,7 +232,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Sí, estoy seguro'
         }).then((result) => {
             if (result.value) {
-                actualizar_padre_familia(foto,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, provincia, canton, distrito, estado, tipo_usuario, contrasena,id);
+                actualizar_padre_familia(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, identificacion, distrito, canton, provincia,  cantidad_hijos, edad_hijos, nacionalidad, telefono,foto, correo, tipo_identificacion, contrasena_pf,_id);
             }
         })
 

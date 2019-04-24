@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/instituciones.css">
     <title>Gemas - Instituciones</title>
 </head>
+
 <body>
 
 
@@ -19,7 +22,7 @@
 
 
 
-        <div id="navbar_lateral_inicio" >
+        <div id="navbar_lateral_inicio">
             <a href="panel_administrador_inicio.html">Inicio</a>
         </div>
 
@@ -31,7 +34,7 @@
             <a href="#">Reportes</a>
         </div>
 
-        <div id="navbar_lateral_instituciones"  class="pagina_actual">
+        <div id="navbar_lateral_instituciones" class="pagina_actual">
             <a href="panel_administrador_instituciones.html">Instituciones</a>
         </div>
 
@@ -40,7 +43,7 @@
         </div>
 
         <div id="navbar_lateral_utiles">
-            <a href="#">Lista de útiles</a>
+            <a href="lista_utiles.html">Lista de útiles</a>
         </div>
 
         <div id="navbar_lateral_cercanos">
@@ -48,8 +51,12 @@
         </div>
 
         <div id="navbar_lateral_cercanos">
-                <a href="panel_administrador_etiquetas.html">Etiquetas</a>
-            </div>
+            <a href="panel_administrador_etiquetas.html">Etiquetas</a>
+        </div>
+
+        <div id="navbar_lateral_preferencias">
+            <a href="listar_preferencia.html">Preferencias</a>
+        </div>
 
         <div id="navbar_lateral_cercanos">
             <a href="panel_administrador_bitacora.html">Bitácora</a>
@@ -74,28 +81,30 @@
             <div class="contenedor_criterios">
                 <label for="select_criterios">Criterios: </label>
                 <select id="select_criterios">
-                    <option  value="Todos">Todos</option>
-                    <option  value="Escuelas">Escuelas</option>
-                    <option  value="Colegios">Colegios</option>
-                    
+                    <option value="Todos">Todos</option>
+                    <option value="Escuelas">Escuelas</option>
+                    <option value="Colegios">Colegios</option>
+
                     <option value="Deshabilitado">Centros Educativos desabilitados</option>
+                    <option value="Matricula">Matricula</option>
+                    <option id="cantidad" value="Mensualidad_menor">Mensualidad menor ha 100,000 colones
+
+                    </option>
+                    <option id="cantidad" value="Mensualidad_mayor">Mensualidad mayor ha 100,000 colones
+
+                    </option>
                 </select>
-                
-                <option value="Matricula">Matricula</option>
-                <option id="cantidad" value="Mensualidad_menor">Mensualidad menor ha 100,000 colones
 
-                </option>
-                <option id="cantidad" value="Mensualidad_mayor">Mensualidad mayor ha 100,000 colones
 
-                </option>
             </div>
 
 
 
         </div>
         <div class="">
-          <button type="button" id="btn_registrar_ce" class="btn_crear_ce"> <a href="registrar_centro_educativo.html">Agregar instituciones</a>
-          </button>
+            <button type="button" id="btn_registrar_ce" class="btn_crear_ce"> <a
+                    href="registrar_centro_educativo.html">Agregar instituciones</a>
+            </button>
 
         </div>
 
@@ -106,11 +115,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_centro_educativo.js"></script>
     <script src="js/controlador_registrar_ce_admin.js"></script>
     <script src="js/controlador_listar_centro_educativo.js"></script>
     <script src="js/controlador_cerrar_sesion_admin.js"></script>
 
 </body>
+
 </html>

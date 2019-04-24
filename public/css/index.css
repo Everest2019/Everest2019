@@ -137,6 +137,12 @@
   margin-left: 30%;
 }
 
+
+#navbar_lateral_preferencia{
+  width: 35%;
+  margin-left: 28%;
+}
+
 .pagina_actual{
   border-bottom: 3px solid #FAA21A;
 }

@@ -55,7 +55,7 @@ let obtener_datos = () => {
         let descripcion = input_descripcion.value;
 
         Swal.fire({
-            title: ' Está seguro que desea actualizar la etiqueta ?',
+            title: '¿ Está seguro que desea actualizar ?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

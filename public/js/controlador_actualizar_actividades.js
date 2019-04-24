@@ -64,7 +64,7 @@ let obtener_datos = () => {
         //registrar_actividades( titulo, fecha, descripcion);
 
         Swal.fire({
-            title: 'Está seguro que desea actualizar la actividad ?',
+            title: ' ¿ Está seguro de actualizar ?',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -80,7 +80,7 @@ let obtener_datos = () => {
     } else {
         swal.fire({
             type: 'warning',
-            title: 'La actividad no fue actualizada'
+            title: ' No se ha podido actualizar'
         });
     }
 };

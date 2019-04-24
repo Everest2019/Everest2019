@@ -620,9 +620,9 @@ module.exports.actualizar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se ha podido actualizar su perfil' });
+                res.json({ success: false, msg: `No se ha podido actualizar su perfil ${error}` });
             } else {
-                res.json({ success: true, msg: 'Su perfil se ha actualizado con exito' });
+                res.json({ success: true, msg: '' });
             }
         }
     );

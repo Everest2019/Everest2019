@@ -2,10 +2,17 @@
 
 const tabla = document.querySelector('#tbl_preferencia tbody');
 const input_filtro = document.querySelector('#txt_filtar')
+
+const btn_agregar_preferencia = document.querySelector('#btn_agregar');
 let preferencia=listar_preferencias();
 
 mostrar_datos();
 input_filtro.addEventListener('keyup', mostrar_datos);
+
+btn_agregar_preferencia.addEventListener('click', function () {
+    window.location.href = './registrar_preferencia.html';
+})
+
 
 function mostrar_datos() {
 
