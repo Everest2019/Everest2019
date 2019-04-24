@@ -231,9 +231,6 @@
   border: 0;
   margin-left: 3%;
   cursor: pointer;
+
 }
 
-.btn_crear_ce a{
-  text-decoration: none;
-  color: inherit;
-}

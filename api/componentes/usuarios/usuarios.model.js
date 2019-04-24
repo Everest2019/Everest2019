@@ -55,11 +55,11 @@ let schema_usuarios = new mongoose.Schema(
 
             //Servicios adicionales
             servicios : [
-                {servicio: String}
+                {servicio: String,required: false}
             ],
 
             idiomas : [
-                {idioma: String}
+                {idioma: String,required: false}
             ],
             
             fecha_creacion: {type: Date, required: false},
@@ -72,7 +72,7 @@ let schema_usuarios = new mongoose.Schema(
             edad_hijos : {type: String, required: false},
             foto_perfil : {type: String, required: false},
             favoritos : [
-                {id_centro_educativo: String}
+                {id_centro_educativo: String, required: false}
             ],
 
 

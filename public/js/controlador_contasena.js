@@ -1,50 +1,94 @@
 'use strict';
+
+const codigo_verificacion = document.querySelector('#txt_codigo');
 const input_correo = document.querySelector('#txt_correo');
 const input_contrasena = document.querySelector('#txt_contrasena');
-const input_confirmar_contrasena = document.querySelector('#txt_confirmar_contrasena');
-const boton_enviar = document.querySelector('#boton_enviar');
+const verificar_contrasena = document.querySelector('#txt_contrasena2');
+const boton_Ingresar = document.querySelector('#btn_iniciar');
 
-let validar = () => {
+
+function obtener_Datos() {
+
+    if (!validar()) {
+
+        let correo = input_correo.value;
+        let codigo = codigo_verificacion.value;
+        let contrasena = input_contrasena.value;
+
+         let usuario_Aceptado = agregar_contrasena(correo, codigo, contrasena);
+        if (usuario_Aceptado.success == true) {
+        }else{
+            swal.fire({
+                type: 'warning',
+                title: 'Datos incorrectos',
+                text: 'El correo no coincide con el código de verificación'
+              });
+        }
+    }
+    else{
+        swal.fire({
+            type: 'warning',
+            title: 'Verifique los campos',
+            text: 'Por favor revise los espacios resaltados'
+        })
+    }
+
+};
+
+function validar() {
     let error = false;
+
+    if (codigo_verificacion.value == '') {
+        error = true;
+        codigo_verificacion.classList.remove('borde');
+        codigo_verificacion.classList.add('error_input');
+    } else {
+        codigo_verificacion.classList.remove('error_input');
+        codigo_verificacion.classList.add('borde');
+    }
 
     if (input_correo.value == '') {
         error = true;
+        input_correo.classList.remove('borde');
         input_correo.classList.add('error_input');
     } else {
         input_correo.classList.remove('error_input');
+        input_correo.classList.add('borde');
     }
 
     if (input_contrasena.value == '') {
         error = true;
+        input_contrasena.classList.remove('borde');
         input_contrasena.classList.add('error_input');
     } else {
         input_contrasena.classList.remove('error_input');
+        input_contrasena.classList.add('borde');
     }
 
-    if (input_confirmar_contrasena.value == '') {
+    if (verificar_contrasena.value == '') {
         error = true;
-        input_confirmar_contrasena.classList.add('error_input');
+        verificar_contrasena.classList.remove('borde');
+        verificar_contrasena.classList.add('error_input');
     } else {
-        input_confirmar_contrasena.classList.remove('error_input');
+        verificar_contrasena.classList.remove('error_input');
+        verificar_contrasena.classList.add('borde');
+    }
+
+    if (verificar_contrasena.value != input_contrasena.value) {
+        error = true;
+        input_contrasena.classList.remove('borde');
+        input_contrasena.classList.add('error_input');
+        verificar_contrasena.classList.remove('borde');
+        verificar_contrasena.classList.add('error_input');
+    } else {
+        verificar_contrasena.classList.remove('error_input');
+        verificar_contrasena.classList.add('borde');
+        input_contrasena.classList.remove('error_input');
+        input_contrasena.classList.add('borde');
     }
 
     return error;
-
 };
-let obtener_datos = () => {
 
-    if(input_contrasena == input_confirmar_contrasena) {
-        let contrasenna = input_contrasena.value;
-        let confirmar_contrasena = input_confirmar_contrasena.value;
 
-        contrasena( contrasenna, confirmar_contrasena);
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'No se pudo crear',
-            text: 'Revise que sus contraseñas coincidan'
-        })
-    }
-    };
-
-boton_enviar.addEventListener('click', obtener_datos);
+boton_Ingresar.addEventListener('click', obtener_Datos);

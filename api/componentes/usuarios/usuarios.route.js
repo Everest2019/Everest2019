@@ -160,10 +160,17 @@ router.route('/habilitar_padre_familia')
         api_usuario.habilitar(req, res);
     });
 
-    router.route('/listar_instituciones_por_evaluacion')
-    .get(
+router.route('/listar_instituciones_por_evaluacion')
+.get(
+    function (req, res) {
+        api_usuario.listar_instituciones_por_evaluacion(req, res);
+    }
+);
+
+router.route('/agregar_contrasena')
+    .post(
         function (req, res) {
-            api_usuario.listar_instituciones_por_evaluacion(req, res);
+            api_usuario.agregar_contrasena(req, res);
         }
     );
 module.exports = router; 

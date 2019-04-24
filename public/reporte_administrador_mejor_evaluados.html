@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reporte_mejor_evaluados.css">
 
 
@@ -16,29 +17,61 @@
 
 <body>
     <!-- Barra de navegacion superior -->
-    <header>
-            <nav>
-                <div class="cont_links">
-                    <a href="panel_administrador_inicio.html">Inicio</a>
-                    <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
-                    <a href="panel_administrador_reportes.html">Reportes</a>
-                    <a href="panel_administrador_instituciones.html">Instituciones</a>
-                    <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
-                    <a href="#">Lista útiles</a>
-                    <a href="panel_administrador_articulos.html">Artículos</a>
-                    <a href="panel_administrador_etiquetas.html">Etiquetas</a>
-                    <a href="panel_administrador_bitacora.html">Bitácora</a>
-                </div>
-            </nav>
-    </header>
+    <div class="navbar_lateral">
+
+        <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
+
+        <div id="navbar_lateral_inicio" >
+            <a href="panel_administrador_inicio.html">Inicio</a>
+        </div>
+
+        <div id="navbar_lateral_favoritos">
+            <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos" class="pagina_actual">
+            <a href="panel_administrador_reportes.html">Reportes</a>
+        </div>
+
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_instituciones.html">Instituciones</a>
+        </div>
+        
+        <div id="navbar_lateral_instituciones">
+            <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
+        </div>
+
+        <div id="navbar_lateral_utiles">
+            <a href="#">Lista de útiles</a>
+        </div>
+        
+        <div id="navbar_lateral_cercanos" >
+            <a href="panel_administrador_articulos.html">Artículos</a>
+        </div>
+
+        <div id="navbar_lateral_cercanos" >
+                <a href="panel_administrador_etiquetas.html">Etiquetas</a>
+            </div>
+            
+        
+        <div id="navbar_lateral_cercanos">
+            <a href="panel_administrador_bitacora.html">Bitácora</a>
+        </div>
+
+                <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
+
+    </div>
 
 
     <!-- Contenedores de las partes del formulario -->
 
-    <h2 class="titulo2">Reporte mejores Centros Educativos</h2>
-    <h1 class="titulo1"> Evaluación MEP</h1> 
+    
 
-    <main>
+    <div class="main">
+        <h1>Reporte Centros Educativos</h1>
+        <h2>Mejor evaluados por el MEP</h2>
+        <div class="separador"></div>
+    
         <!-- Primer contenedor, Informacion General-->
         <div class="contenedor_reporte">
 
@@ -60,14 +93,14 @@
         </div>
         
 
-    </main>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_reportes.js"></script>
     <script src="js/controlador_reporte_mejor_evaluados.js"></script>
-    
+    <script src="js/controlador_cerrar_sesion_admin.js"></script>
 </body>
 
 </html>

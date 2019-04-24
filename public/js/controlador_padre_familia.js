@@ -159,15 +159,16 @@ let obtener_datos = () =>{
     let identificacion = input_identificacion.value;
     let tipo_identificacion = select_tipo_identificacion.value;
     let foto = input_foto_padre_familia.value;
-    let estado = true;
+    let estado = false;
     let tipo_usuario = 'padre_familia';
-    let contrasena_pf = contrasena.value;
+    //let contrasena_pf = contrasena.value;
+    let codigo = generar_codigo();
 
     let provincia = buscar_provincia();
     let canton = buscar_canton();
     let distrito = buscar_distrito();
 
-    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, contrasena_pf);
+    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, codigo);
   
   }else{
     swal.fire({

@@ -23,7 +23,7 @@ lista_instituciones.innerHTML ='';
 
         for (let j = 0; j < instituciones.length; j++) {
 
-        if(padre_familia['favoritos'][i]['id_centro_educativo'] == instituciones[j]['_id']){
+        if(padre_familia['favoritos'][i]['id_centro_educativo'] == instituciones[j]['_id'] && instituciones[j]['aprobado'] && instituciones[j]['estado']){
             if(instituciones[j]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())){
 
             document.getElementById('lista_instituciones').innerHTML +=
