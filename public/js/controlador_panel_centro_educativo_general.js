@@ -321,7 +321,9 @@ if(centro_educativo['informacion_religion']){
 else{
     txt_religion.innerHTML = 'No hay información sobre la religión';
 }
-
+btn_modificar.addEventListener('click', function () {
+    window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
+})
 /******************************************************************************* */
 // redes sociales
 
@@ -388,6 +390,3 @@ if(centro_educativo['facebook'] == '' && centro_educativo['instagram'] == '' && 
 //btn_eliminar.addEventListener('click', eliminar_centro_educativo);
 
 
-btn_modificar.addEventListener('click', function () {
-    window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
-})

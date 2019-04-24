@@ -513,5 +513,6 @@ let obtener_datos = () => {
     })
 }
 
-
+let fecha = new Date();
+agregar_visitas(fecha,id_centro_educativo);
 btn_informacion.addEventListener('click', obtener_datos);

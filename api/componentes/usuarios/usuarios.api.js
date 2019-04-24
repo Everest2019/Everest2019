@@ -630,7 +630,7 @@ module.exports.aprobar_centro_educativo = function (req, res) {
                       </div>
                       <div class="contenedor_cuerpo">
                         <p class="bienvenida">Encuentra el centro educativo ideal para tus hijos</p>
-                        <p> El centro educativo a sido aprobado con exitó</p>
+                        <p> El centro educativo ha sido aprobado con exitó</p>
                         <div class="contenedor_descripcion">
                         <p>Codigo: ${req.body.codigo_verificacion}.</p>
                         </div>

@@ -1,0 +1,35 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+.main{
+    background: #f2f2f2;
+    height: 100%;
+}
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main h2{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 25px;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.style{
+    width: 900px; 
+    height: 500px
+}
+.contenido {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+    
