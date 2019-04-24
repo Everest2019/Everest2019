@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const idiomas_api = require('./lenguaje.api');
 
-router.route('/registrar_idioma')
+router.route('/agregar_idioma')
   .post(function(req,res){
     idiomas_api.registrar_idioma(req,res);
   });

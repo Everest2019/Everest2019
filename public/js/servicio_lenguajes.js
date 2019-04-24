@@ -2,7 +2,7 @@
 
 let registrar = (pidioma,piso,pflag) =>{
   let request = $.ajax({
-    url:"http://localhost:4000/api/registrar_idioma",
+    url:"http://localhost:4000/api/agregar_idioma",
     method: "POST",
     data:{
       iso:piso,

@@ -704,6 +704,7 @@ let obtener_datos = () =>{
         let aprobado = false;
         let estado = true;
         let tipo_usuario = 'centro_educativo';
+        let fecha_creacion = new Date();
         
         let provincia = buscar_provincia();
         let canton = buscar_canton();
@@ -711,7 +712,7 @@ let obtener_datos = () =>{
 
         let codigo = generar_codigo();
 
-        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud,religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, codigo);
+        registrar_centro_educativo(nombre_institucion, correo_institucion, cedula_institucion, tipo_institucion, tipo_sistema, tipo_colegio, provincia, canton, distrito, direccion_exacta, latitud, longitud,religion, ensenanza, descripcion_institucion, referencia_historica, ano_fundacion, matricula, mensualidad, portada, galeria1, galeria2, galeria3, galeria4, telefono, fax, web, facebook, instagram, twitter, youtube, logo, documento1, documento2, documento3,primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo_encargado, departamento, telefono_encargado, extension, identificacion, fotografia_encargado, aprobado, estado,tipo_usuario, codigo,fecha_creacion);
 
         for(let i = 0; i < servicios.length; i++){
             registrar_servicio(cedula_institucion, servicios[i].value);
