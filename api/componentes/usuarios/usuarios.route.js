@@ -28,6 +28,7 @@ router.route('/registrar_centro_educativo')
         }
     );
 
+
 router.route('/registrar_servicio')
     .post(
         function (req, res) {
@@ -63,6 +64,13 @@ router.route('/listar_instituciones')
         }
     );
 
+router.route('/listar_instituciones_por_fecha')
+    .get(
+        function (req, res) {
+            api_usuario.listar_instituciones_por_fecha(req, res);
+        }
+    );
+
 router.route('/listar_padre_familia')
     .get(
         function (req, res) {
@@ -77,7 +85,7 @@ router.route('/buscar_centro_educativo')
 
 
 router.route('/buscar_padre_familia')
-    .post(function(req , res){  
+    .post(function(req , res){
         api_usuario.buscar_padre_familia(req , res);
 });
 
@@ -145,9 +153,9 @@ router.route('/eliminar_servicio')
             api_usuario.eliminar_servicio(req, res);
         }
     );
-router.route('/habilitar_centro_educativo')
+router.route('/aprobar_centro_educativo')
     .post(function (req, res) {
-        api_usuario.habilitar_centro_educativo(req, res);
+        api_usuario.aprobar_centro_educativo(req, res);
     });
 
 router.route('/deshabilitar_padre_familia')
@@ -173,4 +181,16 @@ router.route('/agregar_contrasena')
             api_usuario.agregar_contrasena(req, res);
         }
     );
+module.exports = router; 
+router.route('/listar_instituciones_top_mep')
+    .get(
+        function (req, res) {
+            api_usuario.listar_instituciones_top_mep(req, res);
+        }
+    );
+
+router.route('/agregar_visitas')
+    .post(function (req, res) {
+        api_usuario.agregar_visitas(req, res);
+    });
 module.exports = router; 

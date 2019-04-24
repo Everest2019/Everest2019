@@ -58,9 +58,6 @@ else{
 informacion_general.innerHTML = centro_educativo['informacion_general'];
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
 
-
-
-
 //Tipo Institucion
 let contenedor_tipo_institucion = document.createElement('div');
 contenedor_tipo_institucion.classList.add('contenedor_informacion');
@@ -168,29 +165,32 @@ if (!centro_educativo['mensualidad'] == '') {
 }
 
 //Etiquetas
+if(centro_educativo['etiquetas'][0] != undefined){
 
-let contenedor_etiquetas = document.createElement('div');
-contenedor_etiquetas.classList.add('contenedor_informacion', 'contenedor_etiquetas');
-
-let titulo_etiquetas = document.createElement('p');
-titulo_etiquetas.classList.add('tipo_informacion');
-titulo_etiquetas.textContent = 'Etiquetas';
-
-contenedor_etiquetas.appendChild(titulo_etiquetas);
-
-for (let i = 1; i <= 4; i++) {
-    var div_etiqueta = document.createElement('div');
-    let etiqueta = document.createElement('p');
-    div_etiqueta.classList.add('etiqueta');
-    etiqueta.classList.add('texto_etiqueta');
-    etiqueta.textContent = 'Deporte';
-
-    div_etiqueta.appendChild(etiqueta);
-    contenedor_etiquetas.appendChild(div_etiqueta);
+    let contenedor_etiquetas = document.createElement('div');
+    contenedor_etiquetas.classList.add('contenedor_informacion', 'contenedor_etiquetas');
+    
+    let titulo_etiquetas = document.createElement('p');
+    titulo_etiquetas.classList.add('tipo_informacion');
+    titulo_etiquetas.textContent = 'Etiquetas';
+    
+    contenedor_etiquetas.appendChild(titulo_etiquetas);
+    
+    for(let i=0; i < centro_educativo['etiquetas'].length; i++){
+        var div_etiqueta = document.createElement('div');
+        let etiqueta = document.createElement('p');
+        div_etiqueta.classList.add('etiqueta');
+        etiqueta.classList.add('texto_etiqueta');
+        etiqueta.textContent = centro_educativo['etiquetas'][i]['accion'];
+    
+        div_etiqueta.appendChild(etiqueta);
+        contenedor_etiquetas.appendChild(div_etiqueta);
+    }
+    
+    
+    contenedor_caracteristicas.appendChild(contenedor_etiquetas);
 }
 
-
-contenedor_caracteristicas.appendChild(contenedor_etiquetas);
 
 //Año de fundacion
 
@@ -383,13 +383,9 @@ if(centro_educativo['facebook'] == '' && centro_educativo['instagram'] == '' && 
     contenedor_redes.appendChild(redes_vacias);
 }
 /*************************************************************************************** */
-btn_eliminar.addEventListener('click', eliminar_centro_educativo);
+//btn_eliminar.addEventListener('click', eliminar_centro_educativo);
 
 
 btn_modificar.addEventListener('click', function () {
     window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
 })
-
-
-
-

@@ -19,7 +19,6 @@ let listar_preferencias = () => {
 
     request.fail(function (jqXHR, textStatus) {
         
-
     });
     return listar_preferencias;
 

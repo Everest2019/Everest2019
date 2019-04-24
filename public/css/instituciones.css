@@ -234,3 +234,12 @@
 
 }
 
+.slt_etiquetas {
+  display: inline-block;
+  width: 70%;
+  height: 25px;
+  border-radius: 3px;
+  font-size: 20px;
+  border: 2px solid rgb(194, 194, 194);
+  font-family: 'Raleway', sans-serif;
+}

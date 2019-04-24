@@ -27,7 +27,7 @@ let obtener_datos = () =>{
     let respuesta = input_respuesta.value;
 
     Swal.fire({
-        title: 'Está seguro que desea actualizar la pregunta?',
+        title: '¿Está seguro que desea actualizar la pregunta?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

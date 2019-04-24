@@ -95,6 +95,10 @@
   width: 70%;
   margin-left: 13%;
 }
+#navbar_lateral_etiquetas{
+  width: 50%;
+  margin-left: 22%;
+}
 
 #navbar_mi_perfil i{
   font-size: 21px;

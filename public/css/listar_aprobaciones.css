@@ -118,4 +118,9 @@ html {
     text-decoration: none;
     color: #000;
     font-size: 25px;
+    padding-left: 40%;
+}
+
+.texto_vencido{
+    color: #ee5253;
 }

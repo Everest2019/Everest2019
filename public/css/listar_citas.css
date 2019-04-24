@@ -36,7 +36,7 @@ body{
 
 .tabla_citas tr th{
     padding: 10px 0;
-    border: 1px solid #000;   
+    border: 1px solid #000;
     color: #40433E;
     background: #FAA21A;
     font-weight: bold;
@@ -66,11 +66,11 @@ body{
 .tabla_citas tr td{
     padding: 15px 10px;
     border: 1px solid #000;
-    width: 4%; 
+    width: 4%;
     right: 100px;
     background: #fff;
     text-align: center;
-} 
+}
 
 .contenido .contenedor_buscar{
     margin-top: 60px;
@@ -96,4 +96,3 @@ div input{
     width: 8%;
     margin-left: 5%;
 }
-

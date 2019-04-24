@@ -1,0 +1,43 @@
+#tbl_top{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 2%;
+    padding: 15px;
+}
+#tbl_top tr th{
+    padding: 15px;
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
+    width: 4%;     
+    right: 60px;
+    color: #40433E;
+    background: #FAA21A;
+}
+#tbl_top tr td{
+    padding: 9px;
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
+    width: 4%; 
+    right: 100px;
+    background: #fff;
+} 
+#tbl_top tbody{
+    padding: 15px;
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
+    width: 4%; 
+    right: 100px;
+    background: #fff;
+    text-align: center;
+}
+#tbl_top th, td{
+    padding: 15px;
+    text-align: center;
+}
+.imagen_tabla{
+    height: 60px;
+    width: 50px;
+}
+.th_posicion{
+    width: 2%;
+}

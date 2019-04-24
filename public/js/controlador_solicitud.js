@@ -16,7 +16,6 @@ let obtener_datos = () => {
         let padre_familia = id_padre_familia;
         let id = localStorage.getItem('_id');
 
-  
         Swal.fire({
             title: 'Está seguro que desea registar la solicitud?',
             type: 'warning',

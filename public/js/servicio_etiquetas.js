@@ -5,7 +5,7 @@ let listar_etiquetas = ()=>{
         url: "http://localhost:4000/api/listar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "GET",
         data: {
-            
+
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
@@ -80,7 +80,7 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
             id : pid
         },
         dataType : "json",
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 
     request.done(function(res){
@@ -97,7 +97,7 @@ let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
             text : res.msg,
             onClose: () => {
                 window.location.href = 'panel_administrador_etiquetas.html';
-              }    
+              }
         });
 
     });
@@ -122,7 +122,7 @@ function borrar_etiquetas(pid){
             id_etiqueta : pid
         },
         beforeSend: function beforeSend() {
-            
+
         },
         success: function success(response) {
             let detalle = "Etiqueta actualizada";
@@ -135,7 +135,7 @@ function borrar_etiquetas(pid){
                 text: 'La etiqueta fue borrada con éxito',
                 type: 'success'
             }
-                
+
             )
         },
         error: function error(_error) {
