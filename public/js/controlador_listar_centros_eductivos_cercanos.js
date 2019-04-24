@@ -24,7 +24,7 @@ lista_instituciones.innerHTML ='';
 
     for (let i = 0; i < instituciones.length; i++) {
 
-        if(instituciones[i]['canton'].includes(padre_familia['canton'])){
+        if(instituciones[i]['canton'].includes(padre_familia['canton']) && instituciones[i]['aprobado'] && instituciones[i]['estado']){
             if(instituciones[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())){
 
             document.getElementById('lista_instituciones').innerHTML +=

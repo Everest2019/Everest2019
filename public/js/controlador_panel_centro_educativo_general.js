@@ -58,8 +58,6 @@ else{
 informacion_general.innerHTML = centro_educativo['informacion_general'];
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
 
-
-
 //Tipo Institucion
 let contenedor_tipo_institucion = document.createElement('div');
 contenedor_tipo_institucion.classList.add('contenedor_informacion');

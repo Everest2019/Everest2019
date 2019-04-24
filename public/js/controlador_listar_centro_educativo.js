@@ -48,14 +48,14 @@ let instituciones = listar_instituciones();
 let mostrar_datos = () => {
     let filtro = input_filtrar.value;
     select_criterios.value = 'Todos';
-    document.getElementById('lista_instituciones').innerHTML = '';
-    for (let i = 0; i < instituciones.length; i++) {
-        if (instituciones[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase())) {
-            document.getElementById('lista_instituciones').innerHTML +=
+    document.getElementById('lista_instituciones').innerHTML =''; 
+    for(let i=0; i< instituciones.length; i++){
+        if(instituciones[i]['nombre_comercial'].toLowerCase().includes(filtro.toLowerCase()) && instituciones[i]['aprobado']&& instituciones[i]['estado']){
+        document.getElementById('lista_instituciones').innerHTML += 
+        
 
-
-                '<div class="contenedor_institucion">' +
-                '<div class="contenedor_nombre_institucion">' +
+        '<div class="contenedor_institucion">'+
+            '<div class="contenedor_nombre_institucion">'+
                 '<p>' + instituciones[i]['nombre_comercial'] + ' </p>' +
                 '</div>' +
                 '<img src="' + instituciones[i]['logo'] + '" alt="Logo Centro Educativo">' +
@@ -111,9 +111,12 @@ let mostrar_datos = () => {
 };
 
 let mostrar_datos_colegios = () => {
-    document.getElementById('lista_instituciones').innerHTML = '';
-    for (let i = 0; i < instituciones.length; i++) {
-        if (instituciones[i]['tipo_institucion'].includes('Colegio')) {
+    document.getElementById('lista_instituciones').innerHTML ='';
+    for(let i=0; i< instituciones.length; i++){
+        if (instituciones[i]['tipo_institucion'].includes('Colegio') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
+        
+        document.getElementById('lista_instituciones').innerHTML += 
+        
 
             document.getElementById('lista_instituciones').innerHTML +=
 
@@ -172,9 +175,12 @@ let mostrar_datos_colegios = () => {
 };
 
 let mostrar_datos_escuelas = () => {
-    document.getElementById('lista_instituciones').innerHTML = '';
-    for (let i = 0; i < instituciones.length; i++) {
-        if (instituciones[i]['tipo_institucion'].includes('Escuela')) {
+    document.getElementById('lista_instituciones').innerHTML ='';
+    for(let i=0; i< instituciones.length; i++){
+        if (instituciones[i]['tipo_institucion'].includes('Escuela') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
+        
+        document.getElementById('lista_instituciones').innerHTML += 
+        
 
             document.getElementById('lista_instituciones').innerHTML +=
 
@@ -234,9 +240,12 @@ let mostrar_datos_escuelas = () => {
 
 
 let mostrar_datos_ambos = () => {
-    document.getElementById('lista_instituciones').innerHTML = '';
-    for (let i = 0; i < instituciones.length; i++) {
-        if (instituciones[i]['tipo_institucion'].includes('Ambos')) {
+    document.getElementById('lista_instituciones').innerHTML ='';
+    for(let i=0; i< instituciones.length; i++){
+        if (instituciones[i]['tipo_institucion'].includes('Ambos') && instituciones[i]['aprobado'] && instituciones[i]['estado']) {
+        
+        document.getElementById('lista_instituciones').innerHTML += 
+        
 
             document.getElementById('lista_instituciones').innerHTML +=
 
