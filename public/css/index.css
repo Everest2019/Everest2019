@@ -104,7 +104,10 @@
   width: 33%;
   margin-left: 30%;
 }
-
+#navbar_lateral_comentarios{
+  width: 50%;
+  margin-left: 22%;
+}
 #navbar_mi_perfil i{
   font-size: 21px;
   padding-right: 5px;

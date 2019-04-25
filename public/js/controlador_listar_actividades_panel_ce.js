@@ -43,18 +43,14 @@ let mostrar_datos = () => {
                 let celda_configuracion = fila.insertCell();
                 //se crea el boton editar
                 let boton_editar = document.createElement('a');
-                boton_editar.textContent = 'Editar';
+                boton_editar.classList.add('far', 'fa-edit')
                 boton_editar.href = `actualizar_actividades.html?id_actividades=${actividades[i]['_id']}`;
 
                 celda_configuracion.appendChild(boton_editar);
 
-                //se crea una nueva celda para el boton eliminar
-                celda_configuracion = fila.insertCell();
-                //se crea el boto eliminar
-
                 let boton_eliminar = document.createElement('a');
-                boton_eliminar.textContent = 'Eliminar';
-                boton_eliminar.href = "#";
+                boton_eliminar.href = '#';
+                boton_eliminar.classList.add('far', 'fa-trash-alt');
                 boton_eliminar.dataset.id_actividades = actividades[i]['_id'];
                 boton_eliminar.addEventListener('click', confirmar_borrado);
 
