@@ -950,6 +950,3 @@ module.exports.agregar_contrasena = function (req, res) {
         }
     )
 };
-
-
-

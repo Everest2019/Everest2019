@@ -1,0 +1,90 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: #F2F2F2;
+}
+
+.main h1{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 25px;
+    font-weight: bold;
+}
+.main .separador{
+    height: 4px;
+    width: 60%;
+    margin: 0 auto;
+    background: #FAA21A;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.contenido .contenedor_buscar{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+div input{
+    display: inline-block;
+    width: 30%;
+    height: 25px;
+    border-radius: 3px;
+    border: 2px solid gray;
+    font-size: 15px;
+}
+
+.contenedor_buscar input:focus{
+    border: 2px solid #FAA21A;
+    outline: none;
+}
+.contenedor_buscar  label{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 8%;
+    margin-left: 5%;
+}
+
+.btn_comentario{
+    width: 20%;
+    height: 40px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 3%;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .tabla_comentario{
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.tabla_comentario tr th{
+    padding: 10px 0;
+    border: 1px solid #000;   
+    color: #40433E;
+    background: #FAA21A;
+    font-weight: bold;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 20px;
+}
+.tabla_comentario tr td{
+    padding: 15px 10px;
+    border: 1px solid #000;
+    width: 4%; 
+    right: 100px;
+    background: #fff;
+    text-align: center;
+} 
+.tabla_comentario tbody{
+    padding: 15px;
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
+    width: 4%; 
+    right: 150px;
+}
