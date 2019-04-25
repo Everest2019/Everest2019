@@ -44,12 +44,12 @@ function mostrar_noticias() {
           let celda_configuracion= fila.insertCell();
 
           let boton_editar = document.createElement('a');
-          boton_editar.innerHTML='<i class="fas fa-pencil-alt"></i>';
+          boton_editar.innerHTML='<i class="far fa-edit"></i>';
           boton_editar.href = `editar_noticia.html?id_noticia=${noticias[i]['_id']}`;
           boton_editar.classList.add('btn_editar');
 
           let boton_eliminar = document.createElement('a');
-          boton_eliminar.innerHTML='<i class="fas fa-trash-alt"></i>';
+          boton_eliminar.innerHTML='<i class="far fa-trash-alt"></i>';
           boton_eliminar.dataset.id = noticias[i]['_id'];
         boton_eliminar.addEventListener('click', confirmacion);
 

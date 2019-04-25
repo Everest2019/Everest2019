@@ -152,6 +152,7 @@ button:hover{
 #lista_noticias i{
     color: #000;
     margin-left: 18px;
+    font-size: 25px;
 }
 
 .btn_editar{

@@ -34,11 +34,11 @@ let mostrar_datos = () => {
                 fila.insertCell().innerHTML = actividades[i]['titulo'];
 
                 let fecha = new Date(actividades[i]['fecha']);
-                fecha = fecha.toLocaleDateString();
+                fecha = fecha.getDate()+1 + '/' + fecha.getMonth()+'/'+fecha.getFullYear();
                 fila.insertCell().innerHTML = fecha;
                 fila.insertCell().innerHTML = actividades[i]['descripcion'];
 
-
+ 
                 //se crea una nueva celda para el boton editar
                 let celda_configuracion = fila.insertCell();
                 //se crea el boton editar

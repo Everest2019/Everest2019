@@ -14,10 +14,12 @@ let mi_centro_educativo = buscar_centro_educativo(_id);
 console.log(mi_centro_educativo['nombre_comercial']);
 
 let listar_etiquetas = () =>{
+  let filtro = input_filtro.value;
   tabla.innerHTML = '';
   let etiquetas = mi_centro_educativo['etiquetas'];
 
   for(let i=0;i<etiquetas.length;i++){
+    if (mi_centro_educativo['etiquetas'][i]['accion'].toLowerCase().includes(filtro.toLowerCase())) {
     let fila = tabla.insertRow();
 
     fila.insertCell().innerHTML = etiquetas[i]['accion'];
@@ -37,7 +39,7 @@ let listar_etiquetas = () =>{
     celda_configuracion.appendChild(eliminar);
 
   }
-
+  }
 };
 listar_etiquetas();
 
@@ -77,3 +79,5 @@ function confirmar_borrado() {
         }
     })
 };
+
+input_filtro.addEventListener('keyup',listar_etiquetas);

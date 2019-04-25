@@ -44,6 +44,10 @@ body{
     font-size: 17px;
 }
 
+.tabla_citas i{
+    color: #000;
+}
+
 .tabla_citas .celda_nombre{
     width: 8%;
 }

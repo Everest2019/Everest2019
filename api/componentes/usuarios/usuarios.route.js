@@ -207,4 +207,24 @@ router.route('/clientes_potenciales')
         api_usuario.listar_padre_familia(req, res);
     });
 
+    router.route('/asignar_etiquetas')
+      .post(function(req,res){
+        api_usuario.asignar_etiquetas(req,res);
+  });
+
+router.route('/remover_etiquetas')
+  .post(function(req, res){
+    api_usuario.remover_etiquetas(req, res);
+  });
+
+router.route('/deshabilitar_ce')
+.post(function(req,res){
+  api_usuario.deshabilitar_ce(req, res);
+});
+
+router.route('/habilitar_ce')
+.post(function(req,res){
+  api_usuario.habilitar_ce(req, res);
+});
+
 module.exports = router; 
