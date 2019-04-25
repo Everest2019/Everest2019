@@ -269,30 +269,33 @@ if (!centro_educativo['mensualidad'] == '') {
 
 //Etiquetas
 let etiquetas = [];
-etiquetas = centro_educativo['etiquetas'];
-let contenedor_etiquetas = document.createElement('div');
-contenedor_etiquetas.classList.add('contenedor_informacion', 'contenedor_etiquetas');
-
-let titulo_etiquetas = document.createElement('p');
-titulo_etiquetas.classList.add('tipo_informacion');
-
-titulo_etiquetas.textContent = 'Etiquetas';
-
-contenedor_etiquetas.appendChild(titulo_etiquetas);
-
-for(let i=0; i<etiquetas.length; i++){
-    var div_etiqueta = document.createElement('div');
-    let etiqueta = document.createElement('p');
-    div_etiqueta.classList.add('etiqueta');
-    etiqueta.classList.add('texto_etiqueta');
-    etiqueta.textContent = etiquetas[i]['accion'];
-
-    div_etiqueta.appendChild(etiqueta);
-    contenedor_etiquetas.appendChild(div_etiqueta);
+if(centro_educativo['etiquetas'][0] != undefined){
+    etiquetas = centro_educativo['etiquetas'];
+    let contenedor_etiquetas = document.createElement('div');
+    contenedor_etiquetas.classList.add('contenedor_informacion', 'contenedor_etiquetas');
+    
+    let titulo_etiquetas = document.createElement('p');
+    titulo_etiquetas.classList.add('tipo_informacion');
+    
+    titulo_etiquetas.textContent = 'Etiquetas';
+    
+    contenedor_etiquetas.appendChild(titulo_etiquetas);
+    
+    for(let i=0; i<etiquetas.length; i++){
+        var div_etiqueta = document.createElement('div');
+        let etiqueta = document.createElement('p');
+        div_etiqueta.classList.add('etiqueta');
+        etiqueta.classList.add('texto_etiqueta');
+        etiqueta.textContent = etiquetas[i]['accion'];
+    
+        div_etiqueta.appendChild(etiqueta);
+        contenedor_etiquetas.appendChild(div_etiqueta);
+    }
+    
+    
+    contenedor_caracteristicas.appendChild(contenedor_etiquetas);
 }
 
-
-contenedor_caracteristicas.appendChild(contenedor_etiquetas);
 
 //Año de fundacion
 
@@ -513,5 +516,6 @@ let obtener_datos = () => {
     })
 }
 
-
+let fecha = new Date();
+agregar_visitas(fecha,id_centro_educativo);
 btn_informacion.addEventListener('click', obtener_datos);

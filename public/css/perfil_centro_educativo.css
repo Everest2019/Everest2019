@@ -173,7 +173,8 @@
     font-size: 18px;
 }
 .contenedor_etiquetas{
-    margin-bottom: 120px;
+    margin-bottom: 20px;
+    display: flow-root;
 }
 .contenedor_informacion .etiqueta{
     height: 30px;

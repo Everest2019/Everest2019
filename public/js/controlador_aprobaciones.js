@@ -10,11 +10,10 @@ const modalidad = document.querySelector('#modalidad');
 const ubicacion = document.querySelector('#ubicacion');
 const cedula = document.querySelector('#cedula');
 const correo = document.querySelector('#correo');
-const documento1 = document.querySelector('#documento1');
-const documento2 = document.querySelector('#documento2');
-const documento3 = document.querySelector('#documento3');
+const documentos = document.querySelector('#documentos');
 const celda_configuracion = document.querySelector('#celda_configuracion');
 const celda_eliminar = document.querySelector('#celda_eliminar');
+
 
 //Información del encargado del centro educativo
 
@@ -39,7 +38,7 @@ let id_centro_educativo = centro_educativo['_id'];
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 informacion_general.innerHTML = centro_educativo['informacion_general'];
-tipo_institución.innerHTML = centro_educativo['tipo_institución'];
+tipo_institución.innerHTML = centro_educativo['tipo_institucion'];
 tipo_colegio.innerHTML = centro_educativo['tipo_colegio'];
 modalidad.innerHTML = centro_educativo['modalidad'];
 ubicacion.innerHTML = centro_educativo['provincia'] + ", " + centro_educativo['canton'];
@@ -48,14 +47,31 @@ cedula.innerHTML = centro_educativo['cedula_juridica'];
 correo.innerHTML = centro_educativo['correo'];
 
 
+let imagen1 = document.createElement('img');
+imagen1.src = './img/document.png';
+let imagen2 = document.createElement('img');
+imagen2.src = './img/document.png';
+let imagen3 = document.createElement('img');
+imagen3.src = './img/document.png';
 if (centro_educativo['documento1']) {
+    let documento1 = document.createElement('a');
     documento1.href = centro_educativo['documento1'];
+    documento1.appendChild(imagen1);
+    documentos.appendChild(documento1);
+
 }
 if (centro_educativo['documento2']) {
+    let documento2 = document.createElement('a');
     documento2.href = centro_educativo['documento2'];
+    documento2.appendChild(imagen2);
+    documentos.appendChild(documento2);
 }
 if (centro_educativo['documento3']) {
-    documento2.href = centro_educativo['documento3'];
+    let documento3 = document.createElement('a');
+    documento3.href = centro_educativo['documento3'];
+    documento3.appendChild(imagen3);
+    documentos.appendChild(documento3);
+
 }
 
 if (centro_educativo['logo']) {
@@ -90,11 +106,13 @@ if (centro_educativo['aprobado'] == false) {
 function habilitar() {
     let id_centro_educativo = this.dataset.id_centro_educativo;
 
-    aprobar_centro_aducativo(id_centro_educativo);
-    Swal.fire(
-        '¡Centro Educativo aprobado!',
-        'El centro educativo fue eliminado con éxito',
-        'success'
+    aprobar_centro_aducativo(id_centro_educativo,centro_educativo['codigo_verificacion'],centro_educativo['correo_encargado'],);
+    Swal.fire({
+        title:'¡Centro Educativo aprobado!',
+        text:'El centro educativo fue eliminado con éxito',
+        type:'success'
+    }
+       
     )
 };
 

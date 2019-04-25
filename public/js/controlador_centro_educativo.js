@@ -107,6 +107,8 @@ const flecha_treceavo_slide = document.querySelector('#flecha_treceavo_slide');
 const flecha_catorceavo_slide = document.querySelector('#flecha_catorceavo_slide');
 const flecha_quiceavo_slide = document.querySelector('#flecha_quiceavo_slide');
 
+let usuario = localStorage.getItem('tipo_usuario');
+
 //Primera validacion
 let validacion_primer_slide = () =>{
     let error = false;
@@ -701,7 +703,13 @@ let obtener_datos = () =>{
         let extension = input_extension.value;
         let identificacion = input_identificacion.value;
         let fotografia_encargado = url_img_encargado.value;
-        let aprobado = false;
+        let aprobado;
+        if(usuario == 'administrador'){
+             aprobado = true;
+        }
+        else{
+             aprobado = false;
+        }
         let estado = true;
         let tipo_usuario = 'centro_educativo';
         let fecha_creacion = new Date();

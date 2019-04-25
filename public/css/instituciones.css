@@ -223,15 +223,19 @@
     top: 3px;
 }
 .btn_crear_ce{
-  width: 20%;
+  width: 40%;
   height: 40px;
   background: #FAA21A;
   color: #fff;
   border-radius: 3px;
   border: 0;
-  margin-left: 3%;
+  margin-left: 25%;
   cursor: pointer;
+  margin-top: 30px;
+}
 
+.btn_crear_ce:hover{
+    background: rgb(245, 148, 2);
 }
 
 .slt_etiquetas {

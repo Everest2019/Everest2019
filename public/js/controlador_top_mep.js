@@ -6,7 +6,7 @@ const select_criterios = document.querySelector('#select_criterios');
 
 let usuario_loggeado = localStorage.getItem('conectado');
 let tipo_usuario = localStorage.getItem('tipo_usuario');
-if (!usuario_loggeado || tipo_usuario != 'padre_familia') {
+if (!usuario_loggeado || tipo_usuario == 'centro_educativo') {
     window.location.href = `iniciar_sesion.html`;
 }
 
@@ -129,9 +129,6 @@ function mostrar_datos_privadas() {
             }
             celda_posicion.classList.add('td_posicion');
             celda_logo.appendChild(imagen);
-
-
-            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
 
             celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
             let icono_estrella = document.createElement('i');

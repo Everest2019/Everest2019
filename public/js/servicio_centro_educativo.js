@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcodigo) =>{
+let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pcedula_institucion, ptipo_institucion, ptipo_sistema, ptipo_colegio, pprovincia, pcanton, pdistrito, pdireccion_exacta, platitud, plongitud, preligion, pensenanza, pdescripcion_institucion, preferencia_historica, pano_fundacion, pmatricula, pmensualidad, pportada, pgaleria1, pgaleria2, pgaleria3, pgaleria4, ptelefono, pfax, pweb, pfacebook, pinstagram, ptwitter, pyoutube, plogo, pdocumento1, pdocumento2, pdocumento3, pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo_encargado, pdepartamento, ptelefono_encargado, pextension, pidentificacion, pfotografia_encargado, paprobado, pestado, ptipo_usuario, pcodigo,pfecha_creacion) =>{
 
    let request = $.ajax({
        url: "http://localhost:4000/api/registrar_centro_educativo",
@@ -55,7 +55,8 @@ let registrar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pced
             estado : pestado,
 
             tipo_usuario: ptipo_usuario,
-            codigo_verificacion: pcodigo
+            codigo_verificacion: pcodigo,
+            fecha_creacion: pfecha_creacion
        },
        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
        dataType: "json",
@@ -411,15 +412,15 @@ let actualizar_centro_educativo = (pnombre_institucion, pcorreo_institucion, pce
       documento1: pdocumento1,
       documento2: pdocumento2,
       documento3: pdocumento3,
-      primer_nombre: pprimer_nombre,
-      segundo_nombre: psegundo_nombre,
-      primer_apellido: pprimer_apellido,
-      segundo_apellido: psegundo_apellido,
+      primer_nombre_encargado: pprimer_nombre,
+      segundo_nombre_encargado: psegundo_nombre,
+      primer_apellido_encargado: pprimer_apellido,
+      segundo_apellido_encargado: psegundo_apellido,
       correo_encargado: pcorreo_encargado,
       departamento: pdepartamento,
       telefono_encargado: ptelefono_encargado,
       extension: pextension,
-      identificacion: pidentificacion,
+      identificacion_encargado: pidentificacion,
       fotografia_encargado: pfotografia_encargado,
       id_centro_educativo: pid
     },
@@ -578,13 +579,14 @@ function aprobar_centro_aducativo(pid_centro_educativo, pcodigo_verificacion, pc
   });
 };
 
-function agregar_visitas(pvisitas) {
+function agregar_visitas(pfecha, pid_centro_educativo) {
   $.ajax({
     url: 'http://localhost:4000/api/agregar_visitas',
     method: 'POST',
     contentType: "application/x-www-form-urlencoded; charset=utf-8",
     data: {
-      visitas: pvisitas
+      fecha: pfecha,
+      id_centro_educativo: pid_centro_educativo
     },
 
     success: function success(res) {
