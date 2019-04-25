@@ -13,18 +13,17 @@ if (!usuario_loggeado || tipo_usuario == 'centro_educativo') {
 
 let lista_instituciones = listar_instituciones_top_mep();
 
-
-let filtrar_criterios = () =>{
-    switch(select_criterios.value){
+let filtrar_criterios = () => {
+    switch (select_criterios.value) {
         case 'Todos':
             mostrar_datos();
-        break;
+            break;
         case 'Escuelas publicas':
             mostrar_datos_publicas();
-        break;
+            break;
         case 'Escuelas privadas':
-            mostrar_datos_privadas();       
-        break;
+            mostrar_datos_privadas();
+            break;
     }
 };
 
@@ -71,7 +70,7 @@ function mostrar_datos_publicas() {
     let posicion = 0;
     for (let i = 0; i < 10; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Público') {
-            
+
             posicion++;
 
 
@@ -82,7 +81,7 @@ function mostrar_datos_publicas() {
             let celda_evaluacion = fila.insertCell();
             celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
             celda_posicion.innerHTML = posicion;
-            
+
             let imagen = document.createElement('img');
             imagen.classList.add('imagen_tabla');
             if (lista_instituciones[i]['logo']) {
@@ -95,9 +94,10 @@ function mostrar_datos_publicas() {
 
 
             celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+            
 
         }
-        
+
     };
 };
 
@@ -106,7 +106,7 @@ function mostrar_datos_privadas() {
     let posicion = 0;
     for (let i = 0; i < 10; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Privado') {
-            
+
             posicion++;
 
 
@@ -117,7 +117,7 @@ function mostrar_datos_privadas() {
             let celda_evaluacion = fila.insertCell();
             celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
             celda_posicion.innerHTML = posicion;
-            
+
             let imagen = document.createElement('img');
             imagen.classList.add('imagen_tabla');
             if (lista_instituciones[i]['logo']) {
@@ -137,4 +137,3 @@ function mostrar_datos_privadas() {
 
 
 mostrar_datos();
-

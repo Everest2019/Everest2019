@@ -1,14 +1,15 @@
 'use strict';
 const lista_preguntas = document.querySelector('#lista_preguntas');
-const input_buscar = document.querySelector('#txt_buscar');
+const input_buscar = document.querySelector('#txt_filtrar_preguntas');
 const nombre = document.querySelector('#nombre_ce');
 const a_regresar = document.querySelector('#a_regresar');
 
+const tabla = document.querySelector('#tbl_pregunta tbody');
 //Inicio Sesión
 let usuario_loggeado = localStorage.getItem('conectado');
 let tipo_usuario = localStorage.getItem('tipo_usuario');
 if (!usuario_loggeado || tipo_usuario == 'centro_educativo') {
-    window.location.href = `iniciar_sesion.html`;
+  window.location.href = `iniciar_sesion.html`;
 }
 
 
@@ -32,39 +33,25 @@ nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 let preguntas = listar_preguntas();
 
-let mostrar_datos = () => {
-  let preguntas = listar_preguntas();
-  lista_preguntas.innerHTML = '';
+function mostrar_datos() {
+  tabla.innerHTML = '';
+  let filtro = input_buscar.value;
   for (let i = 0; i < preguntas.length; i++) {
     if (preguntas[i]['id_centro_educativo'].includes(id_centro_educativo)) {
-      // pregunta
-      let pregunta_frecuente = document.createElement('div');
-      pregunta_frecuente.classList.add('pregunta');
+      if (preguntas[i]['pregunta'].includes(filtro)) {
+      let fila = tabla.insertRow();
 
-      let nombre_pregunta = document.createElement('div');
-      nombre_pregunta.classList.add('nombre_pregunta');
+      let celda_pregunta = fila.insertCell();
+      celda_pregunta.innerHTML = preguntas[i]['pregunta'];
 
-      let texto_pregunta = document.createElement('p');
-      texto_pregunta.innerHTML = preguntas[i]['pregunta'];
+      let celda_respuesta = fila.insertCell();
+      celda_respuesta.innerHTML = preguntas[i]['respuesta'];
 
-      nombre_pregunta.appendChild(texto_pregunta);
-
-      //Respuesta
-      let respuesta_pregunta = document.createElement('div');
-      respuesta_pregunta.classList.add('respuesta_pregunta');
-
-      let texto_respuesta = document.createElement('p');
-      texto_respuesta.innerHTML = preguntas[i]['respuesta'];
-
-      respuesta_pregunta.appendChild(texto_respuesta);
-
-      pregunta_frecuente.appendChild(nombre_pregunta);
-      pregunta_frecuente.appendChild(respuesta_pregunta);
-
-      lista_preguntas.appendChild(pregunta_frecuente);
-
+      }
     }
   }
 };
 
+
 mostrar_datos();
+input_buscar.addEventListener('keyup',mostrar_datos);
