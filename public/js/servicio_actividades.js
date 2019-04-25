@@ -134,7 +134,7 @@ let actualizar_actividades = (ptitulo, pfecha, pdescripcion, pid) => {
 
         swal.fire({
             type: 'success',
-            title: 'Actividad actualizada con éxito',
+            title: 'Se ha actualizad con éxito',
             text: res.msg,
             onClose: () => {
                 window.location.href = 'panel_centro_educativo_actividades.html';
@@ -168,8 +168,8 @@ function borrar_actividades(pid){
         },
         success: function success(response) {
             Swal.fire({
-                title: 'actividad eliminada!',
-                text: 'La actividad fue borrada con éxito',
+                title: 'Se ha eliminado con exito!',
+                text: '',
                 type: 'success'
             }
                 

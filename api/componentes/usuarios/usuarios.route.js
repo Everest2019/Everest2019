@@ -43,6 +43,13 @@ router.route('/registrar_idioma')
         }
     );
 
+    router.route('/registrar_preferncia')
+    .post(
+        function (req, res) {
+            api_usuario.agregar_preferencia(req, res);
+        }
+    );
+
 router.route('/registrar_adminitrador')
     .post(
         function (req, res) {

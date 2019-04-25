@@ -78,7 +78,7 @@ module.exports.actualizar = (req, res) => {
                 res.json(
                     {
                         succes: true,
-                        msg: `La actividad se actualizó correctamente.`
+                        msg: ``
                     }
                 );
 
@@ -91,10 +91,10 @@ module.exports.borrar = (req, res) => {
     modelo_actividades.findByIdAndDelete(req.body.id_actividades,
         function (error) {
             if (error) {
-                res.json({ success: false, msg: ' Nose ha podido eliminar la actividad' }
+                res.json({ success: false, msg: ' Nose ha podido eliminar ' }
                 )
             } else {
-                res.json({ success: true, msg: 'La actividad se elimino con exito' })
+                res.json({ success: true, msg: ' Se elimino con exito' })
             }
         }
     )

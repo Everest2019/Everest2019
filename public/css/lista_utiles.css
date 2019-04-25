@@ -98,5 +98,32 @@
 }
 
 
-
-
+.btn_utiles{
+    width: 30%;
+    height: 30px;
+    background: #FAA21A;
+    color: #fff;
+    border-radius: 3px;
+    border: 0;
+    margin-left: 3%;
+    cursor: pointer;
+    margin-top: 30px;
+  
+  }
+  
+  .btn_utiles{
+      width: 20%;
+      height: 40px;
+      background: #FAA21A;
+      color: #fff;
+      border-radius: 3px;
+      border: 0;
+      margin-left: 3%;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+  
+    .btn_utiles a{
+      text-decoration: none;
+      color: #fff;
+    }

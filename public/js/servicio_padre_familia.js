@@ -101,29 +101,28 @@ let listar_padre_familia = ()  =>{
 
 };
 
-let actualizar_padre_familia = (pfoto,pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pcorreo, ptelefono,  pcantidad_hijos, pedad_hijos, pnacionalidad, pidentificacion, ptipo_identificacion, pprovincia, pcanton, pdistrito, pestado, ptipo_usuario, pcontrasena,pid)=>{
+let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellido, psegundo_apellido, pidentificacion, pdistrito, pcanton, pprovincia,  pcantidad_hijos, pedad_hijos, pnacionalidad, ptelefono,pfoto, pcorreo, ptipo_identificacion, pcontrasena,pid)=>{
 
     let request = $.ajax({
         url : 'http://localhost:4000/api/actualizar_padre_familia',
         method : "POST",
         data : {
-           foto : pfoto,
+           
            primer_nombre : pprimer_nombre,
            segundo_nombre : psegundo_nombre,
            primer_apellido : pprimer_apellido,
            segundo_apellido : psegundo_apellido,
-           correo : pcorreo,
-           telefono : ptelefono,
+           identificacion : pidentificacion,
+           distrito : pdistrito,
+           canton : pcanton,
+           provincia : pprovincia,
            cantidad_hijos : pcantidad_hijos,
            edad_hijos : pedad_hijos,
            nacionalidad : pnacionalidad,
-           identificacion : pidentificacion,
+           telefono : ptelefono,
+           foto : pfoto,
+           correo : pcorreo,
            tipo_identificacion : ptipo_identificacion,
-           provincia : pprovincia,
-           canton : pcanton,
-           distrito : pdistrito,
-           estado : pestado,
-           tipo_usuario : ptipo_usuario,
            contrasena : pcontrasena,
             id : pid
         },
