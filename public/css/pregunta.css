@@ -106,8 +106,8 @@ div input[type=text]{
     width: 4%; 
     right: 150px;
 }
-i{
-    text-decoration: none;
+a{
+    text-decoration: none; 
     color: #000;
     font-size: 25px;
 }

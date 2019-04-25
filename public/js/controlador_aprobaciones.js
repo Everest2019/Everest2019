@@ -38,7 +38,7 @@ let id_centro_educativo = centro_educativo['_id'];
 
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 informacion_general.innerHTML = centro_educativo['informacion_general'];
-tipo_institución.innerHTML = centro_educativo['tipo_institución'];
+tipo_institución.innerHTML = centro_educativo['tipo_institucion'];
 tipo_colegio.innerHTML = centro_educativo['tipo_colegio'];
 modalidad.innerHTML = centro_educativo['modalidad'];
 ubicacion.innerHTML = centro_educativo['provincia'] + ", " + centro_educativo['canton'];

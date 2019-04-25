@@ -67,22 +67,22 @@ html {
 }
 .tabla_articulo tr th{
     padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000;   
+    border: 1px solid #000;
+    border-top: 1px solid #000;   
     right: 90px;
     background: #FAA21A;
 }
 .tabla_articulo tr td{
     padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000; 
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
     right: 150px;
     background: #F2F2F2;
 } 
 .tabla_articulo tbody{
     padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000; 
+    border: 1px solid #000;
+    border-top: 1px solid #000; 
     width: 4%; 
     right: 150px;
     background: #F2F2F2;
