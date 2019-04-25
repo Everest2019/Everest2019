@@ -24,7 +24,7 @@ fila.insertCell().innerHTML = 'Permite visualizar la cantidad de visitas realiza
  // se crea una nueva celda para el boton de generar el reporte 
  let celda_configuracion1 = fila.insertCell();
  let boton_redirigir1 = document.createElement('a');
- boton_redirigir1.href = 'reporte.html';
+ boton_redirigir1.href = 'panel_reportes_centro_educativo.html';
  let icono_redirigir1 = document.createElement('i');
  icono_redirigir1.classList.add('fas', 'fa-arrow-alt-circle-right', 'fa-2x');
  boton_redirigir1.appendChild(icono_redirigir1);   

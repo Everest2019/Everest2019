@@ -23,7 +23,7 @@ nombre.innerHTML = centro_educativo['nombre_comercial'];
 
 
 let actividades = listar_actividades ();
-
+ 
 let mostrar_datos = () =>{
     let filtro = input_filtro.value;
     tabla.innerHTML='';
@@ -43,14 +43,6 @@ let mostrar_datos = () =>{
         fila.insertCell().innerHTML = fecha;
         fila.insertCell().innerHTML = actividades[i]['descripcion'];
 
-        //se crea una nueva celda para el boton actividades
-        let celda_configuracion = fila.insertCell();
-        //se crea el boton editar
-        let boton_editar = document.createElement('a');
-        boton_editar.textContent = 'Editar';
-        boton_editar.href =  `actualizar_actividades.html?id_actividades=${actividades[i]['_id']}`;
-
-        celda_configuracion.appendChild(boton_editar);
     };
     }
 };

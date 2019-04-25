@@ -41,6 +41,7 @@
 .th_posicion{
     width: 2%;
 }
-i{
-    color: #FAA21A;
-}
+.tbl_top td i{
+    color: #FAA21A;  
+    
+} 

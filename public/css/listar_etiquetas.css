@@ -72,9 +72,8 @@
 }
 #tbl_etiquetas tr th{
     padding: 15px;
-    border: 2px solid #000;
-    border-top: 2px solid #000;
-    width: 4%;
+    border: 1px solid #000;
+    border-top: 1px solid #000;   
     right: 90px;
     background: #FAA21A;
 }
@@ -82,7 +81,6 @@
     padding: 15px;
     border: 2px solid #000;
     border-top: 2px solid #000;
-    width: 4%;
     right: 150px;
     background: #F2F2F2;
 }
@@ -108,6 +106,11 @@
 
 }
 
+.fa-edit:before {
+    content: "\f044";
+    margin-right: 10px;
+    margin-left: 5px;
+}
 .btn_etiqueta{
     width: 20%;
     height: 40px;
@@ -124,3 +127,6 @@
     text-decoration: none;
     color: #fff;
   }
+
+ 
+
