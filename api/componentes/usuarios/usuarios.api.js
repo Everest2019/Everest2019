@@ -415,7 +415,7 @@ module.exports.registrar_administrador = (req, res) => {
 //LISTAR USUARIOS
 
 module.exports.listar_instituciones = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({nombre_comercial: 1}).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ nombre_comercial: 1 }).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(
@@ -604,18 +604,20 @@ module.exports.buscar_por_id = function (req, res) {
         }
     )
 };
+
 //habilitar y deshabilitar
 module.exports.deshabilitar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: false } },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se pudo actualizar la editorial' });
+                res.json({ success: false, msg: 'No se pudo deshabilitar el usuario' });
             } else {
-                res.json({ success: true, msg: 'La editorial se actualizó con éxito' });
+                res.json({ success: true, msg: 'Usuario deshabilitado' });
             }
         }
     )
 };
+
 module.exports.habilitar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: { estado: true } },
         function (error) {
@@ -826,7 +828,7 @@ module.exports.aprobar_centro_educativo = function (req, res) {
 };
 
 module.exports.listar_instituciones_top_mep = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo'}).sort({ evaluacion: -1 }).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ evaluacion: -1 }).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(
@@ -835,7 +837,7 @@ module.exports.listar_instituciones_top_mep = (req, res) => {
                         instituciones: instituciones
                     }
                 )
-            } 
+            }
             else {
                 res.json(
                     {
@@ -870,13 +872,13 @@ module.exports.agregar_visitas = (req, res) => {
     )
 };
 
-module.exports.buscar_por_id = function (req, res){
-    modelo_usuario.find({_id : req.body.id_padre_familia}).then(
-        function(padre_familia){
-            if(padre_familia){
-                res.json({success: true, padre_familia : padre_familia});
-            }else{
-                res.json({success: false, padre_familia : padre_familia});
+module.exports.buscar_por_id = function (req, res) {
+    modelo_usuario.find({ _id: req.body.id_padre_familia }).then(
+        function (padre_familia) {
+            if (padre_familia) {
+                res.json({ success: true, padre_familia: padre_familia });
+            } else {
+                res.json({ success: false, padre_familia: padre_familia });
             }
         }
 
@@ -898,7 +900,7 @@ module.exports.actualizar = function (req, res) {
 };
 
 module.exports.listar_instituciones_por_evaluacion = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({evaluacion: -1}).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ evaluacion: -1 }).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(
@@ -925,15 +927,15 @@ module.exports.agregar_contrasena = function (req, res) {
         function (usuario) {
             if (usuario) {
                 if (usuario.codigo_verificacion == req.body.codigo_verificacion) {
-                        modelo_usuario.update({correo: req.body.correo}, { $set: { contrasena: req.body.contrasena, estado: true } },
-                            function (error) {
-                                if (error) {
-                                    res.json({ success: false, msg: `Revise el error ${error}` });
-                                } else {
-                                    res.json({ success: true, msg: 'Su perfil se ha actualizado con éxito', nombre: usuario.primer_nombre, apellido: usuario.primer_apellido });
-                                }
+                    modelo_usuario.update({ correo: req.body.correo }, { $set: { contrasena: req.body.contrasena, estado: true } },
+                        function (error) {
+                            if (error) {
+                                res.json({ success: false, msg: `Revise el error ${error}` });
+                            } else {
+                                res.json({ success: true, msg: 'Su perfil se ha actualizado con éxito', nombre: usuario.primer_nombre, apellido: usuario.primer_apellido });
                             }
-                        );
+                        }
+                    );
                 } else {
                     res.json({
                         success: false
