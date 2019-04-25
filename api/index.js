@@ -110,6 +110,8 @@ app.use('/api', rangos_puntuacion);
 const bitacora = require('./componentes/bitacora/bitacora.route');
 app.use('/api', bitacora);
 
+const comentarios = require ('./componentes/comentarios/comentarios.route');
+app.use('/api', comentarios);
 // Se guarda todo lo que se ha realizado
 //Se envie toda la informacion que hayamos creado hacia la app
 module.exports = app;
