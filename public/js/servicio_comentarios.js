@@ -18,7 +18,8 @@ let registrar_comentario = (pcentro_educativo, pcomentario, pcalificacion, pid_p
 
         swal.fire({
             type: 'success',
-            title: 'Comentario enviado correctamente'
+            title: 'Comentario enviado correctamente',
+            onClose: function(){ location.reload()}
         });
 
     });
@@ -26,11 +27,11 @@ let registrar_comentario = (pcentro_educativo, pcomentario, pcalificacion, pid_p
     });
 };
 
-let buscar_comentario = (id) => {
-    let comentario = [];
+let buscar_comentario = (id_comentario) => {
+    let comentarios = [];
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/buscar_comentario/" + id,
+        url: "http://localhost:4000/api/buscar_comentario/" + id_comentario,
         method: "GET",
         data: {
         },
@@ -40,14 +41,14 @@ let buscar_comentario = (id) => {
     });
 
     request.done(function (res) {
-        comentario = res.comentario;
+        comentarios = res.comentarios;
 
     });
 
     request.fail(function (jqXHR, textStatus) {
 
     });
-    return comentario;
+    return comentarios;
 
 };
 
@@ -75,15 +76,16 @@ let listar_comentarios = () =>{
     return lista_comentarios;
 }
   
-function actualizar_comentario(p_id, pcomentario, pcalificacion) {
+function actualizar_comentario(comentario, calificacion, _id, centro_educativo) {
     $.ajax({
         url: 'http://localhost:4000/api/actualizar_comentario',
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id: p_id,
-            comentario: pcomentario,
-            calificacion: pcalificacion
+            comentario: comentario,
+            calificacion: calificacion,
+            id: _id,
+            centro_educativo: centro_educativo
         },
         beforeSend: function beforeSend() {
 
@@ -98,7 +100,7 @@ function actualizar_comentario(p_id, pcomentario, pcalificacion) {
     });
 };
 
-function borrar_comentario(pid){
+function eliminar_comentario(pid){
     $.ajax({
         url: 'http://localhost:4000/api/eliminar_comentario',
         method: 'POST',

@@ -61,7 +61,7 @@ function mostrar_datos() {
 };
 
 function usuarios_deshabilitados(){
-    window.location.href = 'usuarios_deshabilitados.html';
+    window.location.href = 'usuarios_padres_de_familia_deshabilitados.html';
 };
 
 

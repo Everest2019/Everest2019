@@ -174,15 +174,11 @@ form{ width:250px; margin-left: 44%; padding:10px;}
     font-size: 20px;
   }
 
-  input[type="radio"] {
+  /*input[type="radio"] {
     display: none;
-  }
+  }*/
   
-  label {
-    color: grey;
-  }
-  
-  .clasificacion {
+  /*.clasificacion {
     direction: rtl;
     unicode-bidi: bidi-override;
   }
@@ -194,3 +190,4 @@ form{ width:250px; margin-left: 44%; padding:10px;}
   input[type="radio"]:checked ~ label {
     color: orange;
   }
+*/

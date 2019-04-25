@@ -172,3 +172,36 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
       } 
       return codigo; 
   };
+
+  function deshabilitar_padre_familia (pid_usuarios){
+    $.ajax({
+        url: 'http://localhost:4000/api/deshabilitar_padre_familia',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id : pid_usuarios
+        },
+
+        success: function success(res) {
+            console.log(res.msg);
+            
+        },
+    });
+    
+};
+
+function habilitar_padre_familia(pid_usuarios){
+    $.ajax({
+        url: 'http://localhost:4000/api/habilitar_padre_familia',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id : pid_usuarios
+        },
+        
+        success: function success(res) {
+            console.log(res.msg);
+            
+        },
+    });
+};
