@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/instituciones.css">
+    <link rel="stylesheet" href="css/top_mep.css">
+
     <title>Gemas - Instituciones</title>
+
 </head>
 
 <body>
@@ -34,23 +37,15 @@
             <a href="instituciones_favoritas.html">Favoritos</a>
         </div>
 
-        <div id="navbar_lateral_cercanos" class="pagina_actual">
+        <div id="navbar_lateral_cercanos">
             <a href="instituciones_cercanas.html">Cercanos</a>
-        </div>
-
-        <div id="navbar_lateral_inicio">
-            <a href="citas_padres_familia.html">Citas</a>
-        </div>
-
-        <div id="navbar_lateral_etiquetas">
-            <a href="filtrar_mediante_etiquetas_centros_educativos.html">Etiquetas</a>
         </div>
 
         <div id="navbar_lateral_utiles">
             <a href="#">Lista de útiles</a>
         </div>
 
-        <div id="navbar_lateral_utiles">
+        <div id="navbar_lateral_utiles" class="pagina_actual" s>
             <a href="top_ce_mep.html">Tops Centros Educativos</a>
         </div>
 
@@ -59,11 +54,10 @@
         </div>
 
     </div>
-    </div>
 
     <div class="main">
-        <h1>Lista de Instituciones</h1>
-        <h2>Centros Educativos Cercanos</h2>
+        <h1>Tops Centros Educativos</h1>
+        <h2>Centros Educativos mejores evaluados</h2>
         <div class="separador"></div>
 
         <div class="contenedor_filtraciones">
@@ -72,19 +66,39 @@
                 <input type="text" id="txt_buscar_centro_educativo">
             </div>
 
-        </div>
+            <div class="contenedor_criterios">
+                <label for="select_criterios">Criterios: </label>
+                <select id="select_criterios">
+                    <option value="Todos">Centros Educativos MEP</option>
+                    <option value="Escuelas publicas">Escuelas Publicas</option>
+                    <option value="Escuelas privadas">Escuelas Privadas</option>
+                </select>
+            </div>
 
-        <!-- Contenedor donde se muestran todas las instituciones -->
-        <div class="lista_instituciones" id="lista_instituciones">
-
         </div>
+        <table id="tbl_top" class="tbl_top">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Logo</th>
+                    <th>Centro Educativo</th>
+                    <th>Evaluación</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/servicio_centro_educativos_cercanos.js"></script>
-    <script src="js/controlador_listar_centros_eductivos_cercanos.js"></script>
+    <script src="js/servicio_centro_educativo.js"></script>
+    <script src="js/controlador_top_mep.js"></script>
+    <script src="js/controlador_sesion.js"></script>
 </body>
 
 </html>

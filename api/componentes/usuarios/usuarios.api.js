@@ -354,6 +354,30 @@ module.exports.agregar_idioma = (req, res) => {
     )
 };
 
+
+module.exports.agregar_preferencia = (req, res) => {
+    modelo_usuario.update(
+        { identificacion: req.body.identificacion },
+        {
+            $push:
+            {
+                'preferencia':
+                {
+                    preferencia: req.body.nombre
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar la preferncia, revise el siguiente error ${error}` });
+            }
+            else {
+                res.json({ success: true, msg: `Registro completo` });
+            }
+        }
+    )
+};
+
 module.exports.registrar_administrador = (req, res) => {
     let modelo_administrador = new modelo_usuario(
         {
@@ -720,7 +744,7 @@ module.exports.aprobar_centro_educativo = function (req, res) {
                       </div>
                       <div class="contenedor_cuerpo">
                         <p class="bienvenida">Encuentra el centro educativo ideal para tus hijos</p>
-                        <p> El centro educativo a sido aprobado con exitó</p>
+                        <p> El centro educativo ha sido aprobado con exitó</p>
                         <div class="contenedor_descripcion">
                         <p>Codigo: ${req.body.codigo_verificacion}.</p>
                         </div>
@@ -865,9 +889,9 @@ module.exports.actualizar = function (req, res) {
     modelo_usuario.findByIdAndUpdate(req.body.id, { $set: req.body },
         function (error) {
             if (error) {
-                res.json({ success: false, msg: 'No se ha podido actualizar su perfil' });
+                res.json({ success: false, msg: `No se ha podido actualizar su perfil ${error}` });
             } else {
-                res.json({ success: true, msg: 'Su perfil se ha actualizado con exito' });
+                res.json({ success: true, msg: '' });
             }
         }
     );

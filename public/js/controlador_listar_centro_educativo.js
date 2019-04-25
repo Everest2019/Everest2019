@@ -46,6 +46,7 @@ let filtrar_criterios = () => {
 let instituciones = listar_instituciones();
 
 let mostrar_datos = () => {
+    
     let filtro = input_filtrar.value;
     select_criterios.value = 'Todos';
     document.getElementById('lista_instituciones').innerHTML =''; 

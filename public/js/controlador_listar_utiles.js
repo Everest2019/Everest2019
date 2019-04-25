@@ -3,6 +3,8 @@
 const tabla = document.querySelector('#tbl_utiles tbody');
 const input_filtro = document.querySelector('#txt_filtar');
 
+const btn_agregar_utiles = document.querySelector('#btn_agregar');
+
 let lista_utiles = listar_utiles();
 
 let tipoUsuario = localStorage.getItem("tipo_usuario");
@@ -75,5 +77,8 @@ function confirmar_borrado() {
 };
 
 input_filtro.addEventListener('keyup', mostrar_datos);
+btn_agregar_utiles.addEventListener('click', function () {
+    window.location.href = './registrar_lista_utiles.html';
+})
 
 mostrar_datos();

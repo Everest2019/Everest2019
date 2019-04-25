@@ -8,10 +8,14 @@ const puntuacion_mep = document.querySelector('#evaluacion_mep');
 const informacion_general = document.querySelector('#informacion_general');
 const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
-const txt_religion =  document.querySelector('#txt_religion');
-const txt_ensenanza =  document.querySelector('#txt_ensenanza');
+const txt_religion = document.querySelector('#txt_religion');
+const txt_ensenanza = document.querySelector('#txt_ensenanza');
 const btn_modificar = document.querySelector('#btn_modificar');
 const btn_eliminar = document.querySelector('#btn_eliminar');
+
+const web = document.querySelector('#pagina_web');
+const correo = document.querySelector('#correo_electronico');
+const contenedor_redes = document.querySelector('#iconos_redes');
 
 
 let id_centro_educativo = localStorage.getItem('id_usuario');
@@ -30,33 +34,98 @@ banner.src = centro_educativo['imagen_portada'];
 logo.src = centro_educativo['logo'];
 nombre.innerHTML = centro_educativo['nombre_comercial'];
 
-if(centro_educativo['evaluacion']){
+if (centro_educativo['evaluacion']) {
     puntuacion_mep.innerHTML = centro_educativo['evaluacion'];
     puntuacion_mep.classList.add('evaluacion');
 
     let icono_estrella = document.createElement('i');
-    icono_estrella.classList.add('fas','fa-star');
+    icono_estrella.classList.add('fas', 'fa-star');
 
     puntuacion_mep.appendChild(icono_estrella);
 }
-else{
+else {
     puntuacion_mep.classList.add('sin_evaluar');
 }
 
-if(centro_educativo['evaluacion_padres']){
+if (centro_educativo['evaluacion_padres']) {
     puntuacion_padres_familia.innerHTML = centro_educativo['evaluacion'];
 
     let icono_estrella = document.createElement('i');
-    icono_estrella.classList.add('fas','fa-star');
+    icono_estrella.classList.add('fas', 'fa-star');
 
     puntuacion_padres_familia.appendChild(icono_estrella);
 }
-else{
+else {
     puntuacion_padres_familia.classList.add('sin_evaluar');
 }
 
 informacion_general.innerHTML = centro_educativo['informacion_general'];
 referencia_historica.innerHTML = centro_educativo['referencia_historica'];
+
+
+/******************************************************************************* */
+// redes sociales
+
+web.innerHTML = centro_educativo['pagina_web'];
+correo.innerHTML = centro_educativo['correo'];
+telefono.innerHTML += centro_educativo['telefono'];
+fax.innerHTML += centro_educativo['fax'];
+if (!centro_educativo['facebook'] == '') {
+
+    let url_facebook = document.createElement('a');
+    url_facebook.href = 'https://' + centro_educativo['facebook'];
+
+    let icono_facebook = document.createElement('i');
+    icono_facebook.classList.add('fab', 'fa-facebook-square', 'fa-4x', 'primer_icono');
+
+    url_facebook.appendChild(icono_facebook);
+    contenedor_redes.appendChild(url_facebook);
+}
+
+if (!centro_educativo['instagram'] == '') {
+
+    let url_instagram = document.createElement('a');
+    url_instagram.href = 'https://' + centro_educativo['instagram'];
+
+    let icono_instagram = document.createElement('i');
+    icono_instagram.classList.add('fab', 'fa-instagram', 'fa-4x');
+
+    url_instagram.appendChild(icono_instagram);
+    contenedor_redes.appendChild(url_instagram);
+}
+
+if (!centro_educativo['twitter'] == '') {
+
+    let url_twitter = document.createElement('a');
+    url_twitter.href = 'https://' + centro_educativo['twitter'];
+
+    let icono_twitter = document.createElement('i');
+    icono_twitter.classList.add('fab', 'fa-twitter', 'fa-4x');
+
+    url_twitter.appendChild(icono_twitter);
+    contenedor_redes.appendChild(url_twitter);
+}
+
+if (!centro_educativo['youtube'] == '') {
+
+    let url_youtube = document.createElement('a');
+    url_youtube.href = 'https://' + centro_educativo['youtube'];
+
+    let icono_youtube = document.createElement('i');
+    icono_youtube.classList.add('fab', 'fa-youtube', 'fa-4x');
+
+    url_youtube.appendChild(icono_youtube);
+    contenedor_redes.appendChild(url_youtube);
+}
+//Verificar si el centro educativo no tiene redes sociales agregadas
+if (centro_educativo['facebook'] == '' && centro_educativo['instagram'] == '' && centro_educativo['twitter'] == '' && centro_educativo['youtube'] == '') {
+
+    let redes_vacias = document.createElement('h1');
+    redes_vacias.textContent = 'Este centro educativo no cuenta con redes sociales';
+
+    contenedor_redes.appendChild(redes_vacias);
+}
+/*************************************************************************************** */
 
 //Tipo Institucion
 let contenedor_tipo_institucion = document.createElement('div');
@@ -165,33 +234,35 @@ if (!centro_educativo['mensualidad'] == '') {
 }
 
 //Etiquetas
-if(centro_educativo['etiquetas'][0] != undefined){
+if (centro_educativo['etiquetas'][0] != undefined) {
 
     let contenedor_etiquetas = document.createElement('div');
     contenedor_etiquetas.classList.add('contenedor_informacion', 'contenedor_etiquetas');
-    
-    let titulo_etiquetas = document.createElement('p');
-    titulo_etiquetas.classList.add('tipo_informacion');
-    titulo_etiquetas.textContent = 'Etiquetas';
-    
-    contenedor_etiquetas.appendChild(titulo_etiquetas);
-    
-    for(let i=0; i < centro_educativo['etiquetas'].length; i++){
-        var div_etiqueta = document.createElement('div');
-        let etiqueta = document.createElement('p');
-        div_etiqueta.classList.add('etiqueta');
-        etiqueta.classList.add('texto_etiqueta');
-        etiqueta.textContent = centro_educativo['etiquetas'][i]['accion'];
-    
-        div_etiqueta.appendChild(etiqueta);
-        contenedor_etiquetas.appendChild(div_etiqueta);
-    }
-    
-    
-    contenedor_caracteristicas.appendChild(contenedor_etiquetas);
+
+
+let titulo_etiquetas = document.createElement('p');
+titulo_etiquetas.classList.add('tipo_informacion');
+titulo_etiquetas.textContent = 'Etiquetas';
+
+
+contenedor_etiquetas.appendChild(titulo_etiquetas);
+for (let i = 0; i < centro_educativo['etiquetas'].length; i++) {
+
+    var div_etiqueta = document.createElement('div'); let etiqueta = document.createElement('p');
+    div_etiqueta.classList.add('etiqueta');
+    etiqueta.classList.add('texto_etiqueta');
+    etiqueta.textContent = etiquetas[i]['accion'];
+
+    div_etiqueta.appendChild(etiqueta);
+    contenedor_etiquetas.appendChild(div_etiqueta);
+
 }
 
 
+
+contenedor_caracteristicas.appendChild(contenedor_etiquetas);
+
+}
 //Año de fundacion
 
 let contenedor_fundacion = document.createElement('div');
@@ -222,7 +293,7 @@ contenedor_idioma.appendChild(titulo_idioma);
 
 let total_idiomas = 0;
 
-for(let i = 0; i < centro_educativo['idiomas'].length; i++){
+for (let i = 0; i < centro_educativo['idiomas'].length; i++) {
     let idioma = document.createElement('p');
     idioma.classList.add('informacion');
     idioma.textContent = centro_educativo['idiomas'][i]['idioma'];
@@ -231,7 +302,7 @@ for(let i = 0; i < centro_educativo['idiomas'].length; i++){
 
     total_idiomas++;
 }
-if(total_idiomas > 0){
+if (total_idiomas > 0) {
     contenedor_caracteristicas.appendChild(contenedor_idioma);
 }
 
@@ -296,7 +367,7 @@ let eliminar_centro_educativo = () => {
                 type: 'success',
                 onClose: () => {
                     window.location.href = 'iniciar_sesion.html';
-                  } 
+                }
             })
         }
     })
@@ -306,20 +377,22 @@ let eliminar_centro_educativo = () => {
 
 
 
-if(centro_educativo['informacion_ensenanza']){
+if (centro_educativo['informacion_ensenanza']) {
     txt_ensenanza.innerHTML = centro_educativo['informacion_ensenanza'];
 }
-else{
+else {
     txt_ensenanza.innerHTML = 'No hay información sobre el método de enseñanza';
 }
 
-if(centro_educativo['informacion_religion']){
+if (centro_educativo['informacion_religion']) {
     txt_religion.innerHTML = centro_educativo['informacion_religion'];
 }
-else{
+else {
     txt_religion.innerHTML = 'No hay información sobre la religión';
 }
-
+btn_modificar.addEventListener('click', function () {
+    window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
+})
 /******************************************************************************* */
 // redes sociales
 
@@ -386,6 +459,3 @@ if(centro_educativo['facebook'] == '' && centro_educativo['instagram'] == '' && 
 //btn_eliminar.addEventListener('click', eliminar_centro_educativo);
 
 
-btn_modificar.addEventListener('click', function () {
-    window.location.href = `actualizar_centro_educativo_general.html?id_centro_educativo=${centro_educativo['_id']}`;
-})

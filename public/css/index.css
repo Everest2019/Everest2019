@@ -130,6 +130,10 @@
   width: 35%;
   margin-left: 28%;
 }
+#navbar_lateral_solicitudes{
+  width: 35%;
+  margin-left: 28%;
+}
 
 #navbar_lateral_noticias{
   width: 35%;
@@ -153,6 +157,10 @@
 #navbar_lateral_aprobaciones{
   width: 47%;
   margin-left: 24%;
+}
+#navbar_lateral_preferencia{
+  width: 35%;
+  margin-left: 28%;
 }
 
 .pagina_actual{

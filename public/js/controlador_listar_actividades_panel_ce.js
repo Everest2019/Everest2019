@@ -76,7 +76,7 @@ let actividad = () => {
 function confirmar_borrado() {
     let id = this.dataset.id_actividades;
     swal.fire({
-        title: 'Está seguro que desea eliminar la actividad ?',
+        title: ' ¿ Desea eliminar ?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

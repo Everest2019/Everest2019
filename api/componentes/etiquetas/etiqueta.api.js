@@ -70,7 +70,7 @@ module.exports.actualizar = function (req, res) {
             if (error) {
                 res.json({ success: false, msg: 'No se pudo actualizar la etiqueta' });
             } else {
-                res.json({ success: true, msg: 'La etiqueta se actualizó con éxito' });
+                res.json({ success: true, msg: '' });
             }
         }
 

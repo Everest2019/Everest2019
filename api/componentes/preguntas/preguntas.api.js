@@ -56,10 +56,18 @@ module.exports.buscar_por_id = (req, res) => {
         function (pregunta) {
             if (pregunta) {
                 res.json(
-                    {success: true, pregunta: pregunta})
+                    {
+                        success: true,
+                        pregunta: pregunta
+                    }
+                )
             } else {
                 res.json(
-                    {success: false,pregunta: 'No se encontraron preguntas'})
+                    {
+                        success: false,
+                        pregunta: 'No se encontraron preguntas'
+                    }
+                )
             }
         }
     )
@@ -69,10 +77,18 @@ module.exports.actualizar = (req, res) => {
         function (error) {
             if (error) {
                 res.json(
-                    {success: false,msg: `No se pudo actualizar la pregunta`});
+                    {
+                        success: false,
+                        msg: `No se pudo actualizar la pregunta`
+                    }
+                );
             } else {
                 res.json(
-                    {success: true,msg: `Se actualizó correctamente la pregunta`});
+                    {
+                        succes: true,
+                        msg: `Se actualizó correctamente la pregunta`
+                    }
+                );
 
             }
         }

@@ -2,9 +2,9 @@
 
 const lista_instituciones = document.querySelector('#lista_instituciones');
 const select_criterios = document.querySelector('#select_criterios');
-const opt_todos = document.querySelector('#listar_todos');
+const opt_todos = document.querySelector('#listar_todos')
 const opt_escuelas = document.querySelector('#listar_escuelas');
-
+let instituciones = listar_instituciones();
 
 let filtrar_criterios = () =>{
     switch(select_criterios.value){
@@ -28,7 +28,7 @@ select_criterios.addEventListener('change', filtrar_criterios);
 
 
 let mostrar_datos = () => {
-    let instituciones = listar_instituciones();
+    
     document.getElementById('lista_instituciones').innerHTML =''; 
     for(let i=0; i< instituciones.length; i++){
         document.getElementById('lista_instituciones').innerHTML += 
@@ -92,7 +92,6 @@ let mostrar_datos = () => {
 };
 
 let mostrar_datos_colegios = () => {
-    let instituciones = listar_instituciones();
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
         if (instituciones[i]['tipo_institucion'].includes('Colegio') || instituciones[i]['tipo_institucion'].includes('Ambos')) {
@@ -156,7 +155,6 @@ let mostrar_datos_colegios = () => {
 };
 
 let mostrar_datos_escuelas = () => {
-    let instituciones = listar_instituciones();
     document.getElementById('lista_instituciones').innerHTML ='';
     for(let i=0; i< instituciones.length; i++){
         if (instituciones[i]['tipo_institucion'].includes('Escuela') || instituciones[i]['tipo_institucion'].includes('Ambos')) {

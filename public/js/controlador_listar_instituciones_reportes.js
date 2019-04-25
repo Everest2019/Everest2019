@@ -65,7 +65,7 @@ function redirigir() {
     const reporte6 = document.querySelector('#reporte6');
 
     reporte1.addEventListener('click',function(){
-       
+        window.location.href = `panel_reportes_centro_educativo.html`;
     });
 
     reporte2.addEventListener('click',function(){

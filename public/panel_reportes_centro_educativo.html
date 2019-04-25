@@ -3,26 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-
-
-    <title>Gemas</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/listar_etiquetas.css">
-    <link rel="stylesheet" href="css/panel_control_centro_educativo.css">
+    <link rel="stylesheet" href="css/reporte_visitas.css">
+    <title>Gemas - Instituciones</title>
 </head>
 
 <body>
+
+
     <div class="navbar_lateral" id="nav_principal">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
 
 
         <div id="navbar_lateral_regresar">
-            <a href="panel_control_centro_educativo">Inicio</a>
+            <a href="panel_control_centro_educativo.html">Inicio</a>
         </div>
 
         <div id="navbar_lateral_general">
@@ -49,7 +49,7 @@
             <a href="panel_centro_educativo_actividades.html">Actividades</a>
         </div>
 
-        <div id="navbar_lateral_etiquetas" class="pagina_actual">
+        <div id="navbar_lateral_etiquetas">
             <a href="panel_centro_educativo_etiquetas.html">Etiquetas</a>
         </div>
 
@@ -61,7 +61,7 @@
             <a href="lista_utiles.html">Listas de Útiles</a>
         </div>
 
-        <div id="navbar_lateral_reportes">
+        <div id="navbar_lateral_reportes" class="pagina_actual">
             <a href="panel_reportes_centro_educativo.html">Reportes</a>
         </div>
 
@@ -83,38 +83,27 @@
 
     <div class="main">
 
-        <h1>Agregar Etiquetas</h1>
-        <h2>Seleccione hasta cuatro etiquetas</h2>
+        <h1 id="nombre_ce"></h1>
+        <h2>Padres de familia que han ingresado al perfil</h2>
         <div class="separador"></div>
 
-        <div class="contenedor_filtraciones">
-            <div class="contenedor_buscar">
-                <label for="txt_filtar">Buscar: </label>
-                <input type="text" id="txt_filtar">
-            </div>
-
-        </div>
-
-        <button type="button" id="btn_agregar" class="btn_etiqueta">Agregar etiquetas</button>
-        <button type="button" class="btn_etiqueta"><a href="lista_etiquetas_centro_educativo.html">Gestionar mis
-                etiquetas</a></button>
-
-
         <div class="contenido">
-            <table id="tbl_etiquetas">
-                <thead>
-                    <tr id="tr_etiquetas">
-                        <th>Etiquetas</th>
-                        <th>Descripción</th>
-                        <th>Seleccione las etiquetas:</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-            </table>
+            <div id="curve_chart" class="style"></div>
         </div>
+
+        <table id="tbl_reporte_visitas" class="tbl_reporte_visitas">
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Visitas</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>
 
 
     </div>
@@ -122,13 +111,11 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-
-    <script src="js/servicio_etiquetas.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript"></script>
     <script src="js/servicio_centro_educativo.js"></script>
-    <script src="js/controlador_listar_etiquetas.js"></script>
+    <script src="js/controlador_visitas.js"></script>
     <script src="js/controlador_cerrar_sesion.js"></script>
-
 
 </body>
 

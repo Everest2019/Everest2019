@@ -1,6 +1,6 @@
 'use strict';
-let listar_etiquetas = ()=>{
-    let  listar_etiquetas = [];
+let listar_etiquetas = () => {
+    let listar_etiquetas = [];
     let request = $.ajax({
         url: "http://localhost:4000/api/listar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "GET",
@@ -9,7 +9,7 @@ let listar_etiquetas = ()=>{
         },
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json",
-        async:false
+        async: false
     });
 
     request.done(function (res) {
@@ -21,7 +21,7 @@ let listar_etiquetas = ()=>{
 
     return listar_etiquetas;
 };
-let registrar_etiquetas = (paccion, pdescripcion)=>{
+let registrar_etiquetas = (paccion, pdescripcion) => {
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_etiquetas",// se necesita el protocolo http para que funciona por que lo pide
         method: "POST",
@@ -33,12 +33,12 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
         dataType: "json"
     });
 
-    request.done(function(res){
+    request.done(function (res) {
         let detalle = "Etiqueta registrada";
         let usuario = 'Administrador';
         let fecha = new Date();
 
-        registrar_accion(usuario,detalle,fecha);
+        registrar_accion(usuario, detalle, fecha);
     });
 
     request.fail(function (jqXHR, textStatus) {
@@ -46,93 +46,88 @@ let registrar_etiquetas = (paccion, pdescripcion)=>{
 
 };
 
-let buscar_etiquetas = (id_etiquetas)=>{
+let buscar_etiquetas = (id_etiquetas) => {
     let etiquetas = [];
 
     let request = $.ajax({
-        url: "http://localhost:4000/api/buscar_etiquetas/"+ id_etiquetas,
+        url: "http://localhost:4000/api/buscar_etiquetas/" + id_etiquetas,
         method: "GET",
         data: {
         },
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        async : false
+        async: false
     });
 
-    request.done(function(res){
-        etiquetas= res.etiquetas;
+    request.done(function (res) {
+        etiquetas = res.etiquetas;
     });
 
-    request.fail(function(jqXHR, textStatus){
+    request.fail(function (jqXHR, textStatus) {
 
     });
     return etiquetas;
 
 };
 
-let actualizar_etiquetas = (paccion,pdescripcion, pid)=>{
+let actualizar_etiquetas = (paccion, pdescripcion, pid) => {
     let request = $.ajax({
-        url : 'http://localhost:4000/api/actualizar_etiquetas',
-        method : "POST",
-        data:{
-            accion : paccion,
+        url: 'http://localhost:4000/api/actualizar_etiquetas',
+        method: "POST",
+        data: {
+            accion: paccion,
             descripcion: pdescripcion,
-            id : pid
+            id: pid
         },
-        dataType : "json",
-        contentType : 'application/x-www-form-urlencoded; charset=UTF-8'
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 
-    request.done(function(res){
-
+    request.done(function (res) {
+/*
         let detalle = "Etiqueta actualizada";
         let usuario = 'Administrador';
         let fecha = new Date();
 
-        registrar_accion(usuario,detalle,fecha);
-
+        registrar_accion(usuario, detalle, fecha);
+*/
         swal.fire({
-            type : 'success',
-            title : 'Etiqueta actualizada con éxito',
-            text : res.msg,
+            type: 'success',
+            title: 'Se ha  actualizado con éxito',
+            text: res.msg,
             onClose: () => {
                 window.location.href = 'panel_administrador_etiquetas.html';
-              }
+            }
         });
 
     });
 
-    request.fail(function(res){
+    request.fail(function (res) {
         swal.fire({
-            type : 'error',
-            title : 'Proceso no realizado',
-            text : res.msg
+            type: 'error',
+            title: 'Proceso no realizado',
+            text: res.msg
         });
 
     });
 
 };
 
-function borrar_etiquetas(pid){
+function borrar_etiquetas(pid) {
     $.ajax({
         url: 'http://localhost:4000/api/borrar_etiquetas',
         method: 'POST',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {
-            id_etiqueta : pid
+            id_etiqueta: pid
         },
         beforeSend: function beforeSend() {
 
         },
         success: function success(response) {
-            let detalle = "Etiqueta actualizada";
-            let usuario = 'Administrador';
-            let fecha = new Date();
-
-            registrar_accion(usuario,detalle,fecha);
             Swal.fire({
-                title: 'Etiqueta eliminada!',
-                text: 'La etiqueta fue borrada con éxito',
+                title: 'Se ha eliminado correctamente!',
+               
                 type: 'success'
             }
 
@@ -142,4 +137,32 @@ function borrar_etiquetas(pid){
             console.log("Request fail error:" + _error);
         }
     });
+    /* $.ajax({
+         url: 'http://localhost:4000/api/borrar_etiquetas',
+         method: 'POST',
+         contentType: "application/x-www-form-urlencoded; charset=utf-8",
+         data: {
+             id_etiqueta : pid
+         },
+         beforeSend: function beforeSend() {
+ 
+         },
+         success: function success(response) {
+             let detalle = "Etiqueta actualizada";
+             let usuario = 'Administrador';
+             let fecha = new Date();
+ 
+             registrar_accion(usuario,detalle,fecha);
+             Swal.fire({
+                 title: 'Etiqueta eliminada!',
+                 text: 'La etiqueta fue borrada con éxito',
+                 type: 'success'
+             }
+ 
+             )
+         },
+         error: function error(_error) {
+             console.log("Request fail error:" + _error);
+         }
+     });*/
 }
