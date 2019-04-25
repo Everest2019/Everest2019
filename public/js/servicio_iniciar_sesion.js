@@ -56,7 +56,7 @@ function agregar_contrasena(pcorreo, pcodigo_verificacion, pcontrasena){
       respuesta = response;
 
         let detalle = "Padre familia verificado";
-        let usuario = respuesta.nombre + ' ' + respuesta.apellido;
+        let usuario = response.nombre + ' ' + response.apellido;
         let fecha = new Date();
 
         registrar_accion(usuario,detalle,fecha);

@@ -30,7 +30,9 @@ let listar_etiquetas = () =>{
     let eliminar = document.createElement('input');
     eliminar.type = 'checkbox';
     eliminar.value= etiquetas[i]['_id'];
+    console.log(etiquetas[0]['_id'])
     eliminar.name = etiquetas[i]['_id'];
+    eliminar.dataset.id = etiquetas[i]['_id'];
 
     celda_configuracion.appendChild(eliminar);
 
@@ -43,10 +45,35 @@ let obtener_datos =()=>{
   let seleccionadas = document.querySelectorAll('input[type=checkbox]:checked');
 
   for(let i=0;i<seleccionadas.length;i++){
-    console.log(seleccionadas[i].value);
-    remover_etiquetas(mi_centro_educativo,seleccionadas[i].value);
+
+    remover_etiquetas(_id,seleccionadas[i].value);
 
   }
 
 };
-boton_eliminar.addEventListener('click',obtener_datos);
+boton_eliminar.addEventListener('click',confirmar_borrado);
+//boton_eliminar.addEventListener('click',obtener_datos);
+
+function confirmar_borrado() {
+  let seleccionadas = document.querySelectorAll('input[type=checkbox]:checked');
+    let id = this.dataset.id;
+    swal.fire({
+        title: 'Confirme que desea eliminar etiquetas ',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, estoy seguro'
+    }).then((result) => {
+        if (result.value) {
+          for(let i=0;i<seleccionadas.length;i++){
+
+            remover_etiquetas(_id,seleccionadas[i].value);
+
+          }
+            //actividades = listar_actividades();
+            //mostrar_datos();
+
+        }
+    })
+};

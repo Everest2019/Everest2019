@@ -16,7 +16,8 @@ let get_param = (param) => {
 let _id = get_param('id_actividades');
 
 let actividades = buscar_actividades(_id); //se levantan los datos de ese inmueble bajo demanda usando su id
-
+let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
 let validar = () => {
     let error = false;
@@ -73,7 +74,7 @@ let obtener_datos = () => {
            
         }).then((result) => {
             if (result.value) {
-                actualizar_actividades( titulo, fecha, descripcion, _id);
+                actualizar_actividades( titulo, fecha, descripcion, _id,centro_educativo['nombre_comercial']);
             }
         })
 

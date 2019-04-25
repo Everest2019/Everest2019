@@ -102,7 +102,7 @@ div input{
     padding-top: 10px;
     text-align: center;
 }
- button{
+ .agregar_noticia{
     margin: 2%;
     width: 20%;
     height: 40px;
@@ -147,4 +147,13 @@ button:hover{
     width: 4%;
     right: 100px;
     background: #fff;
+}
+
+#lista_noticias i{
+    color: #000;
+    margin-left: 18px;
+}
+
+.btn_editar{
+    margin-left: 28%;  
 }

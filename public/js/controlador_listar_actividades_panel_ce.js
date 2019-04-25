@@ -84,7 +84,7 @@ function confirmar_borrado() {
         confirmButtonText: 'Sí, estoy seguro'
     }).then((result) => {
         if (result.value) {
-            borrar_actividades(id);
+            borrar_actividades(id,centro_educativo['nombre_comercial']);
             actividades = listar_actividades();
             mostrar_datos();
 

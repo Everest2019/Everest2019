@@ -625,9 +625,16 @@ let asignar_etiquetas = (paccion, pdescripcion, id_ce)=>{
     dataType: "json"
   });
 
-  peticion.done(function(response){
-    respuesta = response;
-      window.location.href = 'lista_etiquetas_centro_educativo.html';
+  peticion.done(function(res){
+    respuesta = res;
+    swal.fire({
+        type: 'success',
+        title: 'Se ha agregado la etiqueta con éxito',
+        text: res.msg,
+        onClose: () => {
+            window.location.href = 'lista_etiquetas_centro_educativo.html';
+        }
+    });
   });
 
   peticion.fail(function(response){
@@ -637,13 +644,13 @@ let asignar_etiquetas = (paccion, pdescripcion, id_ce)=>{
   return respuesta;
 
 };
-
+//-------remover 1 etiqueta (subdocumento de un CE)--------------
 let remover_etiquetas = (pid_centro_educativo, pid_etiqueta)=>{
   let request = $.ajax({
     url:"http://localhost:4000/api/remover_etiquetas",
     method:"POST",
     data:{
-      id_centro_educativo: pid_centro_educativo,
+      id_ce: pid_centro_educativo,
       id_etiqueta: pid_etiqueta,
     },
     contentType: "application/x-www-form-urlencoded; charset=utf-8",
@@ -654,8 +661,8 @@ let remover_etiquetas = (pid_centro_educativo, pid_etiqueta)=>{
   request.done(function(msg){
     swal.fire({
       type:'success',
-      title:'Eliminada',
-      text: 'Etiqueta eliminada de la lista ',
+      title:'Éxito',
+      text: 'Etiquetas eliminada de la lista ',
       onClose: ()=>{
         window.location.href = './lista_etiquetas_centro_educativo.html';
       }
@@ -667,6 +674,60 @@ let remover_etiquetas = (pid_centro_educativo, pid_etiqueta)=>{
   });
 
 }
+let deshabilitar_ce =(pid_centro_educativo)=>{
+  let request = $.ajax({
+    url:"http://localhost:4000/api/deshabilitar_ce",
+    method: "POST",
+    data:{
+      id_ce: pid_centro_educativo
+    },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async: false
+  });
+  request.done(function (res) {
+    swal.fire({
+        type: 'success',
+        title: 'Deshabilitado',
+        text: 'Esta cuenta ha sido deshabilitada',
+        onClose: () => {
+         window.location.href = './panel_administrador_instituciones.html';
+       }
+    });
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+
+};
+
+let habilitar_ce =(pid_centro_educativo)=>{
+  let request = $.ajax({
+    url:"http://localhost:4000/api/habilitar_ce",
+    method: "POST",
+    data:{
+      id: pid_centro_educativo
+    },
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    dataType: "json",
+    async: false
+  });
+  request.done(function (res) {
+    swal.fire({
+        type: 'success',
+        title: 'Habilitado',
+        text: 'El Centro educativo ha sido habilitado nuevamente',
+        onClose: () => {
+         window.location.href = './panel_administrador_instituciones.html';
+       }
+    });
 
 
-//---------------unfinished--------------------------------
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+
+  });
+
+};

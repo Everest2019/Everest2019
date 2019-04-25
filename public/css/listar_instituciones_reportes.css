@@ -124,7 +124,7 @@ a{
 }
 .contenedor_botones{
     display: grid;
-    grid-template-columns: repeat(auto-fill,45%);
+    grid-template-columns: 1fr;
     grid-gap: 5px;
     margin: 0 auto;
     justify-content: center; 
@@ -132,7 +132,7 @@ a{
 }
 .btn_reporte{
     height: 100px;
-    width: 100%;
+    width: 80%;
     background: #fff;
     border: 3px solid #40433E;
     border-radius: 15px;
@@ -142,6 +142,7 @@ a{
     font-family: 'Roboto', 'sans-serif';
     color: #40433E;
     margin-top: 15px;
+    margin: 0 auto;
 }
 
 .btn_reporte:hover{

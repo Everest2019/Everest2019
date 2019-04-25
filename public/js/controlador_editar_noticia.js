@@ -14,7 +14,8 @@ let get_param = (param)=>{
 
   return id;
 };
-
+let id_centro_educativo = localStorage.getItem('id_usuario');
+let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 //-------------------
 let _id = get_param('id_noticia');
 
@@ -39,7 +40,7 @@ let obtener_datos = ()=>{
 
 
 
-  actualizar_noticia(titulo, descripcion, fecha, _id);
+  actualizar_noticia(titulo, descripcion, fecha, _id,centro_educativo['nombre_comercial']);
 
 };
 //----------------------------Validate function------

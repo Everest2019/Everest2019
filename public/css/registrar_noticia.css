@@ -62,7 +62,7 @@ div input[type=text]{
 
 div input[type=date]{
     display: inline-block;
-    width: 40%;
+    width: 52%;
     height: 25px;
     border-radius: 3px;
     font-size: 16px;
@@ -110,7 +110,7 @@ div input[type=date]{
 }
 
 .formulario-1 div textarea{
-    width: 40%;
+    width: 52%;
     height: 75px;
     resize: none;
     font-size: 15px;

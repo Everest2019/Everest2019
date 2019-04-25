@@ -43,9 +43,9 @@
   }
 
   .navbar_lateral img{
-    width: 80%;   
-    height: 100px;
-    margin-left: 10%;
+    width: 70%;   
+    height: 120px;
+    margin-left: 7%;
     margin-top: 20px;
 }
 
@@ -161,6 +161,11 @@
 #navbar_lateral_preferencia{
   width: 35%;
   margin-left: 28%;
+}
+
+#navbar_lateral_preferencias{
+  width: 50%;
+  margin-left: 23%;
 }
 
 .pagina_actual{

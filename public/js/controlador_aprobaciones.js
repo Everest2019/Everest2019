@@ -110,7 +110,10 @@ function habilitar() {
     Swal.fire({
         title:'¡Centro Educativo aprobado!',
         text:'El centro educativo fue eliminado con éxito',
-        type:'success'
+        type:'success',
+        onClose: () =>{
+            window.location.href = 'panel_administrador_aprobaciones.html';
+        }
     }
        
     )

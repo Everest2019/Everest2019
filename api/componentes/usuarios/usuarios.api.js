@@ -951,5 +951,68 @@ module.exports.agregar_contrasena = function (req, res) {
     )
 };
 
+module.exports.asignar_etiquetas = function(req,res){
+    modelo_usuario.update(
+      {_id:req.body._id},
+      {
+        $push:
+        {
+          'etiquetas':
+          {
+            accion : req.body.accion,
+            descripcion : req.body.descripcion
+          }
+        }
+      },
+      function(error){
+        if(error){
+          res.json({success:false, msg:'No se pudo agregar la etiqueta'});
+        }else{
+          res.json({success:true, msg:'Etiqueta asignada con éxito'});
+        }
+      }
+    )
+
+
+};
+
+module.exports.remover_etiquetas = function (req, res){
+  modelo_usuario.findByIdAndUpdate(req.body.id_ce,
+    { $pull:{'etiquetas' :{_id: req.body.id_etiqueta}}},
+    {safe:true, upsert:true},
+    function(error){
+      if(error){
+        res.json({success:false, msg: 'no se pudo bla bla'})
+      }else{
+        res.json({success:true, msg: 'Etiqueta removida con éxito'})
+      }
+    }
+  );
+};
+
+module.exports.deshabilitar_ce = function(req,res){
+  modelo_usuario.findByIdAndUpdate(req.body.id_ce, {$set:{estado:false}},
+    function(error){
+      if(error){
+        res.json({success:false, msg:'No se pudo deshabilitar el usuario'});
+      }else{
+        res.json({success: true, msg: 'Centro educativo deshabilitado'});
+      }
+    }
+  )
+};
+
+module.exports.habilitar_ce = function(req, res){
+  modelo_usuario.findByIdAndUpdate(req.body.id, {$set: {estado:true}},
+    function(error){
+      if(error){
+        res.json({success:false, msg:' No se pudo habilitar nuevamente al usuario'});
+      }else{
+        res.json({success:true, msg: 'Usuario habilitado con éxito'});
+      }
+    });
+};
+
+
 
 

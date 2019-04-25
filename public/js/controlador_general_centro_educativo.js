@@ -11,6 +11,7 @@ const contenedor_imagenes = document.querySelector('#contenedor_imagenes');
 const referencia_historica = document.querySelector('#referencia_historica');
 const txt_religion =  document.querySelector('#txt_religion');
 const txt_ensenanza =  document.querySelector('#txt_ensenanza');
+const boton_deshabilitar = document.querySelector('#btn_deshabilitar');
 
 /******************************************************** */
 
@@ -516,6 +517,60 @@ let obtener_datos = () => {
     })
 }
 
+// ----------boton deshabilitar-------------------
+if(tipo_usuario== 'padre_familia'|| tipo_usuario=='centro_educativo'){
+    document.getElementById('btn_deshabilitar').style.display = "none";
+  }
+  
+  function confirmar_deshabilitar() {
+  
+      swal.fire({
+          title: 'Confirme que desea deshabilitar este centro educativo',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, deshabilitar'
+      }).then((result) => {
+          if (result.value) {
+            deshabilitar_ce(localStorage.getItem('centro_educativo'));
+          }
+      })
+  };
+  function confirmar_habilitar() {
+  
+      swal.fire({
+          title: 'Confirme que desea habilitar de nuevo este centro educativo',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, habilitar'
+      }).then((result) => {
+          if (result.value) {
+            habilitar_ce(localStorage.getItem('centro_educativo'));
+            
+          }
+      })
+  };
+  
+  if(centro_educativo['estado']== false ){
+    boton_deshabilitar.textContent= 'Habilitar';
+    boton_deshabilitar.name = 'habilitar';
+  document.querySelector('#btn_deshabilitar').addEventListener('click',confirmar_habilitar);
+  }else{
+    boton_deshabilitar.textContent= 'Deshabilitar';
+    boton_deshabilitar.name = 'deshabilitar';
+    document.querySelector('#btn_deshabilitar').addEventListener('click',confirmar_deshabilitar);
+  }
+  
+  
+  
+  
+  
+  //--------------------------------------------------
+
+  
 let fecha = new Date();
 agregar_visitas(fecha,id_centro_educativo);
 btn_informacion.addEventListener('click', obtener_datos);

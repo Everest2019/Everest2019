@@ -17,7 +17,10 @@ let registrar = (pidioma,piso,pflag) =>{
     swal.fire({
       type:'success',
       title:'Idioma agregado a configuración',
-      text:`El idioma ${pidioma} fue agregado satisfactoriamente`
+      text:`El idioma ${pidioma} fue agregado satisfactoriamente`,
+      onClose:  () =>{
+        window.location.href = 'panel_administrador_lenguajes.html';
+      }
     });
   });
 

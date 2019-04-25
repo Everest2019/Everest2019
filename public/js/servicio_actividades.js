@@ -116,7 +116,7 @@ let buscar_actividades = (id_actividades) => {
 };
 
 
-let actualizar_actividades = (ptitulo, pfecha, pdescripcion, pid) => {
+let actualizar_actividades = (ptitulo, pfecha, pdescripcion, pid, pnombre_institucion) => {
     let request = $.ajax({
         url: 'http://localhost:4000/api/actualizar_actividades',
         method: "POST",
@@ -132,9 +132,15 @@ let actualizar_actividades = (ptitulo, pfecha, pdescripcion, pid) => {
 
     request.done(function (res) {
 
+        let detalle = "Actividad actualizada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
         swal.fire({
             type: 'success',
-            title: 'Se ha actualizad con éxito',
+            title: 'Se ha actualizado con éxito',
             text: res.msg,
             onClose: () => {
                 window.location.href = 'panel_centro_educativo_actividades.html';
@@ -155,7 +161,7 @@ let actualizar_actividades = (ptitulo, pfecha, pdescripcion, pid) => {
 
 };
 
-function borrar_actividades(pid){
+function borrar_actividades(pid,pnombre_institucion){
     $.ajax({
         url: 'http://localhost:4000/api/borrar_actividades',
         method: 'POST',
@@ -167,8 +173,14 @@ function borrar_actividades(pid){
             
         },
         success: function success(response) {
+
+            let detalle = "Actividad eliminada";
+            let usuario = pnombre_institucion;
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
             Swal.fire({
-                title: 'Se ha eliminado con exito!',
+                title: 'Se ha eliminado con éxito!',
                 text: '',
                 type: 'success'
             }

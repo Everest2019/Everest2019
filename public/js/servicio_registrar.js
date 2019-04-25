@@ -38,6 +38,12 @@ let registrar = (pnombre, pinformacion) => {
     });
 
     request.done(function (msg) {
+        let detalle = "Preferencia registrada";
+            let usuario = 'Administrador';
+            let fecha = new Date();
+
+            registrar_accion(usuario, detalle, fecha);
+
         swal.fire({
             type: 'success',
             title: 'Se registro correctamente',

@@ -1,6 +1,7 @@
 'use strict';
 
 const tabla = document.querySelector('#tbl_idiomas tbody');
+const btn_agregar = document.querySelector('#btn_agregar');
 let lista_idiomas = listar_lenguajes();
 
 
@@ -28,3 +29,6 @@ let show_languages = () =>{
 
 
 show_languages();
+btn_agregar.addEventListener('click', function(){
+  window.location.href = 'registrar_lenguaje.html';
+})

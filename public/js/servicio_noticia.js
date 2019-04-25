@@ -108,7 +108,7 @@ let buscar_noticia=(pid_noticia)=>{
     return noticia;
   };
 
-let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
+let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid,pnombre_institucion)=>{
     let request = $.ajax({
       url:"http://localhost:4000/api/actualizar_noticia",
       method: "POST",
@@ -123,6 +123,13 @@ let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
     });
 
     request.done(function(res){
+
+      let detalle = "Noticia modificada";
+      let usuario = pnombre_institucion;
+      let fecha = new Date();
+
+      registrar_accion(usuario,detalle,fecha);
+
       swal.fire({
             type : 'success',
             title : 'Noticia actualizada',
@@ -143,7 +150,7 @@ let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
 
   };
 
-  function eliminar_noticia (pid_noticia){
+  function eliminar_noticia (pid_noticia,pnombre_institucion){
      $.ajax ({
       url:"http://localhost:4000/api/eliminar_noticia",
       method:"POST",
@@ -151,13 +158,16 @@ let actualizar_noticia = (ptitulo,pdescripcion,pfecha,pid)=>{
       data:{
         id: pid_noticia
       },
-
-
+      
       beforeSend: function beforeSend(){
 
       },
       success: function success(response){
-
+        let detalle = "Noticia eliminada";
+        let usuario = pnombre_institucion;
+        let fecha = new Date();
+  
+        registrar_accion(usuario,detalle,fecha);
       },
       error: function error(_error){
         console.log('request fail');
