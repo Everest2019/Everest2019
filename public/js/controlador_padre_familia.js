@@ -167,9 +167,20 @@ let obtener_datos = () =>{
     let provincia = buscar_provincia();
     let canton = buscar_canton();
     let distrito = buscar_distrito();
+    
+//Contenedor preferencia
+const contenedor_preferencia = document.querySelector('#preferencias');
 
-    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, codigo);
+    //preferencia
+
+        const preferencia = document.querySelectorAll('#preferencias input[type=checkbox]:checked');
+
+    registrar_usuario(primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, correo, telefono,  cantidad_hijos, edad_hijos, nacionalidad, identificacion, tipo_identificacion, foto, provincia, canton, distrito, estado, tipo_usuario, codigo,preferencia);
   
+    
+    for(let i = 0; i < preferencia.length; i++){
+      registrar_preferncia(identificacion, preferencia[i].value);
+  }
   }else{
     swal.fire({
       type: 'warning',
@@ -254,3 +265,25 @@ llenar_provincias();
 select_provincia.addEventListener('change', llenar_cantones);
 select_canton.addEventListener('change', llenar_distritos);
 boton_enviar.addEventListener('click',obtener_datos);
+
+
+
+let listar_preferencias = listar_preferencia();
+
+for(let i = 0; i < listar_preferencias.length; i++){
+  let contenedor = document.createElement('div');
+
+  let label = document.createElement('label');
+  label.textContent = listar_preferencias[i]['preferencia'] + ' - ' + listar_preferencias[i]['nombre'];
+
+  let checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.classList.add('checkbox_preferencia');
+  checkbox.value = listar_preferencias[i]['nombre'];
+
+
+  contenedor.appendChild(checkbox);
+  contenedor.appendChild(label);
+
+  preferencias.appendChild(contenedor);
+}

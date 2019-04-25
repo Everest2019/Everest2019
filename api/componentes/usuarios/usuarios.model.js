@@ -80,8 +80,13 @@ let schema_usuarios = new mongoose.Schema(
 
 
             foto_perfil : {type: String, required: false},
+            
             favoritos : [
                 {id_centro_educativo: String, required: false}
+            ],
+
+            preferencia : [
+                {nombre: String, required: false}
             ],
 
 
