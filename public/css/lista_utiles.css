@@ -96,8 +96,11 @@
     right: 150px;
     background: #F2F2F2;
 }
-
-
+.fa-edit:before {
+    content: "\f044";
+    margin-right: 15px;
+    margin-left: 20px;
+}
 .btn_utiles{
     width: 30%;
     height: 30px;

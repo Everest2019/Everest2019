@@ -4,12 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title> Gemas</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/lista_utiles.css">
@@ -23,62 +17,30 @@
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
 
-
-
         <div id="navbar_lateral_inicio">
-            <a href="panel_administrador_inicio.html">Inicio</a>
+            <a href="index.html">Inicio</a>
         </div>
 
-        <div id="navbar_lateral_aprobaciones">
-            <a href="panel_administrador_aprobaciones.html">Aprobaciones</a>
+        <div id="navbar_lateral_instituciones">
+            <a href="instituciones.html">Instituciones</a>
         </div>
 
-        <div id="navbar_lateral_cercanos" >
-            <a href="panel_administrador_reportes.html">Reportes</a>
-        </div>
-
-        <div id="navbar_lateral_instituciones"  >
-            <a href="panel_administrador_instituciones.html">Instituciones</a>
-        </div>
-
-        <div id="navbar_lateral_instituciones" >
-            <a href="panel_administrador_evaluaciones.html">Evaluaciones</a>
-        </div>
-
-        <div id="navbar_lateral_utiles" class="pagina_actual">
-            <a href="lista_utiles.html">Lista de útiles</a>
-        </div>
-
-        <div id="navbar_lateral_lenguajes" >
-            <a href="panel_administrador_lenguajes.html">Lenguajes</a>
+        <div id="navbar_lateral_favoritos">
+            <a href="instituciones_favoritas.html">Favoritos</a>
         </div>
 
         <div id="navbar_lateral_cercanos">
-            <a href="panel_administrador_articulos.html">Artículos</a>
+            <a href="instituciones_cercanas.html">Cercanos</a>
         </div>
 
-        <div id="navbar_lateral_cercanos" >
-            <a href="panel_administrador_etiquetas.html">Etiquetas</a>
-        </div>
-        <div id="navbar_administrador_preferencia" >
-            <a href="listar_preferencia.html">Preferencia</a>
+        <div id="navbar_lateral_utiles">
+            <a href="listar_tuliles_padre_familia.html">Lista de útiles</a>
         </div>
 
-        <div id="navbar_lateral_cercanos" >
-            <a href="panel_administrador_bitacora.html">Bitácora</a>
+        <div id="navbar_mi_perfil">
+            <a href="perfil_padre_familia.html"><i class="fas fa-user-cog"></i>Mi Perfil</a>
         </div>
-
-        <div id="navbar_lateral_padres">
-            <a href="panel_administrador_lista_padres_familia.html">Padres de Familia</a>
-        </div>
-
-
-        <button type="button" id="btn_cerrar_sesion_admin">Cerrar Sesión</button>
-
-
     </div>
-
-
 
     <main class="main">
         <div class="slidershow-container">
@@ -122,7 +84,6 @@
                                         <th>
                                             Descripción
                                         </th>
-                                        <th id="lista_utiles"> Accion</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -146,8 +107,6 @@
 
                 <script src="js/servicio_registrar_lista_utiles.js"></script>
                 <script src="js/controlador_listar_utiles.js"></script>
-                <script src="js/controlador_cerrar_sesion_admin.js"></script>
-
 
 
 </body>
