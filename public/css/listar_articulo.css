@@ -128,3 +128,9 @@ html {
     cursor: pointer;
     margin-top: 30px;
   }
+
+  .fa-edit:before {
+    content: "\f044";
+    margin-right: 10px;
+    margin-left: 10px;
+}

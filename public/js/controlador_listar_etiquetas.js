@@ -25,23 +25,35 @@ let mostrar_datos = () => {
 
             //creacion del boton de editar
             let boton_editar = document.createElement('a');
-            boton_editar.textContent = 'Editar';
+            boton_editar.textContent = '';
             boton_editar.href = `actualizar_etiquetas.html?id_etiquetas=${etiquetas[i]['_id']}`;
 
             celda_configuracion.appendChild(boton_editar);
+
+            let icono_modificar = document.createElement('i');
+            icono_modificar.classList.add('far', 'fa-edit');
+
+            
+            boton_editar.appendChild(icono_modificar);
             // se crea una celda para el boton eliminar
-            celda_configuracion = fila.insertCell();
+           // celda_configuracion = fila.insertCell();
 
             //se crea el boton eliminar
             
             let boton_eliminar = document.createElement('a');
-            boton_eliminar.textContent = 'Eliminar';
+            boton_eliminar.textContent = '';
             boton_eliminar.href = "#";
             boton_eliminar.dataset.id_etiqueta = etiquetas[i]
             ['_id'];
             boton_eliminar.addEventListener('click', confirmar_borrado);
 
             celda_configuracion.appendChild(boton_eliminar);
+            
+            let icono_eliminar = document.createElement('i');
+            icono_eliminar.classList.add('far', 'fa-trash-alt');
+
+            
+            boton_eliminar.appendChild(icono_eliminar);
 
             
 
