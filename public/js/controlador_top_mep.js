@@ -224,5 +224,3 @@ function mostrar_colegios_privados() {
 };
 
 mostrar_datos();
-
-

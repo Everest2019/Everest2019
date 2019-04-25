@@ -58,12 +58,9 @@
         <div id="navbar_lateral_utiles">
             <a href="lista_utiles.html">Listas de Útiles</a>
         </div>
+        
         <div id="navbar_lateral_reportes">
-            <a href="#">Reportes</a>
-        </div>
-
-        <div id="navbar_lateral_contacto">
-            <a href="panel_centro_educativo_contacto.html">Contacto</a>
+            <a href="panel_centro_educativo_reportes.html">Reportes</a>
         </div>
 
         <div id="navbar_lateral_solicitudes">
@@ -104,10 +101,10 @@
 
         </div>
 
-    <div class="contenedor_informacion_general">
+        <div class="contenedor_informacion_general">
 
-        <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i>
-            <button type="button" id="btn_modificar">Modificar</button></p>
+            <p class="titulo_informacion_general">Información General<i class="fas fa-info-circle"></i>
+                <button type="button" id="btn_modificar">Modificar</button></p>
 
             <div>
                 <p id="titulo_evaluaciones">Evaluaciones</p>
@@ -115,37 +112,37 @@
                 <p id="puntuacion_mep">MEP <span id="evaluacion_mep">Sin evaluar</span></i></p>
             </div>
 
-        <p id="informacion_general" class="informacion_general"></p>
-    </div>
-
-    <div class="contenedor_galeria">
-        
-        <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
-
-        <div class="contenedor_imagenes" id="contenedor_imagenes">
+            <p id="informacion_general" class="informacion_general"></p>
         </div>
-    </div>
+
+        <div class="contenedor_galeria">
+
+            <p class="titulo_galeria">Galería<i class="fas fa-images"></i></p>
+
+            <div class="contenedor_imagenes" id="contenedor_imagenes">
+            </div>
+        </div>
 
         <div class="contenedor_referencia_historica">
 
             <p class="titulo_referencia_historica">Referencia Histórica<i class="fas fa-book"></i></p>
             <p id="referencia_historica" class="referencia_historica"></p>
         </div>
-    <div class="contenedor_informacion_adicional">
-            
-        <div class="contenedor_ensenanza">
-            <p class="titulo_info_adicional">Enseñanza<i class="fas fa-book-open"></i></p>
-            <p id="txt_ensenanza"></p>
+        <div class="contenedor_informacion_adicional">
+
+            <div class="contenedor_ensenanza">
+                <p class="titulo_info_adicional">Enseñanza<i class="fas fa-book-open"></i></p>
+                <p id="txt_ensenanza"></p>
+            </div>
+
+            <div class="contenedor_religion">
+                <p class="titulo_info_adicional">Religión<i class="fas fa-cross"></i></p>
+                <p id="txt_religion"></p>
+            </div>
+
         </div>
 
-        <div class="contenedor_religion">
-            <p class="titulo_info_adicional">Religión<i class="fas fa-cross"></i></p>
-            <p id="txt_religion"></p>
-        </div>
 
-    </div>
-
-            
 
 
 
@@ -160,52 +157,53 @@
         <!-- Informacion de la pagina web, correo, telefono y fax -->
         <div class="contenedor_contacto">
 
-                <div class="contenedor_item_contacto icono_web">
-                    <i class="fas fa-globe-americas fa-4x web"></i>
-                </div>
-    
-                <div>
-                    <p id="pagina_web" class="contenido_web"></p>
-                </div>
-    
-                <div class="contenedor_item_contacto icono_correo">
-                    <i class="fas fa-envelope fa-3x correo"></i>
-                </div>
-                <div>
-                    <p id="correo_electronico" class="contenido_correo"></p>
-                </div>
-    
-                <div class="contenedor_item_contacto icono_telefono">
-                    <i class="fas fa-phone fa-3x telefono"></i>
-                </div>
-                <div>
-                    <p id="telefono" class="contenido_telefono">Teléfono: </p>
-                    <p id="fax" class="contenido_telefono">Fax: </p>
-                </div>
-    
+            <div class="contenedor_item_contacto icono_web">
+                <i class="fas fa-globe-americas fa-4x web"></i>
             </div>
-            <!-- Contenedor de las redes sociales -->
-            <div class="fondo_gris_contenedor">
 
-                <div class="contenedor_redes_sociales">
-                    <div class="titulo_redes_sociales">
-                        <p>Redes sociales</p>
-                    </div>
-    
-                    <div class="separador_redes_sociales"></div>
-    
-                    <div id="iconos_redes" class="contenedor_iconos_redes">
-    
-                    </div>
-    
-                </div>
+            <div>
+                <p id="pagina_web" class="contenido_web"></p>
             </div>
+
+            <div class="contenedor_item_contacto icono_correo">
+                <i class="fas fa-envelope fa-3x correo"></i>
+            </div>
+            <div>
+                <p id="correo_electronico" class="contenido_correo"></p>
+            </div>
+
+            <div class="contenedor_item_contacto icono_telefono">
+                <i class="fas fa-phone fa-3x telefono"></i>
+            </div>
+            <div>
+                <p id="telefono" class="contenido_telefono">Teléfono: </p>
+                <p id="fax" class="contenido_telefono">Fax: </p>
+            </div>
+
+        </div>
+        <!-- Contenedor de las redes sociales -->
+        <div class="fondo_gris_contenedor">
+
+            <div class="contenedor_redes_sociales">
+                <div class="titulo_redes_sociales">
+                    <p>Redes sociales</p>
+                </div>
+
+                <div class="separador_redes_sociales"></div>
+
+                <div id="iconos_redes" class="contenedor_iconos_redes">
+
+                </div>
+
+            </div>
+        </div>
 
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/servicio_bitacora.js"></script>
     <script src="js/servicio_centro_educativo.js"></script>
 

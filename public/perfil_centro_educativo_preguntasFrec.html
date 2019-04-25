@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
@@ -13,9 +17,10 @@
 
     <title>Gemas - Instituciones</title>
 </head>
+
 <body>
 
- 
+
     <div class="navbar_lateral">
 
         <a href="index.html"><img src="img/gemas.png" alt="Logo Gemas"></a>
@@ -29,7 +34,7 @@
         <div id="navbar_lateral_general">
             <a href="perfil_centro_educativo_general.html">General</a>
         </div>
-                
+
         <div id="navbar_lateral_favoritos">
             <a href="perfil_centro_educativo_ubicacion.html">Ubicación</a>
         </div>
@@ -59,7 +64,7 @@
         </div>
         
         <div id="navbar_mi_perfil_instituciones">
-            
+
         </div>
 
     </div>
@@ -71,24 +76,37 @@
 
         <div class="separador"></div>
         <div class="contenido">
-          <div class="contenedor_buscar">
-              <label for="txt_filtrar_preguntas">Filtrar </label>
-              <input type="text" id="txt_filtrar_preguntas">
-          </div>
-           
-          <div id="lista_preguntas">
-         
+            <div class="contenedor_buscar">
+                <label for="txt_filtrar_preguntas">Filtrar </label>
+                <input type="text" id="txt_filtrar_preguntas">
             </div>
-          </div>
-</div>
+
+            <div>
+                <table id="tbl_pregunta" class="tabla_pregunta">
+                    <thead>
+                        <tr>
+                            <th>Pregunta</th>
+                            <th>Respuesta</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="js/servicio_preguntas.js"></script>
-<script src="js/controlador_listar_preguntas.js"></script>
-<script src="js/controlador_sesion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/servicio_preguntas.js"></script>
+    <script src="js/controlador_listar_preguntas.js"></script>
+    <script src="js/controlador_sesion.js"></script>
 </body>
+
 </html>

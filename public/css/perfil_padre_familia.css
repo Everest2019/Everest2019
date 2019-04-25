@@ -16,6 +16,7 @@
    position: relative;
    right: 44px;
    height: 320px;
+   object-fit: cover;
 
 }
 

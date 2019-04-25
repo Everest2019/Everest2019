@@ -120,7 +120,7 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
            edad_hijos : pedad_hijos,
            nacionalidad : pnacionalidad,
            telefono : ptelefono,
-           foto : pfoto,
+           foto_perfil : pfoto,
            correo : pcorreo,
            tipo_identificacion : ptipo_identificacion,
            contrasena : pcontrasena,
