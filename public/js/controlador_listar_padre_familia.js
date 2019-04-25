@@ -1,6 +1,7 @@
 'use strict';
 const input_filtrar = document.querySelector('#txt_filtrar');
 const boton_estado = document.querySelector('#btn_usuarios_deshabilitadas');
+
 let lista_padre_familia = listar_padre_familia();
 input_filtrar.addEventListener('keyup', mostrar_datos);
 

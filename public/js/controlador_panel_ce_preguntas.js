@@ -72,10 +72,12 @@ function confirmar_borrado(){
           borrar_pregunta(id);
           preguntas = listar_preguntas();
           mostrar_datos();
-        Swal.fire(
-          'Pregunta eliminada!',
-          'La pregunta fue borrada con éxito',
-          'success'
+        Swal.fire({
+          title:'Pregunta eliminada',
+          text:'La pregunta fue borrada con éxito',
+         type: 'success'
+        }
+          
         )
       }
     })

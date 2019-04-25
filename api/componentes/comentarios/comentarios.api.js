@@ -45,7 +45,7 @@ module.exports.listar_comentarios = (req, res) => {
                 res.json(
                     {
                         success: false,
-                        comentario: 'No se encontraron comentarios'
+                        comentarios: 'No se encontraron comentarios'
                     }
                 )
             }
@@ -54,36 +54,14 @@ module.exports.listar_comentarios = (req, res) => {
 }
 
 module.exports.buscar_por_id = (req, res) => {
-    modelo_comentarios.find({ _id: req.body.id }).then(
-        function (comentario) {
-            if (comentario) {
+    modelo_comentarios.find({ _id: req.body.id_comentario }).then(
+        function (comentarios) {
+            if (comentarios) {
                 res.json(
-                    { success: true, comentario: comentario })
+                    { success: true, comentarios: comentarios })
             } else {
                 res.json(
-                    { success: false, pregunta: 'No se encontraron comentarios' })
-            }
-        }
-    )
-};
-
-module.exports.actualizar_comentarios = function (req, res) {
-    modelo_comentarios.findByIdAndUpdate(req.body.id, { $set: req.body },
-        function (error) {
-            if (error) {
-                res.json(
-                    {
-                        success: false,
-                        msg: 'No se pudo actualizar el comentario'
-                    }
-                );
-            } else {
-                res.json(
-                    {
-                        success: true,
-                        msg: 'El comentario se actualizó con éxito'
-                    }
-                );
+                    { success: false, comentarios: 'No se encontraron comentarios' })
             }
         }
     )

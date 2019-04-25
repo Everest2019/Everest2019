@@ -10,6 +10,38 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/registrar_comentarios.css">
+
+    <style>
+        #calificacion {
+            /*display: flex;*/
+        }
+
+        #calificacion .clasificacion input[type="radio"] {
+            display: none;
+        }
+
+        #calificacion .clasificacion label {
+            color: grey;
+            margin-left: 30px;
+            transition: .2s;
+            font-size: 30px;
+        }
+
+        #calificacion .clasificacion {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            max-width: 170px;
+        }
+
+        #calificacion .clasificacion label:hover,
+        #calificacion .clasificacion label:hover~label {
+            color: #FFEF35;
+        }
+
+        #calificacion .clasificacion input[type="radio"]:checked~label {
+            color: #FFEF35;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +55,7 @@
 
     <h2 class="titulo2">Agregrar</h2>
     <h1 class="titulo1">Comentario</h1>
-    
+
     <main>
         <div class="contenedor">
             <div class="descripcion_contenedor">
@@ -33,34 +65,27 @@
             <div class="contenido">
                 <div class="formulario-1">
                     <div>
-                        <textarea name="comentario" id="txt_comentario" placeholder="Me gusta la institución"></textarea>
+                        <textarea name="comentario" id="txt_comentario"
+                            placeholder="Me gusta la institución"></textarea>
                     </div>
                     <form>
                         <div>
-                            <p class="calificacion">
-                                <fieldset id="fieldset_calificacion">
-                                    <legend>Calificación</legend>
+                            <legend>Calificación</legend>
+                            <div id="calificacion">
+
+                                <p class="clasificacion">
+                                    <input id="radio5" type="radio" name="estrellas" value="5">
+                                    <label for="radio5" title="Excelente">★</label>
+                                    <input id="radio4" type="radio" name="estrellas" value="4">
+                                    <label for="radio4" title="Bueno">★</label>
+                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                    <label for="radio3" title="Regular">★</label>
+                                    <input id="radio2" type="radio" name="estrellas" value="2">
+                                    <label for="radio2" title="Malo">★</label>
                                     <input id="radio1" type="radio" name="estrellas" value="1">
-                                    <!--
-                                --><label for="radio1" title="Excelente">★</label>
-                                    <!--
-                                --><input id="radio2" type="radio" name="estrellas" value="2">
-                                    <!--
-                                --><label for="radio2" title="Bueno">★</label>
-                                    <!--
-                                --><input id="radio3" type="radio" name="estrellas" value="3">
-                                    <!--
-                                --><label for="radio3" title="Regular">★</label>
-                                    <!--
-                                --><input id="radio4" type="radio" name="estrellas" value="4">
-                                    <!--
-                                --><label for="radio4" title="Malo">★</label>
-                                    <!--
-                                --><input id="radio5" type="radio" name="estrellas" value="5">
-                                    <!--
-                                --><label for="radio5" title="Muy malo">★</label>
-                                </fieldset>
-                            </p>
+                                    <label for="radio1" title="Muy malo">★</label>
+                                </p>
+                            </div>
                         </div>
                     </form>
                     <div>
