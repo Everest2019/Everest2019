@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const api_usuario = require('./usuarios.api');
 
-router.param('id_padre_familia', function(req, res, next, id_padre_familia){
+router.param('id_padre_familia', function (req, res, next, id_padre_familia) {
     req.body.id_padre_familia = id_padre_familia;
     next();
 });
@@ -43,7 +43,7 @@ router.route('/registrar_idioma')
         }
     );
 
-    router.route('/registrar_preferncia')
+router.route('/registrar_preferncia')
     .post(
         function (req, res) {
             api_usuario.agregar_preferencia(req, res);
@@ -57,9 +57,9 @@ router.route('/registrar_adminitrador')
         }
     );
 
-    router.route('/actualizar_padre_familia')
+router.route('/actualizar_padre_familia')
     .post(
-        function(req , res){
+        function (req, res) {
             api_usuario.actualizar(req, res);
         }
     );
@@ -92,21 +92,21 @@ router.route('/buscar_centro_educativo')
 
 
 router.route('/buscar_padre_familia')
-    .post(function(req , res){
-        api_usuario.buscar_padre_familia(req , res);
-});
+    .post(function (req, res) {
+        api_usuario.buscar_padre_familia(req, res);
+    });
 
 router.route('/buscar_favoritos_padre_familia')
     .post(function (req, res) {
         api_usuario.buscar_favoritos_padre_familia(req, res);
     });
 
-    router.route('/buscar_padre_familia/:id_padre_familia')
-.get(
-    function(req , res){
-        api_usuario.buscar_por_id(req, res);
-    }
-);
+router.route('/buscar_padre_familia/:id_padre_familia')
+    .get(
+        function (req, res) {
+            api_usuario.buscar_por_id(req, res);
+        }
+    );
 
 router.route('/validar_credenciales')
     .post(function (req, res) {
@@ -138,9 +138,9 @@ router.route('/borrar_centro_educativo')
     });
 
 router.route('/eliminar_padre_familia')
-.post(function (req, res) {
-    api_usuario.eliminar_padre_familia(req, res);
-});
+    .post(function (req, res) {
+        api_usuario.eliminar_padre_familia(req, res);
+    });
 
 router.route('/actualizar_centro_educativo')
     .post(
@@ -176,11 +176,11 @@ router.route('/habilitar_padre_familia')
     });
 
 router.route('/listar_instituciones_por_evaluacion')
-.get(
-    function (req, res) {
-        api_usuario.listar_instituciones_por_evaluacion(req, res);
-    }
-);
+    .get(
+        function (req, res) {
+            api_usuario.listar_instituciones_por_evaluacion(req, res);
+        }
+    );
 
 router.route('/agregar_contrasena')
     .post(
@@ -188,7 +188,7 @@ router.route('/agregar_contrasena')
             api_usuario.agregar_contrasena(req, res);
         }
     );
-module.exports = router; 
+module.exports = router;
 router.route('/listar_instituciones_top_mep')
     .get(
         function (req, res) {
@@ -200,4 +200,11 @@ router.route('/agregar_visitas')
     .post(function (req, res) {
         api_usuario.agregar_visitas(req, res);
     });
+
+//clientes potenciales CE
+router.route('/clientes_potenciales')
+    .get(function (req, res) {
+        api_usuario.listar_padre_familia(req, res);
+    });
+
 module.exports = router; 
