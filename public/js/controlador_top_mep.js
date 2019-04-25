@@ -17,14 +17,22 @@ let filtrar_criterios = () => {
         case 'Todos':
             mostrar_datos();
             break;
-        case 'colegios_publicos':
+        case 'Escuelas publicas':
+            mostrar_datos_publicas();
+            break;
+        case 'Escuelas privadas':
+            mostrar_datos_privadas();
+            break;
+        case 'Colegios_publicas':
             mostrar_colegios_publicos();
             break;
-        case 'colegios_privados':
+        case 'Colegios_privadas':
             mostrar_colegios_privados();
             break;
     }
-}
+};
+
+select_criterios.addEventListener('change', filtrar_criterios);
 
 function mostrar_datos() {
     tabla.innerHTML = '';
@@ -57,14 +65,14 @@ function mostrar_datos() {
     };
 };
 
-//Instituciones Colegios
-function mostrar_colegios_publicos() {
+function mostrar_datos_publicas() {
     tabla.innerHTML = '';
     let posicion = 0;
     for (let i = 0; i < 10; i++) {
-        if (lista_instituciones[i]['tipo_institucion'] == 'Colegio' && lista_instituciones[i]['modalidad'] == 'Público') {
+        if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Público') {
 
             posicion++;
+
 
             let fila = tabla.insertRow();
             let celda_posicion = fila.insertCell();
@@ -72,7 +80,7 @@ function mostrar_colegios_publicos() {
             let celda_nombre = fila.insertCell();
             let celda_evaluacion = fila.insertCell();
             celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
-            celda_posicion.innerHTML = i + 1;
+            celda_posicion.innerHTML = posicion;
 
             let imagen = document.createElement('img');
             imagen.classList.add('imagen_tabla');
@@ -86,8 +94,96 @@ function mostrar_colegios_publicos() {
 
 
             celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+            let icono_estrella = document.createElement('i');
+            icono_estrella.classList.add('fas', 'fa-star');
+
+            celda_evaluacion.appendChild(icono_estrella);
         }
-    }
+
+    };
+};
+
+function mostrar_datos_privadas() {
+    tabla.innerHTML = '';
+    let posicion = 0;
+    for (let i = 0; i < 10; i++) {
+        if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Privado') {
+
+            posicion++;
+
+
+            let fila = tabla.insertRow();
+            let celda_posicion = fila.insertCell();
+            let celda_logo = fila.insertCell();
+            let celda_nombre = fila.insertCell();
+            let celda_evaluacion = fila.insertCell();
+            celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
+            celda_posicion.innerHTML = posicion;
+
+            let imagen = document.createElement('img');
+            imagen.classList.add('imagen_tabla');
+            if (lista_instituciones[i]['logo']) {
+                imagen.src = lista_instituciones[i]['logo'];
+            } else {
+                imagen.src = 'img/user_icon.png';
+            }
+            celda_posicion.classList.add('td_posicion');
+            celda_logo.appendChild(imagen);
+
+
+            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+
+            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+            let icono_estrella = document.createElement('i');
+            icono_estrella.classList.add('fas', 'fa-star');
+
+            celda_evaluacion.appendChild(icono_estrella);
+
+        }
+    };
+};
+
+//colegios
+
+function mostrar_colegios_publicos() {
+    tabla.innerHTML = '';
+    let posicion = 0;
+    for (let i = 0; i < 10; i++) {
+        if (lista_instituciones[i]['tipo_institucion'] == 'Colegio' && lista_instituciones[i]['modalidad'] == 'Público') {
+
+            posicion++;
+
+
+            let fila = tabla.insertRow();
+            let celda_posicion = fila.insertCell();
+            let celda_logo = fila.insertCell();
+            let celda_nombre = fila.insertCell();
+            let celda_evaluacion = fila.insertCell();
+            celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
+            celda_posicion.innerHTML = posicion;
+
+            let imagen = document.createElement('img');
+            imagen.classList.add('imagen_tabla');
+            if (lista_instituciones[i]['logo']) {
+                imagen.src = lista_instituciones[i]['logo'];
+            } else {
+                imagen.src = 'img/user_icon.png';
+            }
+            celda_posicion.classList.add('td_posicion');
+            celda_logo.appendChild(imagen);
+
+
+            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+
+            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+            let icono_estrella = document.createElement('i');
+            icono_estrella.classList.add('fas', 'fa-star');
+
+            celda_evaluacion.appendChild(icono_estrella);
+
+        }
+
+    };
 };
 
 function mostrar_colegios_privados() {
@@ -98,13 +194,14 @@ function mostrar_colegios_privados() {
 
             posicion++;
 
+
             let fila = tabla.insertRow();
             let celda_posicion = fila.insertCell();
             let celda_logo = fila.insertCell();
             let celda_nombre = fila.insertCell();
             let celda_evaluacion = fila.insertCell();
             celda_nombre.innerHTML = lista_instituciones[i]['nombre_comercial'];
-            celda_posicion.innerHTML = i + 1;
+            celda_posicion.innerHTML = posicion;
 
             let imagen = document.createElement('img');
             imagen.classList.add('imagen_tabla');
@@ -118,10 +215,17 @@ function mostrar_colegios_privados() {
 
 
             celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+
+            celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
+            let icono_estrella = document.createElement('i');
+            icono_estrella.classList.add('fas', 'fa-star');
+
+            celda_evaluacion.appendChild(icono_estrella);
+
         }
-    }
+    };
 };
 
-
 mostrar_datos();
+
 
