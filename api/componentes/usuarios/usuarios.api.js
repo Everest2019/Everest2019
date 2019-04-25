@@ -353,6 +353,30 @@ module.exports.agregar_idioma = (req, res) => {
     )
 };
 
+
+module.exports.agregar_preferencia = (req, res) => {
+    modelo_usuario.update(
+        { identificacion: req.body.identificacion },
+        {
+            $push:
+            {
+                'preferencia':
+                {
+                    preferencia: req.body.nombre
+                }
+            }
+        },
+        function (error) {
+            if (error) {
+                res.json({ success: false, msg: `No se pudo agregar la preferncia, revise el siguiente error ${error}` });
+            }
+            else {
+                res.json({ success: true, msg: `Registro completo` });
+            }
+        }
+    )
+};
+
 module.exports.registrar_administrador = (req, res) => {
     let modelo_administrador = new modelo_usuario(
         {
