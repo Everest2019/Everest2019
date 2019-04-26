@@ -188,6 +188,12 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
         let fecha = new Date();
 
         registrar_accion(usuario,detalle,fecha);
+
+        swal.fire({
+            title:'Usuario deshabilitado',
+            type: 'success',
+            text:'Se deshabilitó el usuario correctamente'
+        })
             console.log(res.msg);
             
         },
@@ -210,6 +216,12 @@ function habilitar_padre_familia(pid_usuarios){
         let fecha = new Date();
 
         registrar_accion(usuario,detalle,fecha);
+
+        swal.fire({
+            title:'Usuario habilitado',
+            text: 'Se habilitó el usuario correctamente',
+            type: 'success'
+        })
 
             console.log(res.msg);
             

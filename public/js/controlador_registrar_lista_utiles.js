@@ -46,7 +46,10 @@ let obtener_datos = ()=>{
         
             swal.fire({
                 type: 'success',
-                title: 'El registro ha sido completado!'
+                title: 'El registro ha sido completado',
+                onClose: () =>{
+                    window.location.href = 'lista_utiles.html';
+                }
             });
     }else{
         swal.fire({
@@ -55,8 +58,6 @@ let obtener_datos = ()=>{
             text: 'Porfavor revice los campos resaltados'
         });
     }
-    input_articulo.value = '';
-    input_cantidad.value = '';
-    input_descripcion.value = '';
+    
 };
 boton_guardar.addEventListener('click',obtener_datos);

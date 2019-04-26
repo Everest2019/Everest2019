@@ -36,6 +36,14 @@ let registrar_utiles = (particulo, pcantidad, pdescripcion) => {
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         dataType: "json"
     });
+    request.done(function (res) {
+        let detalle = "Artículo agregado a la lista de útiles";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+    });
+
     
 
     request.fail(function (jqXHR, textStatus) {
@@ -118,6 +126,13 @@ function borrar_lista_utiles(pid) {
 
         },
         success: function success(response) {
+
+        let detalle = "Artículo eliminado de la lista de útiles";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
             Swal.fire({
                 title: 'Lista eliminada',
                 text: 'La lista de útiles fue eliminada con éxito',
