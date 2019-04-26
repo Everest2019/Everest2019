@@ -786,10 +786,10 @@ html {
     }
   
     .navbar_lateral img{
-      width: 80%;   
-      height: 100px;
-      margin-left: 10%;
-      margin-top: 30px;
+      width: 70%;   
+      height: 120px;
+      margin-left: 7%;
+      margin-top: 20px;
   }
   
     .navbar_lateral div:hover{
@@ -987,12 +987,7 @@ html {
         margin-bottom: 15px;
     }
   
-    .navbar_lateral img{
-      width: 80%;   
-      height: 100px;
-      margin-left: 10%;
-      margin-top: 20px;
-  }
+    
   
     .navbar_lateral div:hover{
       border-bottom: 3px solid #FAA21A;

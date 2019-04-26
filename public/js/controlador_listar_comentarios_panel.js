@@ -3,7 +3,7 @@
 const tabla = document.querySelector('#tbl_comentario tbody');
 const input_buscar = document.querySelector('#txt_buscar');
 
-let id_centro_educativo = localStorage.getItem('centro_educativo');
+let id_centro_educativo = localStorage.getItem('id_usuario');
 
 let centro_educativo = buscar_centro_educativo(id_centro_educativo);
 
@@ -29,3 +29,4 @@ let mostrar_comentarios = () => {
     }
 }
 mostrar_comentarios();
+input_buscar.addEventListener('keyup',mostrar_comentarios);
