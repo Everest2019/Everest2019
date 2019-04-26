@@ -55,6 +55,7 @@ let imagen3 = document.createElement('img');
 imagen3.src = './img/document.png';
 if (centro_educativo['documento1']) {
     let documento1 = document.createElement('a');
+    documento1.classList.add('documento');
     documento1.href = centro_educativo['documento1'];
     documento1.appendChild(imagen1);
     documentos.appendChild(documento1);
@@ -62,12 +63,14 @@ if (centro_educativo['documento1']) {
 }
 if (centro_educativo['documento2']) {
     let documento2 = document.createElement('a');
+    documento2.classList.add('documento');
     documento2.href = centro_educativo['documento2'];
     documento2.appendChild(imagen2);
     documentos.appendChild(documento2);
 }
 if (centro_educativo['documento3']) {
     let documento3 = document.createElement('a');
+    documento3.classList.add('documento');
     documento3.href = centro_educativo['documento3'];
     documento3.appendChild(imagen3);
     documentos.appendChild(documento3);
@@ -134,10 +137,15 @@ let eliminar_centro_educativo = () => {
         }).then((result) => {
             if (result.value) {
                 borrar_centro_educativo(id_centro_educativo);
-                Swal.fire(
-                    '¡Centro Educativo eliminado!',
-                    'El centro educativo fue eliminado con éxito',
-                    'success'
+                Swal.fire({
+                    title:'¡Centro Educativo eliminado!',
+                    text:'El centro educativo fue eliminado con éxito',
+                    type:'success',
+                    onClose: ()=>{
+                        window.location.href = 'panel_administrador_aprobaciones.html';
+                    }
+                }
+                    
                 )
             }
         })

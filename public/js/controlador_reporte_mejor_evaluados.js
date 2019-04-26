@@ -15,7 +15,7 @@ console.log(lista_instituciones);
 function mostrar_datos() {
 
   tabla.innerHTML = '';
-  for (let i = 0; i < lista_instituciones.length; i++) {
+  for (let i = 0; i < 15; i++) {
 
     if(lista_instituciones[i]['evaluacion']){
 

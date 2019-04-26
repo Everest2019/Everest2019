@@ -12,7 +12,6 @@ const select_nacionalidad = document.querySelector('#select_nacionalidad');
 const input_identificacion = document.querySelector('#txt_identificacion');
 const select_tipo_identificacion = document.querySelector('#select_tipo_identificacion');
 const input_foto_padre_familia = document.querySelector('#url_foto_perfil');
-const contrasena = document.querySelector('#txt_contrasena');
 const verificar_contrasena = document.querySelector('#txt_verificar_contrasena');
 const select_provincia = document.querySelector('#txt_provincia');
 const select_canton = document.querySelector('#txt_canton');
@@ -112,35 +111,6 @@ let validar =() =>{
     select_distrito.classList.add ('borde');
     select_distrito.classList.remove('error_datalist');
   }
-  if(contrasena.value == ''){
-    error = true;
-    contrasena.classList.remove ('borde');
-    contrasena.classList.add('input_error');
-}
-else{
-    contrasena.classList.remove('input_error');
-}
-if(verificar_contrasena.value == ''){
-    error = true;
-    verificar_contrasena.classList.remove ('borde');
-    verificar_contrasena.classList.add('input_error');
-}
-else{
-    verificar_contrasena.classList.remove('input_error');
-}
-if(verificar_contrasena.value != contrasena.value){
-    error = true;
-    verificar_contrasena.classList.remove ('borde');
-    contrasena.classList.remove ('borde');
-    contrasena.classList.add('input_error');
-    verificar_contrasena.classList.add('input_error');
-}
-else{
-    verificar_contrasena.classList.add('borde');
-    contrasena.classList.add('borde');
-    contrasena.classList.remove('input_error');
-    verificar_contrasena.classList.remove('input_error');
-}
 
   return error;
 }; 
@@ -161,7 +131,6 @@ let obtener_datos = () =>{
     let foto = input_foto_padre_familia.value;
     let estado = false;
     let tipo_usuario = 'padre_familia';
-    //let contrasena_pf = contrasena.value;
     let codigo = generar_codigo();
 
     let provincia = buscar_provincia();

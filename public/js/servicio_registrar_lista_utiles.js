@@ -119,8 +119,8 @@ function borrar_lista_utiles(pid) {
         },
         success: function success(response) {
             Swal.fire({
-                title: 'articulo eliminado!',
-                text: 'El articulo fue eliminado con éxito',
+                title: 'Lista eliminada',
+                text: 'La lista de útiles fue eliminada con éxito',
                 type: 'success'
             }
 

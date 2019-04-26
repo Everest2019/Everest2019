@@ -3,7 +3,7 @@
 const tabla = document.querySelector('#tbl_comentario tbody');
 const input_buscar = document.querySelector('#txt_buscar');
 const boton_comentario = document.querySelector('#btn_agregar_comentario');
-
+const a_regresar = document.querySelector('#a_regresar');
 
 let comentarios = listar_comentarios();
 
@@ -72,7 +72,16 @@ function confirmar_borrado() {
         }
     })
 };
+a_regresar.addEventListener('click', function () {
+    if (localStorage.getItem('tipo_usuario') == 'administrador') {
+        window.location.href = './panel_administrador_instituciones.html';
+    }
+    else {
+        window.location.href = './instituciones.html';
+    }
+});
 
+a_regresar.classList.add('estilos_a');
 boton_comentario.addEventListener('click', function () { window.location.href = './registrar_comentarios.html';
 });
 mostrar_comentarios();

@@ -57,10 +57,13 @@ function mostrar_datos() {
         celda_posicion.innerHTML = i + 1;
         celda_posicion.classList.add('td_posicion');
         celda_logo.appendChild(imagen);
+        let icono_estrella = document.createElement('i');
+        icono_estrella.classList.add('fas', 'fa-star');
 
+        
 
         celda_evaluacion.innerHTML = lista_instituciones[i]['evaluacion'];
-
+        celda_evaluacion.appendChild(icono_estrella);
 
     };
 };
@@ -68,7 +71,7 @@ function mostrar_datos() {
 function mostrar_datos_publicas() {
     tabla.innerHTML = '';
     let posicion = 0;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Público') {
 
             posicion++;
@@ -106,7 +109,7 @@ function mostrar_datos_publicas() {
 function mostrar_datos_privadas() {
     tabla.innerHTML = '';
     let posicion = 0;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Escuela' && lista_instituciones[i]['modalidad'] == 'Privado') {
 
             posicion++;
@@ -145,7 +148,7 @@ function mostrar_datos_privadas() {
 function mostrar_colegios_publicos() {
     tabla.innerHTML = '';
     let posicion = 0;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Colegio' && lista_instituciones[i]['modalidad'] == 'Público') {
 
             posicion++;
@@ -186,7 +189,7 @@ function mostrar_colegios_publicos() {
 function mostrar_colegios_privados() {
     tabla.innerHTML = '';
     let posicion = 0;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
         if (lista_instituciones[i]['tipo_institucion'] == 'Colegio' && lista_instituciones[i]['modalidad'] == 'Privado') {
 
             posicion++;

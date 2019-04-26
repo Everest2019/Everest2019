@@ -45,8 +45,8 @@ function mostrar_noticias () {
 
         let fecha = new Date(noticias[i]['fecha']);
         fecha = fecha.toLocaleDateString();
-        fila.insertCell().innerHTML = fecha;
         fila.insertCell().innerHTML = noticias[i]['titulo'];
+        fila.insertCell().innerHTML = fecha;
         fila.insertCell().innerHTML = noticias[i]['descripcion'];
       }
     }

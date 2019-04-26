@@ -438,7 +438,7 @@ module.exports.listar_instituciones = (req, res) => {
 };
 
 module.exports.listar_instituciones_por_fecha = (req, res) => {
-    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ fecha_creacion: -1}).then(
+    modelo_usuario.find({ tipo_usuario: 'centro_educativo' }).sort({ fecha_creacion: 1}).then(
         function (instituciones) {
             if (instituciones.length > 0) {
                 res.json(

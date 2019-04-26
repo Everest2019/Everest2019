@@ -148,3 +148,38 @@ let buscar_padre_familia = (pid_padre_familia)=>{
         }
     });
 };
+
+
+let eliminar_cita_padre = (pid_cita, pnombre)=>{
+    $.ajax({
+        url: 'http://localhost:4000/api/eliminar_cita',
+        method: 'POST',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            id_cita : pid_cita
+        },
+        beforeSend: function beforeSend() {
+            
+        },
+        success: function success(response) {
+            let detalle = "Cita cancelada";
+            let usuario = pnombre;
+            let fecha = new Date();
+
+            registrar_accion(usuario,detalle,fecha);
+
+            Swal.fire({
+                title:'Cita cancelada',
+                text:'La cita fue cancelada con éxito',
+                type:'success',
+                onClose: () =>{
+                    window.location.href = 'citas_padres_familia.html';
+                }
+            });
+        },
+        error: function error(_error) {
+            console.log("Request fail error:" + _error);
+        }
+    });
+};
+

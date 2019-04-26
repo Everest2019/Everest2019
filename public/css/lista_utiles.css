@@ -96,6 +96,11 @@
     right: 150px;
     background: #F2F2F2;
 }
+
+#tbl_utiles i{
+    font-size: 25px;
+    color: #000;
+}
 .fa-edit:before {
     content: "\f044";
     margin-right: 15px;
@@ -121,7 +126,7 @@
       color: #fff;
       border-radius: 3px;
       border: 0;
-      margin-left: 3%;
+      margin-left: 15%;
       cursor: pointer;
       margin-top: 30px;
     }

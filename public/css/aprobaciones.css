@@ -143,17 +143,11 @@ html {
 .celda_configuracion button:hover{
     background: rgb(245, 148, 2);
 }
-.documento1 img{
-    height: 200px;
-    width: 150px;
-}
-.documento2 img{
-    height: 40px;
-    width: 50px;
-}
-.documento3 img{
-    height: 40px;
-    width: 50px;
+.documento img{
+    height: 150px;
+    width: 120px;
+    margin-left: 10px;
+    float: left;
 }
 
 

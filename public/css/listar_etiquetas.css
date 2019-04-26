@@ -93,6 +93,17 @@
     background: #F2F2F2;
 }
 
+#tbl_etiquetas tbody a{
+    color: #000;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.th_configuracion{
+    width: 120px;
+}
+
 .btn_asignar{
   width: 30%;
   height: 30px;

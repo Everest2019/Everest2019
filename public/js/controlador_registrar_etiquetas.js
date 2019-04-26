@@ -41,6 +41,9 @@ let obtener_datos = () => {
         swal.fire({
             type : 'success',
             title : 'Etiqueta creada con éxito',
+            onClose: () =>{
+                window.location.href = 'panel_administrador_etiquetas.html';
+            }
         });
         input_accion.value = '';
         input_descripcion.value = '';

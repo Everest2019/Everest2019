@@ -86,7 +86,7 @@ let mostrar_datos = () => {
 function confirmar_borrado() {
     let id = this.dataset.id_lista_utiles;
     swal.fire({
-        title: 'Está seguro que desea eliminar la etiqueta?',
+        title: '¿Está seguro que desea eliminar la lista de útiles?',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',

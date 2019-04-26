@@ -1,6 +1,5 @@
 'use strict';
 const input_filtrar = document.querySelector('#txt_filtrar');
-const boton_estado = document.querySelector('#btn_usuarios_deshabilitadas');
 
 let lista_padre_familia = listar_padre_familia();
 input_filtrar.addEventListener('keyup', mostrar_datos);
@@ -86,10 +85,3 @@ function habilitar(){
     lista_padre_familia = listar_padre_familia();
     mostrar_datos();
 };
-
-function usuarios_deshabilitados() {
-    window.location.href = 'usuarios_deshabilitados.html';
-};
-
-
-boton_estado.addEventListener('click', usuarios_deshabilitados);

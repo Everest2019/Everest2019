@@ -183,6 +183,11 @@ let actualizar_padre_familia = (pprimer_nombre, psegundo_nombre, pprimer_apellid
         },
 
         success: function success(res) {
+            let detalle = "Usuario deshabilitado";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
             console.log(res.msg);
             
         },
@@ -200,6 +205,12 @@ function habilitar_padre_familia(pid_usuarios){
         },
         
         success: function success(res) {
+        let detalle = "Usuario habilitado";
+        let usuario = 'Administrador';
+        let fecha = new Date();
+
+        registrar_accion(usuario,detalle,fecha);
+
             console.log(res.msg);
             
         },

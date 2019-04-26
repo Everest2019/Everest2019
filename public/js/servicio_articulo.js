@@ -22,7 +22,10 @@ let registrar_articulo = (pnombre, pdescripcion) => {
         swal.fire({
             type: 'success',
             title: 'Artículo creado',
-            text: `${pnombre} agregado correctamente`
+            text: `${pnombre} agregado correctamente`,
+            onClose: ()=>{
+                window.location.href = 'panel_administrador_articulos.html'
+            }
         });
     });
 

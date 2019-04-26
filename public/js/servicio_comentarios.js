@@ -19,7 +19,9 @@ let registrar_comentario = (pcentro_educativo, pcomentario, pcalificacion, pid_p
         swal.fire({
             type: 'success',
             title: 'Comentario enviado correctamente',
-            onClose: function(){ location.reload()}
+            onClose: ()=>{
+                window.location.href = 'perfil_centro_educativo_comentarios.html';
+            }
         });
 
     });
